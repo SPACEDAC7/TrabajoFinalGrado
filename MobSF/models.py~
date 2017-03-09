@@ -11,5 +11,5 @@ class RecentScansDB(models.Model):
     userID = models.TextField()
 
     def __str__(self):
-        return (self.NAME, self.userID)
+        return self.NAME
     

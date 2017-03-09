@@ -1,0 +1,7 @@
+
+  {% extends "baseMar.html" %}
+   {% block content %}
+
+<h1>Te has colado</h1>
+
+{% end content %}

@@ -1,0 +1,13 @@
+
+  {% extends "baseMar.html" %}
+   {% block content %}
+
+<h1>Te has colado</h1>
+
+<form method="post" action="/index/">
+{% csrf_token %}
+
+<input type="submit" value="Return" />
+</form>
+
+{% end content %}

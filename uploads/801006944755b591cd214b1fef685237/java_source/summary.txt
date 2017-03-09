@@ -1,0 +1,104 @@
+Summary for /home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/uploads/801006944755b591cd214b1fef685237/classes.jar
+Decompiled with CFR 0_115
+
+
+jackpal.androidterm.compat.Base64
+----------------------------
+
+process(byte[] int int boolean )
+  Unable to fully structure code
+process(byte[] int int boolean )
+  Unable to fully structure code
+
+
+jackpal.androidterm.compat.PRNGFixes
+----------------------------
+
+engineSetSeed(byte[] )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [4[TRYBLOCK]], but top level block is 7[CATCHBLOCK]
+
+
+jackpal.androidterm.emulatorview.EmulatorView
+----------------------------
+
+createLinks(int )
+  Unable to fully structure code
+
+
+jackpal.androidterm.emulatorview.FullUnicodeLine
+----------------------------
+
+setChar(int int )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Statement already marked as first in another block
+
+
+jackpal.androidterm.emulatorview.TermKeyListener
+----------------------------
+
+keyDown(int android.view.KeyEvent boolean boolean )
+  Unable to fully structure code
+mapControlChar(boolean boolean int )
+  Unable to fully structure code
+
+
+jackpal.androidterm.emulatorview.TermSession
+----------------------------
+
+run()
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [0[TRYBLOCK]], but top level block is 6[UNCONDITIONALDOLOOP]
+
+
+jackpal.androidterm.emulatorview.TerminalEmulator
+----------------------------
+
+nextOSCString(int )
+  Unable to fully structure code
+process(byte boolean )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [2[CASE]], but top level block is 12[SWITCH]
+selectGraphicRendition()
+  Unable to fully structure code
+
+
+jackpal.androidterm.emulatorview.UnicodeTranscript
+----------------------------
+
+blockCopy(int int int int int int )
+  Unable to fully structure code
+resize(int int int[] )
+  Unable to fully structure code
+
+
+jackpal.androidterm.shortcuts.AddShortcut
+----------------------------
+
+buildShortcut(java.lang.String java.lang.String java.lang.String java.lang.String int )
+  Loose catch block
+
+
+jackpal.androidterm.RunShortcut
+----------------------------
+
+handleIntent()
+  Loose catch block
+
+
+jackpal.androidterm.Term
+----------------------------
+
+doUIToggle(int int int int )
+  Unable to fully structure code
+populateViewFlipper()
+  Unable to fully structure code
+onCreate(android.os.Bundle )
+  Unable to fully structure code
+onNewIntent(android.content.Intent )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Extractable last case doesn't follow previous
+
+
+jackpal.androidterm.emulatorview.TranscriptScreen
+----------------------------
+
+internalGetTranscriptText(jackpal.androidterm.emulatorview.GrowableIntArray int int int int )
+  Unable to fully structure code
+drawText(int android.graphics.Canvas float float jackpal.androidterm.emulatorview.TextRenderer int int int java.lang.String int )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Statement already marked as first in another block

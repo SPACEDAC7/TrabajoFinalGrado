@@ -12,4 +12,6 @@ class RecentScansDB(models.Model):
 
     def __str__(self):
         return self.NAME
-    
+   
+    class Meta:
+        unique_together = (("NAME", "userID"),)

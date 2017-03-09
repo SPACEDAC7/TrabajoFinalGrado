@@ -225,3 +225,17 @@
 [ERROR] Adding Scan URL to Database (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/MobSF/views.py, LINE 93 "NAME=name, MD5=md5, URL=url, TS=timezone.now(), userID=user.id)"): global name 'user' is not defined
 [2017-03-09 11:51:18]
 [ERROR] Adding Scan URL to Database (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/MobSF/views.py, LINE 95 "NAME=name, MD5=md5, URL=url, TS=timezone.now(), userID=request.session["user"].id)"): global name 'request' is not defined
+[2017-03-09 12:52:36]
+[ERROR] Cannot Check for updates. (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/MobSF/utils.py, LINE 49 "html = response.read().split("\n")"): [Errno 104] Connection reset by peer
+[2017-03-09 13:06:42]
+[ERROR] Cannot Check for updates. (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/MobSF/utils.py, LINE 49 "html = response.read().split("\n")"): [Errno 104] Connection reset by peer
+[2017-03-09 13:06:51]
+[ERROR] Cannot Check for updates. (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/MobSF/utils.py, LINE 49 "html = response.read().split("\n")"): [Errno 104] Connection reset by peer
+[2017-03-09 13:10:49]
+[ERROR] Adding Scan URL to Database (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/MobSF/views.py, LINE 98 "new_db_obj.save()"): UNIQUE constraint failed: MobSF_recentscansdb.NAME, MobSF_recentscansdb.userID
+[2017-03-09 13:18:34]
+[ERROR] Adding Scan URL to Database (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/MobSF/views.py, LINE 98 "new_db_obj.save()"): UNIQUE constraint failed: MobSF_recentscansdb.NAME, MobSF_recentscansdb.userID
+[2017-03-09 13:18:34]
+[ERROR] Uploading File: (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/MobSF/views.py, LINE 157 "request.FILES['file'].name, md5, response_data['url'])"): Invalid block tag on line 13: 'end', expected 'endblock'. Did you forget to register or load this tag?
+[2017-03-09 13:20:24]
+[ERROR] Adding Scan URL to Database (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/MobSF/views.py, LINE 98 "new_db_obj.save()"): UNIQUE constraint failed: MobSF_recentscansdb.NAME, MobSF_recentscansdb.userID

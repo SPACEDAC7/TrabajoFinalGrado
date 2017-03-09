@@ -91,13 +91,16 @@ def add_to_recent_scan(id, name, md5, url):
     Add Entry to Database under Recent Scan
     """
     try:
-        db_obj = RecentScansDB.objects.filter(MD5=md5)
-        if not db_obj.exists():
+       # db_obj = RecentScansDB.objects.filter(MD5=md5)
+      #  if not db_obj.exists():
             new_db_obj = RecentScansDB(
                 NAME=name, MD5=md5, URL=url, TS=timezone.now(), userID=id)
             new_db_obj.save()
     except:
         PrintException("[ERROR] Adding Scan URL to Database")
+	#context = {'version': settings.MOBSF_VER}
+        #template = "registration/errorUpload.html"
+        #return render(request, template, context)
 
 
 
@@ -150,7 +153,7 @@ def upload(request):
                     response_data['url'] = ('../StaticAnalyzer/?name=' + request.FILES['file'].name +
                                             '&type=apk&checksum=' + md5)
                     response_data['status'] = 'success'
-                    add_to_recent_scan(request.session["userID"],
+                    add_to_recent_scan( request.session["userID"],
                         request.FILES['file'].name, md5, response_data['url'])
                     print "\n[INFO] Performing Static Analysis of Android APK"
                 elif ((file_type in settings.ZIP_MIME) and
@@ -160,7 +163,7 @@ def upload(request):
                     response_data['url'] = ('../StaticAnalyzer/?name=' + request.FILES['file'].name +
                                             '&type=zip&checksum=' + md5)
                     response_data['status'] = 'success'
-                    add_to_recent_scan(request.session["userID"],
+                    add_to_recent_scan( request.session["userID"],
                         request.FILES['file'].name, md5, response_data['url'])
                     print "\n[INFO] Performing Static Analysis of Android/iOS Source Code"
                 elif ((file_type in settings.IPA_MIME) and
@@ -173,7 +176,7 @@ def upload(request):
                                                 request.FILES['file'].name +
                                                 '&type=ipa&checksum=' + md5)
                         response_data['status'] = 'success'
-                        add_to_recent_scan(request.session["userID"],
+                        add_to_recent_scan( request.session["userID"],
                             request.FILES['file'].name, md5, response_data['url'])
                         print "\n[INFO] Performing Static Analysis of iOS IPA"
                     else:
@@ -184,7 +187,7 @@ def upload(request):
                     md5=handle_uploaded_file(request.FILES['file'],'.appx')
                     response_data['url'] = '../StaticAnalyzer_Windows/?name='+request.FILES['file'].name+'&type=appx&checksum='+md5
                     response_data['status'] = 'success'
-                    add_to_recent_scan(request.session["userID"],
+                    add_to_recent_scan( request.session["userID"],
                         request.FILES['file'].name,md5,response_data['url'])
                     print "\n[INFO] Performing Static Analysis of Windows APP"
                 else:
