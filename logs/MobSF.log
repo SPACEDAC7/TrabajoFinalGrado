@@ -1,0 +1,213 @@
+
+[2017-02-17 10:00:56]
+[ERROR] Finding Java path - Cannot Run Process (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/MobSF/utils.py, LINE 277 "args, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,)"): [Errno 2] No such file or directory
+[2017-02-17 09:00:57]
+[ERROR] Finding Java path - Cannot Run Process (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/MobSF/utils.py, LINE 277 "args, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,)"): [Errno 2] No such file or directory
+[2017-02-17 10:00:58]
+[ERROR] Finding Java path - Cannot Run Process (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/MobSF/utils.py, LINE 277 "args, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,)"): [Errno 2] No such file or directory
+[2017-02-17 09:00:58]
+[ERROR] Finding Java path - Cannot Run Process (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/MobSF/utils.py, LINE 277 "args, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,)"): [Errno 2] No such file or directory
+[2017-02-17 10:00:58]
+[ERROR] Finding Java path - Cannot Run Process (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/MobSF/utils.py, LINE 277 "args, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,)"): [Errno 2] No such file or directory
+[2017-02-17 09:00:59]
+[ERROR] Finding Java path - Cannot Run Process (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/MobSF/utils.py, LINE 277 "args, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,)"): [Errno 2] No such file or directory
+[2017-02-17 10:01:00]
+[ERROR] Finding Java path - Cannot Run Process (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/MobSF/utils.py, LINE 277 "args, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,)"): [Errno 2] No such file or directory
+[2017-02-17 09:01:00]
+[ERROR] Finding Java path - Cannot Run Process (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/MobSF/utils.py, LINE 277 "args, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,)"): [Errno 2] No such file or directory
+[2017-02-17 09:01:00]
+[ERROR] Finding Java path - Cannot Run Process (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/MobSF/utils.py, LINE 277 "args, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,)"): [Errno 2] No such file or directory
+[2017-02-17 09:01:14]
+[ERROR] Reading Manifest file (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/manifest_analysis.py, LINE 1240 "dat = subprocess.check_output(args)"): [Errno 2] No such file or directory
+[2017-02-17 09:01:14]
+[ERROR] Parsing Manifest file (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/manifest_analysis.py, LINE 24 "dat = read_manifest(app_dir, toosl_dir, typ, binary).replace("\n", "")"): 'NoneType' object has no attribute 'replace'
+[2017-02-17 09:01:14]
+[ERROR] Extracting Manifest Data (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/manifest_analysis.py, LINE 63 "permissions = mfxml.getElementsByTagName("uses-permission")"): 'NoneType' object has no attribute 'getElementsByTagName'
+[2017-02-17 09:01:14]
+[ERROR] Performing Manifest Analysis (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/manifest_analysis.py, LINE 651 "applications = mfxml.getElementsByTagName("application")"): 'NoneType' object has no attribute 'getElementsByTagName'
+[2017-02-17 09:01:14]
+[ERROR] Reading Code Signing Certificate (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/cert_analysis.py, LINE 61 "dat = subprocess.check_output(args)"): [Errno 2] No such file or directory
+[2017-02-17 09:01:14]
+[ERROR] Converting DEX to SMALI (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/converter.py, LINE 95 "subprocess.call(args)"): [Errno 2] No such file or directory
+[2017-02-17 09:01:14]
+[ERROR] Converting JAR to JAVA (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/converter.py, LINE 137 "subprocess.call(args)"): [Errno 2] No such file or directory
+[2017-02-17 09:01:14]
+[ERROR] Static Analyzer (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/static_analyzer.py, LINE 157 "man_an_dic['permissons'],"): 'NoneType' object has no attribute '__getitem__'
+[2017-02-17 10:05:47]
+[ERROR] Finding Java path - Cannot Run Process (/home/david/Mobile-Security-Framework-MobSF-master/MobSF/utils.py, LINE 277 "args, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,)"): [Errno 2] No such file or directory
+[2017-02-17 09:05:48]
+[ERROR] Finding Java path - Cannot Run Process (/home/david/Mobile-Security-Framework-MobSF-master/MobSF/utils.py, LINE 277 "args, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,)"): [Errno 2] No such file or directory
+[2017-02-17 09:05:49]
+[ERROR] Finding Java path - Cannot Run Process (/home/david/Mobile-Security-Framework-MobSF-master/MobSF/utils.py, LINE 277 "args, stdout=subprocess.PIPE, stderr=subprocess.STDOUT,)"): [Errno 2] No such file or directory
+[2017-02-17 09:05:55]
+[ERROR] Reading Manifest file (/home/david/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/manifest_analysis.py, LINE 1240 "dat = subprocess.check_output(args)"): [Errno 2] No such file or directory
+[2017-02-17 09:05:55]
+[ERROR] Parsing Manifest file (/home/david/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/manifest_analysis.py, LINE 24 "dat = read_manifest(app_dir, toosl_dir, typ, binary).replace("\n", "")"): 'NoneType' object has no attribute 'replace'
+[2017-02-17 09:05:55]
+[ERROR] Extracting Manifest Data (/home/david/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/manifest_analysis.py, LINE 63 "permissions = mfxml.getElementsByTagName("uses-permission")"): 'NoneType' object has no attribute 'getElementsByTagName'
+[2017-02-17 09:05:55]
+[ERROR] Performing Manifest Analysis (/home/david/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/manifest_analysis.py, LINE 651 "applications = mfxml.getElementsByTagName("application")"): 'NoneType' object has no attribute 'getElementsByTagName'
+[2017-02-17 09:05:55]
+[ERROR] Reading Code Signing Certificate (/home/david/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/cert_analysis.py, LINE 61 "dat = subprocess.check_output(args)"): [Errno 2] No such file or directory
+[2017-02-17 09:05:55]
+[ERROR] Converting DEX to SMALI (/home/david/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/converter.py, LINE 95 "subprocess.call(args)"): [Errno 2] No such file or directory
+[2017-02-17 09:05:55]
+[ERROR] Converting JAR to JAVA (/home/david/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/converter.py, LINE 137 "subprocess.call(args)"): [Errno 2] No such file or directory
+[2017-02-17 09:05:55]
+[ERROR] Static Analyzer (/home/david/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/static_analyzer.py, LINE 157 "man_an_dic['permissons'],"): 'NoneType' object has no attribute '__getitem__'
+[2017-02-17 09:06:05]
+[ERROR] Reading Manifest file (/home/david/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/manifest_analysis.py, LINE 1240 "dat = subprocess.check_output(args)"): [Errno 2] No such file or directory
+[2017-02-17 09:06:05]
+[ERROR] Parsing Manifest file (/home/david/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/manifest_analysis.py, LINE 24 "dat = read_manifest(app_dir, toosl_dir, typ, binary).replace("\n", "")"): 'NoneType' object has no attribute 'replace'
+[2017-02-17 09:06:05]
+[ERROR] Extracting Manifest Data (/home/david/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/manifest_analysis.py, LINE 63 "permissions = mfxml.getElementsByTagName("uses-permission")"): 'NoneType' object has no attribute 'getElementsByTagName'
+[2017-02-17 09:06:05]
+[ERROR] Performing Manifest Analysis (/home/david/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/manifest_analysis.py, LINE 651 "applications = mfxml.getElementsByTagName("application")"): 'NoneType' object has no attribute 'getElementsByTagName'
+[2017-02-17 09:06:05]
+[ERROR] Reading Code Signing Certificate (/home/david/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/cert_analysis.py, LINE 61 "dat = subprocess.check_output(args)"): [Errno 2] No such file or directory
+[2017-02-17 09:06:05]
+[ERROR] Converting DEX to SMALI (/home/david/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/converter.py, LINE 95 "subprocess.call(args)"): [Errno 2] No such file or directory
+[2017-02-17 09:06:05]
+[ERROR] Converting JAR to JAVA (/home/david/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/converter.py, LINE 137 "subprocess.call(args)"): [Errno 2] No such file or directory
+[2017-02-17 09:06:05]
+[ERROR] Static Analyzer (/home/david/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/static_analyzer.py, LINE 157 "man_an_dic['permissons'],"): 'NoneType' object has no attribute '__getitem__'
+[2017-02-21 08:04:00]
+[ERROR] Refreshing MobSF VM (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/DynamicAnalyzer/views/android.py, LINE 675 "subprocess.call(args)"): 'NoneType' object has no attribute 'rfind'
+[2017-02-21 12:30:28]
+[ERROR] Refreshing MobSF VM (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/DynamicAnalyzer/views/android.py, LINE 675 "subprocess.call(args)"): 'NoneType' object has no attribute 'rfind'
+[2017-02-21 12:34:47]
+[ERROR] Refreshing MobSF VM (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/DynamicAnalyzer/views/android.py, LINE 675 "subprocess.call(args)"): 'NoneType' object has no attribute 'rfind'
+[2017-02-24 09:46:52]
+[ERROR] Refreshing MobSF VM (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/DynamicAnalyzer/views/android.py, LINE 675 "subprocess.call(args)"): 'NoneType' object has no attribute 'rfind'
+[2017-03-03 11:54:06]
+[ERROR] Performing Manifest Analysis (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/manifest_analysis.py, LINE 1204 "a_desc = a_template[2] % t_desc"): not all arguments converted during string formatting
+[2017-03-03 11:58:37]
+[ERROR] Static Analyzer (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/static_analyzer.py, LINE 157 "man_an_dic['permissons'],"): 'NoneType' object has no attribute '__getitem__'
+[2017-03-03 12:02:11]
+[ERROR] Performing Manifest Analysis (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/manifest_analysis.py, LINE 1204 "a_desc = a_template[2] % t_desc"): not all arguments converted during string formatting
+[2017-03-03 12:05:46]
+[ERROR] Performing Manifest Analysis (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/manifest_analysis.py, LINE 1204 "a_desc = a_template[2] % t_desc"): not all arguments converted during string formatting
+[2017-03-03 12:08:57]
+[ERROR] Static Analyzer (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/static_analyzer.py, LINE 157 "man_an_dic['permissons'],"): 'NoneType' object has no attribute '__getitem__'
+[2017-03-03 12:09:58]
+[ERROR] Performing Manifest Analysis (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/manifest_analysis.py, LINE 1204 "a_desc = a_template[2] % t_desc"): not all arguments converted during string formatting
+[2017-03-03 12:12:11]
+[ERROR] Static Analyzer (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/static_analyzer.py, LINE 157 "man_an_dic['permissons'],"): 'NoneType' object has no attribute '__getitem__'
+[2017-03-03 12:13:21]
+[ERROR] Performing Manifest Analysis (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/manifest_analysis.py, LINE 1204 "a_desc = a_template[2] % t_desc"): not all arguments converted during string formatting
+[2017-03-03 12:38:55]
+[ERROR] Performing Manifest Analysis (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/manifest_analysis.py, LINE 1204 "a_desc = a_template[2] % t_desc"): not all arguments converted during string formatting
+[2017-03-03 12:42:53]
+[ERROR] Performing Manifest Analysis (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/manifest_analysis.py, LINE 1204 "a_desc = a_template[2] % t_desc"): not all arguments converted during string formatting
+[2017-03-03 12:51:07]
+[ERROR] Performing Manifest Analysis (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/manifest_analysis.py, LINE 1204 "a_desc = a_template[2] % t_desc"): not all arguments converted during string formatting
+[2017-03-03 12:53:03]
+[ERROR] Static Analyzer (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/static_analyzer.py, LINE 157 "man_an_dic['permissons'],"): 'NoneType' object has no attribute '__getitem__'
+[2017-03-03 12:55:58]
+[ERROR] Performing Manifest Analysis (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/manifest_analysis.py, LINE 1204 "a_desc = a_template[2] % t_desc"): not all arguments converted during string formatting
+[2017-03-06 07:59:45]
+[ERROR] Performing Manifest Analysis (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/manifest_analysis.py, LINE 1204 "a_desc = a_template[2] % t_desc"): not all arguments converted during string formatting
+[2017-03-06 08:00:51]
+[ERROR] Performing Manifest Analysis (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/manifest_analysis.py, LINE 1204 "a_desc = a_template[2] % t_desc"): not all arguments converted during string formatting
+[2017-03-06 08:04:24]
+[ERROR] Static Analyzer (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/static_analyzer.py, LINE 157 "man_an_dic['permissons'],"): 'NoneType' object has no attribute '__getitem__'
+[2017-03-06 08:06:07]
+[ERROR] Performing Manifest Analysis (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/manifest_analysis.py, LINE 1204 "a_desc = a_template[2] % t_desc"): not all arguments converted during string formatting
+[2017-03-06 08:09:56]
+[ERROR] Static Analyzer (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/static_analyzer.py, LINE 157 "man_an_dic['permissons'],"): 'NoneType' object has no attribute '__getitem__'
+[2017-03-06 08:14:52]
+[ERROR] Performing Manifest Analysis (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/manifest_analysis.py, LINE 1204 "a_desc = a_template[2] % t_desc"): not all arguments converted during string formatting
+[2017-03-06 08:15:13]
+[ERROR] Performing Manifest Analysis (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/manifest_analysis.py, LINE 1204 "a_desc = a_template[2] % t_desc"): not all arguments converted during string formatting
+[2017-03-06 08:23:32]
+[ERROR] Performing Manifest Analysis (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/manifest_analysis.py, LINE 1204 "a_desc = a_template[2] % t_desc"): not all arguments converted during string formatting
+[2017-03-06 08:24:15]
+[ERROR] Performing Manifest Analysis (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/manifest_analysis.py, LINE 1204 "a_desc = a_template[2] % t_desc"): not all arguments converted during string formatting
+[2017-03-06 08:28:18]
+[ERROR] Static Analyzer (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/static_analyzer.py, LINE 157 "man_an_dic['permissons'],"): 'NoneType' object has no attribute '__getitem__'
+[2017-03-06 08:29:43]
+[ERROR] Performing Manifest Analysis (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/manifest_analysis.py, LINE 1204 "a_desc = a_template[2] % t_desc"): not all arguments converted during string formatting
+[2017-03-06 08:31:08]
+[ERROR] Performing Manifest Analysis (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/manifest_analysis.py, LINE 1204 "a_desc = a_template[2] % t_desc"): not all arguments converted during string formatting
+[2017-03-06 08:31:18]
+[ERROR] Static Analyzer (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/static_analyzer.py, LINE 157 "man_an_dic['permissons'],"): 'NoneType' object has no attribute '__getitem__'
+[2017-03-06 08:33:45]
+[ERROR] Static Analyzer (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/static_analyzer.py, LINE 157 "man_an_dic['permissons'],"): 'NoneType' object has no attribute '__getitem__'
+[2017-03-06 08:36:08]
+[ERROR] Performing Manifest Analysis (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/manifest_analysis.py, LINE 1204 "a_desc = a_template[2] % t_desc"): not all arguments converted during string formatting
+[2017-03-06 08:39:08]
+[ERROR] Static Analyzer (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/static_analyzer.py, LINE 157 "man_an_dic['permissons'],"): 'NoneType' object has no attribute '__getitem__'
+[2017-03-06 08:42:16]
+[ERROR] Performing Manifest Analysis (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/manifest_analysis.py, LINE 1204 "a_desc = a_template[2] % t_desc"): not all arguments converted during string formatting
+[2017-03-06 08:45:22]
+[ERROR] Static Analyzer (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/static_analyzer.py, LINE 157 "man_an_dic['permissons'],"): 'NoneType' object has no attribute '__getitem__'
+[2017-03-06 08:46:35]
+[ERROR] Performing Manifest Analysis (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/manifest_analysis.py, LINE 1204 "a_desc = a_template[2] % t_desc"): not all arguments converted during string formatting
+[2017-03-06 08:49:42]
+[ERROR] Static Analyzer (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/static_analyzer.py, LINE 157 "man_an_dic['permissons'],"): 'NoneType' object has no attribute '__getitem__'
+[2017-03-06 08:50:13]
+[ERROR] Performing Manifest Analysis (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/manifest_analysis.py, LINE 1204 "a_desc = a_template[2] % t_desc"): not all arguments converted during string formatting
+[2017-03-06 09:03:16]
+[ERROR] Performing Manifest Analysis (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/manifest_analysis.py, LINE 1204 "a_desc = a_template[2] % t_desc"): not all arguments converted during string formatting
+[2017-03-06 09:08:36]
+[ERROR] Performing Manifest Analysis (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/manifest_analysis.py, LINE 1204 "a_desc = a_template[2] % t_desc"): not all arguments converted during string formatting
+[2017-03-06 09:11:47]
+[ERROR] Static Analyzer (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/static_analyzer.py, LINE 157 "man_an_dic['permissons'],"): 'NoneType' object has no attribute '__getitem__'
+[2017-03-06 09:37:31]
+[ERROR] Performing Manifest Analysis (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/manifest_analysis.py, LINE 1204 "a_desc = a_template[2] % t_desc"): not all arguments converted during string formatting
+[2017-03-06 09:40:18]
+[ERROR] Static Analyzer (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/static_analyzer.py, LINE 157 "man_an_dic['permissons'],"): 'NoneType' object has no attribute '__getitem__'
+[2017-03-06 11:10:12]
+[ERROR] Performing Manifest Analysis (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/manifest_analysis.py, LINE 1204 "a_desc = a_template[2] % t_desc"): not all arguments converted during string formatting
+[2017-03-06 11:12:25]
+[ERROR] Static Analyzer (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/static_analyzer.py, LINE 157 "man_an_dic['permissons'],"): 'NoneType' object has no attribute '__getitem__'
+[2017-03-06 13:18:36]
+[ERROR] Performing Manifest Analysis (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/manifest_analysis.py, LINE 1204 "a_desc = a_template[2] % t_desc"): not all arguments converted during string formatting
+[2017-03-06 13:21:04]
+[ERROR] Static Analyzer (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/static_analyzer.py, LINE 157 "man_an_dic['permissons'],"): 'NoneType' object has no attribute '__getitem__'
+[2017-03-07 08:08:43]
+[ERROR] Performing Manifest Analysis (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/manifest_analysis.py, LINE 1204 "a_desc = a_template[2] % t_desc"): not all arguments converted during string formatting
+[2017-03-07 08:10:46]
+[ERROR] Performing Manifest Analysis (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/manifest_analysis.py, LINE 1204 "a_desc = a_template[2] % t_desc"): not all arguments converted during string formatting
+[2017-03-07 08:11:13]
+[ERROR] Performing Manifest Analysis (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/manifest_analysis.py, LINE 1204 "a_desc = a_template[2] % t_desc"): not all arguments converted during string formatting
+[2017-03-07 08:11:27]
+[ERROR] Static Analyzer (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/static_analyzer.py, LINE 157 "man_an_dic['permissons'],"): 'NoneType' object has no attribute '__getitem__'
+[2017-03-07 08:15:33]
+[ERROR] Performing Manifest Analysis (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/manifest_analysis.py, LINE 1204 "a_desc = a_template[2] % t_desc"): not all arguments converted during string formatting
+[2017-03-07 08:16:21]
+[ERROR] Performing Manifest Analysis (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/manifest_analysis.py, LINE 1204 "a_desc = a_template[2] % t_desc"): not all arguments converted during string formatting
+[2017-03-07 08:19:00]
+[ERROR] Performing Manifest Analysis (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/manifest_analysis.py, LINE 1204 "a_desc = a_template[2] % t_desc"): not all arguments converted during string formatting
+[2017-03-07 08:21:33]
+[ERROR] Static Analyzer (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/static_analyzer.py, LINE 157 "man_an_dic['permissons'],"): 'NoneType' object has no attribute '__getitem__'
+[2017-03-07 08:22:58]
+[ERROR] Performing Manifest Analysis (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/manifest_analysis.py, LINE 1204 "a_desc = a_template[2] % t_desc"): not all arguments converted during string formatting
+[2017-03-07 08:25:11]
+[ERROR] Static Analyzer (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/static_analyzer.py, LINE 157 "man_an_dic['permissons'],"): 'NoneType' object has no attribute '__getitem__'
+[2017-03-07 08:34:44]
+[ERROR] Performing Manifest Analysis (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/manifest_analysis.py, LINE 1204 "a_desc = a_template[2] % t_desc"): not all arguments converted during string formatting
+[2017-03-07 12:16:09]
+[ERROR] Performing Manifest Analysis (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/manifest_analysis.py, LINE 1204 "a_desc = a_template[2] % t_desc"): not all arguments converted during string formatting
+[2017-03-07 12:20:04]
+[ERROR] Performing Manifest Analysis (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/manifest_analysis.py, LINE 1204 "a_desc = a_template[2] % t_desc"): not all arguments converted during string formatting
+[2017-03-07 12:21:37]
+[ERROR] Performing Manifest Analysis (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/manifest_analysis.py, LINE 1204 "a_desc = a_template[2] % t_desc"): not all arguments converted during string formatting
+[2017-03-07 12:21:53]
+[ERROR] Performing Manifest Analysis (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/manifest_analysis.py, LINE 1204 "a_desc = a_template[2] % t_desc"): not all arguments converted during string formatting
+[2017-03-07 12:21:55]
+[ERROR] Static Analyzer (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/static_analyzer.py, LINE 157 "man_an_dic['permissons'],"): 'NoneType' object has no attribute '__getitem__'
+[2017-03-07 12:27:30]
+[ERROR] Performing Manifest Analysis (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/manifest_analysis.py, LINE 1204 "a_desc = a_template[2] % t_desc"): not all arguments converted during string formatting
+[2017-03-07 12:28:43]
+[ERROR] Performing Manifest Analysis (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/manifest_analysis.py, LINE 1204 "a_desc = a_template[2] % t_desc"): not all arguments converted during string formatting
+[2017-03-07 12:31:18]
+[ERROR] Static Analyzer (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/static_analyzer.py, LINE 157 "man_an_dic['permissons'],"): 'NoneType' object has no attribute '__getitem__'
+[2017-03-07 12:31:25]
+[ERROR] Performing Manifest Analysis (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/manifest_analysis.py, LINE 1204 "a_desc = a_template[2] % t_desc"): not all arguments converted during string formatting
+[2017-03-07 13:16:49]
+[ERROR] Performing Manifest Analysis (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/manifest_analysis.py, LINE 1204 "a_desc = a_template[2] % t_desc"): not all arguments converted during string formatting
+[2017-03-08 08:01:02]
+[ERROR] Performing Manifest Analysis (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/manifest_analysis.py, LINE 1204 "a_desc = a_template[2] % t_desc"): not all arguments converted during string formatting
+[2017-03-08 08:02:56]
+[ERROR] Performing Manifest Analysis (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/manifest_analysis.py, LINE 1204 "a_desc = a_template[2] % t_desc"): not all arguments converted during string formatting
