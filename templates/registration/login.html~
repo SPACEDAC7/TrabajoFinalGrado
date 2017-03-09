@@ -13,26 +13,20 @@
 	<p>Please login to see this page.</p>
 	{% endif %}
 {% endif %}
-<div class="box box-default">
-     
-          <div class="box-body">
+<div style="margin-top: 60px;margin-left:40%;margin-right:40%;">
 
-<form method="post" action="/accounts/loginHecho/">
+<form method="post" action="/loginHecho/">
 {% csrf_token %}
-<table>
-<tr>
-	<td><label>Username:</label></td>
-	<td><input id="username" type="text" name="username"></td>
-</tr>
-<tr>
-	<td><label>Password:</label></td>
-	<td><input id="password" type="password" name="password"></td>
-</tr>
-</table>
+<div class="form-group">
+	<input class="form-control sombreado" id="username" type="text" name="username" placeholder="Username">
+</div>
+<div class="form-group">
+	<input  class="form-control sombreado" id="password" type="password" name="password" placeholder="Pasword">
+</div>
 
-<input type="submit" value="login" />
+<input class="btn btn-primary" type="submit" value="login" />
 <input type="hidden" name="next" value="{{ next }}" />
 </form>
 
-</div></div>
+</div>
 {% endblock %}

@@ -1,0 +1,3526 @@
+{
+  "count": 451,
+  "created_at": 1465850083,
+  "next": "https://weaver-api-stage.buzzfeed.com/v1/feeds/home?page=2",
+  "previous": null,
+  "results": [
+    {
+      "id": "wid:1",
+      "wid": 1,
+      "type": "crap",
+      "ad_type": "post",
+      "ad_pos": "story1",
+      "is_advertiser": true,
+      "width": 5,
+      "height": 5
+    },
+    {
+      "id": "4276237",
+      "name": "Featured card 2",
+      "description": "Featured",
+      "type": "post",
+      "treatments": [
+        "featured",
+        "featured-news"
+      ],
+      "category": "USNews",
+      "source_uri": "https://mrsdev78:wilkie@stage.buzzfeed.com/aliciamelvillesmith/nightclub-shooting-orlando-florida",
+      "created_at": "2016-06-12T08:10:10",
+      "updated_at": "2016-06-13T03:59:59",
+      "tags": [
+        "--has-additional-byline",
+        "--primarykeyword-orlando shooting",
+        "--sensitive",
+        "--trending",
+        "--updated-1465739893",
+        "florida",
+        "gay nightclub",
+        "shooting"
+      ],
+      "stats": {
+        "impressions": 1760689
+      },
+      "flags": [
+        "brand_safe",
+        "raw",
+        "mobile_safe"
+      ],
+      "thumbnails": [
+        {
+          "sizes": [
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-06/12/20/campaign_images/buzzfeed-prod-fastlane01/50-killed-at-orlando-gay-nightclub-in-deadliest-u-2-28761-1465778931-18_dblwide.jpg",
+              "size": "dblwide"
+            },
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-06/12/20/campaign_images/buzzfeed-prod-fastlane01/50-killed-at-orlando-gay-nightclub-in-deadliest-u-2-28761-1465778931-18_wide.jpg",
+              "size": "wide"
+            },
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-06/12/20/campaign_images/buzzfeed-prod-fastlane01/50-killed-at-orlando-gay-nightclub-in-deadliest-u-2-28761-1465778931-18_big.jpg",
+              "size": "big"
+            },
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-06/12/20/campaign_images/buzzfeed-prod-fastlane01/50-killed-at-orlando-gay-nightclub-in-deadliest-u-2-28761-1465778931-18_dblbig.jpg",
+              "size": "dblbig"
+            },
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-06/12/20/campaign_images/buzzfeed-prod-fastlane01/50-killed-at-orlando-gay-nightclub-in-deadliest-u-2-28761-1465778931-18.jpg",
+              "size": "standard"
+            },
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-06/12/20/campaign_images/buzzfeed-prod-fastlane01/50-killed-at-orlando-gay-nightclub-in-deadliest-u-2-28761-1465778931-18_small.jpg",
+              "size": "small"
+            }
+          ]
+        }
+      ],
+      "authors": [
+        {
+          "username": "aliciamelvillesmith",
+          "name": "Alicia Melville-Smith",
+          "links": [
+            {
+              "url": "https://www.facebook.com/alicia.melvillesmith",
+              "link_text": "Facebook"
+            }
+          ],
+          "avatars": [
+            {
+              "sizes": [
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-02/1/9/user_images/webdr11/aliciamelvillesmith-v2-11821-1454336525-8_large.jpg",
+                  "size": "small"
+                }
+              ]
+            }
+          ],
+          "page": "https://mrsdev78:wilkie@stage.buzzfeed.com/aliciamelvillesmith",
+          "id": "3856896"
+        },
+        {
+          "username": "davidmack",
+          "name": "David Mack",
+          "links": [
+            {
+              "url": "https://www.facebook.com/davidmackau",
+              "link_text": "Facebook"
+            }
+          ],
+          "avatars": [
+            {
+              "sizes": [
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2015-03/14/18/user_images/webdr14/davidmack-v2-29496-1426371108-32_large.jpg",
+                  "size": "small"
+                }
+              ]
+            }
+          ],
+          "page": "https://mrsdev78:wilkie@stage.buzzfeed.com/davidmack",
+          "id": "2170674"
+        },
+        {
+          "username": "maryanngeorgantopoulos",
+          "name": "Mary Ann Georgantopoulos",
+          "links": [
+            {
+              "url": "https://www.facebook.com/maryann.georgantopoulos",
+              "link_text": "Facebook"
+            }
+          ],
+          "avatars": [
+            {
+              "sizes": [
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-03/24/17/user_images/webdr02/maryanngeorgantopoulos-v2-9246-1458855336-0_large.jpg",
+                  "size": "small"
+                }
+              ]
+            }
+          ],
+          "page": "https://mrsdev78:wilkie@stage.buzzfeed.com/maryanngeorgantopoulos",
+          "id": "1946840"
+        }
+      ]
+    },
+    {
+      "id": "4276237",
+      "name": "Featured Trending card IGNORED",
+      "description": "Featured Trending",
+      "type": "post",
+      "treatments": [
+        "featured",
+        "trending",
+        "featured-news"
+      ],
+      "category": "USNews",
+      "source_uri": "https://mrsdev78:wilkie@stage.buzzfeed.com/aliciamelvillesmith/nightclub-shooting-orlando-florida",
+      "created_at": "2016-06-12T08:10:10",
+      "updated_at": "2016-06-13T03:59:59",
+      "tags": [
+        "--has-additional-byline",
+        "--primarykeyword-orlando shooting",
+        "--sensitive",
+        "--trending",
+        "--updated-1465739893",
+        "florida",
+        "gay nightclub",
+        "shooting"
+      ],
+      "stats": {
+        "impressions": 1760689
+      },
+      "flags": [
+        "brand_safe",
+        "raw",
+        "mobile_safe"
+      ],
+      "thumbnails": [
+        {
+          "sizes": [
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-06/12/20/campaign_images/buzzfeed-prod-fastlane01/50-killed-at-orlando-gay-nightclub-in-deadliest-u-2-28761-1465778931-18_dblwide.jpg",
+              "size": "dblwide"
+            },
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-06/12/20/campaign_images/buzzfeed-prod-fastlane01/50-killed-at-orlando-gay-nightclub-in-deadliest-u-2-28761-1465778931-18_wide.jpg",
+              "size": "wide"
+            },
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-06/12/20/campaign_images/buzzfeed-prod-fastlane01/50-killed-at-orlando-gay-nightclub-in-deadliest-u-2-28761-1465778931-18_big.jpg",
+              "size": "big"
+            },
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-06/12/20/campaign_images/buzzfeed-prod-fastlane01/50-killed-at-orlando-gay-nightclub-in-deadliest-u-2-28761-1465778931-18_dblbig.jpg",
+              "size": "dblbig"
+            },
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-06/12/20/campaign_images/buzzfeed-prod-fastlane01/50-killed-at-orlando-gay-nightclub-in-deadliest-u-2-28761-1465778931-18.jpg",
+              "size": "standard"
+            },
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-06/12/20/campaign_images/buzzfeed-prod-fastlane01/50-killed-at-orlando-gay-nightclub-in-deadliest-u-2-28761-1465778931-18_small.jpg",
+              "size": "small"
+            }
+          ]
+        }
+      ],
+      "authors": [
+        {
+          "username": "aliciamelvillesmith",
+          "name": "Alicia Melville-Smith",
+          "links": [
+            {
+              "url": "https://www.facebook.com/alicia.melvillesmith",
+              "link_text": "Facebook"
+            }
+          ],
+          "avatars": [
+            {
+              "sizes": [
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-02/1/9/user_images/webdr11/aliciamelvillesmith-v2-11821-1454336525-8_large.jpg",
+                  "size": "small"
+                }
+              ]
+            }
+          ],
+          "page": "https://mrsdev78:wilkie@stage.buzzfeed.com/aliciamelvillesmith",
+          "id": "3856896"
+        },
+        {
+          "username": "davidmack",
+          "name": "David Mack",
+          "links": [
+            {
+              "url": "https://www.facebook.com/davidmackau",
+              "link_text": "Facebook"
+            }
+          ],
+          "avatars": [
+            {
+              "sizes": [
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2015-03/14/18/user_images/webdr14/davidmack-v2-29496-1426371108-32_large.jpg",
+                  "size": "small"
+                }
+              ]
+            }
+          ],
+          "page": "https://mrsdev78:wilkie@stage.buzzfeed.com/davidmack",
+          "id": "2170674"
+        },
+        {
+          "username": "maryanngeorgantopoulos",
+          "name": "Mary Ann Georgantopoulos",
+          "links": [
+            {
+              "url": "https://www.facebook.com/maryann.georgantopoulos",
+              "link_text": "Facebook"
+            }
+          ],
+          "avatars": [
+            {
+              "sizes": [
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-03/24/17/user_images/webdr02/maryanngeorgantopoulos-v2-9246-1458855336-0_large.jpg",
+                  "size": "small"
+                }
+              ]
+            }
+          ],
+          "page": "https://mrsdev78:wilkie@stage.buzzfeed.com/maryanngeorgantopoulos",
+          "id": "1946840"
+        }
+      ]
+    },
+    {
+      "id": "4276237",
+      "name": "Featured Trending Quiz card IGNORED",
+      "description": "Featured Trending Quiz",
+      "type": "post",
+      "treatments": [
+        "featured",
+        "trending",
+        "quiz",
+        "featured-news"
+      ],
+      "category": "USNews",
+      "source_uri": "https://mrsdev78:wilkie@stage.buzzfeed.com/aliciamelvillesmith/nightclub-shooting-orlando-florida",
+      "created_at": "2016-06-12T08:10:10",
+      "updated_at": "2016-06-13T03:59:59",
+      "tags": [
+        "--has-additional-byline",
+        "--primarykeyword-orlando shooting",
+        "--sensitive",
+        "--trending",
+        "--updated-1465739893",
+        "florida",
+        "gay nightclub",
+        "shooting"
+      ],
+      "stats": {
+        "impressions": 1760689
+      },
+      "flags": [
+        "brand_safe",
+        "raw",
+        "mobile_safe"
+      ],
+      "thumbnails": [
+        {
+          "sizes": [
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-06/12/20/campaign_images/buzzfeed-prod-fastlane01/50-killed-at-orlando-gay-nightclub-in-deadliest-u-2-28761-1465778931-18_dblwide.jpg",
+              "size": "dblwide"
+            },
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-06/12/20/campaign_images/buzzfeed-prod-fastlane01/50-killed-at-orlando-gay-nightclub-in-deadliest-u-2-28761-1465778931-18_wide.jpg",
+              "size": "wide"
+            },
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-06/12/20/campaign_images/buzzfeed-prod-fastlane01/50-killed-at-orlando-gay-nightclub-in-deadliest-u-2-28761-1465778931-18_big.jpg",
+              "size": "big"
+            },
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-06/12/20/campaign_images/buzzfeed-prod-fastlane01/50-killed-at-orlando-gay-nightclub-in-deadliest-u-2-28761-1465778931-18_dblbig.jpg",
+              "size": "dblbig"
+            },
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-06/12/20/campaign_images/buzzfeed-prod-fastlane01/50-killed-at-orlando-gay-nightclub-in-deadliest-u-2-28761-1465778931-18.jpg",
+              "size": "standard"
+            },
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-06/12/20/campaign_images/buzzfeed-prod-fastlane01/50-killed-at-orlando-gay-nightclub-in-deadliest-u-2-28761-1465778931-18_small.jpg",
+              "size": "small"
+            }
+          ]
+        }
+      ],
+      "authors": [
+        {
+          "username": "aliciamelvillesmith",
+          "name": "Alicia Melville-Smith",
+          "links": [
+            {
+              "url": "https://www.facebook.com/alicia.melvillesmith",
+              "link_text": "Facebook"
+            }
+          ],
+          "avatars": [
+            {
+              "sizes": [
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-02/1/9/user_images/webdr11/aliciamelvillesmith-v2-11821-1454336525-8_large.jpg",
+                  "size": "small"
+                }
+              ]
+            }
+          ],
+          "page": "https://mrsdev78:wilkie@stage.buzzfeed.com/aliciamelvillesmith",
+          "id": "3856896"
+        },
+        {
+          "username": "davidmack",
+          "name": "David Mack",
+          "links": [
+            {
+              "url": "https://www.facebook.com/davidmackau",
+              "link_text": "Facebook"
+            }
+          ],
+          "avatars": [
+            {
+              "sizes": [
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2015-03/14/18/user_images/webdr14/davidmack-v2-29496-1426371108-32_large.jpg",
+                  "size": "small"
+                }
+              ]
+            }
+          ],
+          "page": "https://mrsdev78:wilkie@stage.buzzfeed.com/davidmack",
+          "id": "2170674"
+        },
+        {
+          "username": "maryanngeorgantopoulos",
+          "name": "Mary Ann Georgantopoulos",
+          "links": [
+            {
+              "url": "https://www.facebook.com/maryann.georgantopoulos",
+              "link_text": "Facebook"
+            }
+          ],
+          "avatars": [
+            {
+              "sizes": [
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-03/24/17/user_images/webdr02/maryanngeorgantopoulos-v2-9246-1458855336-0_large.jpg",
+                  "size": "small"
+                }
+              ]
+            }
+          ],
+          "page": "https://mrsdev78:wilkie@stage.buzzfeed.com/maryanngeorgantopoulos",
+          "id": "1946840"
+        }
+      ]
+    },
+    {
+      "id": "4276601",
+      "name": "Featured Quiz card",
+      "description": "Featured Quiz",
+      "type": "post",
+      "treatments": [
+        "featured",
+        "quiz"
+      ],
+      "category": "LGBT",
+      "source_uri": "https://mrsdev78:wilkie@stage.buzzfeed.com/claudiakoerner/la-pride-parade-marches-on",
+      "created_at": "2016-06-12T23:34:29",
+      "updated_at": "2016-06-13T03:50:53",
+      "tags": [
+        "--buzzfeed-news-crossposting",
+        "--has-dateline",
+        "--heatmap",
+        "--primarykeyword-orlando shooting",
+        "--updated-1465778993",
+        "california",
+        "la pride",
+        "los angeles",
+        "pride parade"
+      ],
+      "stats": {
+        "impressions": 5646
+      },
+      "flags": [
+        "brand_safe",
+        "raw",
+        "mobile_safe"
+      ],
+      "thumbnails": [
+        {
+          "sizes": [
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-06/12/21/campaign_images/buzzfeed-prod-web03/la-pride-parade-marches-on-in-solidarity-after-or-2-14741-1465783156-0_dblwide.jpg",
+              "size": "dblwide"
+            },
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-06/12/21/campaign_images/buzzfeed-prod-web03/la-pride-parade-marches-on-in-solidarity-after-or-2-14741-1465783156-0_wide.jpg",
+              "size": "wide"
+            },
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-06/12/21/campaign_images/buzzfeed-prod-web03/la-pride-parade-marches-on-in-solidarity-after-or-2-14741-1465783156-0_big.jpg",
+              "size": "big"
+            },
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-06/12/21/campaign_images/buzzfeed-prod-web03/la-pride-parade-marches-on-in-solidarity-after-or-2-14741-1465783156-0_dblbig.jpg",
+              "size": "dblbig"
+            },
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-06/12/21/campaign_images/buzzfeed-prod-web03/la-pride-parade-marches-on-in-solidarity-after-or-2-14741-1465783156-0.jpg",
+              "size": "standard"
+            },
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-06/12/21/campaign_images/buzzfeed-prod-web03/la-pride-parade-marches-on-in-solidarity-after-or-2-14741-1465783156-0_small.jpg",
+              "size": "small"
+            }
+          ]
+        }
+      ],
+      "authors": [
+        {
+          "username": "claudiakoerner",
+          "page": "https://mrsdev78:wilkie@stage.buzzfeed.com/claudiakoerner",
+          "avatars": [
+            {
+              "sizes": [
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2014-08/4/11/user_images/webdr02/claudiakoerner-402-1407164516-2_large.jpg",
+                  "size": "small"
+                }
+              ]
+            }
+          ],
+          "name": "Claudia Koerner",
+          "id": "1610676"
+        }
+      ]
+    },
+    {
+      "id": "4276646",
+      "name": "Normal Card with no treatments",
+      "description": "Normal Card with no treatments",
+      "type": "post",
+      "treatments": [],
+      "category": "USNews",
+      "source_uri": "https://mrsdev78:wilkie@stage.buzzfeed.com/emaoconnor/hundreds-gathered-at-stonewall-the-birthplace-of-lgbt-rights",
+      "created_at": "2016-06-13T01:43:48",
+      "updated_at": "2016-06-13T03:51:35",
+      "tags": [
+        "--force-image-width-625",
+        "--has-dateline",
+        "--heatmap",
+        "--primarykeyword-orlando shooting",
+        "--sensitive",
+        "pulse nightclub",
+        "stonewall inn"
+      ],
+      "stats": {
+        "impressions": 11492
+      },
+      "flags": [
+        "brand_safe",
+        "raw",
+        "mobile_safe"
+      ],
+      "thumbnails": [
+        {
+          "sizes": [
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-06/12/21/campaign_images/buzzfeed-prod-fastlane01/hundreds-gathered-at-stonewall-the-birthplace-of--2-30171-1465782225-1_dblwide.jpg",
+              "size": "dblwide"
+            },
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-06/12/21/campaign_images/buzzfeed-prod-fastlane01/hundreds-gathered-at-stonewall-the-birthplace-of--2-30171-1465782225-1_wide.jpg",
+              "size": "wide"
+            },
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-06/12/21/campaign_images/buzzfeed-prod-fastlane01/hundreds-gathered-at-stonewall-the-birthplace-of--2-30171-1465782225-1_big.jpg",
+              "size": "big"
+            },
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-06/12/21/campaign_images/buzzfeed-prod-fastlane01/hundreds-gathered-at-stonewall-the-birthplace-of--2-30171-1465782225-1_dblbig.jpg",
+              "size": "dblbig"
+            },
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-06/12/21/campaign_images/buzzfeed-prod-fastlane01/hundreds-gathered-at-stonewall-the-birthplace-of--2-30171-1465782225-1.jpg",
+              "size": "standard"
+            },
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-06/12/21/campaign_images/buzzfeed-prod-fastlane01/hundreds-gathered-at-stonewall-the-birthplace-of--2-30171-1465782225-1_small.jpg",
+              "size": "small"
+            }
+          ]
+        }
+      ],
+      "authors": [
+        {
+          "username": "emaoconnor",
+          "name": "Ema O&#39;Connor",
+          "links": [
+            {
+              "url": "https://www.facebook.com/pages/Ema-OConnor/1624506221096583",
+              "link_text": "Facebook"
+            }
+          ],
+          "avatars": [
+            {
+              "sizes": [
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-05/8/11/user_images/webdr05/emaoconnor-v2-16471-1462721943-0_large.jpg",
+                  "size": "small"
+                }
+              ]
+            }
+          ],
+          "page": "https://mrsdev78:wilkie@stage.buzzfeed.com/emaoconnor",
+          "id": "1442705"
+        }
+      ]
+    },
+    {
+      "id": "4276686",
+      "name": "Trending only card",
+      "description": "Trending only card",
+      "type": "post",
+      "treatments": [
+        "trending"
+      ],
+      "category": "TVAndMovies",
+      "source_uri": "https://mrsdev78:wilkie@stage.buzzfeed.com/jaimieetkin/lin-manuel-miranda-james-corden-orlando-tribute-tonys",
+      "created_at": "2016-06-13T01:50:01",
+      "updated_at": "2016-06-13T03:51:52",
+      "tags": [
+        "--buzzfeed-news-crossposting",
+        "--primarykeyword-tony awards orlando tribute",
+        "--trending",
+        "james corden",
+        "jessica lange",
+        "lin manuel miranda",
+        "orlando shooting",
+        "tony awards",
+        "tony awards 2016",
+        "tonys"
+      ],
+      "stats": {
+        "impressions": 50546
+      },
+      "flags": [
+        "brand_safe",
+        "raw",
+        "mobile_safe"
+      ],
+      "thumbnails": [
+        {
+          "sizes": [
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-06/12/23/campaign_images/buzzfeed-prod-web15/lin-manuel-miranda-and-james-corden-paid-tribute--2-30963-1465788168-0_dblwide.jpg",
+              "size": "dblwide"
+            },
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-06/12/23/campaign_images/buzzfeed-prod-web15/lin-manuel-miranda-and-james-corden-paid-tribute--2-30963-1465788168-0_wide.jpg",
+              "size": "wide"
+            },
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-06/12/23/campaign_images/buzzfeed-prod-web15/lin-manuel-miranda-and-james-corden-paid-tribute--2-30963-1465788168-0_big.jpg",
+              "size": "big"
+            },
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-06/12/23/campaign_images/buzzfeed-prod-web15/lin-manuel-miranda-and-james-corden-paid-tribute--2-30963-1465788168-0_dblbig.jpg",
+              "size": "dblbig"
+            },
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-06/12/23/campaign_images/buzzfeed-prod-web15/lin-manuel-miranda-and-james-corden-paid-tribute--2-30963-1465788168-0.jpg",
+              "size": "standard"
+            },
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-06/12/23/campaign_images/buzzfeed-prod-web15/lin-manuel-miranda-and-james-corden-paid-tribute--2-30963-1465788168-0_small.jpg",
+              "size": "small"
+            }
+          ]
+        }
+      ],
+      "authors": [
+        {
+          "username": "jaimieetkin",
+          "page": "https://mrsdev78:wilkie@stage.buzzfeed.com/jaimieetkin",
+          "avatars": [
+            {
+              "sizes": [
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2013-12/user_images/webdr05/5/16/jaimieetkin-12610-1386279683-0_large.jpg",
+                  "size": "small"
+                }
+              ]
+            }
+          ],
+          "name": "Jaimie Etkin",
+          "id": "885067"
+        }
+      ]
+    },
+    {
+      "id": "4276488",
+      "name": "Quiz Card",
+      "description": "Quiz card",
+      "type": "post",
+      "treatments": [
+        "quiz"
+      ],
+      "category": "USNews",
+      "source_uri": "https://mrsdev78:wilkie@stage.buzzfeed.com/emaoconnor/orlando-shooter",
+      "created_at": "2016-06-12T20:27:58",
+      "updated_at": "2016-06-13T04:00:36",
+      "tags": [
+        "--force-image-width-625",
+        "--has-additional-byline",
+        "--heatmap",
+        "--primarykeyword-orlando shooting",
+        "--sensitive",
+        "--trending",
+        "--updated-1465781841",
+        "omar mir seddique mateen"
+      ],
+      "stats": {
+        "impressions": 230296
+      },
+      "flags": [
+        "brand_safe",
+        "raw",
+        "mobile_safe"
+      ],
+      "thumbnails": [
+        {
+          "sizes": [
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-06/12/22/campaign_images/buzzfeed-prod-web07/heres-everything-we-know-about-the-orlando-shooter-2-27164-1465785237-0_dblwide.jpg",
+              "size": "dblwide"
+            },
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-06/12/22/campaign_images/buzzfeed-prod-web07/heres-everything-we-know-about-the-orlando-shooter-2-27164-1465785237-0_wide.jpg",
+              "size": "wide"
+            },
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-06/12/22/campaign_images/buzzfeed-prod-web07/heres-everything-we-know-about-the-orlando-shooter-2-27164-1465785237-0_big.jpg",
+              "size": "big"
+            },
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-06/12/22/campaign_images/buzzfeed-prod-web07/heres-everything-we-know-about-the-orlando-shooter-2-27164-1465785237-0_dblbig.jpg",
+              "size": "dblbig"
+            },
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-06/12/22/campaign_images/buzzfeed-prod-web07/heres-everything-we-know-about-the-orlando-shooter-2-27164-1465785237-0.jpg",
+              "size": "standard"
+            },
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-06/12/22/campaign_images/buzzfeed-prod-web07/heres-everything-we-know-about-the-orlando-shooter-2-27164-1465785237-0_small.jpg",
+              "size": "small"
+            }
+          ]
+        }
+      ],
+      "authors": [
+        {
+          "username": "emaoconnor",
+          "name": "Ema O&#39;Connor",
+          "links": [
+            {
+              "url": "https://www.facebook.com/pages/Ema-OConnor/1624506221096583",
+              "link_text": "Facebook"
+            }
+          ],
+          "avatars": [
+            {
+              "sizes": [
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-05/8/11/user_images/webdr05/emaoconnor-v2-16471-1462721943-0_large.jpg",
+                  "size": "small"
+                }
+              ]
+            }
+          ],
+          "page": "https://mrsdev78:wilkie@stage.buzzfeed.com/emaoconnor",
+          "id": "1442705"
+        },
+        {
+          "username": "ellievhall",
+          "page": "https://mrsdev78:wilkie@stage.buzzfeed.com/ellievhall",
+          "avatars": [
+            {
+              "sizes": [
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2015-12/2/14/user_images/webdr12/ellievhall-v2-28427-1449082934-6_large.jpg",
+                  "size": "small"
+                }
+              ]
+            }
+          ],
+          "name": "Ellie Hall",
+          "id": "384520"
+        },
+        {
+          "username": "mbvd",
+          "name": "Michelle Broder Van Dyke",
+          "links": [
+            {
+              "url": "https://www.facebook.com/michelle.b.dyke",
+              "link_text": "Facebook"
+            }
+          ],
+          "avatars": [
+            {
+              "sizes": [
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2015-04/23/17/user_images/webdr07/mbvd-v2-28233-1429825338-3_large.jpg",
+                  "size": "small"
+                }
+              ]
+            }
+          ],
+          "page": "https://mrsdev78:wilkie@stage.buzzfeed.com/mbvd",
+          "id": "352440"
+        }
+      ]
+    },
+    {
+      "id": "4276346",
+      "name": "Trending Quiz card",
+      "description": "Trending Quiz Card",
+      "type": "post",
+      "treatments": [
+        "trending",
+        "quiz"
+      ],
+      "category": "USNews",
+      "source_uri": "https://mrsdev78:wilkie@stage.buzzfeed.com/stephaniemcneal/blood-donations-florida",
+      "created_at": "2016-06-12T15:28:58",
+      "updated_at": "2016-06-13T03:47:10",
+      "tags": [
+        "--force-image-width-625",
+        "--heatmap",
+        "--primarykeyword-Blood donations",
+        "florida",
+        "florida nightclub shooting",
+        "orlando shooting",
+        "pulse nightclub",
+        "social news"
+      ],
+      "stats": {
+        "impressions": 177349
+      },
+      "flags": [
+        "brand_safe",
+        "raw",
+        "mobile_safe"
+      ],
+      "thumbnails": [
+        {
+          "sizes": [
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-06/12/13/campaign_images/buzzfeed-prod-fastlane03/people-are-lining-up-to-donate-blood-for-the-orla-2-27527-1465753322-0_dblwide.jpg",
+              "size": "dblwide"
+            },
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-06/12/13/campaign_images/buzzfeed-prod-fastlane03/people-are-lining-up-to-donate-blood-for-the-orla-2-27527-1465753322-0_wide.jpg",
+              "size": "wide"
+            },
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-06/12/13/campaign_images/buzzfeed-prod-fastlane03/people-are-lining-up-to-donate-blood-for-the-orla-2-27527-1465753322-0_big.jpg",
+              "size": "big"
+            },
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-06/12/13/campaign_images/buzzfeed-prod-fastlane03/people-are-lining-up-to-donate-blood-for-the-orla-2-27527-1465753322-0_dblbig.jpg",
+              "size": "dblbig"
+            },
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-06/12/13/campaign_images/buzzfeed-prod-fastlane03/people-are-lining-up-to-donate-blood-for-the-orla-2-27527-1465753322-0.jpg",
+              "size": "standard"
+            },
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-06/12/13/campaign_images/buzzfeed-prod-fastlane03/people-are-lining-up-to-donate-blood-for-the-orla-2-27527-1465753322-0_small.jpg",
+              "size": "small"
+            }
+          ]
+        }
+      ],
+      "authors": [
+        {
+          "username": "stephaniemcneal",
+          "name": "Stephanie McNeal",
+          "links": [
+            {
+              "url": "https://www.facebook.com/stephanie.mcneal.79",
+              "link_text": "Facebook"
+            }
+          ],
+          "avatars": [
+            {
+              "sizes": [
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2014-12/30/11/user_images/webdr01/stephaniemcneal-6347-1419956001-10_large.jpg",
+                  "size": "small"
+                }
+              ]
+            }
+          ],
+          "page": "https://mrsdev78:wilkie@stage.buzzfeed.com/stephaniemcneal",
+          "id": "2441426"
+        }
+      ]
+    },
+    {
+      "id": "6916",
+      "name": "Youtube link only",
+      "type": "video",
+      "created_at": "2016-11-05T01:31:51Z",
+      "updated_at": "2016-11-08T22:38:20Z",
+      "treatments": [],
+      "videos": [
+        {
+          "duration": 256298,
+          "aspect_ratio": "16:9",
+          "cover_image_url": "https://videoapp-assets-ak.buzzfeed.com/prod/video_thumbnails/3d65fb94db7b424088f69aa8ce16c8d9.PNG",
+          "encodings": [
+            {
+              "url": "https://video-cdn.buzzfeed.com/13986/high_1478309287.m3u8",
+              "width": 1920,
+              "encoding": "hls",
+              "height": 1080
+            },
+            {
+              "url": "https://video-cdn.buzzfeed.com/13986/mp4_1280X720/1478309287",
+              "width": 1280,
+              "encoding": "h264",
+              "height": 720
+            },
+            {
+              "url": "https://video-cdn.buzzfeed.com/13986/mp4_640X480/1478309287",
+              "width": 640,
+              "encoding": "h264",
+              "height": 480
+            },
+            {
+              "url": "https://video-cdn.buzzfeed.com/13986/mp4_320x240/1478309287",
+              "width": 320,
+              "encoding": "h264",
+              "height": 240
+            }
+          ]
+        }
+      ],
+      "thumbnails": [
+        {
+          "sizes": [
+            {
+              "url": "https://videoapp-assets-ak.buzzfeed.com/prod/video_thumbnails/20ac1d3931eb47e69194303a9659ae12.JPEG",
+              "size": "standard"
+            }
+          ]
+        }
+      ],
+      "links": [
+        {
+          "url": "https://www.youtube.com/watch?v=IeW65WP75E8",
+          "link_text": "youtube"
+        }
+      ],
+      "authors": [
+        {
+          "username": "justin.tan@buzzfeed.com"
+        }
+      ]
+    },
+    {
+      "id": "6823",
+      "name": "Facebook link only",
+      "type": "video",
+      "created_at": "2016-10-31T18:31:23Z",
+      "updated_at": "2016-11-08T22:30:14Z",
+      "treatments": [],
+      "videos": [
+        {
+          "duration": 35861,
+          "aspect_ratio": "1:1",
+          "cover_image_url": "https://videoapp-assets-ak.buzzfeed.com/prod/video_thumbnails/a0efa4a5938c458d80b334ca2e40c094.PNG",
+          "encodings": [
+            {
+              "url": "https://video-cdn.buzzfeed.com/13409/high_1477938588.m3u8",
+              "width": 1080,
+              "encoding": "hls",
+              "height": 1080
+            },
+            {
+              "url": "https://video-cdn.buzzfeed.com/13409/mp4_1280x1280/1477938588",
+              "width": 1280,
+              "encoding": "h264",
+              "height": 1280
+            },
+            {
+              "url": "https://video-cdn.buzzfeed.com/13409/mp4_640x640/1477938588",
+              "width": 640,
+              "encoding": "h264",
+              "height": 640
+            },
+            {
+              "url": "https://video-cdn.buzzfeed.com/13409/mp4_320x320/1477938588",
+              "width": 320,
+              "encoding": "h264",
+              "height": 320
+            }
+          ]
+        }
+      ],
+      "thumbnails": [
+        {
+          "sizes": [
+            {
+              "url": "https://videoapp-assets-ak.buzzfeed.com/prod/video_thumbnails/b20aad6d017247259920abfdc82fa45c.JPEG",
+              "size": "standard"
+            }
+          ]
+        }
+      ],
+      "links": [
+        {
+          "url": "https://www.facebook.com/buzzfeednifty/videos/1782134618707929/",
+          "link_text": "facebook"
+        }
+      ],
+      "authors": [
+        {
+          "username": "nifty",
+          "description": "Why didn't I think of that?",
+          "avatars": [
+            {
+              "sizes": [
+                {
+                  "url": "https://videoapp-assets-ak.buzzfeed.com/prod/show/avatars/7c11edbd3cc4407d91f9c9ea1f18b446.JPEG",
+                  "size": "standard"
+                }
+              ]
+            }
+          ],
+          "name": "Nifty"
+        }
+      ],
+      "_embedded": {
+        "shows": [
+          {
+            "id": "nifty",
+            "name": "Nifty",
+            "description": "Why didn't I think of that?",
+            "_links": {
+              "self": {
+                "href": "https://weaver-api.buzzfeed.com/v1/feeds/shows-nifty"
+              }
+            },
+            "thumbnail_url": "https://videoapp-assets-ak.buzzfeed.com/prod/show/avatars/7c11edbd3cc4407d91f9c9ea1f18b446.JPEG",
+            "background_image_url": "https://videoapp-assets-ak.buzzfeed.com/prod/show/avatars/882d246222cc4f12a92ec6bd2957f649.JPEG"
+          }
+        ]
+      }
+    },
+    {
+      "id": "6892",
+      "name": "No FB or Youtube link",
+      "type": "video",
+      "created_at": "2016-11-03T23:20:32Z",
+      "updated_at": "2016-11-08T21:08:10Z",
+      "treatments": [],
+      "videos": [
+        {
+          "duration": 214250,
+          "aspect_ratio": "16:9",
+          "cover_image_url": "https://videoapp-assets-ak.buzzfeed.com/prod/video_thumbnails/f8b660765a9b4b918da1fab958ac224a.PNG",
+          "encodings": [
+            {
+              "url": "https://video-cdn.buzzfeed.com/13817/high_1478215054.m3u8",
+              "width": 1920,
+              "encoding": "hls",
+              "height": 1080
+            },
+            {
+              "url": "https://video-cdn.buzzfeed.com/13817/mp4_1280X720/1478215054",
+              "width": 1280,
+              "encoding": "h264",
+              "height": 720
+            },
+            {
+              "url": "https://video-cdn.buzzfeed.com/13817/mp4_640X480/1478215054",
+              "width": 640,
+              "encoding": "h264",
+              "height": 480
+            },
+            {
+              "url": "https://video-cdn.buzzfeed.com/13817/mp4_320x240/1478215054",
+              "width": 320,
+              "encoding": "h264",
+              "height": 240
+            }
+          ]
+        }
+      ],
+      "thumbnails": [
+        {
+          "sizes": [
+            {
+              "url": "https://videoapp-assets-ak.buzzfeed.com/prod/video_thumbnails/f817e6d2e21042c0939efe906a8e5da6.JPEG",
+              "size": "standard"
+            }
+          ]
+        }
+      ],
+      "links": [],
+      "authors": [
+        {
+          "username": "ladylike",
+          "description": "Lady tested, lady approved.",
+          "avatars": [
+            {
+              "sizes": [
+                {
+                  "url": "https://videoapp-assets-ak.buzzfeed.com/prod/show/avatars/793a7912817a483d8744e676a84b8d07.png",
+                  "size": "standard"
+                }
+              ]
+            }
+          ],
+          "name": "Ladylike"
+        }
+      ],
+      "_embedded": {
+        "shows": [
+          {
+            "id": "ladylike",
+            "name": "Ladylike",
+            "description": "Lady tested, lady approved.",
+            "_links": {
+              "self": {
+                "href": "https://weaver-api.buzzfeed.com/v1/feeds/shows-ladylike"
+              }
+            },
+            "thumbnail_url": "https://videoapp-assets-ak.buzzfeed.com/prod/show/avatars/793a7912817a483d8744e676a84b8d07.png",
+            "background_image_url": "https://videoapp-assets-ak.buzzfeed.com/prod/show/avatars/7460789a7fdd45a98c03c375f31824fd.png"
+          }
+        ]
+      }
+    },
+    {
+      "id": "6876",
+      "name": "BF Link",
+      "type": "video",
+      "created_at": "2016-11-02T23:54:39Z",
+      "updated_at": "2016-11-07T23:52:50Z",
+      "treatments": [],
+      "videos": [
+        {
+          "duration": 58112,
+          "aspect_ratio": "1:1",
+          "cover_image_url": "https://videoapp-assets-ak.buzzfeed.com/prod/video_thumbnails/37ccb0c81268484689ad98289e179ed1.PNG",
+          "encodings": [
+            {
+              "url": "https://video-cdn.buzzfeed.com/13697/high_1478130769.m3u8",
+              "width": 1080,
+              "encoding": "hls",
+              "height": 1080
+            },
+            {
+              "url": "https://video-cdn.buzzfeed.com/13697/mp4_1280x1280/1478130769",
+              "width": 1280,
+              "encoding": "h264",
+              "height": 1280
+            },
+            {
+              "url": "https://video-cdn.buzzfeed.com/13697/mp4_640x640/1478130769",
+              "width": 640,
+              "encoding": "h264",
+              "height": 640
+            },
+            {
+              "url": "https://video-cdn.buzzfeed.com/13697/mp4_320x320/1478130769",
+              "width": 320,
+              "encoding": "h264",
+              "height": 320
+            }
+          ]
+        }
+      ],
+      "thumbnails": [
+        {
+          "sizes": [
+            {
+              "url": "https://videoapp-assets-ak.buzzfeed.com/prod/video_thumbnails/2bd950b64fff43ac96e3d3855536343d.JPEG",
+              "size": "standard"
+            }
+          ]
+        }
+      ],
+      "links": [
+        {
+          "url": "https://www.facebook.com/officialgoodful/videos/1351565831580546/",
+          "link_text": "facebook"
+        }
+      ],
+      "source_uri": "https://www.buzzfeed.com/jordanshalhoub/grab-your-boo-and-do-this-partner-yoga-routine",
+      "authors": [
+        {
+          "username": "goodful",
+          "description": "Inspiration for living a more balanced life.",
+          "avatars": [
+            {
+              "sizes": [
+                {
+                  "url": "https://videoapp-assets-ak.buzzfeed.com/prod/show/avatars/3e9c69d3492c41b6a6936c1f1d0ae63c.JPEG",
+                  "size": "standard"
+                }
+              ]
+            }
+          ],
+          "name": "Goodful"
+        }
+      ],
+      "_embedded": {
+        "shows": [
+          {
+            "id": "goodful",
+            "name": "Goodful",
+            "description": "Inspiration for living a more balanced life.",
+            "_links": {
+              "self": {
+                "href": "https://weaver-api.buzzfeed.com/v1/feeds/shows-goodful"
+              }
+            },
+            "thumbnail_url": "https://videoapp-assets-ak.buzzfeed.com/prod/show/avatars/3e9c69d3492c41b6a6936c1f1d0ae63c.JPEG",
+            "background_image_url": "https://videoapp-assets-ak.buzzfeed.com/prod/show/avatars/c7a0ff19791940c58b8e46c20f46d5bf.JPEG"
+          }
+        ]
+      }
+    },
+    {
+      "id": "1311805692253467007",
+      "name": "President-Elect Trump",
+      "description": "",
+      "type": "package",
+      "treatments": [],
+      "category": "",
+      "source_uri": "",
+      "created_at": "2016-12-07T19:42:31Z",
+      "updated_at": "2016-12-08T19:02:05Z",
+      "tags": [],
+      "stats": {
+        "impressions": 0
+      },
+      "flags": [],
+      "thumbnails": [],
+      "items": [
+        {
+          "id": "4409124",
+          "name": "Trump To Pick Hardee's/Carl's Jr. CEO For Labor Secretary, Reports Say",
+          "description": "Andy Puzder, CEO of burger chains Hardee's and Carl Jr.'s, is an outspoken opponent of raising the minimum wage.",
+          "description_markdown": "Andy Puzder, CEO of burger chains Hardee's and Carl Jr.'s, is an outspoken\nopponent of raising the minimum wage.",
+          "type": "post",
+          "treatments": [],
+          "category": "Business",
+          "source_uri": "https://www.buzzfeed.com/coralewis/trump-labor-secretary-pick",
+          "created_at": "2016-12-08T18:38:04Z",
+          "tags": [
+            "--heatmap",
+            "--primarykeyword-andy puzder",
+            "cabinet",
+            "carls jr",
+            "hardees",
+            "trump"
+          ],
+          "badges": [],
+          "comments_enabled": false,
+          "flags": [
+            "brand_safe",
+            "raw",
+            "comments_enabled",
+            "mobile_safe"
+          ],
+          "thumbnails": [
+            {
+              "sizes": [
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/8/14/campaign_images/buzzfeed-prod-fastlane02/trump-to-pick-hardeescarls-jr-ceo-for-labor-secre-2-12686-1481224130-0_dblwide.jpg",
+                  "size": "dblwide"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/8/14/campaign_images/buzzfeed-prod-fastlane02/trump-to-pick-hardeescarls-jr-ceo-for-labor-secre-2-12686-1481224130-0_wide.jpg",
+                  "size": "wide"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/8/14/campaign_images/buzzfeed-prod-fastlane02/trump-to-pick-hardeescarls-jr-ceo-for-labor-secre-2-12686-1481224130-0_big.jpg",
+                  "size": "big"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/8/14/campaign_images/buzzfeed-prod-fastlane02/trump-to-pick-hardeescarls-jr-ceo-for-labor-secre-2-12686-1481224130-0_dblbig.jpg",
+                  "size": "dblbig"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/8/14/campaign_images/buzzfeed-prod-fastlane02/trump-to-pick-hardeescarls-jr-ceo-for-labor-secre-2-12686-1481224130-0.jpg",
+                  "size": "standard"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/8/14/campaign_images/buzzfeed-prod-fastlane02/trump-to-pick-hardeescarls-jr-ceo-for-labor-secre-2-12686-1481224130-0_small.jpg",
+                  "size": "small"
+                }
+              ]
+            }
+          ],
+          "authors": [
+            {
+              "username": "coralewis",
+              "id": "2478649",
+              "page": "https://www.buzzfeed.com/coralewis",
+              "name": "Cora Lewis",
+              "avatars": [
+                {
+                  "sizes": [
+                    {
+                      "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-08/21/21/user_images/buzzfeed-prod-web15/coralewis-v2-25065-1471828633-0_large.jpg",
+                      "size": "small"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "4415140",
+          "name": "Trump Lashes Out At Carrier Union After Leader Said President-Elect \"Lied His Ass Off\"",
+          "description": "\"If United Steelworkers 1999 was any good, they would have kept those jobs in Indiana,\" the president-elect tweeted.",
+          "description_markdown": "\"If United Steelworkers 1999 was any good, they would have kept those jobs in\nIndiana,\" the president-elect tweeted.",
+          "type": "post",
+          "treatments": [],
+          "category": "USNews",
+          "source_uri": "https://www.buzzfeed.com/salvadorhernandez/trump-lashes-out-at-carrier-union-leader",
+          "created_at": "2016-12-08T02:12:18Z",
+          "updated_at": "2016-12-08T12:45:17Z",
+          "tags": [
+            "--heatmap",
+            "--primarykeyword-carrier",
+            "--updated-1481201117",
+            "donald trump",
+            "jobs",
+            "labor boss",
+            "mexico",
+            "monterrey",
+            "president elect",
+            "union"
+          ],
+          "badges": [],
+          "comments_enabled": false,
+          "flags": [
+            "brand_safe",
+            "raw",
+            "comments_enabled",
+            "mobile_safe"
+          ],
+          "thumbnails": [
+            {
+              "sizes": [
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/8/13/campaign_images/buzzfeed-prod-fastlane01/trump-lashes-out-at-carrier-union-after-leader-sa-2-24044-1481223226-0_dblwide.jpg",
+                  "size": "dblwide"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/8/13/campaign_images/buzzfeed-prod-fastlane01/trump-lashes-out-at-carrier-union-after-leader-sa-2-24044-1481223226-0_wide.jpg",
+                  "size": "wide"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/8/13/campaign_images/buzzfeed-prod-fastlane01/trump-lashes-out-at-carrier-union-after-leader-sa-2-24044-1481223226-0_big.jpg",
+                  "size": "big"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/8/13/campaign_images/buzzfeed-prod-fastlane01/trump-lashes-out-at-carrier-union-after-leader-sa-2-24044-1481223226-0_dblbig.jpg",
+                  "size": "dblbig"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/8/13/campaign_images/buzzfeed-prod-fastlane01/trump-lashes-out-at-carrier-union-after-leader-sa-2-24044-1481223226-0.jpg",
+                  "size": "standard"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/8/13/campaign_images/buzzfeed-prod-fastlane01/trump-lashes-out-at-carrier-union-after-leader-sa-2-24044-1481223226-0_small.jpg",
+                  "size": "small"
+                }
+              ]
+            }
+          ],
+          "authors": [
+            {
+              "username": "salvadorhernandez",
+              "id": "2633715",
+              "page": "https://www.buzzfeed.com/salvadorhernandez",
+              "name": "Salvador Hernandez",
+              "avatars": [
+                {
+                  "sizes": [
+                    {
+                      "url": "https://img.buzzfeed.com/buzzfeed-static/static/2015-02/10/17/user_images/webdr12/salvadorhernandez-349-1423607813-0_large.jpg",
+                      "size": "small"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "4414938",
+          "name": "Trump Nominates Former Wrestling Executive Linda McMahon For Cabinet Post",
+          "description": "She is the former CEO of the WWE.",
+          "description_markdown": "She is the former CEO of the WWE.",
+          "type": "post",
+          "treatments": [],
+          "category": "USNews",
+          "source_uri": "https://www.buzzfeed.com/talalansari/trump-nominates-linda-mcmahon-for-cabinet-post",
+          "created_at": "2016-12-07T21:25:48Z",
+          "updated_at": "2016-12-07T22:12:18Z",
+          "tags": [
+            "--primarykeyword-Linda McMahon",
+            "--updated-1481148738",
+            "donald trump",
+            "small business administration",
+            "transition team"
+          ],
+          "badges": [],
+          "comments_enabled": false,
+          "flags": [
+            "brand_safe",
+            "raw",
+            "comments_enabled",
+            "mobile_safe"
+          ],
+          "thumbnails": [
+            {
+              "sizes": [
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/7/17/campaign_images/buzzfeed-prod-fastlane02/trump-nominates-former-wrestling-executive-linda--2-19063-1481150007-8_dblwide.jpg",
+                  "size": "dblwide"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/7/17/campaign_images/buzzfeed-prod-fastlane02/trump-nominates-former-wrestling-executive-linda--2-19063-1481150007-8_wide.jpg",
+                  "size": "wide"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/7/17/campaign_images/buzzfeed-prod-fastlane02/trump-nominates-former-wrestling-executive-linda--2-19063-1481150007-8_big.jpg",
+                  "size": "big"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/7/17/campaign_images/buzzfeed-prod-fastlane02/trump-nominates-former-wrestling-executive-linda--2-19063-1481150007-8_dblbig.jpg",
+                  "size": "dblbig"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/7/17/campaign_images/buzzfeed-prod-fastlane02/trump-nominates-former-wrestling-executive-linda--2-19063-1481150007-8.jpg",
+                  "size": "standard"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/7/17/campaign_images/buzzfeed-prod-fastlane02/trump-nominates-former-wrestling-executive-linda--2-19063-1481150007-8_small.jpg",
+                  "size": "small"
+                }
+              ]
+            }
+          ],
+          "authors": [
+            {
+              "username": "talalansari",
+              "name": "Talal Ansari",
+              "links": [
+                {
+                  "url": "https://www.facebook.com/talal0009",
+                  "link_text": "Facebook"
+                }
+              ],
+              "avatars": [
+                {
+                  "sizes": [
+                    {
+                      "url": "https://img.buzzfeed.com/buzzfeed-static/static/2015-02/22/11/user_images/webdr03/talalansari-v2-32143-1424620808-2_large.jpg",
+                      "size": "small"
+                    }
+                  ]
+                }
+              ],
+              "page": "https://www.buzzfeed.com/talalansari",
+              "id": "2570218"
+            }
+          ]
+        },
+        {
+          "id": "4414773",
+          "name": "Trump Picks Oil And Gas Ally For Environment Post",
+          "description": "Pruitt is the attorney general of Oklahoma and has antagonized the US Environmental Protection Agency through letters and lawsuits during the Obama administration.",
+          "description_markdown": "Pruitt is the attorney general of Oklahoma and has antagonized the US\nEnvironmental Protection Agency through letters and lawsuits during the Obama\nadministration.",
+          "type": "post",
+          "treatments": [],
+          "category": "Science",
+          "source_uri": "https://www.buzzfeed.com/dinograndoni/reports-scott-pruitt-longtime-epa-opponent-is-trumps-pick-fo",
+          "created_at": "2016-12-07T19:42:31Z",
+          "updated_at": "2016-12-07T23:44:43Z",
+          "tags": [
+            "--buzzfeed-news-crossposting",
+            "--heatmap",
+            "--primarykeyword-science news",
+            "--updated-1481154283",
+            "epa",
+            "oklahoma",
+            "pruitt",
+            "science-news",
+            "trump"
+          ],
+          "badges": [],
+          "comments_enabled": false,
+          "flags": [
+            "brand_safe",
+            "raw",
+            "comments_enabled",
+            "mobile_safe"
+          ],
+          "thumbnails": [
+            {
+              "sizes": [
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/8/10/campaign_images/buzzfeed-prod-fastlane01/trump-picks-oil-and-gas-ally-for-environment-post-2-6081-1481212328-0_dblwide.jpg",
+                  "size": "dblwide"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/8/10/campaign_images/buzzfeed-prod-fastlane01/trump-picks-oil-and-gas-ally-for-environment-post-2-6081-1481212328-0_wide.jpg",
+                  "size": "wide"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/8/10/campaign_images/buzzfeed-prod-fastlane01/trump-picks-oil-and-gas-ally-for-environment-post-2-6081-1481212328-0_big.jpg",
+                  "size": "big"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/8/10/campaign_images/buzzfeed-prod-fastlane01/trump-picks-oil-and-gas-ally-for-environment-post-2-6081-1481212328-0_dblbig.jpg",
+                  "size": "dblbig"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/8/10/campaign_images/buzzfeed-prod-fastlane01/trump-picks-oil-and-gas-ally-for-environment-post-2-6081-1481212328-0.jpg",
+                  "size": "standard"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/8/10/campaign_images/buzzfeed-prod-fastlane01/trump-picks-oil-and-gas-ally-for-environment-post-2-6081-1481212328-0_small.jpg",
+                  "size": "small"
+                }
+              ]
+            }
+          ],
+          "authors": [
+            {
+              "username": "dinograndoni",
+              "id": "4918495",
+              "page": "https://www.buzzfeed.com/dinograndoni",
+              "name": "Dino Grandoni",
+              "avatars": [
+                {
+                  "sizes": [
+                    {
+                      "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-06/21/13/user_images/buzzfeed-prod-fastlane03/dinograndoni-v2-4587-1466528550-0_large.jpg",
+                      "size": "small"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "14846193053150275857",
+      "name": "Anchor Test!",
+      "description": "",
+      "type": "package",
+      "treatments": [],
+      "category": "",
+      "source_uri": "",
+      "created_at": "2016-12-07T22:04:56Z",
+      "updated_at": "2016-12-08T03:28:13Z",
+      "tags": [],
+      "stats": {
+        "impressions": 0
+      },
+      "flags": [],
+      "thumbnails": [],
+      "items": [
+        {
+          "id": "4414964",
+          "name": "Oakland Warehouse Fire Victims Were Trapped With \"No Way Out\"",
+          "description": "Investigators said Wednesday there were no fire alarms or sprinklers installed inside the warehouse to warn victims of the deadly fire.",
+          "description_markdown": "Investigators said Wednesday there were no fire alarms or sprinklers installed\ninside the warehouse to warn victims of the deadly fire.",
+          "type": "post",
+          "treatments": [],
+          "category": "USNews",
+          "source_uri": "https://mrsdev78:wilkie@stage.buzzfeed.com/adolfoflores/oakland-warehouse-fire-victims-were-trapped-with-no-way-out",
+          "created_at": "2016-12-07T22:04:56Z",
+          "tags": [
+            "--heatmap",
+            "--primarykeyword-oakland fire",
+            "art collective",
+            "deadly fire",
+            "oakland",
+            "refrigerator"
+          ],
+          "badges": [],
+          "comments_enabled": false,
+          "flags": [
+            "brand_safe",
+            "raw",
+            "comments_enabled",
+            "mobile_safe"
+          ],
+          "thumbnails": [
+            {
+              "sizes": [
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-12/7/17/campaign_images/buzzfeed-prod-fastlane01/oakland-warehouse-fire-victims-were-trapped-with--2-30158-1481148290-2_dblwide.jpg",
+                  "size": "dblwide"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-12/7/17/campaign_images/buzzfeed-prod-fastlane01/oakland-warehouse-fire-victims-were-trapped-with--2-30158-1481148290-2_wide.jpg",
+                  "size": "wide"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-12/7/17/campaign_images/buzzfeed-prod-fastlane01/oakland-warehouse-fire-victims-were-trapped-with--2-30158-1481148290-2_big.jpg",
+                  "size": "big"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-12/7/17/campaign_images/buzzfeed-prod-fastlane01/oakland-warehouse-fire-victims-were-trapped-with--2-30158-1481148290-2_dblbig.jpg",
+                  "size": "dblbig"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-12/7/17/campaign_images/buzzfeed-prod-fastlane01/oakland-warehouse-fire-victims-were-trapped-with--2-30158-1481148290-2.jpg",
+                  "size": "standard"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-12/7/17/campaign_images/buzzfeed-prod-fastlane01/oakland-warehouse-fire-victims-were-trapped-with--2-30158-1481148290-2_small.jpg",
+                  "size": "small"
+                }
+              ]
+            }
+          ],
+          "authors": [
+            {
+              "username": "adolfoflores",
+              "name": "Adolfo Flores",
+              "links": [
+                {
+                  "url": "https://www.facebook.com/adolfof3",
+                  "link_text": "Facebook"
+                }
+              ],
+              "avatars": [
+                {
+                  "sizes": [
+                    {
+                      "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2014-11/18/15/user_images/webdr03/adolfoflores-4275-1416342113-18_large.jpg",
+                      "size": "small"
+                    }
+                  ]
+                }
+              ],
+              "page": "https://mrsdev78:wilkie@stage.buzzfeed.com/adolfoflores",
+              "id": "1614116"
+            }
+          ]
+        },
+        {
+          "id": "4414975",
+          "name": "Here Are 11 Insane Times Donald Trump Appeared On WWE",
+          "description": "A fake Donald Trump also wrestled a fake Rosie O'Donnell, defeating her after throwing a cake in her face and head-butting her from the second rope.",
+          "description_markdown": "A fake Donald Trump also wrestled a fake Rosie O'Donnell, defeating her after\nthrowing a cake in her face and head-butting her from the second rope.",
+          "type": "post",
+          "treatments": [],
+          "category": "USNews",
+          "source_uri": "https://mrsdev78:wilkie@stage.buzzfeed.com/bradesposito/hair-vs-hair",
+          "created_at": "2016-12-08T00:58:53Z",
+          "tags": [
+            "--force-image-width-625",
+            "--has-additional-byline",
+            "--heatmap",
+            "donald trump",
+            "politics",
+            "president",
+            "trump",
+            "wrestling",
+            "wwe"
+          ],
+          "badges": [],
+          "comments_enabled": false,
+          "flags": [
+            "brand_safe",
+            "raw",
+            "comments_enabled",
+            "mobile_safe"
+          ],
+          "thumbnails": [
+            {
+              "sizes": [
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-12/7/19/campaign_images/buzzfeed-prod-fastlane03/here-are-11-insane-times-donald-trump-appeared-on-2-942-1481158730-3_dblwide.jpg",
+                  "size": "dblwide"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-12/7/19/campaign_images/buzzfeed-prod-fastlane03/here-are-11-insane-times-donald-trump-appeared-on-2-942-1481158730-3_wide.jpg",
+                  "size": "wide"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-12/7/19/campaign_images/buzzfeed-prod-fastlane03/here-are-11-insane-times-donald-trump-appeared-on-2-942-1481158730-3_big.jpg",
+                  "size": "big"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-12/7/19/campaign_images/buzzfeed-prod-fastlane03/here-are-11-insane-times-donald-trump-appeared-on-2-942-1481158730-3_dblbig.jpg",
+                  "size": "dblbig"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-12/7/19/campaign_images/buzzfeed-prod-fastlane03/here-are-11-insane-times-donald-trump-appeared-on-2-942-1481158730-3.jpg",
+                  "size": "standard"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-12/7/19/campaign_images/buzzfeed-prod-fastlane03/here-are-11-insane-times-donald-trump-appeared-on-2-942-1481158730-3_small.jpg",
+                  "size": "small"
+                }
+              ]
+            }
+          ],
+          "authors": [
+            {
+              "username": "bradesposito",
+              "name": "Brad Esposito",
+              "links": [
+                {
+                  "url": "https://www.facebook.com/braddybb?ref=hl",
+                  "link_text": "Facebook"
+                }
+              ],
+              "avatars": [
+                {
+                  "sizes": [
+                    {
+                      "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2015-02/19/15/user_images/webdr02/bradesposito-v2-29434-1424377888-16_large.jpg",
+                      "size": "small"
+                    }
+                  ]
+                }
+              ],
+              "page": "https://mrsdev78:wilkie@stage.buzzfeed.com/bradesposito",
+              "id": "1042292"
+            },
+            {
+              "username": "austinhunt",
+              "name": "Austin Hunt",
+              "links": [
+                {
+                  "url": "https://www.facebook.com/austin.j.hunt.52",
+                  "link_text": "Facebook"
+                }
+              ],
+              "avatars": [
+                {
+                  "sizes": [
+                    {
+                      "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2014-04/user_images/webdr05/3/9/austinhunt-32364-1396533373-4_large.jpg",
+                      "size": "small"
+                    }
+                  ]
+                }
+              ],
+              "page": "https://mrsdev78:wilkie@stage.buzzfeed.com/austinhunt",
+              "id": "1156833"
+            },
+            {
+              "id": "14846193053150275857",
+              "name": "Anchor Test!",
+              "description": "",
+              "type": "package",
+              "treatments": [],
+              "category": "",
+              "source_uri": "",
+              "created_at": "2016-12-07T22:04:56Z",
+              "updated_at": "2016-12-08T03:28:13Z",
+              "tags": [],
+              "stats": {
+                "impressions": 0
+              },
+              "flags": [],
+              "thumbnails": [],
+              "items": [
+                {
+                  "id": "4414964",
+                  "name": "Oakland Warehouse Fire Victims Were Trapped With \"No Way Out\"",
+                  "description": "Investigators said Wednesday there were no fire alarms or sprinklers installed inside the warehouse to warn victims of the deadly fire.",
+                  "description_markdown": "Investigators said Wednesday there were no fire alarms or sprinklers installed\ninside the warehouse to warn victims of the deadly fire.",
+                  "type": "post",
+                  "treatments": [],
+                  "category": "USNews",
+                  "source_uri": "https://mrsdev78:wilkie@stage.buzzfeed.com/adolfoflores/oakland-warehouse-fire-victims-were-trapped-with-no-way-out",
+                  "created_at": "2016-12-07T22:04:56Z",
+                  "tags": [
+                    "--heatmap",
+                    "--primarykeyword-oakland fire",
+                    "art collective",
+                    "deadly fire",
+                    "oakland",
+                    "refrigerator"
+                  ],
+                  "badges": [],
+                  "comments_enabled": false,
+                  "flags": [
+                    "brand_safe",
+                    "raw",
+                    "comments_enabled",
+                    "mobile_safe"
+                  ],
+                  "thumbnails": [
+                    {
+                      "sizes": [
+                        {
+                          "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-12/7/17/campaign_images/buzzfeed-prod-fastlane01/oakland-warehouse-fire-victims-were-trapped-with--2-30158-1481148290-2_dblwide.jpg",
+                          "size": "dblwide"
+                        },
+                        {
+                          "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-12/7/17/campaign_images/buzzfeed-prod-fastlane01/oakland-warehouse-fire-victims-were-trapped-with--2-30158-1481148290-2_wide.jpg",
+                          "size": "wide"
+                        },
+                        {
+                          "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-12/7/17/campaign_images/buzzfeed-prod-fastlane01/oakland-warehouse-fire-victims-were-trapped-with--2-30158-1481148290-2_big.jpg",
+                          "size": "big"
+                        },
+                        {
+                          "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-12/7/17/campaign_images/buzzfeed-prod-fastlane01/oakland-warehouse-fire-victims-were-trapped-with--2-30158-1481148290-2_dblbig.jpg",
+                          "size": "dblbig"
+                        },
+                        {
+                          "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-12/7/17/campaign_images/buzzfeed-prod-fastlane01/oakland-warehouse-fire-victims-were-trapped-with--2-30158-1481148290-2.jpg",
+                          "size": "standard"
+                        },
+                        {
+                          "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-12/7/17/campaign_images/buzzfeed-prod-fastlane01/oakland-warehouse-fire-victims-were-trapped-with--2-30158-1481148290-2_small.jpg",
+                          "size": "small"
+                        }
+                      ]
+                    }
+                  ],
+                  "authors": [
+                    {
+                      "username": "adolfoflores",
+                      "name": "Adolfo Flores",
+                      "links": [
+                        {
+                          "url": "https://www.facebook.com/adolfof3",
+                          "link_text": "Facebook"
+                        }
+                      ],
+                      "avatars": [
+                        {
+                          "sizes": [
+                            {
+                              "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2014-11/18/15/user_images/webdr03/adolfoflores-4275-1416342113-18_large.jpg",
+                              "size": "small"
+                            }
+                          ]
+                        }
+                      ],
+                      "page": "https://mrsdev78:wilkie@stage.buzzfeed.com/adolfoflores",
+                      "id": "1614116"
+                    }
+                  ]
+                },
+                {
+                  "id": "4414975",
+                  "name": "Here Are 11 Insane Times Donald Trump Appeared On WWE",
+                  "description": "A fake Donald Trump also wrestled a fake Rosie O'Donnell, defeating her after throwing a cake in her face and head-butting her from the second rope.",
+                  "description_markdown": "A fake Donald Trump also wrestled a fake Rosie O'Donnell, defeating her after\nthrowing a cake in her face and head-butting her from the second rope.",
+                  "type": "post",
+                  "treatments": [],
+                  "category": "USNews",
+                  "source_uri": "https://mrsdev78:wilkie@stage.buzzfeed.com/bradesposito/hair-vs-hair",
+                  "created_at": "2016-12-08T00:58:53Z",
+                  "tags": [
+                    "--force-image-width-625",
+                    "--has-additional-byline",
+                    "--heatmap",
+                    "donald trump",
+                    "politics",
+                    "president",
+                    "trump",
+                    "wrestling",
+                    "wwe"
+                  ],
+                  "badges": [],
+                  "comments_enabled": false,
+                  "flags": [
+                    "brand_safe",
+                    "raw",
+                    "comments_enabled",
+                    "mobile_safe"
+                  ],
+                  "thumbnails": [
+                    {
+                      "sizes": [
+                        {
+                          "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-12/7/19/campaign_images/buzzfeed-prod-fastlane03/here-are-11-insane-times-donald-trump-appeared-on-2-942-1481158730-3_dblwide.jpg",
+                          "size": "dblwide"
+                        },
+                        {
+                          "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-12/7/19/campaign_images/buzzfeed-prod-fastlane03/here-are-11-insane-times-donald-trump-appeared-on-2-942-1481158730-3_wide.jpg",
+                          "size": "wide"
+                        },
+                        {
+                          "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-12/7/19/campaign_images/buzzfeed-prod-fastlane03/here-are-11-insane-times-donald-trump-appeared-on-2-942-1481158730-3_big.jpg",
+                          "size": "big"
+                        },
+                        {
+                          "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-12/7/19/campaign_images/buzzfeed-prod-fastlane03/here-are-11-insane-times-donald-trump-appeared-on-2-942-1481158730-3_dblbig.jpg",
+                          "size": "dblbig"
+                        },
+                        {
+                          "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-12/7/19/campaign_images/buzzfeed-prod-fastlane03/here-are-11-insane-times-donald-trump-appeared-on-2-942-1481158730-3.jpg",
+                          "size": "standard"
+                        },
+                        {
+                          "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2016-12/7/19/campaign_images/buzzfeed-prod-fastlane03/here-are-11-insane-times-donald-trump-appeared-on-2-942-1481158730-3_small.jpg",
+                          "size": "small"
+                        }
+                      ]
+                    }
+                  ],
+                  "authors": [
+                    {
+                      "username": "bradesposito",
+                      "name": "Brad Esposito",
+                      "links": [
+                        {
+                          "url": "https://www.facebook.com/braddybb?ref=hl",
+                          "link_text": "Facebook"
+                        }
+                      ],
+                      "avatars": [
+                        {
+                          "sizes": [
+                            {
+                              "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2015-02/19/15/user_images/webdr02/bradesposito-v2-29434-1424377888-16_large.jpg",
+                              "size": "small"
+                            }
+                          ]
+                        }
+                      ],
+                      "page": "https://mrsdev78:wilkie@stage.buzzfeed.com/bradesposito",
+                      "id": "1042292"
+                    },
+                    {
+                      "username": "austinhunt",
+                      "name": "Austin Hunt",
+                      "links": [
+                        {
+                          "url": "https://www.facebook.com/austin.j.hunt.52",
+                          "link_text": "Facebook"
+                        }
+                      ],
+                      "avatars": [
+                        {
+                          "sizes": [
+                            {
+                              "url": "https://img.buzzfeed.com/buzzfeed-stage/static/2014-04/user_images/webdr05/3/9/austinhunt-32364-1396533373-4_large.jpg",
+                              "size": "small"
+                            }
+                          ]
+                        }
+                      ],
+                      "page": "https://mrsdev78:wilkie@stage.buzzfeed.com/austinhunt",
+                      "id": "1156833"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "28079",
+      "name": "QUICKLY CATCH UP",
+      "description": "In The News Today",
+      "type": "package",
+      "treatments": [
+        "bulleted-list"
+      ],
+      "category": "",
+      "source_uri": "",
+      "created_at": "2016-12-05T20:58:22Z",
+      "tags": [],
+      "stats": {
+        "impressions": 0
+      },
+      "flags": [],
+      "authors": [],
+      "thumbnails": [
+        {
+          "sizes": [
+            {
+              "url": "http://img.buzzfeed.com/newsappcms-prod/RTSUNEL_f4eb1f1.jpg",
+              "size": "big"
+            }
+          ]
+        }
+      ],
+      "items": [
+        {
+          "id": "4411527",
+          "name": "At least 36 people have died in Friday's fire at a warehouse party in Oakland. Officials say they are no where close to finding a cause.",
+          "description": "Officials are continuing to recover bodies from inside the Oakland warehouse, which had been hosting a party on Friday night when the blaze broke out.",
+          "description_markdown": "Officials are continuing to recover bodies from inside the Oakland warehouse,\nwhich had been hosting a party on Friday night when the blaze broke out.",
+          "type": "post",
+          "treatments": [],
+          "category": "USNews",
+          "source_uri": "https://www.buzzfeed.com/davidmack/oakland-fire",
+          "created_at": "2016-12-03T15:12:15Z",
+          "updated_at": "2016-12-05T14:18:38Z",
+          "tags": [
+            "--has-additional-byline",
+            "--no-newsletter-signup",
+            "--primarykeyword-fire",
+            "--sensitive",
+            "--updated-1480947518",
+            "california",
+            "oakland"
+          ],
+          "badges": [],
+          "comments_enabled": false,
+          "flags": [
+            "raw",
+            "brand_safe",
+            "sensitive",
+            "mobile_safe"
+          ],
+          "thumbnails": [
+            {
+              "sizes": [
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/5/11/campaign_images/buzzfeed-prod-fastlane03/death-toll-from-california-warehouse-party-fire-r-2-15815-1480955271-0_dblwide.jpg",
+                  "size": "dblwide"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/5/11/campaign_images/buzzfeed-prod-fastlane03/death-toll-from-california-warehouse-party-fire-r-2-15815-1480955271-0_wide.jpg",
+                  "size": "wide"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/5/11/campaign_images/buzzfeed-prod-fastlane03/death-toll-from-california-warehouse-party-fire-r-2-15815-1480955271-0_big.jpg",
+                  "size": "big"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/5/11/campaign_images/buzzfeed-prod-fastlane03/death-toll-from-california-warehouse-party-fire-r-2-15815-1480955271-0_dblbig.jpg",
+                  "size": "dblbig"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/5/11/campaign_images/buzzfeed-prod-fastlane03/death-toll-from-california-warehouse-party-fire-r-2-15815-1480955271-0.jpg",
+                  "size": "standard"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/5/11/campaign_images/buzzfeed-prod-fastlane03/death-toll-from-california-warehouse-party-fire-r-2-15815-1480955271-0_small.jpg",
+                  "size": "small"
+                }
+              ]
+            }
+          ],
+          "authors": [
+            {
+              "username": "davidmack",
+              "name": "David Mack",
+              "links": [
+                {
+                  "url": "https://www.facebook.com/davidmackau",
+                  "link_text": "Facebook"
+                }
+              ],
+              "avatars": [
+                {
+                  "sizes": [
+                    {
+                      "url": "https://img.buzzfeed.com/buzzfeed-static/static/2015-03/14/18/user_images/webdr14/davidmack-v2-29496-1426371108-32_large.jpg",
+                      "size": "small"
+                    }
+                  ]
+                }
+              ],
+              "page": "https://www.buzzfeed.com/davidmack",
+              "id": "2170674"
+            },
+            {
+              "username": "tamerragriffin",
+              "id": "2170678",
+              "page": "https://www.buzzfeed.com/tamerragriffin",
+              "name": "Tamerra Griffin",
+              "avatars": [
+                {
+                  "sizes": [
+                    {
+                      "url": "https://img.buzzfeed.com/buzzfeed-static/static/2015-02/20/17/user_images/webdr12/tamerragriffin-v2-2660-1424472987-1_large.jpg",
+                      "size": "small"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "username": "salvadorhernandez",
+              "id": "2633715",
+              "page": "https://www.buzzfeed.com/salvadorhernandez",
+              "name": "Salvador Hernandez",
+              "avatars": [
+                {
+                  "sizes": [
+                    {
+                      "url": "https://img.buzzfeed.com/buzzfeed-static/static/2015-02/10/17/user_images/webdr12/salvadorhernandez-349-1423607813-0_large.jpg",
+                      "size": "small"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "username": "adolfoflores",
+              "name": "Adolfo Flores",
+              "links": [
+                {
+                  "url": "https://www.facebook.com/adolfof3",
+                  "link_text": "Facebook"
+                }
+              ],
+              "avatars": [
+                {
+                  "sizes": [
+                    {
+                      "url": "https://img.buzzfeed.com/buzzfeed-static/static/2014-11/18/15/user_images/webdr03/adolfoflores-4275-1416342113-18_large.jpg",
+                      "size": "small"
+                    }
+                  ]
+                }
+              ],
+              "page": "https://www.buzzfeed.com/adolfoflores",
+              "id": "1614116"
+            }
+          ],
+          "links": [
+            {
+              "url": "https://www.buzzfeed.com/davidmack/oakland-fire",
+              "link_text": "BuzzFeed News"
+            }
+          ]
+        },
+        {
+          "id": "4409749",
+          "name": "A judge has declared a mistrial in the case of a South Carolina officer who fatally shot Walter Scott, an unarmed black man, in 2015.",
+          "description": "Michael Slager was charged with murder and manslaughter in the killing of Scott in 2015.",
+          "description_markdown": "Michael Slager was charged with murder and manslaughter in the killing of\nScott in 2015.",
+          "type": "post",
+          "treatments": [],
+          "category": "USNews",
+          "source_uri": "https://www.buzzfeed.com/maryanngeorgantopoulos/michael-slager-mistrial-walter-scott-shooting",
+          "created_at": "2016-12-05T20:48:27Z",
+          "tags": [
+            "--has-additional-byline",
+            "--heatmap",
+            "--primarykeyword-walter scott",
+            "michael slager",
+            "michael slager verdict",
+            "north charleston police officer",
+            "police involved shooting",
+            "slager jury",
+            "slager verdict",
+            "walter scott verdict"
+          ],
+          "badges": [],
+          "comments_enabled": false,
+          "flags": [
+            "raw",
+            "brand_safe",
+            "comments_enabled",
+            "mobile_safe"
+          ],
+          "thumbnails": [
+            {
+              "sizes": [
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/5/16/campaign_images/buzzfeed-prod-fastlane02/mistrial-declared-in-the-case-of-a-former-cop-who-2-7392-1480971728-10_dblwide.jpg",
+                  "size": "dblwide"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/5/16/campaign_images/buzzfeed-prod-fastlane02/mistrial-declared-in-the-case-of-a-former-cop-who-2-7392-1480971728-10_wide.jpg",
+                  "size": "wide"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/5/16/campaign_images/buzzfeed-prod-fastlane02/mistrial-declared-in-the-case-of-a-former-cop-who-2-7392-1480971728-10_big.jpg",
+                  "size": "big"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/5/16/campaign_images/buzzfeed-prod-fastlane02/mistrial-declared-in-the-case-of-a-former-cop-who-2-7392-1480971728-10_dblbig.jpg",
+                  "size": "dblbig"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/5/16/campaign_images/buzzfeed-prod-fastlane02/mistrial-declared-in-the-case-of-a-former-cop-who-2-7392-1480971728-10.jpg",
+                  "size": "standard"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/5/16/campaign_images/buzzfeed-prod-fastlane02/mistrial-declared-in-the-case-of-a-former-cop-who-2-7392-1480971728-10_small.jpg",
+                  "size": "small"
+                }
+              ]
+            }
+          ],
+          "authors": [
+            {
+              "username": "maryanngeorgantopoulos",
+              "name": "Mary Ann Georgantopoulos",
+              "links": [
+                {
+                  "url": "https://www.facebook.com/maryann.georgantopoulos",
+                  "link_text": "Facebook"
+                }
+              ],
+              "avatars": [
+                {
+                  "sizes": [
+                    {
+                      "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-03/24/17/user_images/webdr02/maryanngeorgantopoulos-v2-9246-1458855336-0_large.jpg",
+                      "size": "small"
+                    }
+                  ]
+                }
+              ],
+              "page": "https://www.buzzfeed.com/maryanngeorgantopoulos",
+              "id": "1946840"
+            },
+            {
+              "username": "claudiakoerner",
+              "id": "1610676",
+              "page": "https://www.buzzfeed.com/claudiakoerner",
+              "name": "Claudia Koerner",
+              "avatars": [
+                {
+                  "sizes": [
+                    {
+                      "url": "https://img.buzzfeed.com/buzzfeed-static/static/2014-08/4/11/user_images/webdr02/claudiakoerner-402-1407164516-2_large.jpg",
+                      "size": "small"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "username": "tasneemnashrulla",
+              "id": "780484",
+              "page": "https://www.buzzfeed.com/tasneemnashrulla",
+              "name": "Tasneem Nashrulla",
+              "avatars": [
+                {
+                  "sizes": [
+                    {
+                      "url": "https://img.buzzfeed.com/buzzfeed-static/static/user_images/webdr03/2013/7/9/17/tasneemnashrulla-598-1373406682-4_large.jpg",
+                      "size": "small"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "links": [
+            {
+              "url": "https://www.buzzfeed.com/maryanngeorgantopoulos/michael-slager-mistrial-walter-scott-shooting",
+              "link_text": "BuzzFeed News"
+            }
+          ]
+        },
+        {
+          "id": "4412575",
+          "name": "Amazon is opening a grocery store in Seattle that will allow shoppers to walk in and walk out — without pulling out their wallets 👀🍎",
+          "description": "Enter a store, pick what you want, and walk out. It calls the system, um, \"Just Walk Out.\"",
+          "description_markdown": "Enter a store, pick what you want, and walk out. It calls the system, um,\n\"Just Walk Out.\"",
+          "type": "post",
+          "treatments": [],
+          "category": "Tech",
+          "source_uri": "https://www.buzzfeed.com/pranavdixit/amazon-go",
+          "created_at": "2016-12-05T15:51:30Z",
+          "updated_at": "2016-12-05T16:01:40Z",
+          "tags": [
+            "--heatmap",
+            "--primarykeyword-amazon",
+            "--updated-1480953700",
+            "amazon go",
+            "just walk out",
+            "supermarkets"
+          ],
+          "badges": [],
+          "comments_enabled": false,
+          "flags": [
+            "raw",
+            "brand_safe",
+            "comments_enabled",
+            "mobile_safe"
+          ],
+          "thumbnails": [
+            {
+              "sizes": [
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/5/12/campaign_images/buzzfeed-prod-fastlane03/amazons-new-seattle-store-will-let-people-pay-wit-2-2958-1480958378-0_dblwide.jpg",
+                  "size": "dblwide"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/5/12/campaign_images/buzzfeed-prod-fastlane03/amazons-new-seattle-store-will-let-people-pay-wit-2-2958-1480958378-0_wide.jpg",
+                  "size": "wide"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/5/12/campaign_images/buzzfeed-prod-fastlane03/amazons-new-seattle-store-will-let-people-pay-wit-2-2958-1480958378-0_big.jpg",
+                  "size": "big"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/5/12/campaign_images/buzzfeed-prod-fastlane03/amazons-new-seattle-store-will-let-people-pay-wit-2-2958-1480958378-0_dblbig.jpg",
+                  "size": "dblbig"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/5/12/campaign_images/buzzfeed-prod-fastlane03/amazons-new-seattle-store-will-let-people-pay-wit-2-2958-1480958378-0.jpg",
+                  "size": "standard"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/5/12/campaign_images/buzzfeed-prod-fastlane03/amazons-new-seattle-store-will-let-people-pay-wit-2-2958-1480958378-0_small.jpg",
+                  "size": "small"
+                }
+              ]
+            }
+          ],
+          "authors": [
+            {
+              "username": "pranavdixit",
+              "name": "Pranav Dixit",
+              "links": [
+                {
+                  "url": "https://www.facebook.com/pranavadixit",
+                  "link_text": "Facebook"
+                }
+              ],
+              "avatars": [
+                {
+                  "sizes": [
+                    {
+                      "url": "https://img.buzzfeed.com/buzzfeed-static/static/2015-05/22/12/user_images/webdr04/johnpaczkowski-v2-5483-1432311971-4_large.jpg",
+                      "size": "small"
+                    }
+                  ]
+                }
+              ],
+              "page": "https://www.buzzfeed.com/pranavdixit",
+              "id": "3138089"
+            }
+          ],
+          "links": [
+            {
+              "url": "https://www.buzzfeed.com/pranavdixit/amazon-go",
+              "link_text": "BuzzFeed News"
+            }
+          ]
+        },
+        {
+          "id": "4412601",
+          "name": "People are cringing (and laughing) at this Forever 21 necklace they think is taking the choker trend too far 😬",
+          "description": "\"Y'all taking this choker fad too far.\"",
+          "description_markdown": "\"Y'all taking this choker fad too far.\"",
+          "type": "post",
+          "treatments": [
+            "trending"
+          ],
+          "category": "USNews",
+          "source_uri": "https://www.buzzfeed.com/tanyachen/choker-trend-is-suffocating",
+          "created_at": "2016-12-05T16:51:15Z",
+          "tags": [
+            "--force-image-width-625",
+            "--heatmap",
+            "--primarykeyword-choker-or-neck-brace",
+            "--trending",
+            "choker",
+            "forever 21",
+            "lol",
+            "rerere",
+            "social news",
+            "too far",
+            "trend"
+          ],
+          "badges": [],
+          "comments_enabled": false,
+          "flags": [
+            "raw",
+            "brand_safe",
+            "comments_enabled",
+            "mobile_safe"
+          ],
+          "thumbnails": [
+            {
+              "sizes": [
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/5/11/campaign_images/buzzfeed-prod-fastlane03/choker-trend-is-suffocating-2-24158-1480956425-1_dblwide.jpg",
+                  "size": "dblwide"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/5/11/campaign_images/buzzfeed-prod-fastlane03/choker-trend-is-suffocating-2-24158-1480956425-1_wide.jpg",
+                  "size": "wide"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/5/11/campaign_images/buzzfeed-prod-fastlane03/choker-trend-is-suffocating-2-24158-1480956425-1_big.jpg",
+                  "size": "big"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/5/11/campaign_images/buzzfeed-prod-fastlane03/choker-trend-is-suffocating-2-24158-1480956425-1_dblbig.jpg",
+                  "size": "dblbig"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/5/11/campaign_images/buzzfeed-prod-fastlane03/choker-trend-is-suffocating-2-24158-1480956425-1.jpg",
+                  "size": "standard"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/5/11/campaign_images/buzzfeed-prod-fastlane03/choker-trend-is-suffocating-2-24158-1480956425-1_small.jpg",
+                  "size": "small"
+                }
+              ]
+            }
+          ],
+          "authors": [
+            {
+              "username": "tanyachen",
+              "name": "Tanya Chen",
+              "links": [
+                {
+                  "url": "https://www.facebook.com/tanya.tianyi",
+                  "link_text": "Facebook"
+                }
+              ],
+              "avatars": [
+                {
+                  "sizes": [
+                    {
+                      "url": "https://img.buzzfeed.com/buzzfeed-static/static/user_images/webdr06/2013/9/18/11/tanyachen-11213-1379517818-34_large.jpg",
+                      "size": "small"
+                    }
+                  ]
+                }
+              ],
+              "page": "https://www.buzzfeed.com/tanyachen",
+              "id": "939060"
+            }
+          ],
+          "links": [
+            {
+              "url": "https://www.buzzfeed.com/tanyachen/choker-trend-is-suffocating",
+              "link_text": "BuzzFeed News"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "28071",
+      "name": "BREAKING NEWS",
+      "description": "In The News Today",
+      "type": "package",
+      "treatments": [
+        "bulleted-list",
+        "breaking"
+      ],
+      "category": "",
+      "source_uri": "",
+      "created_at": "2016-12-05T20:58:22Z",
+      "tags": [],
+      "stats": {
+        "impressions": 0
+      },
+      "flags": [],
+      "authors": [],
+      "thumbnails": [
+        {
+          "sizes": [
+            {
+              "url": "http://img.buzzfeed.com/newsappcms-prod/RTSUNEL_f4eb1f1.jpg",
+              "size": "big"
+            }
+          ]
+        }
+      ],
+      "items": [
+        {
+          "id": "4411527",
+          "name": "At least 36 people have died in Friday's fire at a warehouse party in Oakland. Officials say they are no where close to finding a cause.",
+          "description": "Officials are continuing to recover bodies from inside the Oakland warehouse, which had been hosting a party on Friday night when the blaze broke out.",
+          "description_markdown": "Officials are continuing to recover bodies from inside the Oakland warehouse,\nwhich had been hosting a party on Friday night when the blaze broke out.",
+          "type": "post",
+          "treatments": [],
+          "category": "USNews",
+          "source_uri": "https://www.buzzfeed.com/davidmack/oakland-fire",
+          "created_at": "2016-12-03T15:12:15Z",
+          "updated_at": "2016-12-05T14:18:38Z",
+          "tags": [
+            "--has-additional-byline",
+            "--no-newsletter-signup",
+            "--primarykeyword-fire",
+            "--sensitive",
+            "--updated-1480947518",
+            "california",
+            "oakland"
+          ],
+          "badges": [],
+          "comments_enabled": false,
+          "flags": [
+            "raw",
+            "brand_safe",
+            "sensitive",
+            "mobile_safe"
+          ],
+          "thumbnails": [
+            {
+              "sizes": [
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/5/11/campaign_images/buzzfeed-prod-fastlane03/death-toll-from-california-warehouse-party-fire-r-2-15815-1480955271-0_dblwide.jpg",
+                  "size": "dblwide"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/5/11/campaign_images/buzzfeed-prod-fastlane03/death-toll-from-california-warehouse-party-fire-r-2-15815-1480955271-0_wide.jpg",
+                  "size": "wide"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/5/11/campaign_images/buzzfeed-prod-fastlane03/death-toll-from-california-warehouse-party-fire-r-2-15815-1480955271-0_big.jpg",
+                  "size": "big"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/5/11/campaign_images/buzzfeed-prod-fastlane03/death-toll-from-california-warehouse-party-fire-r-2-15815-1480955271-0_dblbig.jpg",
+                  "size": "dblbig"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/5/11/campaign_images/buzzfeed-prod-fastlane03/death-toll-from-california-warehouse-party-fire-r-2-15815-1480955271-0.jpg",
+                  "size": "standard"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/5/11/campaign_images/buzzfeed-prod-fastlane03/death-toll-from-california-warehouse-party-fire-r-2-15815-1480955271-0_small.jpg",
+                  "size": "small"
+                }
+              ]
+            }
+          ],
+          "authors": [
+            {
+              "username": "davidmack",
+              "name": "David Mack",
+              "links": [
+                {
+                  "url": "https://www.facebook.com/davidmackau",
+                  "link_text": "Facebook"
+                }
+              ],
+              "avatars": [
+                {
+                  "sizes": [
+                    {
+                      "url": "https://img.buzzfeed.com/buzzfeed-static/static/2015-03/14/18/user_images/webdr14/davidmack-v2-29496-1426371108-32_large.jpg",
+                      "size": "small"
+                    }
+                  ]
+                }
+              ],
+              "page": "https://www.buzzfeed.com/davidmack",
+              "id": "2170674"
+            },
+            {
+              "username": "tamerragriffin",
+              "id": "2170678",
+              "page": "https://www.buzzfeed.com/tamerragriffin",
+              "name": "Tamerra Griffin",
+              "avatars": [
+                {
+                  "sizes": [
+                    {
+                      "url": "https://img.buzzfeed.com/buzzfeed-static/static/2015-02/20/17/user_images/webdr12/tamerragriffin-v2-2660-1424472987-1_large.jpg",
+                      "size": "small"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "username": "salvadorhernandez",
+              "id": "2633715",
+              "page": "https://www.buzzfeed.com/salvadorhernandez",
+              "name": "Salvador Hernandez",
+              "avatars": [
+                {
+                  "sizes": [
+                    {
+                      "url": "https://img.buzzfeed.com/buzzfeed-static/static/2015-02/10/17/user_images/webdr12/salvadorhernandez-349-1423607813-0_large.jpg",
+                      "size": "small"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "username": "adolfoflores",
+              "name": "Adolfo Flores",
+              "links": [
+                {
+                  "url": "https://www.facebook.com/adolfof3",
+                  "link_text": "Facebook"
+                }
+              ],
+              "avatars": [
+                {
+                  "sizes": [
+                    {
+                      "url": "https://img.buzzfeed.com/buzzfeed-static/static/2014-11/18/15/user_images/webdr03/adolfoflores-4275-1416342113-18_large.jpg",
+                      "size": "small"
+                    }
+                  ]
+                }
+              ],
+              "page": "https://www.buzzfeed.com/adolfoflores",
+              "id": "1614116"
+            }
+          ],
+          "links": [
+            {
+              "url": "https://www.buzzfeed.com/davidmack/oakland-fire",
+              "link_text": "BuzzFeed News"
+            }
+          ]
+        },
+        {
+          "id": "4409749",
+          "name": "A judge has declared a mistrial in the case of a South Carolina officer who fatally shot Walter Scott, an unarmed black man, in 2015.",
+          "description": "Michael Slager was charged with murder and manslaughter in the killing of Scott in 2015.",
+          "description_markdown": "Michael Slager was charged with murder and manslaughter in the killing of\nScott in 2015.",
+          "type": "post",
+          "treatments": [],
+          "category": "USNews",
+          "source_uri": "https://www.buzzfeed.com/maryanngeorgantopoulos/michael-slager-mistrial-walter-scott-shooting",
+          "created_at": "2016-12-05T20:48:27Z",
+          "tags": [
+            "--has-additional-byline",
+            "--heatmap",
+            "--primarykeyword-walter scott",
+            "michael slager",
+            "michael slager verdict",
+            "north charleston police officer",
+            "police involved shooting",
+            "slager jury",
+            "slager verdict",
+            "walter scott verdict"
+          ],
+          "badges": [],
+          "comments_enabled": false,
+          "flags": [
+            "raw",
+            "brand_safe",
+            "comments_enabled",
+            "mobile_safe"
+          ],
+          "thumbnails": [
+            {
+              "sizes": [
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/5/16/campaign_images/buzzfeed-prod-fastlane02/mistrial-declared-in-the-case-of-a-former-cop-who-2-7392-1480971728-10_dblwide.jpg",
+                  "size": "dblwide"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/5/16/campaign_images/buzzfeed-prod-fastlane02/mistrial-declared-in-the-case-of-a-former-cop-who-2-7392-1480971728-10_wide.jpg",
+                  "size": "wide"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/5/16/campaign_images/buzzfeed-prod-fastlane02/mistrial-declared-in-the-case-of-a-former-cop-who-2-7392-1480971728-10_big.jpg",
+                  "size": "big"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/5/16/campaign_images/buzzfeed-prod-fastlane02/mistrial-declared-in-the-case-of-a-former-cop-who-2-7392-1480971728-10_dblbig.jpg",
+                  "size": "dblbig"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/5/16/campaign_images/buzzfeed-prod-fastlane02/mistrial-declared-in-the-case-of-a-former-cop-who-2-7392-1480971728-10.jpg",
+                  "size": "standard"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/5/16/campaign_images/buzzfeed-prod-fastlane02/mistrial-declared-in-the-case-of-a-former-cop-who-2-7392-1480971728-10_small.jpg",
+                  "size": "small"
+                }
+              ]
+            }
+          ],
+          "authors": [
+            {
+              "username": "maryanngeorgantopoulos",
+              "name": "Mary Ann Georgantopoulos",
+              "links": [
+                {
+                  "url": "https://www.facebook.com/maryann.georgantopoulos",
+                  "link_text": "Facebook"
+                }
+              ],
+              "avatars": [
+                {
+                  "sizes": [
+                    {
+                      "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-03/24/17/user_images/webdr02/maryanngeorgantopoulos-v2-9246-1458855336-0_large.jpg",
+                      "size": "small"
+                    }
+                  ]
+                }
+              ],
+              "page": "https://www.buzzfeed.com/maryanngeorgantopoulos",
+              "id": "1946840"
+            },
+            {
+              "username": "claudiakoerner",
+              "id": "1610676",
+              "page": "https://www.buzzfeed.com/claudiakoerner",
+              "name": "Claudia Koerner",
+              "avatars": [
+                {
+                  "sizes": [
+                    {
+                      "url": "https://img.buzzfeed.com/buzzfeed-static/static/2014-08/4/11/user_images/webdr02/claudiakoerner-402-1407164516-2_large.jpg",
+                      "size": "small"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "username": "tasneemnashrulla",
+              "id": "780484",
+              "page": "https://www.buzzfeed.com/tasneemnashrulla",
+              "name": "Tasneem Nashrulla",
+              "avatars": [
+                {
+                  "sizes": [
+                    {
+                      "url": "https://img.buzzfeed.com/buzzfeed-static/static/user_images/webdr03/2013/7/9/17/tasneemnashrulla-598-1373406682-4_large.jpg",
+                      "size": "small"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "links": [
+            {
+              "url": "https://www.buzzfeed.com/maryanngeorgantopoulos/michael-slager-mistrial-walter-scott-shooting",
+              "link_text": "BuzzFeed News"
+            }
+          ]
+        },
+        {
+          "id": "4412575",
+          "name": "Amazon is opening a grocery store in Seattle that will allow shoppers to walk in and walk out — without pulling out their wallets 👀🍎",
+          "description": "Enter a store, pick what you want, and walk out. It calls the system, um, \"Just Walk Out.\"",
+          "description_markdown": "Enter a store, pick what you want, and walk out. It calls the system, um,\n\"Just Walk Out.\"",
+          "type": "post",
+          "treatments": [],
+          "category": "Tech",
+          "source_uri": "https://www.buzzfeed.com/pranavdixit/amazon-go",
+          "created_at": "2016-12-05T15:51:30Z",
+          "updated_at": "2016-12-05T16:01:40Z",
+          "tags": [
+            "--heatmap",
+            "--primarykeyword-amazon",
+            "--updated-1480953700",
+            "amazon go",
+            "just walk out",
+            "supermarkets"
+          ],
+          "badges": [],
+          "comments_enabled": false,
+          "flags": [
+            "raw",
+            "brand_safe",
+            "comments_enabled",
+            "mobile_safe"
+          ],
+          "thumbnails": [
+            {
+              "sizes": [
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/5/12/campaign_images/buzzfeed-prod-fastlane03/amazons-new-seattle-store-will-let-people-pay-wit-2-2958-1480958378-0_dblwide.jpg",
+                  "size": "dblwide"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/5/12/campaign_images/buzzfeed-prod-fastlane03/amazons-new-seattle-store-will-let-people-pay-wit-2-2958-1480958378-0_wide.jpg",
+                  "size": "wide"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/5/12/campaign_images/buzzfeed-prod-fastlane03/amazons-new-seattle-store-will-let-people-pay-wit-2-2958-1480958378-0_big.jpg",
+                  "size": "big"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/5/12/campaign_images/buzzfeed-prod-fastlane03/amazons-new-seattle-store-will-let-people-pay-wit-2-2958-1480958378-0_dblbig.jpg",
+                  "size": "dblbig"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/5/12/campaign_images/buzzfeed-prod-fastlane03/amazons-new-seattle-store-will-let-people-pay-wit-2-2958-1480958378-0.jpg",
+                  "size": "standard"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/5/12/campaign_images/buzzfeed-prod-fastlane03/amazons-new-seattle-store-will-let-people-pay-wit-2-2958-1480958378-0_small.jpg",
+                  "size": "small"
+                }
+              ]
+            }
+          ],
+          "authors": [
+            {
+              "username": "pranavdixit",
+              "name": "Pranav Dixit",
+              "links": [
+                {
+                  "url": "https://www.facebook.com/pranavadixit",
+                  "link_text": "Facebook"
+                }
+              ],
+              "avatars": [
+                {
+                  "sizes": [
+                    {
+                      "url": "https://img.buzzfeed.com/buzzfeed-static/static/2015-05/22/12/user_images/webdr04/johnpaczkowski-v2-5483-1432311971-4_large.jpg",
+                      "size": "small"
+                    }
+                  ]
+                }
+              ],
+              "page": "https://www.buzzfeed.com/pranavdixit",
+              "id": "3138089"
+            }
+          ],
+          "links": [
+            {
+              "url": "https://www.buzzfeed.com/pranavdixit/amazon-go",
+              "link_text": "BuzzFeed News"
+            }
+          ]
+        },
+        {
+          "id": "4412601",
+          "name": "People are cringing (and laughing) at this Forever 21 necklace they think is taking the choker trend too far 😬",
+          "description": "\"Y'all taking this choker fad too far.\"",
+          "description_markdown": "\"Y'all taking this choker fad too far.\"",
+          "type": "post",
+          "treatments": [
+            "trending"
+          ],
+          "category": "USNews",
+          "source_uri": "https://www.buzzfeed.com/tanyachen/choker-trend-is-suffocating",
+          "created_at": "2016-12-05T16:51:15Z",
+          "tags": [
+            "--force-image-width-625",
+            "--heatmap",
+            "--primarykeyword-choker-or-neck-brace",
+            "--trending",
+            "choker",
+            "forever 21",
+            "lol",
+            "rerere",
+            "social news",
+            "too far",
+            "trend"
+          ],
+          "badges": [],
+          "comments_enabled": false,
+          "flags": [
+            "raw",
+            "brand_safe",
+            "comments_enabled",
+            "mobile_safe"
+          ],
+          "thumbnails": [
+            {
+              "sizes": [
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/5/11/campaign_images/buzzfeed-prod-fastlane03/choker-trend-is-suffocating-2-24158-1480956425-1_dblwide.jpg",
+                  "size": "dblwide"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/5/11/campaign_images/buzzfeed-prod-fastlane03/choker-trend-is-suffocating-2-24158-1480956425-1_wide.jpg",
+                  "size": "wide"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/5/11/campaign_images/buzzfeed-prod-fastlane03/choker-trend-is-suffocating-2-24158-1480956425-1_big.jpg",
+                  "size": "big"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/5/11/campaign_images/buzzfeed-prod-fastlane03/choker-trend-is-suffocating-2-24158-1480956425-1_dblbig.jpg",
+                  "size": "dblbig"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/5/11/campaign_images/buzzfeed-prod-fastlane03/choker-trend-is-suffocating-2-24158-1480956425-1.jpg",
+                  "size": "standard"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-12/5/11/campaign_images/buzzfeed-prod-fastlane03/choker-trend-is-suffocating-2-24158-1480956425-1_small.jpg",
+                  "size": "small"
+                }
+              ]
+            }
+          ],
+          "authors": [
+            {
+              "username": "tanyachen",
+              "name": "Tanya Chen",
+              "links": [
+                {
+                  "url": "https://www.facebook.com/tanya.tianyi",
+                  "link_text": "Facebook"
+                }
+              ],
+              "avatars": [
+                {
+                  "sizes": [
+                    {
+                      "url": "https://img.buzzfeed.com/buzzfeed-static/static/user_images/webdr06/2013/9/18/11/tanyachen-11213-1379517818-34_large.jpg",
+                      "size": "small"
+                    }
+                  ]
+                }
+              ],
+              "page": "https://www.buzzfeed.com/tanyachen",
+              "id": "939060"
+            }
+          ],
+          "links": [
+            {
+              "url": "https://www.buzzfeed.com/tanyachen/choker-trend-is-suffocating",
+              "link_text": "BuzzFeed News"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "4433834",
+      "name": "Breaking test!!! I'm With Him",
+      "description": "Trump Trusts Wikileaks’s Assange Over US Intelligence Agencies",
+      "description_markdown": "Trump Trusts Wikileaks’s Assange Over US Intelligence Agencies",
+      "type": "post",
+      "treatments": [
+        "breaking"
+      ],
+      "category": "Politics",
+      "source_uri": "https://www.buzzfeed.com/tamerragriffin/trump-trusts-wikileakss-assange-over-us-intelligence-agencie",
+      "created_at": "2017-01-04T13:25:18Z",
+      "updated_at": "2017-01-04T13:57:22Z",
+      "tags": [
+        "--primarykeyword-Julian Assange",
+        "--updated-1483538242",
+        "Fox",
+        "Hannity",
+        "Wikileaks",
+        "featured"
+      ],
+      "badges": [],
+      "comments_enabled": false,
+      "stats": {
+        "impressions": 1030
+      },
+      "flags": [
+        "raw",
+        "brand_safe",
+        "mobile_safe",
+        "comments_enabled"
+      ],
+      "thumbnails": [
+        {
+          "sizes": [
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-static/static/2017-01/4/8/campaign_images/buzzfeed-prod-fastlane-01/trump-trusts-wikileakss-assange-over-us-intellige-2-14329-1483538244-5_dblwide.jpg",
+              "size": "dblwide"
+            },
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-static/static/2017-01/4/8/campaign_images/buzzfeed-prod-fastlane-01/trump-trusts-wikileakss-assange-over-us-intellige-2-14329-1483538244-5_wide.jpg",
+              "size": "wide"
+            },
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-static/static/2017-01/4/8/campaign_images/buzzfeed-prod-fastlane-01/trump-trusts-wikileakss-assange-over-us-intellige-2-14329-1483538244-5_big.jpg",
+              "size": "big"
+            },
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-static/static/2017-01/4/8/campaign_images/buzzfeed-prod-fastlane-01/trump-trusts-wikileakss-assange-over-us-intellige-2-14329-1483538244-5_dblbig.jpg",
+              "size": "dblbig"
+            },
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-static/static/2017-01/4/8/campaign_images/buzzfeed-prod-fastlane-01/trump-trusts-wikileakss-assange-over-us-intellige-2-14329-1483538244-5.jpg",
+              "size": "standard"
+            },
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-static/static/2017-01/4/8/campaign_images/buzzfeed-prod-fastlane-01/trump-trusts-wikileakss-assange-over-us-intellige-2-14329-1483538244-5_small.jpg",
+              "size": "small"
+            }
+          ]
+        }
+      ],
+      "authors": [
+        {
+          "username": "tamerragriffin",
+          "page": "https://www.buzzfeed.com/tamerragriffin",
+          "avatars": [
+            {
+              "sizes": [
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2015-02/20/17/user_images/webdr12/tamerragriffin-v2-2660-1424472987-1_large.jpg",
+                  "size": "small"
+                }
+              ]
+            }
+          ],
+          "name": "Tamerra Griffin",
+          "id": "2170678"
+        }
+      ]
+    },
+    {
+      "id": "4433755",
+      "name": "This Teen's Brother Turned Up To Meet Their",
+      "description": "Uncle goals.",
+      "description_markdown": "Uncle goals.",
+      "type": "post",
+      "treatments": [
+        "trending"
+      ],
+      "category": "UK",
+      "source_uri": "https://www.buzzfeed.com/matthewchampion/uncle-of-the-year",
+      "created_at": "2017-01-04T13:43:58Z",
+      "tags": [
+        "--heatmap",
+        "--primarykeyword-social",
+        "--trending",
+        "social"
+      ],
+      "badges": [],
+      "comments_enabled": true,
+      "flags": [
+        "brand_safe",
+        "raw",
+        "comments_enabled",
+        "mobile_safe",
+        "reactions_enabled"
+      ],
+      "thumbnails": [
+        {
+          "sizes": [
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-static/static/2017-01/4/10/campaign_images/buzzfeed-prod-fastlane-02/this-teens-brother-turned-up-to-meet-their-newbor-2-20797-1483542965-3_dblwide.jpg",
+              "size": "dblwide"
+            },
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-static/static/2017-01/4/10/campaign_images/buzzfeed-prod-fastlane-02/this-teens-brother-turned-up-to-meet-their-newbor-2-20797-1483542965-3_wide.jpg",
+              "size": "wide"
+            },
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-static/static/2017-01/4/10/campaign_images/buzzfeed-prod-fastlane-02/this-teens-brother-turned-up-to-meet-their-newbor-2-20797-1483542965-3_big.jpg",
+              "size": "big"
+            },
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-static/static/2017-01/4/10/campaign_images/buzzfeed-prod-fastlane-02/this-teens-brother-turned-up-to-meet-their-newbor-2-20797-1483542965-3_dblbig.jpg",
+              "size": "dblbig"
+            },
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-static/static/2017-01/4/10/campaign_images/buzzfeed-prod-fastlane-02/this-teens-brother-turned-up-to-meet-their-newbor-2-20797-1483542965-3.jpg",
+              "size": "standard"
+            },
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-static/static/2017-01/4/10/campaign_images/buzzfeed-prod-fastlane-02/this-teens-brother-turned-up-to-meet-their-newbor-2-20797-1483542965-3_small.jpg",
+              "size": "small"
+            }
+          ]
+        }
+      ],
+      "authors": [
+        {
+          "username": "matthewchampion",
+          "page": "https://www.buzzfeed.com/matthewchampion",
+          "avatars": [
+            {
+              "sizes": [
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2015-12/17/10/user_images/webdr15/matthewchampion-v2-21134-1450365260-0_large.jpg",
+                  "size": "small"
+                }
+              ]
+            }
+          ],
+          "name": "Matthew Champion",
+          "id": "4092667"
+        }
+      ]
+    },
+    {
+      "id": "4426621",
+      "name": "25 Inexpensive Ways To Organize Your Books",
+      "description": "Where to put all those books you were just gifted.",
+      "description_markdown": "Where to put all those books you were just gifted.",
+      "type": "post",
+      "treatments": [],
+      "category": "DIY",
+      "source_uri": "https://www.buzzfeed.com/elizabethlilly/cheap-ways-to-organize-your-books",
+      "created_at": "2017-01-04T15:01:03Z",
+      "tags": [
+        "--force-image-width-625",
+        "--heatmap",
+        "--primarykeyword-comtent",
+        "book storage",
+        "books",
+        "market"
+      ],
+      "badges": [],
+      "comments_enabled": true,
+      "flags": [
+        "brand_safe",
+        "raw",
+        "comments_enabled",
+        "mobile_safe",
+        "reactions_enabled"
+      ],
+      "thumbnails": [
+        {
+          "sizes": [
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-static/static/2017-01/4/1/campaign_images/buzzfeed-prod-web-02/25-inexpensive-ways-to-organize-your-books-2-3879-1483511811-4_dblwide.jpg",
+              "size": "dblwide"
+            },
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-static/static/2017-01/4/1/campaign_images/buzzfeed-prod-web-02/25-inexpensive-ways-to-organize-your-books-2-3879-1483511811-4_wide.jpg",
+              "size": "wide"
+            },
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-static/static/2017-01/4/1/campaign_images/buzzfeed-prod-web-02/25-inexpensive-ways-to-organize-your-books-2-3879-1483511811-4_big.jpg",
+              "size": "big"
+            },
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-static/static/2017-01/4/1/campaign_images/buzzfeed-prod-web-02/25-inexpensive-ways-to-organize-your-books-2-3879-1483511811-4_dblbig.jpg",
+              "size": "dblbig"
+            },
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-static/static/2017-01/4/1/campaign_images/buzzfeed-prod-web-02/25-inexpensive-ways-to-organize-your-books-2-3879-1483511811-4.jpg",
+              "size": "standard"
+            },
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-static/static/2017-01/4/1/campaign_images/buzzfeed-prod-web-02/25-inexpensive-ways-to-organize-your-books-2-3879-1483511811-4_small.jpg",
+              "size": "small"
+            }
+          ]
+        }
+      ],
+      "authors": [
+        {
+          "username": "elizabethlilly",
+          "page": "https://www.buzzfeed.com/elizabethlilly",
+          "avatars": [
+            {
+              "sizes": [
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2014-04/user_images/webdr04/12/12/elizabethlilly-24623-1397318897-13_large.jpg",
+                  "size": "small"
+                }
+              ]
+            }
+          ],
+          "name": "Elizabeth Lilly",
+          "id": "1412923"
+        }
+      ]
+    },
+    {
+      "id": "4433755",
+      "name": "This Teen's Brother Turned Up To Meet ",
+      "description": "Uncle goals.",
+      "description_markdown": "Uncle goals.",
+      "type": "post",
+      "treatments": [
+        "trending"
+      ],
+      "category": "UK",
+      "source_uri": "https://www.buzzfeed.com/matthewchampion/uncle-of-the-year",
+      "created_at": "2017-01-04T13:43:58Z",
+      "tags": [
+        "--heatmap",
+        "--primarykeyword-social",
+        "--trending",
+        "social"
+      ],
+      "badges": [],
+      "comments_enabled": true,
+      "flags": [
+        "brand_safe",
+        "raw",
+        "comments_enabled",
+        "mobile_safe",
+        "reactions_enabled"
+      ],
+      "thumbnails": [
+        {
+          "sizes": [
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-static/static/2017-01/4/10/campaign_images/buzzfeed-prod-fastlane-02/this-teens-brother-turned-up-to-meet-their-newbor-2-20797-1483542965-3_dblwide.jpg",
+              "size": "dblwide"
+            },
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-static/static/2017-01/4/10/campaign_images/buzzfeed-prod-fastlane-02/this-teens-brother-turned-up-to-meet-their-newbor-2-20797-1483542965-3_wide.jpg",
+              "size": "wide"
+            },
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-static/static/2017-01/4/10/campaign_images/buzzfeed-prod-fastlane-02/this-teens-brother-turned-up-to-meet-their-newbor-2-20797-1483542965-3_big.jpg",
+              "size": "big"
+            },
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-static/static/2017-01/4/10/campaign_images/buzzfeed-prod-fastlane-02/this-teens-brother-turned-up-to-meet-their-newbor-2-20797-1483542965-3_dblbig.jpg",
+              "size": "dblbig"
+            },
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-static/static/2017-01/4/10/campaign_images/buzzfeed-prod-fastlane-02/this-teens-brother-turned-up-to-meet-their-newbor-2-20797-1483542965-3.jpg",
+              "size": "standard"
+            },
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-static/static/2017-01/4/10/campaign_images/buzzfeed-prod-fastlane-02/this-teens-brother-turned-up-to-meet-their-newbor-2-20797-1483542965-3_small.jpg",
+              "size": "small"
+            }
+          ]
+        }
+      ],
+      "authors": [
+        {
+          "username": "matthewchampion",
+          "page": "https://www.buzzfeed.com/matthewchampion",
+          "avatars": [
+            {
+              "sizes": [
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2015-12/17/10/user_images/webdr15/matthewchampion-v2-21134-1450365260-0_large.jpg",
+                  "size": "small"
+                }
+              ]
+            }
+          ],
+          "name": "Matthew Champion",
+          "id": "4092667"
+        }
+      ]
+    },
+    {
+      "id": "4433756",
+      "name": "This Teen's Brother Turned Up To Meet Their Newborn Niece In A Suit \"Because First Impressions Matter\"",
+      "description": "Uncle goals.",
+      "description_markdown": "Uncle goals.",
+      "type": "post",
+      "treatments": [
+        "trending"
+      ],
+      "category": "UK",
+      "source_uri": "https://www.buzzfeed.com/matthewchampion/uncle-of-the-year",
+      "created_at": "2017-01-04T13:43:58Z",
+      "tags": [
+        "--heatmap",
+        "--primarykeyword-social",
+        "--trending",
+        "social"
+      ],
+      "badges": [],
+      "comments_enabled": true,
+      "flags": [
+        "brand_safe",
+        "raw",
+        "comments_enabled",
+        "mobile_safe",
+        "reactions_enabled"
+      ],
+      "thumbnails": [
+        {
+          "sizes": [
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-static/static/2017-01/4/10/campaign_images/buzzfeed-prod-fastlane-02/this-teens-brother-turned-up-to-meet-their-newbor-2-20797-1483542965-3_dblwide.jpg",
+              "size": "dblwide"
+            },
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-static/static/2017-01/4/10/campaign_images/buzzfeed-prod-fastlane-02/this-teens-brother-turned-up-to-meet-their-newbor-2-20797-1483542965-3_wide.jpg",
+              "size": "wide"
+            },
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-static/static/2017-01/4/10/campaign_images/buzzfeed-prod-fastlane-02/this-teens-brother-turned-up-to-meet-their-newbor-2-20797-1483542965-3_big.jpg",
+              "size": "big"
+            },
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-static/static/2017-01/4/10/campaign_images/buzzfeed-prod-fastlane-02/this-teens-brother-turned-up-to-meet-their-newbor-2-20797-1483542965-3_dblbig.jpg",
+              "size": "dblbig"
+            },
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-static/static/2017-01/4/10/campaign_images/buzzfeed-prod-fastlane-02/this-teens-brother-turned-up-to-meet-their-newbor-2-20797-1483542965-3.jpg",
+              "size": "standard"
+            },
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-static/static/2017-01/4/10/campaign_images/buzzfeed-prod-fastlane-02/this-teens-brother-turned-up-to-meet-their-newbor-2-20797-1483542965-3_small.jpg",
+              "size": "small"
+            }
+          ]
+        }
+      ],
+      "authors": [
+        {
+          "username": "matthewchampion",
+          "page": "https://www.buzzfeed.com/matthewchampion",
+          "avatars": [
+            {
+              "sizes": [
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2015-12/17/10/user_images/webdr15/matthewchampion-v2-21134-1450365260-0_large.jpg",
+                  "size": "small"
+                }
+              ]
+            }
+          ],
+          "name": "Matthew Champion",
+          "id": "4092667"
+        }
+      ]
+    },
+    {
+      "id": "4433757",
+      "name": "This Teen's Brother Turned Up To Meet Their Newborn Niece In A Suit \"Because First Impressions Matter\"",
+      "description": "Uncle goals.",
+      "description_markdown": "Uncle goals.",
+      "type": "post",
+      "treatments": [
+        "trending"
+      ],
+      "category": "UK",
+      "source_uri": "https://www.buzzfeed.com/matthewchampion/uncle-of-the-year",
+      "created_at": "2017-01-04T13:43:58Z",
+      "tags": [
+        "--heatmap",
+        "--primarykeyword-social",
+        "--trending",
+        "social"
+      ],
+      "badges": [],
+      "comments_enabled": true,
+      "flags": [
+        "brand_safe",
+        "raw",
+        "comments_enabled",
+        "mobile_safe",
+        "reactions_enabled"
+      ],
+      "thumbnails": [
+        {
+          "sizes": [
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-static/static/2017-01/4/10/campaign_images/buzzfeed-prod-fastlane-02/this-teens-brother-turned-up-to-meet-their-newbor-2-20797-1483542965-3_dblwide.jpg",
+              "size": "dblwide"
+            },
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-static/static/2017-01/4/10/campaign_images/buzzfeed-prod-fastlane-02/this-teens-brother-turned-up-to-meet-their-newbor-2-20797-1483542965-3_wide.jpg",
+              "size": "wide"
+            },
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-static/static/2017-01/4/10/campaign_images/buzzfeed-prod-fastlane-02/this-teens-brother-turned-up-to-meet-their-newbor-2-20797-1483542965-3_big.jpg",
+              "size": "big"
+            },
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-static/static/2017-01/4/10/campaign_images/buzzfeed-prod-fastlane-02/this-teens-brother-turned-up-to-meet-their-newbor-2-20797-1483542965-3_dblbig.jpg",
+              "size": "dblbig"
+            },
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-static/static/2017-01/4/10/campaign_images/buzzfeed-prod-fastlane-02/this-teens-brother-turned-up-to-meet-their-newbor-2-20797-1483542965-3.jpg",
+              "size": "standard"
+            },
+            {
+              "url": "https://img.buzzfeed.com/buzzfeed-static/static/2017-01/4/10/campaign_images/buzzfeed-prod-fastlane-02/this-teens-brother-turned-up-to-meet-their-newbor-2-20797-1483542965-3_small.jpg",
+              "size": "small"
+            }
+          ]
+        }
+      ],
+      "authors": [
+        {
+          "username": "matthewchampion",
+          "page": "https://www.buzzfeed.com/matthewchampion",
+          "avatars": [
+            {
+              "sizes": [
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2015-12/17/10/user_images/webdr15/matthewchampion-v2-21134-1450365260-0_large.jpg",
+                  "size": "small"
+                }
+              ]
+            }
+          ],
+          "name": "Matthew Champion",
+          "id": "4092667"
+        }
+      ]
+    },
+    {
+      "id": "1311805692253467009",
+      "name": "President-Elect Trump",
+      "description": "",
+      "type": "package",
+      "treatments": [],
+      "category": "",
+      "source_uri": "",
+      "created_at": "2017-01-15T14:20:56Z",
+      "updated_at": "2017-01-17T19:38:11Z",
+      "tags": [],
+      "stats": {
+        "impressions": 0
+      },
+      "flags": [],
+      "thumbnails": [],
+      "items": [
+        {
+          "id": "4442242",
+          "name": "Here Are All The Lawmakers Boycotting Trump's Inauguration",
+          "description": "All are Democrats, and many made the decision after President-elect Donald Trump criticized civil rights leader and Georgia representative John Lewis.",
+          "description_markdown": "All are Democrats, and many made the decision after President-elect Donald\nTrump criticized civil rights leader and Georgia representative John Lewis.",
+          "type": "post",
+          "treatments": [],
+          "category": "USNews",
+          "source_uri": "https://www.buzzfeed.com/tomnamako/these-are-the-lawmakers-boycotting-the-inauguration",
+          "created_at": "2017-01-16T20:11:35Z",
+          "updated_at": "2017-01-17T16:26:02Z",
+          "tags": [
+            "--force-image-width-625",
+            "--heatmap",
+            "--updated-1484670362"
+          ],
+          "badges": [],
+          "comments_enabled": false,
+          "stats": {
+            "impressions": 51959
+          },
+          "flags": [
+            "brand_safe",
+            "raw",
+            "comments_enabled",
+            "mobile_safe"
+          ],
+          "thumbnails": [
+            {
+              "sizes": [
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2017-01/17/13/campaign_images/buzzfeed-prod-fastlane-01/here-are-all-the-lawmakers-boycotting-trumps-inau-2-1947-1484677826-13_dblwide.jpg",
+                  "size": "dblwide"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2017-01/17/13/campaign_images/buzzfeed-prod-fastlane-01/here-are-all-the-lawmakers-boycotting-trumps-inau-2-1947-1484677826-13_wide.jpg",
+                  "size": "wide"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2017-01/17/13/campaign_images/buzzfeed-prod-fastlane-01/here-are-all-the-lawmakers-boycotting-trumps-inau-2-1947-1484677826-13_big.jpg",
+                  "size": "big"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2017-01/17/13/campaign_images/buzzfeed-prod-fastlane-01/here-are-all-the-lawmakers-boycotting-trumps-inau-2-1947-1484677826-13_dblbig.jpg",
+                  "size": "dblbig"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2017-01/17/13/campaign_images/buzzfeed-prod-fastlane-01/here-are-all-the-lawmakers-boycotting-trumps-inau-2-1947-1484677826-13.jpg",
+                  "size": "standard"
+                },
+                {
+                  "url": "https://img.buzzfeed.com/buzzfeed-static/static/2017-01/17/13/campaign_images/buzzfeed-prod-fastlane-01/here-are-all-the-lawmakers-boycotting-trumps-inau-2-1947-1484677826-13_small.jpg",
+                  "size": "small"
+                }
+              ]
+            }
+          ],
+          "authors": [
+            {
+              "username": "tomnamako",
+              "id": "2111902",
+              "page": "https://www.buzzfeed.com/tomnamako",
+              "name": "Tom Namako",
+              "avatars": [
+                {
+                  "sizes": [
+                    {
+                      "url": "https://img.buzzfeed.com/buzzfeed-static/static/2016-11/6/12/user_images/buzzfeed-prod-web01/tomnamako-v2-15585-1478453502-0_large.jpg",
+                      "size": "small"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "data_source": "curated_feed_api"
+    },
+    {
+      "id": "3920",
+      "name": "WOOOOOOOOOWWWWWWW WHATTTTTTTT A LONNNNNNNG TITLEEEEEEEEEEEEEEEE, LONGEST TITLE EVER!!!!!",
+      "type": "video",
+      "created_at": "2016-03-21T20:19:22Z",
+      "updated_at": "2016-07-25T21:36:31Z",
+      "treatments": [],
+      "videos": [
+        {
+          "duration": 71402,
+          "aspect_ratio": "9:16",
+          "cover_image_url": "https://videoapp-assets-ak.buzzfeed.com/prod/video_thumbnails/3745a328e9454a5890dd0c8099c6783a.PNG",
+          "encodings": [
+            {
+              "url": "https://video-cdn.buzzfeed.com/2331/high_1458591483.m3u8",
+              "width": 1080,
+              "encoding": "hls",
+              "height": 1920
+            },
+            {
+              "url": "https://video-cdn.buzzfeed.com/2331/mp4_720x1280/1458591483",
+              "width": 720,
+              "encoding": "h264",
+              "height": 1280
+            },
+            {
+              "url": "https://video-cdn.buzzfeed.com/2331/mp4_480x640/1458591483",
+              "width": 480,
+              "encoding": "h264",
+              "height": 640
+            },
+            {
+              "url": "https://video-cdn.buzzfeed.com/2331/mp4_240x320/1458591483",
+              "width": 240,
+              "encoding": "h264",
+              "height": 320
+            }
+          ]
+        }
+      ],
+      "thumbnails": [
+        {
+          "sizes": [
+            {
+              "url": "https://videoapp-assets-ak.buzzfeed.com/prod/video_thumbnails/055017d525054086a9ea5977bd08326a.JPEG",
+              "size": "standard"
+            }
+          ]
+        }
+      ],
+      "links": [],
+      "source_uri": "https://mrsdev78:wilkie@stage.buzzfeed.com/aliciamelvillesmith/nightclub-shooting-orlando-florida",
+      "authors": [
+        {
+          "username": "allison.bagg"
+        }
+      ],
+      "_embedded": {
+        "shows": [
+          {
+            "id": "instagram",
+            "name": "LOL IDK?",
+            "description": "Quizzes, challenges, questions, and games!",
+            "_links": {
+              "self": {
+                "href": "https://weaver-api-stage.buzzfeed.com/v1/feeds/shows-instagram"
+              }
+            },
+            "thumbnail_url": "https://videoapp-assets-ak.buzzfeed.com/prod/show/avatars/97e61479d9544e57b54f3645aff5c248.jpeg",
+            "background_image_url": "https://videoapp-assets-ak.buzzfeed.com/prod/show/avatars/a26f994c7ff04531882afb63799e288c.jpeg"
+          }
+        ]
+      }
+    }
+  ]
+}

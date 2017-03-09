@@ -150,6 +150,10 @@ body.hold-transition .main-header .logo {
   padding-left: 15px;
   padding-right: 15px;
 }
+
+.ver-informe{
+ margin-right: 6px;
+}
 /* H1 - H6 font */
 h1,
 h2,

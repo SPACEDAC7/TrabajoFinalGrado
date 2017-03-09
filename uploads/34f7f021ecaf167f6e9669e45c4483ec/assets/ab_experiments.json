@@ -1,0 +1,75 @@
+{
+  "experiments": [
+    {
+      "name": "Article_Thumb_4_56",
+      "variants": [
+        "Control",
+        "No_Thumb"
+      ]
+    },
+    {
+      "name": "android_experiment_test_4_55",
+      "variants": [
+        "control",
+        "turn_on"
+      ]
+    },
+    {
+      "name": "Share_Bar_4_56",
+      "variants": [
+        "Control",
+        "Solid_Buttons",
+        "Flat_Buttons"
+      ]
+    },
+    {
+      "name": "video_ads_turn_on_182",
+      "variants": [
+        "control",
+        "turn_on"
+      ]
+    },
+    {
+      "name": "FAB_Share_4_55",
+      "variants": [
+        "Control",
+        "Labeled"
+      ]
+    },
+    {
+      "name": "Grid_Height_ANDROID",
+      "variants": [
+        "Control",
+        "Smaller"
+      ]
+    },
+    {
+      "name": "News_Package_ANDROID_4_58",
+      "variants": [
+        "Control",
+        "Package"
+      ]
+    },
+    {
+      "name": "spicy_native_bpage_ads_4716",
+      "variants": [
+        "control",
+        "turn_on"
+      ]
+    },
+    {
+      "name" : "Splash_ANDROID_4_57",
+      "variants" : [
+        "Control",
+        "Splash"
+      ]
+    },
+    {
+      "name": "Show_Subscriptions_ANDROID",
+      "variants": [
+        "Control",
+        "Subs"
+      ]
+    }
+  ]
+}

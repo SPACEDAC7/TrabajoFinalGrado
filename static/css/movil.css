@@ -189,6 +189,10 @@ body {
   cursor:default;
 }
 
+#sombreado{
+  box-shadow: 2px 2px 5px #999;
+}
+
 #analizando div {
   position:absolute;
   width:40px;
@@ -197,7 +201,10 @@ body {
   font-size: 1.7em;
   font-family:Helvetica, Arial, sans-serif;
   -webkit-animation:move 2.5s linear infinite;
+  animation-duration: 3s;
+  animation-name: move;
   -webkit-transform:rotate(180deg);
+  transform:rotate(180deg);
   color:#036CA9;
 }
 

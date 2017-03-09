@@ -1,0 +1,22 @@
+.class public interface abstract Lcom/buzzfeed/toolkit/util/GetRedirectTask$RedirectListener;
+.super Ljava/lang/Object;
+.source "GetRedirectTask.java"
+
+
+# annotations
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lcom/buzzfeed/toolkit/util/GetRedirectTask;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x609
+    name = "RedirectListener"
+.end annotation
+
+
+# virtual methods
+.method public abstract onRedirect(Ljava/lang/String;)V
+.end method
+
+.method public abstract onRedirectNotFound()V
+.end method

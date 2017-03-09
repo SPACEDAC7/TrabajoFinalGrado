@@ -13,41 +13,34 @@
 	<p>Please login to see this page.</p>
 	{% endif %}
 {% endif %}
-
-<form method="post" action="/accounts/registrar/">
+<div style="margin-top: 60px;margin-left:25%;margin-right:25%;">
+<form class="form-horizontal" method="post" action="/registrar/">
 {% csrf_token %}
-<table>
-<tr>
-	<td><label>Username:</label></td>
-	<td><input id="username" type="text" name="username"></td>
-</tr>
-<tr>
-	<td><label>Password:</label></td>
-	<td><input id="password" type="password" name="password"></td>
-</tr>
-<tr>
-	<td><label>Email:</label></td>
-	<td><input id="email" type="text" name="email"></td>
-</tr>
-<tr>
-	<td><label>First name:</label></td>
-	<td><input id="first_name" type="text" name="first_name"></td>
-</tr>
-<tr>
-	<td><label>Last name:</label></td>
-	<td><input id="last_name" type="text" name="last_name"></td>
-</tr>
+<div class="form-group">
+	<input class="form-control sombreado" id="username" type="text" name="username" placeholder="Username">
+</div>
+<div class="form-group">
+	<input  class="form-control sombreado" id="password" type="password" name="password" placeholder="Pasword">
+</div>
+<div class="form-group">
+	<input  class="form-control sombreado" id="email" type="text" name="email" placeholder="Email">
+</div>
+<div class="form-group">
+	<input class="form-control sombreado" id="first_name" type="text" name="first_name" placeholder="First Name">
+</div>
+<div class="form-group">
+	<input  class="form-control sombreado" id="last_name" type="text" name="last_name" placeholder="Last Name">
+</div>
 
-</table>
 
-<input type="submit" value="Register" />
+<input class="btn btn-default" type="submit" value="Register" />
 <input type="hidden" name="next" value="{{ next }}" />
 </form>
 
-<form method="post" action="/accounts/login/">
+<form class="form-horizontal" method="post" action="/login/">
 {% csrf_token%}
 <h5>If you are register, log in your account.</h5>
-<input type="submit" value="Login" />
+<input class="btn btn-primary" type="submit" value="Login" />
 </form>
-
+</div>
 {% endblock %}

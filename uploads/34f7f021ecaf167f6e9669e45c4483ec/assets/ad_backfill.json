@@ -1,0 +1,390 @@
+{
+   "ad_backfill":[
+      {
+         "userid":"162354",
+         "form":"super",
+         "oid":"7DIL0B7",
+         "category_name":"Culture",
+         "badges":[
+            "yasss",
+            "viral",
+            "lol"
+         ],
+         "impressions":"8079235",
+         "track_uri":"/track/me/please/,/some/day/",
+         "id":"3243142",
+         "comments_count":0,
+         "thumbnail":"http://img.buzzfeed.com/buzzfeed-static/static/2014-09/4/18/campaign_images/webdr04/m-21-problems-all-sarcastic-people-will-understand-2-26138-1409871418-6.jpg",
+         "blurb":"Yeah, good one.",
+         "images":{
+            "small":"http://img.buzzfeed.com/buzzfeed-static/static/2014-09/4/18/campaign_images/webdr04/21-problems-all-sarcastic-people-will-understand-2-26138-1409871418-6_small.jpg",
+            "standard":"http://img.buzzfeed.com/buzzfeed-static/static/2014-09/4/18/campaign_images/webdr04/21-problems-all-sarcastic-people-will-understand-2-26138-1409871418-6.jpg",
+            "big":"http://img.buzzfeed.com/buzzfeed-static/static/2014-09/4/18/campaign_images/webdr04/21-problems-all-sarcastic-people-will-understand-2-26138-1409871418-6_big.jpg",
+            "wide":"http://img.buzzfeed.com/buzzfeed-static/static/2014-09/4/18/campaign_images/webdr04/21-problems-all-sarcastic-people-will-understand-2-26138-1409871418-6_wide.jpg",
+            "dblbig":"http://img.buzzfeed.com/buzzfeed-static/static/2014-09/4/18/campaign_images/webdr04/21-problems-all-sarcastic-people-will-understand-2-26138-1409871418-6_dblbig.jpg",
+            "dblwide":"http://img.buzzfeed.com/buzzfeed-static/static/2014-09/4/18/campaign_images/webdr04/21-problems-all-sarcastic-people-will-understand-2-26138-1409871418-6_dblwide.jpg"
+         },
+         "ouserid":"7OCY77",
+         "flags":"raw-1_nsfw-0_ad-0_partner-0_editor-1_user-0_trigger-0",
+         "last_updated_unix":"1466797605",
+         "allow_contributions":1,
+         "name":"21 Problems All Sarcastic People Will Understand",
+         "uri":"/erinlarosa/problems-all-sarcastic-people-will-understand",
+         "published_unix":"1399937857",
+         "viral":0,
+         "header":{
+            "blurb":"<b>Yeah, <i>good one</i>.</b>",
+            "name":"21 Problems All Sarcastic People Will Understand",
+            "users":[
+               {
+                  "user_page":"/erinlarosa",
+                  "byline_desc":"BuzzFeed Staff",
+                  "user_id":"162354",
+                  "display_name":"Erin La Rosa",
+                  "username":"erinlarosa",
+                  "byline_description_id":"2",
+                  "user_image":"https://webappstatic.buzzfeed.com/static/user_images/web04/2011/5/31/16/erinlarosa-27337-1306872651-83.jpg"
+               }
+            ]
+         },
+         "html_blurb":"<b><big>21 Problems All Sarcastic People Will Understand</big></b><br/><b>Yeah, <i>good one</i>.</b><br/><table><tr><td width='30' padding='0 0'><img src='http://webappstatic.buzzfeed.com/static/user_images/web04/2011/5/31/16/erinlarosa-27337-1306872651-83.jpg' width='25' height='25'/></td><td padding='5' pspacing='0'><small><b><a href='/erinlarosa'>Erin La Rosa</a></b></small><br/><small><color value='#939393'>BuzzFeed Staff</color></small></td></tr></table>"
+      },
+      {
+         "userid":"939055",
+         "form":"super-image",
+         "oid":"7DEDZ97",
+         "category_name":"Culture",
+         "badges":[
+            "lol",
+            "viral"
+         ],
+         "impressions":"1645953",
+         "track_uri":"/track/me/please/,/some/day/",
+         "id":"3215180",
+         "comments_count":0,
+         "thumbnail":"http://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr04/5/15/m-charts-that-perfectly-illustrate-how-to-properly--2-32231-1399317958-20.jpg",
+         "blurb":"Learn how to interact with animals and you'll have more furry friends than you know what to do with.",
+         "images":{
+            "small":"http://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr04/5/15/charts-that-perfectly-illustrate-how-to-properly--2-32231-1399317958-20_small.jpg",
+            "standard":"http://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr04/5/15/charts-that-perfectly-illustrate-how-to-properly--2-32231-1399317958-20.jpg",
+            "big":"http://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr04/5/15/charts-that-perfectly-illustrate-how-to-properly--2-32231-1399317958-20_big.jpg",
+            "wide":"http://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr04/5/15/charts-that-perfectly-illustrate-how-to-properly--2-32231-1399317958-20_wide.jpg",
+            "dblbig":"http://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr04/5/15/charts-that-perfectly-illustrate-how-to-properly--2-32231-1399317958-20_dblbig.jpg",
+            "dblwide":"http://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr04/5/15/charts-that-perfectly-illustrate-how-to-properly--2-32231-1399317958-20_dblwide.jpg"
+         },
+         "ouserid":"73WW3E7",
+         "flags":"raw-1_nsfw-0_ad-0_partner-0_editor-1_user-0_trigger-0",
+         "last_updated_unix":"1466793917",
+         "allow_contributions":1,
+         "name":"15 Charts That Perfectly Illustrate How To Properly Pet Animals",
+         "uri":"/adamellis/charts-that-perfectly-illustrate-how-to-properly-pet-anim",
+         "published_unix":"1399317853",
+         "viral":0,
+         "header":{
+            "blurb":"<b>Learn how to interact with animals and you'll have more furry friends than you know what to do with.</b>",
+            "name":"15 Charts That Perfectly Illustrate How To Properly Pet Animals",
+            "users":[
+               {
+                  "user_page":"/adamellis",
+                  "byline_desc":"BuzzFeed Staff",
+                  "user_id":"939055",
+                  "display_name":"Adam Ellis",
+                  "username":"adamellis",
+                  "byline_description_id":"2",
+                  "user_image":"https://webappstatic.buzzfeed.com/static/2013-10/user_images/webdr02/31/19/adamellis-16557-1383263319-9.jpg"
+               }
+            ]
+         },
+         "html_blurb":"<b><big>15 Charts That Perfectly Illustrate How To Properly Pet Animals</big></b><br/><b>Learn how to interact with animals and you'll have more furry friends than you know what to do with.</b><br/><table><tr><td width='30' padding='0 0'><img src='http://webappstatic.buzzfeed.com/static/2013-10/user_images/webdr02/31/19/adamellis-16557-1383263319-9.jpg' width='25' height='25'/></td><td padding='5' pspacing='0'><small><b><a href='/adamellis'>Adam Ellis</a></b></small><br/><small><color value='#939393'>BuzzFeed Staff</color></small></td></tr></table>"
+      },
+      {
+         "userid":"1401831",
+         "form":"super",
+         "oid":"7DH6UB7",
+         "category_name":"UK",
+         "badges":[
+            "viral",
+            "win"
+         ],
+         "impressions":"2024859",
+         "track_uri":"/track/me/please/,/some/day/",
+         "id":"3233854",
+         "comments_count":0,
+         "thumbnail":"http://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr06/9/10/m-18-cool-internet-tricks-you-didnt-know-existed-2-13938-1399644043-0.jpg",
+         "blurb":"So many shortcuts. And kittens.",
+         "images":{
+            "small":"http://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr06/9/10/18-cool-internet-tricks-you-didnt-know-existed-2-13938-1399644043-0_small.jpg",
+            "standard":"http://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr06/9/10/18-cool-internet-tricks-you-didnt-know-existed-2-13938-1399644043-0.jpg",
+            "big":"http://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr06/9/10/18-cool-internet-tricks-you-didnt-know-existed-2-13938-1399644043-0_big.jpg",
+            "wide":"http://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr06/9/10/18-cool-internet-tricks-you-didnt-know-existed-2-13938-1399644043-0_wide.jpg",
+            "dblbig":"http://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr06/9/10/18-cool-internet-tricks-you-didnt-know-existed-2-13938-1399644043-0_dblbig.jpg",
+            "dblwide":"http://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr06/9/10/18-cool-internet-tricks-you-didnt-know-existed-2-13938-1399644043-0_dblwide.jpg"
+         },
+         "ouserid":"75UBNM7",
+         "flags":"raw-1_nsfw-0_ad-0_partner-0_editor-1_user-0_trigger-0",
+         "last_updated_unix":"1466716158",
+         "allow_contributions":1,
+         "name":"18 Cool Internet Tricks You Didn't Know About",
+         "uri":"/danieldalton/cool-internet-tricks-you-didnt-know-existed",
+         "published_unix":"1399643122",
+         "viral":0,
+         "header":{
+            "blurb":"<b>So many shortcuts.</b> And kittens.",
+            "name":"18 Cool Internet Tricks You Didn't Know About",
+            "users":[
+               {
+                  "user_page":"/danieldalton",
+                  "byline_desc":"BuzzFeed Staff",
+                  "user_id":"1401831",
+                  "display_name":"Dan Dalton",
+                  "username":"danieldalton",
+                  "byline_description_id":"2",
+                  "user_image":"https://webappstatic.buzzfeed.com/static/2014-04/user_images/webdr03/7/10/danieldalton-5871-1396881655-0.jpg"
+               }
+            ]
+         },
+         "html_blurb":"<b><big>18 Cool Internet Tricks You Didn't Know About</big></b><br/><b>So many shortcuts.</b> And kittens.<br/><table><tr><td width='30' padding='0 0'><img src='http://webappstatic.buzzfeed.com/static/2014-04/user_images/webdr03/7/10/danieldalton-5871-1396881655-0.jpg' width='25' height='25'/></td><td padding='5' pspacing='0'><small><b><a href='/danieldalton'>Dan Dalton</a></b></small><br/><small><color value='#939393'>BuzzFeed Staff</color></small></td></tr></table>"
+      },
+      {
+         "userid":"1253",
+         "form":"super",
+         "oid":"7D2K4H7",
+         "category_name":"Animals",
+         "badges":[
+            "mega-list",
+            "viral",
+            "cute"
+         ],
+         "impressions":"12368123",
+         "track_uri":"/track/me/please/,/some/day/",
+         "id":"3136336",
+         "comments_count":0,
+         "thumbnail":"http://img.buzzfeed.com/buzzfeed-static/static/2015-09/8/20/campaign_images/webdr02/m-the-100-most-important-cat-pictures-of-all-time-2-17626-1441757546-6.jpg",
+         "blurb":"OK, this is it. This is the one. We can all finally shut down the internet and go home after this.",
+         "images":{
+            "small":"http://img.buzzfeed.com/buzzfeed-static/static/2015-09/8/20/campaign_images/webdr02/the-100-most-important-cat-pictures-of-all-time-2-17626-1441757546-6_small.jpg",
+            "standard":"http://img.buzzfeed.com/buzzfeed-static/static/2015-09/8/20/campaign_images/webdr02/the-100-most-important-cat-pictures-of-all-time-2-17626-1441757546-6.jpg",
+            "big":"http://img.buzzfeed.com/buzzfeed-static/static/2015-09/8/20/campaign_images/webdr02/the-100-most-important-cat-pictures-of-all-time-2-17626-1441757546-6_big.jpg",
+            "wide":"http://img.buzzfeed.com/buzzfeed-static/static/2015-09/8/20/campaign_images/webdr02/the-100-most-important-cat-pictures-of-all-time-2-17626-1441757546-6_wide.jpg",
+            "dblbig":"http://img.buzzfeed.com/buzzfeed-static/static/2015-09/8/20/campaign_images/webdr02/the-100-most-important-cat-pictures-of-all-time-2-17626-1441757546-6_dblbig.jpg",
+            "dblwide":"http://img.buzzfeed.com/buzzfeed-static/static/2015-09/8/20/campaign_images/webdr02/the-100-most-important-cat-pictures-of-all-time-2-17626-1441757546-6_dblwide.jpg"
+         },
+         "ouserid":"76T07",
+         "flags":"raw-1_nsfw-0_ad-0_partner-1_editor-1_user-0_trigger-0",
+         "last_updated_unix":"1466793276",
+         "allow_contributions":0,
+         "name":"The 100 Most Important Cat Pictures Of All Time",
+         "uri":"/expresident/best-cat-pictures",
+         "published_unix":"1399477891",
+         "viral":0,
+         "header":{
+            "blurb":"<b>OK, this is it.</b> This is the one. We can all finally shut down the internet and go home after this.",
+            "name":"The 100 Most Important Cat Pictures Of All Time",
+            "users":[
+               {
+                  "user_page":"/expresident",
+                  "byline_desc":"BuzzFeed Staff",
+                  "user_id":"1253",
+                  "display_name":"Jack Shepherd",
+                  "username":"expresident",
+                  "byline_description_id":"2",
+                  "user_image":"https://webappstatic.buzzfeed.com/static/user_images/web04/2011/11/12/6/expresident-11353-1321099154-3.jpg"
+               }
+            ]
+         },
+         "html_blurb":"<b><big>The 100 Most Important Cat Pictures Of All Time</big></b><br/><b>OK, this is it.</b> This is the one. We can all finally shut down the internet and go home after this.<br/><table><tr><td width='30' padding='0 0'><img src='http://webappstatic.buzzfeed.com/static/user_images/web04/2011/11/12/6/expresident-11353-1321099154-3.jpg' width='25' height='25'/></td><td padding='5' pspacing='0'><small><b><a href='/expresident'>Jack Shepherd</a></b></small><br/><small><color value='#939393'>BuzzFeed Staff</color></small></td></tr></table>"
+      },
+      {
+         "userid":"16191",
+         "form":"super-image",
+         "oid":"7DDUTK7",
+         "category_name":"Culture",
+         "badges":[
+            "viral",
+            "lol"
+         ],
+         "impressions":"2046681",
+         "track_uri":"/track/me/please/,/some/day/",
+         "id":"3211633",
+         "comments_count":0,
+         "thumbnail":"http://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr06/2/15/m-28-maps-that-will-teach-you-a-damn-thing-about-yo-2-13776-1399057363-0.jpg",
+         "blurb":"NO SCHOOL, ONLY MAPS.",
+         "images":{
+            "small":"http://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr06/2/15/28-maps-that-will-teach-you-a-damn-thing-about-yo-2-13776-1399057363-0_small.jpg",
+            "standard":"http://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr06/2/15/28-maps-that-will-teach-you-a-damn-thing-about-yo-2-13776-1399057363-0.jpg",
+            "big":"http://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr06/2/15/28-maps-that-will-teach-you-a-damn-thing-about-yo-2-13776-1399057363-0_big.jpg",
+            "wide":"http://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr06/2/15/28-maps-that-will-teach-you-a-damn-thing-about-yo-2-13776-1399057363-0_wide.jpg",
+            "dblbig":"http://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr06/2/15/28-maps-that-will-teach-you-a-damn-thing-about-yo-2-13776-1399057363-0_dblbig.jpg",
+            "dblwide":"http://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr06/2/15/28-maps-that-will-teach-you-a-damn-thing-about-yo-2-13776-1399057363-0_dblwide.jpg"
+         },
+         "ouserid":"72FHM7",
+         "flags":"raw-1_nsfw-0_ad-0_partner-0_editor-1_user-0_trigger-0",
+         "last_updated_unix":"1466758913",
+         "allow_contributions":1,
+         "name":"28 Maps That Will Teach You A Damn Thing About Your State For Once",
+         "uri":"/daves4/maps-that-will-teach-you-a-damn-thing-about-your-state-fo",
+         "published_unix":"1398975292",
+         "viral":0,
+         "header":{
+            "blurb":"<b>NO SCHOOL, ONLY MAPS.</b>",
+            "name":"28 Maps That Will Teach You A Damn Thing About Your State For Once",
+            "users":[
+               {
+                  "user_page":"/daves4",
+                  "byline_desc":"BuzzFeed Staff",
+                  "user_id":"16191",
+                  "display_name":"Dave Stopera",
+                  "username":"daves4",
+                  "byline_description_id":"2",
+                  "user_image":"https://webappstatic.buzzfeed.com/static/user_images/web03/2011/3/6/21/daves4-5980-1299466581-0.jpg"
+               }
+            ]
+         },
+         "html_blurb":"<b><big>28 Maps That Will Teach You A Damn Thing About Your State For Once</big></b><br/><b>NO SCHOOL, ONLY MAPS.</b><br/><table><tr><td width='30' padding='0 0'><img src='http://webappstatic.buzzfeed.com/static/user_images/web03/2011/3/6/21/daves4-5980-1299466581-0.jpg' width='25' height='25'/></td><td padding='5' pspacing='0'><small><b><a href='/daves4'>Dave Stopera</a></b></small><br/><small><color value='#939393'>BuzzFeed Staff</color></small></td></tr></table>"
+      },
+      {
+         "userid":"16191",
+         "form":"super-image",
+         "oid":"7DDUTK7",
+         "category_name":"Culture",
+         "badges":[
+            "viral",
+            "lol"
+         ],
+         "impressions":"2046681",
+         "track_uri":"/track/me/please/,/some/day/",
+         "id":"3211633",
+         "comments_count":0,
+         "thumbnail":"http://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr06/2/15/m-28-maps-that-will-teach-you-a-damn-thing-about-yo-2-13776-1399057363-0.jpg",
+         "blurb":"NO SCHOOL, ONLY MAPS.",
+         "images":{
+            "small":"http://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr06/2/15/28-maps-that-will-teach-you-a-damn-thing-about-yo-2-13776-1399057363-0_small.jpg",
+            "standard":"http://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr06/2/15/28-maps-that-will-teach-you-a-damn-thing-about-yo-2-13776-1399057363-0.jpg",
+            "big":"http://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr06/2/15/28-maps-that-will-teach-you-a-damn-thing-about-yo-2-13776-1399057363-0_big.jpg",
+            "wide":"http://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr06/2/15/28-maps-that-will-teach-you-a-damn-thing-about-yo-2-13776-1399057363-0_wide.jpg",
+            "dblbig":"http://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr06/2/15/28-maps-that-will-teach-you-a-damn-thing-about-yo-2-13776-1399057363-0_dblbig.jpg",
+            "dblwide":"http://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr06/2/15/28-maps-that-will-teach-you-a-damn-thing-about-yo-2-13776-1399057363-0_dblwide.jpg"
+         },
+         "ouserid":"72FHM7",
+         "flags":"raw-1_nsfw-0_ad-0_partner-0_editor-1_user-0_trigger-0",
+         "last_updated_unix":"1466758913",
+         "allow_contributions":1,
+         "name":"28 Maps That Will Teach You A Damn Thing About Your State For Once",
+         "uri":"/daves4/maps-that-will-teach-you-a-damn-thing-about-your-state-fo",
+         "published_unix":"1398975292",
+         "viral":0,
+         "header":{
+            "blurb":"<b>NO SCHOOL, ONLY MAPS.</b>",
+            "name":"28 Maps That Will Teach You A Damn Thing About Your State For Once",
+            "users":[
+               {
+                  "user_page":"/daves4",
+                  "byline_desc":"BuzzFeed Staff",
+                  "user_id":"16191",
+                  "display_name":"Dave Stopera",
+                  "username":"daves4",
+                  "byline_description_id":"2",
+                  "user_image":"https://webappstatic.buzzfeed.com/static/user_images/web03/2011/3/6/21/daves4-5980-1299466581-0.jpg"
+               }
+            ]
+         },
+         "html_blurb":"<b><big>28 Maps That Will Teach You A Damn Thing About Your State For Once</big></b><br/><b>NO SCHOOL, ONLY MAPS.</b><br/><table><tr><td width='30' padding='0 0'><img src='http://webappstatic.buzzfeed.com/static/user_images/web03/2011/3/6/21/daves4-5980-1299466581-0.jpg' width='25' height='25'/></td><td padding='5' pspacing='0'><small><b><a href='/daves4'>Dave Stopera</a></b></small><br/><small><color value='#939393'>BuzzFeed Staff</color></small></td></tr></table>"
+      },
+      {
+         "userid":"939055",
+         "form":"super-image",
+         "oid":"7DEDZ97",
+         "category_name":"Culture",
+         "badges":[
+            "lol",
+            "viral"
+         ],
+         "impressions":"1645953",
+         "track_uri":"/track/me/please/,/some/day/",
+         "id":"3215180",
+         "comments_count":0,
+         "thumbnail":"http://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr04/5/15/m-charts-that-perfectly-illustrate-how-to-properly--2-32231-1399317958-20.jpg",
+         "blurb":"Learn how to interact with animals and you'll have more furry friends than you know what to do with.",
+         "images":{
+            "small":"http://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr04/5/15/charts-that-perfectly-illustrate-how-to-properly--2-32231-1399317958-20_small.jpg",
+            "standard":"http://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr04/5/15/charts-that-perfectly-illustrate-how-to-properly--2-32231-1399317958-20.jpg",
+            "big":"http://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr04/5/15/charts-that-perfectly-illustrate-how-to-properly--2-32231-1399317958-20_big.jpg",
+            "wide":"http://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr04/5/15/charts-that-perfectly-illustrate-how-to-properly--2-32231-1399317958-20_wide.jpg",
+            "dblbig":"http://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr04/5/15/charts-that-perfectly-illustrate-how-to-properly--2-32231-1399317958-20_dblbig.jpg",
+            "dblwide":"http://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr04/5/15/charts-that-perfectly-illustrate-how-to-properly--2-32231-1399317958-20_dblwide.jpg"
+         },
+         "ouserid":"73WW3E7",
+         "flags":"raw-1_nsfw-0_ad-0_partner-0_editor-1_user-0_trigger-0",
+         "last_updated_unix":"1466793917",
+         "allow_contributions":1,
+         "name":"15 Charts That Perfectly Illustrate How To Properly Pet Animals",
+         "uri":"/adamellis/charts-that-perfectly-illustrate-how-to-properly-pet-anim",
+         "published_unix":"1399317853",
+         "viral":0,
+         "header":{
+            "blurb":"<b>Learn how to interact with animals and you'll have more furry friends than you know what to do with.</b>",
+            "name":"15 Charts That Perfectly Illustrate How To Properly Pet Animals",
+            "users":[
+               {
+                  "user_page":"/adamellis",
+                  "byline_desc":"BuzzFeed Staff",
+                  "user_id":"939055",
+                  "display_name":"Adam Ellis",
+                  "username":"adamellis",
+                  "byline_description_id":"2",
+                  "user_image":"https://webappstatic.buzzfeed.com/static/2013-10/user_images/webdr02/31/19/adamellis-16557-1383263319-9.jpg"
+               }
+            ]
+         },
+         "html_blurb":"<b><big>15 Charts That Perfectly Illustrate How To Properly Pet Animals</big></b><br/><b>Learn how to interact with animals and you'll have more furry friends than you know what to do with.</b><br/><table><tr><td width='30' padding='0 0'><img src='http://webappstatic.buzzfeed.com/static/2013-10/user_images/webdr02/31/19/adamellis-16557-1383263319-9.jpg' width='25' height='25'/></td><td padding='5' pspacing='0'><small><b><a href='/adamellis'>Adam Ellis</a></b></small><br/><small><color value='#939393'>BuzzFeed Staff</color></small></td></tr></table>"
+      },
+      {
+         "userid":"1401831",
+         "form":"super",
+         "oid":"7DH6UB7",
+         "category_name":"UK",
+         "badges":[
+            "viral",
+            "win"
+         ],
+         "impressions":"2024859",
+         "track_uri":"/track/me/please/,/some/day/",
+         "id":"3233854",
+         "comments_count":0,
+         "thumbnail":"http://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr06/9/10/m-18-cool-internet-tricks-you-didnt-know-existed-2-13938-1399644043-0.jpg",
+         "blurb":"So many shortcuts. And kittens.",
+         "images":{
+            "small":"http://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr06/9/10/18-cool-internet-tricks-you-didnt-know-existed-2-13938-1399644043-0_small.jpg",
+            "standard":"http://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr06/9/10/18-cool-internet-tricks-you-didnt-know-existed-2-13938-1399644043-0.jpg",
+            "big":"http://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr06/9/10/18-cool-internet-tricks-you-didnt-know-existed-2-13938-1399644043-0_big.jpg",
+            "wide":"http://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr06/9/10/18-cool-internet-tricks-you-didnt-know-existed-2-13938-1399644043-0_wide.jpg",
+            "dblbig":"http://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr06/9/10/18-cool-internet-tricks-you-didnt-know-existed-2-13938-1399644043-0_dblbig.jpg",
+            "dblwide":"http://img.buzzfeed.com/buzzfeed-static/static/2014-05/campaign_images/webdr06/9/10/18-cool-internet-tricks-you-didnt-know-existed-2-13938-1399644043-0_dblwide.jpg"
+         },
+         "ouserid":"75UBNM7",
+         "flags":"raw-1_nsfw-0_ad-0_partner-0_editor-1_user-0_trigger-0",
+         "last_updated_unix":"1466716158",
+         "allow_contributions":1,
+         "name":"18 Cool Internet Tricks You Didn't Know About",
+         "uri":"/danieldalton/cool-internet-tricks-you-didnt-know-existed",
+         "published_unix":"1399643122",
+         "viral":0,
+         "header":{
+            "blurb":"<b>So many shortcuts.</b> And kittens.",
+            "name":"18 Cool Internet Tricks You Didn't Know About",
+            "users":[
+               {
+                  "user_page":"/danieldalton",
+                  "byline_desc":"BuzzFeed Staff",
+                  "user_id":"1401831",
+                  "display_name":"Dan Dalton",
+                  "username":"danieldalton",
+                  "byline_description_id":"2",
+                  "user_image":"https://webappstatic.buzzfeed.com/static/2014-04/user_images/webdr03/7/10/danieldalton-5871-1396881655-0.jpg"
+               }
+            ]
+         },
+         "html_blurb":"<b><big>18 Cool Internet Tricks You Didn't Know About</big></b><br/><b>So many shortcuts.</b> And kittens.<br/><table><tr><td width='30' padding='0 0'><img src='http://webappstatic.buzzfeed.com/static/2014-04/user_images/webdr03/7/10/danieldalton-5871-1396881655-0.jpg' width='25' height='25'/></td><td padding='5' pspacing='0'><small><b><a href='/danieldalton'>Dan Dalton</a></b></small><br/><small><color value='#939393'>BuzzFeed Staff</color></small></td></tr></table>"
+      }
+   ]
+}

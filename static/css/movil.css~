@@ -155,6 +155,10 @@ body {
    height: 100px;
 }
 
+.back-arrow{
+   margin-right:5px;
+}
+
 .fileUpload {
 	position: relative;
 	overflow: hidden;
@@ -185,6 +189,10 @@ body {
   cursor:default;
 }
 
+#sombreado{
+  box-shadow: 2px 2px 5px #999;
+}
+
 #analizando div {
   position:absolute;
   width:40px;
@@ -193,7 +201,10 @@ body {
   font-size: 1.7em;
   font-family:Helvetica, Arial, sans-serif;
   -webkit-animation:move 2.5s linear infinite;
+  animation-duration: 3s;
+  animation-name: prueba;
   -webkit-transform:rotate(180deg);
+  transform:rotate(180deg);
   color:#036CA9;
 }
 
@@ -215,16 +226,19 @@ body {
     35% {
         left: 41%;
         -webkit-transform:rotate(0deg);
+	transform:rotate(0deg);
         opacity:1;
     }
     65% {
         left:59%;
         -webkit-transform:rotate(0deg);
+	transform:rotate(0deg);
         opacity:1;
     }
     100% {
         left:100%;
         -webkit-transform:rotate(-180deg);
+	transform:rotate(-180deg);
         opacity:0;
     }
 }
