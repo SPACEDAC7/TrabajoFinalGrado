@@ -262,7 +262,7 @@ def recent_scans(request):
     Show Recent Scans Route
     """
 
-    db_obj = RecentScansDB.objects.filter(userID = request.session["userID"]).order_by('-TS')
+    db_obj = RecentScansDB.objects.filter(userID = request.session["userID"])
     print db_obj
 
 #    db_obj = RecentScansDB.objects.all().order_by('-TS')

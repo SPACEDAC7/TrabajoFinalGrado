@@ -1,0 +1,38 @@
+{% extends "baseMar.html" %}
+
+{% block content %}
+
+{% if form.errors%}
+<p>Your username and password didn't match. Please try again.</p>
+{% endif %}
+
+{% if next %}
+	{% if user.is_authenticated %}
+	<p>Your account doesn't have access to this page. To proceed, please login with an account that has access.</p>
+	{% else %}
+	<p>Please login to see this page.</p>
+	{% endif %}
+{% endif %}
+<div class="box box-default">
+     
+          <div class="box-body">
+
+<form method="post" action="/loginHecho/">
+{% csrf_token %}
+<table>
+<tr>
+	<td><label>Username:</label></td>
+	<td><input id="username" type="text" name="username"></td>
+</tr>
+<tr>
+	<td><label>Password:</label></td>
+	<td><input id="password" type="password" name="password"></td>
+</tr>
+</table>
+
+<input type="submit" value="login" />
+<input type="hidden" name="next" value="{{ next }}" />
+</form>
+
+</div></div>
+{% endblock %}

@@ -211,3 +211,17 @@
 [ERROR] Performing Manifest Analysis (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/manifest_analysis.py, LINE 1204 "a_desc = a_template[2] % t_desc"): not all arguments converted during string formatting
 [2017-03-08 08:02:56]
 [ERROR] Performing Manifest Analysis (/home/david/IonicAppWithRestBackend/backend/Mobile-Security-Framework-MobSF-master/StaticAnalyzer/views/android/manifest_analysis.py, LINE 1204 "a_desc = a_template[2] % t_desc"): not all arguments converted during string formatting
+[2017-03-09 10:59:51]
+[ERROR] Cannot Check for updates. (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/MobSF/utils.py, LINE 49 "html = response.read().split("\n")"): [Errno 104] Connection reset by peer
+[2017-03-09 11:06:01]
+[ERROR] Cannot Check for updates. (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/MobSF/utils.py, LINE 49 "html = response.read().split("\n")"): [Errno 104] Connection reset by peer
+[2017-03-09 11:12:20]
+[ERROR] Adding Scan URL to Database (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/MobSF/views.py, LINE 93 "NAME=name, MD5=md5, URL=url, TS=timezone.now(), userID=user.id)"): global name 'user' is not defined
+[2017-03-09 11:23:26]
+[ERROR] Adding Scan URL to Database (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/MobSF/views.py, LINE 93 "NAME=name, MD5=md5, URL=url, TS=timezone.now(), userID=user.id)"): global name 'user' is not defined
+[2017-03-09 11:24:39]
+[ERROR] Adding Scan URL to Database (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/MobSF/views.py, LINE 93 "NAME=name, MD5=md5, URL=url, TS=timezone.now(), userID=user.id)"): global name 'user' is not defined
+[2017-03-09 11:30:34]
+[ERROR] Adding Scan URL to Database (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/MobSF/views.py, LINE 93 "NAME=name, MD5=md5, URL=url, TS=timezone.now(), userID=user.id)"): global name 'user' is not defined
+[2017-03-09 11:51:18]
+[ERROR] Adding Scan URL to Database (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/MobSF/views.py, LINE 95 "NAME=name, MD5=md5, URL=url, TS=timezone.now(), userID=request.session["user"].id)"): global name 'request' is not defined

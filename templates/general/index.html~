@@ -103,6 +103,9 @@ progress::-webkit-progress-value {
 -->
 <div class="inner cover" id="pruebados" style="border-radius:17px;">
 </br>
+<p>{{user.username}}</p>
+<p>{{user.id}}</p>
+<p>{{user.email}}</p>
 
  <form id="upload_form" enctype="multipart/form-data" method="post">
   {% csrf_token %}
@@ -115,7 +118,7 @@ progress::-webkit-progress-value {
   <h4 id="status" style="font-family: 'Oswald', sans-serif;"></h4>
 
   </div>
-<div id="analizando" style="display:none">
+<div id="analizando" style="display:none;visibility:visible;">
   <div>O</div>
   <div>D</div>
   <div>N</div>
@@ -134,6 +137,7 @@ progress::-webkit-progress-value {
   <span class="glyphicon glyphicon-th-list"></span>
    <a href="../recent_scans" >Mis escaneos</a>
   </div>
+
 </div>
         </div>
       </div>

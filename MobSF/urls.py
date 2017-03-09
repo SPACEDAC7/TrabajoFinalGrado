@@ -19,7 +19,7 @@ from django.contrib import admin
 
 urlpatterns = [
     # Examples:
-    url(r'^$', MobSF.views.index),
+    url(r'^index/$', MobSF.views.index),
     url(r'^upload/$', MobSF.views.upload),
     url(r'^download/', MobSF.views.download),
     url(r'^about/$', MobSF.views.about),
@@ -32,6 +32,12 @@ urlpatterns = [
 
 
     url(r'^admin/', admin.site.urls),
+    url('^$', MobSF.views.cargaRegistro),
+    url(r'^login/$', MobSF.views.cargaLogin),
+    url(r'^registrar/$', MobSF.views.registrar),
+    url(r'^loginHecho/$', MobSF.views.my_view),
+    url(r'^logout/$', MobSF.views.logout_view),
+
 
     url(r'^StaticAnalyzer/$', StaticAnalyzer.views.android.static_analyzer.static_analyzer),
     url(r'^StaticAnalyzer_iOS/$', StaticAnalyzer.views.ios.StaticAnalyzer_iOS),

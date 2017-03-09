@@ -52,7 +52,7 @@
 
           <!--Menu Items-->
           <ul class="nav navbar-nav">
-	    <li><a href="../"><span class="glyphicon glyphicon-arrow-left"></span>  Analizar otra aplicación</a></li>
+	    <li><a href="../"><span class="glyphicon glyphicon-arrow-left"></span>  Analize other APP</a></li>
             <li><a href="../recent_scans">Mis Escaneos</a></li>
             <!-- <li><a href="../about">About</a></li> -->
           </ul>
