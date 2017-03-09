@@ -115,7 +115,8 @@ progress::-webkit-progress-value {
   <h4 id="status" style="font-family: 'Oswald', sans-serif;"></h4>
 
   </div>
-<div id="analizando" style="visibility:visible;">
+<div id="analizando" style="visibility:visible;display:none">
+<!-- Arriba en el syle falta un display:none pero así veo como va -->
   <div>O</div>
   <div>D</div>
   <div>N</div>
