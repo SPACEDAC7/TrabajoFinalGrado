@@ -193,48 +193,15 @@ body {
   box-shadow: 2px 2px 5px #999;
 }
 
-#analizando div {
+#analizando p {
   position:absolute;
   width:40px;
   height:40px;
+  margin-left:50%;
   opacity:0;
   font-size: 1.7em;
   font-family:Helvetica, Arial, sans-serif;
-  -webkit-animation:move 2.5s linear infinite;
-  -webkit-transform:rotate(180deg);
   color:#036CA9;
-}
-
-#analizando div:nth-child(2) {-webkit-animation-delay:0.1s;}
-#analizando div:nth-child(3) {-webkit-animation-delay:0.2s;}
-#analizando div:nth-child(4) {-webkit-animation-delay:0.3s;}
-#analizando div:nth-child(5) {-webkit-animation-delay:0.4s;}
-#analizando div:nth-child(6) {-webkit-animation-delay:0.5s;}
-#analizando div:nth-child(7) {-webkit-animation-delay:0.6s;}
-#analizando div:nth-child(8) {-webkit-animation-delay:0.7s;}
-#analizando div:nth-child(9) {-webkit-animation-delay:0.8s;}
-#analizando div:nth-child(10) {-webkit-animation-delay:0.9s;}
-
-@keyframes move {
-   0% {
-        left:0;
-        opacity:0;
-    }
-    35% {
-        left: 41%;
-        -webkit-transform:rotate(0deg);
-        opacity:1;
-    }
-    65% {
-        left:59%;
-        -webkit-transform:rotate(0deg);
-        opacity:1;
-    }
-    100% {
-        left:100%;
-        -webkit-transform:rotate(-180deg);
-        opacity:0;
-    }
 }
 
 

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -82,25 +81,22 @@ progress::-webkit-progress-value {
     -webkit-linear-gradient(left, #66ccff, #3399ff);
 
   background-size: 25px 14px, 100% 100%, 100% 100%;
-  -webkit-animation: move 5s linear 0 infinite;
 }
 
-@-webkit-keyframes move {
-  0% {background-position: 0px 0px, 0 0, 0 0}
-  100% {background-position: -100px 0px, 0 0, 0 0}
+
+p {
+  animation-duration: 3s;
+  animation-name: slidein;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+}
+@keyframes slidein {
+    50% {
+        opacity:1;
+    }
 }
 
 </style>
-<!--
-  <div class="inner cover">
-
-
-      <form id="upload-widget" method="POST" action="/upload/" class="bg-primary text-white dropzone">
-      {% csrf_token %}
-	<img src="/static/img/uji.png" style="width:70px;heigh:70px;"onClick="prueba()">
-      </form>
-</div>
--->
 <div class="inner cover" id="pruebados" style="border-radius:17px;">
 </br>s
 
@@ -116,17 +112,7 @@ progress::-webkit-progress-value {
 
   </div>
 <div id="analizando" style="visibility:visible;display:none;">
-<!-- Arriba en el syle falta un display:none pero así veo como va -->
-  <div>O</div>
-  <div>D</div>
-  <div>N</div>
-  <div>A</div>
-  <div>Z</div>
-  <div>I</div>
-  <div>L</div>
-  <div>A</div>
-  <div>N</div>
-  <div>A</div>
+  <p>Analizando...</p>
 </div>
 
 </form>
@@ -140,6 +126,7 @@ progress::-webkit-progress-value {
         </div>
       </div>
     </div>
+
     <script>
 function _(el){
   return document.getElementById(el);
@@ -152,25 +139,13 @@ function responseHandler (json, isbutton) {
   }
   else if (json.status==='success')
   {
-    //document.getElementById('pruebados').style.backgroundColor="#428bca";
     i=1;
     setInterval(function () {
-      dot='';
-      for (x=1;x<=i;x++)
-       {
-        dot+='.';
-       }
+     
        document.getElementById('analizando').style.display="inline";
        document.getElementById('pruebados').style.visibility="hidden";
        document.getElementById('recientes').style.visibility="hidden";
-      //_("status").innerHTML = "Analizando" +dot;
-      // _("progressBar").style.visibility = "hidden";
-      // _("progressBar").value = 40;
-       i+=1;
-       if(i==5)
-       {
-        i=1;
-       }
+      
     }, 2000);
     window.location.href=window.location.href+json.url;
   }
@@ -187,7 +162,6 @@ function responseHandler (json, isbutton) {
 
   init: function() {
     this.on('success', function( file, resp ){
-      //console.log( file );
       console.log( resp );
       responseHandler (resp);
     });
@@ -220,10 +194,6 @@ $('input[type=file]').change(function ()
                  _("but").style.display = "none";
 		document.getElementById('recientes').style.display="none";
                 var file = _("uploadFile").files[0];
-                //document.getElementById('pruebados').style.backgroundColor="#428bca";
-                //_("progressBar").style.visibility = "visible";
-		
-
 
                 var formdata = new FormData();
                 formdata.append("file", file);
@@ -246,10 +216,8 @@ $('input[type=file]').change(function ()
   });
 });
 function progressHandler(event){
-  //document.getElementById('pruebados').style.backgroundColor="#428bca";
   var percent = (event.loaded / event.total) * 100;
   console.log("Uploaded..."+Math.round(percent));
-  //_("progressBar").value = Math.round(percent);
   document.getElementById('status').style.color="#428bca";
   _("status").innerHTML = Math.round(percent)+"% Uploaded...";
 }
