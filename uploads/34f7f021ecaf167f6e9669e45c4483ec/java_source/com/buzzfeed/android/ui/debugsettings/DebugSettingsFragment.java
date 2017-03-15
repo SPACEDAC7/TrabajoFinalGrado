@@ -102,8 +102,8 @@ extends PreferenceFragment {
     }
 
     public void initPreferences() {
-        String[] arrstring;
         Object object;
+        String[] arrstring;
         Object object2 = this.getPreferenceManager();
         SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences((Context)this.getActivity());
         String string2 = this.getKey(2131296922);

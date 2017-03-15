@@ -37,8 +37,8 @@ extends SnapHelper {
             return 1.0f;
         }
         for (int i2 = 0; i2 < n5; ++i2) {
-            View view3;
             int n6;
+            View view3;
             View view4 = layoutManager.getChildAt(i2);
             int n7 = layoutManager.getPosition(view4);
             if (n7 == -1) {

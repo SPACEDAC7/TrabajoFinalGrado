@@ -86,8 +86,8 @@ extends ActionProvider {
 
     @Override
     public void onPrepareSubMenu(SubMenu subMenu) {
-        ResolveInfo resolveInfo;
         int n2;
+        ResolveInfo resolveInfo;
         subMenu.clear();
         ActivityChooserModel activityChooserModel = ActivityChooserModel.get(this.mContext, this.mShareHistoryFileName);
         PackageManager packageManager = this.mContext.getPackageManager();

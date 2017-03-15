@@ -62,8 +62,8 @@ public final class LocalBroadcastManager {
      */
     private void executePendingBroadcasts() {
         block3 : do {
-            int n2;
             BroadcastRecord[] arrbroadcastRecord;
+            int n2;
             Object object = this.mReceivers;
             synchronized (object) {
                 n2 = this.mPendingBroadcasts.size();
@@ -168,48 +168,48 @@ public final class LocalBroadcastManager {
      * Lifted jumps to return sites
      */
     public void unregisterReceiver(BroadcastReceiver var1_1) {
-        var6_2 = this.mReceivers;
-        // MONITORENTER : var6_2
-        var7_3 = this.mReceivers.remove((Object)var1_1);
-        if (var7_3 == null) {
-            // MONITOREXIT : var6_2
+        var2_2 = this.mReceivers;
+        // MONITORENTER : var2_2
+        var3_3 = this.mReceivers.remove((Object)var1_1);
+        if (var3_3 == null) {
+            // MONITOREXIT : var2_2
             return;
         }
-        var3_5 = 0;
+        var8_8 = 0;
         block3 : do {
-            if (var3_5 >= var7_3.size()) {
-                // MONITOREXIT : var6_2
+            if (var8_8 >= var3_3.size()) {
+                // MONITOREXIT : var2_2
                 return;
             }
-            var8_8 = var7_3.get(var3_5);
-            var4_6 = 0;
+            var4_4 = var3_3.get(var8_8);
+            var9_9 = 0;
             do {
-                if (var4_6 >= var8_8.countActions()) ** GOTO lbl20
-                var9_9 = var8_8.getAction(var4_6);
-                var10_10 = this.mActions.get(var9_9);
-                if (var10_10 == null) ** GOTO lbl35
+                if (var9_9 >= var4_4.countActions()) ** GOTO lbl20
+                var5_5 = var4_4.getAction(var9_9);
+                var6_6 = this.mActions.get(var5_5);
+                if (var6_6 == null) ** GOTO lbl35
                 ** GOTO lbl22
 lbl20: // 1 sources:
-                ++var3_5;
+                ++var8_8;
                 continue block3;
 lbl22: // 1 sources:
-                var2_4 = 0;
+                var7_7 = 0;
                 do {
-                    if (var2_4 < var10_10.size()) {
-                        var5_7 = var2_4;
-                        if (var10_10.get((int)var2_4).receiver == var1_1) {
-                            var10_10.remove(var2_4);
-                            var5_7 = var2_4 - 1;
+                    if (var7_7 < var6_6.size()) {
+                        var10_10 = var7_7;
+                        if (var6_6.get((int)var7_7).receiver == var1_1) {
+                            var6_6.remove(var7_7);
+                            var10_10 = var7_7 - 1;
                         }
                     } else {
-                        if (var10_10.size() > 0) break;
-                        this.mActions.remove(var9_9);
+                        if (var6_6.size() > 0) break;
+                        this.mActions.remove(var5_5);
                         break;
                     }
-                    var2_4 = var5_7 + 1;
+                    var7_7 = var10_10 + 1;
                 } while (true);
 lbl35: // 3 sources:
-                ++var4_6;
+                ++var9_9;
             } while (true);
             break;
         } while (true);

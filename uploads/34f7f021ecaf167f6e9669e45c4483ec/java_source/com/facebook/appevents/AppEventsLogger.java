@@ -997,22 +997,22 @@ public class AppEventsLogger {
          */
         private static void restoreAppSessionInformation(Context var0) {
             block20 : {
-                var5_4 = null;
-                var3_5 = null;
-                var4_7 = null;
-                var6_12 = PersistedAppSessionInfo.staticLock;
-                // MONITORENTER : var6_12
-                var1_13 = PersistedAppSessionInfo.isLoaded;
-                if (var1_13) ** GOTO lbl23
+                var4_4 = null;
+                var2_5 = null;
+                var3_7 = null;
+                var5_12 = PersistedAppSessionInfo.staticLock;
+                // MONITORENTER : var5_12
+                var6_13 = PersistedAppSessionInfo.isLoaded;
+                if (var6_13) ** GOTO lbl23
                 {
                     catch (Throwable var0_3) {
                         throw var0_1;
                     }
                 }
-                var2_14 = new ObjectInputStream(var0.openFileInput("AppEventsLogger.persistedsessioninfo"));
-                PersistedAppSessionInfo.appSessionInfoMap = (HashMap)var2_14.readObject();
+                var1_14 = new ObjectInputStream(var0.openFileInput("AppEventsLogger.persistedsessioninfo"));
+                PersistedAppSessionInfo.appSessionInfoMap = (HashMap)var1_14.readObject();
                 Logger.log(LoggingBehavior.APP_EVENTS, "AppEvents", "App session info loaded");
-                Utility.closeQuietly((Closeable)var2_14);
+                Utility.closeQuietly((Closeable)var1_14);
                 var0.deleteFile("AppEventsLogger.persistedsessioninfo");
                 if (PersistedAppSessionInfo.appSessionInfoMap == null) {
                     PersistedAppSessionInfo.appSessionInfoMap = new HashMap<AccessTokenAppIdPair, FacebookTimeSpentData>();
@@ -1020,27 +1020,27 @@ public class AppEventsLogger {
                 PersistedAppSessionInfo.isLoaded = true;
                 PersistedAppSessionInfo.hasChanges = false;
 lbl23: // 2 sources:
-                // MONITOREXIT : var6_12
+                // MONITOREXIT : var5_12
                 return;
                 {
                     catch (Throwable var0_2) {
                         throw var0_1;
                     }
                 }
-                catch (Exception var4_8) {
+                catch (Exception var3_8) {
                     block21 : {
-                        var2_14 = var5_4;
+                        var1_14 = var4_4;
                         ** GOTO lbl35
-                        catch (Throwable var4_10) {
-                            var3_5 = var2_14;
-                            var2_14 = var4_10;
+                        catch (Throwable var3_10) {
+                            var2_5 = var1_14;
+                            var1_14 = var3_10;
                             break block20;
                         }
-                        catch (Exception var4_11) {}
+                        catch (Exception var3_11) {}
 lbl35: // 2 sources:
-                        var3_5 = var2_14;
-                        Log.d((String)AppEventsLogger.access$1300(), (String)("Got unexpected exception: " + var4_9.toString()));
-                        Utility.closeQuietly((Closeable)var2_14);
+                        var2_5 = var1_14;
+                        Log.d((String)AppEventsLogger.access$1300(), (String)("Got unexpected exception: " + var3_9.toString()));
+                        Utility.closeQuietly((Closeable)var1_14);
                         var0.deleteFile("AppEventsLogger.persistedsessioninfo");
                         if (PersistedAppSessionInfo.appSessionInfoMap == null) {
                             PersistedAppSessionInfo.appSessionInfoMap = new HashMap<AccessTokenAppIdPair, FacebookTimeSpentData>();
@@ -1048,14 +1048,14 @@ lbl35: // 2 sources:
                         PersistedAppSessionInfo.isLoaded = true;
                         PersistedAppSessionInfo.hasChanges = false;
                         return;
-                        catch (FileNotFoundException var3_6) {
+                        catch (FileNotFoundException var2_6) {
                             break block21;
                         }
-                        catch (FileNotFoundException var2_15) {
-                            var2_14 = var4_7;
+                        catch (FileNotFoundException var1_15) {
+                            var1_14 = var3_7;
                         }
                     }
-                    Utility.closeQuietly((Closeable)var2_14);
+                    Utility.closeQuietly((Closeable)var1_14);
                     var0.deleteFile("AppEventsLogger.persistedsessioninfo");
                     if (PersistedAppSessionInfo.appSessionInfoMap == null) {
                         PersistedAppSessionInfo.appSessionInfoMap = new HashMap<AccessTokenAppIdPair, FacebookTimeSpentData>();
@@ -1063,17 +1063,17 @@ lbl35: // 2 sources:
                     PersistedAppSessionInfo.isLoaded = true;
                     PersistedAppSessionInfo.hasChanges = false;
                     return;
-                    catch (Throwable var2_16) {}
+                    catch (Throwable var1_16) {}
                 }
             }
-            Utility.closeQuietly(var3_5);
+            Utility.closeQuietly(var2_5);
             var0.deleteFile("AppEventsLogger.persistedsessioninfo");
             if (PersistedAppSessionInfo.appSessionInfoMap == null) {
                 PersistedAppSessionInfo.appSessionInfoMap = new HashMap<AccessTokenAppIdPair, FacebookTimeSpentData>();
             }
             PersistedAppSessionInfo.isLoaded = true;
             PersistedAppSessionInfo.hasChanges = false;
-            throw var2_14;
+            throw var1_14;
         }
 
         /*
@@ -1295,8 +1295,8 @@ lbl18: // 2 sources:
          * Lifted jumps to return sites
          */
         private void populateRequest(GraphRequest graphRequest, int n2, JSONArray object, boolean bl) {
-            JSONObject jSONObject;
             Bundle bundle;
+            JSONObject jSONObject;
             block8 : {
                 block7 : {
                     jSONObject = new JSONObject();

@@ -743,60 +743,60 @@ public class GraphRequest {
      */
     static final void serializeToUrlConnection(GraphRequestBatch var0, HttpURLConnection var1_4) throws IOException, JSONException {
         block7 : {
-            var7_5 = new Logger(LoggingBehavior.REQUESTS, "Request");
-            var3_6 = var0.size();
-            var4_7 = GraphRequest.isGzipCompressible(var0);
-            var5_8 = var3_6 == 1 ? var0.get((int)0).httpMethod : HttpMethod.POST;
-            var1_4.setRequestMethod(var5_8.name());
-            GraphRequest.setConnectionContentType((HttpURLConnection)var1_4, var4_7);
-            var8_9 = var1_4.getURL();
-            var7_5.append("Request:\n");
-            var7_5.appendKeyValue("Id", var0.getId());
-            var7_5.appendKeyValue("URL", var8_9);
-            var7_5.appendKeyValue("Method", var1_4.getRequestMethod());
-            var7_5.appendKeyValue("User-Agent", var1_4.getRequestProperty("User-Agent"));
-            var7_5.appendKeyValue("Content-Type", var1_4.getRequestProperty("Content-Type"));
+            var4_5 = new Logger(LoggingBehavior.REQUESTS, "Request");
+            var7_6 = var0.size();
+            var8_7 = GraphRequest.isGzipCompressible(var0);
+            var2_8 = var7_6 == 1 ? var0.get((int)0).httpMethod : HttpMethod.POST;
+            var1_4.setRequestMethod(var2_8.name());
+            GraphRequest.setConnectionContentType((HttpURLConnection)var1_4, var8_7);
+            var5_9 = var1_4.getURL();
+            var4_5.append("Request:\n");
+            var4_5.appendKeyValue("Id", var0.getId());
+            var4_5.appendKeyValue("URL", var5_9);
+            var4_5.appendKeyValue("Method", var1_4.getRequestMethod());
+            var4_5.appendKeyValue("User-Agent", var1_4.getRequestProperty("User-Agent"));
+            var4_5.appendKeyValue("Content-Type", var1_4.getRequestProperty("Content-Type"));
             var1_4.setConnectTimeout(var0.getTimeout());
             var1_4.setReadTimeout(var0.getTimeout());
-            var2_10 = var5_8 == HttpMethod.POST ? 1 : 0;
-            if (var2_10 == 0) {
-                var7_5.log();
+            var6_10 = var2_8 == HttpMethod.POST ? 1 : 0;
+            if (var6_10 == 0) {
+                var4_5.log();
                 return;
             }
             var1_4.setDoOutput(true);
-            var5_8 = null;
+            var2_8 = null;
             try {
-                var1_4 = var6_11 = new BufferedOutputStream(var1_4.getOutputStream());
-                if (!var4_7) ** GOTO lbl29
-                var5_8 = var6_11;
+                var1_4 = var3_11 = new BufferedOutputStream(var1_4.getOutputStream());
+                if (!var8_7) ** GOTO lbl29
+                var2_8 = var3_11;
             }
             catch (Throwable var0_1) {}
             try {
-                var1_4 = new GZIPOutputStream(var6_11);
+                var1_4 = new GZIPOutputStream(var3_11);
 lbl29: // 2 sources:
-                var5_8 = var1_4;
+                var2_8 = var1_4;
                 if (GraphRequest.hasOnProgressCallbacks(var0)) {
-                    var5_8 = var1_4;
-                    var6_12 = new ProgressNoopOutputStream(var0.getCallbackHandler());
-                    var5_8 = var1_4;
-                    GraphRequest.processRequest(var0, null, var3_6, var8_9, var6_12, var4_7);
-                    var5_8 = var1_4;
-                    var2_10 = var6_12.getMaxProgress();
-                    var5_8 = var1_4;
-                    var1_4 = new ProgressOutputStream((OutputStream)var1_4, var0, var6_12.getProgressMap(), var2_10);
+                    var2_8 = var1_4;
+                    var3_12 = new ProgressNoopOutputStream(var0.getCallbackHandler());
+                    var2_8 = var1_4;
+                    GraphRequest.processRequest(var0, null, var7_6, var5_9, var3_12, var8_7);
+                    var2_8 = var1_4;
+                    var6_10 = var3_12.getMaxProgress();
+                    var2_8 = var1_4;
+                    var1_4 = new ProgressOutputStream((OutputStream)var1_4, var0, var3_12.getProgressMap(), var6_10);
                 }
-                var5_8 = var1_4;
+                var2_8 = var1_4;
             }
             catch (Throwable var0_3) {}
-            GraphRequest.processRequest(var0, var7_5, var3_6, var8_9, (OutputStream)var1_4, var4_7);
+            GraphRequest.processRequest(var0, var4_5, var7_6, var5_9, (OutputStream)var1_4, var8_7);
             if (var1_4 == null) break block7;
             var1_4.close();
         }
-        var7_5.log();
+        var4_5.log();
         return;
         {
-            if (var5_8 == null) throw var0_2;
-            var5_8.close();
+            if (var2_8 == null) throw var0_2;
+            var2_8.close();
             throw var0_2;
         }
     }

@@ -152,19 +152,19 @@ public class BuzzUtils {
         Object object2 = Pattern.compile("#");
         object = object.matcher(string2);
         object2 = object2.matcher(string2);
-        int n4 = n2 = (n3 = string2.length());
+        int n4 = n3 = (n2 = string2.length());
         if (object.find()) {
-            n2 = object.start();
+            n3 = object.start();
         }
         if (object2.find()) {
             n4 = object2.start();
         }
-        if (n2 >= n3) {
+        if (n3 >= n2) {
             object2 = string2;
-            if (n4 >= n3) return object2;
+            if (n4 >= n2) return object2;
         }
-        if (n2 >= n4) return string2.substring(0, n4);
-        return string2.substring(0, n2);
+        if (n3 >= n4) return string2.substring(0, n4);
+        return string2.substring(0, n3);
     }
 
     /*
@@ -240,61 +240,61 @@ public class BuzzUtils {
      * Lifted jumps to return sites
      */
     private static String getCsrfTokenInternal(BuzzUser var0) {
-        var10_5 = BuzzUtils.TAG + ".getCsrfTokenInternal";
-        var7_6 = null;
-        var8_7 = null;
-        var9_8 = null;
-        var2_10 = var6_9 = null;
-        if (var0 == null) return var2_10;
-        var2_10 = var6_9;
-        if (var0.isLogin() == false) return var2_10;
-        var5_11 = var7_6;
-        var3_12 = var8_7;
-        var4_13 = var9_8;
+        var9_5 = BuzzUtils.TAG + ".getCsrfTokenInternal";
+        var6_6 = null;
+        var7_7 = null;
+        var8_8 = null;
+        var1_10 = var5_9 = null;
+        if (var0 == null) return var1_10;
+        var1_10 = var5_9;
+        if (var0.isLogin() == false) return var1_10;
+        var4_11 = var6_6;
+        var2_12 = var7_7;
+        var3_13 = var8_8;
         try {
             var0 = BuzzUtils.requestCsrfTokenInternal((BuzzUser)var0);
-            var5_11 = var7_6;
-            var3_12 = var8_7;
-            var4_13 = var9_8;
+            var4_11 = var6_6;
+            var2_12 = var7_7;
+            var3_13 = var8_8;
             if (var0.code() == 401) {
                 return "invalid_session";
             }
-            var5_11 = var7_6;
-            var3_12 = var8_7;
-            var4_13 = var9_8;
+            var4_11 = var6_6;
+            var2_12 = var7_7;
+            var3_13 = var8_8;
             var0 = new JSONObject(((ResponseBody)var0.body()).string());
-            var2_10 = var6_9;
-            var5_11 = var7_6;
-            var3_12 = var8_7;
-            var4_13 = var9_8;
-            if (var0.optInt("success") != 1) return var2_10;
-            var5_11 = var7_6;
-            var3_12 = var8_7;
-            var4_13 = var9_8;
-            var2_10 = var0 = var0.optString("token");
-            if (var0 == null) return var2_10;
-            var5_11 = var0;
-            var3_12 = var0;
-            var4_13 = var0;
-            var1_14 = var0.length();
-            var2_10 = var0;
-            if (var1_14 != 0) return var2_10;
+            var1_10 = var5_9;
+            var4_11 = var6_6;
+            var2_12 = var7_7;
+            var3_13 = var8_8;
+            if (var0.optInt("success") != 1) return var1_10;
+            var4_11 = var6_6;
+            var2_12 = var7_7;
+            var3_13 = var8_8;
+            var1_10 = var0 = var0.optString("token");
+            if (var0 == null) return var1_10;
+            var4_11 = var0;
+            var2_12 = var0;
+            var3_13 = var0;
+            var10_14 = var0.length();
+            var1_10 = var0;
+            if (var10_14 != 0) return var1_10;
             return null;
         }
         catch (JSONException var0_1) {
             block5 : {
-                var2_10 = var5_11;
+                var1_10 = var4_11;
                 ** GOTO lbl48
                 catch (IOException var0_3) {
-                    var2_10 = var3_12;
+                    var1_10 = var2_12;
                     break block5;
                 }
                 catch (HttpException var0_4) {
-                    var2_10 = var4_13;
+                    var1_10 = var3_13;
                 }
             }
-            LogUtil.e(var10_5, "Error getting CSRF token", (Throwable)var0_2);
-            return var2_10;
+            LogUtil.e(var9_5, "Error getting CSRF token", (Throwable)var0_2);
+            return var1_10;
         }
     }
 

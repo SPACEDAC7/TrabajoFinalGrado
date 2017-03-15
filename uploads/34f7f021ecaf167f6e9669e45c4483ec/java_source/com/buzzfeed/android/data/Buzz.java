@@ -859,12 +859,12 @@ FlowItem.Content {
      */
     @Override
     public void parse(JSONObject jSONObject) throws JSONException {
-        long l2;
-        int n2;
-        int n3;
         Object object;
+        long l2;
         Object object2;
+        int n2;
         Object object3;
+        int n3;
         if (jSONObject.has("id") && !jSONObject.isNull("id")) {
             this.setId(jSONObject.getString("id"));
         } else if (jSONObject.has("campaignid") && !jSONObject.isNull("campaignid")) {
@@ -889,8 +889,8 @@ FlowItem.Content {
             try {
                 this.setTimestamp(Long.valueOf(jSONObject.getString("published_unix")) * 1000);
             }
-            catch (NumberFormatException var7_3) {
-                LogUtil.e(TAG, "failed to convert timestamp to long", var7_3);
+            catch (NumberFormatException var2_3) {
+                LogUtil.e(TAG, "failed to convert timestamp to long", var2_3);
                 this.timestamp = System.currentTimeMillis();
             }
         }
@@ -907,14 +907,14 @@ FlowItem.Content {
             object = object3.optJSONObject("extra_fields");
             this.setSplashPosition(this.parseHeadlinePosition(object.optString("position")));
             object2 = object.optString("size");
-            n3 = 28;
+            n2 = 28;
             try {
-                n3 = n2 = Integer.parseInt((String)object2);
+                n2 = n3 = Integer.parseInt((String)object2);
             }
-            catch (Exception var10_8) {
+            catch (Exception var5_8) {
                 LogUtil.w(TAG, "Error parsing font size: " + (String)object2);
             }
-            this.setSplashTextSize(String.valueOf(n3));
+            this.setSplashTextSize(String.valueOf(n2));
             this.setSplashColorScheme(this.parseSplashColorScheme(object.optString("color")));
             object2 = object.optString("title");
             if (object2 != null && object2.length() > 0) {
@@ -932,12 +932,12 @@ FlowItem.Content {
             this.setHeaderName(object3.optString("name"));
             if (object3.has("users")) {
                 object = object3.getJSONArray("users");
-                n2 = object.length();
-                if (n2 > 0) {
+                n3 = object.length();
+                if (n3 > 0) {
                     this.contributors = new ArrayList();
                 }
-                for (n3 = 0; n3 < n2; ++n3) {
-                    Object object4 = object.getJSONObject(n3);
+                for (n2 = 0; n2 < n3; ++n2) {
+                    Object object4 = object.getJSONObject(n2);
                     if (object4 == null) continue;
                     object2 = new Contributor();
                     object2.setUserPage(object4.optString("user_page"));
@@ -970,10 +970,10 @@ FlowItem.Content {
             object3 = this.getThumbnail();
             if (object3 != null) {
                 this.setImageUrlStandard((String)object3);
-                n3 = object3.lastIndexOf(".");
-                object = object3.substring(n3);
-                this.setImageUrlBig(object3.substring(0, n3) + "_big" + (String)object);
-                this.setImageUrlDblBig(object3.substring(0, n3) + "_dblbig" + (String)object);
+                n2 = object3.lastIndexOf(".");
+                object = object3.substring(n2);
+                this.setImageUrlBig(object3.substring(0, n2) + "_big" + (String)object);
+                this.setImageUrlDblBig(object3.substring(0, n2) + "_dblbig" + (String)object);
             }
         }
         if (jSONObject.has("allow_contributions")) {

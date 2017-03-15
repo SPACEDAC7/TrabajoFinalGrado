@@ -609,8 +609,8 @@ extends Kit<Void> {
                     bl = CrashlyticsCore.this.initializationMarker.remove();
                     Fabric.getLogger().d("CrashlyticsCore", "Initialization marker file removed: " + bl);
                 }
-                catch (Exception var2_2) {
-                    Fabric.getLogger().e("CrashlyticsCore", "Problem encountered deleting Crashlytics initialization marker.", (Throwable)var2_2);
+                catch (Exception var1_2) {
+                    Fabric.getLogger().e("CrashlyticsCore", "Problem encountered deleting Crashlytics initialization marker.", (Throwable)var1_2);
                     return false;
                 }
                 return bl;

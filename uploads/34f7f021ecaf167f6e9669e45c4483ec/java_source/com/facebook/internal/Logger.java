@@ -96,7 +96,7 @@ public class Logger {
 
     public void append(StringBuilder stringBuilder) {
         if (this.shouldLog()) {
-            this.contents.append(stringBuilder);
+            this.contents.append((CharSequence)stringBuilder);
         }
     }
 

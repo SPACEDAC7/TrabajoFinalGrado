@@ -98,7 +98,7 @@ class AppCompatTextHelper {
         int n5 = 0;
         TintTypedArray tintTypedArray2 = null;
         object2 = null;
-        Object var13_13 = null;
+        Object var7_13 = null;
         tintTypedArray = null;
         TintTypedArray tintTypedArray3 = null;
         if (n3 != -1) {
@@ -116,7 +116,7 @@ class AppCompatTextHelper {
             object2 = tintTypedArray2;
             tintTypedArray2 = tintTypedArray3;
             if (Build.VERSION.SDK_INT < 23) {
-                tintTypedArray = var13_13;
+                tintTypedArray = var7_13;
                 if (tintTypedArray4.hasValue(R.styleable.TextAppearance_android_textColor)) {
                     tintTypedArray = tintTypedArray4.getColorStateList(R.styleable.TextAppearance_android_textColor);
                 }

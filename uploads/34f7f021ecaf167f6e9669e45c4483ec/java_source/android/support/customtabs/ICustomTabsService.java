@@ -318,30 +318,30 @@ extends IInterface {
 
             @Override
             public boolean warmup(long l2) throws RemoteException {
-                boolean bl;
                 Parcel parcel;
+                boolean bl;
                 Parcel parcel2;
                 block2 : {
                     bl = false;
-                    parcel = Parcel.obtain();
                     parcel2 = Parcel.obtain();
+                    parcel = Parcel.obtain();
                     try {
-                        parcel.writeInterfaceToken("android.support.customtabs.ICustomTabsService");
-                        parcel.writeLong(l2);
-                        this.mRemote.transact(2, parcel, parcel2, 0);
-                        parcel2.readException();
-                        int n2 = parcel2.readInt();
+                        parcel2.writeInterfaceToken("android.support.customtabs.ICustomTabsService");
+                        parcel2.writeLong(l2);
+                        this.mRemote.transact(2, parcel2, parcel, 0);
+                        parcel.readException();
+                        int n2 = parcel.readInt();
                         if (n2 == 0) break block2;
                         bl = true;
                     }
-                    catch (Throwable var7_6) {
-                        parcel2.recycle();
+                    catch (Throwable var5_6) {
                         parcel.recycle();
-                        throw var7_6;
+                        parcel2.recycle();
+                        throw var5_6;
                     }
                 }
-                parcel2.recycle();
                 parcel.recycle();
+                parcel2.recycle();
                 return bl;
             }
         }

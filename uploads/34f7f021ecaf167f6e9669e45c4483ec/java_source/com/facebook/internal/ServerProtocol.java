@@ -3,6 +3,7 @@
  * 
  * Could not load the following classes:
  *  android.os.Bundle
+ *  com.facebook.internal.BundleJSONConverter
  *  org.json.JSONException
  */
 package com.facebook.internal;

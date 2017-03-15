@@ -1031,12 +1031,12 @@ AdContent {
      */
     @Override
     public void parse(JSONObject jSONObject, ContentFactory contentFactory) {
-        long l2;
         Object object;
         Object object2;
-        int n2;
         Object object3;
+        long l2;
         Object object4;
+        int n2;
         int n3;
         if (jSONObject.has("id") && !jSONObject.isNull("id")) {
             this.setId(JSONUtil.optString(jSONObject, "id"));
@@ -1045,8 +1045,8 @@ AdContent {
         } else if (jSONObject.has("buzz_id") && !jSONObject.isNull("buzz_id")) {
             this.setId(JSONUtil.optString(jSONObject, "buzz_id"));
         }
-        if ((object3 = jSONObject.optJSONArray("badges")) != null) {
-            this.setBadges(this.spliceBrackets(object3.toString()));
+        if ((object4 = jSONObject.optJSONArray("badges")) != null) {
+            this.setBadges(this.spliceBrackets(object4.toString()));
         }
         this.setFlags(this.spliceBrackets(JSONUtil.optString(jSONObject, "flags")));
         this.setName(JSONUtil.optString(jSONObject, "name"));
@@ -1064,13 +1064,13 @@ AdContent {
             try {
                 this.setTimestamp(JSONUtil.optDate(jSONObject, "published_unix"));
             }
-            catch (NumberFormatException var8_5) {}
+            catch (NumberFormatException var3_5) {}
         }
         if (jSONObject.has("published") && this.timestamp.getTime() == 0) {
             try {
                 this.setTimestamp(JSONUtil.optDate(jSONObject, "published"));
             }
-            catch (NumberFormatException var8_4) {}
+            catch (NumberFormatException var3_4) {}
         }
         if (jSONObject.has("viral")) {
             this.setViral(jSONObject.optLong("viral"));
@@ -1084,108 +1084,108 @@ AdContent {
         }
         this.setLastUpdated(JSONUtil.optDate(jSONObject, "last_updated"));
         this.setEditUpdated(JSONUtil.optDate(jSONObject, "edit_updated"));
-        if (jSONObject.has("promotions") && (object3 = jSONObject.optJSONObject("promotions")).has("extra_fields")) {
-            object2 = object3.optJSONObject("extra_fields");
-            this.setSplashPosition(this.parseHeadlinePosition(object2.optString("position")));
-            object = object2.optString("size");
+        if (jSONObject.has("promotions") && (object4 = jSONObject.optJSONObject("promotions")).has("extra_fields")) {
+            object = object4.optJSONObject("extra_fields");
+            this.setSplashPosition(this.parseHeadlinePosition(object.optString("position")));
+            object3 = object.optString("size");
             n3 = 28;
             try {
-                n3 = n2 = Integer.parseInt((String)object);
+                n3 = n2 = Integer.parseInt((String)object3);
             }
-            catch (Exception var10_9) {}
+            catch (Exception var5_9) {}
             this.setSplashTextSize(String.valueOf(n3));
-            this.setSplashColorScheme(this.parseSplashColorScheme(object2.optString("color")));
-            object = object2.optString("title");
-            if (object != null && object.length() > 0) {
-                this.setTitle((String)object);
+            this.setSplashColorScheme(this.parseSplashColorScheme(object.optString("color")));
+            object3 = object.optString("title");
+            if (object3 != null && object3.length() > 0) {
+                this.setTitle((String)object3);
             } else {
-                this.setTitle(object3.optString("title"));
+                this.setTitle(object4.optString("title"));
             }
-            if (object2.has("label")) {
-                this.setSubtitle(object2.optJSONObject("label").optString("value"));
+            if (object.has("label")) {
+                this.setSubtitle(object.optJSONObject("label").optString("value"));
             }
         }
         this.contributors = new ArrayList();
-        if (jSONObject.has("bylines") && (object3 = jSONObject.optJSONArray("bylines")) != null) {
-            for (n3 = 0; n3 < object3.length(); ++n3) {
-                object2 = object3.optJSONObject(n3);
-                object = new Contributor();
-                object.setId(object2.optString("id"));
-                object.setDisplayName(JSONUtil.optString((JSONObject)object2, "display_name"));
-                object.setFacebook(JSONUtil.optString((JSONObject)object2, "facebook_page_url"));
-                object4 = new JSONObject();
-                object4.add((String)JSONUtil.optString((JSONObject)object2, "avatar"));
-                object.setUserImages((Stack<String>)object4);
-                object.setUserPage("/" + JSONUtil.optString((JSONObject)object2, "username"));
-                object.setBylineDesc(JSONUtil.optString((JSONObject)object2, "title"));
-                this.contributors.add((Contributor)object);
+        if (jSONObject.has("bylines") && (object4 = jSONObject.optJSONArray("bylines")) != null) {
+            for (n3 = 0; n3 < object4.length(); ++n3) {
+                object = object4.optJSONObject(n3);
+                object3 = new Contributor();
+                object3.setId(object.optString("id"));
+                object3.setDisplayName(JSONUtil.optString((JSONObject)object, "display_name"));
+                object3.setFacebook(JSONUtil.optString((JSONObject)object, "facebook_page_url"));
+                object2 = new JSONObject();
+                object2.add((String)JSONUtil.optString((JSONObject)object, "avatar"));
+                object3.setUserImages((Stack<String>)object2);
+                object3.setUserPage("/" + JSONUtil.optString((JSONObject)object, "username"));
+                object3.setBylineDesc(JSONUtil.optString((JSONObject)object, "title"));
+                this.contributors.add((Contributor)object3);
             }
         }
         if (jSONObject.has("header")) {
-            object3 = jSONObject.optJSONObject("header");
-            this.setHeaderBlurb(object3.optString("blurb"));
-            this.setHeaderName(object3.optString("name"));
+            object4 = jSONObject.optJSONObject("header");
+            this.setHeaderBlurb(object4.optString("blurb"));
+            this.setHeaderName(object4.optString("name"));
             if (this.getHeaderName() == null || this.getHeaderName().length() == 0) {
-                this.setHeaderName(object3.optString("title"));
+                this.setHeaderName(object4.optString("title"));
                 if (this.getName() == null || this.getName().length() == 0) {
-                    this.setName(object3.optString("title"));
+                    this.setName(object4.optString("title"));
                 }
             }
-            if (object3.has("users") && (object2 = object3.optJSONArray("users")) != null) {
-                n2 = object2.length();
+            if (object4.has("users") && (object = object4.optJSONArray("users")) != null) {
+                n2 = object.length();
                 for (n3 = 0; n3 < n2; ++n3) {
-                    object4 = object2.optJSONObject(n3);
-                    if (object4 == null) continue;
-                    object = new Contributor();
-                    Object object5 = object4.optString("user_id");
+                    object2 = object.optJSONObject(n3);
+                    if (object2 == null) continue;
+                    object3 = new Contributor();
+                    Object object5 = object2.optString("user_id");
                     if (this.hasContributor((String)object5)) continue;
-                    object.setId((String)object5);
-                    object.setUserPage(object4.optString("user_page"));
-                    object.setBylineDesc(object4.optString("byline_desc"));
-                    object.setDisplayName(object4.optString("display_name"));
-                    if (!TextUtils.isEmpty((CharSequence)object.getDisplayName()) && object.getDisplayName().equals("BuzzFeed Promotions")) {
+                    object3.setId((String)object5);
+                    object3.setUserPage(object2.optString("user_page"));
+                    object3.setBylineDesc(object2.optString("byline_desc"));
+                    object3.setDisplayName(object2.optString("display_name"));
+                    if (!TextUtils.isEmpty((CharSequence)object3.getDisplayName()) && object3.getDisplayName().equals("BuzzFeed Promotions")) {
                         this.mIsBackfill = true;
                     }
-                    object4 = object4.optString("user_image");
+                    object2 = object2.optString("user_image");
                     object5 = new Stack();
-                    object5.add(object4);
-                    if (!object4.contains("_large.jpg")) {
-                        object5.add(object4.replace(".jpg", "_large.jpg"));
+                    object5.add(object2);
+                    if (!object2.contains("_large.jpg")) {
+                        object5.add(object2.replace(".jpg", "_large.jpg"));
                     }
-                    object.setUserImages((Stack<String>)object5);
-                    this.contributors.add((Contributor)object);
+                    object3.setUserImages((Stack<String>)object5);
+                    this.contributors.add((Contributor)object3);
                 }
             }
-            if (object3.has("special_blurb") && (object3 = object3.optJSONObject("special_blurb")) != null && object3.has("type") && (object2 = object3.optString("type")) != null && object2.equalsIgnoreCase("bulleted_list") && object3.has("value")) {
-                if ((object3 = object3.optJSONObject("value")) != null) {
-                    this.bulletedDekHtml = object3.optString("bullets");
+            if (object4.has("special_blurb") && (object4 = object4.optJSONObject("special_blurb")) != null && object4.has("type") && (object = object4.optString("type")) != null && object.equalsIgnoreCase("bulleted_list") && object4.has("value")) {
+                if ((object4 = object4.optJSONObject("value")) != null) {
+                    this.bulletedDekHtml = object4.optString("bullets");
                 }
                 this.setBulletedDeks(BulletedDekParser.getBulletedDek(this.bulletedDekHtml));
             }
         }
         if (jSONObject.has("images")) {
-            object3 = jSONObject.optJSONObject("images");
-            this.imageUrlSmall = object3.optString("small");
-            this.imageUrlStandard = object3.optString("standard");
-            this.imageUrlBig = object3.optString("big");
-            this.imageUrlWide = object3.optString("wide");
-            this.imageUrlDblBig = object3.optString("dblbig");
-            this.imageUrlDblWide = object3.optString("dblwide");
+            object4 = jSONObject.optJSONObject("images");
+            this.imageUrlSmall = object4.optString("small");
+            this.imageUrlStandard = object4.optString("standard");
+            this.imageUrlBig = object4.optString("big");
+            this.imageUrlWide = object4.optString("wide");
+            this.imageUrlDblBig = object4.optString("dblbig");
+            this.imageUrlDblWide = object4.optString("dblwide");
         } else {
-            object3 = this.getThumbnail();
-            if (object3 != null) {
-                this.imageUrlStandard = object3;
-                n3 = object3.lastIndexOf(".");
-                object2 = object3.substring(n3);
-                this.imageUrlBig = object3.substring(0, n3) + "_big" + (String)object2;
-                this.imageUrlDblBig = object3.substring(0, n3) + "_dblbig" + (String)object2;
+            object4 = this.getThumbnail();
+            if (object4 != null) {
+                this.imageUrlStandard = object4;
+                n3 = object4.lastIndexOf(".");
+                object = object4.substring(n3);
+                this.imageUrlBig = object4.substring(0, n3) + "_big" + (String)object;
+                this.imageUrlDblBig = object4.substring(0, n3) + "_dblbig" + (String)object;
             }
         }
         if (jSONObject.has("category")) {
             this.setCategory(JSONUtil.optString(jSONObject, "category"));
         }
-        if ((object3 = JSONUtil.optString(jSONObject, "category_name")) != null && !object3.equals("VerticalFeature")) {
-            this.setCategory((String)object3);
+        if ((object4 = JSONUtil.optString(jSONObject, "category_name")) != null && !object4.equals("VerticalFeature")) {
+            this.setCategory((String)object4);
         }
         if (this.getCategory() != null && this.getCategory().equalsIgnoreCase("Breaking")) {
             this.setAllowContributions(false);
@@ -1205,9 +1205,9 @@ AdContent {
             this.utmTerm = JSONUtil.optString(jSONObject, "utm_term");
         }
         this.setNumComments(jSONObject.optInt("comments_count"));
-        object3 = JSONUtil.optString(jSONObject, "byline_prefix");
-        if (!TextUtils.isEmpty((CharSequence)object3)) {
-            this.setBylinePrefix((String)object3);
+        object4 = JSONUtil.optString(jSONObject, "byline_prefix");
+        if (!TextUtils.isEmpty((CharSequence)object4)) {
+            this.setBylinePrefix((String)object4);
         }
         this.parseSponsorNameAndImageUrl(jSONObject);
         this.metaVertical = JSONUtil.optString(jSONObject, "metavertical");
@@ -1217,23 +1217,23 @@ AdContent {
         if (TextUtils.isEmpty((CharSequence)this.description)) {
             this.description = JSONUtil.optString(jSONObject, "blurb");
         }
-        if (jSONObject.has("format") && (object3 = jSONObject.optJSONObject("format")) != null) {
-            this.pageWidth = object3.optString("page_width");
-            this.pageType = this.parsePageType(object3.optString("page_type"));
+        if (jSONObject.has("format") && (object4 = jSONObject.optJSONObject("format")) != null) {
+            this.pageWidth = object4.optString("page_width");
+            this.pageType = this.parsePageType(object4.optString("page_type"));
         }
-        if (jSONObject.has("tags") && (object3 = jSONObject.optJSONArray("tags")) != null) {
+        if (jSONObject.has("tags") && (object4 = jSONObject.optJSONArray("tags")) != null) {
             this.tags = new ArrayList<String>();
-            for (n3 = 0; n3 < object3.length(); ++n3) {
-                this.tags.add(object3.optString(n3));
+            for (n3 = 0; n3 < object4.length(); ++n3) {
+                this.tags.add(object4.optString(n3));
             }
         }
         if (jSONObject.has("sub_buzzes") && contentFactory != null && (jSONObject = jSONObject.optJSONArray("sub_buzzes")) != null) {
             this.subbuzzs = new ArrayList<FlowItem>();
             n3 = 0;
             while (n3 < jSONObject.length()) {
-                object3 = new FlowItem();
-                object3.parse(jSONObject.optJSONObject(n3), contentFactory);
-                this.subbuzzs.add((FlowItem)object3);
+                object4 = new FlowItem();
+                object4.parse(jSONObject.optJSONObject(n3), contentFactory);
+                this.subbuzzs.add((FlowItem)object4);
                 ++n3;
             }
             return;

@@ -32,8 +32,8 @@ class DrawableCompatJellybeanMr1 {
                 sGetLayoutDirectionMethod = Drawable.class.getDeclaredMethod("getLayoutDirection", new Class[0]);
                 sGetLayoutDirectionMethod.setAccessible(true);
             }
-            catch (NoSuchMethodException var2_3) {
-                Log.i((String)"DrawableCompatJellybeanMr1", (String)"Failed to retrieve getLayoutDirection() method", (Throwable)var2_3);
+            catch (NoSuchMethodException var1_3) {
+                Log.i((String)"DrawableCompatJellybeanMr1", (String)"Failed to retrieve getLayoutDirection() method", (Throwable)var1_3);
             }
             sGetLayoutDirectionMethodFetched = true;
         }

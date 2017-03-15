@@ -138,14 +138,14 @@ implements TintableBackgroundView {
      */
     public AppCompatSpinner(Context var1_1, AttributeSet var2_3, int var3_4, int var4_5, Resources.Theme var5_6) {
         super(var1_1, var2_3, var3_4);
-        var10_7 = TintTypedArray.obtainStyledAttributes(var1_1, var2_3, R.styleable.Spinner, var3_4, 0);
+        var8_7 = TintTypedArray.obtainStyledAttributes(var1_1, var2_3, R.styleable.Spinner, var3_4, 0);
         this.mBackgroundTintHelper = new AppCompatBackgroundHelper((View)this);
         if (var5_6 != null) {
             this.mPopupContext = new ContextThemeWrapper(var1_1, (Resources.Theme)var5_6);
         } else {
-            var6_8 = var10_7.getResourceId(R.styleable.Spinner_popupTheme, 0);
-            if (var6_8 != 0) {
-                this.mPopupContext = new ContextThemeWrapper(var1_1, var6_8);
+            var9_8 = var8_7.getResourceId(R.styleable.Spinner_popupTheme, 0);
+            if (var9_8 != 0) {
+                this.mPopupContext = new ContextThemeWrapper(var1_1, var9_8);
             } else {
                 var5_6 = AppCompatSpinner.IS_AT_LEAST_M == false ? var1_1 : null;
                 this.mPopupContext = var5_6;
@@ -153,40 +153,40 @@ implements TintableBackgroundView {
         }
         if (this.mPopupContext != null) {
             block17 : {
-                var7_9 = var4_5;
+                var10_9 = var4_5;
                 if (var4_5 == -1) {
                     if (Build.VERSION.SDK_INT >= 11) {
-                        var8_10 = null;
+                        var6_10 = null;
                         var5_6 = null;
                         try {
-                            var9_11 = var1_1.obtainStyledAttributes(var2_3, AppCompatSpinner.ATTRS_ANDROID_SPINNERMODE, var3_4, 0);
-                            var6_8 = var4_5;
-                            var5_6 = var9_11;
-                            var8_10 = var9_11;
-                            if (var9_11.hasValue(0)) {
-                                var5_6 = var9_11;
-                                var8_10 = var9_11;
-                                var6_8 = var9_11.getInt(0, 0);
+                            var7_11 = var1_1.obtainStyledAttributes(var2_3, AppCompatSpinner.ATTRS_ANDROID_SPINNERMODE, var3_4, 0);
+                            var9_8 = var4_5;
+                            var5_6 = var7_11;
+                            var6_10 = var7_11;
+                            if (var7_11.hasValue(0)) {
+                                var5_6 = var7_11;
+                                var6_10 = var7_11;
+                                var9_8 = var7_11.getInt(0, 0);
                             }
-                            var7_9 = var6_8;
-                            ** if (var9_11 == null) goto lbl-1000
+                            var10_9 = var9_8;
+                            ** if (var7_11 == null) goto lbl-1000
                         }
-                        catch (Exception var9_12) {
-                            var8_10 = var5_6;
+                        catch (Exception var7_12) {
+                            var6_10 = var5_6;
                             try {
-                                Log.i((String)"AppCompatSpinner", (String)"Could not read android:spinnerMode", (Throwable)var9_12);
-                                var7_9 = var4_5;
+                                Log.i((String)"AppCompatSpinner", (String)"Could not read android:spinnerMode", (Throwable)var7_12);
+                                var10_9 = var4_5;
                                 ** if (var5_6 == null) goto lbl-1000
                             }
                             catch (Throwable var1_2) {
-                                if (var8_10 == null) throw var1_2;
-                                var8_10.recycle();
+                                if (var6_10 == null) throw var1_2;
+                                var6_10.recycle();
                                 throw var1_2;
                             }
 lbl-1000: // 1 sources:
                             {
                                 var5_6.recycle();
-                                var7_9 = var4_5;
+                                var10_9 = var4_5;
                             }
 lbl-1000: // 2 sources:
                             {
@@ -195,24 +195,24 @@ lbl-1000: // 2 sources:
                         }
 lbl-1000: // 1 sources:
                         {
-                            var9_11.recycle();
-                            var7_9 = var6_8;
+                            var7_11.recycle();
+                            var10_9 = var9_8;
                         }
 lbl-1000: // 2 sources:
                         {
                             break block17;
                         }
                     }
-                    var7_9 = 1;
+                    var10_9 = 1;
                 }
             }
-            if (var7_9 == 1) {
+            if (var10_9 == 1) {
                 var5_6 = new DropdownPopup(this.mPopupContext, var2_3, var3_4);
-                var8_10 = TintTypedArray.obtainStyledAttributes(this.mPopupContext, var2_3, R.styleable.Spinner, var3_4, 0);
-                this.mDropDownWidth = var8_10.getLayoutDimension(R.styleable.Spinner_android_dropDownWidth, -2);
-                var5_6.setBackgroundDrawable(var8_10.getDrawable(R.styleable.Spinner_android_popupBackground));
-                var5_6.setPromptText(var10_7.getString(R.styleable.Spinner_android_prompt));
-                var8_10.recycle();
+                var6_10 = TintTypedArray.obtainStyledAttributes(this.mPopupContext, var2_3, R.styleable.Spinner, var3_4, 0);
+                this.mDropDownWidth = var6_10.getLayoutDimension(R.styleable.Spinner_android_dropDownWidth, -2);
+                var5_6.setBackgroundDrawable(var6_10.getDrawable(R.styleable.Spinner_android_popupBackground));
+                var5_6.setPromptText(var8_7.getString(R.styleable.Spinner_android_prompt));
+                var6_10.recycle();
                 this.mPopup = var5_6;
                 this.mForwardingListener = new ForwardingListener((View)this, (DropdownPopup)var5_6){
                     final /* synthetic */ DropdownPopup val$popup;
@@ -232,12 +232,12 @@ lbl-1000: // 2 sources:
                 };
             }
         }
-        if ((var5_6 = var10_7.getTextArray(R.styleable.Spinner_android_entries)) != null) {
+        if ((var5_6 = var8_7.getTextArray(R.styleable.Spinner_android_entries)) != null) {
             var1_1 = new ArrayAdapter(var1_1, 17367048, (Object[])var5_6);
             var1_1.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
             this.setAdapter((SpinnerAdapter)var1_1);
         }
-        var10_7.recycle();
+        var8_7.recycle();
         this.mPopupSet = true;
         if (this.mTempAdapter != null) {
             this.setAdapter(this.mTempAdapter);

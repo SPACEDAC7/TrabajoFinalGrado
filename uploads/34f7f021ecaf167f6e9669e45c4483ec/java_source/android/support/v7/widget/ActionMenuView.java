@@ -86,20 +86,20 @@ MenuView {
      * Lifted jumps to return sites
      */
     static int measureChildForCells(View var0, int var1_1, int var2_2, int var3_3, int var4_4) {
-        var9_5 = (LayoutParams)var0.getLayoutParams();
-        var6_6 = View.MeasureSpec.makeMeasureSpec((int)(View.MeasureSpec.getSize((int)var3_3) - var4_4), (int)View.MeasureSpec.getMode((int)var3_3));
-        var8_7 = var0 instanceof ActionMenuItemView != false ? (ActionMenuItemView)var0 : null;
-        var4_4 = var8_7 != null && var8_7.hasText() != false ? 1 : 0;
-        var3_3 = var5_8 = 0;
+        var6_5 = (LayoutParams)var0.getLayoutParams();
+        var8_6 = View.MeasureSpec.makeMeasureSpec((int)(View.MeasureSpec.getSize((int)var3_3) - var4_4), (int)View.MeasureSpec.getMode((int)var3_3));
+        var5_7 = var0 instanceof ActionMenuItemView != false ? (ActionMenuItemView)var0 : null;
+        var4_4 = var5_7 != null && var5_7.hasText() != false ? 1 : 0;
+        var3_3 = var7_8 = 0;
         if (var2_2 <= 0) ** GOTO lbl20
         if (var4_4 == 0) ** GOTO lbl-1000
-        var3_3 = var5_8;
+        var3_3 = var7_8;
         if (var2_2 >= 2) lbl-1000: // 2 sources:
         {
-            var0.measure(View.MeasureSpec.makeMeasureSpec((int)(var1_1 * var2_2), (int)Integer.MIN_VALUE), var6_6);
-            var5_8 = var0.getMeasuredWidth();
-            var2_2 = var3_3 = var5_8 / var1_1;
-            if (var5_8 % var1_1 != 0) {
+            var0.measure(View.MeasureSpec.makeMeasureSpec((int)(var1_1 * var2_2), (int)Integer.MIN_VALUE), var8_6);
+            var7_8 = var0.getMeasuredWidth();
+            var2_2 = var3_3 = var7_8 / var1_1;
+            if (var7_8 % var1_1 != 0) {
                 var2_2 = var3_3 + 1;
             }
             var3_3 = var2_2;
@@ -111,10 +111,10 @@ MenuView {
             }
         }
 lbl20: // 8 sources:
-        var7_9 = var9_5.isOverflowButton == false && var4_4 != 0;
-        var9_5.expandable = var7_9;
-        var9_5.cellsUsed = var3_3;
-        var0.measure(View.MeasureSpec.makeMeasureSpec((int)(var3_3 * var1_1), (int)1073741824), var6_6);
+        var9_9 = var6_5.isOverflowButton == false && var4_4 != 0;
+        var6_5.expandable = var9_9;
+        var6_5.cellsUsed = var3_3;
+        var0.measure(View.MeasureSpec.makeMeasureSpec((int)(var3_3 * var1_1), (int)1073741824), var8_6);
         return var3_3;
     }
 
@@ -125,221 +125,221 @@ lbl20: // 8 sources:
      */
     private void onMeasureExactFormat(int var1_1, int var2_2) {
         block39 : {
-            var18_3 = View.MeasureSpec.getMode((int)var2_2);
+            var20_3 = View.MeasureSpec.getMode((int)var2_2);
             var1_1 = View.MeasureSpec.getSize((int)var1_1);
-            var17_4 = View.MeasureSpec.getSize((int)var2_2);
-            var6_5 = this.getPaddingLeft();
-            var7_6 = this.getPaddingRight();
-            var23_7 = this.getPaddingTop() + this.getPaddingBottom();
-            var19_8 = ActionMenuView.getChildMeasureSpec((int)var2_2, (int)var23_7, (int)-2);
-            var20_9 = var1_1 - (var6_5 + var7_6);
-            var1_1 = var20_9 / this.mMinCellSize;
+            var19_4 = View.MeasureSpec.getSize((int)var2_2);
+            var8_5 = this.getPaddingLeft();
+            var9_6 = this.getPaddingRight();
+            var25_7 = this.getPaddingTop() + this.getPaddingBottom();
+            var21_8 = ActionMenuView.getChildMeasureSpec((int)var2_2, (int)var25_7, (int)-2);
+            var22_9 = var1_1 - (var8_5 + var9_6);
+            var1_1 = var22_9 / this.mMinCellSize;
             var2_2 = this.mMinCellSize;
             if (var1_1 == 0) {
-                this.setMeasuredDimension(var20_9, 0);
+                this.setMeasuredDimension(var22_9, 0);
                 return;
             }
-            var21_10 = this.mMinCellSize + var20_9 % var2_2 / var1_1;
-            var6_5 = 0;
-            var9_11 = 0;
-            var8_12 = 0;
-            var10_13 = 0;
-            var7_6 = 0;
-            var25_14 = 0;
-            var22_15 = this.getChildCount();
-            for (var11_16 = 0; var11_16 < var22_15; ++var11_16) {
-                var32_25 = this.getChildAt(var11_16);
-                if (var32_25.getVisibility() == 8) {
-                    var27_23 = var25_14;
-                    var12_17 = var7_6;
+            var23_10 = this.mMinCellSize + var22_9 % var2_2 / var1_1;
+            var8_5 = 0;
+            var11_11 = 0;
+            var10_12 = 0;
+            var12_13 = 0;
+            var9_6 = 0;
+            var27_14 = 0;
+            var24_15 = this.getChildCount();
+            for (var13_16 = 0; var13_16 < var24_15; ++var13_16) {
+                var6_18 = this.getChildAt(var13_16);
+                if (var6_18.getVisibility() == 8) {
+                    var29_26 = var27_14;
+                    var14_20 = var9_6;
                 } else {
-                    var31_24 = var32_25 instanceof ActionMenuItemView;
-                    var13_18 = var10_13 + 1;
-                    if (var31_24) {
-                        var32_25.setPadding(this.mGeneratedItemPadding, 0, this.mGeneratedItemPadding, 0);
+                    var33_17 = var6_18 instanceof ActionMenuItemView;
+                    var15_21 = var12_13 + 1;
+                    if (var33_17) {
+                        var6_18.setPadding(this.mGeneratedItemPadding, 0, this.mGeneratedItemPadding, 0);
                     }
-                    var33_26 = (LayoutParams)var32_25.getLayoutParams();
-                    var33_26.expanded = false;
-                    var33_26.extraPixels = 0;
-                    var33_26.cellsUsed = 0;
-                    var33_26.expandable = false;
-                    var33_26.leftMargin = 0;
-                    var33_26.rightMargin = 0;
-                    var31_24 = var31_24 != false && ((ActionMenuItemView)var32_25).hasText() != false;
-                    var33_26.preventEdgeOffset = var31_24;
-                    var2_2 = var33_26.isOverflowButton != false ? 1 : var1_1;
-                    var24_22 = ActionMenuView.measureChildForCells((View)var32_25, var21_10, var2_2, var19_8, var23_7);
-                    var14_19 = Math.max(var9_11, var24_22);
-                    var2_2 = var8_12;
-                    if (var33_26.expandable) {
-                        var2_2 = var8_12 + 1;
+                    var7_19 = (LayoutParams)var6_18.getLayoutParams();
+                    var7_19.expanded = false;
+                    var7_19.extraPixels = 0;
+                    var7_19.cellsUsed = 0;
+                    var7_19.expandable = false;
+                    var7_19.leftMargin = 0;
+                    var7_19.rightMargin = 0;
+                    var33_17 = var33_17 != false && ((ActionMenuItemView)var6_18).hasText() != false;
+                    var7_19.preventEdgeOffset = var33_17;
+                    var2_2 = var7_19.isOverflowButton != false ? 1 : var1_1;
+                    var26_25 = ActionMenuView.measureChildForCells((View)var6_18, var23_10, var2_2, var21_8, var25_7);
+                    var16_23 = Math.max(var11_11, var26_25);
+                    var2_2 = var10_12;
+                    if (var7_19.expandable) {
+                        var2_2 = var10_12 + 1;
                     }
-                    if (var33_26.isOverflowButton) {
-                        var7_6 = 1;
+                    if (var7_19.isOverflowButton) {
+                        var9_6 = 1;
                     }
-                    var15_20 = var1_1 - var24_22;
-                    var16_21 = Math.max(var6_5, var32_25.getMeasuredHeight());
-                    var1_1 = var15_20;
-                    var8_12 = var2_2;
-                    var12_17 = var7_6;
-                    var9_11 = var14_19;
-                    var6_5 = var16_21;
-                    var27_23 = var25_14;
-                    var10_13 = var13_18;
-                    if (var24_22 == 1) {
-                        var27_23 = var25_14 | (long)(1 << var11_16);
-                        var1_1 = var15_20;
-                        var8_12 = var2_2;
-                        var12_17 = var7_6;
-                        var9_11 = var14_19;
-                        var6_5 = var16_21;
-                        var10_13 = var13_18;
+                    var17_22 = var1_1 - var26_25;
+                    var18_24 = Math.max(var8_5, var6_18.getMeasuredHeight());
+                    var1_1 = var17_22;
+                    var10_12 = var2_2;
+                    var14_20 = var9_6;
+                    var11_11 = var16_23;
+                    var8_5 = var18_24;
+                    var29_26 = var27_14;
+                    var12_13 = var15_21;
+                    if (var26_25 == 1) {
+                        var29_26 = var27_14 | (long)(1 << var13_16);
+                        var1_1 = var17_22;
+                        var10_12 = var2_2;
+                        var14_20 = var9_6;
+                        var11_11 = var16_23;
+                        var8_5 = var18_24;
+                        var12_13 = var15_21;
                     }
                 }
-                var7_6 = var12_17;
-                var25_14 = var27_23;
+                var9_6 = var14_20;
+                var27_14 = var29_26;
             }
-            var11_16 = var7_6 != 0 && var10_13 == 2 ? 1 : 0;
+            var13_16 = var9_6 != 0 && var12_13 == 2 ? 1 : 0;
             var2_2 = 0;
-            var12_17 = var1_1;
+            var14_20 = var1_1;
             do {
-                var27_23 = var25_14;
-                if (var8_12 <= 0) ** GOTO lbl106
-                var27_23 = var25_14;
-                if (var12_17 <= 0) ** GOTO lbl106
-                var13_18 = Integer.MAX_VALUE;
-                var29_27 = 0;
-                var16_21 = 0;
-                for (var14_19 = 0; var14_19 < var22_15; ++var14_19) {
-                    var32_25 = (LayoutParams)this.getChildAt(var14_19).getLayoutParams();
-                    if (!var32_25.expandable) {
-                        var27_23 = var29_27;
-                        var1_1 = var16_21;
-                        var15_20 = var13_18;
-                    } else if (var32_25.cellsUsed < var13_18) {
-                        var15_20 = var32_25.cellsUsed;
-                        var27_23 = 1 << var14_19;
+                var29_26 = var27_14;
+                if (var10_12 <= 0) ** GOTO lbl106
+                var29_26 = var27_14;
+                if (var14_20 <= 0) ** GOTO lbl106
+                var15_21 = Integer.MAX_VALUE;
+                var31_27 = 0;
+                var18_24 = 0;
+                for (var16_23 = 0; var16_23 < var24_15; ++var16_23) {
+                    var6_18 = (LayoutParams)this.getChildAt(var16_23).getLayoutParams();
+                    if (!var6_18.expandable) {
+                        var29_26 = var31_27;
+                        var1_1 = var18_24;
+                        var17_22 = var15_21;
+                    } else if (var6_18.cellsUsed < var15_21) {
+                        var17_22 = var6_18.cellsUsed;
+                        var29_26 = 1 << var16_23;
                         var1_1 = 1;
                     } else {
-                        var15_20 = var13_18;
-                        var1_1 = var16_21;
-                        var27_23 = var29_27;
-                        if (var32_25.cellsUsed == var13_18) {
-                            var27_23 = var29_27 | (long)(1 << var14_19);
-                            var1_1 = var16_21 + 1;
-                            var15_20 = var13_18;
+                        var17_22 = var15_21;
+                        var1_1 = var18_24;
+                        var29_26 = var31_27;
+                        if (var6_18.cellsUsed == var15_21) {
+                            var29_26 = var31_27 | (long)(1 << var16_23);
+                            var1_1 = var18_24 + 1;
+                            var17_22 = var15_21;
                         }
                     }
-                    var13_18 = var15_20;
-                    var16_21 = var1_1;
-                    var29_27 = var27_23;
+                    var15_21 = var17_22;
+                    var18_24 = var1_1;
+                    var31_27 = var29_26;
                 }
-                var25_14 |= var29_27;
-                if (var16_21 <= var12_17) ** GOTO lbl158
-                var27_23 = var25_14;
+                var27_14 |= var31_27;
+                if (var18_24 <= var14_20) ** GOTO lbl158
+                var29_26 = var27_14;
 lbl106: // 3 sources:
-                var1_1 = var7_6 == 0 && var10_13 == 1 ? 1 : 0;
-                var7_6 = var2_2;
-                if (var12_17 <= 0) ** GOTO lbl155
-                var7_6 = var2_2;
-                if (var27_23 == 0) ** GOTO lbl155
-                if (var12_17 < var10_13 - 1 || var1_1 != 0) ** GOTO lbl-1000
-                var7_6 = var2_2;
-                if (var9_11 > 1) lbl-1000: // 2 sources:
+                var1_1 = var9_6 == 0 && var12_13 == 1 ? 1 : 0;
+                var9_6 = var2_2;
+                if (var14_20 <= 0) ** GOTO lbl155
+                var9_6 = var2_2;
+                if (var29_26 == 0) ** GOTO lbl155
+                if (var14_20 < var12_13 - 1 || var1_1 != 0) ** GOTO lbl-1000
+                var9_6 = var2_2;
+                if (var11_11 > 1) lbl-1000: // 2 sources:
                 {
-                    var4_29 = var5_28 = (float)Long.bitCount(var27_23);
+                    var4_29 = var5_28 = (float)Long.bitCount(var29_26);
                     if (var1_1 == 0) {
                         var3_30 = var5_28;
-                        if ((1 & var27_23) != 0) {
+                        if ((1 & var29_26) != 0) {
                             var3_30 = var5_28;
                             if (!((LayoutParams)this.getChildAt((int)0).getLayoutParams()).preventEdgeOffset) {
                                 var3_30 = var5_28 - 0.5f;
                             }
                         }
                         var4_29 = var3_30;
-                        if (((long)(1 << var22_15 - 1) & var27_23) != 0) {
+                        if (((long)(1 << var24_15 - 1) & var29_26) != 0) {
                             var4_29 = var3_30;
-                            if (!((LayoutParams)this.getChildAt((int)(var22_15 - 1)).getLayoutParams()).preventEdgeOffset) {
+                            if (!((LayoutParams)this.getChildAt((int)(var24_15 - 1)).getLayoutParams()).preventEdgeOffset) {
                                 var4_29 = var3_30 - 0.5f;
                             }
                         }
                     }
-                    var7_6 = var4_29 > 0.0f ? (int)((float)(var12_17 * var21_10) / var4_29) : 0;
-                    for (var8_12 = 0; var8_12 < var22_15; ++var8_12) {
-                        if (((long)(1 << var8_12) & var27_23) == 0) {
+                    var9_6 = var4_29 > 0.0f ? (int)((float)(var14_20 * var23_10) / var4_29) : 0;
+                    for (var10_12 = 0; var10_12 < var24_15; ++var10_12) {
+                        if (((long)(1 << var10_12) & var29_26) == 0) {
                             var1_1 = var2_2;
                         } else {
-                            var32_25 = this.getChildAt(var8_12);
-                            var33_26 = (LayoutParams)var32_25.getLayoutParams();
-                            if (var32_25 instanceof ActionMenuItemView) {
-                                var33_26.extraPixels = var7_6;
-                                var33_26.expanded = true;
-                                if (var8_12 == 0 && !var33_26.preventEdgeOffset) {
-                                    var33_26.leftMargin = (- var7_6) / 2;
+                            var6_18 = this.getChildAt(var10_12);
+                            var7_19 = (LayoutParams)var6_18.getLayoutParams();
+                            if (var6_18 instanceof ActionMenuItemView) {
+                                var7_19.extraPixels = var9_6;
+                                var7_19.expanded = true;
+                                if (var10_12 == 0 && !var7_19.preventEdgeOffset) {
+                                    var7_19.leftMargin = (- var9_6) / 2;
                                 }
                                 var1_1 = 1;
-                            } else if (var33_26.isOverflowButton) {
-                                var33_26.extraPixels = var7_6;
-                                var33_26.expanded = true;
-                                var33_26.rightMargin = (- var7_6) / 2;
+                            } else if (var7_19.isOverflowButton) {
+                                var7_19.extraPixels = var9_6;
+                                var7_19.expanded = true;
+                                var7_19.rightMargin = (- var9_6) / 2;
                                 var1_1 = 1;
                             } else {
-                                if (var8_12 != 0) {
-                                    var33_26.leftMargin = var7_6 / 2;
+                                if (var10_12 != 0) {
+                                    var7_19.leftMargin = var9_6 / 2;
                                 }
                                 var1_1 = var2_2;
-                                if (var8_12 != var22_15 - 1) {
-                                    var33_26.rightMargin = var7_6 / 2;
+                                if (var10_12 != var24_15 - 1) {
+                                    var7_19.rightMargin = var9_6 / 2;
                                     var1_1 = var2_2;
                                 }
                             }
                         }
                         var2_2 = var1_1;
                     }
-                    var7_6 = var2_2;
+                    var9_6 = var2_2;
                 }
 lbl155: // 5 sources:
-                if (var7_6 != 0) {
+                if (var9_6 != 0) {
                     break;
                 }
                 break block39;
 lbl158: // 2 sources:
-                for (var1_1 = 0; var1_1 < var22_15; ++var1_1) {
-                    var32_25 = this.getChildAt(var1_1);
-                    var33_26 = (LayoutParams)var32_25.getLayoutParams();
-                    if (((long)(1 << var1_1) & var29_27) == 0) {
-                        var2_2 = var12_17;
-                        var27_23 = var25_14;
-                        if (var33_26.cellsUsed == var13_18 + 1) {
-                            var27_23 = var25_14 | (long)(1 << var1_1);
-                            var2_2 = var12_17;
+                for (var1_1 = 0; var1_1 < var24_15; ++var1_1) {
+                    var6_18 = this.getChildAt(var1_1);
+                    var7_19 = (LayoutParams)var6_18.getLayoutParams();
+                    if (((long)(1 << var1_1) & var31_27) == 0) {
+                        var2_2 = var14_20;
+                        var29_26 = var27_14;
+                        if (var7_19.cellsUsed == var15_21 + 1) {
+                            var29_26 = var27_14 | (long)(1 << var1_1);
+                            var2_2 = var14_20;
                         }
                     } else {
-                        if (var11_16 != 0 && var33_26.preventEdgeOffset && var12_17 == 1) {
-                            var32_25.setPadding(this.mGeneratedItemPadding + var21_10, 0, this.mGeneratedItemPadding, 0);
+                        if (var13_16 != 0 && var7_19.preventEdgeOffset && var14_20 == 1) {
+                            var6_18.setPadding(this.mGeneratedItemPadding + var23_10, 0, this.mGeneratedItemPadding, 0);
                         }
-                        ++var33_26.cellsUsed;
-                        var33_26.expanded = true;
-                        var2_2 = var12_17 - 1;
-                        var27_23 = var25_14;
+                        ++var7_19.cellsUsed;
+                        var7_19.expanded = true;
+                        var2_2 = var14_20 - 1;
+                        var29_26 = var27_14;
                     }
-                    var12_17 = var2_2;
-                    var25_14 = var27_23;
+                    var14_20 = var2_2;
+                    var27_14 = var29_26;
                 }
                 var2_2 = 1;
             } while (true);
-            for (var1_1 = 0; var1_1 < var22_15; ++var1_1) {
-                var32_25 = this.getChildAt(var1_1);
-                var33_26 = (LayoutParams)var32_25.getLayoutParams();
-                if (!var33_26.expanded) continue;
-                var32_25.measure(View.MeasureSpec.makeMeasureSpec((int)(var33_26.cellsUsed * var21_10 + var33_26.extraPixels), (int)1073741824), var19_8);
+            for (var1_1 = 0; var1_1 < var24_15; ++var1_1) {
+                var6_18 = this.getChildAt(var1_1);
+                var7_19 = (LayoutParams)var6_18.getLayoutParams();
+                if (!var7_19.expanded) continue;
+                var6_18.measure(View.MeasureSpec.makeMeasureSpec((int)(var7_19.cellsUsed * var23_10 + var7_19.extraPixels), (int)1073741824), var21_8);
             }
         }
-        var1_1 = var17_4;
-        if (var18_3 != 1073741824) {
-            var1_1 = var6_5;
+        var1_1 = var19_4;
+        if (var20_3 != 1073741824) {
+            var1_1 = var8_5;
         }
-        this.setMeasuredDimension(var20_9, var1_1);
+        this.setMeasuredDimension(var22_9, var1_1);
     }
 
     @Override
@@ -515,9 +515,9 @@ lbl158: // 2 sources:
      */
     @Override
     protected void onLayout(boolean bl, int n2, int n3, int n4, int n5) {
+        View view;
         LayoutParams layoutParams;
         int n6;
-        View view;
         if (!this.mFormatItems) {
             super.onLayout(bl, n2, n3, n4, n5);
             return;

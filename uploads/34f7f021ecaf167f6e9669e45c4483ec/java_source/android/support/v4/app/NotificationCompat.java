@@ -1326,16 +1326,16 @@ public class NotificationCompat {
                 try {
                     if (!bundle.containsKey("text")) return null;
                     if (!bundle.containsKey("time")) return null;
-                    message2 = message = new Message(bundle.getCharSequence("text"), bundle.getLong("time"), bundle.getCharSequence("sender"));
+                    message = message2 = new Message(bundle.getCharSequence("text"), bundle.getLong("time"), bundle.getCharSequence("sender"));
                 }
                 catch (ClassCastException var0_1) {
                     return null;
                 }
-                if (!bundle.containsKey("type")) return message2;
-                message2 = message;
-                if (!bundle.containsKey("uri")) return message2;
-                message.setData(bundle.getString("type"), (Uri)bundle.getParcelable("uri"));
-                return message;
+                if (!bundle.containsKey("type")) return message;
+                message = message2;
+                if (!bundle.containsKey("uri")) return message;
+                message2.setData(bundle.getString("type"), (Uri)bundle.getParcelable("uri"));
+                return message2;
             }
 
             static List<Message> getMessagesFromBundleArray(Parcelable[] arrparcelable) {

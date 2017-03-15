@@ -36,8 +36,8 @@ public class BookmarkConverter {
      * Enabled aggressive exception aggregation
      */
     private static String convertToJson(Buzz object) {
-        long l2;
         JSONObject jSONObject;
+        long l2;
         JSONArray jSONArray;
         try {
             jSONObject = new JSONObject();

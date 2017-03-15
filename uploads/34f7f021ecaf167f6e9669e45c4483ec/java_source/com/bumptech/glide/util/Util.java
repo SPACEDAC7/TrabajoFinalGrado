@@ -71,7 +71,7 @@ public final class Util {
                 int n2 = bitmap.getAllocationByteCount();
                 return n2;
             }
-            catch (NullPointerException var2_2) {
+            catch (NullPointerException var1_2) {
                 // empty catch block
             }
         }

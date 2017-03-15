@@ -305,8 +305,8 @@ extends SimpleItemAnimator {
 
     @Override
     public void endAnimation(RecyclerView.ViewHolder viewHolder) {
-        int n2;
         ArrayList arrayList;
+        int n2;
         View view = viewHolder.itemView;
         ViewCompat.animate(view).cancel();
         for (n2 = this.mPendingMoves.size() - 1; n2 >= 0; --n2) {

@@ -194,7 +194,7 @@ public class IdHelperAndroid {
                     bl3 = true;
                 }
             }
-            catch (Exception var6_6) {
+            catch (Exception var2_6) {
                 bl3 = bl2;
             }
         }

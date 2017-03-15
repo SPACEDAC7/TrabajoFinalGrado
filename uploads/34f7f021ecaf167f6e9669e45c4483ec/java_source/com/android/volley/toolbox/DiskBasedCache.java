@@ -145,10 +145,10 @@ implements Cache {
         int n3;
         int n4;
         byte[] arrby = new byte[n2];
-        for (n3 = 0; n3 < n2 && (n4 = inputStream.read(arrby, n3, n2 - n3)) != -1; n3 += n4) {
+        for (n4 = 0; n4 < n2 && (n3 = inputStream.read(arrby, n4, n2 - n4)) != -1; n4 += n3) {
         }
-        if (n3 != n2) {
-            throw new IOException(new StringBuilder(50).append("Expected ").append(n2).append(" bytes, read ").append(n3).append(" bytes").toString());
+        if (n4 != n2) {
+            throw new IOException(new StringBuilder(50).append("Expected ").append(n2).append(" bytes, read ").append(n4).append(" bytes").toString());
         }
         return arrby;
     }
@@ -299,66 +299,66 @@ lbl28: // 2 sources:
                 return;
             }
         }
-        var6_1 = this.mRootDirectory.listFiles();
-        if (var6_1 == null) ** GOTO lbl-1000
-        var2_2 = var6_1.length;
-        var1_3 = 0;
+        var4_1 = this.mRootDirectory.listFiles();
+        if (var4_1 == null) ** GOTO lbl-1000
+        var7_2 = var4_1.length;
+        var6_3 = 0;
         do {
-            if (var1_3 >= var2_2) lbl-1000: // 2 sources:
+            if (var6_3 >= var7_2) lbl-1000: // 2 sources:
             {
                 // MONITOREXIT : this
                 return;
             }
-            var7_14 = var6_1[var1_3];
-            var3_4 = null;
-            var5_12 = null;
-            var4_10 = new BufferedInputStream(new FileInputStream(var7_14));
-            var3_4 = CacheHeader.readHeader((InputStream)var4_10);
-            var3_4.size = var7_14.length();
-            this.putEntry(var3_4.key, (CacheHeader)var3_4);
-            ** if (var4_10 == null) goto lbl28
+            var5_14 = var4_1[var6_3];
+            var1_4 = null;
+            var3_12 = null;
+            var2_10 = new BufferedInputStream(new FileInputStream(var5_14));
+            var1_4 = CacheHeader.readHeader((InputStream)var2_10);
+            var1_4.size = var5_14.length();
+            this.putEntry(var1_4.key, (CacheHeader)var1_4);
+            ** if (var2_10 == null) goto lbl28
 lbl-1000: // 1 sources:
             {
                 try {
-                    var4_10.close();
+                    var2_10.close();
                 }
-                catch (IOException var3_5) {}
+                catch (IOException var1_5) {}
             }
 lbl28: // 2 sources:
             ** GOTO lbl46
-            catch (IOException var3_6) {
-                var4_10 = var5_12;
+            catch (IOException var1_6) {
+                var2_10 = var3_12;
                 ** GOTO lbl37
-                catch (Throwable var5_13) {
-                    var3_4 = var4_10;
-                    var4_10 = var5_13;
+                catch (Throwable var3_13) {
+                    var1_4 = var2_10;
+                    var2_10 = var3_13;
                     ** GOTO lbl-1000
                 }
-                catch (IOException var3_9) {}
+                catch (IOException var1_9) {}
 lbl37: // 2 sources:
-                if (var7_14 != null) {
-                    var3_4 = var4_10;
-                    var7_14.delete();
+                if (var5_14 != null) {
+                    var1_4 = var2_10;
+                    var5_14.delete();
                 }
-                if (var4_10 != null) {
+                if (var2_10 != null) {
                     try {
-                        var4_10.close();
+                        var2_10.close();
                     }
-                    catch (IOException var3_7) {}
+                    catch (IOException var1_7) {}
                 }
 lbl46: // 6 sources:
-                ++var1_3;
+                ++var6_3;
                 continue;
-                catch (Throwable var4_11) lbl-1000: // 2 sources:
+                catch (Throwable var2_11) lbl-1000: // 2 sources:
                 {
-                    if (var3_4 == null) throw var4_10;
+                    if (var1_4 == null) throw var2_10;
                     try {
-                        var3_4.close();
+                        var1_4.close();
                     }
-                    catch (IOException var3_8) {
-                        throw var4_10;
+                    catch (IOException var1_8) {
+                        throw var2_10;
                     }
-                    throw var4_10;
+                    throw var2_10;
                 }
             }
             break;

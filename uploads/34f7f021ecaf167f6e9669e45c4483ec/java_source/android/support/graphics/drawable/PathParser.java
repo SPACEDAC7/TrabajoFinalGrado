@@ -124,57 +124,57 @@ class PathParser {
             boolean bl7 = false;
             switch (string2.charAt(n3)) {
                 default: {
-                    bl6 = bl2;
+                    bl4 = bl2;
                     bl5 = bl7;
-                    bl4 = bl;
+                    bl6 = bl;
                     break;
                 }
                 case ' ': 
                 case ',': {
-                    bl4 = true;
+                    bl6 = true;
                     bl5 = bl7;
-                    bl6 = bl2;
+                    bl4 = bl2;
                     break;
                 }
                 case '-': {
-                    bl4 = bl;
+                    bl6 = bl;
                     bl5 = bl7;
-                    bl6 = bl2;
+                    bl4 = bl2;
                     if (n3 == n2) break;
-                    bl4 = bl;
+                    bl6 = bl;
                     bl5 = bl7;
-                    bl6 = bl2;
+                    bl4 = bl2;
                     if (bl3) break;
-                    bl4 = true;
+                    bl6 = true;
                     extractFloatResult.mEndWithNegOrDot = true;
                     bl5 = bl7;
-                    bl6 = bl2;
+                    bl4 = bl2;
                     break;
                 }
                 case '.': {
                     if (!bl2) {
-                        bl6 = true;
-                        bl4 = bl;
+                        bl4 = true;
+                        bl6 = bl;
                         bl5 = bl7;
                         break;
                     }
-                    bl4 = true;
+                    bl6 = true;
                     extractFloatResult.mEndWithNegOrDot = true;
                     bl5 = bl7;
-                    bl6 = bl2;
+                    bl4 = bl2;
                     break;
                 }
                 case 'E': 
                 case 'e': {
                     bl5 = true;
-                    bl4 = bl;
-                    bl6 = bl2;
+                    bl6 = bl;
+                    bl4 = bl2;
                 }
             }
-            if (bl4) break;
-            bl = bl4;
+            if (bl6) break;
+            bl = bl6;
             bl3 = bl5;
-            bl2 = bl6;
+            bl2 = bl4;
         }
         extractFloatResult.mEndPosition = n3;
     }
@@ -188,38 +188,38 @@ class PathParser {
      */
     private static float[] getFloats(String var0) {
         block7 : {
-            var2_1 = 1;
-            var1_2 = var0.charAt(0) == 'z' ? 1 : 0;
+            var4_1 = 1;
+            var3_2 = var0.charAt(0) == 'z' ? 1 : 0;
             if (var0.charAt(0) != 'Z') {
-                var2_1 = 0;
+                var4_1 = 0;
             }
-            if (var1_2 | var2_1) {
+            if (var3_2 | var4_1) {
                 return new float[0];
             }
             try {
-                var6_3 = new float[var0.length()];
-                var2_1 = 1;
-                var7_5 = new ExtractFloatResult();
-                var5_6 = var0.length();
-                var1_2 = 0;
+                var1_3 = new float[var0.length()];
+                var4_1 = 1;
+                var2_5 = new ExtractFloatResult();
+                var7_6 = var0.length();
+                var3_2 = 0;
 lbl13: // 3 sources:
-                if (var2_1 >= var5_6) return PathParser.copyOfRange(var6_3, 0, var1_2);
-                PathParser.extract(var0, var2_1, var7_5);
-                var3_7 = var7_5.mEndPosition;
-                if (var2_1 < var3_7) {
-                    var4_8 = var1_2 + 1;
-                    var6_3[var1_2] = Float.parseFloat(var0.substring(var2_1, var3_7));
-                    var1_2 = var4_8;
+                if (var4_1 >= var7_6) return PathParser.copyOfRange(var1_3, 0, var3_2);
+                PathParser.extract(var0, var4_1, var2_5);
+                var5_7 = var2_5.mEndPosition;
+                if (var4_1 < var5_7) {
+                    var6_8 = var3_2 + 1;
+                    var1_3[var3_2] = Float.parseFloat(var0.substring(var4_1, var5_7));
+                    var3_2 = var6_8;
                 }
-                if (!var7_5.mEndWithNegOrDot) break block7;
-                var2_1 = var3_7;
+                if (!var2_5.mEndWithNegOrDot) break block7;
+                var4_1 = var5_7;
                 ** GOTO lbl13
             }
-            catch (NumberFormatException var6_4) {
-                throw new RuntimeException("error in parsing \"" + var0 + "\"", var6_4);
+            catch (NumberFormatException var1_4) {
+                throw new RuntimeException("error in parsing \"" + var0 + "\"", var1_4);
             }
         }
-        var2_1 = var3_7 + 1;
+        var4_1 = var5_7 + 1;
         ** GOTO lbl13
     }
 

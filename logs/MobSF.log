@@ -283,3 +283,27 @@
 [ERROR] Adding Scan URL to Database (/home/david/MobSFramework/MobSF/views.py, LINE 98 "new_db_obj.save()"): UNIQUE constraint failed: MobSF_recentscansdb.NAME, MobSF_recentscansdb.userID
 [2017-03-09 15:47:29]
 [ERROR] Performing Manifest Analysis (/home/david/MobSFramework/StaticAnalyzer/views/android/manifest_analysis.py, LINE 1204 "a_desc = a_template[2] % t_desc"): not all arguments converted during string formatting
+[2017-03-14 08:02:37]
+[ERROR] Performing Manifest Analysis (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/android/manifest_analysis.py, LINE 1204 "a_desc = a_template[2] % t_desc"): not all arguments converted during string formatting
+[2017-03-14 08:07:20]
+[ERROR] Performing Manifest Analysis (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/android/manifest_analysis.py, LINE 1204 "a_desc = a_template[2] % t_desc"): not all arguments converted during string formatting
+[2017-03-14 08:10:07]
+[ERROR] Static Analyzer (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/android/static_analyzer.py, LINE 157 "man_an_dic['permissons'],"): 'NoneType' object has no attribute '__getitem__'
+[2017-03-14 09:09:21]
+[ERROR] Performing Manifest Analysis (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/android/manifest_analysis.py, LINE 1204 "a_desc = a_template[2] % t_desc"): not all arguments converted during string formatting
+[2017-03-14 09:12:12]
+[ERROR] Performing Manifest Analysis (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/android/manifest_analysis.py, LINE 1204 "a_desc = a_template[2] % t_desc"): not all arguments converted during string formatting
+[2017-03-14 09:12:33]
+[ERROR] Static Analyzer (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/android/static_analyzer.py, LINE 157 "man_an_dic['permissons'],"): 'NoneType' object has no attribute '__getitem__'
+[2017-03-14 09:41:06]
+[ERROR] PDF Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 241 "if not result.err:"): StringIO instance has no attribute 'err'
+[2017-03-14 09:57:12]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 241 "data = serializers.serialize('xml', context),"): Non-model object (<type 'str'>) encountered during serialization
+[2017-03-14 15:29:15]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 248 "myfile.write(data)"): expected a character buffer object
+[2017-03-14 15:30:21]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 248 "myfile.write(data)"): expected a character buffer object
+[2017-03-14 15:31:31]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 248 "myfile.write(data)"): expected a character buffer object
+[2017-03-14 15:34:52]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 248 "myfile.write(data)"): expected a character buffer object

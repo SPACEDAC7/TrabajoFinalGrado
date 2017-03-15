@@ -188,8 +188,8 @@ extends BaseActivity {
          * Lifted jumps to return sites
          */
         public void initPreferences() {
-            String[] arrstring;
             Object object;
+            String[] arrstring;
             Object object2;
             String[] arrstring2;
             PreferenceManager preferenceManager = this.getPreferenceManager();
@@ -204,11 +204,11 @@ extends BaseActivity {
                     }
                 });
             }
-            if ((arrstring2 = preferenceManager.findPreference((CharSequence)(arrstring = this.getKey(2131296911)))) != null) {
+            if ((arrstring = preferenceManager.findPreference((CharSequence)(arrstring2 = this.getKey(2131296911)))) != null) {
                 int n2;
                 object2 = this.getResources().getStringArray(2131492873);
                 String[] arrstring3 = this.getResources().getStringArray(2131492874);
-                object = sharedPreferences.getString((String)arrstring, this.getString(2131296829));
+                object = sharedPreferences.getString((String)arrstring2, this.getString(2131296829));
                 if (object.equals(this.getString(2131296846))) {
                     object3 = this.getString(2131296834);
                 } else if (object.equals(this.getString(2131296845))) {
@@ -237,9 +237,9 @@ extends BaseActivity {
                 if (n2 < 0) {
                     n3 = Arrays.asList(arrstring3).indexOf(this.getString(2131296829));
                 }
-                arrstring2.setSummary((CharSequence)object2[n3]);
+                arrstring.setSummary((CharSequence)object2[n3]);
                 this.setEdition(arrstring3[n3]);
-                arrstring2.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener((Preference)arrstring2, (String[])object2, arrstring3, sharedPreferences, (String)arrstring){
+                arrstring.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener((Preference)arrstring, (String[])object2, arrstring3, sharedPreferences, (String)arrstring2){
                     final /* synthetic */ String val$editionKey;
                     final /* synthetic */ Preference val$editionPreference;
                     final /* synthetic */ String[] val$editionValues;
@@ -276,23 +276,23 @@ extends BaseActivity {
                 });
             }
             if ((object = preferenceManager.findPreference((CharSequence)(object3 = this.getKey(2131296906)))) != null) {
-                arrstring = this.getResources().getStringArray(2131492867);
-                arrstring2 = this.getResources().getStringArray(2131492866);
+                arrstring2 = this.getResources().getStringArray(2131492867);
+                arrstring = this.getResources().getStringArray(2131492866);
                 object2 = sharedPreferences.getString((String)object3, "Always");
                 object.setSummary((CharSequence)object2);
                 this.setAutoplayMode((String)object2);
-                object.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener((String)object3, arrstring2){
+                object.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener((String)object3, arrstring){
                     final /* synthetic */ String val$autoPlayKey;
                     final /* synthetic */ String[] val$autoplayLabels;
 
                     public boolean onPreferenceClick(final Preference preference) {
                         BuzzFeedAlertDialog.Builder builder = new BuzzFeedAlertDialog.Builder((Context)BFPreferenceFragment.this.getActivity());
                         builder.setTitle(preference.getTitle());
-                        builder.setSingleChoiceItems(arrstring, Arrays.asList(arrstring).indexOf(sharedPreferences.getString(this.val$autoPlayKey, BFPreferenceFragment.this.getString(2131296673))), new AdapterView.OnItemClickListener(){
+                        builder.setSingleChoiceItems(arrstring2, Arrays.asList(arrstring2).indexOf(sharedPreferences.getString(this.val$autoPlayKey, BFPreferenceFragment.this.getString(2131296673))), new AdapterView.OnItemClickListener(){
 
                             public void onItemClick(AdapterView<?> object, View view, int n2, long l2) {
-                                preference.setSummary((CharSequence)arrstring[n2]);
-                                object = VideoSettings.getAutoplaySetting(arrstring[n2], preference.getContext());
+                                preference.setSummary((CharSequence)arrstring2[n2]);
+                                object = VideoSettings.getAutoplaySetting(arrstring2[n2], preference.getContext());
                                 BFPreferenceFragment.this.setAutoplayMode((String)object);
                                 BuzzFeedTracker.getInstance().trackEvent(BFPreferenceFragment.this.getString(2131296767), BFPreferenceFragment.this.getString(2131296682), 3.this.val$autoplayLabels[n2]);
                                 BFPreferenceFragment.this.setAppShouldReset(true);
@@ -376,8 +376,8 @@ extends BaseActivity {
                 object3.setSummary((CharSequence)"5.2 (502002)");
                 return;
             }
-            catch (Exception var3_4) {
-                LogUtil.e(this.TAG, "initPreferences() error", var3_4);
+            catch (Exception var1_4) {
+                LogUtil.e(this.TAG, "initPreferences() error", var1_4);
                 return;
             }
         }

@@ -98,51 +98,51 @@ public final class FacebookRequestError {
     static FacebookRequestError checkResponseAndCreateError(JSONObject var0, Object var1_2, HttpURLConnection var2_3) {
         try {
             if (var0.has("code") == false) return null;
-            var6_4 = var0.getInt("code");
-            var9_5 = Utility.getStringPropertyAsJSON((JSONObject)var0, "body", "FACEBOOK_NON_JSON_RESULT");
-            if (var9_5 == null || !(var9_5 instanceof JSONObject)) ** GOTO lbl40
-            var15_6 = (JSONObject)var9_5;
-            var9_5 = null;
-            var10_7 = null;
-            var13_8 = null;
-            var14_9 = null;
-            var8_10 = false;
-            var3_11 = -1;
-            var4_12 = -1;
-            var5_13 = false;
-            if (var15_6.has("error")) {
-                var13_8 = (JSONObject)Utility.getStringPropertyAsJSON(var15_6, "error", null);
-                var9_5 = var13_8.optString("type", null);
-                var10_7 = var13_8.optString("message", null);
-                var3_11 = var13_8.optInt("code", -1);
-                var4_12 = var13_8.optInt("error_subcode", -1);
-                var11_14 = var13_8.optString("error_user_msg", null);
-                var12_15 = var13_8.optString("error_user_title", null);
-                var7_16 = var13_8.optBoolean("is_transient", false);
-                return new FacebookRequestError(var6_4, var3_11, var4_12, (String)var9_5, var10_7, var12_15, (String)var11_14, var7_16, var15_6, (JSONObject)var0, var1_2, var2_3, null);
+            var13_4 = var0.getInt("code");
+            var3_5 = Utility.getStringPropertyAsJSON((JSONObject)var0, "body", "FACEBOOK_NON_JSON_RESULT");
+            if (var3_5 == null || !(var3_5 instanceof JSONObject)) ** GOTO lbl40
+            var9_6 = (JSONObject)var3_5;
+            var3_5 = null;
+            var4_7 = null;
+            var7_8 = null;
+            var8_9 = null;
+            var15_10 = false;
+            var10_11 = -1;
+            var11_12 = -1;
+            var12_13 = false;
+            if (var9_6.has("error")) {
+                var7_8 = (JSONObject)Utility.getStringPropertyAsJSON(var9_6, "error", null);
+                var3_5 = var7_8.optString("type", null);
+                var4_7 = var7_8.optString("message", null);
+                var10_11 = var7_8.optInt("code", -1);
+                var11_12 = var7_8.optInt("error_subcode", -1);
+                var5_14 = var7_8.optString("error_user_msg", null);
+                var6_15 = var7_8.optString("error_user_title", null);
+                var14_16 = var7_8.optBoolean("is_transient", false);
+                return new FacebookRequestError(var13_4, var10_11, var11_12, (String)var3_5, var4_7, var6_15, (String)var5_14, var14_16, var9_6, (JSONObject)var0, var1_2, var2_3, null);
             }
-            if (var15_6.has("error_code") || var15_6.has("error_msg")) ** GOTO lbl-1000
-            var12_15 = var14_9;
-            var11_14 = var13_8;
-            var7_16 = var8_10;
-            if (var15_6.has("error_reason")) lbl-1000: // 2 sources:
+            if (var9_6.has("error_code") || var9_6.has("error_msg")) ** GOTO lbl-1000
+            var6_15 = var8_9;
+            var5_14 = var7_8;
+            var14_16 = var15_10;
+            if (var9_6.has("error_reason")) lbl-1000: // 2 sources:
             {
-                var9_5 = var15_6.optString("error_reason", null);
-                var10_7 = var15_6.optString("error_msg", null);
-                var3_11 = var15_6.optInt("error_code", -1);
-                var4_12 = var15_6.optInt("error_subcode", -1);
-                var5_13 = true;
-                var12_15 = var14_9;
-                var11_14 = var13_8;
-                var7_16 = var8_10;
+                var3_5 = var9_6.optString("error_reason", null);
+                var4_7 = var9_6.optString("error_msg", null);
+                var10_11 = var9_6.optInt("error_code", -1);
+                var11_12 = var9_6.optInt("error_subcode", -1);
+                var12_13 = true;
+                var6_15 = var8_9;
+                var5_14 = var7_8;
+                var14_16 = var15_10;
             }
-            if (var5_13) {
-                return new FacebookRequestError(var6_4, var3_11, var4_12, (String)var9_5, var10_7, var12_15, (String)var11_14, var7_16, var15_6, (JSONObject)var0, var1_2, var2_3, null);
+            if (var12_13) {
+                return new FacebookRequestError(var13_4, var10_11, var11_12, (String)var3_5, var4_7, var6_15, (String)var5_14, var14_16, var9_6, (JSONObject)var0, var1_2, var2_3, null);
             }
 lbl40: // 3 sources:
-            if (FacebookRequestError.HTTP_RANGE_SUCCESS.contains(var6_4) != false) return null;
-            var9_5 = var0.has("body") != false ? (JSONObject)Utility.getStringPropertyAsJSON((JSONObject)var0, "body", "FACEBOOK_NON_JSON_RESULT") : null;
-            return new FacebookRequestError(var6_4, -1, -1, null, null, null, null, false, (JSONObject)var9_5, (JSONObject)var0, var1_2, var2_3, null);
+            if (FacebookRequestError.HTTP_RANGE_SUCCESS.contains(var13_4) != false) return null;
+            var3_5 = var0.has("body") != false ? (JSONObject)Utility.getStringPropertyAsJSON((JSONObject)var0, "body", "FACEBOOK_NON_JSON_RESULT") : null;
+            return new FacebookRequestError(var13_4, -1, -1, null, null, null, null, false, (JSONObject)var3_5, (JSONObject)var0, var1_2, var2_3, null);
         }
         catch (JSONException var0_1) {
             // empty catch block

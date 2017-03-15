@@ -184,106 +184,106 @@ lbl8: // 2 sources:
      */
     public final View createView(View var1_1, String var2_2, @NonNull Context var3_3, @NonNull AttributeSet var4_4, boolean var5_5, boolean var6_6, boolean var7_7, boolean var8_8) {
         block50 : {
-            var10_9 = var3_3;
+            var9_9 = var3_3;
             if (var5_5) {
-                var10_9 = var3_3;
+                var9_9 = var3_3;
                 if (var1_1 != null) {
-                    var10_9 = var1_1.getContext();
+                    var9_9 = var1_1.getContext();
                 }
             }
             if (!var6_6) {
-                var1_1 = var10_9;
+                var1_1 = var9_9;
                 if (!var7_7) break block50;
             }
-            var1_1 = AppCompatViewInflater.themifyContext((Context)var10_9, var4_4, var6_6, var7_7);
+            var1_1 = AppCompatViewInflater.themifyContext((Context)var9_9, var4_4, var6_6, var7_7);
         }
-        var10_9 = var1_1;
+        var9_9 = var1_1;
         if (var8_8) {
-            var10_9 = TintContextWrapper.wrap((Context)var1_1);
+            var9_9 = TintContextWrapper.wrap((Context)var1_1);
         }
         var1_1 = null;
-        var9_10 = -1;
+        var11_10 = -1;
         switch (var2_2.hashCode()) {
             case -938935918: {
                 if (var2_2.equals("TextView")) {
-                    var9_10 = 0;
+                    var11_10 = 0;
                     ** break;
                 }
                 ** GOTO lbl75
             }
             case 1125864064: {
                 if (var2_2.equals("ImageView")) {
-                    var9_10 = 1;
+                    var11_10 = 1;
                     ** break;
                 }
                 ** GOTO lbl75
             }
             case 2001146706: {
                 if (var2_2.equals("Button")) {
-                    var9_10 = 2;
+                    var11_10 = 2;
                     ** break;
                 }
                 ** GOTO lbl75
             }
             case 1666676343: {
                 if (var2_2.equals("EditText")) {
-                    var9_10 = 3;
+                    var11_10 = 3;
                     ** break;
                 }
                 ** GOTO lbl75
             }
             case -339785223: {
                 if (var2_2.equals("Spinner")) {
-                    var9_10 = 4;
+                    var11_10 = 4;
                     ** break;
                 }
                 ** GOTO lbl75
             }
             case -937446323: {
                 if (var2_2.equals("ImageButton")) {
-                    var9_10 = 5;
+                    var11_10 = 5;
                     ** break;
                 }
                 ** GOTO lbl75
             }
             case 1601505219: {
                 if (var2_2.equals("CheckBox")) {
-                    var9_10 = 6;
+                    var11_10 = 6;
                     ** break;
                 }
                 ** GOTO lbl75
             }
             case 776382189: {
                 if (var2_2.equals("RadioButton")) {
-                    var9_10 = 7;
+                    var11_10 = 7;
                     ** break;
                 }
                 ** GOTO lbl75
             }
             case -1455429095: {
                 if (var2_2.equals("CheckedTextView")) {
-                    var9_10 = 8;
+                    var11_10 = 8;
                     ** break;
                 }
                 ** GOTO lbl75
             }
             case 1413872058: {
                 if (var2_2.equals("AutoCompleteTextView")) {
-                    var9_10 = 9;
+                    var11_10 = 9;
                     ** break;
                 }
                 ** GOTO lbl75
             }
             case -1346021293: {
                 if (var2_2.equals("MultiAutoCompleteTextView")) {
-                    var9_10 = 10;
+                    var11_10 = 10;
                     ** break;
                 }
                 ** GOTO lbl75
             }
             case -1946472170: {
                 if (var2_2.equals("RatingBar")) {
-                    var9_10 = 11;
+                    var11_10 = 11;
                 }
             }
 lbl75: // 26 sources:
@@ -293,56 +293,56 @@ lbl75: // 26 sources:
             case -658531749: 
         }
         if (var2_2.equals("SeekBar")) {
-            var9_10 = 12;
+            var11_10 = 12;
         }
 lbl80: // 4 sources:
-        switch (var9_10) {
+        switch (var11_10) {
             case 0: {
-                var1_1 = new AppCompatTextView((Context)var10_9, var4_4);
+                var1_1 = new AppCompatTextView((Context)var9_9, var4_4);
                 ** break;
             }
             case 1: {
-                var1_1 = new AppCompatImageView((Context)var10_9, var4_4);
+                var1_1 = new AppCompatImageView((Context)var9_9, var4_4);
                 ** break;
             }
             case 2: {
-                var1_1 = new AppCompatButton((Context)var10_9, var4_4);
+                var1_1 = new AppCompatButton((Context)var9_9, var4_4);
                 ** break;
             }
             case 3: {
-                var1_1 = new AppCompatEditText((Context)var10_9, var4_4);
+                var1_1 = new AppCompatEditText((Context)var9_9, var4_4);
                 ** break;
             }
             case 4: {
-                var1_1 = new AppCompatSpinner((Context)var10_9, var4_4);
+                var1_1 = new AppCompatSpinner((Context)var9_9, var4_4);
                 ** break;
             }
             case 5: {
-                var1_1 = new AppCompatImageButton((Context)var10_9, var4_4);
+                var1_1 = new AppCompatImageButton((Context)var9_9, var4_4);
                 ** break;
             }
             case 6: {
-                var1_1 = new AppCompatCheckBox((Context)var10_9, var4_4);
+                var1_1 = new AppCompatCheckBox((Context)var9_9, var4_4);
                 ** break;
             }
             case 7: {
-                var1_1 = new AppCompatRadioButton((Context)var10_9, var4_4);
+                var1_1 = new AppCompatRadioButton((Context)var9_9, var4_4);
                 ** break;
             }
             case 8: {
-                var1_1 = new AppCompatCheckedTextView((Context)var10_9, var4_4);
+                var1_1 = new AppCompatCheckedTextView((Context)var9_9, var4_4);
                 ** break;
             }
             case 9: {
-                var1_1 = new AppCompatAutoCompleteTextView((Context)var10_9, var4_4);
+                var1_1 = new AppCompatAutoCompleteTextView((Context)var9_9, var4_4);
                 ** break;
             }
             case 10: {
-                var1_1 = new AppCompatMultiAutoCompleteTextView((Context)var10_9, var4_4);
+                var1_1 = new AppCompatMultiAutoCompleteTextView((Context)var9_9, var4_4);
                 ** break;
             }
             case 11: {
-                var1_1 = new AppCompatRatingBar((Context)var10_9, var4_4);
+                var1_1 = new AppCompatRatingBar((Context)var9_9, var4_4);
             }
 lbl116: // 13 sources:
             default: {
@@ -350,18 +350,18 @@ lbl116: // 13 sources:
             }
             case 12: 
         }
-        var1_1 = new AppCompatSeekBar((Context)var10_9, var4_4);
+        var1_1 = new AppCompatSeekBar((Context)var9_9, var4_4);
 lbl120: // 2 sources:
-        var11_11 = var1_1;
+        var10_11 = var1_1;
         if (var1_1 == null) {
-            var11_11 = var1_1;
-            if (var3_3 != var10_9) {
-                var11_11 = this.createViewFromTag((Context)var10_9, var2_2, var4_4);
+            var10_11 = var1_1;
+            if (var3_3 != var9_9) {
+                var10_11 = this.createViewFromTag((Context)var9_9, var2_2, var4_4);
             }
         }
-        if (var11_11 == null) return var11_11;
-        this.checkOnClickListener((View)var11_11, var4_4);
-        return var11_11;
+        if (var10_11 == null) return var10_11;
+        this.checkOnClickListener((View)var10_11, var4_4);
+        return var10_11;
     }
 
     private static class DeclaredOnClickListener

@@ -21,7 +21,6 @@ package com.bumptech.glide;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
-import android.app.Fragment;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
@@ -30,6 +29,7 @@ import android.net.Uri;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.ParcelFileDescriptor;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.View;
@@ -290,7 +290,7 @@ public class Glide {
     }
 
     @TargetApi(value=11)
-    public static RequestManager with(Fragment fragment) {
+    public static RequestManager with(android.app.Fragment fragment) {
         return RequestManagerRetriever.get().get(fragment);
     }
 
@@ -298,7 +298,7 @@ public class Glide {
         return RequestManagerRetriever.get().get(context);
     }
 
-    public static RequestManager with(android.support.v4.app.Fragment fragment) {
+    public static RequestManager with(Fragment fragment) {
         return RequestManagerRetriever.get().get(fragment);
     }
 

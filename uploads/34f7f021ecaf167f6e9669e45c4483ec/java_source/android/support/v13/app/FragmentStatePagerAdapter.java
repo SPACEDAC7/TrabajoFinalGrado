@@ -73,8 +73,8 @@ extends PagerAdapter {
 
     @Override
     public Object instantiateItem(ViewGroup viewGroup, int n2) {
-        Fragment.SavedState savedState;
         Fragment fragment;
+        Fragment.SavedState savedState;
         if (this.mFragments.size() > n2 && (fragment = this.mFragments.get(n2)) != null) {
             return fragment;
         }

@@ -142,12 +142,12 @@ class NotificationCompatJellybean {
                 sActionsField.setAccessible(true);
             }
         }
-        catch (ClassNotFoundException var1_1) {
-            Log.e((String)"NotificationCompat", (String)"Unable to access notification actions", (Throwable)var1_1);
+        catch (ClassNotFoundException var0_1) {
+            Log.e((String)"NotificationCompat", (String)"Unable to access notification actions", (Throwable)var0_1);
             sActionsAccessFailed = true;
         }
-        catch (NoSuchFieldException var1_2) {
-            Log.e((String)"NotificationCompat", (String)"Unable to access notification actions", (Throwable)var1_2);
+        catch (NoSuchFieldException var0_2) {
+            Log.e((String)"NotificationCompat", (String)"Unable to access notification actions", (Throwable)var0_2);
             sActionsAccessFailed = true;
         }
         if (sActionsAccessFailed) return false;

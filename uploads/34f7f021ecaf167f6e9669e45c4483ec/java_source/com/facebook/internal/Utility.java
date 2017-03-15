@@ -4,7 +4,6 @@
  * Could not load the following classes:
  *  android.content.Context
  *  android.content.SharedPreferences
- *  android.content.SharedPreferences$Editor
  *  android.content.pm.PackageInfo
  *  android.content.pm.PackageManager
  *  android.content.pm.PackageManager$NameNotFoundException
@@ -17,6 +16,13 @@
  *  android.util.Log
  *  android.webkit.CookieManager
  *  android.webkit.CookieSyncManager
+ *  com.facebook.internal.ImageDownloader
+ *  com.facebook.internal.ProfileInformationCache
+ *  com.facebook.internal.Utility$1
+ *  com.facebook.internal.Utility$2
+ *  com.facebook.internal.Utility$DialogFeatureConfig
+ *  com.facebook.internal.Utility$Mapper
+ *  com.facebook.internal.Utility$Predicate
  *  org.json.JSONArray
  *  org.json.JSONException
  *  org.json.JSONObject
@@ -48,6 +54,7 @@ import com.facebook.internal.AttributionIdentifiers;
 import com.facebook.internal.FacebookRequestErrorClassification;
 import com.facebook.internal.ImageDownloader;
 import com.facebook.internal.ProfileInformationCache;
+import com.facebook.internal.Utility;
 import com.facebook.internal.Validate;
 import java.io.BufferedInputStream;
 import java.io.Closeable;
@@ -82,6 +89,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 
+/*
+ * Exception performing whole class analysis ignored.
+ */
 public final class Utility {
     private static final String APPLICATION_FIELDS = "fields";
     private static final String APP_SETTINGS_PREFS_KEY_FORMAT = "com.facebook.internal.APP_SETTINGS.%s";
@@ -105,6 +115,25 @@ public final class Utility {
     private static final String UTF8 = "UTF-8";
     private static Map<String, FetchedAppSettings> fetchedAppSettings = new ConcurrentHashMap<String, FetchedAppSettings>();
     private static AsyncTask<Void, Void, JSONObject> initialAppSettingsLoadTask;
+
+    static {
+    }
+
+    public Utility() {
+    }
+
+    static /* synthetic */ JSONObject access$000(String string2) {
+        return Utility.getAppSettingsQueryResponse(string2);
+    }
+
+    static /* synthetic */ FetchedAppSettings access$100(String string2, JSONObject jSONObject) {
+        return Utility.parseAppSettingsFromJSON(string2, jSONObject);
+    }
+
+    static /* synthetic */ AsyncTask access$202(AsyncTask asyncTask) {
+        initialAppSettingsLoadTask = asyncTask;
+        return asyncTask;
+    }
 
     public static <T> boolean areObjectsEqual(T t2, T t3) {
         if (t2 == null) {
@@ -161,7 +190,7 @@ public final class Utility {
     }
 
     public static void clearCaches(Context context) {
-        ImageDownloader.clearCache(context);
+        ImageDownloader.clearCache((Context)context);
     }
 
     private static void clearCookiesForDomain(Context context, String string2) {
@@ -229,7 +258,7 @@ public final class Utility {
                 }
                 hashMap.put(string2, map2);
             }
-            catch (JSONException var2_5) {}
+            catch (JSONException var1_5) {}
             ++n2;
         }
         return hashMap;
@@ -244,37 +273,37 @@ public final class Utility {
      */
     public static int copyAndCloseInputStream(InputStream var0, OutputStream var1_1) throws IOException {
         block7 : {
-            var5_2 = null;
-            var2_4 = 0;
-            var4_5 = new BufferedInputStream(var0);
-            var5_2 = new byte[8192];
+            var3_2 = null;
+            var4_4 = 0;
+            var2_5 = new BufferedInputStream(var0);
+            var3_2 = new byte[8192];
             break block7;
-            catch (Throwable var4_6) {
-                var1_1 = var5_2;
+            catch (Throwable var2_6) {
+                var1_1 = var3_2;
                 ** GOTO lbl14
-                catch (Throwable var5_3) {
-                    var1_1 = var4_5;
-                    var4_5 = var5_3;
+                catch (Throwable var3_3) {
+                    var1_1 = var2_5;
+                    var2_5 = var3_3;
                 }
 lbl14: // 2 sources:
                 if (var1_1 != null) {
                     var1_1.close();
                 }
-                if (var0 == null) throw var4_5;
+                if (var0 == null) throw var2_5;
                 var0.close();
-                throw var4_5;
+                throw var2_5;
             }
         }
-        while ((var3_7 = var4_5.read(var5_2)) != -1) {
-            var1_1.write(var5_2, 0, var3_7);
-            var2_4 += var3_7;
+        while ((var5_7 = var2_5.read(var3_2)) != -1) {
+            var1_1.write(var3_2, 0, var5_7);
+            var4_4 += var5_7;
         }
-        if (var4_5 != null) {
-            var4_5.close();
+        if (var2_5 != null) {
+            var2_5.close();
         }
-        if (var0 == null) return var2_4;
+        if (var0 == null) return var4_4;
         var0.close();
-        return var2_4;
+        return var4_4;
     }
 
     public static void deleteDirectory(File file) {
@@ -381,28 +410,15 @@ lbl14: // 2 sources:
         return new GraphRequest(null, "me", bundle, HttpMethod.GET, null);
     }
 
-    public static void getGraphMeRequestWithCacheAsync(String object, GraphMeRequestWithCacheCallback object2) {
+    public static void getGraphMeRequestWithCacheAsync(String object, GraphMeRequestWithCacheCallback graphMeRequestWithCacheCallback) {
         JSONObject jSONObject = ProfileInformationCache.getProfileInformation((String)object);
         if (jSONObject != null) {
-            object2.onSuccess(jSONObject);
+            graphMeRequestWithCacheCallback.onSuccess(jSONObject);
             return;
         }
-        object2 = new GraphRequest.Callback((GraphMeRequestWithCacheCallback)object2, (String)object){
-            final /* synthetic */ String val$accessToken;
-            final /* synthetic */ GraphMeRequestWithCacheCallback val$callback;
-
-            @Override
-            public void onCompleted(GraphResponse graphResponse) {
-                if (graphResponse.getError() != null) {
-                    this.val$callback.onFailure(graphResponse.getError().getException());
-                    return;
-                }
-                ProfileInformationCache.putProfileInformation(this.val$accessToken, graphResponse.getJSONObject());
-                this.val$callback.onSuccess(graphResponse.getJSONObject());
-            }
-        };
+        graphMeRequestWithCacheCallback = new /* Unavailable Anonymous Inner Class!! */;
         object = Utility.getGraphMeRequestWithCache((String)object);
-        object.setCallback((GraphRequest.Callback)object2);
+        object.setCallback((GraphRequest.Callback)((Object)graphMeRequestWithCacheCallback));
         object.executeAsync();
     }
 
@@ -680,29 +696,14 @@ lbl14: // 2 sources:
      * Enabled aggressive exception aggregation
      * Lifted jumps to return sites
      */
-    public static void loadAppSettingsAsync(Context object, final String string2) {
+    public static void loadAppSettingsAsync(Context object, String string2) {
         if (Utility.isNullOrEmpty(string2)) return;
         if (fetchedAppSettings.containsKey(string2)) return;
         if (initialAppSettingsLoadTask != null) {
             return;
         }
         String string3 = String.format("com.facebook.internal.APP_SETTINGS.%s", string2);
-        initialAppSettingsLoadTask = new AsyncTask<Void, Void, JSONObject>((Context)object, string3){
-            final /* synthetic */ Context val$context;
-            final /* synthetic */ String val$settingsKey;
-
-            protected /* varargs */ JSONObject doInBackground(Void ... arrvoid) {
-                return Utility.getAppSettingsQueryResponse(string2);
-            }
-
-            protected void onPostExecute(JSONObject jSONObject) {
-                if (jSONObject != null) {
-                    Utility.parseAppSettingsFromJSON(string2, jSONObject);
-                    this.val$context.getSharedPreferences("com.facebook.internal.preferences.APP_SETTINGS", 0).edit().putString(this.val$settingsKey, jSONObject.toString()).apply();
-                }
-                initialAppSettingsLoadTask = null;
-            }
-        };
+        initialAppSettingsLoadTask = new /* Unavailable Anonymous Inner Class!! */;
         initialAppSettingsLoadTask.execute((Object[])null);
         string3 = object.getSharedPreferences("com.facebook.internal.preferences.APP_SETTINGS", 0).getString(string3, null);
         if (Utility.isNullOrEmpty(string3)) return;
@@ -739,12 +740,12 @@ lbl14: // 2 sources:
         if (arrayList == null) {
             return null;
         }
-        ArrayList<K> arrayList2 = new ArrayList<K>();
+        ArrayList<Object> arrayList2 = new ArrayList<Object>();
         arrayList = arrayList.iterator();
         while (arrayList.hasNext()) {
-            K k2 = mapper.apply(arrayList.next());
-            if (k2 == null) continue;
-            arrayList2.add(k2);
+            Object object = mapper.apply(arrayList.next());
+            if (object == null) continue;
+            arrayList2.add(object);
         }
         arrayList = arrayList2;
         if (arrayList2.size() == 0) {
@@ -779,10 +780,10 @@ lbl14: // 2 sources:
         }
         int n2 = 0;
         while (n2 < jSONArray.length()) {
-            DialogFeatureConfig dialogFeatureConfig = DialogFeatureConfig.parseDialogConfig(jSONArray.optJSONObject(n2));
+            DialogFeatureConfig dialogFeatureConfig = DialogFeatureConfig.access$400((JSONObject)jSONArray.optJSONObject(n2));
             if (dialogFeatureConfig != null) {
-                Map<String, DialogFeatureConfig> map2;
                 void var0_4;
+                Map<String, DialogFeatureConfig> map2;
                 String string2 = dialogFeatureConfig.getDialogName();
                 Map<String, DialogFeatureConfig> map3 = map2 = hashMap.get(string2);
                 if (map2 == null) {
@@ -818,8 +819,8 @@ lbl14: // 2 sources:
                     bundle.putString(URLDecoder.decode(arrstring2[0], "UTF-8"), "");
                 }
             }
-            catch (UnsupportedEncodingException var4_5) {
-                Utility.logd("FacebookSDK", var4_5);
+            catch (UnsupportedEncodingException var2_5) {
+                Utility.logd("FacebookSDK", var2_5);
             }
             ++n3;
         }
@@ -930,38 +931,38 @@ lbl14: // 2 sources:
      * Lifted jumps to return sites
      */
     public static String readStreamToString(InputStream var0) throws IOException {
-        var2_1 = null;
-        var3_3 = null;
+        var1_1 = null;
+        var2_3 = null;
         var0 = new BufferedInputStream(var0);
-        var2_1 = new InputStreamReader(var0);
+        var1_1 = new InputStreamReader(var0);
         try {
-            var3_3 = new StringBuilder();
-            var4_4 = new char[2048];
-            while ((var1_7 = var2_1.read(var4_4)) != -1) {
-                var3_3.append(var4_4, 0, var1_7);
+            var2_3 = new StringBuilder();
+            var3_4 = new char[2048];
+            while ((var4_7 = var1_1.read(var3_4)) != -1) {
+                var2_3.append(var3_4, 0, var4_7);
             }
-            var3_3 = var3_3.toString();
+            var2_3 = var2_3.toString();
             ** GOTO lbl19
         }
-        catch (Throwable var4_5) {
+        catch (Throwable var3_5) {
             block8 : {
-                var3_3 = var2_1;
-                var2_1 = var4_5;
+                var2_3 = var1_1;
+                var1_1 = var3_5;
                 ** GOTO lbl27
 lbl19: // 1 sources:
                 Utility.closeQuietly(var0);
-                Utility.closeQuietly((Closeable)var2_1);
-                return var3_3;
-                catch (Throwable var4_6) {
-                    var0 = var2_1;
-                    var2_1 = var4_6;
+                Utility.closeQuietly((Closeable)var1_1);
+                return var2_3;
+                catch (Throwable var3_6) {
+                    var0 = var1_1;
+                    var1_1 = var3_6;
                     break block8;
                 }
-                catch (Throwable var2_2) {}
+                catch (Throwable var1_2) {}
             }
             Utility.closeQuietly(var0);
-            Utility.closeQuietly((Closeable)var3_3);
-            throw var2_1;
+            Utility.closeQuietly((Closeable)var2_3);
+            throw var1_1;
         }
     }
 
@@ -1091,93 +1092,6 @@ lbl19: // 1 sources:
         }
     }
 
-    public static class DialogFeatureConfig {
-        private String dialogName;
-        private Uri fallbackUrl;
-        private String featureName;
-        private int[] featureVersionSpec;
-
-        private DialogFeatureConfig(String string2, String string3, Uri uri, int[] arrn) {
-            this.dialogName = string2;
-            this.featureName = string3;
-            this.fallbackUrl = uri;
-            this.featureVersionSpec = arrn;
-        }
-
-        /*
-         * Enabled aggressive block sorting
-         * Lifted jumps to return sites
-         */
-        private static DialogFeatureConfig parseDialogConfig(JSONObject jSONObject) {
-            Uri uri = jSONObject.optString("name");
-            if (Utility.isNullOrEmpty((String)uri)) {
-                return null;
-            }
-            if ((uri = uri.split("\\|")).length != 2) return null;
-            String string2 = uri[0];
-            String string3 = uri[1];
-            if (Utility.isNullOrEmpty(string2)) return null;
-            if (Utility.isNullOrEmpty(string3)) return null;
-            String string4 = jSONObject.optString("url");
-            uri = null;
-            if (Utility.isNullOrEmpty(string4)) return new DialogFeatureConfig(string2, string3, uri, DialogFeatureConfig.parseVersionSpec(jSONObject.optJSONArray("versions")));
-            uri = Uri.parse((String)string4);
-            return new DialogFeatureConfig(string2, string3, uri, DialogFeatureConfig.parseVersionSpec(jSONObject.optJSONArray("versions")));
-        }
-
-        /*
-         * Enabled aggressive block sorting
-         * Enabled unnecessary exception pruning
-         * Enabled aggressive exception aggregation
-         */
-        private static int[] parseVersionSpec(JSONArray jSONArray) {
-            Object object = null;
-            if (jSONArray != null) {
-                int n2 = jSONArray.length();
-                int[] arrn = new int[n2];
-                int n3 = 0;
-                do {
-                    int n4;
-                    object = arrn;
-                    if (n3 >= n2) break;
-                    int n5 = n4 = jSONArray.optInt(n3, -1);
-                    if (n4 == -1) {
-                        object = jSONArray.optString(n3);
-                        n5 = n4;
-                        if (!Utility.isNullOrEmpty((String)object)) {
-                            try {
-                                n5 = Integer.parseInt((String)object);
-                            }
-                            catch (NumberFormatException var5_2) {
-                                Utility.logd("FacebookSDK", var5_2);
-                                n5 = -1;
-                            }
-                        }
-                    }
-                    arrn[n3] = n5;
-                    ++n3;
-                } while (true);
-            }
-            return object;
-        }
-
-        public String getDialogName() {
-            return this.dialogName;
-        }
-
-        public Uri getFallbackUrl() {
-            return this.fallbackUrl;
-        }
-
-        public String getFeatureName() {
-            return this.featureName;
-        }
-
-        public int[] getVersionSpec() {
-            return this.featureVersionSpec;
-        }
-    }
-
     public static class FetchedAppSettings {
         private Map<String, Map<String, DialogFeatureConfig>> dialogConfigMap;
         private FacebookRequestErrorClassification errorClassification;
@@ -1218,14 +1132,6 @@ lbl19: // 1 sources:
         public void onFailure(FacebookException var1);
 
         public void onSuccess(JSONObject var1);
-    }
-
-    public static interface Mapper<T, K> {
-        public K apply(T var1);
-    }
-
-    public static interface Predicate<T> {
-        public boolean apply(T var1);
     }
 
 }

@@ -42,8 +42,8 @@ public class AppCompatImageHelper {
 
     public void loadFromAttributes(AttributeSet object, int n2) {
         Object object2;
-        Object object3;
         Drawable drawable2;
+        Object object3;
         block10 : {
             Drawable drawable3;
             TintTypedArray tintTypedArray = null;

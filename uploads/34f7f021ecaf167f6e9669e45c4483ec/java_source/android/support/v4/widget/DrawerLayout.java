@@ -983,73 +983,73 @@ implements DrawerLayoutImpl {
      * Lifted jumps to return sites
      */
     protected void onMeasure(int var1_1, int var2_2) {
-        var8_3 = View.MeasureSpec.getMode((int)var1_1);
-        var7_4 = View.MeasureSpec.getMode((int)var2_2);
-        var3_5 = View.MeasureSpec.getSize((int)var1_1);
-        var4_6 = View.MeasureSpec.getSize((int)var2_2);
-        if (var8_3 != 1073741824) ** GOTO lbl-1000
-        var5_7 = var4_6;
-        var6_8 = var3_5;
-        if (var7_4 != 1073741824) lbl-1000: // 2 sources:
+        var10_3 = View.MeasureSpec.getMode((int)var1_1);
+        var9_4 = View.MeasureSpec.getMode((int)var2_2);
+        var5_5 = View.MeasureSpec.getSize((int)var1_1);
+        var6_6 = View.MeasureSpec.getSize((int)var2_2);
+        if (var10_3 != 1073741824) ** GOTO lbl-1000
+        var7_7 = var6_6;
+        var8_8 = var5_5;
+        if (var9_4 != 1073741824) lbl-1000: // 2 sources:
         {
             if (this.isInEditMode() == false) throw new IllegalArgumentException("DrawerLayout must be measured with MeasureSpec.EXACTLY.");
-            if (var8_3 != Integer.MIN_VALUE && var8_3 == 0) {
-                var3_5 = 300;
+            if (var10_3 != Integer.MIN_VALUE && var10_3 == 0) {
+                var5_5 = 300;
             }
-            if (var7_4 == Integer.MIN_VALUE) {
-                var6_8 = var3_5;
-                var5_7 = var4_6;
+            if (var9_4 == Integer.MIN_VALUE) {
+                var8_8 = var5_5;
+                var7_7 = var6_6;
             } else {
-                var5_7 = var4_6;
-                var6_8 = var3_5;
-                if (var7_4 == 0) {
-                    var5_7 = 300;
-                    var6_8 = var3_5;
+                var7_7 = var6_6;
+                var8_8 = var5_5;
+                if (var9_4 == 0) {
+                    var7_7 = 300;
+                    var8_8 = var5_5;
                 }
             }
         }
-        this.setMeasuredDimension(var6_8, var5_7);
-        var7_4 = this.mLastInsets != null && ViewCompat.getFitsSystemWindows((View)this) != false ? 1 : 0;
-        var10_9 = ViewCompat.getLayoutDirection((View)this);
-        var4_6 = 0;
-        var3_5 = 0;
-        var11_10 = this.getChildCount();
-        var8_3 = 0;
-        while (var8_3 < var11_10) {
-            var13_13 = this.getChildAt(var8_3);
-            if (var13_13.getVisibility() != 8) {
-                var14_14 = (LayoutParams)var13_13.getLayoutParams();
-                if (var7_4 != 0) {
-                    var9_11 = GravityCompat.getAbsoluteGravity(var14_14.gravity, var10_9);
-                    if (ViewCompat.getFitsSystemWindows(var13_13)) {
-                        DrawerLayout.IMPL.dispatchChildInsets(var13_13, this.mLastInsets, var9_11);
+        this.setMeasuredDimension(var8_8, var7_7);
+        var9_4 = this.mLastInsets != null && ViewCompat.getFitsSystemWindows((View)this) != false ? 1 : 0;
+        var12_9 = ViewCompat.getLayoutDirection((View)this);
+        var6_6 = 0;
+        var5_5 = 0;
+        var13_10 = this.getChildCount();
+        var10_3 = 0;
+        while (var10_3 < var13_10) {
+            var3_11 = this.getChildAt(var10_3);
+            if (var3_11.getVisibility() != 8) {
+                var4_12 = (LayoutParams)var3_11.getLayoutParams();
+                if (var9_4 != 0) {
+                    var11_13 = GravityCompat.getAbsoluteGravity(var4_12.gravity, var12_9);
+                    if (ViewCompat.getFitsSystemWindows(var3_11)) {
+                        DrawerLayout.IMPL.dispatchChildInsets(var3_11, this.mLastInsets, var11_13);
                     } else {
-                        DrawerLayout.IMPL.applyMarginInsets(var14_14, this.mLastInsets, var9_11);
+                        DrawerLayout.IMPL.applyMarginInsets(var4_12, this.mLastInsets, var11_13);
                     }
                 }
-                if (this.isContentView(var13_13)) {
-                    var13_13.measure(View.MeasureSpec.makeMeasureSpec((int)(var6_8 - var14_14.leftMargin - var14_14.rightMargin), (int)1073741824), View.MeasureSpec.makeMeasureSpec((int)(var5_7 - var14_14.topMargin - var14_14.bottomMargin), (int)1073741824));
+                if (this.isContentView(var3_11)) {
+                    var3_11.measure(View.MeasureSpec.makeMeasureSpec((int)(var8_8 - var4_12.leftMargin - var4_12.rightMargin), (int)1073741824), View.MeasureSpec.makeMeasureSpec((int)(var7_7 - var4_12.topMargin - var4_12.bottomMargin), (int)1073741824));
                 } else {
-                    if (this.isDrawerView(var13_13) == false) throw new IllegalStateException("Child " + (Object)var13_13 + " at index " + var8_3 + " does not have a valid layout_gravity - must be Gravity.LEFT, " + "Gravity.RIGHT or Gravity.NO_GRAVITY");
-                    if (DrawerLayout.SET_DRAWER_SHADOW_FROM_ELEVATION && ViewCompat.getElevation(var13_13) != this.mDrawerElevation) {
-                        ViewCompat.setElevation(var13_13, this.mDrawerElevation);
+                    if (this.isDrawerView(var3_11) == false) throw new IllegalStateException("Child " + (Object)var3_11 + " at index " + var10_3 + " does not have a valid layout_gravity - must be Gravity.LEFT, " + "Gravity.RIGHT or Gravity.NO_GRAVITY");
+                    if (DrawerLayout.SET_DRAWER_SHADOW_FROM_ELEVATION && ViewCompat.getElevation(var3_11) != this.mDrawerElevation) {
+                        ViewCompat.setElevation(var3_11, this.mDrawerElevation);
                     }
-                    var9_11 = (var12_12 = this.getDrawerViewAbsoluteGravity(var13_13) & 7) == 3 ? 1 : 0;
-                    if (var9_11 != 0) {
-                        if (var4_6 != 0) throw new IllegalStateException("Child drawer has absolute gravity " + DrawerLayout.gravityToString(var12_12) + " but this " + "DrawerLayout" + " already has a " + "drawer view along that edge");
+                    var11_13 = (var14_14 = this.getDrawerViewAbsoluteGravity(var3_11) & 7) == 3 ? 1 : 0;
+                    if (var11_13 != 0) {
+                        if (var6_6 != 0) throw new IllegalStateException("Child drawer has absolute gravity " + DrawerLayout.gravityToString(var14_14) + " but this " + "DrawerLayout" + " already has a " + "drawer view along that edge");
                     }
-                    if (var9_11 == 0 && var3_5 != 0) {
-                        throw new IllegalStateException("Child drawer has absolute gravity " + DrawerLayout.gravityToString(var12_12) + " but this " + "DrawerLayout" + " already has a " + "drawer view along that edge");
+                    if (var11_13 == 0 && var5_5 != 0) {
+                        throw new IllegalStateException("Child drawer has absolute gravity " + DrawerLayout.gravityToString(var14_14) + " but this " + "DrawerLayout" + " already has a " + "drawer view along that edge");
                     }
-                    if (var9_11 != 0) {
-                        var4_6 = 1;
+                    if (var11_13 != 0) {
+                        var6_6 = 1;
                     } else {
-                        var3_5 = 1;
+                        var5_5 = 1;
                     }
-                    var13_13.measure(DrawerLayout.getChildMeasureSpec((int)var1_1, (int)(this.mMinDrawerMargin + var14_14.leftMargin + var14_14.rightMargin), (int)var14_14.width), DrawerLayout.getChildMeasureSpec((int)var2_2, (int)(var14_14.topMargin + var14_14.bottomMargin), (int)var14_14.height));
+                    var3_11.measure(DrawerLayout.getChildMeasureSpec((int)var1_1, (int)(this.mMinDrawerMargin + var4_12.leftMargin + var4_12.rightMargin), (int)var4_12.width), DrawerLayout.getChildMeasureSpec((int)var2_2, (int)(var4_12.topMargin + var4_12.bottomMargin), (int)var4_12.height));
                 }
             }
-            ++var8_3;
+            ++var10_3;
         }
     }
 

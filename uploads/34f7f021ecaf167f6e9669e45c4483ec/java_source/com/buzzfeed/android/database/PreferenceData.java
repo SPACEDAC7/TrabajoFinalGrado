@@ -99,8 +99,8 @@ public class PreferenceData {
     private Preference getPreferenceFromDatabase(String object) {
         SQLiteDatabase sQLiteDatabase;
         block6 : {
-            Object var3_7;
             String string2;
+            Object var3_7;
             block5 : {
                 string2 = TAG + ".getPreferenceFromDatabase";
                 Object object2 = null;

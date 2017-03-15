@@ -190,9 +190,9 @@ implements ShowableListMenu {
      * Enabled aggressive block sorting
      */
     private int buildDropDown() {
-        Object object;
         boolean bl;
         int n2;
+        Object object;
         int n3 = 0;
         int n4 = 0;
         if (this.mDropDownList == null) {
@@ -317,7 +317,7 @@ implements ShowableListMenu {
                 int n3 = (Integer)sGetMaxAvailableHeightMethod.invoke((Object)this.mPopup, new Object[]{view, n2, bl});
                 return n3;
             }
-            catch (Exception var5_5) {
+            catch (Exception var4_5) {
                 Log.i((String)"ListPopupWindow", (String)"Could not call getMaxAvailableHeightMethod(View, int, boolean) on PopupWindow. Using the public version.");
             }
         }
@@ -804,8 +804,8 @@ implements ShowableListMenu {
             try {
                 sSetEpicenterBoundsMethod.invoke((Object)this.mPopup, new Object[]{this.mEpicenterBounds});
             }
-            catch (Exception var9_10) {
-                Log.e((String)"ListPopupWindow", (String)"Could not invoke setEpicenterBounds on PopupWindow", (Throwable)var9_10);
+            catch (Exception var1_10) {
+                Log.e((String)"ListPopupWindow", (String)"Could not invoke setEpicenterBounds on PopupWindow", (Throwable)var1_10);
             }
         }
         PopupWindowCompat.showAsDropDown(this.mPopup, this.getAnchorView(), this.mDropDownHorizontalOffset, this.mDropDownVerticalOffset, this.mDropDownGravity);

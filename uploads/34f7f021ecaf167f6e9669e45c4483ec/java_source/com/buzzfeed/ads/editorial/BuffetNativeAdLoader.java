@@ -98,7 +98,7 @@ public class BuffetNativeAdLoader {
         block6 : {
             try {
                 var1_1 = new JSONObject(EZUtil.readStringFromAsset(var1_1, "ad_backfill.json")).getJSONArray("ad_backfill");
-                var2_5 = 0;
+                var4_5 = 0;
                 break block6;
             }
             catch (JSONException var1_2) {}
@@ -110,17 +110,17 @@ lbl-1000: // 2 sources:
             }
             return;
         }
-        while (var2_5 < var1_1.length()) {
-            var3_6 = var1_1.getJSONObject(var2_5);
-            var4_7 /* !! */  = new Buzz();
-            var4_7 /* !! */ .parse(var3_6);
-            var4_7 /* !! */  = new FlowItem(BuffetType.POST.name(), var4_7 /* !! */ );
-            if (var4_7 /* !! */ .isValid()) {
-                this.adBackfillList.add((FlowItem)var4_7 /* !! */ );
+        while (var4_5 < var1_1.length()) {
+            var2_6 = var1_1.getJSONObject(var4_5);
+            var3_7 /* !! */  = new Buzz();
+            var3_7 /* !! */ .parse(var2_6);
+            var3_7 /* !! */  = new FlowItem(BuffetType.POST.name(), var3_7 /* !! */ );
+            if (var3_7 /* !! */ .isValid()) {
+                this.adBackfillList.add((FlowItem)var3_7 /* !! */ );
             } else {
-                LogUtil.e(BuffetNativeAdLoader.TAG, "flow was not valid! " + (Object)var3_6);
+                LogUtil.e(BuffetNativeAdLoader.TAG, "flow was not valid! " + (Object)var2_6);
             }
-            ++var2_5;
+            ++var4_5;
         }
     }
 

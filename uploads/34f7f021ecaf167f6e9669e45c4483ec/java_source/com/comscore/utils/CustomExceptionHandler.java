@@ -39,9 +39,9 @@ implements Thread.UncaughtExceptionHandler {
             try {
                 object.put("ns_ap_uxc", URLEncoder.encode((String)object2, "UTF-8"));
             }
-            catch (UnsupportedEncodingException var3_5) {
+            catch (UnsupportedEncodingException var2_5) {
                 CSLog.e(this, "Error encoding the URL (ns_ap_uxc)");
-                CSLog.printStackTrace(var3_5);
+                CSLog.printStackTrace(var2_5);
             }
         }
         try {

@@ -107,8 +107,8 @@ class ReportUploader {
                 report.remove();
                 return true;
             }
-            catch (Exception var5_5) {
-                Fabric.getLogger().e("CrashlyticsCore", "Error occurred sending report " + report, (Throwable)var5_5);
+            catch (Exception var2_5) {
+                Fabric.getLogger().e("CrashlyticsCore", "Error occurred sending report " + report, (Throwable)var2_5);
                 return bl;
             }
         }
@@ -155,44 +155,44 @@ class ReportUploader {
             if (this.delay > 0.0f) {
                 Thread.sleep((long)(this.delay * 1000.0f));
             }
-            var5_1 = CrashlyticsCore.getInstance();
-            var6_6 = var5_1.getHandler();
-            var4_7 = ReportUploader.this.findReports();
-            if (var6_6.isHandlingException()) {
+            var2_1 = CrashlyticsCore.getInstance();
+            var3_6 = var2_1.getHandler();
+            var1_7 = ReportUploader.this.findReports();
+            if (var3_6.isHandlingException()) {
                 return;
             }
             ** GOTO lbl14
-            catch (InterruptedException var4_8) {
+            catch (InterruptedException var1_8) {
                 Thread.currentThread().interrupt();
                 return;
             }
 lbl14: // 1 sources:
-            if (!var4_7.isEmpty() && !var5_1.canSendWithUserApproval()) {
-                Fabric.getLogger().d("CrashlyticsCore", "User declined to send. Removing " + var4_7.size() + " Report(s).");
-                var4_7 = var4_7.iterator();
-                while (var4_7.hasNext() != false) {
-                    ((Report)var4_7.next()).remove();
+            if (!var1_7.isEmpty() && !var2_1.canSendWithUserApproval()) {
+                Fabric.getLogger().d("CrashlyticsCore", "User declined to send. Removing " + var1_7.size() + " Report(s).");
+                var1_7 = var1_7.iterator();
+                while (var1_7.hasNext() != false) {
+                    ((Report)var1_7.next()).remove();
                 }
                 return;
             }
-            var1_10 = 0;
-            while (var4_7.isEmpty() == false) {
+            var4_10 = 0;
+            while (var1_7.isEmpty() == false) {
                 if (CrashlyticsCore.getInstance().getHandler().isHandlingException() != false) return;
-                Fabric.getLogger().d("CrashlyticsCore", "Attempting to send " + var4_7.size() + " report(s)");
-                for (Report var5_4 : var4_7) {
-                    ReportUploader.this.forceUpload(var5_4);
+                Fabric.getLogger().d("CrashlyticsCore", "Attempting to send " + var1_7.size() + " report(s)");
+                for (Report var2_4 : var1_7) {
+                    ReportUploader.this.forceUpload(var2_4);
                 }
-                var4_7 = var5_5 = ReportUploader.this.findReports();
-                if (var5_5.isEmpty()) continue;
-                var2_11 = ReportUploader.access$100()[Math.min(var1_10, ReportUploader.access$100().length - 1)];
-                Fabric.getLogger().d("CrashlyticsCore", "Report submisson: scheduling delayed retry in " + var2_11 + " seconds");
+                var1_7 = var2_5 = ReportUploader.this.findReports();
+                if (var2_5.isEmpty()) continue;
+                var5_11 = ReportUploader.access$100()[Math.min(var4_10, ReportUploader.access$100().length - 1)];
+                Fabric.getLogger().d("CrashlyticsCore", "Report submisson: scheduling delayed retry in " + var5_11 + " seconds");
                 try {
-                    Thread.sleep(1000 * var2_11);
-                    ++var1_10;
-                    var4_7 = var5_5;
+                    Thread.sleep(1000 * var5_11);
+                    ++var4_10;
+                    var1_7 = var2_5;
                     continue;
                 }
-                catch (InterruptedException var4_9) {
+                catch (InterruptedException var1_9) {
                     ** break block10
                 }
             }

@@ -10,6 +10,14 @@
  *  android.view.LayoutInflater
  *  android.view.View
  *  android.view.ViewGroup
+ *  com.facebook.login.LoginClient
+ *  com.facebook.login.LoginClient$BackgroundProcessingListener
+ *  com.facebook.login.LoginClient$OnCompletedListener
+ *  com.facebook.login.LoginClient$Request
+ *  com.facebook.login.LoginClient$Result
+ *  com.facebook.login.LoginClient$Result$Code
+ *  com.facebook.login.LoginFragment$1
+ *  com.facebook.login.LoginFragment$2
  */
 package com.facebook.login;
 
@@ -26,6 +34,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import com.facebook.R;
 import com.facebook.login.LoginClient;
+import com.facebook.login.LoginFragment;
 
 public class LoginFragment
 extends Fragment {
@@ -37,6 +46,10 @@ extends Fragment {
     private String callingPackage;
     private LoginClient loginClient;
     private LoginClient.Request request;
+
+    static /* synthetic */ void access$000(LoginFragment loginFragment, LoginClient.Result result) {
+        loginFragment.onLoginClientCompleted(result);
+    }
 
     /*
      * Enabled aggressive block sorting
@@ -72,37 +85,19 @@ extends Fragment {
         super.onCreate(bundle);
         if (bundle != null) {
             this.loginClient = (LoginClient)bundle.getParcelable("loginClient");
-            this.loginClient.setFragment(this);
+            this.loginClient.setFragment((Fragment)this);
         } else {
-            this.loginClient = new LoginClient(this);
+            this.loginClient = new LoginClient((Fragment)this);
         }
         this.callingPackage = this.getActivity().getCallingActivity().getPackageName();
         this.request = (LoginClient.Request)this.getActivity().getIntent().getParcelableExtra("request");
-        this.loginClient.setOnCompletedListener(new LoginClient.OnCompletedListener(){
-
-            @Override
-            public void onCompleted(LoginClient.Result result) {
-                LoginFragment.this.onLoginClientCompleted(result);
-            }
-        });
+        this.loginClient.setOnCompletedListener((LoginClient.OnCompletedListener)new /* Unavailable Anonymous Inner Class!! */);
     }
 
     @Override
     public View onCreateView(LayoutInflater layoutInflater, @Nullable ViewGroup viewGroup, @Nullable Bundle bundle) {
         layoutInflater = layoutInflater.inflate(R.layout.com_facebook_login_fragment, viewGroup, false);
-        this.loginClient.setBackgroundProcessingListener(new LoginClient.BackgroundProcessingListener((View)layoutInflater){
-            final /* synthetic */ View val$view;
-
-            @Override
-            public void onBackgroundProcessingStarted() {
-                this.val$view.findViewById(R.id.com_facebook_login_activity_progress_bar).setVisibility(0);
-            }
-
-            @Override
-            public void onBackgroundProcessingStopped() {
-                this.val$view.findViewById(R.id.com_facebook_login_activity_progress_bar).setVisibility(8);
-            }
-        });
+        this.loginClient.setBackgroundProcessingListener((LoginClient.BackgroundProcessingListener)new /* Unavailable Anonymous Inner Class!! */);
         return layoutInflater;
     }
 
@@ -134,6 +129,5 @@ extends Fragment {
         super.onSaveInstanceState(bundle);
         bundle.putParcelable("loginClient", (Parcelable)this.loginClient);
     }
-
 }
 

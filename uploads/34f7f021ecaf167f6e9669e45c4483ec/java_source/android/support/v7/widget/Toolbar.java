@@ -363,13 +363,13 @@ extends ViewGroup {
         n2 = n2 > 0 ? (n6 - n2) / 2 : 0;
         switch (this.getChildVerticalGravity(layoutParams.gravity)) {
             default: {
-                n4 = this.getPaddingTop();
+                n5 = this.getPaddingTop();
                 n2 = this.getPaddingBottom();
-                n5 = this.getHeight();
-                n3 = (n5 - n4 - n2 - n6) / 2;
+                n4 = this.getHeight();
+                n3 = (n4 - n5 - n2 - n6) / 2;
                 if (n3 >= layoutParams.topMargin) break;
                 n2 = layoutParams.topMargin;
-                return n4 + n2;
+                return n5 + n2;
             }
             case 48: {
                 return this.getPaddingTop() - n2;
@@ -378,11 +378,11 @@ extends ViewGroup {
                 return this.getHeight() - this.getPaddingBottom() - n6 - layoutParams.bottomMargin - n2;
             }
         }
-        n6 = n5 - n2 - n6 - n3 - n4;
+        n6 = n4 - n2 - n6 - n3 - n5;
         n2 = n3;
-        if (n6 >= layoutParams.bottomMargin) return n4 + n2;
+        if (n6 >= layoutParams.bottomMargin) return n5 + n2;
         n2 = Math.max(0, n3 - (layoutParams.bottomMargin - n6));
-        return n4 + n2;
+        return n5 + n2;
     }
 
     private int getChildVerticalGravity(int n2) {
@@ -866,11 +866,11 @@ extends ViewGroup {
         int n7 = 0;
         int[] arrn = this.mTempMargins;
         if (ViewUtils.isLayoutRtl((View)this)) {
-            n5 = 1;
-            n4 = 0;
-        } else {
-            n5 = 0;
             n4 = 1;
+            n5 = 0;
+        } else {
+            n4 = 0;
+            n5 = 1;
         }
         int n8 = 0;
         if (this.shouldLayout((View)this.mNavButtonView)) {
@@ -889,7 +889,7 @@ extends ViewGroup {
         }
         n7 = this.getCurrentContentInsetStart();
         int n11 = 0 + Math.max(n7, n8);
-        arrn[n5] = Math.max(0, n7 - n8);
+        arrn[n4] = Math.max(0, n7 - n8);
         n8 = 0;
         n7 = n9;
         n6 = n10;
@@ -900,47 +900,47 @@ extends ViewGroup {
             n7 = ViewUtils.combineMeasuredStates(n9, ViewCompat.getMeasuredState((View)this.mMenuView));
         }
         n9 = this.getCurrentContentInsetEnd();
-        n5 = n11 + Math.max(n9, n8);
-        arrn[n4] = Math.max(0, n9 - n8);
-        n4 = n5;
+        n4 = n11 + Math.max(n9, n8);
+        arrn[n5] = Math.max(0, n9 - n8);
+        n5 = n4;
         n9 = n7;
         n10 = n6;
         if (this.shouldLayout(this.mExpandedActionView)) {
-            n4 = n5 + this.measureChildCollapseMargins(this.mExpandedActionView, n2, n5, n3, 0, arrn);
+            n5 = n4 + this.measureChildCollapseMargins(this.mExpandedActionView, n2, n4, n3, 0, arrn);
             n10 = Math.max(n6, this.mExpandedActionView.getMeasuredHeight() + this.getVerticalMargins(this.mExpandedActionView));
             n9 = ViewUtils.combineMeasuredStates(n7, ViewCompat.getMeasuredState(this.mExpandedActionView));
         }
-        n7 = n4;
+        n7 = n5;
         n6 = n9;
         n8 = n10;
         if (this.shouldLayout((View)this.mLogoView)) {
-            n7 = n4 + this.measureChildCollapseMargins((View)this.mLogoView, n2, n4, n3, 0, arrn);
+            n7 = n5 + this.measureChildCollapseMargins((View)this.mLogoView, n2, n5, n3, 0, arrn);
             n8 = Math.max(n10, this.mLogoView.getMeasuredHeight() + this.getVerticalMargins((View)this.mLogoView));
             n6 = ViewUtils.combineMeasuredStates(n9, ViewCompat.getMeasuredState((View)this.mLogoView));
         }
         n11 = this.getChildCount();
-        n4 = n8;
+        n5 = n8;
         n9 = n6;
         n8 = n7;
         for (n10 = 0; n10 < n11; ++n10) {
             View view = this.getChildAt(n10);
             n7 = n8;
             n6 = n9;
-            n5 = n4;
+            n4 = n5;
             if (((LayoutParams)view.getLayoutParams()).mViewType == 0) {
                 if (!this.shouldLayout(view)) {
-                    n5 = n4;
+                    n4 = n5;
                     n6 = n9;
                     n7 = n8;
                 } else {
                     n7 = n8 + this.measureChildCollapseMargins(view, n2, n8, n3, 0, arrn);
-                    n5 = Math.max(n4, view.getMeasuredHeight() + this.getVerticalMargins(view));
+                    n4 = Math.max(n5, view.getMeasuredHeight() + this.getVerticalMargins(view));
                     n6 = ViewUtils.combineMeasuredStates(n9, ViewCompat.getMeasuredState(view));
                 }
             }
             n8 = n7;
             n9 = n6;
-            n4 = n5;
+            n5 = n4;
         }
         n6 = 0;
         n7 = 0;
@@ -953,21 +953,21 @@ extends ViewGroup {
             n7 = this.mTitleTextView.getMeasuredHeight() + this.getVerticalMargins((View)this.mTitleTextView);
             n10 = ViewUtils.combineMeasuredStates(n9, ViewCompat.getMeasuredState((View)this.mTitleTextView));
         }
-        n5 = n10;
+        n4 = n10;
         n11 = n7;
         n9 = n6;
         if (this.shouldLayout((View)this.mSubtitleTextView)) {
             n9 = Math.max(n6, this.measureChildCollapseMargins((View)this.mSubtitleTextView, n2, n8 + n13, n3, n7 + n12, arrn));
             n11 = n7 + (this.mSubtitleTextView.getMeasuredHeight() + this.getVerticalMargins((View)this.mSubtitleTextView));
-            n5 = ViewUtils.combineMeasuredStates(n10, ViewCompat.getMeasuredState((View)this.mSubtitleTextView));
+            n4 = ViewUtils.combineMeasuredStates(n10, ViewCompat.getMeasuredState((View)this.mSubtitleTextView));
         }
-        n10 = Math.max(n4, n11);
-        n4 = this.getPaddingLeft();
+        n10 = Math.max(n5, n11);
+        n5 = this.getPaddingLeft();
         n11 = this.getPaddingRight();
         n7 = this.getPaddingTop();
         n6 = this.getPaddingBottom();
-        n9 = ViewCompat.resolveSizeAndState(Math.max(n8 + n9 + (n4 + n11), this.getSuggestedMinimumWidth()), n2, -16777216 & n5);
-        n2 = ViewCompat.resolveSizeAndState(Math.max(n10 + (n7 + n6), this.getSuggestedMinimumHeight()), n3, n5 << 16);
+        n9 = ViewCompat.resolveSizeAndState(Math.max(n8 + n9 + (n5 + n11), this.getSuggestedMinimumWidth()), n2, -16777216 & n4);
+        n2 = ViewCompat.resolveSizeAndState(Math.max(n10 + (n7 + n6), this.getSuggestedMinimumHeight()), n3, n4 << 16);
         if (this.shouldCollapse()) {
             n2 = 0;
         }

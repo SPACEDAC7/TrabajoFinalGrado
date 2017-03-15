@@ -61,19 +61,19 @@ extends LoginMethodHandler {
         String string3;
         LoginClient.Result result = null;
         Bundle bundle = object.getExtras();
-        object = string2 = bundle.getString("error");
-        if (string2 == null) {
+        object = string3 = bundle.getString("error");
+        if (string3 == null) {
             object = bundle.getString("error_type");
         }
         String string4 = bundle.getString("error_code");
-        string2 = string3 = bundle.getString("error_message");
-        if (string3 == null) {
-            string2 = bundle.getString("error_description");
+        string3 = string2 = bundle.getString("error_message");
+        if (string2 == null) {
+            string3 = bundle.getString("error_description");
         }
-        if (!Utility.isNullOrEmpty(string3 = bundle.getString("e2e"))) {
-            this.logWebLoginCompleted(string3);
+        if (!Utility.isNullOrEmpty(string2 = bundle.getString("e2e"))) {
+            this.logWebLoginCompleted(string2);
         }
-        if (object == null && string4 == null && string2 == null) {
+        if (object == null && string4 == null && string3 == null) {
             try {
                 return LoginClient.Result.createTokenResult(request, KatanaProxyLoginMethodHandler.createAccessTokenFromWebBundle(request.getPermissions(), bundle, AccessTokenSource.FACEBOOK_APPLICATION_WEB, request.getApplicationId()));
             }
@@ -82,7 +82,7 @@ extends LoginMethodHandler {
             }
         }
         if (ServerProtocol.errorsProxyAuthDisabled.contains(object)) return result;
-        if (!ServerProtocol.errorsUserCanceled.contains(object)) return LoginClient.Result.createErrorResult(request, (String)object, string2, string4);
+        if (!ServerProtocol.errorsUserCanceled.contains(object)) return LoginClient.Result.createErrorResult(request, (String)object, string3, string4);
         return LoginClient.Result.createCancelResult(request, null);
     }
 

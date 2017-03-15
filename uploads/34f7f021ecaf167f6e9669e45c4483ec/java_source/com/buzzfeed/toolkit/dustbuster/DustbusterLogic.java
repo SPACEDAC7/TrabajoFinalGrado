@@ -156,8 +156,8 @@ public class DustbusterLogic {
                 arrayList.add(string3);
                 LogUtil.v(string2, "adding event to be processed: id " + string3 + " count: " + n4);
             }
-            catch (JSONException var9_10) {
-                LogUtil.e(string2, "exception in recreating event from json string", (Throwable)var9_10);
+            catch (JSONException var6_10) {
+                LogUtil.e(string2, "exception in recreating event from json string", (Throwable)var6_10);
             }
             ++n4;
         }
@@ -193,8 +193,8 @@ public class DustbusterLogic {
             bl3 = bl2;
             this.sendResultBroadcast(dustbusterResponse, logicResult.getEventsProcessed());
         }
-        catch (Exception var7_8) {
-            LogUtil.e(string3, "exception in httpClient.post()", var7_8);
+        catch (Exception var4_8) {
+            LogUtil.e(string3, "exception in httpClient.post()", var4_8);
             this.sendExceptionResultBroadcast("exception in httpClient.post()");
             bl2 = bl3;
         }

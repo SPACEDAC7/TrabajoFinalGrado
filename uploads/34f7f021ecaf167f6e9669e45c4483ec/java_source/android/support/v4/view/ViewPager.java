@@ -814,61 +814,61 @@ lbl54: // 4 sources:
      * Lifted jumps to return sites
      */
     public boolean arrowScroll(int var1_1) {
-        var6_2 = this.findFocus();
-        if (var6_2 != this) ** GOTO lbl5
-        var5_3 = null;
+        var3_2 = this.findFocus();
+        if (var3_2 != this) ** GOTO lbl5
+        var2_3 = null;
         ** GOTO lbl-1000
 lbl5: // 1 sources:
-        var5_3 = var6_2;
-        if (var6_2 == null) lbl-1000: // 4 sources:
+        var2_3 = var3_2;
+        if (var3_2 == null) lbl-1000: // 4 sources:
         {
             do {
-                var4_6 = false;
-                var6_2 = FocusFinder.getInstance().findNextFocus((ViewGroup)this, var5_3, var1_1);
-                if (var6_2 != null && var6_2 != var5_3) {
+                var7_6 = false;
+                var3_2 = FocusFinder.getInstance().findNextFocus((ViewGroup)this, var2_3, var1_1);
+                if (var3_2 != null && var3_2 != var2_3) {
                     if (var1_1 == 17) {
-                        var2_4 = this.getChildRectInPagerCoordinates((Rect)this.mTempRect, (View)var6_2).left;
-                        var3_5 = this.getChildRectInPagerCoordinates((Rect)this.mTempRect, (View)var5_3).left;
-                        var4_6 = var5_3 != null && var2_4 >= var3_5 ? this.pageLeft() : var6_2.requestFocus();
+                        var5_4 = this.getChildRectInPagerCoordinates((Rect)this.mTempRect, (View)var3_2).left;
+                        var6_5 = this.getChildRectInPagerCoordinates((Rect)this.mTempRect, (View)var2_3).left;
+                        var7_6 = var2_3 != null && var5_4 >= var6_5 ? this.pageLeft() : var3_2.requestFocus();
                     } else if (var1_1 == 66) {
-                        var2_4 = this.getChildRectInPagerCoordinates((Rect)this.mTempRect, (View)var6_2).left;
-                        var3_5 = this.getChildRectInPagerCoordinates((Rect)this.mTempRect, (View)var5_3).left;
-                        var4_6 = var5_3 != null && var2_4 <= var3_5 ? this.pageRight() : var6_2.requestFocus();
+                        var5_4 = this.getChildRectInPagerCoordinates((Rect)this.mTempRect, (View)var3_2).left;
+                        var6_5 = this.getChildRectInPagerCoordinates((Rect)this.mTempRect, (View)var2_3).left;
+                        var7_6 = var2_3 != null && var5_4 <= var6_5 ? this.pageRight() : var3_2.requestFocus();
                     }
                 } else if (var1_1 == 17 || var1_1 == 1) {
-                    var4_6 = this.pageLeft();
+                    var7_6 = this.pageLeft();
                 } else if (var1_1 == 66 || var1_1 == 2) {
-                    var4_6 = this.pageRight();
+                    var7_6 = this.pageRight();
                 }
-                if (var4_6 == false) return var4_6;
+                if (var7_6 == false) return var7_6;
                 this.playSoundEffect(SoundEffectConstants.getContantForFocusDirection((int)var1_1));
-                return var4_6;
+                return var7_6;
                 break;
             } while (true);
         }
-        var3_5 = 0;
-        var5_3 = var6_2.getParent();
+        var6_5 = 0;
+        var2_3 = var3_2.getParent();
         do {
-            var2_4 = var3_5;
-            if (!(var5_3 instanceof ViewGroup)) ** GOTO lbl36
-            if (var5_3 != this) ** GOTO lbl46
-            var2_4 = 1;
+            var5_4 = var6_5;
+            if (!(var2_3 instanceof ViewGroup)) ** GOTO lbl36
+            if (var2_3 != this) ** GOTO lbl46
+            var5_4 = 1;
 lbl36: // 2 sources:
-            var5_3 = var6_2;
-            if (var2_4 != 0) ** GOTO lbl-1000
-            var7_7 = new StringBuilder();
-            var7_7.append(var6_2.getClass().getSimpleName());
-            var5_3 = var6_2.getParent();
-            while (var5_3 instanceof ViewGroup) {
-                var7_7.append(" => ").append(var5_3.getClass().getSimpleName());
-                var5_3 = var5_3.getParent();
+            var2_3 = var3_2;
+            if (var5_4 != 0) ** GOTO lbl-1000
+            var4_7 = new StringBuilder();
+            var4_7.append(var3_2.getClass().getSimpleName());
+            var2_3 = var3_2.getParent();
+            while (var2_3 instanceof ViewGroup) {
+                var4_7.append(" => ").append(var2_3.getClass().getSimpleName());
+                var2_3 = var2_3.getParent();
             }
             break;
 lbl46: // 1 sources:
-            var5_3 = var5_3.getParent();
+            var2_3 = var2_3.getParent();
         } while (true);
-        Log.e((String)"ViewPager", (String)("arrowScroll tried to find focus based on non-child current focused view " + var7_7.toString()));
-        var5_3 = null;
+        Log.e((String)"ViewPager", (String)("arrowScroll tried to find focus based on non-child current focused view " + var4_7.toString()));
+        var2_3 = null;
         ** while (true)
     }
 
@@ -971,8 +971,8 @@ lbl46: // 1 sources:
      * Enabled aggressive block sorting
      */
     void dataSetChanged() {
-        Object object;
         int n2;
+        Object object;
         this.mExpectedAdapterCount = n2 = this.mAdapter.getCount();
         int n3 = this.mItems.size() < this.mOffscreenPageLimit * 2 + 1 && this.mItems.size() < n2 ? 1 : 0;
         int n4 = this.mCurItem;
@@ -1463,8 +1463,8 @@ lbl63: // 2 sources:
      * Enabled aggressive block sorting
      */
     protected void onLayout(boolean bl, int n2, int n3, int n4, int n5) {
-        LayoutParams layoutParams;
         int n6;
+        LayoutParams layoutParams;
         View view;
         int n7 = this.getChildCount();
         int n8 = n4 - n2;
@@ -1573,9 +1573,9 @@ lbl63: // 2 sources:
      * Enabled aggressive block sorting
      */
     protected void onMeasure(int n2, int n3) {
-        int n4;
-        View view;
         LayoutParams layoutParams;
+        View view;
+        int n4;
         this.setMeasuredDimension(ViewPager.getDefaultSize((int)0, (int)n2), ViewPager.getDefaultSize((int)0, (int)n3));
         n2 = this.getMeasuredWidth();
         this.mGutterSize = Math.min(n2 / 10, this.mDefaultGutterSize);
@@ -1811,11 +1811,11 @@ lbl63: // 2 sources:
             this.mVelocityTracker = VelocityTracker.obtain();
         }
         this.mVelocityTracker.addMovement(var1_1);
-        var6_2 = var1_1.getAction();
-        var9_4 = var10_3 = false;
-        switch (var6_2 & 255) {
+        var7_2 = var1_1.getAction();
+        var10_4 = var11_3 = false;
+        switch (var7_2 & 255) {
             default: {
-                var9_4 = var10_3;
+                var10_4 = var11_3;
                 break;
             }
             case 0: {
@@ -1827,19 +1827,19 @@ lbl63: // 2 sources:
                 this.mInitialMotionY = var2_5 = var1_1.getY();
                 this.mLastMotionY = var2_5;
                 this.mActivePointerId = var1_1.getPointerId(0);
-                var9_4 = var10_3;
+                var10_4 = var11_3;
                 break;
             }
             case 2: {
                 if (!this.mIsBeingDragged) {
-                    var6_2 = var1_1.findPointerIndex(this.mActivePointerId);
-                    if (var6_2 == -1) {
-                        var9_4 = this.resetTouch();
+                    var7_2 = var1_1.findPointerIndex(this.mActivePointerId);
+                    if (var7_2 == -1) {
+                        var10_4 = this.resetTouch();
                         break;
                     }
-                    var2_6 = var1_1.getX(var6_2);
+                    var2_6 = var1_1.getX(var7_2);
                     var4_8 = Math.abs(var2_6 - this.mLastMotionX);
-                    var3_9 = var1_1.getY(var6_2);
+                    var3_9 = var1_1.getY(var7_2);
                     var5_10 = Math.abs(var3_9 - this.mLastMotionY);
                     if (var4_8 > (float)this.mTouchSlop && var4_8 > var5_10) {
                         this.mIsBeingDragged = true;
@@ -1849,50 +1849,50 @@ lbl63: // 2 sources:
                         this.mLastMotionY = var3_9;
                         this.setScrollState(1);
                         this.setScrollingCacheEnabled(true);
-                        var11_11 = this.getParent();
-                        if (var11_11 != null) {
-                            var11_11.requestDisallowInterceptTouchEvent(true);
+                        var6_11 = this.getParent();
+                        if (var6_11 != null) {
+                            var6_11.requestDisallowInterceptTouchEvent(true);
                         }
                     }
                 }
-                var9_4 = var10_3;
+                var10_4 = var11_3;
                 if (this.mIsBeingDragged) {
-                    var9_4 = false | this.performDrag(var1_1.getX(var1_1.findPointerIndex(this.mActivePointerId)));
+                    var10_4 = false | this.performDrag(var1_1.getX(var1_1.findPointerIndex(this.mActivePointerId)));
                     break;
                 }
                 ** GOTO lbl81
             }
             case 1: {
-                var9_4 = var10_3;
+                var10_4 = var11_3;
                 if (this.mIsBeingDragged) {
-                    var11_12 = this.mVelocityTracker;
-                    var11_12.computeCurrentVelocity(1000, (float)this.mMaximumVelocity);
-                    var6_2 = (int)VelocityTrackerCompat.getXVelocity((VelocityTracker)var11_12, this.mActivePointerId);
+                    var6_12 = this.mVelocityTracker;
+                    var6_12.computeCurrentVelocity(1000, (float)this.mMaximumVelocity);
+                    var7_2 = (int)VelocityTrackerCompat.getXVelocity((VelocityTracker)var6_12, this.mActivePointerId);
                     this.mPopulatePending = true;
-                    var7_13 = this.getClientWidth();
-                    var8_14 = this.getScrollX();
-                    var11_12 = this.infoForCurrentScrollPosition();
-                    var2_7 = (float)this.mPageMargin / (float)var7_13;
-                    this.setCurrentItemInternal(this.determineTargetPage(var11_12.position, ((float)var8_14 / (float)var7_13 - var11_12.offset) / (var11_12.widthFactor + var2_7), var6_2, (int)(var1_1.getX(var1_1.findPointerIndex(this.mActivePointerId)) - this.mInitialMotionX)), true, true, var6_2);
-                    var9_4 = this.resetTouch();
+                    var8_13 = this.getClientWidth();
+                    var9_14 = this.getScrollX();
+                    var6_12 = this.infoForCurrentScrollPosition();
+                    var2_7 = (float)this.mPageMargin / (float)var8_13;
+                    this.setCurrentItemInternal(this.determineTargetPage(var6_12.position, ((float)var9_14 / (float)var8_13 - var6_12.offset) / (var6_12.widthFactor + var2_7), var7_2, (int)(var1_1.getX(var1_1.findPointerIndex(this.mActivePointerId)) - this.mInitialMotionX)), true, true, var7_2);
+                    var10_4 = this.resetTouch();
                     break;
                 }
                 ** GOTO lbl81
             }
             case 3: {
-                var9_4 = var10_3;
+                var10_4 = var11_3;
                 if (this.mIsBeingDragged) {
                     this.scrollToItem(this.mCurItem, true, 0, false);
-                    var9_4 = this.resetTouch();
+                    var10_4 = this.resetTouch();
                     break;
                 }
                 ** GOTO lbl81
             }
             case 5: {
-                var6_2 = MotionEventCompat.getActionIndex(var1_1);
-                this.mLastMotionX = var1_1.getX(var6_2);
-                this.mActivePointerId = var1_1.getPointerId(var6_2);
-                var9_4 = var10_3;
+                var7_2 = MotionEventCompat.getActionIndex(var1_1);
+                this.mLastMotionX = var1_1.getX(var7_2);
+                this.mActivePointerId = var1_1.getPointerId(var7_2);
+                var10_4 = var11_3;
             }
 lbl81: // 5 sources:
             case 4: {
@@ -1901,10 +1901,10 @@ lbl81: // 5 sources:
             case 6: {
                 this.onSecondaryPointerUp(var1_1);
                 this.mLastMotionX = var1_1.getX(var1_1.findPointerIndex(this.mActivePointerId));
-                var9_4 = var10_3;
+                var10_4 = var11_3;
             }
         }
-        if (var9_4 == false) return true;
+        if (var10_4 == false) return true;
         ViewCompat.postInvalidateOnAnimation((View)this);
         return true;
     }
@@ -1939,9 +1939,9 @@ lbl81: // 5 sources:
     void populate(int var1_1) {
         block35 : {
             block36 : {
-                var14_2 = null;
+                var6_2 = null;
                 if (this.mCurItem != var1_1) {
-                    var14_2 = this.infoForPosition(this.mCurItem);
+                    var6_2 = this.infoForPosition(this.mCurItem);
                     this.mCurItem = var1_1;
                 }
                 if (this.mAdapter == null) {
@@ -1955,39 +1955,39 @@ lbl81: // 5 sources:
                 if (this.getWindowToken() == null) return;
                 this.mAdapter.startUpdate(this);
                 var1_1 = this.mOffscreenPageLimit;
-                var11_3 = Math.max(0, this.mCurItem - var1_1);
-                var9_4 = this.mAdapter.getCount();
-                var10_5 = Math.min(var9_4 - 1, this.mCurItem + var1_1);
-                if (var9_4 != this.mExpectedAdapterCount) {
+                var15_3 = Math.max(0, this.mCurItem - var1_1);
+                var13_4 = this.mAdapter.getCount();
+                var14_5 = Math.min(var13_4 - 1, this.mCurItem + var1_1);
+                if (var13_4 != this.mExpectedAdapterCount) {
                     try {
-                        var13_6 = this.getResources().getResourceName(this.getId());
+                        var5_6 = this.getResources().getResourceName(this.getId());
                     }
-                    catch (Resources.NotFoundException var13_7) {
-                        var13_6 = Integer.toHexString(this.getId());
-                        throw new IllegalStateException("The application's PagerAdapter changed the adapter's contents without calling PagerAdapter#notifyDataSetChanged! Expected adapter item count: " + this.mExpectedAdapterCount + ", found: " + var9_4 + " Pager id: " + var13_6 + " Pager class: " + this.getClass() + " Problematic adapter: " + this.mAdapter.getClass());
+                    catch (Resources.NotFoundException var5_7) {
+                        var5_6 = Integer.toHexString(this.getId());
+                        throw new IllegalStateException("The application's PagerAdapter changed the adapter's contents without calling PagerAdapter#notifyDataSetChanged! Expected adapter item count: " + this.mExpectedAdapterCount + ", found: " + var13_4 + " Pager id: " + var5_6 + " Pager class: " + this.getClass() + " Problematic adapter: " + this.mAdapter.getClass());
                     }
-                    throw new IllegalStateException("The application's PagerAdapter changed the adapter's contents without calling PagerAdapter#notifyDataSetChanged! Expected adapter item count: " + this.mExpectedAdapterCount + ", found: " + var9_4 + " Pager id: " + var13_6 + " Pager class: " + this.getClass() + " Problematic adapter: " + this.mAdapter.getClass());
+                    throw new IllegalStateException("The application's PagerAdapter changed the adapter's contents without calling PagerAdapter#notifyDataSetChanged! Expected adapter item count: " + this.mExpectedAdapterCount + ", found: " + var13_4 + " Pager id: " + var5_6 + " Pager class: " + this.getClass() + " Problematic adapter: " + this.mAdapter.getClass());
                 }
-                var15_9 = null;
+                var7_9 = null;
                 var1_1 = 0;
                 do {
-                    var13_8 = var15_9;
+                    var5_8 = var7_9;
                     if (var1_1 >= this.mItems.size()) ** GOTO lbl34
-                    var16_10 = this.mItems.get(var1_1);
-                    if (var16_10.position >= this.mCurItem) {
-                        var13_8 = var15_9;
-                        if (var16_10.position == this.mCurItem) {
-                            var13_8 = var16_10;
+                    var8_10 = this.mItems.get(var1_1);
+                    if (var8_10.position >= this.mCurItem) {
+                        var5_8 = var7_9;
+                        if (var8_10.position == this.mCurItem) {
+                            var5_8 = var8_10;
                         }
 lbl34: // 4 sources:
-                        var15_9 = var13_8;
-                        if (var13_8 == null) {
-                            var15_9 = var13_8;
-                            if (var9_4 > 0) {
-                                var15_9 = this.addNewItem(this.mCurItem, var1_1);
+                        var7_9 = var5_8;
+                        if (var5_8 == null) {
+                            var7_9 = var5_8;
+                            if (var13_4 > 0) {
+                                var7_9 = this.addNewItem(this.mCurItem, var1_1);
                             }
                         }
-                        if (var15_9 != null) {
+                        if (var7_9 != null) {
                             break;
                         }
                         break block35;
@@ -1995,143 +1995,143 @@ lbl34: // 4 sources:
                     ++var1_1;
                 } while (true);
                 var4_11 = 0.0f;
-                var8_12 = var1_1 - 1;
-                var13_8 = var8_12 >= 0 ? this.mItems.get(var8_12) : null;
-                var12_13 = this.getClientWidth();
-                var3_14 = var12_13 <= 0 ? 0.0f : 2.0f - var15_9.widthFactor + (float)this.getPaddingLeft() / (float)var12_13;
-                var7_15 = this.mCurItem - 1;
-                var16_10 = var13_8;
-                var6_16 = var1_1;
+                var12_12 = var1_1 - 1;
+                var5_8 = var12_12 >= 0 ? this.mItems.get(var12_12) : null;
+                var16_13 = this.getClientWidth();
+                var3_14 = var16_13 <= 0 ? 0.0f : 2.0f - var7_9.widthFactor + (float)this.getPaddingLeft() / (float)var16_13;
+                var11_15 = this.mCurItem - 1;
+                var8_10 = var5_8;
+                var10_16 = var1_1;
                 do {
-                    if (var7_15 < 0) ** GOTO lbl-1000
-                    if (var4_11 >= var3_14 && var7_15 < var11_3) {
-                        ** if (var16_10 != null) goto lbl65
+                    if (var11_15 < 0) ** GOTO lbl-1000
+                    if (var4_11 >= var3_14 && var11_15 < var15_3) {
+                        ** if (var8_10 != null) goto lbl65
                     }
                     ** GOTO lbl86
 lbl-1000: // 2 sources:
                     {
-                        var4_11 = var15_9.widthFactor;
-                        var7_15 = var6_16 + 1;
+                        var4_11 = var7_9.widthFactor;
+                        var11_15 = var10_16 + 1;
                         if (var4_11 < 2.0f) {
-                            var13_8 = var7_15 < this.mItems.size() ? this.mItems.get(var7_15) : null;
-                            var3_14 = var12_13 <= 0 ? 0.0f : (float)this.getPaddingRight() / (float)var12_13 + 2.0f;
-                            var16_10 = var13_8;
+                            var5_8 = var11_15 < this.mItems.size() ? this.mItems.get(var11_15) : null;
+                            var3_14 = var16_13 <= 0 ? 0.0f : (float)this.getPaddingRight() / (float)var16_13 + 2.0f;
+                            var8_10 = var5_8;
                             break;
                         }
                         break block36;
                     }
 lbl65: // 1 sources:
-                    var1_1 = var6_16;
+                    var1_1 = var10_16;
                     var2_17 = var4_11;
-                    var13_8 = var16_10;
-                    var5_18 = var8_12;
-                    if (var7_15 == var16_10.position) {
-                        var1_1 = var6_16;
+                    var5_8 = var8_10;
+                    var9_18 = var12_12;
+                    if (var11_15 == var8_10.position) {
+                        var1_1 = var10_16;
                         var2_17 = var4_11;
-                        var13_8 = var16_10;
-                        var5_18 = var8_12;
-                        if (!var16_10.scrolling) {
-                            this.mItems.remove(var8_12);
-                            this.mAdapter.destroyItem(this, var7_15, var16_10.object);
-                            var5_18 = var8_12 - 1;
-                            var1_1 = var6_16 - 1;
-                            if (var5_18 >= 0) {
-                                var13_8 = this.mItems.get(var5_18);
+                        var5_8 = var8_10;
+                        var9_18 = var12_12;
+                        if (!var8_10.scrolling) {
+                            this.mItems.remove(var12_12);
+                            this.mAdapter.destroyItem(this, var11_15, var8_10.object);
+                            var9_18 = var12_12 - 1;
+                            var1_1 = var10_16 - 1;
+                            if (var9_18 >= 0) {
+                                var5_8 = this.mItems.get(var9_18);
                                 var2_17 = var4_11;
                             } else {
-                                var13_8 = null;
+                                var5_8 = null;
                                 var2_17 = var4_11;
                             }
                         }
                     }
                     ** GOTO lbl96
 lbl86: // 1 sources:
-                    if (var16_10 != null && var7_15 == var16_10.position) {
-                        var2_17 = var4_11 + var16_10.widthFactor;
-                        var5_18 = var8_12 - 1;
-                        var13_8 = var5_18 >= 0 ? this.mItems.get(var5_18) : null;
-                        var1_1 = var6_16;
+                    if (var8_10 != null && var11_15 == var8_10.position) {
+                        var2_17 = var4_11 + var8_10.widthFactor;
+                        var9_18 = var12_12 - 1;
+                        var5_8 = var9_18 >= 0 ? this.mItems.get(var9_18) : null;
+                        var1_1 = var10_16;
                     } else {
-                        var2_17 = var4_11 + this.addNewItem((int)var7_15, (int)(var8_12 + 1)).widthFactor;
-                        var1_1 = var6_16 + 1;
-                        var13_8 = var8_12 >= 0 ? this.mItems.get(var8_12) : null;
-                        var5_18 = var8_12;
+                        var2_17 = var4_11 + this.addNewItem((int)var11_15, (int)(var12_12 + 1)).widthFactor;
+                        var1_1 = var10_16 + 1;
+                        var5_8 = var12_12 >= 0 ? this.mItems.get(var12_12) : null;
+                        var9_18 = var12_12;
                     }
 lbl96: // 4 sources:
-                    --var7_15;
-                    var6_16 = var1_1;
+                    --var11_15;
+                    var10_16 = var1_1;
                     var4_11 = var2_17;
-                    var16_10 = var13_8;
-                    var8_12 = var5_18;
+                    var8_10 = var5_8;
+                    var12_12 = var9_18;
                 } while (true);
-                for (var5_18 = this.mCurItem + 1; var5_18 < var9_4; ++var5_18) {
-                    if (var4_11 >= var3_14 && var5_18 > var10_5) {
-                        if (var16_10 == null) break;
+                for (var9_18 = this.mCurItem + 1; var9_18 < var13_4; ++var9_18) {
+                    if (var4_11 >= var3_14 && var9_18 > var14_5) {
+                        if (var8_10 == null) break;
                         var2_17 = var4_11;
-                        var13_8 = var16_10;
-                        var1_1 = var7_15;
-                        if (var5_18 == var16_10.position) {
+                        var5_8 = var8_10;
+                        var1_1 = var11_15;
+                        if (var9_18 == var8_10.position) {
                             var2_17 = var4_11;
-                            var13_8 = var16_10;
-                            var1_1 = var7_15;
-                            if (!var16_10.scrolling) {
-                                this.mItems.remove(var7_15);
-                                this.mAdapter.destroyItem(this, var5_18, var16_10.object);
-                                if (var7_15 < this.mItems.size()) {
-                                    var13_8 = this.mItems.get(var7_15);
-                                    var1_1 = var7_15;
+                            var5_8 = var8_10;
+                            var1_1 = var11_15;
+                            if (!var8_10.scrolling) {
+                                this.mItems.remove(var11_15);
+                                this.mAdapter.destroyItem(this, var9_18, var8_10.object);
+                                if (var11_15 < this.mItems.size()) {
+                                    var5_8 = this.mItems.get(var11_15);
+                                    var1_1 = var11_15;
                                     var2_17 = var4_11;
                                 } else {
-                                    var13_8 = null;
+                                    var5_8 = null;
                                     var2_17 = var4_11;
-                                    var1_1 = var7_15;
+                                    var1_1 = var11_15;
                                 }
                             }
                         }
-                    } else if (var16_10 != null && var5_18 == var16_10.position) {
-                        var2_17 = var4_11 + var16_10.widthFactor;
-                        var1_1 = var7_15 + 1;
-                        var13_8 = var1_1 < this.mItems.size() ? this.mItems.get(var1_1) : null;
+                    } else if (var8_10 != null && var9_18 == var8_10.position) {
+                        var2_17 = var4_11 + var8_10.widthFactor;
+                        var1_1 = var11_15 + 1;
+                        var5_8 = var1_1 < this.mItems.size() ? this.mItems.get(var1_1) : null;
                     } else {
-                        var13_8 = this.addNewItem(var5_18, var7_15);
-                        var1_1 = var7_15 + 1;
-                        var2_17 = var4_11 + var13_8.widthFactor;
-                        var13_8 = var1_1 < this.mItems.size() ? this.mItems.get(var1_1) : null;
+                        var5_8 = this.addNewItem(var9_18, var11_15);
+                        var1_1 = var11_15 + 1;
+                        var2_17 = var4_11 + var5_8.widthFactor;
+                        var5_8 = var1_1 < this.mItems.size() ? this.mItems.get(var1_1) : null;
                     }
                     var4_11 = var2_17;
-                    var16_10 = var13_8;
-                    var7_15 = var1_1;
+                    var8_10 = var5_8;
+                    var11_15 = var1_1;
                 }
             }
-            this.calculatePageOffsets(var15_9, var6_16, (ItemInfo)var14_2);
+            this.calculatePageOffsets(var7_9, var10_16, (ItemInfo)var6_2);
         }
-        var14_2 = this.mAdapter;
+        var6_2 = this.mAdapter;
         var1_1 = this.mCurItem;
-        var13_8 = var15_9 != null ? var15_9.object : null;
-        var14_2.setPrimaryItem(this, var1_1, var13_8);
+        var5_8 = var7_9 != null ? var7_9.object : null;
+        var6_2.setPrimaryItem(this, var1_1, var5_8);
         this.mAdapter.finishUpdate(this);
-        var5_18 = this.getChildCount();
-        for (var1_1 = 0; var1_1 < var5_18; ++var1_1) {
-            var14_2 = this.getChildAt(var1_1);
-            var13_8 = (LayoutParams)var14_2.getLayoutParams();
-            var13_8.childIndex = var1_1;
-            if (var13_8.isDecor || var13_8.widthFactor != 0.0f || (var14_2 = this.infoForChild((View)var14_2)) == null) continue;
-            var13_8.widthFactor = var14_2.widthFactor;
-            var13_8.position = var14_2.position;
+        var9_18 = this.getChildCount();
+        for (var1_1 = 0; var1_1 < var9_18; ++var1_1) {
+            var6_2 = this.getChildAt(var1_1);
+            var5_8 = (LayoutParams)var6_2.getLayoutParams();
+            var5_8.childIndex = var1_1;
+            if (var5_8.isDecor || var5_8.widthFactor != 0.0f || (var6_2 = this.infoForChild((View)var6_2)) == null) continue;
+            var5_8.widthFactor = var6_2.widthFactor;
+            var5_8.position = var6_2.position;
         }
         this.sortChildDrawingOrder();
         if (this.hasFocus() == false) return;
-        var13_8 = this.findFocus();
-        var13_8 = var13_8 != null ? this.infoForAnyChild((View)var13_8) : null;
-        if (var13_8 != null) {
-            if (var13_8.position == this.mCurItem) return;
+        var5_8 = this.findFocus();
+        var5_8 = var5_8 != null ? this.infoForAnyChild((View)var5_8) : null;
+        if (var5_8 != null) {
+            if (var5_8.position == this.mCurItem) return;
         }
         var1_1 = 0;
         while (var1_1 < this.getChildCount()) {
-            var13_8 = this.getChildAt(var1_1);
-            var14_2 = this.infoForChild((View)var13_8);
-            if (var14_2 != null && var14_2.position == this.mCurItem) {
-                if (var13_8.requestFocus(2) != false) return;
+            var5_8 = this.getChildAt(var1_1);
+            var6_2 = this.infoForChild((View)var5_8);
+            if (var6_2 != null && var6_2.position == this.mCurItem) {
+                if (var5_8.requestFocus(2) != false) return;
             }
             ++var1_1;
         }
@@ -2161,8 +2161,8 @@ lbl96: // 4 sources:
      * Enabled aggressive block sorting
      */
     public void setAdapter(PagerAdapter pagerAdapter) {
-        int n2;
         Object object;
+        int n2;
         if (this.mAdapter != null) {
             this.mAdapter.setViewPagerObserver(null);
             this.mAdapter.startUpdate(this);

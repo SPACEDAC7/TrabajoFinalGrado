@@ -59,26 +59,26 @@ final class StateListAnimator {
      * Lifted jumps to return sites
      */
     void setState(int[] var1_1) {
-        var5_2 = null;
-        var3_3 = this.mTuples.size();
-        var2_4 = 0;
+        var3_2 = null;
+        var5_3 = this.mTuples.size();
+        var4_4 = 0;
         do {
-            var4_5 = var5_2;
-            if (var2_4 >= var3_3) ** GOTO lbl-1000
-            var4_5 = this.mTuples.get(var2_4);
-            if (StateSet.stateSetMatches((int[])var4_5.mSpecs, (int[])var1_1)) lbl-1000: // 2 sources:
+            var2_5 = var3_2;
+            if (var4_4 >= var5_3) ** GOTO lbl-1000
+            var2_5 = this.mTuples.get(var4_4);
+            if (StateSet.stateSetMatches((int[])var2_5.mSpecs, (int[])var1_1)) lbl-1000: // 2 sources:
             {
-                if (var4_5 != this.mLastMatch) break;
+                if (var2_5 != this.mLastMatch) break;
                 return;
             }
-            ++var2_4;
+            ++var4_4;
         } while (true);
         if (this.mLastMatch != null) {
             this.cancel();
         }
-        this.mLastMatch = var4_5;
-        if (var4_5 == null) return;
-        this.start(var4_5);
+        this.mLastMatch = var2_5;
+        if (var2_5 == null) return;
+        this.start(var2_5);
     }
 
     static class Tuple {

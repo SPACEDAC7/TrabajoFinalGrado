@@ -71,17 +71,17 @@ class ImageResponseCache {
      * Lifted jumps to return sites
      */
     static InputStream interceptAndCacheImageStream(Context context, HttpURLConnection httpURLConnection) throws IOException {
-        InputStream inputStream2;
-        InputStream inputStream = null;
-        if (httpURLConnection.getResponseCode() != 200) return inputStream;
+        InputStream inputStream;
+        InputStream inputStream2 = null;
+        if (httpURLConnection.getResponseCode() != 200) return inputStream2;
         Uri uri = Uri.parse((String)httpURLConnection.getURL().toString());
-        inputStream = inputStream2 = httpURLConnection.getInputStream();
+        inputStream2 = inputStream = httpURLConnection.getInputStream();
         try {
-            if (!ImageResponseCache.isCDNURL(uri)) return inputStream;
-            return ImageResponseCache.getCache(context).interceptAndPut(uri.toString(), new BufferedHttpInputStream(inputStream2, httpURLConnection));
+            if (!ImageResponseCache.isCDNURL(uri)) return inputStream2;
+            return ImageResponseCache.getCache(context).interceptAndPut(uri.toString(), new BufferedHttpInputStream(inputStream, httpURLConnection));
         }
         catch (IOException iOException) {
-            return inputStream2;
+            return inputStream;
         }
     }
 

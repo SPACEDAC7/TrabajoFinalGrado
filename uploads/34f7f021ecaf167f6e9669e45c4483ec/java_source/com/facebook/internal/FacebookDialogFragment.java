@@ -8,6 +8,12 @@
  *  android.content.res.Configuration
  *  android.os.Bundle
  *  android.os.Message
+ *  com.facebook.internal.FacebookDialogFragment$1
+ *  com.facebook.internal.FacebookDialogFragment$2
+ *  com.facebook.internal.FacebookWebFallbackDialog
+ *  com.facebook.internal.WebDialog
+ *  com.facebook.internal.WebDialog$Builder
+ *  com.facebook.internal.WebDialog$OnCompleteListener
  */
 package com.facebook.internal;
 
@@ -22,6 +28,7 @@ import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentActivity;
 import com.facebook.FacebookException;
 import com.facebook.FacebookSdk;
+import com.facebook.internal.FacebookDialogFragment;
 import com.facebook.internal.FacebookWebFallbackDialog;
 import com.facebook.internal.NativeProtocol;
 import com.facebook.internal.Utility;
@@ -31,6 +38,14 @@ public class FacebookDialogFragment
 extends DialogFragment {
     public static final String TAG = "FacebookDialogFragment";
     private Dialog dialog;
+
+    static /* synthetic */ void access$000(FacebookDialogFragment facebookDialogFragment, Bundle bundle, FacebookException facebookException) {
+        facebookDialogFragment.onCompleteWebDialog(bundle, facebookException);
+    }
+
+    static /* synthetic */ void access$100(FacebookDialogFragment facebookDialogFragment, Bundle bundle) {
+        facebookDialogFragment.onCompleteWebFallbackDialog(bundle);
+    }
 
     /*
      * Enabled aggressive block sorting
@@ -81,13 +96,7 @@ extends DialogFragment {
                 object.finish();
                 return;
             }
-            object = new WebDialog.Builder((Context)object, string2, bundle).setOnCompleteListener(new WebDialog.OnCompleteListener(){
-
-                @Override
-                public void onComplete(Bundle bundle, FacebookException facebookException) {
-                    FacebookDialogFragment.this.onCompleteWebDialog(bundle, facebookException);
-                }
-            }).build();
+            object = new WebDialog.Builder((Context)object, string2, bundle).setOnCompleteListener((WebDialog.OnCompleteListener)new /* Unavailable Anonymous Inner Class!! */).build();
         } else {
             String string3 = bundle.getString("url");
             if (Utility.isNullOrEmpty(string3)) {
@@ -96,13 +105,7 @@ extends DialogFragment {
                 return;
             }
             object = new FacebookWebFallbackDialog((Context)object, string3, String.format("fb%s://bridge/", FacebookSdk.getApplicationId()));
-            object.setOnCompleteListener(new WebDialog.OnCompleteListener(){
-
-                @Override
-                public void onComplete(Bundle bundle, FacebookException facebookException) {
-                    FacebookDialogFragment.this.onCompleteWebFallbackDialog(bundle);
-                }
-            });
+            object.setOnCompleteListener((WebDialog.OnCompleteListener)new /* Unavailable Anonymous Inner Class!! */);
         }
         this.dialog = object;
     }
@@ -124,6 +127,5 @@ extends DialogFragment {
     public void setDialog(Dialog dialog) {
         this.dialog = dialog;
     }
-
 }
 

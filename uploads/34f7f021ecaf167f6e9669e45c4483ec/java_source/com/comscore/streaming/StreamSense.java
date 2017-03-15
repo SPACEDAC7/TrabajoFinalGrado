@@ -877,29 +877,29 @@ public class StreamSense {
         if (var1_1.length() == 0) {
             return null;
         }
-        var3_2 = var1_1.indexOf(63);
-        if (var3_2 < 0) ** GOTO lbl13
-        var5_3 = var1_1;
-        if (var3_2 >= var1_1.length() - 1) ** GOTO lbl24
-        var5_3 = var1_1.substring(var3_2 + 1).split("&");
-        var4_4 = var5_3.length;
+        var5_2 = var1_1.indexOf(63);
+        if (var5_2 < 0) ** GOTO lbl13
+        var2_3 = var1_1;
+        if (var5_2 >= var1_1.length() - 1) ** GOTO lbl24
+        var2_3 = var1_1.substring(var5_2 + 1).split("&");
+        var6_4 = var2_3.length;
         ** GOTO lbl15
 lbl13: // 1 sources:
-        var5_3 = (String)var1_1 + '?';
+        var2_3 = (String)var1_1 + '?';
         ** GOTO lbl24
 lbl15: // 4 sources:
-        for (var2_5 = 0; var2_5 < var4_4; ++var2_5) {
-            var6_6 = var5_3[var2_5].split("=");
-            if (var6_6.length == 2) {
-                this.setLabel(var6_6[0], var6_6[1]);
+        for (var4_5 = 0; var4_5 < var6_4; ++var4_5) {
+            var3_6 = var2_3[var4_5].split("=");
+            if (var3_6.length == 2) {
+                this.setLabel(var3_6[0], var3_6[1]);
                 continue;
             }
-            if (var6_6.length != 1) continue;
-            this.setLabel("name", var6_6[0]);
+            if (var3_6.length != 1) continue;
+            this.setLabel("name", var3_6[0]);
         }
-        var5_3 = var1_1.substring(0, var3_2 + 1);
+        var2_3 = var1_1.substring(0, var5_2 + 1);
 lbl24: // 3 sources:
-        this.c = var5_3;
+        this.c = var2_3;
         return this.c;
     }
 

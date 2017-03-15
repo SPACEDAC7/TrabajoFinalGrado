@@ -104,8 +104,8 @@ public class TestUserManager {
      */
     private JSONObject findTestAccountMatchingIdentifier(String string2) {
         synchronized (this) {
-            JSONObject jSONObject;
             boolean bl;
+            JSONObject jSONObject;
             Iterator<JSONObject> iterator = this.appTestAccounts.values().iterator();
             do {
                 if (!iterator.hasNext()) return null;
@@ -172,8 +172,8 @@ public class TestUserManager {
                 try {
                     jSONObject2.put("name", (Object)jSONObject3.optString("name"));
                 }
-                catch (JSONException var5_6) {
-                    Log.e((String)"TestUserManager", (String)"Could not set name", (Throwable)var5_6);
+                catch (JSONException var4_6) {
+                    Log.e((String)"TestUserManager", (String)"Could not set name", (Throwable)var4_6);
                 }
                 this.storeTestAccount(jSONObject2);
                 ++n2;

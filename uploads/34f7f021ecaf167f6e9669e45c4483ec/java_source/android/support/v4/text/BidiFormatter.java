@@ -300,8 +300,8 @@ public final class BidiFormatter {
                 if (this.lastChar != '\"' && this.lastChar != '\'') continue;
                 n3 = this.lastChar;
                 while (this.charIndex > 0) {
-                    int n4;
                     char c2;
+                    int n4;
                     charSequence = this.text;
                     this.charIndex = n4 = this.charIndex - 1;
                     this.lastChar = c2 = charSequence.charAt(n4);
@@ -395,8 +395,8 @@ public final class BidiFormatter {
             int n4;
             block21 : {
                 this.charIndex = 0;
-                n3 = 0;
                 n2 = 0;
+                n3 = 0;
                 n4 = 0;
                 block13 : while (this.charIndex < this.length) {
                     if (n4 == 0) {
@@ -405,40 +405,40 @@ public final class BidiFormatter {
                                 continue block13;
                             }
                             default: {
-                                n4 = n3;
+                                n4 = n2;
                                 continue block13;
                             }
                             case 14: 
                             case 15: {
-                                ++n3;
-                                n2 = -1;
+                                ++n2;
+                                n3 = -1;
                                 continue block13;
                             }
                             case 16: 
                             case 17: {
-                                ++n3;
-                                n2 = 1;
+                                ++n2;
+                                n3 = 1;
                                 continue block13;
                             }
                             case 18: {
-                                --n3;
-                                n2 = 0;
+                                --n2;
+                                n3 = 0;
                                 continue block13;
                             }
                             case 0: {
-                                if (n3 == 0) {
+                                if (n2 == 0) {
                                     return -1;
                                 }
-                                n4 = n3;
+                                n4 = n2;
                                 continue block13;
                             }
                             case 1: 
                             case 2: 
                         }
-                        if (n3 == 0) {
+                        if (n2 == 0) {
                             return 1;
                         }
-                        n4 = n3;
+                        n4 = n2;
                         continue;
                     }
                     break block21;
@@ -448,8 +448,8 @@ public final class BidiFormatter {
             if (n4 == 0) {
                 return 0;
             }
-            int n5 = n2;
-            if (n2 != 0) return n5;
+            int n5 = n3;
+            if (n3 != 0) return n5;
             block14 : while (this.charIndex > 0) {
                 switch (this.dirTypeBackward()) {
                     default: {
@@ -457,23 +457,23 @@ public final class BidiFormatter {
                     }
                     case 14: 
                     case 15: {
-                        if (n4 == n3) {
+                        if (n4 == n2) {
                             return -1;
                         }
-                        --n3;
+                        --n2;
                         continue block14;
                     }
                     case 16: 
                     case 17: {
-                        if (n4 == n3) {
+                        if (n4 == n2) {
                             return 1;
                         }
-                        --n3;
+                        --n2;
                         continue block14;
                     }
                     case 18: 
                 }
-                ++n3;
+                ++n2;
             }
             return 0;
         }

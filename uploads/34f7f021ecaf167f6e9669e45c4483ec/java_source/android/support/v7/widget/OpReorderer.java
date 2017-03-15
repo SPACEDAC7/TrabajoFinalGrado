@@ -88,25 +88,25 @@ class OpReorderer {
         AdapterHelper.UpdateOp updateOp3 = null;
         int n7 = 0;
         if (updateOp.positionStart < updateOp.itemCount) {
-            n6 = n4 = 0;
-            n5 = n7;
+            n5 = n6 = 0;
+            n4 = n7;
             if (updateOp2.positionStart == updateOp.positionStart) {
-                n6 = n4;
-                n5 = n7;
+                n5 = n6;
+                n4 = n7;
                 if (updateOp2.itemCount == updateOp.itemCount - updateOp.positionStart) {
-                    n5 = 1;
-                    n6 = n4;
+                    n4 = 1;
+                    n5 = n6;
                 }
             }
         } else {
-            n6 = n4 = 1;
-            n5 = n7;
+            n5 = n6 = 1;
+            n4 = n7;
             if (updateOp2.positionStart == updateOp.itemCount + 1) {
-                n6 = n4;
-                n5 = n7;
+                n5 = n6;
+                n4 = n7;
                 if (updateOp2.itemCount == updateOp.positionStart - updateOp.itemCount) {
-                    n5 = 1;
-                    n6 = n4;
+                    n4 = 1;
+                    n5 = n6;
                 }
             }
         }
@@ -125,18 +125,18 @@ class OpReorderer {
             ++updateOp2.positionStart;
         } else if (updateOp.positionStart < updateOp2.positionStart + updateOp2.itemCount) {
             n7 = updateOp2.positionStart;
-            n4 = updateOp2.itemCount;
+            n6 = updateOp2.itemCount;
             int n8 = updateOp.positionStart;
-            updateOp3 = this.mCallback.obtainUpdateOp(2, updateOp.positionStart + 1, n7 + n4 - n8, null);
+            updateOp3 = this.mCallback.obtainUpdateOp(2, updateOp.positionStart + 1, n7 + n6 - n8, null);
             updateOp2.itemCount = updateOp.positionStart - updateOp2.positionStart;
         }
-        if (n5 != 0) {
+        if (n4 != 0) {
             list.set(n2, updateOp2);
             list.remove(n3);
             this.mCallback.recycleUpdateOp(updateOp);
             return;
         }
-        if (n6 != 0) {
+        if (n5 != 0) {
             if (updateOp3 != null) {
                 if (updateOp.positionStart > updateOp3.positionStart) {
                     updateOp.positionStart -= updateOp3.itemCount;

@@ -336,7 +336,6 @@ implements List<FlowItem> {
         return this.list.size();
     }
 
-    @Override
     public void sort(Comparator<? super FlowItem> object) {
         synchronized (this) {
             Collections.sort(this.list, object);

@@ -947,22 +947,22 @@ extends HorizontalScrollView {
             if (view != null && view.getWidth() > 0) {
                 int n4 = view.getLeft();
                 int n5 = view.getRight();
-                n3 = n4;
-                n2 = n5;
+                n2 = n4;
+                n3 = n5;
                 if (this.mSelectionOffset > 0.0f) {
-                    n3 = n4;
-                    n2 = n5;
+                    n2 = n4;
+                    n3 = n5;
                     if (this.mSelectedPosition < this.getChildCount() - 1) {
                         view = this.getChildAt(this.mSelectedPosition + 1);
-                        n3 = (int)(this.mSelectionOffset * (float)view.getLeft() + (1.0f - this.mSelectionOffset) * (float)n4);
-                        n2 = (int)(this.mSelectionOffset * (float)view.getRight() + (1.0f - this.mSelectionOffset) * (float)n5);
+                        n2 = (int)(this.mSelectionOffset * (float)view.getLeft() + (1.0f - this.mSelectionOffset) * (float)n4);
+                        n3 = (int)(this.mSelectionOffset * (float)view.getRight() + (1.0f - this.mSelectionOffset) * (float)n5);
                     }
                 }
             } else {
-                n2 = -1;
                 n3 = -1;
+                n2 = -1;
             }
-            this.setIndicatorPosition(n3, n2);
+            this.setIndicatorPosition(n2, n3);
         }
 
         /*
@@ -1053,8 +1053,8 @@ extends HorizontalScrollView {
          */
         protected void onMeasure(int n2, int n3) {
             int n4;
-            int n5;
             View view;
+            int n5;
             int n6;
             super.onMeasure(n2, n3);
             if (View.MeasureSpec.getMode((int)n2) != 1073741824) {
@@ -1064,29 +1064,29 @@ extends HorizontalScrollView {
             if (TabLayout.this.mTabGravity != 1) return;
             int n7 = this.getChildCount();
             int n8 = 0;
-            for (n5 = 0; n5 < n7; ++n5) {
-                view = this.getChildAt(n5);
-                n6 = n8;
+            for (n6 = 0; n6 < n7; ++n6) {
+                view = this.getChildAt(n6);
+                n5 = n8;
                 if (view.getVisibility() == 0) {
-                    n6 = Math.max(n8, view.getMeasuredWidth());
+                    n5 = Math.max(n8, view.getMeasuredWidth());
                 }
-                n8 = n6;
+                n8 = n5;
             }
             if (n8 <= 0) return;
-            n6 = TabLayout.this.dpToPx(16);
-            n5 = 0;
-            if (n8 * n7 <= this.getMeasuredWidth() - n6 * 2) {
-                n6 = 0;
+            n5 = TabLayout.this.dpToPx(16);
+            n6 = 0;
+            if (n8 * n7 <= this.getMeasuredWidth() - n5 * 2) {
+                n5 = 0;
                 do {
-                    n4 = n5;
-                    if (n6 < n7) {
-                        view = (LinearLayout.LayoutParams)this.getChildAt(n6).getLayoutParams();
+                    n4 = n6;
+                    if (n5 < n7) {
+                        view = (LinearLayout.LayoutParams)this.getChildAt(n5).getLayoutParams();
                         if (view.width != n8 || view.weight != 0.0f) {
                             view.width = n8;
                             view.weight = 0.0f;
-                            n5 = 1;
+                            n6 = 1;
                         }
-                        ++n6;
+                        ++n5;
                         continue;
                     }
                     break;

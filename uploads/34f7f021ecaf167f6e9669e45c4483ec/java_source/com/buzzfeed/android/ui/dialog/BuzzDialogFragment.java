@@ -195,8 +195,8 @@ DialogInterface.OnShowListener {
      */
     @Override
     public Dialog onCreateDialog(Bundle object) {
-        int n2;
         Object object2;
+        int n2;
         object = LayoutInflater.from((Context)this.getActivity().getApplicationContext());
         Bundle bundle = this.getArguments();
         AlertDialog.Builder builder = new AlertDialog.Builder((Context)this.getActivity());

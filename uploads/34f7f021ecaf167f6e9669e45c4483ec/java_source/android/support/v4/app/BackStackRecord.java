@@ -125,50 +125,50 @@ Runnable {
         if (!this.mManager.mContainer.onHasView()) {
             return;
         }
-        var4_3 = this.mHead;
-        while (var4_3 != null) {
-            switch (var4_3.cmd) {
+        var3_3 = this.mHead;
+        while (var3_3 != null) {
+            switch (var3_3.cmd) {
                 case 1: {
-                    this.setLastIn(var1_1, var2_2, var4_3.fragment);
+                    this.setLastIn(var1_1, var2_2, var3_3.fragment);
                     ** break;
                 }
                 case 2: {
-                    var5_5 = var4_3.fragment;
+                    var4_4 = var3_3.fragment;
                     if (this.mManager.mAdded == null) ** GOTO lbl25
-                    for (var3_4 = 0; var3_4 < this.mManager.mAdded.size(); ++var3_4) {
-                        var7_7 = this.mManager.mAdded.get(var3_4);
-                        if (var5_5 == null) ** GOTO lbl-1000
-                        var6_6 = var5_5;
-                        if (var7_7.mContainerId == var5_5.mContainerId) lbl-1000: // 2 sources:
+                    for (var7_7 = 0; var7_7 < this.mManager.mAdded.size(); ++var7_7) {
+                        var6_6 = this.mManager.mAdded.get(var7_7);
+                        if (var4_4 == null) ** GOTO lbl-1000
+                        var5_5 = var4_4;
+                        if (var6_6.mContainerId == var4_4.mContainerId) lbl-1000: // 2 sources:
                         {
-                            if (var7_7 == var5_5) {
-                                var6_6 = null;
-                                var2_2.remove(var7_7.mContainerId);
+                            if (var6_6 == var4_4) {
+                                var5_5 = null;
+                                var2_2.remove(var6_6.mContainerId);
                             } else {
-                                BackStackRecord.setFirstOut(var1_1, var2_2, var7_7);
-                                var6_6 = var5_5;
+                                BackStackRecord.setFirstOut(var1_1, var2_2, var6_6);
+                                var5_5 = var4_4;
                             }
                         }
-                        var5_5 = var6_6;
+                        var4_4 = var5_5;
                     }
 lbl25: // 2 sources:
-                    this.setLastIn(var1_1, var2_2, var4_3.fragment);
+                    this.setLastIn(var1_1, var2_2, var3_3.fragment);
                     ** break;
                 }
                 case 3: {
-                    BackStackRecord.setFirstOut(var1_1, var2_2, var4_3.fragment);
+                    BackStackRecord.setFirstOut(var1_1, var2_2, var3_3.fragment);
                     ** break;
                 }
                 case 4: {
-                    BackStackRecord.setFirstOut(var1_1, var2_2, var4_3.fragment);
+                    BackStackRecord.setFirstOut(var1_1, var2_2, var3_3.fragment);
                     ** break;
                 }
                 case 5: {
-                    this.setLastIn(var1_1, var2_2, var4_3.fragment);
+                    this.setLastIn(var1_1, var2_2, var3_3.fragment);
                     ** break;
                 }
                 case 6: {
-                    BackStackRecord.setFirstOut(var1_1, var2_2, var4_3.fragment);
+                    BackStackRecord.setFirstOut(var1_1, var2_2, var3_3.fragment);
                 }
 lbl38: // 7 sources:
                 default: {
@@ -176,9 +176,9 @@ lbl38: // 7 sources:
                 }
                 case 7: 
             }
-            this.setLastIn(var1_1, var2_2, var4_3.fragment);
+            this.setLastIn(var1_1, var2_2, var3_3.fragment);
 lbl42: // 2 sources:
-            var4_3 = var4_3.next;
+            var3_3 = var3_3.next;
         }
     }
 
@@ -648,36 +648,36 @@ lbl42: // 2 sources:
         if (!this.mManager.mContainer.onHasView()) {
             return;
         }
-        var4_3 = this.mTail;
-        while (var4_3 != null) {
-            switch (var4_3.cmd) {
+        var3_3 = this.mTail;
+        while (var3_3 != null) {
+            switch (var3_3.cmd) {
                 case 1: {
-                    BackStackRecord.setFirstOut(var1_1, var2_2, var4_3.fragment);
+                    BackStackRecord.setFirstOut(var1_1, var2_2, var3_3.fragment);
                     ** break;
                 }
                 case 2: {
-                    if (var4_3.removed != null) {
-                        for (var3_4 = var4_3.removed.size() - 1; var3_4 >= 0; --var3_4) {
-                            this.setLastIn(var1_1, var2_2, var4_3.removed.get(var3_4));
+                    if (var3_3.removed != null) {
+                        for (var4_4 = var3_3.removed.size() - 1; var4_4 >= 0; --var4_4) {
+                            this.setLastIn(var1_1, var2_2, var3_3.removed.get(var4_4));
                         }
                     }
-                    BackStackRecord.setFirstOut(var1_1, var2_2, var4_3.fragment);
+                    BackStackRecord.setFirstOut(var1_1, var2_2, var3_3.fragment);
                     ** break;
                 }
                 case 3: {
-                    this.setLastIn(var1_1, var2_2, var4_3.fragment);
+                    this.setLastIn(var1_1, var2_2, var3_3.fragment);
                     ** break;
                 }
                 case 4: {
-                    this.setLastIn(var1_1, var2_2, var4_3.fragment);
+                    this.setLastIn(var1_1, var2_2, var3_3.fragment);
                     ** break;
                 }
                 case 5: {
-                    BackStackRecord.setFirstOut(var1_1, var2_2, var4_3.fragment);
+                    BackStackRecord.setFirstOut(var1_1, var2_2, var3_3.fragment);
                     ** break;
                 }
                 case 6: {
-                    this.setLastIn(var1_1, var2_2, var4_3.fragment);
+                    this.setLastIn(var1_1, var2_2, var3_3.fragment);
                 }
 lbl27: // 7 sources:
                 default: {
@@ -685,9 +685,9 @@ lbl27: // 7 sources:
                 }
                 case 7: 
             }
-            BackStackRecord.setFirstOut(var1_1, var2_2, var4_3.fragment);
+            BackStackRecord.setFirstOut(var1_1, var2_2, var3_3.fragment);
 lbl31: // 2 sources:
-            var4_3 = var4_3.prev;
+            var3_3 = var3_3.prev;
         }
     }
 
@@ -1019,96 +1019,96 @@ lbl31: // 2 sources:
             Log.v((String)"FragmentManager", (String)("popFromBackStack: " + this));
             this.dump("  ", null, new PrintWriter(new LogWriter("FragmentManager")), null);
         }
-        var9_5 = var2_2;
+        var5_5 = var2_2;
         if (!BackStackRecord.SUPPORTS_TRANSITIONS) ** GOTO lbl18
-        var9_5 = var2_2;
+        var5_5 = var2_2;
         if (this.mManager.mCurState < 1) ** GOTO lbl18
         if (var2_2 != null) ** GOTO lbl14
         if (var3_3.size() != 0) ** GOTO lbl-1000
-        var9_5 = var2_2;
+        var5_5 = var2_2;
         if (var4_4.size() != 0) lbl-1000: // 2 sources:
         {
-            var9_5 = this.beginTransition((SparseArray<Fragment>)var3_3, var4_4, true);
+            var5_5 = this.beginTransition((SparseArray<Fragment>)var3_3, var4_4, true);
         }
         ** GOTO lbl18
 lbl14: // 1 sources:
-        var9_5 = var2_2;
+        var5_5 = var2_2;
         if (!var1_1) {
             BackStackRecord.setNameOverrides((TransitionState)var2_2, this.mSharedElementTargetNames, this.mSharedElementSourceNames);
-            var9_5 = var2_2;
+            var5_5 = var2_2;
         }
 lbl18: // 6 sources:
         this.bumpBackStackNesting(-1);
-        var5_6 = var9_5 != null ? 0 : this.mTransitionStyle;
-        var6_7 = var9_5 != null ? 0 : this.mTransition;
+        var6_6 = var5_5 != null ? 0 : this.mTransitionStyle;
+        var7_7 = var5_5 != null ? 0 : this.mTransition;
         var2_2 = this.mTail;
         while (var2_2 != null) {
-            var7_8 = var9_5 != null ? 0 : var2_2.popEnterAnim;
-            var8_9 = var9_5 != null ? 0 : var2_2.popExitAnim;
+            var8_8 = var5_5 != null ? 0 : var2_2.popEnterAnim;
+            var9_9 = var5_5 != null ? 0 : var2_2.popExitAnim;
             switch (var2_2.cmd) {
                 default: {
                     throw new IllegalArgumentException("Unknown cmd: " + var2_2.cmd);
                 }
                 case 1: {
                     var3_3 = var2_2.fragment;
-                    var3_3.mNextAnim = var8_9;
-                    this.mManager.removeFragment((Fragment)var3_3, FragmentManagerImpl.reverseTransit(var6_7), var5_6);
+                    var3_3.mNextAnim = var9_9;
+                    this.mManager.removeFragment((Fragment)var3_3, FragmentManagerImpl.reverseTransit(var7_7), var6_6);
                     break;
                 }
                 case 2: {
                     var3_3 = var2_2.fragment;
                     if (var3_3 != null) {
-                        var3_3.mNextAnim = var8_9;
-                        this.mManager.removeFragment((Fragment)var3_3, FragmentManagerImpl.reverseTransit(var6_7), var5_6);
+                        var3_3.mNextAnim = var9_9;
+                        this.mManager.removeFragment((Fragment)var3_3, FragmentManagerImpl.reverseTransit(var7_7), var6_6);
                     }
                     if (var2_2.removed == null) break;
-                    for (var8_9 = 0; var8_9 < var2_2.removed.size(); ++var8_9) {
-                        var3_3 = var2_2.removed.get(var8_9);
-                        var3_3.mNextAnim = var7_8;
+                    for (var9_9 = 0; var9_9 < var2_2.removed.size(); ++var9_9) {
+                        var3_3 = var2_2.removed.get(var9_9);
+                        var3_3.mNextAnim = var8_8;
                         this.mManager.addFragment((Fragment)var3_3, false);
                     }
                     break;
                 }
                 case 3: {
                     var3_3 = var2_2.fragment;
-                    var3_3.mNextAnim = var7_8;
+                    var3_3.mNextAnim = var8_8;
                     this.mManager.addFragment((Fragment)var3_3, false);
                     break;
                 }
                 case 4: {
                     var3_3 = var2_2.fragment;
-                    var3_3.mNextAnim = var7_8;
-                    this.mManager.showFragment((Fragment)var3_3, FragmentManagerImpl.reverseTransit(var6_7), var5_6);
+                    var3_3.mNextAnim = var8_8;
+                    this.mManager.showFragment((Fragment)var3_3, FragmentManagerImpl.reverseTransit(var7_7), var6_6);
                     break;
                 }
                 case 5: {
                     var3_3 = var2_2.fragment;
-                    var3_3.mNextAnim = var8_9;
-                    this.mManager.hideFragment((Fragment)var3_3, FragmentManagerImpl.reverseTransit(var6_7), var5_6);
+                    var3_3.mNextAnim = var9_9;
+                    this.mManager.hideFragment((Fragment)var3_3, FragmentManagerImpl.reverseTransit(var7_7), var6_6);
                     break;
                 }
                 case 6: {
                     var3_3 = var2_2.fragment;
-                    var3_3.mNextAnim = var7_8;
-                    this.mManager.attachFragment((Fragment)var3_3, FragmentManagerImpl.reverseTransit(var6_7), var5_6);
+                    var3_3.mNextAnim = var8_8;
+                    this.mManager.attachFragment((Fragment)var3_3, FragmentManagerImpl.reverseTransit(var7_7), var6_6);
                     break;
                 }
                 case 7: {
                     var3_3 = var2_2.fragment;
-                    var3_3.mNextAnim = var7_8;
-                    this.mManager.detachFragment((Fragment)var3_3, FragmentManagerImpl.reverseTransit(var6_7), var5_6);
+                    var3_3.mNextAnim = var8_8;
+                    this.mManager.detachFragment((Fragment)var3_3, FragmentManagerImpl.reverseTransit(var7_7), var6_6);
                 }
             }
             var2_2 = var2_2.prev;
         }
         if (var1_1) {
-            this.mManager.moveToState(this.mManager.mCurState, FragmentManagerImpl.reverseTransit(var6_7), var5_6, true);
-            var9_5 = null;
+            this.mManager.moveToState(this.mManager.mCurState, FragmentManagerImpl.reverseTransit(var7_7), var6_6, true);
+            var5_5 = null;
         }
-        if (this.mIndex < 0) return var9_5;
+        if (this.mIndex < 0) return var5_5;
         this.mManager.freeBackStackIndex(this.mIndex);
         this.mIndex = -1;
-        return var9_5;
+        return var5_5;
     }
 
     @Override
@@ -1148,116 +1148,116 @@ lbl18: // 6 sources:
             throw new IllegalStateException("addToBackStack() called after commit()");
         }
         this.bumpBackStackNesting(1);
-        var8_2 = var7_1 = null;
+        var2_2 = var1_1 = null;
         if (!BackStackRecord.SUPPORTS_TRANSITIONS) ** GOTO lbl-1000
-        var8_2 = var7_1;
+        var2_2 = var1_1;
         if (this.mManager.mCurState >= 1) {
-            var7_1 = new SparseArray();
-            var8_2 = new SparseArray();
-            this.calculateFragments((SparseArray<Fragment>)var7_1, (SparseArray<Fragment>)var8_2);
-            var8_2 = this.beginTransition((SparseArray<Fragment>)var7_1, (SparseArray<Fragment>)var8_2, false);
+            var1_1 = new SparseArray();
+            var2_2 = new SparseArray();
+            this.calculateFragments((SparseArray<Fragment>)var1_1, (SparseArray<Fragment>)var2_2);
+            var2_2 = this.beginTransition((SparseArray<Fragment>)var1_1, (SparseArray<Fragment>)var2_2, false);
         }
-        if (var8_2 != null) {
-            var1_3 = 0;
+        if (var2_2 != null) {
+            var6_3 = 0;
         } else lbl-1000: // 2 sources:
         {
-            var1_3 = this.mTransitionStyle;
+            var6_3 = this.mTransitionStyle;
         }
-        var2_4 = var8_2 != null ? 0 : this.mTransition;
-        var9_5 = this.mHead;
+        var7_4 = var2_2 != null ? 0 : this.mTransition;
+        var3_5 = this.mHead;
         do {
-            if (var9_5 == null) {
-                this.mManager.moveToState(this.mManager.mCurState, var2_4, var1_3, true);
+            if (var3_5 == null) {
+                this.mManager.moveToState(this.mManager.mCurState, var7_4, var6_3, true);
                 if (this.mAddToBackStack == false) return;
                 this.mManager.addBackStackState(this);
                 return;
             }
-            var3_6 = var8_2 != null ? 0 : var9_5.enterAnim;
-            var4_7 = var8_2 != null ? 0 : var9_5.exitAnim;
-            switch (var9_5.cmd) {
+            var8_8 = var2_2 != null ? 0 : var3_5.enterAnim;
+            var9_9 = var2_2 != null ? 0 : var3_5.exitAnim;
+            switch (var3_5.cmd) {
                 default: {
-                    throw new IllegalArgumentException("Unknown cmd: " + var9_5.cmd);
+                    throw new IllegalArgumentException("Unknown cmd: " + var3_5.cmd);
                 }
                 case 1: {
-                    var7_1 = var9_5.fragment;
-                    var7_1.mNextAnim = var3_6;
-                    this.mManager.addFragment((Fragment)var7_1, false);
+                    var1_1 = var3_5.fragment;
+                    var1_1.mNextAnim = var8_8;
+                    this.mManager.addFragment((Fragment)var1_1, false);
                     break;
                 }
                 case 2: {
-                    var7_1 = var9_5.fragment;
-                    var6_9 = var7_1.mContainerId;
-                    var10_10 = var7_1;
+                    var1_1 = var3_5.fragment;
+                    var11_11 = var1_1.mContainerId;
+                    var4_6 = var1_1;
                     if (this.mManager.mAdded != null) {
-                        var5_8 = this.mManager.mAdded.size() - 1;
+                        var10_10 = this.mManager.mAdded.size() - 1;
                         do {
-                            var10_10 = var7_1;
-                            if (var5_8 < 0) break;
-                            var11_11 = this.mManager.mAdded.get(var5_8);
+                            var4_6 = var1_1;
+                            if (var10_10 < 0) break;
+                            var5_7 = this.mManager.mAdded.get(var10_10);
                             if (FragmentManagerImpl.DEBUG) {
-                                Log.v((String)"FragmentManager", (String)("OP_REPLACE: adding=" + var7_1 + " old=" + var11_11));
+                                Log.v((String)"FragmentManager", (String)("OP_REPLACE: adding=" + var1_1 + " old=" + var5_7));
                             }
-                            var10_10 = var7_1;
-                            if (var11_11.mContainerId == var6_9) {
-                                if (var11_11 == var7_1) {
-                                    var10_10 = null;
-                                    var9_5.fragment = null;
+                            var4_6 = var1_1;
+                            if (var5_7.mContainerId == var11_11) {
+                                if (var5_7 == var1_1) {
+                                    var4_6 = null;
+                                    var3_5.fragment = null;
                                 } else {
-                                    if (var9_5.removed == null) {
-                                        var9_5.removed = new ArrayList<E>();
+                                    if (var3_5.removed == null) {
+                                        var3_5.removed = new ArrayList<E>();
                                     }
-                                    var9_5.removed.add(var11_11);
-                                    var11_11.mNextAnim = var4_7;
+                                    var3_5.removed.add(var5_7);
+                                    var5_7.mNextAnim = var9_9;
                                     if (this.mAddToBackStack) {
-                                        ++var11_11.mBackStackNesting;
+                                        ++var5_7.mBackStackNesting;
                                         if (FragmentManagerImpl.DEBUG) {
-                                            Log.v((String)"FragmentManager", (String)("Bump nesting of " + var11_11 + " to " + var11_11.mBackStackNesting));
+                                            Log.v((String)"FragmentManager", (String)("Bump nesting of " + var5_7 + " to " + var5_7.mBackStackNesting));
                                         }
                                     }
-                                    this.mManager.removeFragment(var11_11, var2_4, var1_3);
-                                    var10_10 = var7_1;
+                                    this.mManager.removeFragment(var5_7, var7_4, var6_3);
+                                    var4_6 = var1_1;
                                 }
                             }
-                            --var5_8;
-                            var7_1 = var10_10;
+                            --var10_10;
+                            var1_1 = var4_6;
                         } while (true);
                     }
-                    if (var10_10 == null) break;
-                    var10_10.mNextAnim = var3_6;
-                    this.mManager.addFragment((Fragment)var10_10, false);
+                    if (var4_6 == null) break;
+                    var4_6.mNextAnim = var8_8;
+                    this.mManager.addFragment((Fragment)var4_6, false);
                     break;
                 }
                 case 3: {
-                    var7_1 = var9_5.fragment;
-                    var7_1.mNextAnim = var4_7;
-                    this.mManager.removeFragment((Fragment)var7_1, var2_4, var1_3);
+                    var1_1 = var3_5.fragment;
+                    var1_1.mNextAnim = var9_9;
+                    this.mManager.removeFragment((Fragment)var1_1, var7_4, var6_3);
                     break;
                 }
                 case 4: {
-                    var7_1 = var9_5.fragment;
-                    var7_1.mNextAnim = var4_7;
-                    this.mManager.hideFragment((Fragment)var7_1, var2_4, var1_3);
+                    var1_1 = var3_5.fragment;
+                    var1_1.mNextAnim = var9_9;
+                    this.mManager.hideFragment((Fragment)var1_1, var7_4, var6_3);
                     break;
                 }
                 case 5: {
-                    var7_1 = var9_5.fragment;
-                    var7_1.mNextAnim = var3_6;
-                    this.mManager.showFragment((Fragment)var7_1, var2_4, var1_3);
+                    var1_1 = var3_5.fragment;
+                    var1_1.mNextAnim = var8_8;
+                    this.mManager.showFragment((Fragment)var1_1, var7_4, var6_3);
                     break;
                 }
                 case 6: {
-                    var7_1 = var9_5.fragment;
-                    var7_1.mNextAnim = var4_7;
-                    this.mManager.detachFragment((Fragment)var7_1, var2_4, var1_3);
+                    var1_1 = var3_5.fragment;
+                    var1_1.mNextAnim = var9_9;
+                    this.mManager.detachFragment((Fragment)var1_1, var7_4, var6_3);
                     break;
                 }
                 case 7: {
-                    var7_1 = var9_5.fragment;
-                    var7_1.mNextAnim = var3_6;
-                    this.mManager.attachFragment((Fragment)var7_1, var2_4, var1_3);
+                    var1_1 = var3_5.fragment;
+                    var1_1.mNextAnim = var8_8;
+                    this.mManager.attachFragment((Fragment)var1_1, var7_4, var6_3);
                 }
             }
-            var9_5 = var9_5.next;
+            var3_5 = var3_5.next;
         } while (true);
     }
 

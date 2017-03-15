@@ -150,45 +150,45 @@ implements AppLinkResolver {
      */
     private static Map<String, Object> parseAlData(JSONArray var0) throws JSONException {
         block7 : {
-            var5_1 = new HashMap<String, Object>();
-            var1_2 = 0;
-            block0 : while (var1_2 < var0.length()) {
-                var7_13 = var0.getJSONObject(var1_2);
-                var8_14 = var7_13.getString("property").split(":");
-                if (var8_14[0].equals("al")) {
-                    var3_5 = var5_1;
+            var3_1 = new HashMap<String, Object>();
+            var7_2 = 0;
+            block0 : while (var7_2 < var0.length()) {
+                var5_12 = var0.getJSONObject(var7_2);
+                var6_13 = var5_12.getString("property").split(":");
+                if (var6_13[0].equals("al")) {
+                    var1_4 = var3_1;
                     break block7;
                 }
 lbl9: // 5 sources:
                 do {
-                    ++var1_2;
+                    ++var7_2;
                     continue block0;
                     break;
                 } while (true);
             }
-            return var5_1;
+            return var3_1;
         }
-        for (var2_3 = 1; var2_3 < var8_14.length; ++var2_3) {
-            var4_11 = var6_12 = (ArrayList<HashMap<K, V>>)var3_4.get(var8_14[var2_3]);
-            if (var6_12 == null) {
-                var4_11 = new ArrayList<HashMap<K, V>>();
-                var3_4.put(var8_14[var2_3], var4_11);
+        for (var8_14 = 1; var8_14 < var6_13.length; ++var8_14) {
+            var2_10 = var4_11 = (ArrayList<HashMap<K, V>>)var1_3.get(var6_13[var8_14]);
+            if (var4_11 == null) {
+                var2_10 = new ArrayList<HashMap<K, V>>();
+                var1_3.put(var6_13[var8_14], var2_10);
             }
-            if (var4_11.size() > 0) {
-                var3_6 = (Map)var4_11.get(var4_11.size() - 1);
+            if (var2_10.size() > 0) {
+                var1_5 = (Map)var2_10.get(var2_10.size() - 1);
             } else {
-                var3_10 = null;
+                var1_9 = null;
             }
-            if (var3_7 != null && var2_3 != var8_14.length - 1) continue;
-            var3_8 = new HashMap<K, V>();
-            var4_11.add(var3_8);
+            if (var1_6 != null && var8_14 != var6_13.length - 1) continue;
+            var1_7 = new HashMap<K, V>();
+            var2_10.add(var1_7);
         }
-        if (!var7_13.has("content")) ** GOTO lbl9
-        if (!var7_13.isNull("content")) ** GOTO lbl31
-        var3_4.put("value", null);
+        if (!var5_12.has("content")) ** GOTO lbl9
+        if (!var5_12.isNull("content")) ** GOTO lbl31
+        var1_3.put("value", null);
         ** GOTO lbl9
 lbl31: // 1 sources:
-        var3_4.put("value", var7_13.getString("content"));
+        var1_3.put("value", var5_12.getString("content"));
         ** while (true)
     }
 
@@ -198,19 +198,19 @@ lbl31: // 1 sources:
      * Enabled aggressive exception aggregation
      */
     private static String readFromConnection(URLConnection object) throws IOException {
-        InputStream inputStream;
         ByteArrayOutputStream byteArrayOutputStream;
         Object object2;
+        InputStream inputStream;
         block11 : {
-            String string2;
             int n2;
             int n3;
+            String string2;
             if (object instanceof HttpURLConnection) {
                 object2 = (byte[])object;
                 try {
                     inputStream = object.getInputStream();
                 }
-                catch (Exception var3_4) {
+                catch (Exception var1_4) {
                     inputStream = object2.getErrorStream();
                 }
             } else {

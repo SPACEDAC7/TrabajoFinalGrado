@@ -109,22 +109,22 @@ implements Closeable {
      */
     private void completeEdit(Editor var1_1, boolean var2_2) throws IOException {
         // MONITORENTER : this
-        var8_3 = Editor.access$1400((Editor)var1_1);
-        if (Entry.access$700(var8_3) != var1_1) {
+        var3_3 = Editor.access$1400((Editor)var1_1);
+        if (Entry.access$700(var3_3) != var1_1) {
             throw new IllegalStateException();
         }
-        if (var2_2 && !Entry.access$600(var8_3)) {
-            for (var3_4 = 0; var3_4 < this.valueCount; ++var3_4) {
-                if (!Editor.access$1500((Editor)var1_1)[var3_4]) {
+        if (var2_2 && !Entry.access$600(var3_3)) {
+            for (var5_4 = 0; var5_4 < this.valueCount; ++var5_4) {
+                if (!Editor.access$1500((Editor)var1_1)[var5_4]) {
                     var1_1.abort();
-                    throw new IllegalStateException("Newly created entry didn't create value for index " + var3_4);
+                    throw new IllegalStateException("Newly created entry didn't create value for index " + var5_4);
                 }
-                if (var8_3.getDirtyFile(var3_4).exists()) continue;
+                if (var3_3.getDirtyFile(var5_4).exists()) continue;
                 var1_1.abort();
                 return;
             }
         }
-        var3_4 = 0;
+        var5_4 = 0;
         ** GOTO lbl18
         do {
             // MONITOREXIT : this
@@ -133,39 +133,39 @@ implements Closeable {
         } while (true);
 lbl18: // 1 sources:
         do {
-            if (var3_4 < this.valueCount) {
-                var1_1 = var8_3.getDirtyFile(var3_4);
+            if (var5_4 < this.valueCount) {
+                var1_1 = var3_3.getDirtyFile(var5_4);
                 if (var2_2) {
                     if (var1_1.exists()) {
-                        var9_7 = var8_3.getCleanFile(var3_4);
-                        var1_1.renameTo(var9_7);
-                        var4_5 = Entry.access$1000(var8_3)[var3_4];
-                        Entry.access$1000((Entry)var8_3)[var3_4] = var6_6 = var9_7.length();
-                        this.size = this.size - var4_5 + var6_6;
+                        var4_5 = var3_3.getCleanFile(var5_4);
+                        var1_1.renameTo(var4_5);
+                        var6_6 = Entry.access$1000(var3_3)[var5_4];
+                        Entry.access$1000((Entry)var3_3)[var5_4] = var8_7 = var4_5.length();
+                        this.size = this.size - var6_6 + var8_7;
                     }
                 } else {
                     DiskLruCache.deleteIfExists((File)var1_1);
                 }
             } else {
                 ++this.redundantOpCount;
-                Entry.access$702(var8_3, null);
-                if (Entry.access$600(var8_3) | var2_2) {
-                    Entry.access$602(var8_3, true);
+                Entry.access$702(var3_3, null);
+                if (Entry.access$600(var3_3) | var2_2) {
+                    Entry.access$602(var3_3, true);
                     this.journalWriter.append("CLEAN");
                     this.journalWriter.append(' ');
-                    this.journalWriter.append(Entry.access$1100(var8_3));
-                    this.journalWriter.append(var8_3.getLengths());
+                    this.journalWriter.append(Entry.access$1100(var3_3));
+                    this.journalWriter.append(var3_3.getLengths());
                     this.journalWriter.append('\n');
                     if (var2_2) {
-                        var4_5 = this.nextSequenceNumber;
-                        this.nextSequenceNumber = 1 + var4_5;
-                        Entry.access$1202(var8_3, var4_5);
+                        var6_6 = this.nextSequenceNumber;
+                        this.nextSequenceNumber = 1 + var6_6;
+                        Entry.access$1202(var3_3, var6_6);
                     }
                 } else {
-                    this.lruEntries.remove(Entry.access$1100(var8_3));
+                    this.lruEntries.remove(Entry.access$1100(var3_3));
                     this.journalWriter.append("REMOVE");
                     this.journalWriter.append(' ');
-                    this.journalWriter.append(Entry.access$1100(var8_3));
+                    this.journalWriter.append(Entry.access$1100(var3_3));
                     this.journalWriter.append('\n');
                 }
                 this.journalWriter.flush();
@@ -173,7 +173,7 @@ lbl18: // 1 sources:
                 this.executorService.submit(this.cleanupCallable);
                 return;
             }
-            ++var3_4;
+            ++var5_4;
         } while (true);
     }
 
@@ -302,28 +302,28 @@ lbl18: // 1 sources:
      * Lifted jumps to return sites
      */
     private void readJournal() throws IOException {
-        var2_1 = new StrictLineReader(new FileInputStream(this.journalFile), Util.US_ASCII);
-        var3_2 = var2_1.readLine();
-        var4_5 = var2_1.readLine();
-        var5_6 = var2_1.readLine();
-        var6_7 = var2_1.readLine();
-        var7_8 = var2_1.readLine();
-        if ("libcore.io.DiskLruCache".equals(var3_2) == false) throw new IOException("unexpected journal header: [" + var3_2 + ", " + var4_5 + ", " + var6_7 + ", " + var7_8 + "]");
-        if ("1".equals(var4_5) == false) throw new IOException("unexpected journal header: [" + var3_2 + ", " + var4_5 + ", " + var6_7 + ", " + var7_8 + "]");
-        if (Integer.toString(this.appVersion).equals(var5_6) == false) throw new IOException("unexpected journal header: [" + var3_2 + ", " + var4_5 + ", " + var6_7 + ", " + var7_8 + "]");
-        if (Integer.toString(this.valueCount).equals(var6_7) == false) throw new IOException("unexpected journal header: [" + var3_2 + ", " + var4_5 + ", " + var6_7 + ", " + var7_8 + "]");
-        if (!"".equals(var7_8)) {
-            throw new IOException("unexpected journal header: [" + var3_2 + ", " + var4_5 + ", " + var6_7 + ", " + var7_8 + "]");
+        var1_1 = new StrictLineReader(new FileInputStream(this.journalFile), Util.US_ASCII);
+        var2_2 = var1_1.readLine();
+        var3_5 = var1_1.readLine();
+        var4_6 = var1_1.readLine();
+        var5_7 = var1_1.readLine();
+        var6_8 = var1_1.readLine();
+        if ("libcore.io.DiskLruCache".equals(var2_2) == false) throw new IOException("unexpected journal header: [" + var2_2 + ", " + var3_5 + ", " + var5_7 + ", " + var6_8 + "]");
+        if ("1".equals(var3_5) == false) throw new IOException("unexpected journal header: [" + var2_2 + ", " + var3_5 + ", " + var5_7 + ", " + var6_8 + "]");
+        if (Integer.toString(this.appVersion).equals(var4_6) == false) throw new IOException("unexpected journal header: [" + var2_2 + ", " + var3_5 + ", " + var5_7 + ", " + var6_8 + "]");
+        if (Integer.toString(this.valueCount).equals(var5_7) == false) throw new IOException("unexpected journal header: [" + var2_2 + ", " + var3_5 + ", " + var5_7 + ", " + var6_8 + "]");
+        if (!"".equals(var6_8)) {
+            throw new IOException("unexpected journal header: [" + var2_2 + ", " + var3_5 + ", " + var5_7 + ", " + var6_8 + "]");
         }
         ** GOTO lbl18
         finally {
-            Util.closeQuietly(var2_1);
+            Util.closeQuietly(var1_1);
         }
 lbl18: // 1 sources:
-        var1_9 = 0;
+        var7_9 = 0;
         do {
-            this.readJournalLine(var2_1.readLine());
-            ++var1_9;
+            this.readJournalLine(var1_1.readLine());
+            ++var7_9;
         } while (true);
     }
 
@@ -331,8 +331,8 @@ lbl18: // 1 sources:
      * Enabled aggressive block sorting
      */
     private void readJournalLine(String arrstring) throws IOException {
-        Entry entry;
         Object object;
+        Entry entry;
         Object object2;
         int n2 = arrstring.indexOf(32);
         if (n2 == -1) {
@@ -341,31 +341,31 @@ lbl18: // 1 sources:
         int n3 = n2 + 1;
         int n4 = arrstring.indexOf(32, n3);
         if (n4 == -1) {
-            object2 = object = arrstring.substring(n3);
+            object = object2 = arrstring.substring(n3);
             if (n2 == "REMOVE".length()) {
-                object2 = object;
+                object = object2;
                 if (arrstring.startsWith("REMOVE")) {
-                    this.lruEntries.remove(object);
+                    this.lruEntries.remove(object2);
                     return;
                 }
             }
         } else {
-            object2 = arrstring.substring(n3, n4);
+            object = arrstring.substring(n3, n4);
         }
-        object = entry = this.lruEntries.get(object2);
+        object2 = entry = this.lruEntries.get(object);
         if (entry == null) {
-            object = new Entry((String)object2);
-            this.lruEntries.put((String)object2, (Entry)object);
+            object2 = new Entry((String)object);
+            this.lruEntries.put((String)object, (Entry)object2);
         }
         if (n4 != -1 && n2 == "CLEAN".length() && arrstring.startsWith("CLEAN")) {
             arrstring = arrstring.substring(n4 + 1).split(" ");
-            ((Entry)object).readable = true;
-            ((Entry)object).currentEditor = null;
-            ((Entry)object).setLengths(arrstring);
+            ((Entry)object2).readable = true;
+            ((Entry)object2).currentEditor = null;
+            ((Entry)object2).setLengths(arrstring);
             return;
         }
         if (n4 == -1 && n2 == "DIRTY".length() && arrstring.startsWith("DIRTY")) {
-            ((Entry)object).currentEditor = new Editor((Entry)object);
+            ((Entry)object2).currentEditor = new Editor((Entry)object2);
             return;
         }
         if (n4 == -1 && n2 == "READ".length() && arrstring.startsWith("READ")) return;
@@ -756,7 +756,7 @@ lbl14: // 2 sources:
                     ++n2;
                     continue;
                 }
-                catch (NumberFormatException var3_3) {
+                catch (NumberFormatException var2_3) {
                     throw this.invalidLengths(arrstring);
                 }
             } while (true);

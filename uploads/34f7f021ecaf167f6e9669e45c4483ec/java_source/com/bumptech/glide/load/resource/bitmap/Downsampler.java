@@ -148,27 +148,27 @@ implements BitmapDecoder<InputStream> {
         if (Build.VERSION.SDK_INT == 16) {
             return Bitmap.Config.ARGB_8888;
         }
-        var3_6 = false;
+        var4_6 = false;
         var0.mark(1024);
-        var3_6 = var2_7 = new ImageHeaderParser(var0).hasAlpha();
+        var4_6 = var3_7 = new ImageHeaderParser(var0).hasAlpha();
         try {
             var0.reset();
-            var2_7 = var3_6;
+            var3_7 = var4_6;
         }
         catch (IOException var0_1) {
-            var2_7 = var3_6;
+            var3_7 = var4_6;
             if (Log.isLoggable((String)"Downsampler", (int)5)) {
                 Log.w((String)"Downsampler", (String)"Cannot reset the input stream", (Throwable)var0_1);
-                var2_7 = var3_6;
+                var3_7 = var4_6;
             }
             ** GOTO lbl41
         }
-        catch (IOException var4_8) {
+        catch (IOException var2_8) {
             block13 : {
                 block12 : {
                     try {
                         if (!Log.isLoggable((String)"Downsampler", (int)5)) break block12;
-                        Log.w((String)"Downsampler", (String)("Cannot determine whether the image has alpha or not from header for format " + (Object)var1_4), (Throwable)var4_8);
+                        Log.w((String)"Downsampler", (String)("Cannot determine whether the image has alpha or not from header for format " + (Object)var1_4), (Throwable)var2_8);
                     }
                     catch (Throwable var1_5) {
                         try {
@@ -184,16 +184,16 @@ implements BitmapDecoder<InputStream> {
                 }
                 try {
                     var0.reset();
-                    var2_7 = var3_6;
+                    var3_7 = var4_6;
                 }
                 catch (IOException var0_2) {
-                    var2_7 = var3_6;
+                    var3_7 = var4_6;
                     if (!Log.isLoggable((String)"Downsampler", (int)5)) break block13;
                     Log.w((String)"Downsampler", (String)"Cannot reset the input stream", (Throwable)var0_2);
-                    var2_7 = var3_6;
+                    var3_7 = var4_6;
                 }
             }
-            if (var2_7 == false) return Bitmap.Config.RGB_565;
+            if (var3_7 == false) return Bitmap.Config.RGB_565;
             return Bitmap.Config.ARGB_8888;
         }
     }
@@ -307,16 +307,16 @@ implements BitmapDecoder<InputStream> {
                     if (!Log.isLoggable((String)"Downsampler", (int)5)) break block11;
                     Log.w((String)"Downsampler", (String)"Cannot determine the image type from header", (Throwable)iOException);
                 }
-                catch (Throwable var3_7) {
+                catch (Throwable var1_7) {
                     try {
                         inputStream.reset();
                     }
                     catch (IOException var0_3) {
-                        if (!Log.isLoggable((String)"Downsampler", (int)5)) throw var3_7;
+                        if (!Log.isLoggable((String)"Downsampler", (int)5)) throw var1_7;
                         Log.w((String)"Downsampler", (String)"Cannot reset the input stream", (Throwable)var0_3);
-                        throw var3_7;
+                        throw var1_7;
                     }
-                    throw var3_7;
+                    throw var1_7;
                 }
             }
             try {

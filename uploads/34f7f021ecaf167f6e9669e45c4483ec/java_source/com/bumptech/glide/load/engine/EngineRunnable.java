@@ -46,19 +46,19 @@ Prioritized {
         Resource resource;
         Resource resource2;
         block2 : {
-            resource = null;
+            resource2 = null;
             try {
-                resource2 = this.decodeJob.decodeResultFromCache();
+                resource = this.decodeJob.decodeResultFromCache();
             }
             catch (Exception var3_3) {
-                resource2 = resource;
+                resource = resource2;
                 if (!Log.isLoggable((String)"EngineRunnable", (int)3)) break block2;
                 Log.d((String)"EngineRunnable", (String)("Exception decoding result from cache: " + var3_3));
-                resource2 = resource;
+                resource = resource2;
             }
         }
-        resource = resource2;
-        if (resource2 != null) return resource;
+        resource2 = resource;
+        if (resource != null) return resource2;
         return this.decodeJob.decodeSourceFromCache();
     }
 
@@ -104,8 +104,8 @@ Prioritized {
      */
     @Override
     public void run() {
-        Resource resource;
         Exception exception;
+        Resource resource;
         block5 : {
             if (this.isCancelled) {
                 return;

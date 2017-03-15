@@ -85,8 +85,8 @@ public class AutoFocusController {
      * Enabled aggressive block sorting
      */
     private void findNextViewToFocus() {
-        int n2;
         RecyclerView.ViewHolder viewHolder;
+        int n2;
         int n3 = this.getCurrentChildPosition();
         if (this.mLastDy <= 0) {
             if (this.mCurrentViewHolder != null) {

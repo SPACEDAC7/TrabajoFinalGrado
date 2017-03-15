@@ -211,8 +211,8 @@ public class LikeActionController {
      * Lifted jumps to return sites
      */
     private static LikeActionController deserializeFromDiskSynchronously(String object) {
-        Object object2;
         InputStream inputStream;
+        Object object2;
         block8 : {
             Object var4_3 = null;
             Object object3 = null;

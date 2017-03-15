@@ -124,10 +124,10 @@ public class GenericLoaderFactory {
      */
     public <T, Y> ModelLoaderFactory<T, Y> register(Class<T> object, Class<Y> object2, ModelLoaderFactory<T, Y> iterator) {
         synchronized (this) {
-            ModelLoaderFactory modelLoaderFactory;
-            boolean bl;
             Map<Class, ModelLoaderFactory> map;
+            boolean bl;
             Iterator<Map<Class, ModelLoaderFactory>> iterator2;
+            ModelLoaderFactory modelLoaderFactory;
             this.cachedModelLoaders.clear();
             Map<Class, ModelLoaderFactory> map2 = map = this.modelClassToResourceFactories.get(object);
             if (map == null) {

@@ -113,8 +113,8 @@ implements SessionAnalyticsManagerStrategy {
             boolean bl = this.filesManager.rollFileOver();
             return bl;
         }
-        catch (IOException var2_2) {
-            CommonUtils.logControlledError(this.context, "Failed to roll file over.", var2_2);
+        catch (IOException var1_2) {
+            CommonUtils.logControlledError(this.context, "Failed to roll file over.", var1_2);
             return false;
         }
     }
@@ -133,8 +133,8 @@ implements SessionAnalyticsManagerStrategy {
             this.rolloverFutureRef.set(this.executorService.scheduleAtFixedRate((Runnable)timeBasedFileRollOverRunnable, l2, l3, TimeUnit.SECONDS));
             return;
         }
-        catch (RejectedExecutionException var6_5) {
-            CommonUtils.logControlledError(this.context, "Failed to schedule time based file roll over", var6_5);
+        catch (RejectedExecutionException var5_5) {
+            CommonUtils.logControlledError(this.context, "Failed to schedule time based file roll over", var5_5);
             return;
         }
     }
@@ -169,23 +169,23 @@ implements SessionAnalyticsManagerStrategy {
         int n4 = 0;
         List list = this.filesManager.getBatchOfFilesToSend();
         do {
-            n2 = n4;
             n3 = n4;
+            n2 = n4;
             if (list.size() > 0) {
-                n3 = n4;
-                CommonUtils.logControlled(this.context, String.format(Locale.US, "attempt to send batch of %d files", list.size()));
-                n3 = n4;
-                boolean bl = this.filesSender.send(list);
                 n2 = n4;
+                CommonUtils.logControlled(this.context, String.format(Locale.US, "attempt to send batch of %d files", list.size()));
+                n2 = n4;
+                boolean bl = this.filesSender.send(list);
+                n3 = n4;
                 if (bl) {
-                    n3 = n4;
-                    n3 = n2 = n4 + list.size();
+                    n2 = n4;
+                    n2 = n3 = n4 + list.size();
                     this.filesManager.deleteSentFiles(list);
                 }
                 if (bl) {
-                    n3 = n2;
+                    n2 = n3;
                     list = this.filesManager.getBatchOfFilesToSend();
-                    n4 = n2;
+                    n4 = n3;
                     continue;
                 }
             }
@@ -193,9 +193,9 @@ implements SessionAnalyticsManagerStrategy {
         } while (true);
         catch (Exception exception) {
             CommonUtils.logControlledError(this.context, "Failed to send batch of analytics files to server: " + exception.getMessage(), exception);
-            n2 = n3;
+            n3 = n2;
         }
-        if (n2 != 0) return;
+        if (n3 != 0) return;
         this.filesManager.deleteOldestInRollOverIfOverMax();
     }
 

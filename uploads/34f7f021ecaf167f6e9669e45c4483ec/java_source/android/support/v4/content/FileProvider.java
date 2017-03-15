@@ -143,7 +143,7 @@ extends ContentProvider {
             File[] arrfile = xmlResourceParser.getName();
             String string2 = xmlResourceParser.getAttributeValue(null, "name");
             String string3 = xmlResourceParser.getAttributeValue(null, "path");
-            Object var3_5 = null;
+            Object var2_4 = null;
             if ("root-path".equals(arrfile)) {
                 object = DEVICE_ROOT;
             } else if ("files-path".equals(arrfile)) {
@@ -154,15 +154,15 @@ extends ContentProvider {
                 object = Environment.getExternalStorageDirectory();
             } else if ("external-files-path".equals(arrfile)) {
                 arrfile = ContextCompat.getExternalFilesDirs(context, null);
-                object = var3_5;
+                object = var2_4;
                 if (arrfile.length > 0) {
                     object = arrfile[0];
                 }
             } else {
-                object = var3_5;
+                object = var2_4;
                 if ("external-cache-path".equals(arrfile)) {
                     arrfile = ContextCompat.getExternalCacheDirs(context);
-                    object = var3_5;
+                    object = var2_4;
                     if (arrfile.length > 0) {
                         object = arrfile[0];
                     }
@@ -304,7 +304,7 @@ extends ContentProvider {
                     throw new SecurityException("Resolved path jumped beyond configured root");
                 }
             }
-            catch (IOException var3_5) {
+            catch (IOException var2_5) {
                 throw new IllegalArgumentException("Failed to resolve canonical path for " + object);
             }
             return object2;

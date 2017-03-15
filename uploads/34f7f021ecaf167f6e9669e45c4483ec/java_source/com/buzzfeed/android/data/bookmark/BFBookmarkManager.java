@@ -187,161 +187,161 @@ public class BFBookmarkManager {
      * Lifted jumps to return sites
      */
     private FlowList getBookmarkListAndSetSyncId(BuzzFeedJsonReader var1_1) throws IOException {
-        var18_2 = BFBookmarkManager.TAG + ".getBookmarkListAndSetSyncId";
-        var5_3 = false;
-        var6_4 = false;
-        var19_5 = new FlowList();
-        var7_6 = System.currentTimeMillis();
+        var5_2 = BFBookmarkManager.TAG + ".getBookmarkListAndSetSyncId";
+        var20_3 = false;
+        var21_4 = false;
+        var6_5 = new FlowList();
+        var12_6 = System.currentTimeMillis();
         if (var1_1 == null) ** GOTO lbl30
-        var20_7 = BuzzUser.getInstance(this.context);
+        var7_7 = BuzzUser.getInstance(this.context);
         var1_1.beginObject();
-        var5_3 = var6_4;
+        var20_3 = var21_4;
         do {
             if (!var1_1.hasNext()) ** GOTO lbl29
-            var15_14 = var1_1.nextName();
-            if (var15_14.equals("success")) {
-                var5_3 = var1_1.nextString().equals("1");
-                LogUtil.d(var18_2, "success: " + var5_3);
+            var2_8 = var1_1.nextName();
+            if (var2_8.equals("success")) {
+                var20_3 = var1_1.nextString().equals("1");
+                LogUtil.d(var5_2, "success: " + var20_3);
                 continue;
             }
-            if (var15_14.equals("sync_id")) {
-                var15_14 = var1_1.nextString();
-                var20_7.setSyncId((String)var15_14);
-                LogUtil.d(var18_2, "sync_id: " + (String)var15_14);
+            if (var2_8.equals("sync_id")) {
+                var2_8 = var1_1.nextString();
+                var7_7.setSyncId((String)var2_8);
+                LogUtil.d(var5_2, "sync_id: " + (String)var2_8);
                 continue;
             }
-            if (var15_14.equals("bookmarks")) {
-                var2_8 = 0;
+            if (var2_8.equals("bookmarks")) {
+                var9_14 = 0;
                 var1_1.beginArray();
             } else {
-                LogUtil.d(var18_2, "Skipping key: " + (String)var15_14);
+                LogUtil.d(var5_2, "Skipping key: " + (String)var2_8);
                 var1_1.skipValue();
                 continue;
 lbl29: // 1 sources:
                 var1_1.endObject();
 lbl30: // 2 sources:
-                if (var5_3 == false) return null;
-                return var19_5;
+                if (var20_3 == false) return null;
+                return var6_5;
             }
             while (var1_1.hasNext()) {
                 block14 : {
-                    var15_14 = null;
-                    var3_9 = var2_8;
-                    var11_12 = var7_6;
-                    var4_10 = var2_8;
-                    var13_13 = var7_6;
-                    var15_14 = var17_18 = var1_1.getArrayObjectAsJson();
-                    var3_9 = var2_8;
-                    var11_12 = var7_6;
-                    var4_10 = var2_8;
-                    var13_13 = var7_6;
-                    var16_16 = new com.buzzfeed.toolkit.content.Buzz();
-                    var15_14 = var17_18;
-                    var3_9 = var2_8;
-                    var11_12 = var7_6;
-                    var4_10 = var2_8;
-                    var13_13 = var7_6;
-                    var16_16.parse((JSONObject)var17_18);
-                    var15_14 = var17_18;
-                    var3_9 = var2_8;
-                    var11_12 = var7_6;
-                    var4_10 = var2_8;
-                    var13_13 = var7_6;
-                    if (var16_16.isAd()) {
-                        var15_14 = var17_18;
-                        var3_9 = var2_8;
-                        var11_12 = var7_6;
-                        var4_10 = var2_8;
-                        var13_13 = var7_6;
-                        var16_16 = BuffetType.EDITORIAL_AD;
+                    var2_8 = null;
+                    var10_15 = var9_14;
+                    var16_18 = var12_6;
+                    var11_16 = var9_14;
+                    var18_19 = var12_6;
+                    var2_8 = var4_12 = var1_1.getArrayObjectAsJson();
+                    var10_15 = var9_14;
+                    var16_18 = var12_6;
+                    var11_16 = var9_14;
+                    var18_19 = var12_6;
+                    var3_10 = new com.buzzfeed.toolkit.content.Buzz();
+                    var2_8 = var4_12;
+                    var10_15 = var9_14;
+                    var16_18 = var12_6;
+                    var11_16 = var9_14;
+                    var18_19 = var12_6;
+                    var3_10.parse((JSONObject)var4_12);
+                    var2_8 = var4_12;
+                    var10_15 = var9_14;
+                    var16_18 = var12_6;
+                    var11_16 = var9_14;
+                    var18_19 = var12_6;
+                    if (var3_10.isAd()) {
+                        var2_8 = var4_12;
+                        var10_15 = var9_14;
+                        var16_18 = var12_6;
+                        var11_16 = var9_14;
+                        var18_19 = var12_6;
+                        var3_10 = BuffetType.EDITORIAL_AD;
                     } else {
-                        var15_14 = var17_18;
-                        var3_9 = var2_8;
-                        var11_12 = var7_6;
-                        var4_10 = var2_8;
-                        var13_13 = var7_6;
-                        var16_16 = BuffetType.POST;
+                        var2_8 = var4_12;
+                        var10_15 = var9_14;
+                        var16_18 = var12_6;
+                        var11_16 = var9_14;
+                        var18_19 = var12_6;
+                        var3_10 = BuffetType.POST;
                     }
-                    var15_14 = var17_18;
-                    var3_9 = var2_8;
-                    var11_12 = var7_6;
-                    var4_10 = var2_8;
-                    var13_13 = var7_6;
-                    var21_19 = new com.buzzfeed.toolkit.content.FlowItem();
-                    var15_14 = var17_18;
-                    var3_9 = var2_8;
-                    var11_12 = var7_6;
-                    var4_10 = var2_8;
-                    var13_13 = var7_6;
-                    var21_19.parse((JSONObject)var17_18, new MobileFeedFactory(var16_16.name()));
-                    var15_14 = var17_18;
-                    var3_9 = var2_8;
-                    var11_12 = var7_6;
-                    var4_10 = var2_8;
-                    var13_13 = var7_6;
-                    var16_16 = (com.buzzfeed.toolkit.content.Buzz)var21_19.getContent();
-                    var9_11 = var7_6;
-                    var15_14 = var17_18;
-                    var3_9 = var2_8;
-                    var11_12 = var7_6;
-                    var4_10 = var2_8;
-                    var13_13 = var7_6;
-                    if (var16_16.getBookmarked() > 0) break block14;
-                    var15_14 = var17_18;
-                    var3_9 = var2_8;
-                    var11_12 = var7_6;
-                    var4_10 = var2_8;
-                    var13_13 = var7_6;
-                    var16_16.setBookmarked(var7_6);
-                    var9_11 = var7_6 - 1;
+                    var2_8 = var4_12;
+                    var10_15 = var9_14;
+                    var16_18 = var12_6;
+                    var11_16 = var9_14;
+                    var18_19 = var12_6;
+                    var8_13 = new com.buzzfeed.toolkit.content.FlowItem();
+                    var2_8 = var4_12;
+                    var10_15 = var9_14;
+                    var16_18 = var12_6;
+                    var11_16 = var9_14;
+                    var18_19 = var12_6;
+                    var8_13.parse((JSONObject)var4_12, new MobileFeedFactory(var3_10.name()));
+                    var2_8 = var4_12;
+                    var10_15 = var9_14;
+                    var16_18 = var12_6;
+                    var11_16 = var9_14;
+                    var18_19 = var12_6;
+                    var3_10 = (com.buzzfeed.toolkit.content.Buzz)var8_13.getContent();
+                    var14_17 = var12_6;
+                    var2_8 = var4_12;
+                    var10_15 = var9_14;
+                    var16_18 = var12_6;
+                    var11_16 = var9_14;
+                    var18_19 = var12_6;
+                    if (var3_10.getBookmarked() > 0) break block14;
+                    var2_8 = var4_12;
+                    var10_15 = var9_14;
+                    var16_18 = var12_6;
+                    var11_16 = var9_14;
+                    var18_19 = var12_6;
+                    var3_10.setBookmarked(var12_6);
+                    var14_17 = var12_6 - 1;
                 }
-                var15_14 = var17_18;
-                var3_9 = ++var2_8;
-                var11_12 = var9_11;
-                var4_10 = var2_8;
-                var13_13 = var9_11;
+                var2_8 = var4_12;
+                var10_15 = ++var9_14;
+                var16_18 = var14_17;
+                var11_16 = var9_14;
+                var18_19 = var14_17;
                 try {
-                    if (var16_16.isValid()) {
-                        var15_14 = var17_18;
-                        var3_9 = var2_8;
-                        var11_12 = var9_11;
-                        var4_10 = var2_8;
-                        var13_13 = var9_11;
-                        var19_5.add(var21_19);
-                        var15_14 = var17_18;
-                        var3_9 = var2_8;
-                        var11_12 = var9_11;
-                        var4_10 = var2_8;
-                        var13_13 = var9_11;
-                        LogUtil.d(var18_2, "Successfully parsed bookmark buzz: " + var16_16.toString());
-                        var7_6 = var9_11;
+                    if (var3_10.isValid()) {
+                        var2_8 = var4_12;
+                        var10_15 = var9_14;
+                        var16_18 = var14_17;
+                        var11_16 = var9_14;
+                        var18_19 = var14_17;
+                        var6_5.add(var8_13);
+                        var2_8 = var4_12;
+                        var10_15 = var9_14;
+                        var16_18 = var14_17;
+                        var11_16 = var9_14;
+                        var18_19 = var14_17;
+                        LogUtil.d(var5_2, "Successfully parsed bookmark buzz: " + var3_10.toString());
+                        var12_6 = var14_17;
                     }
                     ** GOTO lbl129
                 }
-                catch (JSONException var16_17) {
-                    var17_18 = new StringBuilder().append("Error parsing buzz (invalid JSONObject): ");
-                    var15_14 = var15_14 == null ? "null" : var15_14.toString();
+                catch (JSONException var3_11) {
+                    var4_12 = new StringBuilder().append("Error parsing buzz (invalid JSONObject): ");
+                    var2_8 = var2_8 == null ? "null" : var2_8.toString();
 lbl129: // 1 sources:
-                    var15_14 = var17_18;
-                    var3_9 = var2_8;
-                    var11_12 = var9_11;
-                    var4_10 = var2_8;
-                    var13_13 = var9_11;
-                    LogUtil.e(var18_2, "Error parsing buzz (missing fields): " + var16_16.toString());
-                    var7_6 = var9_11;
+                    var2_8 = var4_12;
+                    var10_15 = var9_14;
+                    var16_18 = var14_17;
+                    var11_16 = var9_14;
+                    var18_19 = var14_17;
+                    LogUtil.e(var5_2, "Error parsing buzz (missing fields): " + var3_10.toString());
+                    var12_6 = var14_17;
                     continue;
-                    catch (Exception var15_15) {
-                        LogUtil.e(var18_2, "Internal Error parsing buzz (invalid JSONObject)", var15_15);
-                        var2_8 = var4_10;
-                        var7_6 = var13_13;
+                    catch (Exception var2_9) {
+                        LogUtil.e(var5_2, "Internal Error parsing buzz (invalid JSONObject)", var2_9);
+                        var9_14 = var11_16;
+                        var12_6 = var18_19;
                     }
-                    LogUtil.e(var18_2, var17_18.append((String)var15_14).toString(), (Throwable)var16_17);
-                    var2_8 = var3_9;
-                    var7_6 = var11_12;
+                    LogUtil.e(var5_2, var4_12.append((String)var2_8).toString(), (Throwable)var3_11);
+                    var9_14 = var10_15;
+                    var12_6 = var16_18;
                 }
             }
             var1_1.endArray();
-            LogUtil.i(var18_2, "Synchronized " + var2_8 + " bookmarks");
+            LogUtil.i(var5_2, "Synchronized " + var9_14 + " bookmarks");
         } while (true);
     }
 
@@ -617,8 +617,8 @@ lbl129: // 1 sources:
         synchronized (this) {
             int n2 = 0;
             do {
-                com.buzzfeed.toolkit.content.FlowItem flowItem;
                 int n3;
+                com.buzzfeed.toolkit.content.FlowItem flowItem;
                 if (n2 < this.bookmarkList.size()) {
                     flowItem = this.bookmarkList.get(n2);
                     n3 = n2;
@@ -783,10 +783,10 @@ lbl129: // 1 sources:
             if (object3 != null && object3.size() > 0) {
                 object = object3.iterator();
                 while (object.hasNext()) {
-                    long l3;
                     Bookmark bookmark;
-                    long l4;
+                    long l3;
                     com.buzzfeed.toolkit.content.FlowItem flowItem;
+                    long l4;
                     block22 : {
                         boolean bl;
                         object3 = object.next();
@@ -799,8 +799,8 @@ lbl129: // 1 sources:
                                 this.bookmarkList.add((com.buzzfeed.toolkit.content.FlowItem)object3);
                                 LogUtil.v((String)object22, "Restored FlowItem/Buzz bookmark: " + bookmark.toString());
                             }
-                            catch (Exception var8_3) {
-                                LogUtil.e((String)object22, "Error in Content JSON when trying to parse it into flow item", var8_3);
+                            catch (Exception var1_3) {
+                                LogUtil.e((String)object22, "Error in Content JSON when trying to parse it into flow item", var1_3);
                             }
                             continue;
                         }
@@ -808,76 +808,76 @@ lbl129: // 1 sources:
                             block21 : {
                                 bl = (object3 = (FlowItem)object3).getContent() instanceof Buzz;
                                 if (!bl) continue;
-                                l4 = l2;
+                                l3 = l2;
                                 bookmark = (Buzz)object3.getContent();
-                                l4 = l2;
+                                l3 = l2;
                                 flowItem = new com.buzzfeed.toolkit.content.FlowItem();
-                                l4 = l2;
+                                l3 = l2;
                                 object3 = BuffetType.POST;
-                                l4 = l2;
+                                l3 = l2;
                                 if (bookmark.isAd()) {
-                                    l4 = l2;
+                                    l3 = l2;
                                     object3 = BuffetType.EDITORIAL_AD;
                                 }
-                                l4 = l2;
-                                flowItem.parse(new JSONObject(bookmark.getJson()), new MobileFeedFactory(object3.name()));
-                                l4 = l2;
-                                object3 = (com.buzzfeed.toolkit.content.Buzz)flowItem.getContent();
-                                l4 = l2;
-                                object3.setBookmarked(bookmark.getBookmarked());
                                 l3 = l2;
+                                flowItem.parse(new JSONObject(bookmark.getJson()), new MobileFeedFactory(object3.name()));
+                                l3 = l2;
+                                object3 = (com.buzzfeed.toolkit.content.Buzz)flowItem.getContent();
+                                l3 = l2;
+                                object3.setBookmarked(bookmark.getBookmarked());
                                 l4 = l2;
+                                l3 = l2;
                                 if (object3.getBookmarked() > 0) break block21;
-                                l4 = l2;
+                                l3 = l2;
                                 object3.setBookmarked(l2);
-                                l3 = l2 - 1;
+                                l4 = l2 - 1;
                             }
-                            l4 = l3;
+                            l3 = l4;
                             try {
                                 this.bookmarkList.add(flowItem);
-                                l4 = l3;
+                                l3 = l4;
                                 LogUtil.v((String)object22, "Restored LegacyFlowItem/LegacyBuzz bookmark: " + object3.toString());
-                                l2 = l3;
-                            }
-                            catch (Exception var8_4) {
-                                LogUtil.e((String)object22, "Error in Content JSON when trying to parse it into flow item", var8_4);
                                 l2 = l4;
+                            }
+                            catch (Exception var1_4) {
+                                LogUtil.e((String)object22, "Error in Content JSON when trying to parse it into flow item", var1_4);
+                                l2 = l3;
                             }
                             continue;
                         }
                         if (!(object3 instanceof Bookmark) || (bl = TextUtils.isEmpty((CharSequence)(bookmark = (Bookmark)object3).getJson()))) continue;
-                        l4 = l2;
+                        l3 = l2;
                         flowItem = new com.buzzfeed.toolkit.content.FlowItem();
-                        l4 = l2;
+                        l3 = l2;
                         object3 = BuffetType.POST;
-                        l4 = l2;
+                        l3 = l2;
                         if ("ad".equals(bookmark.getType())) {
-                            l4 = l2;
+                            l3 = l2;
                             object3 = BuffetType.EDITORIAL_AD;
                         }
-                        l4 = l2;
-                        flowItem.parse(new JSONObject(bookmark.getJson()), new MobileFeedFactory(object3.name()));
-                        l4 = l2;
-                        object3 = (com.buzzfeed.toolkit.content.Buzz)flowItem.getContent();
-                        l4 = l2;
-                        object3.setBookmarked(bookmark.getTimestamp());
                         l3 = l2;
+                        flowItem.parse(new JSONObject(bookmark.getJson()), new MobileFeedFactory(object3.name()));
+                        l3 = l2;
+                        object3 = (com.buzzfeed.toolkit.content.Buzz)flowItem.getContent();
+                        l3 = l2;
+                        object3.setBookmarked(bookmark.getTimestamp());
                         l4 = l2;
+                        l3 = l2;
                         if (object3.getBookmarked() > 0) break block22;
-                        l4 = l2;
+                        l3 = l2;
                         object3.setBookmarked(l2);
-                        l3 = l2 - 1;
+                        l4 = l2 - 1;
                     }
-                    l4 = l3;
+                    l3 = l4;
                     try {
                         this.bookmarkList.add(flowItem);
-                        l4 = l3;
+                        l3 = l4;
                         LogUtil.v((String)object22, "Restored bookmark: " + bookmark.toString());
-                        l2 = l3;
-                    }
-                    catch (Exception var8_5) {
-                        LogUtil.e((String)object22, "Error in Content JSON when trying to parse it into flow item", var8_5);
                         l2 = l4;
+                    }
+                    catch (Exception var1_5) {
+                        LogUtil.e((String)object22, "Error in Content JSON when trying to parse it into flow item", var1_5);
+                        l2 = l3;
                     }
                 }
             }

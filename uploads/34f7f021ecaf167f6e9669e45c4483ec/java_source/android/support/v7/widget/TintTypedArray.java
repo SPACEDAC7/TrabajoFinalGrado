@@ -62,8 +62,8 @@ public class TintTypedArray {
     }
 
     public ColorStateList getColorStateList(int n2) {
-        int n3;
         ColorStateList colorStateList;
+        int n3;
         if (this.mWrapped.hasValue(n2) && (n3 = this.mWrapped.getResourceId(n2, 0)) != 0 && (colorStateList = AppCompatResources.getColorStateList(this.mContext, n3)) != null) {
             return colorStateList;
         }

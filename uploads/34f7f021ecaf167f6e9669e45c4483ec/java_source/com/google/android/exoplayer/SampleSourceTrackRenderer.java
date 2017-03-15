@@ -97,8 +97,8 @@ extends TrackRenderer {
                             l2 = l3;
                             break block11;
                         }
-                        catch (MediaCodecUtil.DecoderQueryException var14_6) {
-                            throw new ExoPlaybackException(var14_6);
+                        catch (MediaCodecUtil.DecoderQueryException var3_6) {
+                            throw new ExoPlaybackException(var3_6);
                         }
                     }
                     long l4 = mediaFormat.durationUs;

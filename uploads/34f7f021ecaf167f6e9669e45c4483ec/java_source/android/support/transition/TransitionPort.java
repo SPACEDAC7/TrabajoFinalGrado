@@ -380,149 +380,149 @@ implements Cloneable {
      */
     @RestrictTo(value={RestrictTo.Scope.GROUP_ID})
     protected void createAnimators(ViewGroup var1_1, TransitionValuesMaps var2_2, TransitionValuesMaps var3_3) {
-        var17_4 = new String[](var3_3.viewValues);
-        var16_5 = new SparseArray(var3_3.idValues.size());
-        for (var4_6 = 0; var4_6 < var3_3.idValues.size(); ++var4_6) {
-            var16_5.put(var3_3.idValues.keyAt(var4_6), var3_3.idValues.valueAt(var4_6));
+        var12_4 = new String[](var3_3.viewValues);
+        var11_5 = new SparseArray(var3_3.idValues.size());
+        for (var16_6 = 0; var16_6 < var3_3.idValues.size(); ++var16_6) {
+            var11_5.put(var3_3.idValues.keyAt(var16_6), var3_3.idValues.valueAt(var16_6));
         }
-        var13_7 = new LongSparseArray<TransitionValues>(var3_3.itemIdValues.size());
-        for (var4_6 = 0; var4_6 < var3_3.itemIdValues.size(); ++var4_6) {
-            var13_7.put(var3_3.itemIdValues.keyAt(var4_6), (TransitionValues)var3_3.itemIdValues.valueAt(var4_6));
+        var8_7 = new LongSparseArray<TransitionValues>(var3_3.itemIdValues.size());
+        for (var16_6 = 0; var16_6 < var3_3.itemIdValues.size(); ++var16_6) {
+            var8_7.put(var3_3.itemIdValues.keyAt(var16_6), (TransitionValues)var3_3.itemIdValues.valueAt(var16_6));
         }
-        var14_8 = new ArrayList<Object>();
-        var15_9 = new ArrayList<Object>();
-        for (View var19_16 : var2_2.viewValues.keySet()) {
-            var9_12 = null;
-            var4_6 = 0;
-            if (!(var19_16.getParent() instanceof ListView) || (var4_6 = 1) == 0) {
-                var4_6 = var19_16.getId();
-                var10_13 = var2_2.viewValues.get((Object)var19_16) != null ? var2_2.viewValues.get((Object)var19_16) : (TransitionValues)var2_2.idValues.get(var4_6);
-                if (var3_3.viewValues.get((Object)var19_16) != null) {
-                    var9_12 = var3_3.viewValues.get((Object)var19_16);
-                    var17_4.remove((Object)var19_16);
-                } else if (var4_6 != -1) {
-                    var12_15 = (TransitionValues)var3_3.idValues.get(var4_6);
-                    var11_14 = null;
-                    for (Object var9_12 : var17_4.keySet()) {
-                        if (var9_12.getId() != var4_6) continue;
-                        var11_14 = var9_12;
+        var9_8 = new ArrayList<Object>();
+        var10_9 = new ArrayList<Object>();
+        for (View var14_15 : var2_2.viewValues.keySet()) {
+            var4_11 = null;
+            var16_6 = 0;
+            if (!(var14_15.getParent() instanceof ListView) || (var16_6 = 1) == 0) {
+                var16_6 = var14_15.getId();
+                var5_12 = var2_2.viewValues.get((Object)var14_15) != null ? var2_2.viewValues.get((Object)var14_15) : (TransitionValues)var2_2.idValues.get(var16_6);
+                if (var3_3.viewValues.get((Object)var14_15) != null) {
+                    var4_11 = var3_3.viewValues.get((Object)var14_15);
+                    var12_4.remove((Object)var14_15);
+                } else if (var16_6 != -1) {
+                    var7_14 = (TransitionValues)var3_3.idValues.get(var16_6);
+                    var6_13 = null;
+                    for (Object var4_11 : var12_4.keySet()) {
+                        if (var4_11.getId() != var16_6) continue;
+                        var6_13 = var4_11;
                     }
-                    var9_12 = var12_15;
-                    if (var11_14 != null) {
-                        var17_4.remove(var11_14);
-                        var9_12 = var12_15;
+                    var4_11 = var7_14;
+                    if (var6_13 != null) {
+                        var12_4.remove(var6_13);
+                        var4_11 = var7_14;
                     }
                 }
-                var16_5.remove(var4_6);
-                if (!this.isValidTarget(var19_16, var4_6)) continue;
-                var14_8.add(var10_13);
-                var15_9.add(var9_12);
+                var11_5.remove(var16_6);
+                if (!this.isValidTarget(var14_15, var16_6)) continue;
+                var9_8.add(var5_12);
+                var10_9.add(var4_11);
                 continue;
             }
-            var9_12 = (ListView)var19_16.getParent();
-            if (!var9_12.getAdapter().hasStableIds()) continue;
-            var7_11 = var9_12.getItemIdAtPosition(var9_12.getPositionForView(var19_16));
-            var9_12 = var2_2.itemIdValues.get(var7_11);
-            var13_7.remove(var7_11);
-            var14_8.add(var9_12);
-            var15_9.add(null);
+            var4_11 = (ListView)var14_15.getParent();
+            if (!var4_11.getAdapter().hasStableIds()) continue;
+            var19_17 = var4_11.getItemIdAtPosition(var4_11.getPositionForView(var14_15));
+            var4_11 = var2_2.itemIdValues.get(var19_17);
+            var8_7.remove(var19_17);
+            var9_8.add(var4_11);
+            var10_9.add(null);
         }
-        var5_18 = var2_2.itemIdValues.size();
-        for (var4_6 = 0; var4_6 < var5_18; ++var4_6) {
-            var7_11 = var2_2.itemIdValues.keyAt(var4_6);
-            if (!this.isValidTarget(null, var7_11)) continue;
-            var9_12 = var2_2.itemIdValues.get(var7_11);
-            var10_13 = var3_3.itemIdValues.get(var7_11);
-            var13_7.remove(var7_11);
-            var14_8.add(var9_12);
-            var15_9.add(var10_13);
+        var17_18 = var2_2.itemIdValues.size();
+        for (var16_6 = 0; var16_6 < var17_18; ++var16_6) {
+            var19_17 = var2_2.itemIdValues.keyAt(var16_6);
+            if (!this.isValidTarget(null, var19_17)) continue;
+            var4_11 = var2_2.itemIdValues.get(var19_17);
+            var5_12 = var3_3.itemIdValues.get(var19_17);
+            var8_7.remove(var19_17);
+            var9_8.add(var4_11);
+            var10_9.add(var5_12);
         }
-        var10_13 = var17_4.keySet().iterator();
-        while (var10_13.hasNext()) {
-            var11_14 = (View)var10_13.next();
-            if (!this.isValidTarget((View)var11_14, var4_6 = var11_14.getId())) continue;
-            var9_12 = var2_2.viewValues.get(var11_14) != null ? var2_2.viewValues.get(var11_14) : (TransitionValues)var2_2.idValues.get(var4_6);
-            var11_14 = (TransitionValues)var17_4.get(var11_14);
-            var16_5.remove(var4_6);
-            var14_8.add(var9_12);
-            var15_9.add(var11_14);
+        var5_12 = var12_4.keySet().iterator();
+        while (var5_12.hasNext()) {
+            var6_13 = (View)var5_12.next();
+            if (!this.isValidTarget((View)var6_13, var16_6 = var6_13.getId())) continue;
+            var4_11 = var2_2.viewValues.get(var6_13) != null ? var2_2.viewValues.get(var6_13) : (TransitionValues)var2_2.idValues.get(var16_6);
+            var6_13 = (TransitionValues)var12_4.get(var6_13);
+            var11_5.remove(var16_6);
+            var9_8.add(var4_11);
+            var10_9.add(var6_13);
         }
-        var5_18 = var16_5.size();
-        for (var4_6 = 0; var4_6 < var5_18; ++var4_6) {
-            var6_19 = var16_5.keyAt(var4_6);
-            if (!this.isValidTarget(null, var6_19)) continue;
-            var9_12 = (TransitionValues)var2_2.idValues.get(var6_19);
-            var10_13 = (TransitionValues)var16_5.get(var6_19);
-            var14_8.add(var9_12);
-            var15_9.add(var10_13);
+        var17_18 = var11_5.size();
+        for (var16_6 = 0; var16_6 < var17_18; ++var16_6) {
+            var18_19 = var11_5.keyAt(var16_6);
+            if (!this.isValidTarget(null, var18_19)) continue;
+            var4_11 = (TransitionValues)var2_2.idValues.get(var18_19);
+            var5_12 = (TransitionValues)var11_5.get(var18_19);
+            var9_8.add(var4_11);
+            var10_9.add(var5_12);
         }
-        var5_18 = var13_7.size();
-        for (var4_6 = 0; var4_6 < var5_18; ++var4_6) {
-            var7_11 = var13_7.keyAt(var4_6);
-            var9_12 = var2_2.itemIdValues.get(var7_11);
-            var10_13 = (TransitionValues)var13_7.get(var7_11);
-            var14_8.add(var9_12);
-            var15_9.add(var10_13);
+        var17_18 = var8_7.size();
+        for (var16_6 = 0; var16_6 < var17_18; ++var16_6) {
+            var19_17 = var8_7.keyAt(var16_6);
+            var4_11 = var2_2.itemIdValues.get(var19_17);
+            var5_12 = (TransitionValues)var8_7.get(var19_17);
+            var9_8.add(var4_11);
+            var10_9.add(var5_12);
         }
-        var16_5 = TransitionPort.getRunningAnimators();
-        var4_6 = 0;
+        var11_5 = TransitionPort.getRunningAnimators();
+        var16_6 = 0;
         block8 : do {
-            if (var4_6 >= var14_8.size()) return;
-            var2_2 = (TransitionValues)var14_8.get(var4_6);
-            var9_12 = (TransitionValues)var15_9.get(var4_6);
-            if (var2_2 == null && var9_12 == null || var2_2 != null && var2_2.equals(var9_12) || (var11_14 = this.createAnimator(var1_1, (TransitionValues)var2_2, (TransitionValues)var9_12)) == null) ** GOTO lbl133
-            var13_7 = null;
-            if (var9_12 == null) ** GOTO lbl114
-            var12_15 = var9_12.view;
-            var17_4 = this.getTransitionProperties();
-            var9_12 = var11_14;
-            var2_2 = var13_7;
-            var10_13 = var12_15;
-            if (var12_15 == null) ** GOTO lbl130
-            var9_12 = var11_14;
-            var2_2 = var13_7;
-            var10_13 = var12_15;
-            if (var17_4 == null) ** GOTO lbl130
-            var9_12 = var11_14;
-            var2_2 = var13_7;
-            var10_13 = var12_15;
-            if (var17_4.length <= 0) ** GOTO lbl130
-            var13_7 = new TransitionValues();
-            var13_7.view = var12_15;
-            var2_2 = var3_3.viewValues.get(var12_15);
+            if (var16_6 >= var9_8.size()) return;
+            var2_2 = (TransitionValues)var9_8.get(var16_6);
+            var4_11 = (TransitionValues)var10_9.get(var16_6);
+            if (var2_2 == null && var4_11 == null || var2_2 != null && var2_2.equals(var4_11) || (var6_13 = this.createAnimator(var1_1, (TransitionValues)var2_2, (TransitionValues)var4_11)) == null) ** GOTO lbl133
+            var8_7 = null;
+            if (var4_11 == null) ** GOTO lbl114
+            var7_14 = var4_11.view;
+            var12_4 = this.getTransitionProperties();
+            var4_11 = var6_13;
+            var2_2 = var8_7;
+            var5_12 = var7_14;
+            if (var7_14 == null) ** GOTO lbl130
+            var4_11 = var6_13;
+            var2_2 = var8_7;
+            var5_12 = var7_14;
+            if (var12_4 == null) ** GOTO lbl130
+            var4_11 = var6_13;
+            var2_2 = var8_7;
+            var5_12 = var7_14;
+            if (var12_4.length <= 0) ** GOTO lbl130
+            var8_7 = new TransitionValues();
+            var8_7.view = var7_14;
+            var2_2 = var3_3.viewValues.get(var7_14);
             if (var2_2 == null) ** GOTO lbl118
-            for (var5_18 = 0; var5_18 < var17_4.length; ++var5_18) {
-                var13_7.values.put(var17_4[var5_18], var2_2.values.get(var17_4[var5_18]));
+            for (var17_18 = 0; var17_18 < var12_4.length; ++var17_18) {
+                var8_7.values.put(var12_4[var17_18], var2_2.values.get(var12_4[var17_18]));
             }
             ** GOTO lbl118
 lbl114: // 1 sources:
-            var10_13 = var2_2.view;
-            var9_12 = var11_14;
-            var2_2 = var13_7;
+            var5_12 = var2_2.view;
+            var4_11 = var6_13;
+            var2_2 = var8_7;
             ** GOTO lbl130
 lbl118: // 2 sources:
-            var6_19 = var16_5.size();
-            var5_18 = 0;
+            var18_19 = var11_5.size();
+            var17_18 = 0;
             do {
-                var9_12 = var11_14;
-                var2_2 = var13_7;
-                var10_13 = var12_15;
-                if (var5_18 >= var6_19) ** GOTO lbl130
-                var2_2 = (AnimationInfo)var16_5.get((Object)((Animator)var16_5.keyAt(var5_18)));
-                if (var2_2.values != null && var2_2.view == var12_15 && (var2_2.name == null && this.getName() == null || var2_2.name.equals(this.getName())) && var2_2.values.equals(var13_7)) {
-                    var9_12 = null;
-                    var10_13 = var12_15;
-                    var2_2 = var13_7;
+                var4_11 = var6_13;
+                var2_2 = var8_7;
+                var5_12 = var7_14;
+                if (var17_18 >= var18_19) ** GOTO lbl130
+                var2_2 = (AnimationInfo)var11_5.get((Object)((Animator)var11_5.keyAt(var17_18)));
+                if (var2_2.values != null && var2_2.view == var7_14 && (var2_2.name == null && this.getName() == null || var2_2.name.equals(this.getName())) && var2_2.values.equals(var8_7)) {
+                    var4_11 = null;
+                    var5_12 = var7_14;
+                    var2_2 = var8_7;
 lbl130: // 6 sources:
-                    if (var9_12 != null) {
-                        var16_5.put(var9_12, new AnimationInfo((View)var10_13, this.getName(), WindowIdPort.getWindowId((View)var1_1), (TransitionValues)var2_2));
-                        this.mAnimators.add((Animator)var9_12);
+                    if (var4_11 != null) {
+                        var11_5.put(var4_11, new AnimationInfo((View)var5_12, this.getName(), WindowIdPort.getWindowId((View)var1_1), (TransitionValues)var2_2));
+                        this.mAnimators.add((Animator)var4_11);
                     }
 lbl133: // 4 sources:
-                    ++var4_6;
+                    ++var16_6;
                     continue block8;
                 }
-                ++var5_18;
+                ++var17_18;
             } while (true);
             break;
         } while (true);
@@ -861,8 +861,8 @@ lbl133: // 4 sources:
      * Lifted jumps to return sites
      */
     String toString(String string2) {
-        int n2;
         String string3;
+        int n2;
         string2 = string3 = string2 + this.getClass().getSimpleName() + "@" + Integer.toHexString(this.hashCode()) + ": ";
         if (this.mDuration != -1) {
             string2 = string3 + "dur(" + this.mDuration + ") ";

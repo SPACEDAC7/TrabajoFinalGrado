@@ -316,44 +316,44 @@ public class DiffUtil {
             int n6;
             int n7;
             if (bl) {
+                n5 = n3 - 1;
+                n6 = n2;
                 n7 = n3 - 1;
-                n5 = n2;
-                n6 = n3 - 1;
-                n3 = n5;
+                n3 = n6;
             } else {
-                n7 = n2 - 1;
                 n5 = n2 - 1;
-                n6 = n3;
-                n3 = n5;
+                n6 = n2 - 1;
+                n7 = n3;
+                n3 = n6;
             }
             while (n4 >= 0) {
                 Snake snake = this.mSnakes.get(n4);
-                n5 = snake.x;
+                n6 = snake.x;
                 int n8 = snake.size;
                 int n9 = snake.y;
                 int n10 = snake.size;
                 if (bl) {
                     --n3;
-                    while (n3 >= n5 + n8) {
-                        if (this.mCallback.areItemsTheSame(n3, n7)) {
-                            n2 = this.mCallback.areContentsTheSame(n3, n7) ? 8 : 4;
-                            this.mNewItemStatuses[n7] = n3 << 5 | 16;
-                            this.mOldItemStatuses[n3] = n7 << 5 | n2;
+                    while (n3 >= n6 + n8) {
+                        if (this.mCallback.areItemsTheSame(n3, n5)) {
+                            n2 = this.mCallback.areContentsTheSame(n3, n5) ? 8 : 4;
+                            this.mNewItemStatuses[n5] = n3 << 5 | 16;
+                            this.mOldItemStatuses[n3] = n5 << 5 | n2;
                             return true;
                         }
                         --n3;
                     }
                 } else {
-                    for (n3 = n6 - 1; n3 >= n9 + n10; --n3) {
-                        if (!this.mCallback.areItemsTheSame(n7, n3)) continue;
-                        n4 = this.mCallback.areContentsTheSame(n7, n3) ? 8 : 4;
+                    for (n3 = n7 - 1; n3 >= n9 + n10; --n3) {
+                        if (!this.mCallback.areItemsTheSame(n5, n3)) continue;
+                        n4 = this.mCallback.areContentsTheSame(n5, n3) ? 8 : 4;
                         this.mOldItemStatuses[n2 - 1] = n3 << 5 | 16;
                         this.mNewItemStatuses[n3] = n2 - 1 << 5 | n4;
                         return true;
                     }
                 }
                 n3 = snake.x;
-                n6 = snake.y;
+                n7 = snake.y;
                 --n4;
             }
             return false;

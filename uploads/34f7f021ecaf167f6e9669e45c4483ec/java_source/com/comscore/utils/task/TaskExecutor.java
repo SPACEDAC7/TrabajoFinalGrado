@@ -116,20 +116,20 @@ public class TaskExecutor {
      * Lifted jumps to return sites
      */
     public void waitForLastNonDelayedTaskToFinish() {
-        var3_1 = null;
-        var4_2 = new a[this.d.size()];
-        this.d.toArray(var4_2);
-        var1_3 = var4_2.length - 1;
+        var2_1 = null;
+        var3_2 = new a[this.d.size()];
+        this.d.toArray(var3_2);
+        var4_3 = var3_2.length - 1;
         do {
-            var2_4 = var3_1;
-            if (var1_3 < 0) ** GOTO lbl10
-            if (var4_2[var1_3] != null && !var4_2[var1_3].d()) {
-                var2_4 = var4_2[var1_3];
+            var1_4 = var2_1;
+            if (var4_3 < 0) ** GOTO lbl10
+            if (var3_2[var4_3] != null && !var3_2[var4_3].d()) {
+                var1_4 = var3_2[var4_3];
 lbl10: // 2 sources:
-                this.waitForTaskToFinish(var2_4, 0);
+                this.waitForTaskToFinish(var1_4, 0);
                 return;
             }
-            --var1_3;
+            --var4_3;
         } while (true);
     }
 

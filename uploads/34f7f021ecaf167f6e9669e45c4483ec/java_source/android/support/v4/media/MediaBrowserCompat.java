@@ -586,22 +586,22 @@ public final class MediaBrowserCompat {
          */
         @Override
         public void unsubscribe(@NonNull String var1_1, SubscriptionCallback var2_2) {
-            var4_3 = this.mSubscriptions.get(var1_1);
-            if (var4_3 == null) {
+            var3_3 = this.mSubscriptions.get(var1_1);
+            if (var3_3 == null) {
                 return;
             }
             if (this.mServiceBinderWrapper != null) ** GOTO lbl18
             if (var2_2 == null) {
                 MediaBrowserCompatApi21.unsubscribe(this.mBrowserObj, var1_1);
             } else {
-                var5_4 = var4_3.getCallbacks();
-                var6_7 = var4_3.getOptionsList();
-                for (var3_9 = var5_4.size() - 1; var3_9 >= 0; --var3_9) {
-                    if (var5_4.get(var3_9) != var2_2) continue;
-                    var5_4.remove(var3_9);
-                    var6_7.remove(var3_9);
+                var4_4 = var3_3.getCallbacks();
+                var5_7 = var3_3.getOptionsList();
+                for (var6_9 = var4_4.size() - 1; var6_9 >= 0; --var6_9) {
+                    if (var4_4.get(var6_9) != var2_2) continue;
+                    var4_4.remove(var6_9);
+                    var5_7.remove(var6_9);
                 }
-                if (var5_4.size() == 0) {
+                if (var4_4.size() == 0) {
                     MediaBrowserCompatApi21.unsubscribe(this.mBrowserObj, var1_1);
                 }
             }
@@ -611,20 +611,20 @@ lbl18: // 1 sources:
             try {
                 this.mServiceBinderWrapper.removeSubscription(var1_1, null, this.mCallbacksMessenger);
 lbl22: // 1 sources:
-                var5_6 = var4_3.getCallbacks();
-                var6_8 = var4_3.getOptionsList();
-                for (var3_10 = var5_6.size() - 1; var3_10 >= 0; --var3_10) {
-                    if (var5_6.get(var3_10) != var2_2) continue;
+                var4_6 = var3_3.getCallbacks();
+                var5_8 = var3_3.getOptionsList();
+                for (var6_10 = var4_6.size() - 1; var6_10 >= 0; --var6_10) {
+                    if (var4_6.get(var6_10) != var2_2) continue;
                     this.mServiceBinderWrapper.removeSubscription(var1_1, SubscriptionCallback.access$000(var2_2), this.mCallbacksMessenger);
-                    var5_6.remove(var3_10);
-                    var6_8.remove(var3_10);
+                    var4_6.remove(var6_10);
+                    var5_8.remove(var6_10);
                 }
             }
-            catch (RemoteException var5_5) {
+            catch (RemoteException var4_5) {
                 Log.d((String)"MediaBrowserCompat", (String)("removeSubscription failed with RemoteException parentId=" + var1_1));
             }
 lbl33: // 5 sources:
-            if (!var4_3.isEmpty()) {
+            if (!var3_3.isEmpty()) {
                 if (var2_2 != null) return;
             }
             this.mSubscriptions.remove(var1_1);
@@ -775,7 +775,7 @@ lbl33: // 5 sources:
                 boolean bl2;
                 bl = bl2 = this.mContext.bindService(intent, (ServiceConnection)this.mServiceConnection, 1);
             }
-            catch (Exception var4_2) {
+            catch (Exception var2_2) {
                 Log.e((String)"MediaBrowserCompat", (String)("Failed binding to service " + (Object)this.mServiceComponent));
             }
             if (!bl) {
@@ -1042,8 +1042,8 @@ lbl33: // 5 sources:
         @Override
         public void unsubscribe(@NonNull String var1_1, SubscriptionCallback var2_2) {
             block8 : {
-                var4_3 = this.mSubscriptions.get(var1_1);
-                if (var4_3 == null) {
+                var3_3 = this.mSubscriptions.get(var1_1);
+                if (var3_3 == null) {
                     return;
                 }
                 if (var2_2 != null) ** GOTO lbl9
@@ -1053,22 +1053,22 @@ lbl33: // 5 sources:
                     }
                     break block8;
 lbl9: // 1 sources:
-                    var5_4 = var4_3.getCallbacks();
-                    var6_6 = var4_3.getOptionsList();
-                    for (var3_7 = var5_4.size() - 1; var3_7 >= 0; --var3_7) {
-                        if (var5_4.get(var3_7) != var2_2) continue;
+                    var4_4 = var3_3.getCallbacks();
+                    var5_6 = var3_3.getOptionsList();
+                    for (var6_7 = var4_4.size() - 1; var6_7 >= 0; --var6_7) {
+                        if (var4_4.get(var6_7) != var2_2) continue;
                         if (this.mState == 2) {
                             this.mServiceBinderWrapper.removeSubscription(var1_1, SubscriptionCallback.access$000(var2_2), this.mCallbacksMessenger);
                         }
-                        var5_4.remove(var3_7);
-                        var6_6.remove(var3_7);
+                        var4_4.remove(var6_7);
+                        var5_6.remove(var6_7);
                     }
                 }
-                catch (RemoteException var5_5) {
+                catch (RemoteException var4_5) {
                     Log.d((String)"MediaBrowserCompat", (String)("removeSubscription failed with RemoteException parentId=" + var1_1));
                 }
             }
-            if (!var4_3.isEmpty()) {
+            if (!var3_3.isEmpty()) {
                 if (var2_2 != null) return;
             }
             this.mSubscriptions.remove(var1_1);

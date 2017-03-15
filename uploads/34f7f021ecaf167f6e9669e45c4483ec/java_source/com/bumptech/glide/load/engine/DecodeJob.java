@@ -209,9 +209,9 @@ class DecodeJob<A, T, Z> {
      */
     public Resource<Z> decodeResultFromCache() throws Exception {
         Resource<Z> resource;
-        void var3_2;
+        void var1_2;
         if (!this.diskCacheStrategy.cacheResult()) {
-            return var3_2;
+            return var1_2;
         }
         long l2 = LogTime.getLogTime();
         Resource<T> resource2 = this.loadFromCache(this.resultKey);
@@ -221,7 +221,7 @@ class DecodeJob<A, T, Z> {
         l2 = LogTime.getLogTime();
         Resource<Z> resource3 = resource = this.transcode(resource2);
         if (!Log.isLoggable((String)"DecodeJob", (int)2)) {
-            return var3_2;
+            return var1_2;
         }
         this.logWithTimeAndKey("Transcoded transformed from cache", l2);
         return resource;
@@ -304,7 +304,7 @@ class DecodeJob<A, T, Z> {
                     try {
                         object2.close();
                     }
-                    catch (IOException var4_9) {
+                    catch (IOException var2_9) {
                         throw throwable;
                     }
                     do {

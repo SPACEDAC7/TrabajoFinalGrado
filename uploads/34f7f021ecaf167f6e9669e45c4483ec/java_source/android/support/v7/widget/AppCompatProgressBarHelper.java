@@ -61,10 +61,10 @@ class AppCompatProgressBarHelper {
      * Lifted jumps to return sites
      */
     private Drawable tileify(Drawable layerDrawable, boolean bl) {
-        LayerDrawable layerDrawable2;
-        LayerDrawable layerDrawable3;
         int n2;
+        LayerDrawable layerDrawable2;
         int n3;
+        LayerDrawable layerDrawable3;
         if (layerDrawable instanceof DrawableWrapper) {
             Drawable drawable2 = ((DrawableWrapper)layerDrawable).getWrappedDrawable();
             if (drawable2 == null) return layerDrawable;
@@ -73,8 +73,8 @@ class AppCompatProgressBarHelper {
             return layerDrawable;
         }
         if (layerDrawable instanceof LayerDrawable) {
-            layerDrawable3 = layerDrawable;
-            n2 = layerDrawable3.getNumberOfLayers();
+            layerDrawable2 = layerDrawable;
+            n2 = layerDrawable2.getNumberOfLayers();
             layerDrawable = new Drawable[n2];
         } else {
             if (!(layerDrawable instanceof BitmapDrawable)) return layerDrawable;
@@ -92,17 +92,17 @@ class AppCompatProgressBarHelper {
             return new ClipDrawable((Drawable)shapeDrawable, 3, 1);
         }
         for (n3 = 0; n3 < n2; ++n3) {
-            int n4 = layerDrawable3.getId(n3);
-            layerDrawable2 = layerDrawable3.getDrawable(n3);
+            int n4 = layerDrawable2.getId(n3);
+            layerDrawable3 = layerDrawable2.getDrawable(n3);
             bl = n4 == 16908301 || n4 == 16908303;
-            layerDrawable[n3] = this.tileify((Drawable)layerDrawable2, bl);
+            layerDrawable[n3] = this.tileify((Drawable)layerDrawable3, bl);
         }
-        layerDrawable2 = new LayerDrawable((Drawable[])layerDrawable);
+        layerDrawable3 = new LayerDrawable((Drawable[])layerDrawable);
         n3 = 0;
         do {
-            layerDrawable = layerDrawable2;
+            layerDrawable = layerDrawable3;
             if (n3 >= n2) return layerDrawable;
-            layerDrawable2.setId(n3, layerDrawable3.getId(n3));
+            layerDrawable3.setId(n3, layerDrawable2.getId(n3));
             ++n3;
         } while (true);
     }

@@ -7,6 +7,8 @@
  *  android.graphics.Bitmap$CompressFormat
  *  android.net.Uri
  *  android.util.Log
+ *  com.facebook.internal.NativeAppCallAttachmentStore$1
+ *  com.facebook.internal.NativeAppCallAttachmentStore$Attachment
  */
 package com.facebook.internal;
 
@@ -14,9 +16,9 @@ import android.content.ContentResolver;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.util.Log;
-import com.facebook.FacebookContentProvider;
 import com.facebook.FacebookException;
 import com.facebook.FacebookSdk;
+import com.facebook.internal.NativeAppCallAttachmentStore;
 import com.facebook.internal.Utility;
 import com.facebook.internal.Validate;
 import java.io.Closeable;
@@ -34,10 +36,16 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.UUID;
 
+/*
+ * Exception performing whole class analysis ignored.
+ */
 public final class NativeAppCallAttachmentStore {
     static final String ATTACHMENTS_DIR_NAME = "com.facebook.NativeAppCallAttachmentStore.files";
     private static final String TAG = NativeAppCallAttachmentStore.class.getName();
     private static File attachmentsDirectory;
+
+    static {
+    }
 
     private NativeAppCallAttachmentStore() {
     }
@@ -59,15 +67,15 @@ public final class NativeAppCallAttachmentStore {
             object = object.iterator();
             while (object.hasNext()) {
                 object2 = (Attachment)object.next();
-                if (!((Attachment)object2).isBinaryData) continue;
-                File file = NativeAppCallAttachmentStore.getAttachmentFile(((Attachment)object2).callId, ((Attachment)object2).attachmentName, true);
+                if (!Attachment.access$100((Attachment)object2)) continue;
+                File file = NativeAppCallAttachmentStore.getAttachmentFile(Attachment.access$200((Attachment)object2), Attachment.access$300((Attachment)object2), true);
                 object3.add(file);
-                if (((Attachment)object2).bitmap != null) {
-                    NativeAppCallAttachmentStore.processAttachmentBitmap(((Attachment)object2).bitmap, file);
+                if (Attachment.access$400((Attachment)object2) != null) {
+                    NativeAppCallAttachmentStore.processAttachmentBitmap(Attachment.access$400((Attachment)object2), file);
                     continue;
                 }
-                if (((Attachment)object2).imageUri == null) continue;
-                NativeAppCallAttachmentStore.processAttachmentFile(((Attachment)object2).imageUri, ((Attachment)object2).isContentUri, file);
+                if (Attachment.access$500((Attachment)object2) == null) continue;
+                NativeAppCallAttachmentStore.processAttachmentFile(Attachment.access$500((Attachment)object2), Attachment.access$600((Attachment)object2), file);
             }
             return;
         }
@@ -98,13 +106,13 @@ public final class NativeAppCallAttachmentStore {
     public static Attachment createAttachment(UUID uUID, Bitmap bitmap) {
         Validate.notNull(uUID, "callId");
         Validate.notNull((Object)bitmap, "attachmentBitmap");
-        return new Attachment(uUID, bitmap, null);
+        return new Attachment(uUID, bitmap, null, null);
     }
 
     public static Attachment createAttachment(UUID uUID, Uri uri) {
         Validate.notNull(uUID, "callId");
         Validate.notNull((Object)uri, "attachmentUri");
-        return new Attachment(uUID, null, uri);
+        return new Attachment(uUID, null, uri, null);
     }
 
     static File ensureAttachmentsDirectoryExists() {
@@ -202,49 +210,5 @@ lbl7: // 2 sources:
             Utility.closeQuietly((Closeable)var2_3);
         }
     }
-
-    public static final class Attachment {
-        private final String attachmentName;
-        private final String attachmentUrl;
-        private Bitmap bitmap;
-        private final UUID callId;
-        private Uri imageUri;
-        private boolean isBinaryData;
-        private boolean isContentUri;
-
-        /*
-         * Enabled aggressive block sorting
-         */
-        private Attachment(UUID object, Bitmap object2, Uri uri) {
-            this.callId = object;
-            this.bitmap = object2;
-            this.imageUri = uri;
-            if (uri != null) {
-                object2 = uri.getScheme();
-                if ("content".equalsIgnoreCase((String)object2)) {
-                    this.isContentUri = true;
-                    this.isBinaryData = true;
-                } else if ("file".equalsIgnoreCase(uri.getScheme())) {
-                    this.isBinaryData = true;
-                } else if (!Utility.isWebUri(uri)) {
-                    throw new FacebookException("Unsupported scheme for image Uri : " + (String)object2);
-                }
-            } else {
-                if (object2 == null) {
-                    throw new FacebookException("Cannot share a photo without a bitmap or Uri set");
-                }
-                this.isBinaryData = true;
-            }
-            object2 = !this.isBinaryData ? null : UUID.randomUUID().toString();
-            this.attachmentName = object2;
-            object = !this.isBinaryData ? this.imageUri.toString() : FacebookContentProvider.getAttachmentUrl(FacebookSdk.getApplicationId(), (UUID)object, this.attachmentName);
-            this.attachmentUrl = object;
-        }
-
-        public String getAttachmentUrl() {
-            return this.attachmentUrl;
-        }
-    }
-
 }
 

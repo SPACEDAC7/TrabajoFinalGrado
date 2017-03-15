@@ -90,7 +90,7 @@ class NeuQuant {
                     object[2] = object[2] - (object[2] - n6) * n11 / 262144;
                     n2 = n3;
                 }
-                catch (Exception var11_13) {
+                catch (Exception var6_12) {
                     n2 = n3;
                 }
             }
@@ -105,7 +105,7 @@ class NeuQuant {
                     n7 = n3;
                     n3 = n10;
                 }
-                catch (Exception var11_12) {
+                catch (Exception var6_11) {
                     n7 = n3;
                     n3 = n10;
                 }
@@ -199,9 +199,9 @@ class NeuQuant {
         int n3 = 0;
         int n4 = 0;
         for (n2 = 0; n2 < 256; ++n2) {
+            int[] arrn;
             int n5;
             int n6;
-            int[] arrn;
             int[] arrn2 = this.network[n2];
             int n7 = n2;
             int n8 = arrn2[1];
@@ -258,64 +258,64 @@ class NeuQuant {
             this.samplefac = 1;
         }
         this.alphadec = (this.samplefac - 1) / 3 + 30;
-        var17_1 = this.thepicture;
-        var8_2 = 0;
-        var15_3 = this.lengthcount;
-        var16_4 = this.lengthcount / (this.samplefac * 3);
-        var7_5 = var16_4 / 100;
-        var9_6 = 1024;
-        var4_7 = 2048;
-        var2_9 = var1_8 = 2048 >> 6;
-        if (var1_8 <= 1) {
-            var2_9 = 0;
+        var1_1 = this.thepicture;
+        var9_2 = 0;
+        var16_3 = this.lengthcount;
+        var17_4 = this.lengthcount / (this.samplefac * 3);
+        var8_5 = var17_4 / 100;
+        var10_6 = 1024;
+        var5_7 = 2048;
+        var3_9 = var2_8 = 2048 >> 6;
+        if (var2_8 <= 1) {
+            var3_9 = 0;
         }
-        for (var1_8 = 0; var1_8 < var2_9; ++var1_8) {
-            this.radpower[var1_8] = (var2_9 * var2_9 - var1_8 * var1_8) * 256 / (var2_9 * var2_9) * 1024;
+        for (var2_8 = 0; var2_8 < var3_9; ++var2_8) {
+            this.radpower[var2_8] = (var3_9 * var3_9 - var2_8 * var2_8) * 256 / (var3_9 * var3_9) * 1024;
         }
-        var1_8 = this.lengthcount < 1509 ? 3 : (this.lengthcount % 499 != 0 ? 1497 : (this.lengthcount % 491 != 0 ? 1473 : (this.lengthcount % 487 != 0 ? 1461 : 1509)));
-        var5_10 = 0;
-        var6_11 = var2_9;
+        var2_8 = this.lengthcount < 1509 ? 3 : (this.lengthcount % 499 != 0 ? 1497 : (this.lengthcount % 491 != 0 ? 1473 : (this.lengthcount % 487 != 0 ? 1461 : 1509)));
+        var6_10 = 0;
+        var7_11 = var3_9;
         block1 : do lbl-1000: // 3 sources:
         {
-            if (var5_10 >= var16_4) return;
-            var2_9 = (var17_1[var8_2 + 0] & 255) << 4;
-            var3_12 = (var17_1[var8_2 + 1] & 255) << 4;
-            var10_13 = (var17_1[var8_2 + 2] & 255) << 4;
-            var11_14 = this.contest(var2_9, var3_12, var10_13);
-            this.altersingle(var9_6, var11_14, var2_9, var3_12, var10_13);
-            if (var6_11 != 0) {
-                this.alterneigh(var6_11, var11_14, var2_9, var3_12, var10_13);
+            if (var6_10 >= var17_4) return;
+            var3_9 = (var1_1[var9_2 + 0] & 255) << 4;
+            var4_12 = (var1_1[var9_2 + 1] & 255) << 4;
+            var11_13 = (var1_1[var9_2 + 2] & 255) << 4;
+            var12_14 = this.contest(var3_9, var4_12, var11_13);
+            this.altersingle(var10_6, var12_14, var3_9, var4_12, var11_13);
+            if (var7_11 != 0) {
+                this.alterneigh(var7_11, var12_14, var3_9, var4_12, var11_13);
             }
-            var2_9 = var3_12 = var8_2 + var1_8;
-            if (var3_12 >= var15_3) {
-                var2_9 = var3_12 - this.lengthcount;
+            var3_9 = var4_12 = var9_2 + var2_8;
+            if (var4_12 >= var16_3) {
+                var3_9 = var4_12 - this.lengthcount;
             }
-            var12_15 = var5_10 + 1;
-            var10_13 = var7_5;
-            if (var7_5 == 0) {
-                var10_13 = 1;
+            var13_15 = var6_10 + 1;
+            var11_13 = var8_5;
+            if (var8_5 == 0) {
+                var11_13 = 1;
             }
-            var7_5 = var10_13;
-            var5_10 = var12_15;
-            var8_2 = var2_9;
-            if (var12_15 % var10_13 != 0) ** GOTO lbl-1000
-            var13_16 = var9_6 - var9_6 / this.alphadec;
-            var14_17 = var4_7 - var4_7 / 30;
-            var3_12 = var4_7 = var14_17 >> 6;
-            if (var4_7 <= 1) {
-                var3_12 = 0;
+            var8_5 = var11_13;
+            var6_10 = var13_15;
+            var9_2 = var3_9;
+            if (var13_15 % var11_13 != 0) ** GOTO lbl-1000
+            var14_16 = var10_6 - var10_6 / this.alphadec;
+            var15_17 = var5_7 - var5_7 / 30;
+            var4_12 = var5_7 = var15_17 >> 6;
+            if (var5_7 <= 1) {
+                var4_12 = 0;
             }
-            var11_14 = 0;
+            var12_14 = 0;
             do {
-                var9_6 = var13_16;
-                var6_11 = var3_12;
-                var7_5 = var10_13;
-                var5_10 = var12_15;
-                var8_2 = var2_9;
-                var4_7 = var14_17;
-                if (var11_14 >= var3_12) continue block1;
-                this.radpower[var11_14] = (var3_12 * var3_12 - var11_14 * var11_14) * 256 / (var3_12 * var3_12) * var13_16;
-                ++var11_14;
+                var10_6 = var14_16;
+                var7_11 = var4_12;
+                var8_5 = var11_13;
+                var6_10 = var13_15;
+                var9_2 = var3_9;
+                var5_7 = var15_17;
+                if (var12_14 >= var4_12) continue block1;
+                this.radpower[var12_14] = (var4_12 * var4_12 - var12_14 * var12_14) * 256 / (var4_12 * var4_12) * var14_16;
+                ++var12_14;
             } while (true);
             break;
         } while (true);
@@ -330,8 +330,8 @@ class NeuQuant {
         int n7 = this.netindex[n3];
         int n8 = n7 - 1;
         while (n7 < 256 || n8 >= 0) {
-            int[] arrn;
             int n9;
+            int[] arrn;
             int n10 = n6;
             int n11 = n5;
             int n12 = n7;

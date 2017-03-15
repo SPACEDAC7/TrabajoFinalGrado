@@ -86,7 +86,7 @@ public final class AsyncLayoutInflater {
                     if (string3 == null) continue;
                     return string3;
                 }
-                catch (ClassNotFoundException var6_7) {
+                catch (ClassNotFoundException var4_7) {
                     // empty catch block
                 }
             }

@@ -59,10 +59,10 @@ extends FilterInputStream {
         try {
             return Integer.parseInt(string2);
         }
-        catch (NumberFormatException var3_3) {
+        catch (NumberFormatException var1_3) {
             n3 = n2;
             if (!Log.isLoggable((String)"ContentLengthStream", (int)3)) return n3;
-            Log.d((String)"ContentLengthStream", (String)("failed to parse content length header: " + string2), (Throwable)var3_3);
+            Log.d((String)"ContentLengthStream", (String)("failed to parse content length header: " + string2), (Throwable)var1_3);
             return -1;
         }
     }

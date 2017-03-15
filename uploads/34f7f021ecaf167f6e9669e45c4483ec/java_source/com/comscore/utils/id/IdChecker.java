@@ -80,34 +80,34 @@ public class IdChecker {
      * Lifted jumps to return sites
      */
     protected String a() {
-        var3_1 = false;
+        var5_1 = false;
         if (this.c) {
             return this.d;
         }
         this.c = true;
-        var5_2 = this.b();
-        if (var5_2 == null) ** GOTO lbl-1000
-        var4_3 = var5_2;
-        if (var5_2.length() == 0) lbl-1000: // 2 sources:
+        var2_2 = this.b();
+        if (var2_2 == null) ** GOTO lbl-1000
+        var1_3 = var2_2;
+        if (var2_2.length() == 0) lbl-1000: // 2 sources:
         {
-            if ((var5_2 = this.c()) == null) return null;
-            var4_3 = var5_2;
-            if (var5_2.length() == 0) {
+            if ((var2_2 = this.c()) == null) return null;
+            var1_3 = var2_2;
+            if (var2_2.length() == 0) {
                 return null;
             }
         }
-        var1_4 = 0;
+        var3_4 = 0;
         do {
-            var2_5 = var3_1;
-            if (var1_4 >= IdChecker.a.length) ** GOTO lbl19
-            if (IdChecker.a[var1_4].equals(var4_3)) {
-                var2_5 = true;
+            var4_5 = var5_1;
+            if (var3_4 >= IdChecker.a.length) ** GOTO lbl19
+            if (IdChecker.a[var3_4].equals(var1_3)) {
+                var4_5 = true;
 lbl19: // 2 sources:
-                if (var2_5 == false) return null;
-                this.d = var4_3;
-                return var4_3;
+                if (var4_5 == false) return null;
+                this.d = var1_3;
+                return var1_3;
             }
-            ++var1_4;
+            ++var3_4;
         } while (true);
     }
 

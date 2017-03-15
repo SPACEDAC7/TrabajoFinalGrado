@@ -343,25 +343,25 @@ implements View.OnClickListener {
      * Enabled aggressive exception aggregation
      */
     private boolean submitToServer(String var1_1, String var2_4) {
-        var6_6 = ReactionsView.TAG + ".submitToServer";
-        var4_7 = false;
+        var4_6 = ReactionsView.TAG + ".submitToServer";
+        var6_7 = false;
         if (this.singleUseCsrfToken == null) {
-            var5_8 = BuzzUtils.getCsrfToken(this.mBuzzUser);
+            var3_8 = BuzzUtils.getCsrfToken(this.mBuzzUser);
 lbl5: // 2 sources:
             do {
-                if (var5_8 != null) {
+                if (var3_8 != null) {
                     if (var1_1 != null) {
-                        var1_1 = new ReactionsServiceHelper.ReactionRequestParamBuilder().sessionKey(this.mBuzzUser.getSessionKey()).userToken(var5_8).category("love_or_hate").uri(this.mContent.getUri()).buzzId(this.mContent.getId()).value((String)var1_1).build();
-                        var4_7 = new JSONObject(((ResponseBody)NetworkService.getReactionsService().postReactionToServer((Map<String, String>)var1_1).execute().body()).string()).getBoolean("success");
+                        var1_1 = new ReactionsServiceHelper.ReactionRequestParamBuilder().sessionKey(this.mBuzzUser.getSessionKey()).userToken(var3_8).category("love_or_hate").uri(this.mContent.getUri()).buzzId(this.mContent.getId()).value((String)var1_1).build();
+                        var6_7 = new JSONObject(((ResponseBody)NetworkService.getReactionsService().postReactionToServer((Map<String, String>)var1_1).execute().body()).string()).getBoolean("success");
                     }
 lbl11: // 4 sources:
                     do {
                         if (var2_4 != null) {
-                            var1_1 = new ReactionsServiceHelper.ReactionRequestParamBuilder().sessionKey(this.mBuzzUser.getSessionKey()).userToken(var5_8).category("badge").uri(this.mContent.getUri()).buzzId(this.mContent.getId()).badgeId(var2_4).build();
+                            var1_1 = new ReactionsServiceHelper.ReactionRequestParamBuilder().sessionKey(this.mBuzzUser.getSessionKey()).userToken(var3_8).category("badge").uri(this.mContent.getUri()).buzzId(this.mContent.getId()).badgeId(var2_4).build();
                             var1_1 = new JSONObject(((ResponseBody)NetworkService.getReactionsService().postReactionToServer((Map<String, String>)var1_1).execute().body()).string()).getJSONObject("badge_results").getJSONObject(var2_4);
-                            var4_7 = var1_1.getBoolean("success");
+                            var6_7 = var1_1.getBoolean("success");
                         }
-                        return var4_7;
+                        return var6_7;
                         break;
                     } while (true);
                 }
@@ -369,31 +369,31 @@ lbl11: // 4 sources:
                 break;
             } while (true);
         } else {
-            var5_8 = new String(this.singleUseCsrfToken);
+            var3_8 = new String(this.singleUseCsrfToken);
             this.singleUseCsrfToken = null;
             ** continue;
             catch (Exception var1_2) {
-                LogUtil.e(var6_6, "Error: " + var1_2.getMessage());
-                var4_7 = false;
+                LogUtil.e(var4_6, "Error: " + var1_2.getMessage());
+                var6_7 = false;
                 ** continue;
             }
             {
                 catch (JSONException var2_5) {
                     try {
-                        var3_9 = var1_1.getInt("success");
-                        if (var3_9 == 1) {
+                        var5_9 = var1_1.getInt("success");
+                        if (var5_9 == 1) {
                             return true;
                         }
                         return false;
                     }
                     catch (Exception var1_3) {
-                        LogUtil.e(var6_6, "Error: " + var1_3.getMessage());
+                        LogUtil.e(var4_6, "Error: " + var1_3.getMessage());
                         return false;
                     }
                 }
             }
         }
-        LogUtil.e(var6_6, "Error: No CSRF Token was returned");
+        LogUtil.e(var4_6, "Error: No CSRF Token was returned");
         return false;
     }
 
@@ -592,19 +592,19 @@ lbl11: // 4 sources:
                     int n5;
                     int n6;
                     block9 : {
-                        n6 = n4 = ((GridView)viewGroup).getColumnWidth();
-                        n5 = ((WindowManager)this.getContext().getSystemService("window")).getDefaultDisplay().getHeight() - UIUtil.getActionBarHeight(this.getContext());
+                        n4 = n5 = ((GridView)viewGroup).getColumnWidth();
+                        n6 = ((WindowManager)this.getContext().getSystemService("window")).getDefaultDisplay().getHeight() - UIUtil.getActionBarHeight(this.getContext());
                         if (!DeviceUtil.isTablet(this.getContext())) {
-                            n3 = n5;
+                            n3 = n6;
                             if (!UIUtil.isPortrait(this.getContext())) break block9;
                         }
-                        n3 = n5 - UIUtil.getNavBarHeight(this.getContext());
+                        n3 = n6 - UIUtil.getNavBarHeight(this.getContext());
                     }
-                    n5 = n6;
-                    if (n6 * 3 > n3) {
-                        n5 = n3 / 3;
+                    n6 = n4;
+                    if (n4 * 3 > n3) {
+                        n6 = n3 / 3;
                     }
-                    object.setLayoutParams((ViewGroup.LayoutParams)new AbsListView.LayoutParams(n4, n5));
+                    object.setLayoutParams((ViewGroup.LayoutParams)new AbsListView.LayoutParams(n5, n6));
                     object2 = object;
                 }
             } else {

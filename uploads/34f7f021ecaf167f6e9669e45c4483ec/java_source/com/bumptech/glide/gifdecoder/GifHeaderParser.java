@@ -38,7 +38,7 @@ public class GifHeaderParser {
         try {
             by = this.rawData.get();
         }
-        catch (Exception var2_2) {
+        catch (Exception var1_2) {
             this.header.status = 1;
             return 0;
         }
@@ -80,29 +80,29 @@ public class GifHeaderParser {
      */
     private int readBlock() {
         this.blockSize = this.read();
-        var4_1 = 0;
-        var1_2 = 0;
-        if (this.blockSize <= 0) return var4_1;
-        var2_3 = 0;
+        var5_1 = 0;
+        var2_2 = 0;
+        if (this.blockSize <= 0) return var5_1;
+        var3_3 = 0;
         do lbl-1000: // 2 sources:
         {
-            var3_4 = var2_3;
-            var4_1 = var1_2;
-            if (var1_2 >= this.blockSize) return var4_1;
-            var3_4 = var2_3;
+            var4_4 = var3_3;
+            var5_1 = var2_2;
+            if (var2_2 >= this.blockSize) return var5_1;
+            var4_4 = var3_3;
             break;
         } while (true);
-        catch (Exception var5_5) {
+        catch (Exception var1_5) {
             if (Log.isLoggable((String)"GifHeaderParser", (int)3)) {
-                Log.d((String)"GifHeaderParser", (String)("Error Reading Block n: " + var1_2 + " count: " + var3_4 + " blockSize: " + this.blockSize), (Throwable)var5_5);
+                Log.d((String)"GifHeaderParser", (String)("Error Reading Block n: " + var2_2 + " count: " + var4_4 + " blockSize: " + this.blockSize), (Throwable)var1_5);
             }
             this.header.status = 1;
-            return var1_2;
+            return var2_2;
         }
         {
-            var3_4 = var2_3 = this.blockSize - var1_2;
-            this.rawData.get(this.block, var1_2, var2_3);
-            var1_2 += var2_3;
+            var4_4 = var3_3 = this.blockSize - var2_2;
+            this.rawData.get(this.block, var2_2, var3_3);
+            var2_2 += var3_3;
             ** while (true)
         }
     }
@@ -117,24 +117,24 @@ public class GifHeaderParser {
         try {
             this.rawData.get(arrby);
             arrn2 = new int[256];
-            n4 = 0;
             n3 = 0;
+            n4 = 0;
         }
-        catch (BufferUnderflowException var7_5) {
+        catch (BufferUnderflowException var3_5) {
             if (Log.isLoggable((String)"GifHeaderParser", (int)3)) {
-                Log.d((String)"GifHeaderParser", (String)"Format Error Reading Color Table", (Throwable)var7_5);
+                Log.d((String)"GifHeaderParser", (String)"Format Error Reading Color Table", (Throwable)var3_5);
             }
             this.header.status = 1;
         }
         do {
             arrn = arrn2;
-            if (n3 < n2) {
-                int n5 = n4 + 1;
-                n4 = arrby[n4];
+            if (n4 < n2) {
+                int n5 = n3 + 1;
+                n3 = arrby[n3];
                 int n6 = n5 + 1;
-                arrn2[n3] = -16777216 | (n4 & 255) << 16 | (arrby[n5] & 255) << 8 | arrby[n6] & 255;
-                n4 = n6 + 1;
-                ++n3;
+                arrn2[n4] = -16777216 | (n3 & 255) << 16 | (arrby[n5] & 255) << 8 | arrby[n6] & 255;
+                n3 = n6 + 1;
+                ++n4;
                 continue;
             }
             break;

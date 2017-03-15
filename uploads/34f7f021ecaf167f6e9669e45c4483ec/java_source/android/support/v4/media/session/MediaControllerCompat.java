@@ -664,8 +664,8 @@ public final class MediaControllerCompat {
                 long l2 = this.mBinder.getFlags();
                 return l2;
             }
-            catch (RemoteException var3_2) {
-                Log.e((String)"MediaControllerCompat", (String)("Dead object in getFlags. " + (Object)var3_2));
+            catch (RemoteException var1_2) {
+                Log.e((String)"MediaControllerCompat", (String)("Dead object in getFlags. " + (Object)var1_2));
                 return 0;
             }
         }
@@ -754,8 +754,8 @@ public final class MediaControllerCompat {
                 int n2 = this.mBinder.getRatingType();
                 return n2;
             }
-            catch (RemoteException var2_2) {
-                Log.e((String)"MediaControllerCompat", (String)("Dead object in getRatingType. " + (Object)var2_2));
+            catch (RemoteException var1_2) {
+                Log.e((String)"MediaControllerCompat", (String)("Dead object in getRatingType. " + (Object)var1_2));
                 return 0;
             }
         }

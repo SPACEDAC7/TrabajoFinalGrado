@@ -3,12 +3,15 @@
  * 
  * Could not load the following classes:
  *  android.os.Bundle
+ *  com.facebook.appevents.FacebookTimeSpentData$1
+ *  com.facebook.appevents.FacebookTimeSpentData$SerializationProxyV2
  */
 package com.facebook.appevents;
 
 import android.os.Bundle;
 import com.facebook.LoggingBehavior;
 import com.facebook.appevents.AppEventsLogger;
+import com.facebook.appevents.FacebookTimeSpentData;
 import com.facebook.internal.Logger;
 import java.io.Serializable;
 import java.util.Locale;
@@ -148,48 +151,5 @@ implements Serializable {
         this.lastSuspendTime = l2;
         this.isAppActive = false;
     }
-
-    private static class SerializationProxyV1
-    implements Serializable {
-        private static final long serialVersionUID = 6;
-        private final int interruptionCount;
-        private final long lastResumeTime;
-        private final long lastSuspendTime;
-        private final long millisecondsSpentInSession;
-
-        SerializationProxyV1(long l2, long l3, long l4, int n2) {
-            this.lastResumeTime = l2;
-            this.lastSuspendTime = l3;
-            this.millisecondsSpentInSession = l4;
-            this.interruptionCount = n2;
-        }
-
-        private Object readResolve() {
-            return new FacebookTimeSpentData(this.lastResumeTime, this.lastSuspendTime, this.millisecondsSpentInSession, this.interruptionCount);
-        }
-    }
-
-    private static class SerializationProxyV2
-    implements Serializable {
-        private static final long serialVersionUID = 6;
-        private final String firstOpenSourceApplication;
-        private final int interruptionCount;
-        private final long lastResumeTime;
-        private final long lastSuspendTime;
-        private final long millisecondsSpentInSession;
-
-        SerializationProxyV2(long l2, long l3, long l4, int n2, String string2) {
-            this.lastResumeTime = l2;
-            this.lastSuspendTime = l3;
-            this.millisecondsSpentInSession = l4;
-            this.interruptionCount = n2;
-            this.firstOpenSourceApplication = string2;
-        }
-
-        private Object readResolve() {
-            return new FacebookTimeSpentData(this.lastResumeTime, this.lastSuspendTime, this.millisecondsSpentInSession, this.interruptionCount, this.firstOpenSourceApplication);
-        }
-    }
-
 }
 

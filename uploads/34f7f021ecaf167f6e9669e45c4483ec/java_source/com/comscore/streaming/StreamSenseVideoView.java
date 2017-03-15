@@ -121,7 +121,7 @@ extends VideoView {
             boolean bl = this.isPlaying();
             return bl;
         }
-        catch (IllegalStateException var2_2) {
+        catch (IllegalStateException var1_2) {
             return false;
         }
     }
@@ -227,7 +227,7 @@ extends VideoView {
         try {
             n2 = this.getCurrentPosition();
         }
-        catch (IllegalStateException var2_2) {
+        catch (IllegalStateException var1_2) {
             CSLog.e("StreamSenseVideoView", "getCurrentSafePlayerPosition");
             return 0;
         }

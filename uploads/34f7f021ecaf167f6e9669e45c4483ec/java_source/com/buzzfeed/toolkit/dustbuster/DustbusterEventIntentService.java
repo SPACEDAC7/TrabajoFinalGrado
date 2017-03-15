@@ -86,26 +86,26 @@ extends IntentService {
         if (var1_1.getAction() == null) {
             return;
         }
-        var3_2 = var1_1.getAction();
-        var2_3 = -1;
-        switch (var3_2.hashCode()) {
+        var2_2 = var1_1.getAction();
+        var3_3 = -1;
+        switch (var2_2.hashCode()) {
             case -1435645876: {
-                if (var3_2.equals("refresh_prefs")) {
-                    var2_3 = 0;
+                if (var2_2.equals("refresh_prefs")) {
+                    var3_3 = 0;
                     ** break;
                 }
                 ** GOTO lbl20
             }
             case 330666364: {
-                if (var3_2.equals("add_event")) {
-                    var2_3 = 1;
+                if (var2_2.equals("add_event")) {
+                    var3_3 = 1;
                     ** break;
                 }
                 ** GOTO lbl20
             }
             case 720760129: {
-                if (var3_2.equals("add_event_collection")) {
-                    var2_3 = 2;
+                if (var2_2.equals("add_event_collection")) {
+                    var3_3 = 2;
                 }
             }
 lbl20: // 8 sources:
@@ -114,11 +114,11 @@ lbl20: // 8 sources:
             }
             case -670768232: 
         }
-        if (var3_2.equals("process_batches")) {
-            var2_3 = 3;
+        if (var2_2.equals("process_batches")) {
+            var3_3 = 3;
         }
 lbl25: // 4 sources:
-        switch (var2_3) {
+        switch (var3_3) {
             default: {
                 return;
             }

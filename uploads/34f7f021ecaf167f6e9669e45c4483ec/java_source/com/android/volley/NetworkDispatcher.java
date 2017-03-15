@@ -68,14 +68,14 @@ extends Thread {
         Process.setThreadPriority((int)10);
         do {
             Response response;
-            long l2;
             Request request;
+            long l2;
             block11 : {
                 l2 = SystemClock.elapsedRealtime();
                 try {
                     request = this.mQueue.take();
                 }
-                catch (InterruptedException var3_3) {
+                catch (InterruptedException var1_2) {
                     if (!this.mQuit) continue;
                     return;
                 }
@@ -101,13 +101,13 @@ extends Thread {
                 this.mDelivery.postResponse(request, response);
                 continue;
             }
-            catch (VolleyError var4_5) {
-                var4_5.setNetworkTimeMs(SystemClock.elapsedRealtime() - l2);
-                this.parseAndDeliverNetworkError(request, var4_5);
+            catch (VolleyError var2_4) {
+                var2_4.setNetworkTimeMs(SystemClock.elapsedRealtime() - l2);
+                this.parseAndDeliverNetworkError(request, var2_4);
             }
-            catch (Exception var4_6) {
-                VolleyLog.e(var4_6, "Unhandled exception %s", var4_6.toString());
-                response = new VolleyError(var4_6);
+            catch (Exception var2_5) {
+                VolleyLog.e(var2_5, "Unhandled exception %s", var2_5.toString());
+                response = new VolleyError(var2_5);
                 response.setNetworkTimeMs(SystemClock.elapsedRealtime() - l2);
                 this.mDelivery.postError(request, (VolleyError)((Object)response));
                 continue;

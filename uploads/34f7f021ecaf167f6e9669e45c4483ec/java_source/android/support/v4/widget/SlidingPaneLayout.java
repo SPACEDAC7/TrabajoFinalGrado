@@ -177,34 +177,34 @@ extends ViewGroup {
      * Lifted jumps to return sites
      */
     private void parallaxOtherViews(float var1_1) {
-        var8_2 = this.isLayoutRtlSupport();
-        var9_3 = (LayoutParams)this.mSlideableView.getLayoutParams();
-        if (!var9_3.dimWhenOffset) ** GOTO lbl-1000
-        var3_4 = var8_2 != false ? var9_3.rightMargin : var9_3.leftMargin;
-        if (var3_4 <= 0) {
-            var3_4 = 1;
+        var9_2 = this.isLayoutRtlSupport();
+        var3_3 = (LayoutParams)this.mSlideableView.getLayoutParams();
+        if (!var3_3.dimWhenOffset) ** GOTO lbl-1000
+        var4_4 = var9_2 != false ? var3_3.rightMargin : var3_3.leftMargin;
+        if (var4_4 <= 0) {
+            var4_4 = 1;
         } else lbl-1000: // 2 sources:
         {
-            var3_4 = 0;
+            var4_4 = 0;
         }
-        var7_5 = this.getChildCount();
-        var4_6 = 0;
-        while (var4_6 < var7_5) {
-            var9_3 = this.getChildAt(var4_6);
-            if (var9_3 != this.mSlideableView) {
-                var5_8 = (int)((1.0f - this.mParallaxOffset) * (float)this.mParallaxBy);
+        var8_5 = this.getChildCount();
+        var5_6 = 0;
+        while (var5_6 < var8_5) {
+            var3_3 = this.getChildAt(var5_6);
+            if (var3_3 != this.mSlideableView) {
+                var6_8 = (int)((1.0f - this.mParallaxOffset) * (float)this.mParallaxBy);
                 this.mParallaxOffset = var1_1;
-                var5_8 = var6_9 = var5_8 - (int)((1.0f - var1_1) * (float)this.mParallaxBy);
-                if (var8_2) {
-                    var5_8 = - var6_9;
+                var6_8 = var7_9 = var6_8 - (int)((1.0f - var1_1) * (float)this.mParallaxBy);
+                if (var9_2) {
+                    var6_8 = - var7_9;
                 }
-                var9_3.offsetLeftAndRight(var5_8);
-                if (var3_4 != 0) {
-                    var2_7 = var8_2 != false ? this.mParallaxOffset - 1.0f : 1.0f - this.mParallaxOffset;
-                    this.dimChildView((View)var9_3, var2_7, this.mCoveredFadeColor);
+                var3_3.offsetLeftAndRight(var6_8);
+                if (var4_4 != 0) {
+                    var2_7 = var9_2 != false ? this.mParallaxOffset - 1.0f : 1.0f - this.mParallaxOffset;
+                    this.dimChildView((View)var3_3, var2_7, this.mCoveredFadeColor);
                 }
             }
-            ++var4_6;
+            ++var5_6;
         }
     }
 
@@ -454,23 +454,23 @@ extends ViewGroup {
      * Lifted jumps to return sites
      */
     public boolean onInterceptTouchEvent(MotionEvent var1_1) {
-        var6_2 = MotionEventCompat.getActionMasked(var1_1);
-        if (!this.mCanSlide && var6_2 == 0 && this.getChildCount() > 1 && (var8_3 = this.getChildAt(1)) != null) {
-            var7_4 = this.mDragHelper.isViewUnder(var8_3, (int)var1_1.getX(), (int)var1_1.getY()) == false;
-            this.mPreservedOpenState = var7_4;
+        var7_2 = MotionEventCompat.getActionMasked(var1_1);
+        if (!this.mCanSlide && var7_2 == 0 && this.getChildCount() > 1 && (var4_3 = this.getChildAt(1)) != null) {
+            var8_4 = this.mDragHelper.isViewUnder(var4_3, (int)var1_1.getX(), (int)var1_1.getY()) == false;
+            this.mPreservedOpenState = var8_4;
         }
-        if (!this.mCanSlide || this.mIsUnableToDrag && var6_2 != 0) {
+        if (!this.mCanSlide || this.mIsUnableToDrag && var7_2 != 0) {
             this.mDragHelper.cancel();
             return super.onInterceptTouchEvent(var1_1);
         }
-        if (var6_2 == 3 || var6_2 == 1) {
+        if (var7_2 == 3 || var7_2 == 1) {
             this.mDragHelper.cancel();
             return false;
         }
-        var4_6 = var5_5 = false;
-        switch (var6_2) {
+        var5_6 = var6_5 = false;
+        switch (var7_2) {
             default: {
-                var4_6 = var5_5;
+                var5_6 = var6_5;
                 break;
             }
             case 0: {
@@ -479,11 +479,11 @@ extends ViewGroup {
                 var3_9 = var1_1.getY();
                 this.mInitialMotionX = var2_7;
                 this.mInitialMotionY = var3_9;
-                var4_6 = var5_5;
+                var5_6 = var6_5;
                 if (this.mDragHelper.isViewUnder(this.mSlideableView, (int)var2_7, (int)var3_9)) {
-                    var4_6 = var5_5;
+                    var5_6 = var6_5;
                     if (this.isDimmed(this.mSlideableView)) {
-                        var4_6 = true;
+                        var5_6 = true;
                         break;
                     }
                 }
@@ -494,9 +494,9 @@ extends ViewGroup {
                 var2_8 = var1_1.getY();
                 var3_10 = Math.abs(var3_10 - this.mInitialMotionX);
                 var2_8 = Math.abs(var2_8 - this.mInitialMotionY);
-                var4_6 = var5_5;
+                var5_6 = var6_5;
                 if (var3_10 > (float)this.mDragHelper.getTouchSlop()) {
-                    var4_6 = var5_5;
+                    var5_6 = var6_5;
                     if (var2_8 > var3_10) {
                         this.mDragHelper.cancel();
                         this.mIsUnableToDrag = true;
@@ -508,7 +508,7 @@ lbl41: // 6 sources:
             case 1: 
         }
         if (this.mDragHelper.shouldInterceptTouchEvent(var1_1) != false) return true;
-        if (var4_6 == false) return false;
+        if (var5_6 == false) return false;
         return true;
     }
 
@@ -825,13 +825,13 @@ lbl41: // 6 sources:
         int n10 = this.getPaddingBottom();
         if (view != null && SlidingPaneLayout.viewIsOpaque(view)) {
             n2 = view.getLeft();
-            n4 = view.getRight();
-            n3 = view.getTop();
-            n5 = view.getBottom();
+            n3 = view.getRight();
+            n5 = view.getTop();
+            n4 = view.getBottom();
         } else {
+            n4 = 0;
             n5 = 0;
             n3 = 0;
-            n4 = 0;
             n2 = 0;
         }
         int n11 = 0;
@@ -845,7 +845,7 @@ lbl41: // 6 sources:
                 n13 = bl ? n6 : n7;
                 n13 = Math.min(n13, view2.getRight());
                 int n16 = Math.min(n9 - n10, view2.getBottom());
-                n13 = n14 >= n2 && n15 >= n3 && n13 <= n4 && n16 <= n5 ? 4 : 0;
+                n13 = n14 >= n2 && n15 >= n5 && n13 <= n3 && n16 <= n4 ? 4 : 0;
                 view2.setVisibility(n13);
             }
             ++n11;

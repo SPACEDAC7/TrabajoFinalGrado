@@ -84,9 +84,9 @@ implements DataFetcher<InputStream> {
         try {
             inputStream = thumbnailStreamOpener.open(this.context, this.mediaStoreUri);
         }
-        catch (FileNotFoundException var3_3) {
+        catch (FileNotFoundException var2_3) {
             if (Log.isLoggable((String)"MediaStoreThumbFetcher", (int)3)) {
-                Log.d((String)"MediaStoreThumbFetcher", (String)"Failed to find thumbnail file", (Throwable)var3_3);
+                Log.d((String)"MediaStoreThumbFetcher", (String)"Failed to find thumbnail file", (Throwable)var2_3);
             }
             inputStream = null;
         }
@@ -256,8 +256,8 @@ implements DataFetcher<InputStream> {
         }
 
         public InputStream open(Context context, Uri uri) throws FileNotFoundException {
-            Cursor cursor;
             InputStream inputStream;
+            Cursor cursor;
             block6 : {
                 Object var4_4 = null;
                 inputStream = null;

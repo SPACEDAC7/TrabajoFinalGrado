@@ -83,8 +83,8 @@ extends AppCompatDelegateImplV11 {
                 }
                 return false;
             }
-            catch (PackageManager.NameNotFoundException var2_2) {
-                Log.d((String)"AppCompatDelegate", (String)"Exception while getting ActivityInfo", (Throwable)var2_2);
+            catch (PackageManager.NameNotFoundException var1_2) {
+                Log.d((String)"AppCompatDelegate", (String)"Exception while getting ActivityInfo", (Throwable)var1_2);
                 return true;
             }
         }

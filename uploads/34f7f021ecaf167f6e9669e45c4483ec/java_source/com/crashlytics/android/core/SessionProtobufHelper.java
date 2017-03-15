@@ -94,18 +94,18 @@ class SessionProtobufHelper {
         int n5 = SessionProtobufHelper.getThreadSize(thread, arrstackTraceElement, 4, true);
         n5 = 0 + (CodedOutputStream.computeTagSize(1) + CodedOutputStream.computeRawVarint32Size(n5) + n5);
         int n6 = arrthread.length;
-        for (n4 = 0; n4 < n6; ++n4) {
-            n3 = SessionProtobufHelper.getThreadSize(arrthread[n4], list.get(n4), 0, false);
-            n5 += CodedOutputStream.computeTagSize(1) + CodedOutputStream.computeRawVarint32Size(n3) + n3;
+        for (n3 = 0; n3 < n6; ++n3) {
+            n4 = SessionProtobufHelper.getThreadSize(arrthread[n3], list.get(n3), 0, false);
+            n5 += CodedOutputStream.computeTagSize(1) + CodedOutputStream.computeRawVarint32Size(n4) + n4;
         }
         n2 = SessionProtobufHelper.getEventAppExecutionExceptionSize(throwable, 1, n2);
-        n4 = CodedOutputStream.computeTagSize(2);
+        n3 = CodedOutputStream.computeTagSize(2);
         n6 = CodedOutputStream.computeRawVarint32Size(n2);
-        n3 = SessionProtobufHelper.getEventAppExecutionSignalSize();
+        n4 = SessionProtobufHelper.getEventAppExecutionSignalSize();
         int n7 = CodedOutputStream.computeTagSize(3);
-        int n8 = CodedOutputStream.computeRawVarint32Size(n3);
+        int n8 = CodedOutputStream.computeRawVarint32Size(n4);
         int n9 = SessionProtobufHelper.getBinaryImageSize(byteString, byteString2);
-        return n5 + (n4 + n6 + n2) + (n7 + n8 + n3) + (CodedOutputStream.computeTagSize(3) + CodedOutputStream.computeRawVarint32Size(n9) + n9);
+        return n5 + (n3 + n6 + n2) + (n7 + n8 + n4) + (CodedOutputStream.computeTagSize(3) + CodedOutputStream.computeRawVarint32Size(n9) + n9);
     }
 
     /*
@@ -303,9 +303,9 @@ class SessionProtobufHelper {
     }
 
     public static void writeSessionDevice(CodedOutputStream codedOutputStream, String iterator, int n2, String object, int n3, long l2, long l3, boolean bl, Map<IdManager, String> object22, int n4, String object3, String string2) throws Exception {
-        void var13_13;
         ByteString byteString;
         void var11_11;
+        void var13_13;
         iterator = ByteString.copyFromUtf8(iterator);
         ByteString byteString2 = SessionProtobufHelper.stringToByteString((String)object);
         object = SessionProtobufHelper.stringToByteString((String)var13_13);

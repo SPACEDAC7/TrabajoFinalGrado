@@ -206,14 +206,14 @@ public class BuzzApiClient {
      * Lifted jumps to return sites
      */
     public static void updateSessionToken(BuzzUser var0, String var1_1) {
-        var3_2 = BuzzApiClient.TAG + ".updateSessionToken(BuzzUser,String,Response.Listener,Response.ErrorListener)";
-        LogUtil.d(var3_2, "updating session token");
-        var4_3 = var0.getLoginType();
-        var2_4 = -1;
-        switch (var4_3.hashCode()) {
+        var2_2 = BuzzApiClient.TAG + ".updateSessionToken(BuzzUser,String,Response.Listener,Response.ErrorListener)";
+        LogUtil.d(var2_2, "updating session token");
+        var3_3 = var0.getLoginType();
+        var4_4 = -1;
+        switch (var3_3.hashCode()) {
             case -644871684: {
-                if (var4_3.equals("buzzfeedAccount")) {
-                    var2_4 = 0;
+                if (var3_3.equals("buzzfeedAccount")) {
+                    var4_4 = 0;
                 }
             }
             default: {
@@ -221,14 +221,14 @@ public class BuzzApiClient {
             }
             case 1701969031: 
         }
-        if (var4_3.equals("facebookAccount")) {
-            var2_4 = 1;
+        if (var3_3.equals("facebookAccount")) {
+            var4_4 = 1;
         }
 lbl14: // 4 sources:
-        switch (var2_4) {
+        switch (var4_4) {
             default: {
                 var0.setSessionKey(null);
-                LogUtil.d(var3_2, "Could not update session token. Could not resolve login type." + var4_3);
+                LogUtil.d(var2_2, "Could not update session token. Could not resolve login type." + var3_3);
                 return;
             }
             case 0: {

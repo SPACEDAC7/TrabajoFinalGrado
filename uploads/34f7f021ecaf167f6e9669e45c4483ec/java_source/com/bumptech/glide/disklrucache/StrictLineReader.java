@@ -112,8 +112,8 @@ implements Closeable {
                     try {
                         return new String(this.buf, 0, n2, StrictLineReader.this.charset.name());
                     }
-                    catch (UnsupportedEncodingException var2_3) {
-                        throw new AssertionError(var2_3);
+                    catch (UnsupportedEncodingException var1_3) {
+                        throw new AssertionError(var1_3);
                     }
                 }
             };

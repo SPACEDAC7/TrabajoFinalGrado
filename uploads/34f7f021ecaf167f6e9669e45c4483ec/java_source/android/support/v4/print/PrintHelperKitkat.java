@@ -246,61 +246,61 @@ class PrintHelperKitkat {
                     if (cancellationSignal.isCanceled()) {
                         return null;
                     }
-                    var4_6 = new PrintedPdfDocument(PrintHelperKitkat.this.mContext, printAttributes2);
-                    var3_8 = PrintHelperKitkat.access$100(PrintHelperKitkat.this, bitmap, printAttributes2.getColorMode());
-                    var2_9 = cancellationSignal.isCanceled();
-                    if (var2_9 != false) return null;
+                    var3_6 = new PrintedPdfDocument(PrintHelperKitkat.this.mContext, printAttributes2);
+                    var2_8 = PrintHelperKitkat.access$100(PrintHelperKitkat.this, bitmap, printAttributes2.getColorMode());
+                    var7_9 = cancellationSignal.isCanceled();
+                    if (var7_9 != false) return null;
                     {
                         catch (Throwable var1_2) {
                             return var1_2;
                         }
                     }
                     try {
-                        var5_10 = var4_6.startPage(1);
+                        var4_10 = var3_6.startPage(1);
                         if (PrintHelperKitkat.this.mIsMinMarginsHandlingCorrect) {
-                            var1_1 = new RectF(var5_10.getInfo().getContentRect());
+                            var1_1 = new RectF(var4_10.getInfo().getContentRect());
                         } else {
-                            var6_11 = new PrintedPdfDocument(PrintHelperKitkat.this.mContext, printAttributes);
-                            var7_12 = var6_11.startPage(1);
-                            var1_1 = new RectF(var7_12.getInfo().getContentRect());
-                            var6_11.finishPage(var7_12);
-                            var6_11.close();
+                            var5_11 = new PrintedPdfDocument(PrintHelperKitkat.this.mContext, printAttributes);
+                            var6_12 = var5_11.startPage(1);
+                            var1_1 = new RectF(var6_12.getInfo().getContentRect());
+                            var5_11.finishPage(var6_12);
+                            var5_11.close();
                         }
-                        var6_11 = PrintHelperKitkat.access$200(PrintHelperKitkat.this, var3_8.getWidth(), var3_8.getHeight(), var1_1, n2);
+                        var5_11 = PrintHelperKitkat.access$200(PrintHelperKitkat.this, var2_8.getWidth(), var2_8.getHeight(), var1_1, n2);
                         if (!PrintHelperKitkat.this.mIsMinMarginsHandlingCorrect) {
-                            var6_11.postTranslate(var1_1.left, var1_1.top);
-                            var5_10.getCanvas().clipRect(var1_1);
+                            var5_11.postTranslate(var1_1.left, var1_1.top);
+                            var4_10.getCanvas().clipRect(var1_1);
                         }
-                        var5_10.getCanvas().drawBitmap(var3_8, (Matrix)var6_11, null);
-                        var4_6.finishPage(var5_10);
-                        var2_9 = cancellationSignal.isCanceled();
-                        ** if (!var2_9) goto lbl35
+                        var4_10.getCanvas().drawBitmap(var2_8, (Matrix)var5_11, null);
+                        var3_6.finishPage(var4_10);
+                        var7_9 = cancellationSignal.isCanceled();
+                        ** if (!var7_9) goto lbl35
                     }
                     catch (Throwable var1_3) {
-                        var4_6.close();
-                        var4_6 = parcelFileDescriptor;
-                        if (var4_6 == null) ** GOTO lbl54
+                        var3_6.close();
+                        var3_6 = parcelFileDescriptor;
+                        if (var3_6 == null) ** GOTO lbl54
                         parcelFileDescriptor.close();
 lbl44: // 1 sources:
-                        var4_6.writeTo((OutputStream)new FileOutputStream(parcelFileDescriptor.getFileDescriptor()));
-                        var4_6.close();
+                        var3_6.writeTo((OutputStream)new FileOutputStream(parcelFileDescriptor.getFileDescriptor()));
+                        var3_6.close();
                         var1_1 = parcelFileDescriptor;
                         if (var1_1 == null) break block20;
-                        ** try [egrp 9[TRYBLOCK] [18 : 355->362)] { 
+                        ** try [egrp 9[TRYBLOCK] [18 : 350->357)] { 
 lbl-1000: // 1 sources:
                         {
                             parcelFileDescriptor.close();
                             break block20;
                         }
-                        catch (IOException var4_7) {}
+                        catch (IOException var3_7) {}
 lbl54: // 3 sources:
-                        if (var3_8 == bitmap) throw var1_3;
-                        var3_8.recycle();
+                        if (var2_8 == bitmap) throw var1_3;
+                        var2_8.recycle();
                         throw var1_3;
                     }
 lbl-1000: // 1 sources:
                     {
-                        var4_6.close();
+                        var3_6.close();
                         var1_1 = parcelFileDescriptor;
                         if (var1_1 == null) ** GOTO lbl63
                         parcelFileDescriptor.close();
@@ -310,13 +310,13 @@ lbl35: // 1 sources:
 lbl57: // 1 sources:
                     catch (IOException var1_4) {}
                 }
-                if (var3_8 == bitmap) return null;
-                var3_8.recycle();
+                if (var2_8 == bitmap) return null;
+                var2_8.recycle();
                 return null;
                 catch (IOException var1_5) {}
 lbl63: // 3 sources:
-                if (var3_8 == bitmap) return null;
-                var3_8.recycle();
+                if (var2_8 == bitmap) return null;
+                var2_8.recycle();
                 return null;
             }
 
@@ -488,31 +488,31 @@ lbl63: // 3 sources:
                          */
                         protected void onPostExecute(Bitmap var1_1) {
                             super.onPostExecute((Object)var1_1);
-                            var3_2 = var1_1;
+                            var2_2 = var1_1;
                             if (var1_1 == null) ** GOTO lbl17
                             if (!3.this.PrintHelperKitkat.this.mPrintActivityRespectsOrientation) ** GOTO lbl-1000
-                            var3_2 = var1_1;
+                            var2_2 = var1_1;
                             if (3.this.PrintHelperKitkat.this.mOrientation == 0) lbl-1000: // 2 sources:
                             {
                                 // MONITORENTER : this
-                                var4_3 = .access$500(3.this).getMediaSize();
+                                var3_3 = .access$500(3.this).getMediaSize();
                                 // MONITOREXIT : this
-                                var3_2 = var1_1;
-                                if (var4_3 != null) {
-                                    var3_2 = var1_1;
-                                    if (var4_3.isPortrait() != PrintHelperKitkat.access$600(var1_1)) {
-                                        var3_2 = new Matrix();
-                                        var3_2.postRotate(90.0f);
-                                        var3_2 = Bitmap.createBitmap((Bitmap)var1_1, (int)0, (int)0, (int)var1_1.getWidth(), (int)var1_1.getHeight(), (Matrix)var3_2, (boolean)true);
+                                var2_2 = var1_1;
+                                if (var3_3 != null) {
+                                    var2_2 = var1_1;
+                                    if (var3_3.isPortrait() != PrintHelperKitkat.access$600(var1_1)) {
+                                        var2_2 = new Matrix();
+                                        var2_2.postRotate(90.0f);
+                                        var2_2 = Bitmap.createBitmap((Bitmap)var1_1, (int)0, (int)0, (int)var1_1.getWidth(), (int)var1_1.getHeight(), (Matrix)var2_2, (boolean)true);
                                     }
                                 }
                             }
 lbl17: // 8 sources:
-                            3.this.mBitmap = var3_2;
-                            if (var3_2 != null) {
+                            3.this.mBitmap = var2_2;
+                            if (var2_2 != null) {
                                 var1_1 = new PrintDocumentInfo.Builder(3.this.string2).setContentType(1).setPageCount(1).build();
-                                var2_4 = printAttributes2.equals((Object)printAttributes) == false;
-                                layoutResultCallback.onLayoutFinished((PrintDocumentInfo)var1_1, var2_4);
+                                var4_4 = printAttributes2.equals((Object)printAttributes) == false;
+                                layoutResultCallback.onLayoutFinished((PrintDocumentInfo)var1_1, var4_4);
                             } else {
                                 layoutResultCallback.onLayoutFailed(null);
                             }

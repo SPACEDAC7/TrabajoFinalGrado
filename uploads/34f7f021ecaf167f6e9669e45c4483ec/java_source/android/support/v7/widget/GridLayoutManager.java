@@ -65,22 +65,22 @@ extends LinearLayoutManager {
         int n4;
         int n5;
         if (bl) {
-            n5 = 0;
-            n4 = n2;
+            n4 = 0;
+            n5 = n2;
             n3 = 1;
-            n2 = n5;
+            n2 = n4;
         } else {
             --n2;
-            n4 = -1;
+            n5 = -1;
             n3 = -1;
         }
-        n5 = 0;
-        while (n2 != n4) {
+        n4 = 0;
+        while (n2 != n5) {
             View view = this.mSet[n2];
             LayoutParams layoutParams = (LayoutParams)view.getLayoutParams();
             layoutParams.mSpanSize = this.getSpanSize(recycler, state, this.getPosition(view));
-            layoutParams.mSpanIndex = n5;
-            n5 += layoutParams.mSpanSize;
+            layoutParams.mSpanIndex = n4;
+            n4 += layoutParams.mSpanSize;
             n2 += n3;
         }
     }
@@ -582,19 +582,19 @@ extends LinearLayoutManager {
         n2 = bl != this.mShouldReverseLayout ? 1 : 0;
         if (n2 != 0) {
             n2 = this.getChildCount() - 1;
-            n3 = -1;
             n4 = -1;
+            n3 = -1;
         } else {
             n2 = 0;
-            n3 = 1;
-            n4 = this.getChildCount();
+            n4 = 1;
+            n3 = this.getChildCount();
         }
         int n7 = this.mOrientation == 1 && this.isLayoutRTL() ? 1 : 0;
         state = null;
         int n8 = -1;
         int n9 = 0;
         int n10 = n2;
-        while (n10 != n4) {
+        while (n10 != n3) {
             view = this.getChildAt(n10);
             if (view == view2) {
                 return state;
@@ -632,7 +632,7 @@ extends LinearLayoutManager {
                     state = view;
                 }
             }
-            n10 += n3;
+            n10 += n4;
         }
         return state;
     }

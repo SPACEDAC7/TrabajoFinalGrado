@@ -86,27 +86,27 @@ extends ViewGroup {
     public PagerTitleStrip(Context var1_1, AttributeSet var2_2) {
         super(var1_1, var2_2);
         this.mPageListener = new PageListener();
-        this.mPrevText = var6_3 = new TextView(var1_1);
-        this.addView((View)var6_3);
-        this.mCurrText = var6_3 = new TextView(var1_1);
-        this.addView((View)var6_3);
-        this.mNextText = var6_3 = new TextView(var1_1);
-        this.addView((View)var6_3);
+        this.mPrevText = var3_3 = new TextView(var1_1);
+        this.addView((View)var3_3);
+        this.mCurrText = var3_3 = new TextView(var1_1);
+        this.addView((View)var3_3);
+        this.mNextText = var3_3 = new TextView(var1_1);
+        this.addView((View)var3_3);
         var2_2 = var1_1.obtainStyledAttributes(var2_2, PagerTitleStrip.ATTRS);
-        var3_4 = var2_2.getResourceId(0, 0);
-        if (var3_4 != 0) {
-            TextViewCompat.setTextAppearance(this.mPrevText, var3_4);
-            TextViewCompat.setTextAppearance(this.mCurrText, var3_4);
-            TextViewCompat.setTextAppearance(this.mNextText, var3_4);
+        var4_4 = var2_2.getResourceId(0, 0);
+        if (var4_4 != 0) {
+            TextViewCompat.setTextAppearance(this.mPrevText, var4_4);
+            TextViewCompat.setTextAppearance(this.mCurrText, var4_4);
+            TextViewCompat.setTextAppearance(this.mNextText, var4_4);
         }
-        if ((var4_5 = var2_2.getDimensionPixelSize(1, 0)) != 0) {
-            this.setTextSize(0, var4_5);
+        if ((var5_5 = var2_2.getDimensionPixelSize(1, 0)) != 0) {
+            this.setTextSize(0, var5_5);
         }
         if (var2_2.hasValue(2)) {
-            var4_5 = var2_2.getColor(2, 0);
-            this.mPrevText.setTextColor(var4_5);
-            this.mCurrText.setTextColor(var4_5);
-            this.mNextText.setTextColor(var4_5);
+            var5_5 = var2_2.getColor(2, 0);
+            this.mPrevText.setTextColor(var5_5);
+            this.mCurrText.setTextColor(var5_5);
+            this.mNextText.setTextColor(var5_5);
         }
         this.mGravity = var2_2.getInteger(3, 80);
         var2_2.recycle();
@@ -115,12 +115,12 @@ extends ViewGroup {
         this.mPrevText.setEllipsize(TextUtils.TruncateAt.END);
         this.mCurrText.setEllipsize(TextUtils.TruncateAt.END);
         this.mNextText.setEllipsize(TextUtils.TruncateAt.END);
-        var5_6 = false;
-        if (var3_4 == 0) ** GOTO lbl-1000
-        var2_2 = var1_1.obtainStyledAttributes(var3_4, PagerTitleStrip.TEXT_ATTRS);
-        var5_6 = var2_2.getBoolean(0, false);
+        var6_6 = false;
+        if (var4_4 == 0) ** GOTO lbl-1000
+        var2_2 = var1_1.obtainStyledAttributes(var4_4, PagerTitleStrip.TEXT_ATTRS);
+        var6_6 = var2_2.getBoolean(0, false);
         var2_2.recycle();
-        if (var5_6) {
+        if (var6_6) {
             PagerTitleStrip.setSingleLineAllCaps(this.mPrevText);
             PagerTitleStrip.setSingleLineAllCaps(this.mCurrText);
             PagerTitleStrip.setSingleLineAllCaps(this.mNextText);

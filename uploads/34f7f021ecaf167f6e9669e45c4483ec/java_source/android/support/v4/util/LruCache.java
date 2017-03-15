@@ -231,8 +231,8 @@ public class LruCache<K, V> {
      */
     public void trimToSize(int n2) {
         do {
-            K k2;
             Map.Entry entry2;
+            K k2;
             synchronized (this) {
                 if (this.size < 0 || this.map.isEmpty() && this.size != 0) {
                     throw new IllegalStateException(this.getClass().getName() + ".sizeOf() is reporting inconsistent results!");

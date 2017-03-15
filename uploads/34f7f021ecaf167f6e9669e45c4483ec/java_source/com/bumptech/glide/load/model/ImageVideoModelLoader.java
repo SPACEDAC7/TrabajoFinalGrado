@@ -94,33 +94,33 @@ implements ModelLoader<A, ImageVideoWrapper> {
             InputStream inputStream2;
             InputStream inputStream3;
             block7 : {
-                inputStream3 = inputStream2 = null;
+                inputStream = inputStream3 = null;
                 if (this.streamFetcher != null) {
                     try {
-                        inputStream3 = this.streamFetcher.loadData(priority);
+                        inputStream = this.streamFetcher.loadData(priority);
                     }
                     catch (Exception var4_5) {
                         if (Log.isLoggable((String)"IVML", (int)2)) {
                             Log.v((String)"IVML", (String)"Exception fetching input stream, trying ParcelFileDescriptor", (Throwable)var4_5);
                         }
-                        inputStream3 = inputStream2;
+                        inputStream = inputStream3;
                         if (this.fileDescriptorFetcher != null) break block7;
                         throw var4_5;
                     }
                 }
             }
-            inputStream2 = inputStream = null;
-            if (this.fileDescriptorFetcher == null) return new ImageVideoWrapper(inputStream3, (ParcelFileDescriptor)inputStream2);
+            inputStream3 = inputStream2 = null;
+            if (this.fileDescriptorFetcher == null) return new ImageVideoWrapper(inputStream, (ParcelFileDescriptor)inputStream3);
             try {
-                inputStream2 = this.fileDescriptorFetcher.loadData(priority);
-                return new ImageVideoWrapper(inputStream3, (ParcelFileDescriptor)inputStream2);
+                inputStream3 = this.fileDescriptorFetcher.loadData(priority);
+                return new ImageVideoWrapper(inputStream, (ParcelFileDescriptor)inputStream3);
             }
             catch (Exception var1_2) {
                 if (Log.isLoggable((String)"IVML", (int)2)) {
                     Log.v((String)"IVML", (String)"Exception fetching ParcelFileDescriptor", (Throwable)var1_2);
                 }
-                inputStream2 = inputStream;
-                if (inputStream3 != null) return new ImageVideoWrapper(inputStream3, (ParcelFileDescriptor)inputStream2);
+                inputStream3 = inputStream2;
+                if (inputStream != null) return new ImageVideoWrapper(inputStream, (ParcelFileDescriptor)inputStream3);
                 throw var1_2;
             }
         }

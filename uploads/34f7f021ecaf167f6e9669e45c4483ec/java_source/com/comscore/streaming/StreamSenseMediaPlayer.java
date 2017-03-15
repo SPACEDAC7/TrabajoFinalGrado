@@ -403,7 +403,7 @@ extends MediaPlayer {
         try {
             n2 = this.getCurrentPosition();
         }
-        catch (IllegalStateException var2_2) {
+        catch (IllegalStateException var1_2) {
             return 0;
         }
         return n2;
@@ -418,7 +418,7 @@ extends MediaPlayer {
             boolean bl = this.isPlaying();
             return bl;
         }
-        catch (IllegalStateException var2_2) {
+        catch (IllegalStateException var1_2) {
             return false;
         }
     }

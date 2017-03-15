@@ -580,9 +580,9 @@ implements DecorToolbar {
      */
     @Override
     public void setNavigationMode(int var1_1) {
-        var2_2 = this.mNavigationMode;
-        if (var1_1 == var2_2) return;
-        switch (var2_2) {
+        var3_2 = this.mNavigationMode;
+        if (var1_1 == var3_2) return;
+        switch (var3_2) {
             case 1: {
                 if (this.mSpinner != null && this.mSpinner.getParent() == this.mToolbar) {
                     this.mToolbar.removeView((View)this.mSpinner);
@@ -613,10 +613,10 @@ lbl12: // 4 sources:
         }
         if (this.mTabView == null) return;
         this.mToolbar.addView(this.mTabView, 0);
-        var3_3 = (Toolbar.LayoutParams)this.mTabView.getLayoutParams();
-        var3_3.width = -2;
-        var3_3.height = -2;
-        var3_3.gravity = 8388691;
+        var2_3 = (Toolbar.LayoutParams)this.mTabView.getLayoutParams();
+        var2_3.width = -2;
+        var2_3.height = -2;
+        var2_3.gravity = 8388691;
     }
 
     @Override

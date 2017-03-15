@@ -187,8 +187,8 @@ public class ImageDownloader {
      * Enabled aggressive block sorting
      */
     private static void readFromCache(RequestKey requestKey, Context object, boolean bl) {
-        boolean bl2;
         InputStream inputStream;
+        boolean bl2;
         block6 : {
             InputStream inputStream2 = null;
             boolean bl3 = false;

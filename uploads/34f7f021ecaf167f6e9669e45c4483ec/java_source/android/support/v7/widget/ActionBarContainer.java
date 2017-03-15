@@ -60,7 +60,7 @@ extends FrameLayout {
      * Enabled aggressive block sorting
      */
     public ActionBarContainer(Context context, AttributeSet attributeSet) {
-        void var4_5;
+        void var3_5;
         boolean bl = true;
         super(context, attributeSet);
         if (Build.VERSION.SDK_INT >= 21) {
@@ -68,7 +68,7 @@ extends FrameLayout {
         } else {
             ActionBarBackgroundDrawable actionBarBackgroundDrawable = new ActionBarBackgroundDrawable(this);
         }
-        ViewCompat.setBackground((View)this, (Drawable)var4_5);
+        ViewCompat.setBackground((View)this, (Drawable)var3_5);
         context = context.obtainStyledAttributes(attributeSet, R.styleable.ActionBar);
         this.mBackground = context.getDrawable(R.styleable.ActionBar_background);
         this.mStackedBackground = context.getDrawable(R.styleable.ActionBar_backgroundStacked);

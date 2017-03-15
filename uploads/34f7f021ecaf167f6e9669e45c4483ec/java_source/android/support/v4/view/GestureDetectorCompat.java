@@ -170,7 +170,7 @@ public final class GestureDetectorCompat {
         private boolean isConsideredDoubleTap(MotionEvent motionEvent, MotionEvent motionEvent2, MotionEvent motionEvent3) {
             int n2;
             int n3;
-            if (!this.mAlwaysInBiggerTapRegion || motionEvent3.getEventTime() - motionEvent2.getEventTime() > (long)DOUBLE_TAP_TIMEOUT || (n3 = (int)motionEvent.getX() - (int)motionEvent3.getX()) * n3 + (n2 = (int)motionEvent.getY() - (int)motionEvent3.getY()) * n2 >= this.mDoubleTapSlopSquare) {
+            if (!this.mAlwaysInBiggerTapRegion || motionEvent3.getEventTime() - motionEvent2.getEventTime() > (long)DOUBLE_TAP_TIMEOUT || (n2 = (int)motionEvent.getX() - (int)motionEvent3.getX()) * n2 + (n3 = (int)motionEvent.getY() - (int)motionEvent3.getY()) * n3 >= this.mDoubleTapSlopSquare) {
                 return false;
             }
             return true;
@@ -195,34 +195,34 @@ public final class GestureDetectorCompat {
          */
         @Override
         public boolean onTouchEvent(MotionEvent var1_1) {
-            var10_2 = var1_1.getAction();
+            var12_2 = var1_1.getAction();
             if (this.mVelocityTracker == null) {
                 this.mVelocityTracker = VelocityTracker.obtain();
             }
             this.mVelocityTracker.addMovement(var1_1);
-            var6_3 = (var10_2 & 255) == 6 ? 1 : 0;
-            var7_4 = var6_3 != 0 ? MotionEventCompat.getActionIndex(var1_1) : -1;
+            var8_3 = (var12_2 & 255) == 6 ? 1 : 0;
+            var9_4 = var8_3 != 0 ? MotionEventCompat.getActionIndex(var1_1) : -1;
             var3_5 = 0.0f;
             var2_6 = 0.0f;
-            var9_7 = var1_1.getPointerCount();
-            for (var8_8 = 0; var8_8 < var9_7; ++var8_8) {
-                if (var7_4 == var8_8) continue;
-                var3_5 += var1_1.getX(var8_8);
-                var2_6 += var1_1.getY(var8_8);
+            var11_7 = var1_1.getPointerCount();
+            for (var10_8 = 0; var10_8 < var11_7; ++var10_8) {
+                if (var9_4 == var10_8) continue;
+                var3_5 += var1_1.getX(var10_8);
+                var2_6 += var1_1.getY(var10_8);
             }
-            var6_3 = var6_3 != 0 ? var9_7 - 1 : var9_7;
-            var3_5 /= (float)var6_3;
-            var2_6 /= (float)var6_3;
-            var7_4 = 0;
-            var13_9 = false;
-            var14_10 = false;
-            var12_12 = var11_11 = false;
-            switch (var10_2 & 255) {
+            var8_3 = var8_3 != 0 ? var11_7 - 1 : var11_7;
+            var3_5 /= (float)var8_3;
+            var2_6 /= (float)var8_3;
+            var9_4 = 0;
+            var15_9 = false;
+            var16_10 = false;
+            var14_12 = var13_11 = false;
+            switch (var12_2 & 255) {
                 default: {
-                    var12_12 = var11_11;
+                    var14_12 = var13_11;
                 }
                 case 4: {
-                    return var12_12;
+                    return var14_12;
                 }
                 case 5: {
                     this.mLastFocusX = var3_5;
@@ -238,34 +238,34 @@ public final class GestureDetectorCompat {
                     this.mLastFocusY = var2_6;
                     this.mDownFocusY = var2_6;
                     this.mVelocityTracker.computeCurrentVelocity(1000, (float)this.mMaximumFlingVelocity);
-                    var7_4 = MotionEventCompat.getActionIndex(var1_1);
-                    var6_3 = var1_1.getPointerId(var7_4);
-                    var2_6 = VelocityTrackerCompat.getXVelocity(this.mVelocityTracker, var6_3);
-                    var3_5 = VelocityTrackerCompat.getYVelocity(this.mVelocityTracker, var6_3);
-                    var6_3 = 0;
+                    var9_4 = MotionEventCompat.getActionIndex(var1_1);
+                    var8_3 = var1_1.getPointerId(var9_4);
+                    var2_6 = VelocityTrackerCompat.getXVelocity(this.mVelocityTracker, var8_3);
+                    var3_5 = VelocityTrackerCompat.getYVelocity(this.mVelocityTracker, var8_3);
+                    var8_3 = 0;
                     do {
-                        var12_12 = var11_11;
-                        if (var6_3 >= var9_7) return var12_12;
-                        if (var6_3 != var7_4 && var2_6 * VelocityTrackerCompat.getXVelocity(this.mVelocityTracker, var8_8 = var1_1.getPointerId(var6_3)) + var3_5 * VelocityTrackerCompat.getYVelocity(this.mVelocityTracker, var8_8) < 0.0f) {
+                        var14_12 = var13_11;
+                        if (var8_3 >= var11_7) return var14_12;
+                        if (var8_3 != var9_4 && var2_6 * VelocityTrackerCompat.getXVelocity(this.mVelocityTracker, var10_8 = var1_1.getPointerId(var8_3)) + var3_5 * VelocityTrackerCompat.getYVelocity(this.mVelocityTracker, var10_8) < 0.0f) {
                             this.mVelocityTracker.clear();
                             return false;
                         }
-                        ++var6_3;
+                        ++var8_3;
                     } while (true);
                 }
                 case 0: {
-                    var6_3 = var7_4;
+                    var8_3 = var9_4;
                     if (this.mDoubleTapListener != null) {
-                        var11_11 = this.mHandler.hasMessages(3);
-                        if (var11_11) {
+                        var13_11 = this.mHandler.hasMessages(3);
+                        if (var13_11) {
                             this.mHandler.removeMessages(3);
                         }
-                        if (this.mCurrentDownEvent != null && this.mPreviousUpEvent != null && var11_11 && this.isConsideredDoubleTap(this.mCurrentDownEvent, this.mPreviousUpEvent, var1_1)) {
+                        if (this.mCurrentDownEvent != null && this.mPreviousUpEvent != null && var13_11 && this.isConsideredDoubleTap(this.mCurrentDownEvent, this.mPreviousUpEvent, var1_1)) {
                             this.mIsDoubleTapping = true;
-                            var6_3 = false | this.mDoubleTapListener.onDoubleTap(this.mCurrentDownEvent) | this.mDoubleTapListener.onDoubleTapEvent(var1_1);
+                            var8_3 = false | this.mDoubleTapListener.onDoubleTap(this.mCurrentDownEvent) | this.mDoubleTapListener.onDoubleTapEvent(var1_1);
                         } else {
                             this.mHandler.sendEmptyMessageDelayed(3, (long)GestureDetectorCompatImplBase.DOUBLE_TAP_TIMEOUT);
-                            var6_3 = var7_4;
+                            var8_3 = var9_4;
                         }
                     }
                     this.mLastFocusX = var3_5;
@@ -286,23 +286,23 @@ public final class GestureDetectorCompat {
                         this.mHandler.sendEmptyMessageAtTime(2, this.mCurrentDownEvent.getDownTime() + (long)GestureDetectorCompatImplBase.TAP_TIMEOUT + (long)GestureDetectorCompatImplBase.LONGPRESS_TIMEOUT);
                     }
                     this.mHandler.sendEmptyMessageAtTime(1, this.mCurrentDownEvent.getDownTime() + (long)GestureDetectorCompatImplBase.TAP_TIMEOUT);
-                    return (boolean)(var6_3 | this.mListener.onDown(var1_1));
+                    return (boolean)(var8_3 | this.mListener.onDown(var1_1));
                 }
                 case 2: {
-                    var12_12 = var11_11;
-                    if (this.mInLongPress != false) return var12_12;
+                    var14_12 = var13_11;
+                    if (this.mInLongPress != false) return var14_12;
                     var4_13 = this.mLastFocusX - var3_5;
                     var5_14 = this.mLastFocusY - var2_6;
                     if (this.mIsDoubleTapping) {
                         return false | this.mDoubleTapListener.onDoubleTapEvent(var1_1);
                     }
                     if (this.mAlwaysInTapRegion) {
-                        var6_3 = (int)(var3_5 - this.mDownFocusX);
-                        var7_4 = (int)(var2_6 - this.mDownFocusY);
-                        var6_3 = var6_3 * var6_3 + var7_4 * var7_4;
-                        var11_11 = var13_9;
-                        if (var6_3 > this.mTouchSlopSquare) {
-                            var11_11 = this.mListener.onScroll(this.mCurrentDownEvent, var1_1, var4_13, var5_14);
+                        var8_3 = (int)(var3_5 - this.mDownFocusX);
+                        var9_4 = (int)(var2_6 - this.mDownFocusY);
+                        var8_3 = var8_3 * var8_3 + var9_4 * var9_4;
+                        var13_11 = var15_9;
+                        if (var8_3 > this.mTouchSlopSquare) {
+                            var13_11 = this.mListener.onScroll(this.mCurrentDownEvent, var1_1, var4_13, var5_14);
                             this.mLastFocusX = var3_5;
                             this.mLastFocusY = var2_6;
                             this.mAlwaysInTapRegion = false;
@@ -310,60 +310,60 @@ public final class GestureDetectorCompat {
                             this.mHandler.removeMessages(1);
                             this.mHandler.removeMessages(2);
                         }
-                        var12_12 = var11_11;
-                        if (var6_3 <= this.mTouchSlopSquare) return var12_12;
+                        var14_12 = var13_11;
+                        if (var8_3 <= this.mTouchSlopSquare) return var14_12;
                         this.mAlwaysInBiggerTapRegion = false;
-                        return var11_11;
+                        return var13_11;
                     }
                     if (Math.abs(var4_13) < 1.0f) {
-                        var12_12 = var11_11;
-                        if (Math.abs(var5_14) < 1.0f) return var12_12;
+                        var14_12 = var13_11;
+                        if (Math.abs(var5_14) < 1.0f) return var14_12;
                     }
-                    var11_11 = this.mListener.onScroll(this.mCurrentDownEvent, var1_1, var4_13, var5_14);
+                    var13_11 = this.mListener.onScroll(this.mCurrentDownEvent, var1_1, var4_13, var5_14);
                     this.mLastFocusX = var3_5;
                     this.mLastFocusY = var2_6;
-                    return var11_11;
+                    return var13_11;
                 }
                 case 1: {
                     this.mStillDown = false;
-                    var15_15 = MotionEvent.obtain((MotionEvent)var1_1);
+                    var6_15 = MotionEvent.obtain((MotionEvent)var1_1);
                     if (!this.mIsDoubleTapping) ** GOTO lbl119
-                    var11_11 = false | this.mDoubleTapListener.onDoubleTapEvent(var1_1);
+                    var13_11 = false | this.mDoubleTapListener.onDoubleTapEvent(var1_1);
                     ** GOTO lbl141
 lbl119: // 1 sources:
                     if (!this.mInLongPress) ** GOTO lbl124
                     this.mHandler.removeMessages(3);
                     this.mInLongPress = false;
-                    var11_11 = var14_10;
+                    var13_11 = var16_10;
                     ** GOTO lbl141
 lbl124: // 1 sources:
                     if (!this.mAlwaysInTapRegion) ** GOTO lbl132
-                    var11_11 = var12_12 = this.mListener.onSingleTapUp(var1_1);
+                    var13_11 = var14_12 = this.mListener.onSingleTapUp(var1_1);
                     if (this.mDeferConfirmSingleTap) {
-                        var11_11 = var12_12;
+                        var13_11 = var14_12;
                         if (this.mDoubleTapListener != null) {
                             this.mDoubleTapListener.onSingleTapConfirmed(var1_1);
-                            var11_11 = var12_12;
+                            var13_11 = var14_12;
                         }
                     }
                     ** GOTO lbl141
 lbl132: // 1 sources:
-                    var16_16 = this.mVelocityTracker;
-                    var6_3 = var1_1.getPointerId(0);
-                    var16_16.computeCurrentVelocity(1000, (float)this.mMaximumFlingVelocity);
-                    var2_6 = VelocityTrackerCompat.getYVelocity(var16_16, var6_3);
-                    var3_5 = VelocityTrackerCompat.getXVelocity(var16_16, var6_3);
+                    var7_16 = this.mVelocityTracker;
+                    var8_3 = var1_1.getPointerId(0);
+                    var7_16.computeCurrentVelocity(1000, (float)this.mMaximumFlingVelocity);
+                    var2_6 = VelocityTrackerCompat.getYVelocity(var7_16, var8_3);
+                    var3_5 = VelocityTrackerCompat.getXVelocity(var7_16, var8_3);
                     if (Math.abs(var2_6) > (float)this.mMinimumFlingVelocity) ** GOTO lbl-1000
-                    var11_11 = var14_10;
+                    var13_11 = var16_10;
                     if (Math.abs(var3_5) > (float)this.mMinimumFlingVelocity) lbl-1000: // 2 sources:
                     {
-                        var11_11 = this.mListener.onFling(this.mCurrentDownEvent, var1_1, var3_5, var2_6);
+                        var13_11 = this.mListener.onFling(this.mCurrentDownEvent, var1_1, var3_5, var2_6);
                     }
 lbl141: // 6 sources:
                     if (this.mPreviousUpEvent != null) {
                         this.mPreviousUpEvent.recycle();
                     }
-                    this.mPreviousUpEvent = var15_15;
+                    this.mPreviousUpEvent = var6_15;
                     if (this.mVelocityTracker != null) {
                         this.mVelocityTracker.recycle();
                         this.mVelocityTracker = null;
@@ -372,7 +372,7 @@ lbl141: // 6 sources:
                     this.mDeferConfirmSingleTap = false;
                     this.mHandler.removeMessages(1);
                     this.mHandler.removeMessages(2);
-                    return var11_11;
+                    return var13_11;
                 }
                 case 3: 
             }

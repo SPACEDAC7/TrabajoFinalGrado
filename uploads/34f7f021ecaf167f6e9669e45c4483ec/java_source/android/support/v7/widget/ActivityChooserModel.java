@@ -211,83 +211,83 @@ extends DataSetObservable {
      * Lifted jumps to return sites
      */
     private void readHistoricalDataImpl() {
-        var2_1 = this.mContext.openFileInput(this.mHistoryFileName);
+        var1_1 = this.mContext.openFileInput(this.mHistoryFileName);
         try {
-            var3_7 = Xml.newPullParser();
-            var3_7.setInput((InputStream)var2_1, "UTF-8");
-            var1_11 = 0;
-            while (var1_11 != 1 && var1_11 != 2) {
-                var1_11 = var3_7.next();
+            var2_7 = Xml.newPullParser();
+            var2_7.setInput((InputStream)var1_1, "UTF-8");
+            var4_11 = 0;
+            while (var4_11 != 1 && var4_11 != 2) {
+                var4_11 = var2_7.next();
             }
-            if (!"historical-records".equals(var3_7.getName())) {
+            if (!"historical-records".equals(var2_7.getName())) {
                 throw new XmlPullParserException("Share records file does not start with historical-records tag.");
             }
-            var4_12 = this.mHistoricalRecords;
-            var4_12.clear();
+            var3_12 = this.mHistoricalRecords;
+            var3_12.clear();
             ** GOTO lbl27
-            catch (FileNotFoundException var2_6) {
+            catch (FileNotFoundException var1_6) {
                 // empty catch block
             }
             return;
             {
-                catch (XmlPullParserException var3_8) {
-                    Log.e((String)ActivityChooserModel.LOG_TAG, (String)("Error reading historical recrod file: " + this.mHistoryFileName), (Throwable)var3_8);
-                    if (var2_1 == null) return;
+                catch (XmlPullParserException var2_8) {
+                    Log.e((String)ActivityChooserModel.LOG_TAG, (String)("Error reading historical recrod file: " + this.mHistoryFileName), (Throwable)var2_8);
+                    if (var1_1 == null) return;
                     try {
-                        var2_1.close();
+                        var1_1.close();
                         return;
                     }
-                    catch (IOException var2_2) {
+                    catch (IOException var1_2) {
                         return;
                     }
                 }
 lbl27: // 1 sources:
                 do {
-                    if ((var1_11 = var3_7.next()) == 1) {
-                        if (var2_1 == null) return;
+                    if ((var4_11 = var2_7.next()) == 1) {
+                        if (var1_1 == null) return;
                         try {
-                            var2_1.close();
+                            var1_1.close();
                             return;
                         }
-                        catch (IOException var2_3) {
+                        catch (IOException var1_3) {
                             return;
                         }
                     }
-                    if (var1_11 == 3 || var1_11 == 4) continue;
-                    ** try [egrp 6[TRYBLOCK] [21 : 162->219)] { 
+                    if (var4_11 == 3 || var4_11 == 4) continue;
+                    ** try [egrp 6[TRYBLOCK] [21 : 168->225)] { 
 lbl38: // 2 sources:
-                    if ("historical-record".equals(var3_7.getName())) ** break block23
+                    if ("historical-record".equals(var2_7.getName())) ** break block23
                     throw new XmlPullParserException("Share records file not well-formed.");
                     break;
                 } while (true);
-                catch (IOException var3_9) {
-                    Log.e((String)ActivityChooserModel.LOG_TAG, (String)("Error reading historical recrod file: " + this.mHistoryFileName), (Throwable)var3_9);
-                    if (var2_1 == null) return;
+                catch (IOException var2_9) {
+                    Log.e((String)ActivityChooserModel.LOG_TAG, (String)("Error reading historical recrod file: " + this.mHistoryFileName), (Throwable)var2_9);
+                    if (var1_1 == null) return;
                     try {
-                        var2_1.close();
+                        var1_1.close();
                         return;
                     }
-                    catch (IOException var2_4) {
+                    catch (IOException var1_4) {
                         return;
                     }
                 }
                 {
                     
-                    var4_12.add(new HistoricalRecord(var3_7.getAttributeValue(null, "activity"), Long.parseLong(var3_7.getAttributeValue(null, "time")), Float.parseFloat(var3_7.getAttributeValue(null, "weight"))));
+                    var3_12.add(new HistoricalRecord(var2_7.getAttributeValue(null, "activity"), Long.parseLong(var2_7.getAttributeValue(null, "time")), Float.parseFloat(var2_7.getAttributeValue(null, "weight"))));
                     continue;
                 }
             }
         }
 lbl52: // 3 sources:
-        catch (Throwable var3_10) {
-            if (var2_1 == null) throw var3_10;
+        catch (Throwable var2_10) {
+            if (var1_1 == null) throw var2_10;
             try {
-                var2_1.close();
+                var1_1.close();
             }
-            catch (IOException var2_5) {
-                throw var3_10;
+            catch (IOException var1_5) {
+                throw var2_10;
             }
-            throw var3_10;
+            throw var2_10;
         }
     }
 
@@ -689,47 +689,47 @@ lbl52: // 3 sources:
          * Lifted jumps to return sites
          */
         public /* varargs */ Void doInBackground(Object ... var1_1) {
-            var4_8 = (List)var1_1[0];
-            var5_13 = (String)var1_1[1];
-            var1_1 = ActivityChooserModel.this.mContext.openFileOutput(var5_13, 0);
-            var5_13 = Xml.newSerializer();
+            var2_8 = (List)var1_1[0];
+            var3_13 = (String)var1_1[1];
+            var1_1 = ActivityChooserModel.this.mContext.openFileOutput(var3_13, 0);
+            var3_13 = Xml.newSerializer();
             try {
-                var5_13.setOutput((OutputStream)var1_1, null);
-                var5_13.startDocument("UTF-8", Boolean.valueOf(true));
-                var5_13.startTag(null, "historical-records");
-                var3_14 = var4_8.size();
-                for (var2_15 = 0; var2_15 < var3_14; ++var2_15) {
-                    var6_16 = (HistoricalRecord)var4_8.remove(0);
-                    var5_13.startTag(null, "historical-record");
-                    var5_13.attribute(null, "activity", var6_16.activity.flattenToString());
-                    var5_13.attribute(null, "time", String.valueOf(var6_16.time));
-                    var5_13.attribute(null, "weight", String.valueOf(var6_16.weight));
-                    var5_13.endTag(null, "historical-record");
+                var3_13.setOutput((OutputStream)var1_1, null);
+                var3_13.startDocument("UTF-8", Boolean.valueOf(true));
+                var3_13.startTag(null, "historical-records");
+                var6_14 = var2_8.size();
+                for (var5_15 = 0; var5_15 < var6_14; ++var5_15) {
+                    var4_16 = (HistoricalRecord)var2_8.remove(0);
+                    var3_13.startTag(null, "historical-record");
+                    var3_13.attribute(null, "activity", var4_16.activity.flattenToString());
+                    var3_13.attribute(null, "time", String.valueOf(var4_16.time));
+                    var3_13.attribute(null, "weight", String.valueOf(var4_16.weight));
+                    var3_13.endTag(null, "historical-record");
                 }
                 ** GOTO lbl23
                 catch (FileNotFoundException var1_2) {
-                    Log.e((String)ActivityChooserModel.LOG_TAG, (String)("Error writing historical record file: " + var5_13), (Throwable)var1_2);
+                    Log.e((String)ActivityChooserModel.LOG_TAG, (String)("Error writing historical record file: " + var3_13), (Throwable)var1_2);
                     return null;
                 }
 lbl23: // 1 sources:
-                var5_13.endTag(null, "historical-records");
-                var5_13.endDocument();
+                var3_13.endTag(null, "historical-records");
+                var3_13.endDocument();
                 return null;
             }
-            catch (IllegalArgumentException var4_9) {
-                Log.e((String)ActivityChooserModel.LOG_TAG, (String)("Error writing historical record file: " + ActivityChooserModel.this.mHistoryFileName), (Throwable)var4_9);
+            catch (IllegalArgumentException var2_9) {
+                Log.e((String)ActivityChooserModel.LOG_TAG, (String)("Error writing historical record file: " + ActivityChooserModel.this.mHistoryFileName), (Throwable)var2_9);
                 return null;
             }
-            catch (IllegalStateException var4_10) {
-                Log.e((String)ActivityChooserModel.LOG_TAG, (String)("Error writing historical record file: " + ActivityChooserModel.this.mHistoryFileName), (Throwable)var4_10);
+            catch (IllegalStateException var2_10) {
+                Log.e((String)ActivityChooserModel.LOG_TAG, (String)("Error writing historical record file: " + ActivityChooserModel.this.mHistoryFileName), (Throwable)var2_10);
                 return null;
                 {
-                    catch (Throwable var4_12) {
-                        throw var4_12;
+                    catch (Throwable var2_12) {
+                        throw var2_12;
                     }
                 }
-                catch (IOException var4_11) {
-                    Log.e((String)ActivityChooserModel.LOG_TAG, (String)("Error writing historical record file: " + ActivityChooserModel.this.mHistoryFileName), (Throwable)var4_11);
+                catch (IOException var2_11) {
+                    Log.e((String)ActivityChooserModel.LOG_TAG, (String)("Error writing historical record file: " + ActivityChooserModel.this.mHistoryFileName), (Throwable)var2_11);
                     return null;
                 }
             }

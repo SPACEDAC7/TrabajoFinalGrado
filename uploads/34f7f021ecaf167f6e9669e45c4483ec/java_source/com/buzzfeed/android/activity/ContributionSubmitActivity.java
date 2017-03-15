@@ -223,14 +223,14 @@ extends BaseActivity {
     }
 
     private String getPath(Uri object) {
-        Object var3_2 = null;
+        Object var2_2 = null;
         Cursor cursor = this.getContentResolver().query((Uri)object, null, null, null, null);
         if (cursor == null) {
             return object.getPath();
         }
         cursor.moveToFirst();
         int n2 = cursor.getColumnIndex("_data");
-        object = var3_2;
+        object = var2_2;
         if (n2 > 0) {
             object = cursor.getString(n2);
         }
@@ -359,7 +359,7 @@ extends BaseActivity {
             object3 = ((ResponseBody)this.mCommentServiceHelper.saveImage((Map<String, String>)object2).execute().body()).string();
             object2 = new JSONObject((String)object3);
         }
-        catch (Exception var2_3) {}
+        catch (Exception var1_3) {}
         try {
             LogUtil.d(string2, "Contribute response: " + (String)object3);
             boolean bl = object2.getInt("success") == 1;
@@ -371,9 +371,9 @@ extends BaseActivity {
             this.errorMsg = object2.optString("error");
             return;
         }
-        catch (Exception var4_6) {
+        catch (Exception var3_6) {
             object = object2;
-            object2 = var4_6;
+            object2 = var3_6;
         }
         {
             LogUtil.e(string2, this.getString(2131296376), object2);
@@ -720,7 +720,7 @@ extends BaseActivity {
             string2 = ((ResponseBody)this.mCommentServiceHelper.postText((Map<String, String>)object).execute().body()).string();
             object = new JSONObject(string2);
         }
-        catch (Exception var2_3) {}
+        catch (Exception var1_3) {}
         try {
             boolean bl = object.getInt("success") == 1;
             this.successfulPost = bl;
@@ -732,9 +732,9 @@ extends BaseActivity {
             LogUtil.d(string3, "Contribute response: " + string2 + " ; successfulPost=" + this.successfulPost + " ;errorMsg=" + this.errorMsg);
             return;
         }
-        catch (Exception var4_6) {
+        catch (Exception var3_6) {
             object2 = object;
-            object = var4_6;
+            object = var3_6;
         }
         {
             if (object2 != null) {

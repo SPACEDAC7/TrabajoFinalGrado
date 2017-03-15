@@ -521,8 +521,8 @@ lbl31: // 2 sources:
      * Enabled aggressive block sorting
      */
     private void dispatchLayoutStep1() {
-        int n2;
         ItemAnimator.ItemHolderInfo itemHolderInfo;
+        int n2;
         int n3;
         this.mState.assertLayoutStep(1);
         this.mState.mIsMeasuring = false;
@@ -1096,8 +1096,8 @@ lbl31: // 2 sources:
      * Lifted jumps to return sites
      */
     private void recoverFocusFromState() {
-        Object object;
         View view;
+        Object object;
         if (!this.mPreserveFocusAfterLayout) return;
         if (this.mAdapter == null) return;
         if (!this.hasFocus()) {
@@ -1675,71 +1675,71 @@ lbl31: // 2 sources:
         int n4 = 1;
         super.draw(canvas);
         int n5 = this.mItemDecorations.size();
-        for (n3 = 0; n3 < n5; ++n3) {
-            this.mItemDecorations.get(n3).onDrawOver(canvas, this, this.mState);
+        for (n2 = 0; n2 < n5; ++n2) {
+            this.mItemDecorations.get(n2).onDrawOver(canvas, this, this.mState);
         }
-        n5 = n3 = 0;
+        n5 = n2 = 0;
         if (this.mLeftGlow != null) {
-            n5 = n3;
+            n5 = n2;
             if (!this.mLeftGlow.isFinished()) {
-                n2 = canvas.save();
-                n3 = this.mClipToPadding ? this.getPaddingBottom() : 0;
+                n3 = canvas.save();
+                n2 = this.mClipToPadding ? this.getPaddingBottom() : 0;
                 canvas.rotate(270.0f);
-                canvas.translate((float)(- this.getHeight() + n3), 0.0f);
+                canvas.translate((float)(- this.getHeight() + n2), 0.0f);
                 n5 = this.mLeftGlow != null && this.mLeftGlow.draw(canvas) ? 1 : 0;
-                canvas.restoreToCount(n2);
+                canvas.restoreToCount(n3);
             }
         }
-        n3 = n5;
+        n2 = n5;
         if (this.mTopGlow != null) {
-            n3 = n5;
+            n2 = n5;
             if (!this.mTopGlow.isFinished()) {
-                n2 = canvas.save();
+                n3 = canvas.save();
                 if (this.mClipToPadding) {
                     canvas.translate((float)this.getPaddingLeft(), (float)this.getPaddingTop());
                 }
-                n3 = this.mTopGlow != null && this.mTopGlow.draw(canvas) ? 1 : 0;
-                n3 = n5 | n3;
-                canvas.restoreToCount(n2);
+                n2 = this.mTopGlow != null && this.mTopGlow.draw(canvas) ? 1 : 0;
+                n2 = n5 | n2;
+                canvas.restoreToCount(n3);
             }
         }
-        n5 = n3;
+        n5 = n2;
         if (this.mRightGlow != null) {
-            n5 = n3;
+            n5 = n2;
             if (!this.mRightGlow.isFinished()) {
-                n2 = canvas.save();
+                n3 = canvas.save();
                 int n6 = this.getWidth();
                 n5 = this.mClipToPadding ? this.getPaddingTop() : 0;
                 canvas.rotate(90.0f);
                 canvas.translate((float)(- n5), (float)(- n6));
                 n5 = this.mRightGlow != null && this.mRightGlow.draw(canvas) ? 1 : 0;
-                n5 = n3 | n5;
-                canvas.restoreToCount(n2);
+                n5 = n2 | n5;
+                canvas.restoreToCount(n3);
             }
         }
-        n3 = n5;
+        n2 = n5;
         if (this.mBottomGlow != null) {
-            n3 = n5;
+            n2 = n5;
             if (!this.mBottomGlow.isFinished()) {
-                n2 = canvas.save();
+                n3 = canvas.save();
                 canvas.rotate(180.0f);
                 if (this.mClipToPadding) {
                     canvas.translate((float)(- this.getWidth() + this.getPaddingRight()), (float)(- this.getHeight() + this.getPaddingBottom()));
                 } else {
                     canvas.translate((float)(- this.getWidth()), (float)(- this.getHeight()));
                 }
-                n3 = this.mBottomGlow != null && this.mBottomGlow.draw(canvas) ? n4 : 0;
-                n3 = n5 | n3;
-                canvas.restoreToCount(n2);
+                n2 = this.mBottomGlow != null && this.mBottomGlow.draw(canvas) ? n4 : 0;
+                n2 = n5 | n2;
+                canvas.restoreToCount(n3);
             }
         }
-        n5 = n3;
-        if (n3 == 0) {
-            n5 = n3;
+        n5 = n2;
+        if (n2 == 0) {
+            n5 = n2;
             if (this.mItemAnimator != null) {
-                n5 = n3;
+                n5 = n2;
                 if (this.mItemDecorations.size() > 0) {
-                    n5 = n3;
+                    n5 = n2;
                     if (this.mItemAnimator.isRunning()) {
                         n5 = 1;
                     }
@@ -1922,32 +1922,32 @@ lbl31: // 2 sources:
      * Lifted jumps to return sites
      */
     ViewHolder findViewHolderForPosition(int var1_1, boolean var2_2) {
-        var4_3 = this.mChildHelper.getUnfilteredChildCount();
-        var5_4 = null;
-        var3_5 = 0;
-        while (var3_5 < var4_3) {
-            var6_6 = RecyclerView.getChildViewHolderInt(this.mChildHelper.getUnfilteredChildAt(var3_5));
-            var7_7 = var5_4;
-            if (var6_6 == null) ** GOTO lbl19
-            var7_7 = var5_4;
-            if (var6_6.isRemoved()) ** GOTO lbl19
+        var7_3 = this.mChildHelper.getUnfilteredChildCount();
+        var3_4 = null;
+        var6_5 = 0;
+        while (var6_5 < var7_3) {
+            var4_6 = RecyclerView.getChildViewHolderInt(this.mChildHelper.getUnfilteredChildAt(var6_5));
+            var5_7 = var3_4;
+            if (var4_6 == null) ** GOTO lbl19
+            var5_7 = var3_4;
+            if (var4_6.isRemoved()) ** GOTO lbl19
             if (!var2_2) ** GOTO lbl14
-            if (var6_6.mPosition == var1_1) ** GOTO lbl-1000
-            var7_7 = var5_4;
+            if (var4_6.mPosition == var1_1) ** GOTO lbl-1000
+            var5_7 = var3_4;
             ** GOTO lbl19
 lbl14: // 1 sources:
-            var7_7 = var5_4;
-            if (var6_6.getLayoutPosition() == var1_1) lbl-1000: // 2 sources:
+            var5_7 = var3_4;
+            if (var4_6.getLayoutPosition() == var1_1) lbl-1000: // 2 sources:
             {
-                var5_4 = var6_6;
-                if (this.mChildHelper.isHidden(var6_6.itemView) == false) return var5_4;
-                var7_7 = var6_6;
+                var3_4 = var4_6;
+                if (this.mChildHelper.isHidden(var4_6.itemView) == false) return var3_4;
+                var5_7 = var4_6;
             }
 lbl19: // 6 sources:
-            ++var3_5;
-            var5_4 = var7_7;
+            ++var6_5;
+            var3_4 = var5_7;
         }
-        return var5_4;
+        return var3_4;
     }
 
     /*
@@ -1960,8 +1960,8 @@ lbl19: // 6 sources:
         } else {
             if (this.mLayoutFrozen) return false;
             {
-                int n4;
                 boolean bl;
+                int n4;
                 boolean bl2;
                 block9 : {
                     bl2 = this.mLayout.canScrollHorizontally();
@@ -2002,28 +2002,28 @@ lbl19: // 6 sources:
      * Lifted jumps to return sites
      */
     public View focusSearch(View var1_1, int var2_2) {
-        var5_3 = this.mLayout.onInterceptFocusSearch(var1_1, var2_2);
-        if (var5_3 != null) {
-            return var5_3;
+        var3_3 = this.mLayout.onInterceptFocusSearch(var1_1, var2_2);
+        if (var3_3 != null) {
+            return var3_3;
         }
-        var3_4 = this.mAdapter != null && this.mLayout != null && this.isComputingLayout() == false && this.mLayoutFrozen == false ? 1 : 0;
-        var5_3 = FocusFinder.getInstance();
-        if (var3_4 == 0 || var2_2 != 2 && var2_2 != 1) ** GOTO lbl28
-        var3_4 = 0;
+        var5_4 = this.mAdapter != null && this.mLayout != null && this.isComputingLayout() == false && this.mLayoutFrozen == false ? 1 : 0;
+        var3_3 = FocusFinder.getInstance();
+        if (var5_4 == 0 || var2_2 != 2 && var2_2 != 1) ** GOTO lbl28
+        var5_4 = 0;
         if (this.mLayout.canScrollVertically()) {
-            var3_4 = var2_2 == 2 ? 130 : 33;
-            var3_4 = var5_3.findNextFocus((ViewGroup)this, var1_1, var3_4) == null ? 1 : 0;
+            var5_4 = var2_2 == 2 ? 130 : 33;
+            var5_4 = var3_3.findNextFocus((ViewGroup)this, var1_1, var5_4) == null ? 1 : 0;
         }
-        var4_5 = var3_4;
-        if (var3_4 != 0) ** GOTO lbl19
-        var4_5 = var3_4;
+        var6_5 = var5_4;
+        if (var5_4 != 0) ** GOTO lbl19
+        var6_5 = var5_4;
         if (this.mLayout.canScrollHorizontally()) {
-            var3_4 = this.mLayout.getLayoutDirection() == 1 ? 1 : 0;
-            var4_5 = var2_2 == 2 ? 1 : 0;
-            var3_4 = (var4_5 ^ var3_4) != 0 ? 66 : 17;
-            var4_5 = var5_3.findNextFocus((ViewGroup)this, var1_1, var3_4) == null ? 1 : 0;
+            var5_4 = this.mLayout.getLayoutDirection() == 1 ? 1 : 0;
+            var6_5 = var2_2 == 2 ? 1 : 0;
+            var5_4 = (var6_5 ^ var5_4) != 0 ? 66 : 17;
+            var6_5 = var3_3.findNextFocus((ViewGroup)this, var1_1, var5_4) == null ? 1 : 0;
 lbl19: // 2 sources:
-            if (var4_5 != 0) {
+            if (var6_5 != 0) {
                 this.consumePendingUpdateOperations();
                 if (this.findContainingItemView(var1_1) == null) {
                     return null;
@@ -2033,25 +2033,25 @@ lbl19: // 2 sources:
                 this.resumeRequestLayout(false);
             }
         }
-        var5_3 = var5_3.findNextFocus((ViewGroup)this, var1_1, var2_2);
+        var3_3 = var3_3.findNextFocus((ViewGroup)this, var1_1, var2_2);
         ** GOTO lbl38
 lbl28: // 1 sources:
-        var5_3 = var6_6 = var5_3.findNextFocus((ViewGroup)this, var1_1, var2_2);
-        if (var6_6 == null) {
-            var5_3 = var6_6;
-            if (var3_4 != 0) {
+        var3_3 = var4_6 = var3_3.findNextFocus((ViewGroup)this, var1_1, var2_2);
+        if (var4_6 == null) {
+            var3_3 = var4_6;
+            if (var5_4 != 0) {
                 this.consumePendingUpdateOperations();
                 if (this.findContainingItemView(var1_1) == null) {
                     return null;
                 }
                 this.eatRequestLayout();
-                var5_3 = this.mLayout.onFocusSearchFailed(var1_1, var2_2, this.mRecycler, this.mState);
+                var3_3 = this.mLayout.onFocusSearchFailed(var1_1, var2_2, this.mRecycler, this.mState);
                 this.resumeRequestLayout(false);
             }
         }
 lbl38: // 6 sources:
-        if (this.isPreferredNextFocus(var1_1, var5_3, var2_2) == false) return super.focusSearch(var1_1, var2_2);
-        return var5_3;
+        if (this.isPreferredNextFocus(var1_1, var3_3, var2_2) == false) return super.focusSearch(var1_1, var2_2);
+        return var3_3;
     }
 
     protected ViewGroup.LayoutParams generateDefaultLayoutParams() {
@@ -2426,13 +2426,13 @@ lbl38: // 6 sources:
         int n6;
         int n7 = this.mChildHelper.getUnfilteredChildCount();
         if (n2 < n3) {
-            n4 = n2;
-            n5 = n3;
-            n6 = -1;
-        } else {
-            n4 = n3;
             n5 = n2;
-            n6 = 1;
+            n6 = n3;
+            n4 = -1;
+        } else {
+            n5 = n3;
+            n6 = n2;
+            n4 = 1;
         }
         int n8 = 0;
         do {
@@ -2442,11 +2442,11 @@ lbl38: // 6 sources:
                 return;
             }
             ViewHolder viewHolder = RecyclerView.getChildViewHolderInt(this.mChildHelper.getUnfilteredChildAt(n8));
-            if (viewHolder != null && viewHolder.mPosition >= n4 && viewHolder.mPosition <= n5) {
+            if (viewHolder != null && viewHolder.mPosition >= n5 && viewHolder.mPosition <= n6) {
                 if (viewHolder.mPosition == n2) {
                     viewHolder.offsetPosition(n3 - n2, false);
                 } else {
-                    viewHolder.offsetPosition(n6, false);
+                    viewHolder.offsetPosition(n4, false);
                 }
                 this.mState.mStructureChanged = true;
             }
@@ -2830,120 +2830,120 @@ lbl38: // 6 sources:
         if (this.mLayout == null) {
             return false;
         }
-        var13_2 = this.mLayout.canScrollHorizontally();
-        var14_3 = this.mLayout.canScrollVertically();
+        var15_2 = this.mLayout.canScrollHorizontally();
+        var16_3 = this.mLayout.canScrollVertically();
         if (this.mVelocityTracker == null) {
             this.mVelocityTracker = VelocityTracker.obtain();
         }
-        var10_4 = 0;
-        var15_5 = MotionEvent.obtain((MotionEvent)var1_1);
-        var6_6 = MotionEventCompat.getActionMasked((MotionEvent)var1_1);
-        var5_7 = MotionEventCompat.getActionIndex((MotionEvent)var1_1);
-        if (var6_6 == 0) {
-            var16_8 = this.mNestedOffsets;
+        var12_4 = 0;
+        var4_5 = MotionEvent.obtain((MotionEvent)var1_1);
+        var8_6 = MotionEventCompat.getActionMasked((MotionEvent)var1_1);
+        var7_7 = MotionEventCompat.getActionIndex((MotionEvent)var1_1);
+        if (var8_6 == 0) {
+            var5_8 = this.mNestedOffsets;
             this.mNestedOffsets[1] = 0;
-            var16_8[0] = 0;
+            var5_8[0] = 0;
         }
-        var15_5.offsetLocation((float)this.mNestedOffsets[0], (float)this.mNestedOffsets[1]);
-        var4_9 = var10_4;
-        switch (var6_6) {
+        var4_5.offsetLocation((float)this.mNestedOffsets[0], (float)this.mNestedOffsets[1]);
+        var6_9 = var12_4;
+        switch (var8_6) {
             default: {
-                var4_9 = var10_4;
+                var6_9 = var12_4;
                 break;
             }
             case 0: {
                 this.mScrollPointerId = var1_1.getPointerId(0);
-                this.mLastTouchX = var4_9 = (int)(var1_1.getX() + 0.5f);
-                this.mInitialTouchX = var4_9;
-                this.mLastTouchY = var4_9 = (int)(var1_1.getY() + 0.5f);
-                this.mInitialTouchY = var4_9;
-                var4_9 = 0;
-                if (var13_2) {
-                    var4_9 = false | true;
+                this.mLastTouchX = var6_9 = (int)(var1_1.getX() + 0.5f);
+                this.mInitialTouchX = var6_9;
+                this.mLastTouchY = var6_9 = (int)(var1_1.getY() + 0.5f);
+                this.mInitialTouchY = var6_9;
+                var6_9 = 0;
+                if (var15_2) {
+                    var6_9 = false | true;
                 }
-                var5_7 = var4_9;
-                if (var14_3) {
-                    var5_7 = var4_9 | 2;
+                var7_7 = var6_9;
+                if (var16_3) {
+                    var7_7 = var6_9 | 2;
                 }
-                this.startNestedScroll(var5_7);
-                var4_9 = var10_4;
+                this.startNestedScroll(var7_7);
+                var6_9 = var12_4;
                 break;
             }
             case 5: {
-                this.mScrollPointerId = var1_1.getPointerId(var5_7);
-                this.mLastTouchX = var4_9 = (int)(var1_1.getX(var5_7) + 0.5f);
-                this.mInitialTouchX = var4_9;
-                this.mLastTouchY = var4_9 = (int)(var1_1.getY(var5_7) + 0.5f);
-                this.mInitialTouchY = var4_9;
-                var4_9 = var10_4;
+                this.mScrollPointerId = var1_1.getPointerId(var7_7);
+                this.mLastTouchX = var6_9 = (int)(var1_1.getX(var7_7) + 0.5f);
+                this.mInitialTouchX = var6_9;
+                this.mLastTouchY = var6_9 = (int)(var1_1.getY(var7_7) + 0.5f);
+                this.mInitialTouchY = var6_9;
+                var6_9 = var12_4;
                 break;
             }
             case 2: {
-                var4_9 = var1_1.findPointerIndex(this.mScrollPointerId);
-                if (var4_9 < 0) {
+                var6_9 = var1_1.findPointerIndex(this.mScrollPointerId);
+                if (var6_9 < 0) {
                     Log.e((String)"RecyclerView", (String)("Error processing scroll; pointer index for id " + this.mScrollPointerId + " not found. Did any MotionEvents get skipped?"));
                     return false;
                 }
-                var11_10 = (int)(var1_1.getX(var4_9) + 0.5f);
-                var12_11 = (int)(var1_1.getY(var4_9) + 0.5f);
-                var7_12 = this.mLastTouchX - var11_10;
-                var6_6 = this.mLastTouchY - var12_11;
-                var5_7 = var7_12;
-                var4_9 = var6_6;
-                if (this.dispatchNestedPreScroll(var7_12, var6_6, this.mScrollConsumed, this.mScrollOffset)) {
-                    var5_7 = var7_12 - this.mScrollConsumed[0];
-                    var4_9 = var6_6 - this.mScrollConsumed[1];
-                    var15_5.offsetLocation((float)this.mScrollOffset[0], (float)this.mScrollOffset[1]);
+                var13_10 = (int)(var1_1.getX(var6_9) + 0.5f);
+                var14_11 = (int)(var1_1.getY(var6_9) + 0.5f);
+                var9_12 = this.mLastTouchX - var13_10;
+                var8_6 = this.mLastTouchY - var14_11;
+                var7_7 = var9_12;
+                var6_9 = var8_6;
+                if (this.dispatchNestedPreScroll(var9_12, var8_6, this.mScrollConsumed, this.mScrollOffset)) {
+                    var7_7 = var9_12 - this.mScrollConsumed[0];
+                    var6_9 = var8_6 - this.mScrollConsumed[1];
+                    var4_5.offsetLocation((float)this.mScrollOffset[0], (float)this.mScrollOffset[1]);
                     var1_1 = this.mNestedOffsets;
                     var1_1[0] = var1_1[0] + this.mScrollOffset[0];
                     var1_1 = this.mNestedOffsets;
                     var1_1[1] = var1_1[1] + this.mScrollOffset[1];
                 }
-                var6_6 = var5_7;
-                var7_12 = var4_9;
+                var8_6 = var7_7;
+                var9_12 = var6_9;
                 if (this.mScrollState != 1) {
-                    var7_12 = 0;
-                    var8_13 = var5_7;
-                    var6_6 = var7_12;
-                    if (var13_2) {
-                        var8_13 = var5_7;
-                        var6_6 = var7_12;
-                        if (Math.abs(var5_7) > this.mTouchSlop) {
-                            var8_13 = var5_7 > 0 ? var5_7 - this.mTouchSlop : var5_7 + this.mTouchSlop;
-                            var6_6 = 1;
+                    var9_12 = 0;
+                    var10_13 = var7_7;
+                    var8_6 = var9_12;
+                    if (var15_2) {
+                        var10_13 = var7_7;
+                        var8_6 = var9_12;
+                        if (Math.abs(var7_7) > this.mTouchSlop) {
+                            var10_13 = var7_7 > 0 ? var7_7 - this.mTouchSlop : var7_7 + this.mTouchSlop;
+                            var8_6 = 1;
                         }
                     }
-                    var5_7 = var4_9;
-                    var9_14 = var6_6;
-                    if (var14_3) {
-                        var5_7 = var4_9;
-                        var9_14 = var6_6;
-                        if (Math.abs(var4_9) > this.mTouchSlop) {
-                            var5_7 = var4_9 > 0 ? var4_9 - this.mTouchSlop : var4_9 + this.mTouchSlop;
-                            var9_14 = 1;
+                    var7_7 = var6_9;
+                    var11_14 = var8_6;
+                    if (var16_3) {
+                        var7_7 = var6_9;
+                        var11_14 = var8_6;
+                        if (Math.abs(var6_9) > this.mTouchSlop) {
+                            var7_7 = var6_9 > 0 ? var6_9 - this.mTouchSlop : var6_9 + this.mTouchSlop;
+                            var11_14 = 1;
                         }
                     }
-                    var6_6 = var8_13;
-                    var7_12 = var5_7;
-                    if (var9_14 != 0) {
+                    var8_6 = var10_13;
+                    var9_12 = var7_7;
+                    if (var11_14 != 0) {
                         this.setScrollState(1);
-                        var7_12 = var5_7;
-                        var6_6 = var8_13;
+                        var9_12 = var7_7;
+                        var8_6 = var10_13;
                     }
                 }
-                var4_9 = var10_4;
+                var6_9 = var12_4;
                 if (this.mScrollState == 1) {
-                    this.mLastTouchX = var11_10 - this.mScrollOffset[0];
-                    this.mLastTouchY = var12_11 - this.mScrollOffset[1];
-                    var4_9 = var13_2 != false ? var6_6 : 0;
-                    var5_7 = var14_3 != false ? var7_12 : 0;
-                    if (this.scrollByInternal(var4_9, var5_7, var15_5)) {
+                    this.mLastTouchX = var13_10 - this.mScrollOffset[0];
+                    this.mLastTouchY = var14_11 - this.mScrollOffset[1];
+                    var6_9 = var15_2 != false ? var8_6 : 0;
+                    var7_7 = var16_3 != false ? var9_12 : 0;
+                    if (this.scrollByInternal(var6_9, var7_7, var4_5)) {
                         this.getParent().requestDisallowInterceptTouchEvent(true);
                     }
-                    var4_9 = var10_4;
+                    var6_9 = var12_4;
                     if (RecyclerView.ALLOW_PREFETCHING) {
-                        this.mViewPrefetcher.postFromTraversal(var6_6, var7_12);
-                        var4_9 = var10_4;
+                        this.mViewPrefetcher.postFromTraversal(var8_6, var9_12);
+                        var6_9 = var12_4;
                         break;
                     }
                 }
@@ -2951,15 +2951,15 @@ lbl38: // 6 sources:
             }
             case 6: {
                 this.onPointerUp((MotionEvent)var1_1);
-                var4_9 = var10_4;
+                var6_9 = var12_4;
                 break;
             }
             case 1: {
-                this.mVelocityTracker.addMovement(var15_5);
-                var4_9 = 1;
+                this.mVelocityTracker.addMovement(var4_5);
+                var6_9 = 1;
                 this.mVelocityTracker.computeCurrentVelocity(1000, (float)this.mMaxFlingVelocity);
-                var2_15 = var13_2 != false ? - VelocityTrackerCompat.getXVelocity(this.mVelocityTracker, this.mScrollPointerId) : 0.0f;
-                var3_16 = var14_3 != false ? - VelocityTrackerCompat.getYVelocity(this.mVelocityTracker, this.mScrollPointerId) : 0.0f;
+                var2_15 = var15_2 != false ? - VelocityTrackerCompat.getXVelocity(this.mVelocityTracker, this.mScrollPointerId) : 0.0f;
+                var3_16 = var16_3 != false ? - VelocityTrackerCompat.getYVelocity(this.mVelocityTracker, this.mScrollPointerId) : 0.0f;
                 if (var2_15 == 0.0f && var3_16 == 0.0f || !this.fling((int)var2_15, (int)var3_16)) {
                     this.setScrollState(0);
                 }
@@ -2971,13 +2971,13 @@ lbl122: // 3 sources:
             }
             case 3: {
                 this.cancelTouch();
-                var4_9 = var10_4;
+                var6_9 = var12_4;
             }
         }
-        if (var4_9 == 0) {
-            this.mVelocityTracker.addMovement(var15_5);
+        if (var6_9 == 0) {
+            this.mVelocityTracker.addMovement(var4_5);
         }
-        var15_5.recycle();
+        var4_5.recycle();
         return true;
     }
 
@@ -5567,8 +5567,8 @@ lbl122: // 3 sources:
         }
 
         ViewHolder getChangedScrapViewForPosition(int n2) {
-            ViewHolder viewHolder;
             int n3;
+            ViewHolder viewHolder;
             if (this.mChangedScrap == null || (n3 = this.mChangedScrap.size()) == 0) {
                 return null;
             }
@@ -5660,43 +5660,43 @@ lbl122: // 3 sources:
          */
         ViewHolder getScrapViewForPosition(int var1_1, int var2_2, boolean var3_3) {
             block6 : {
-                var5_4 = this.mAttachedScrap.size();
-                var4_5 = 0;
+                var7_4 = this.mAttachedScrap.size();
+                var6_5 = 0;
                 do {
-                    if (var4_5 >= var5_4) ** GOTO lbl9
-                    var6_6 = this.mAttachedScrap.get(var4_5);
-                    if (!(var6_6.wasReturnedFromScrap() || var6_6.getLayoutPosition() != var1_1 || var6_6.isInvalid() || !RecyclerView.this.mState.mInPreLayout && var6_6.isRemoved())) {
-                        if (var2_2 != -1 && var6_6.getItemViewType() != var2_2) {
-                            Log.e((String)"RecyclerView", (String)("Scrap view for position " + var1_1 + " isn't dirty but has" + " wrong view type! (found " + var6_6.getItemViewType() + " but expected " + var2_2 + ")"));
+                    if (var6_5 >= var7_4) ** GOTO lbl9
+                    var4_6 = this.mAttachedScrap.get(var6_5);
+                    if (!(var4_6.wasReturnedFromScrap() || var4_6.getLayoutPosition() != var1_1 || var4_6.isInvalid() || !RecyclerView.this.mState.mInPreLayout && var4_6.isRemoved())) {
+                        if (var2_2 != -1 && var4_6.getItemViewType() != var2_2) {
+                            Log.e((String)"RecyclerView", (String)("Scrap view for position " + var1_1 + " isn't dirty but has" + " wrong view type! (found " + var4_6.getItemViewType() + " but expected " + var2_2 + ")"));
 lbl9: // 2 sources:
-                            if (!var3_3 && (var6_6 = RecyclerView.this.mChildHelper.findHiddenNonRemovedView(var1_1, var2_2)) != null) {
-                                var7_7 = RecyclerView.getChildViewHolderInt((View)var6_6);
-                                RecyclerView.this.mChildHelper.unhide((View)var6_6);
-                                var1_1 = RecyclerView.this.mChildHelper.indexOfChild((View)var6_6);
+                            if (!var3_3 && (var4_6 = RecyclerView.this.mChildHelper.findHiddenNonRemovedView(var1_1, var2_2)) != null) {
+                                var5_7 = RecyclerView.getChildViewHolderInt((View)var4_6);
+                                RecyclerView.this.mChildHelper.unhide((View)var4_6);
+                                var1_1 = RecyclerView.this.mChildHelper.indexOfChild((View)var4_6);
                                 if (var1_1 != -1) break;
-                                throw new IllegalStateException("layout index should not be -1 after unhiding a view:" + var7_7);
+                                throw new IllegalStateException("layout index should not be -1 after unhiding a view:" + var5_7);
                             }
                             break block6;
                         }
-                        var6_6.addFlags(32);
-                        return var6_6;
+                        var4_6.addFlags(32);
+                        return var4_6;
                     }
-                    ++var4_5;
+                    ++var6_5;
                 } while (true);
                 RecyclerView.this.mChildHelper.detachViewFromParent(var1_1);
-                this.scrapView((View)var6_6);
-                var7_7.addFlags(8224);
-                return var7_7;
+                this.scrapView((View)var4_6);
+                var5_7.addFlags(8224);
+                return var5_7;
             }
-            var4_5 = this.mCachedViews.size();
+            var6_5 = this.mCachedViews.size();
             var2_2 = 0;
-            while (var2_2 < var4_5) {
-                var7_8 = this.mCachedViews.get(var2_2);
-                if (!var7_8.isInvalid() && var7_8.getLayoutPosition() == var1_1) {
-                    var6_6 = var7_8;
-                    if (var3_3 != false) return var6_6;
+            while (var2_2 < var6_5) {
+                var5_8 = this.mCachedViews.get(var2_2);
+                if (!var5_8.isInvalid() && var5_8.getLayoutPosition() == var1_1) {
+                    var4_6 = var5_8;
+                    if (var3_3 != false) return var4_6;
                     this.mCachedViews.remove(var2_2);
-                    return var7_8;
+                    return var5_8;
                 }
                 ++var2_2;
             }
@@ -5891,22 +5891,22 @@ lbl9: // 2 sources:
             int n6;
             if (n2 < n3) {
                 n4 = n2;
-                n6 = n3;
-                n5 = -1;
+                n5 = n3;
+                n6 = -1;
             } else {
                 n4 = n3;
-                n6 = n2;
-                n5 = 1;
+                n5 = n2;
+                n6 = 1;
             }
             int n7 = this.mCachedViews.size();
             int n8 = 0;
             while (n8 < n7) {
                 ViewHolder viewHolder = this.mCachedViews.get(n8);
-                if (viewHolder != null && viewHolder.mPosition >= n4 && viewHolder.mPosition <= n6) {
+                if (viewHolder != null && viewHolder.mPosition >= n4 && viewHolder.mPosition <= n5) {
                     if (viewHolder.mPosition == n2) {
                         viewHolder.offsetPosition(n3 - n2, false);
                     } else {
-                        viewHolder.offsetPosition(n5, false);
+                        viewHolder.offsetPosition(n6, false);
                     }
                 }
                 ++n8;
@@ -6006,14 +6006,14 @@ lbl9: // 2 sources:
          * Lifted jumps to return sites
          */
         void recycleViewHolderInternal(ViewHolder var1_1) {
-            var7_2 = true;
+            var8_2 = true;
             if (var1_1.isScrap() || var1_1.itemView.getParent() != null) {
-                var8_3 = new StringBuilder().append("Scrapped or attached views may not be recycled. isScrap:").append(var1_1.isScrap()).append(" isAttached:");
+                var2_3 = new StringBuilder().append("Scrapped or attached views may not be recycled. isScrap:").append(var1_1.isScrap()).append(" isAttached:");
                 if (var1_1.itemView.getParent() != null) {
-                    throw new IllegalArgumentException(var8_3.append(var7_2).toString());
+                    throw new IllegalArgumentException(var2_3.append(var8_2).toString());
                 }
-                var7_2 = false;
-                throw new IllegalArgumentException(var8_3.append(var7_2).toString());
+                var8_2 = false;
+                throw new IllegalArgumentException(var2_3.append(var8_2).toString());
             }
             if (var1_1.isTmpDetached()) {
                 throw new IllegalArgumentException("Tmp detached view should be removed from RecyclerView before it can be recycled: " + var1_1);
@@ -6021,57 +6021,57 @@ lbl9: // 2 sources:
             if (var1_1.shouldIgnore()) {
                 throw new IllegalArgumentException("Trying to recycle an ignored view holder. You should first call stopIgnoringView(view) before calling recycle.");
             }
-            var7_2 = ViewHolder.access$800(var1_1);
-            var2_4 = RecyclerView.this.mAdapter != null && var7_2 != false && RecyclerView.this.mAdapter.onFailedToRecycleView(var1_1) != false ? 1 : 0;
-            var3_5 = 0;
-            var6_6 = 0;
-            var5_7 = 0;
-            if (var2_4 != 0) ** GOTO lbl20
-            var4_8 = var5_7;
+            var8_2 = ViewHolder.access$800(var1_1);
+            var3_4 = RecyclerView.this.mAdapter != null && var8_2 != false && RecyclerView.this.mAdapter.onFailedToRecycleView(var1_1) != false ? 1 : 0;
+            var4_5 = 0;
+            var7_6 = 0;
+            var6_7 = 0;
+            if (var3_4 != 0) ** GOTO lbl20
+            var5_8 = var6_7;
             if (!var1_1.isRecyclable()) ** GOTO lbl48
 lbl20: // 2 sources:
-            var2_4 = var6_6;
+            var3_4 = var7_6;
             if (this.mViewCacheMax <= 0) ** GOTO lbl42
-            var2_4 = var6_6;
+            var3_4 = var7_6;
             if (var1_1.hasAnyOfTheFlags(14)) ** GOTO lbl42
-            var2_4 = var3_5 = this.mCachedViews.size();
-            if (var3_5 >= this.mViewCacheMax) {
-                var2_4 = var3_5;
-                if (var3_5 > 0) {
+            var3_4 = var4_5 = this.mCachedViews.size();
+            if (var4_5 >= this.mViewCacheMax) {
+                var3_4 = var4_5;
+                if (var4_5 > 0) {
                     this.recycleCachedViewAt(0);
-                    var2_4 = var3_5 - 1;
+                    var3_4 = var4_5 - 1;
                 }
             }
-            var4_8 = var3_5 = var2_4;
+            var5_8 = var4_5 = var3_4;
             if (!RecyclerView.access$400()) ** GOTO lbl40
-            var4_8 = var3_5;
-            if (var2_4 <= 0) ** GOTO lbl40
-            var4_8 = var3_5;
+            var5_8 = var4_5;
+            if (var3_4 <= 0) ** GOTO lbl40
+            var5_8 = var4_5;
             if (RecyclerView.this.mViewPrefetcher.lastPrefetchIncludedPosition(var1_1.mPosition)) ** GOTO lbl40
-            --var2_4;
+            --var3_4;
             do {
-                if (var2_4 < 0 || !RecyclerView.this.mViewPrefetcher.lastPrefetchIncludedPosition(var3_5 = this.mCachedViews.get((int)var2_4).mPosition)) {
-                    var4_8 = var2_4 + 1;
+                if (var3_4 < 0 || !RecyclerView.this.mViewPrefetcher.lastPrefetchIncludedPosition(var4_5 = this.mCachedViews.get((int)var3_4).mPosition)) {
+                    var5_8 = var3_4 + 1;
 lbl40: // 4 sources:
-                    this.mCachedViews.add(var4_8, var1_1);
-                    var2_4 = 1;
+                    this.mCachedViews.add(var5_8, var1_1);
+                    var3_4 = 1;
 lbl42: // 3 sources:
-                    var3_5 = var2_4;
-                    var4_8 = var5_7;
-                    if (var2_4 == 0) {
+                    var4_5 = var3_4;
+                    var5_8 = var6_7;
+                    if (var3_4 == 0) {
                         this.addViewHolderToRecycledViewPool(var1_1);
-                        var4_8 = 1;
-                        var3_5 = var2_4;
+                        var5_8 = 1;
+                        var4_5 = var3_4;
                     }
 lbl48: // 4 sources:
                     RecyclerView.this.mViewInfoStore.removeViewHolder(var1_1);
-                    if (var3_5 != 0) return;
-                    if (var4_8 != 0) return;
-                    if (var7_2 == false) return;
+                    if (var4_5 != 0) return;
+                    if (var5_8 != 0) return;
+                    if (var8_2 == false) return;
                     var1_1.mOwnerRecyclerView = null;
                     return;
                 }
-                --var2_4;
+                --var3_4;
             } while (true);
         }
 
@@ -7349,8 +7349,8 @@ lbl48: // 4 sources:
                         return;
                     }
                     n2 = RecyclerView.this.mLayout.getItemPrefetchCount();
-                    l4 = TimeUnit.MILLISECONDS.toNanos(RecyclerView.this.getDrawingTime());
-                    if (l4 == 0) break block10;
+                    l3 = TimeUnit.MILLISECONDS.toNanos(RecyclerView.this.getDrawingTime());
+                    if (l3 == 0) break block10;
                     l2 = RecyclerView.sFrameIntervalNanos;
                     if (l2 != 0) break block11;
                 }
@@ -7359,7 +7359,7 @@ lbl48: // 4 sources:
             }
             l2 = System.nanoTime();
             long l5 = RecyclerView.sFrameIntervalNanos;
-            if (l2 - this.mPostTimeNanos > RecyclerView.sFrameIntervalNanos || l4 + l5 - l2 < (l3 = MIN_PREFETCH_TIME_NANOS)) {
+            if (l2 - this.mPostTimeNanos > RecyclerView.sFrameIntervalNanos || l3 + l5 - l2 < (l4 = MIN_PREFETCH_TIME_NANOS)) {
                 TraceCompat.endSection();
                 return;
             }

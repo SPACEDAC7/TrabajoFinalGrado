@@ -162,8 +162,8 @@ implements MenuView.ItemView {
      */
     @Override
     public void setCheckable(boolean bl) {
-        CheckBox checkBox;
         RadioButton radioButton;
+        CheckBox checkBox;
         if (!bl && this.mRadioButton == null && this.mCheckBox == null) return;
         if (this.mItemData.isExclusiveCheckable()) {
             if (this.mRadioButton == null) {

@@ -186,47 +186,47 @@ implements View.OnClickListener {
     private Drawable getDrawable(Uri var1_1) {
         block13 : {
             try {
-                var2_2 = "android.resource".equals(var1_1.getScheme());
-                if (var2_2) {
+                var4_2 = "android.resource".equals(var1_1.getScheme());
+                if (var4_2) {
                     try {
                         return this.getDrawableFromResourceUri(var1_1);
                     }
-                    catch (Resources.NotFoundException var3_4) {
+                    catch (Resources.NotFoundException var2_4) {
                         throw new FileNotFoundException("Resource does not exist: " + (Object)var1_1);
                     }
                 }
-                var3_6 = this.mProviderContext.getContentResolver().openInputStream(var1_1);
-                if (var3_6 != null) break block13;
+                var2_6 = this.mProviderContext.getContentResolver().openInputStream(var1_1);
+                if (var2_6 != null) break block13;
                 throw new FileNotFoundException("Failed to open " + (Object)var1_1);
             }
-            catch (FileNotFoundException var3_5) {
-                Log.w((String)"SuggestionsAdapter", (String)("Icon not found: " + (Object)var1_1 + ", " + var3_5.getMessage()));
+            catch (FileNotFoundException var2_5) {
+                Log.w((String)"SuggestionsAdapter", (String)("Icon not found: " + (Object)var1_1 + ", " + var2_5.getMessage()));
                 return null;
             }
         }
         try {
-            var4_9 = Drawable.createFromStream((InputStream)var3_6, (String)null);
+            var3_9 = Drawable.createFromStream((InputStream)var2_6, (String)null);
         }
-        catch (Throwable var4_10) {
+        catch (Throwable var3_10) {
             try {
-                var3_6.close();
+                var2_6.close();
             }
-            catch (IOException var3_8) {
-                Log.e((String)"SuggestionsAdapter", (String)("Error closing icon stream for " + (Object)var1_1), (Throwable)var3_8);
-                throw var4_10;
+            catch (IOException var2_8) {
+                Log.e((String)"SuggestionsAdapter", (String)("Error closing icon stream for " + (Object)var1_1), (Throwable)var2_8);
+                throw var3_10;
             }
-            throw var4_10;
+            throw var3_10;
         }
-        ** try [egrp 5[TRYBLOCK] [7 : 145->149)] { 
+        ** try [egrp 5[TRYBLOCK] [7 : 146->150)] { 
 lbl-1000: // 1 sources:
         {
-            var3_6.close();
-            return var4_9;
+            var2_6.close();
+            return var3_9;
         }
 lbl29: // 1 sources:
-        catch (IOException var3_7) {
-            Log.e((String)"SuggestionsAdapter", (String)("Error closing icon stream for " + (Object)var1_1), (Throwable)var3_7);
-            return var4_9;
+        catch (IOException var2_7) {
+            Log.e((String)"SuggestionsAdapter", (String)("Error closing icon stream for " + (Object)var1_1), (Throwable)var2_7);
+            return var3_9;
         }
     }
 
@@ -250,14 +250,14 @@ lbl29: // 1 sources:
             this.storeInIconCache(string3, drawable3);
             return drawable3;
         }
-        catch (NumberFormatException var3_3) {
+        catch (NumberFormatException var2_3) {
             drawable3 = drawable2 = this.checkIconCache(string2);
             if (drawable2 != null) return drawable3;
             drawable3 = this.getDrawable(Uri.parse((String)string2));
             this.storeInIconCache(string2, drawable3);
             return drawable3;
         }
-        catch (Resources.NotFoundException var3_4) {
+        catch (Resources.NotFoundException var2_4) {
             Log.w((String)"SuggestionsAdapter", (String)("Icon resource not found: " + string2));
             return null;
         }
@@ -447,7 +447,7 @@ lbl29: // 1 sources:
         try {
             resources = this.mContext.getPackageManager().getResourcesForApplication(string2);
         }
-        catch (PackageManager.NameNotFoundException var3_3) {
+        catch (PackageManager.NameNotFoundException var2_3) {
             throw new FileNotFoundException("No package found for authority: " + (Object)uri);
         }
         List list = uri.getPathSegments();
@@ -459,7 +459,7 @@ lbl29: // 1 sources:
             try {
                 n2 = Integer.parseInt((String)list.get(0));
             }
-            catch (NumberFormatException var3_4) {
+            catch (NumberFormatException var2_4) {
                 throw new FileNotFoundException("Single path segment is not a resource ID: " + (Object)uri);
             }
         } else {

@@ -104,29 +104,29 @@ implements OpReorderer.Callback {
             int n7;
             int n8;
             if (this.mCallback.findViewHolder(i2) != null || this.canFindInPreLayout(i2)) {
-                n7 = n3;
+                n8 = n3;
                 int n9 = n2;
                 if (n6 == 0) {
                     this.dispatchAndUpdateViewHolders(this.obtainUpdateOp(4, n2, n3, updateOp.payload));
-                    n7 = 0;
+                    n8 = 0;
                     n9 = i2;
                 }
-                n8 = 1;
+                n7 = 1;
                 n2 = n9;
             } else {
-                n7 = n3;
-                n8 = n2;
+                n8 = n3;
+                n7 = n2;
                 if (n6 == 1) {
                     this.postponeAndUpdateViewHolders(this.obtainUpdateOp(4, n2, n3, updateOp.payload));
-                    n7 = 0;
-                    n8 = i2;
+                    n8 = 0;
+                    n7 = i2;
                 }
                 n3 = 0;
-                n2 = n8;
-                n8 = n3;
+                n2 = n7;
+                n7 = n3;
             }
-            n3 = n7 + 1;
-            n6 = n8;
+            n3 = n8 + 1;
+            n6 = n7;
         }
         Object object = updateOp;
         if (n3 != updateOp.itemCount) {
@@ -424,29 +424,29 @@ implements OpReorderer.Callback {
      */
     void consumeUpdatesInOnePass() {
         this.consumePostponedUpdates();
-        var2_1 = this.mPendingUpdates.size();
-        var1_2 = 0;
+        var3_1 = this.mPendingUpdates.size();
+        var2_2 = 0;
         do {
-            if (var1_2 >= var2_1) {
+            if (var2_2 >= var3_1) {
                 this.recycleUpdateOpsAndClearList(this.mPendingUpdates);
                 this.mExistingUpdateTypes = 0;
                 return;
             }
-            var3_3 = this.mPendingUpdates.get(var1_2);
-            switch (var3_3.cmd) {
+            var1_3 = this.mPendingUpdates.get(var2_2);
+            switch (var1_3.cmd) {
                 case 1: {
-                    this.mCallback.onDispatchSecondPass(var3_3);
-                    this.mCallback.offsetPositionsForAdd(var3_3.positionStart, var3_3.itemCount);
+                    this.mCallback.onDispatchSecondPass(var1_3);
+                    this.mCallback.offsetPositionsForAdd(var1_3.positionStart, var1_3.itemCount);
                     ** break;
                 }
                 case 2: {
-                    this.mCallback.onDispatchSecondPass(var3_3);
-                    this.mCallback.offsetPositionsForRemovingInvisible(var3_3.positionStart, var3_3.itemCount);
+                    this.mCallback.onDispatchSecondPass(var1_3);
+                    this.mCallback.offsetPositionsForRemovingInvisible(var1_3.positionStart, var1_3.itemCount);
                     ** break;
                 }
                 case 4: {
-                    this.mCallback.onDispatchSecondPass(var3_3);
-                    this.mCallback.markViewHoldersUpdated(var3_3.positionStart, var3_3.itemCount, var3_3.payload);
+                    this.mCallback.onDispatchSecondPass(var1_3);
+                    this.mCallback.markViewHoldersUpdated(var1_3.positionStart, var1_3.itemCount, var1_3.payload);
                 }
 lbl22: // 4 sources:
                 default: {
@@ -454,13 +454,13 @@ lbl22: // 4 sources:
                 }
                 case 8: 
             }
-            this.mCallback.onDispatchSecondPass(var3_3);
-            this.mCallback.offsetPositionsForMove(var3_3.positionStart, var3_3.itemCount);
+            this.mCallback.onDispatchSecondPass(var1_3);
+            this.mCallback.offsetPositionsForMove(var1_3.positionStart, var1_3.itemCount);
 lbl27: // 2 sources:
             if (this.mOnItemProcessedCallback != null) {
                 this.mOnItemProcessedCallback.run();
             }
-            ++var1_2;
+            ++var2_2;
         } while (true);
     }
 
@@ -632,25 +632,25 @@ lbl27: // 2 sources:
      */
     void preProcess() {
         this.mOpReorderer.reorderOps(this.mPendingUpdates);
-        var2_1 = this.mPendingUpdates.size();
-        var1_2 = 0;
+        var3_1 = this.mPendingUpdates.size();
+        var2_2 = 0;
         do {
-            if (var1_2 >= var2_1) {
+            if (var2_2 >= var3_1) {
                 this.mPendingUpdates.clear();
                 return;
             }
-            var3_3 = this.mPendingUpdates.get(var1_2);
-            switch (var3_3.cmd) {
+            var1_3 = this.mPendingUpdates.get(var2_2);
+            switch (var1_3.cmd) {
                 case 1: {
-                    this.applyAdd(var3_3);
+                    this.applyAdd(var1_3);
                     ** break;
                 }
                 case 2: {
-                    this.applyRemove(var3_3);
+                    this.applyRemove(var1_3);
                     ** break;
                 }
                 case 4: {
-                    this.applyUpdate(var3_3);
+                    this.applyUpdate(var1_3);
                 }
 lbl18: // 4 sources:
                 default: {
@@ -658,12 +658,12 @@ lbl18: // 4 sources:
                 }
                 case 8: 
             }
-            this.applyMove(var3_3);
+            this.applyMove(var1_3);
 lbl22: // 2 sources:
             if (this.mOnItemProcessedCallback != null) {
                 this.mOnItemProcessedCallback.run();
             }
-            ++var1_2;
+            ++var2_2;
         } while (true);
     }
 

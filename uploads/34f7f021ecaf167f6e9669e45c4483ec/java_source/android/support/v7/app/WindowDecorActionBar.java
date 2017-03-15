@@ -443,14 +443,14 @@ implements ActionBarOverlayLayout.ActionBarVisibilityCallback {
             ViewPropertyAnimatorCompat viewPropertyAnimatorCompat;
             ViewPropertyAnimatorCompat viewPropertyAnimatorCompat2;
             if (bl) {
-                viewPropertyAnimatorCompat = this.mDecorToolbar.setupAnimatorToVisibility(4, 100);
-                viewPropertyAnimatorCompat2 = this.mContextView.setupAnimatorToVisibility(0, 200);
+                viewPropertyAnimatorCompat2 = this.mDecorToolbar.setupAnimatorToVisibility(4, 100);
+                viewPropertyAnimatorCompat = this.mContextView.setupAnimatorToVisibility(0, 200);
             } else {
-                viewPropertyAnimatorCompat2 = this.mDecorToolbar.setupAnimatorToVisibility(0, 200);
-                viewPropertyAnimatorCompat = this.mContextView.setupAnimatorToVisibility(8, 100);
+                viewPropertyAnimatorCompat = this.mDecorToolbar.setupAnimatorToVisibility(0, 200);
+                viewPropertyAnimatorCompat2 = this.mContextView.setupAnimatorToVisibility(8, 100);
             }
             ViewPropertyAnimatorCompatSet viewPropertyAnimatorCompatSet = new ViewPropertyAnimatorCompatSet();
-            viewPropertyAnimatorCompatSet.playSequentially(viewPropertyAnimatorCompat, viewPropertyAnimatorCompat2);
+            viewPropertyAnimatorCompatSet.playSequentially(viewPropertyAnimatorCompat2, viewPropertyAnimatorCompat);
             viewPropertyAnimatorCompatSet.start();
             return;
         }

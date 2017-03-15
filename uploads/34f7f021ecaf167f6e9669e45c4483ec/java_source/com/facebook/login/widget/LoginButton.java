@@ -394,8 +394,8 @@ extends FacebookButtonBase {
          * Enabled aggressive block sorting
          */
         public void onClick(View view) {
-            Object object;
             String string2;
+            Object object;
             Context context = LoginButton.this.getContext();
             AccessToken accessToken = AccessToken.getCurrentAccessToken();
             if (accessToken != null) {

@@ -5,15 +5,21 @@
  *  android.content.Context
  *  android.net.Uri
  *  android.net.Uri$Builder
+ *  com.facebook.internal.ImageRequest$1
+ *  com.facebook.internal.ImageRequest$Builder
+ *  com.facebook.internal.ImageRequest$Callback
  */
 package com.facebook.internal;
 
 import android.content.Context;
 import android.net.Uri;
-import com.facebook.internal.ImageResponse;
+import com.facebook.internal.ImageRequest;
 import com.facebook.internal.Validate;
 import java.util.Locale;
 
+/*
+ * Exception performing whole class analysis ignored.
+ */
 public class ImageRequest {
     private static final String AUTHORITY = "graph.facebook.com";
     private static final String HEIGHT_PARAM = "height";
@@ -33,11 +39,11 @@ public class ImageRequest {
      * Enabled aggressive block sorting
      */
     private ImageRequest(Builder object) {
-        this.context = ((Builder)object).context;
-        this.imageUri = ((Builder)object).imageUrl;
-        this.callback = ((Builder)object).callback;
-        this.allowCachedRedirects = ((Builder)object).allowCachedRedirects;
-        object = ((Builder)object).callerTag == null ? new Object() : ((Builder)object).callerTag;
+        this.context = Builder.access$000((Builder)object);
+        this.imageUri = Builder.access$100((Builder)object);
+        this.callback = Builder.access$200((Builder)object);
+        this.allowCachedRedirects = Builder.access$300((Builder)object);
+        object = Builder.access$400((Builder)object) == null ? new Object() : Builder.access$400((Builder)object);
         this.callerTag = object;
     }
 
@@ -78,43 +84,5 @@ public class ImageRequest {
     public boolean isCachedRedirectAllowed() {
         return this.allowCachedRedirects;
     }
-
-    public static class Builder {
-        private boolean allowCachedRedirects;
-        private Callback callback;
-        private Object callerTag;
-        private Context context;
-        private Uri imageUrl;
-
-        public Builder(Context context, Uri uri) {
-            Validate.notNull((Object)uri, "imageUri");
-            this.context = context;
-            this.imageUrl = uri;
-        }
-
-        public ImageRequest build() {
-            return new ImageRequest(this);
-        }
-
-        public Builder setAllowCachedRedirects(boolean bl) {
-            this.allowCachedRedirects = bl;
-            return this;
-        }
-
-        public Builder setCallback(Callback callback) {
-            this.callback = callback;
-            return this;
-        }
-
-        public Builder setCallerTag(Object object) {
-            this.callerTag = object;
-            return this;
-        }
-    }
-
-    public static interface Callback {
-        public void onCompleted(ImageResponse var1);
-    }
-
 }
 

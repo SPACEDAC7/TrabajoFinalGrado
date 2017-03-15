@@ -78,14 +78,14 @@ extends BaseControllerView {
         float f3;
         if (bl) {
             this.setVisibility(0);
-            f2 = 1.0f;
-            f3 = 0.0f;
-        } else {
-            f2 = 0.0f;
             f3 = 1.0f;
+            f2 = 0.0f;
+        } else {
+            f3 = 0.0f;
+            f2 = 1.0f;
         }
         this.mIsShowing = bl;
-        return ObjectAnimator.ofFloat((Object)((Object)this), (String)"alpha", (float[])new float[]{f3, f2}).setDuration(500);
+        return ObjectAnimator.ofFloat((Object)((Object)this), (String)"alpha", (float[])new float[]{f2, f3}).setDuration(500);
     }
 
     private void configureDrawables() {

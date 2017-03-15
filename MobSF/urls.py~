@@ -19,7 +19,7 @@ from django.contrib import admin
 
 urlpatterns = [
     # Examples:
-    #url(r'^index/$', MobSF.views.index),
+    url(r'^index/$', MobSF.views.index),
     url(r'^upload/$', MobSF.views.upload),
     url(r'^download/', MobSF.views.download),
     url(r'^about/$', MobSF.views.about),

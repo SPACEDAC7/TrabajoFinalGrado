@@ -72,8 +72,8 @@ extends InputStream {
             int n2 = this.wrapped.read();
             return n2;
         }
-        catch (IOException var2_2) {
-            this.exception = var2_2;
+        catch (IOException var1_2) {
+            this.exception = var1_2;
             return -1;
         }
     }

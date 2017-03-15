@@ -192,23 +192,23 @@ extends FrameLayout {
             }
         }
         if (this.mToolbar != null) ** GOTO lbl20
-        var4_1 = null;
-        var1_2 = 0;
-        var2_3 = this.getChildCount();
+        var2_1 = null;
+        var3_2 = 0;
+        var4_3 = this.getChildCount();
         do {
-            var3_4 = var4_1;
-            if (var1_2 >= var2_3) ** GOTO lbl19
-            var3_4 = this.getChildAt(var1_2);
-            if (var3_4 instanceof Toolbar) {
-                var3_4 = (Toolbar)var3_4;
+            var1_4 = var2_1;
+            if (var3_2 >= var4_3) ** GOTO lbl19
+            var1_4 = this.getChildAt(var3_2);
+            if (var1_4 instanceof Toolbar) {
+                var1_4 = (Toolbar)var1_4;
 lbl19: // 2 sources:
-                this.mToolbar = var3_4;
+                this.mToolbar = var1_4;
 lbl20: // 2 sources:
                 this.updateDummyView();
                 this.mRefreshToolbar = false;
                 return;
             }
-            ++var1_2;
+            ++var3_2;
         } while (true);
     }
 
@@ -450,42 +450,42 @@ lbl20: // 2 sources:
      * Enabled aggressive block sorting
      */
     protected void onLayout(boolean bl, int n2, int n3, int n4, int n5) {
-        Object object;
         int n6;
         int n7;
         int n8;
+        Object object;
         super.onLayout(bl, n2, n3, n4, n5);
         if (this.mLastInsets != null) {
-            n7 = this.mLastInsets.getSystemWindowInsetTop();
-            n8 = this.getChildCount();
-            for (n6 = 0; n6 < n8; ++n6) {
-                object = this.getChildAt(n6);
-                if (ViewCompat.getFitsSystemWindows((View)object) || object.getTop() >= n7) continue;
-                ViewCompat.offsetTopAndBottom((View)object, n7);
+            n8 = this.mLastInsets.getSystemWindowInsetTop();
+            n6 = this.getChildCount();
+            for (n7 = 0; n7 < n6; ++n7) {
+                object = this.getChildAt(n7);
+                if (ViewCompat.getFitsSystemWindows((View)object) || object.getTop() >= n8) continue;
+                ViewCompat.offsetTopAndBottom((View)object, n8);
             }
         }
         if (this.mCollapsingTitleEnabled && this.mDummyView != null) {
             bl = ViewCompat.isAttachedToWindow(this.mDummyView) && this.mDummyView.getVisibility() == 0;
             this.mDrawCollapsingTitle = bl;
             if (this.mDrawCollapsingTitle) {
-                n6 = ViewCompat.getLayoutDirection((View)this) == 1 ? 1 : 0;
+                n7 = ViewCompat.getLayoutDirection((View)this) == 1 ? 1 : 0;
                 object = this.mToolbarDirectChild != null ? this.mToolbarDirectChild : this.mToolbar;
                 int n9 = this.getMaxOffsetForPinChild((View)object);
                 ViewGroupUtils.getDescendantRect((ViewGroup)this, this.mDummyView, this.mTmpRect);
                 object = this.mCollapsingTextHelper;
                 int n10 = this.mTmpRect.left;
-                n7 = n6 != 0 ? this.mToolbar.getTitleMarginEnd() : this.mToolbar.getTitleMarginStart();
+                n8 = n7 != 0 ? this.mToolbar.getTitleMarginEnd() : this.mToolbar.getTitleMarginStart();
                 int n11 = this.mTmpRect.top;
                 int n12 = this.mToolbar.getTitleMarginTop();
                 int n13 = this.mTmpRect.right;
-                n8 = n6 != 0 ? this.mToolbar.getTitleMarginStart() : this.mToolbar.getTitleMarginEnd();
-                object.setCollapsedBounds(n10 + n7, n12 + (n11 + n9), n8 + n13, this.mTmpRect.bottom + n9 - this.mToolbar.getTitleMarginBottom());
+                n6 = n7 != 0 ? this.mToolbar.getTitleMarginStart() : this.mToolbar.getTitleMarginEnd();
+                object.setCollapsedBounds(n10 + n8, n12 + (n11 + n9), n6 + n13, this.mTmpRect.bottom + n9 - this.mToolbar.getTitleMarginBottom());
                 object = this.mCollapsingTextHelper;
-                n7 = n6 != 0 ? this.mExpandedMarginEnd : this.mExpandedMarginStart;
-                n8 = this.mTmpRect.top;
+                n8 = n7 != 0 ? this.mExpandedMarginEnd : this.mExpandedMarginStart;
+                n6 = this.mTmpRect.top;
                 n9 = this.mExpandedMarginTop;
-                n6 = n6 != 0 ? this.mExpandedMarginStart : this.mExpandedMarginEnd;
-                object.setExpandedBounds(n7, n9 + n8, n4 - n2 - n6, n5 - n3 - this.mExpandedMarginBottom);
+                n7 = n7 != 0 ? this.mExpandedMarginStart : this.mExpandedMarginEnd;
+                object.setExpandedBounds(n8, n9 + n6, n4 - n2 - n7, n5 - n3 - this.mExpandedMarginBottom);
                 this.mCollapsingTextHelper.recalculate();
             }
         }

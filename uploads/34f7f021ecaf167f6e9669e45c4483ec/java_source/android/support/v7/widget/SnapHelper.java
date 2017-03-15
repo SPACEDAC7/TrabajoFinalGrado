@@ -156,8 +156,8 @@ extends RecyclerView.OnFlingListener {
      * Enabled aggressive block sorting
      */
     void snapToTargetExistingView() {
-        View view;
         int[] arrn;
+        View view;
         if (this.mRecyclerView == null || (arrn = this.mRecyclerView.getLayoutManager()) == null || (view = this.findSnapView((RecyclerView.LayoutManager)arrn)) == null || (arrn = this.calculateDistanceToFinalSnap((RecyclerView.LayoutManager)arrn, view))[0] == 0 && arrn[1] == 0) {
             return;
         }

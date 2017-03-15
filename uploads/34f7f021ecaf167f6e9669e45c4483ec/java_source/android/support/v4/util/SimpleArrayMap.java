@@ -367,31 +367,31 @@ lbl25: // 2 sources:
         int n3;
         int n4 = 8;
         if (object == null) {
-            n3 = 0;
-            n2 = this.indexOfNull();
+            n2 = 0;
+            n3 = this.indexOfNull();
         } else {
-            n3 = object.hashCode();
-            n2 = this.indexOf(object, n3);
+            n2 = object.hashCode();
+            n3 = this.indexOf(object, n2);
         }
-        if (n2 >= 0) {
-            n2 = (n2 << 1) + 1;
-            object = this.mArray[n2];
-            this.mArray[n2] = v2;
+        if (n3 >= 0) {
+            n3 = (n3 << 1) + 1;
+            object = this.mArray[n3];
+            this.mArray[n3] = v2;
             return (V)object;
         }
-        int n5 = ~ n2;
+        int n5 = ~ n3;
         if (this.mSize >= this.mHashes.length) {
             if (this.mSize >= 8) {
-                n2 = this.mSize + (this.mSize >> 1);
+                n3 = this.mSize + (this.mSize >> 1);
             } else {
-                n2 = n4;
+                n3 = n4;
                 if (this.mSize < 4) {
-                    n2 = 4;
+                    n3 = 4;
                 }
             }
             int[] arrn = this.mHashes;
             Object[] arrobject = this.mArray;
-            this.allocArrays(n2);
+            this.allocArrays(n3);
             if (this.mHashes.length > 0) {
                 System.arraycopy(arrn, 0, this.mHashes, 0, arrn.length);
                 System.arraycopy(arrobject, 0, this.mArray, 0, arrobject.length);
@@ -402,7 +402,7 @@ lbl25: // 2 sources:
             System.arraycopy(this.mHashes, n5, this.mHashes, n5 + 1, this.mSize - n5);
             System.arraycopy(this.mArray, n5 << 1, this.mArray, n5 + 1 << 1, this.mSize - n5 << 1);
         }
-        this.mHashes[n5] = n3;
+        this.mHashes[n5] = n2;
         this.mArray[n5 << 1] = object;
         this.mArray[(n5 << 1) + 1] = v2;
         ++this.mSize;

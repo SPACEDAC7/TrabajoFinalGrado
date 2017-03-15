@@ -25,7 +25,7 @@ public class RootDetector {
                 return true;
             }
         }
-        catch (Exception var1_1) {
+        catch (Exception var0_1) {
             // empty catch block
         }
         return false;

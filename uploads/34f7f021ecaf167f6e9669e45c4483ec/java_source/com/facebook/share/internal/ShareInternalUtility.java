@@ -521,32 +521,32 @@ public final class ShareInternalUtility {
                         return null;
                     }
                     try {
-                        var4_3 = new JSONObject();
-                        var6_4 = new JSONObject();
-                        var7_5 = var0.names();
-                        var2_6 = 0;
+                        var3_3 = new JSONObject();
+                        var5_4 = new JSONObject();
+                        var6_5 = var0.names();
+                        var9_6 = 0;
 lbl8: // 2 sources:
-                        if (var2_6 >= var7_5.length()) break block12;
-                        var8_9 = var7_5.getString(var2_6);
-                        var5_8 = var0.get(var8_9);
-                        if (var5_8 instanceof JSONObject) {
-                            var3_7 = ShareInternalUtility.removeNamespacesFromOGJsonObject((JSONObject)var5_8, true);
+                        if (var9_6 >= var6_5.length()) break block12;
+                        var7_9 = var6_5.getString(var9_6);
+                        var4_8 = var0.get(var7_9);
+                        if (var4_8 instanceof JSONObject) {
+                            var2_7 = ShareInternalUtility.removeNamespacesFromOGJsonObject((JSONObject)var4_8, true);
                         } else {
-                            var3_7 = var5_8;
-                            if (var5_8 instanceof JSONArray) {
-                                var3_7 = ShareInternalUtility.removeNamespacesFromOGJsonArray((JSONArray)var5_8, true);
+                            var2_7 = var4_8;
+                            if (var4_8 instanceof JSONArray) {
+                                var2_7 = ShareInternalUtility.removeNamespacesFromOGJsonArray((JSONArray)var4_8, true);
                             }
                         }
-                        var9_10 = ShareInternalUtility.getFieldNameAndNamespaceFromFullName(var8_9);
-                        var5_8 = (String)var9_10.first;
-                        var9_10 = (String)var9_10.second;
+                        var8_10 = ShareInternalUtility.getFieldNameAndNamespaceFromFullName(var7_9);
+                        var4_8 = (String)var8_10.first;
+                        var8_10 = (String)var8_10.second;
                         if (!var1_2) break block13;
-                        if (var5_8 != null && var5_8.equals("fbsdk")) {
-                            var4_3.put(var8_9, var3_7);
-                        } else if (var5_8 == null || var5_8.equals("og")) {
-                            var4_3.put((String)var9_10, var3_7);
+                        if (var4_8 != null && var4_8.equals("fbsdk")) {
+                            var3_3.put(var7_9, var2_7);
+                        } else if (var4_8 == null || var4_8.equals("og")) {
+                            var3_3.put((String)var8_10, var2_7);
                         } else {
-                            var6_4.put((String)var9_10, var3_7);
+                            var5_4.put((String)var8_10, var2_7);
                         }
                         break block14;
                     }
@@ -554,15 +554,15 @@ lbl8: // 2 sources:
                         throw new FacebookException("Failed to create json object from share content");
                     }
                 }
-                var4_3.put((String)var9_10, var3_7);
+                var3_3.put((String)var8_10, var2_7);
                 ** GOTO lbl39
             }
-            var0 = var4_3;
-            if (var6_4.length() <= 0) return var0;
-            var4_3.put("data", (Object)var6_4);
-            return var4_3;
+            var0 = var3_3;
+            if (var5_4.length() <= 0) return var0;
+            var3_3.put("data", (Object)var5_4);
+            return var3_3;
         }
-        ++var2_6;
+        ++var9_6;
         ** GOTO lbl8
     }
 

@@ -44,30 +44,30 @@ public class SortedList<T> {
      * Lifted jumps to return sites
      */
     private int add(T var1_1, boolean var2_2) {
-        var4_3 = this.findIndexOf(var1_1, this.mData, 0, this.mSize, 1);
-        if (var4_3 != -1) ** GOTO lbl5
-        var3_4 = 0;
+        var5_3 = this.findIndexOf(var1_1, this.mData, 0, this.mSize, 1);
+        if (var5_3 != -1) ** GOTO lbl5
+        var4_4 = 0;
         ** GOTO lbl-1000
 lbl5: // 1 sources:
-        var3_4 = var4_3;
-        if (var4_3 >= this.mSize) ** GOTO lbl-1000
-        var5_5 = this.mData[var4_3];
-        var3_4 = var4_3;
-        if (this.mCallback.areItemsTheSame(var5_5, var1_1)) {
-            if (this.mCallback.areContentsTheSame(var5_5, var1_1)) {
-                this.mData[var4_3] = var1_1;
-                return var4_3;
+        var4_4 = var5_3;
+        if (var5_3 >= this.mSize) ** GOTO lbl-1000
+        var3_5 = this.mData[var5_3];
+        var4_4 = var5_3;
+        if (this.mCallback.areItemsTheSame(var3_5, var1_1)) {
+            if (this.mCallback.areContentsTheSame(var3_5, var1_1)) {
+                this.mData[var5_3] = var1_1;
+                return var5_3;
             }
         } else lbl-1000: // 3 sources:
         {
-            this.addToData(var3_4, var1_1);
-            if (var2_2 == false) return var3_4;
-            this.mCallback.onInserted(var3_4, 1);
-            return var3_4;
+            this.addToData(var4_4, var1_1);
+            if (var2_2 == false) return var4_4;
+            this.mCallback.onInserted(var4_4, 1);
+            return var4_4;
         }
-        this.mData[var4_3] = var1_1;
-        this.mCallback.onChanged(var4_3, 1);
-        return var4_3;
+        this.mData[var5_3] = var1_1;
+        this.mCallback.onChanged(var5_3, 1);
+        return var5_3;
     }
 
     /*

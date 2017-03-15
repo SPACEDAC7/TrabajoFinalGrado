@@ -325,9 +325,9 @@ implements MenuPresenter {
             int n5 = NavigationMenuPresenter.this.mMenu.getVisibleItems().size();
             do {
                 int n6;
+                boolean bl2;
                 int n7;
                 int n8;
-                boolean bl2;
                 if (n4 >= n5) {
                     this.mUpdateSuspended = false;
                     return;

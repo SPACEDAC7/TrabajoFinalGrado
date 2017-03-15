@@ -128,7 +128,7 @@ lbl38: // 3 sources:
             }
             var11_15 += (this.block[var14_17] & 255) << var4_14;
             var5_13 = var4_14 + 8;
-            var18_20 = var14_17 + 1;
+            var18_21 = var14_17 + 1;
             var17_19 = var9_10 - 1;
             var9_10 = var16_5;
             while (var5_13 >= var8_7) {
@@ -147,7 +147,7 @@ lbl38: // 3 sources:
                 if (var4_14 > var9_10) {
                     this.status = 3;
                     var16_5 = var9_10;
-                    var9_10 = var18_20;
+                    var9_10 = var18_21;
                     var4_14 = var15_18;
                     var5_13 = var17_19;
                     var11_15 = var14_17;
@@ -155,7 +155,7 @@ lbl38: // 3 sources:
                 }
                 if (var4_14 == var21_4 + 1) {
                     var16_5 = var9_10;
-                    var9_10 = var18_20;
+                    var9_10 = var18_21;
                     var4_14 = var15_18;
                     var5_13 = var17_19;
                     var11_15 = var14_17;
@@ -182,16 +182,16 @@ lbl38: // 3 sources:
                     var5_13 = this.prefix[var5_13];
                     ++var11_15;
                 }
-                var19_21 = this.suffix[var5_13] & 255;
+                var19_20 = this.suffix[var5_13] & 255;
                 var1_1 = this.pixelStack;
                 var16_5 = var11_15 + 1;
-                var1_1[var11_15] = (byte)var19_21;
+                var1_1[var11_15] = (byte)var19_20;
                 var5_13 = var9_10;
                 var11_15 = var7_8;
                 var10_12 = var8_7;
                 if (var9_10 < 4096) {
                     this.prefix[var9_10] = (short)var3_6;
-                    this.suffix[var9_10] = (byte)var19_21;
+                    this.suffix[var9_10] = (byte)var19_20;
                     var5_13 = var2_9 = var9_10 + 1;
                     var11_15 = var7_8;
                     var10_12 = var8_7;
@@ -219,13 +219,13 @@ lbl38: // 3 sources:
                 var7_8 = var11_15;
                 var8_7 = var10_12;
                 var11_15 = var14_17;
-                var10_12 = var19_21;
+                var10_12 = var19_20;
                 var3_6 = var4_14;
                 var6_11 = var2_9;
                 var2_9 = var16_5;
             }
             var16_5 = var9_10;
-            var9_10 = var18_20;
+            var9_10 = var18_21;
             var4_14 = var5_13;
             var5_13 = var17_19;
         } while (true);
@@ -253,7 +253,7 @@ lbl38: // 3 sources:
         try {
             by = this.rawData.get();
         }
-        catch (Exception var2_2) {
+        catch (Exception var1_2) {
             this.status = 1;
             return 0;
         }
@@ -512,23 +512,23 @@ lbl38: // 3 sources:
      * Lifted jumps to return sites
      */
     public int read(InputStream var1_1, int var2_3) {
-        var3_4 = 16384;
+        var5_4 = 16384;
         if (var1_1 == null) ** GOTO lbl17
         if (var2_3 > 0) {
-            var3_4 = var2_3 + 4096;
+            var5_4 = var2_3 + 4096;
         }
         try {
-            var4_5 = new ByteArrayOutputStream(var3_4);
-            var5_7 = new byte[16384];
-            while ((var2_3 = var1_1.read(var5_7, 0, var5_7.length)) != -1) {
-                var4_5.write(var5_7, 0, var2_3);
+            var3_5 = new ByteArrayOutputStream(var5_4);
+            var4_7 = new byte[16384];
+            while ((var2_3 = var1_1.read(var4_7, 0, var4_7.length)) != -1) {
+                var3_5.write(var4_7, 0, var2_3);
             }
-            var4_5.flush();
-            this.read(var4_5.toByteArray());
+            var3_5.flush();
+            this.read(var3_5.toByteArray());
             ** GOTO lbl18
         }
-        catch (IOException var4_6) {
-            Log.w((String)GifDecoder.TAG, (String)"Error reading data from stream", (Throwable)var4_6);
+        catch (IOException var3_6) {
+            Log.w((String)GifDecoder.TAG, (String)"Error reading data from stream", (Throwable)var3_6);
             ** GOTO lbl18
 lbl17: // 1 sources:
             this.status = 2;

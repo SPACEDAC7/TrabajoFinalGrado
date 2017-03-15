@@ -443,29 +443,29 @@ public class Core {
         if (!this.an) {
             return;
         }
-        var3_2 = var1_1.indexOf(63);
-        if (var3_2 < 0) ** GOTO lbl10
-        var5_3 = var1_1;
-        if (var3_2 >= var1_1.length() - 1) ** GOTO lbl21
-        var5_3 = var1_1.substring(var3_2 + 1).split("&");
-        var4_4 = var5_3.length;
+        var5_2 = var1_1.indexOf(63);
+        if (var5_2 < 0) ** GOTO lbl10
+        var2_3 = var1_1;
+        if (var5_2 >= var1_1.length() - 1) ** GOTO lbl21
+        var2_3 = var1_1.substring(var5_2 + 1).split("&");
+        var6_4 = var2_3.length;
         ** GOTO lbl12
 lbl10: // 1 sources:
-        var5_3 = (String)var1_1 + '?';
+        var2_3 = (String)var1_1 + '?';
         ** GOTO lbl21
 lbl12: // 4 sources:
-        for (var2_5 = 0; var2_5 < var4_4; ++var2_5) {
-            var6_6 = var5_3[var2_5].split("=");
-            if (var6_6.length == 2) {
-                this.setLabel(var6_6[0], var6_6[1], false);
+        for (var4_5 = 0; var4_5 < var6_4; ++var4_5) {
+            var3_6 = var2_3[var4_5].split("=");
+            if (var3_6.length == 2) {
+                this.setLabel(var3_6[0], var3_6[1], false);
                 continue;
             }
-            if (var6_6.length != 1) continue;
-            this.setLabel("name", var6_6[0], false);
+            if (var3_6.length != 1) continue;
+            this.setLabel("name", var3_6[0], false);
         }
-        var5_3 = var1_1.substring(0, var3_2 + 1);
+        var2_3 = var1_1.substring(0, var5_2 + 1);
 lbl21: // 3 sources:
-        this.Z = var5_3;
+        this.Z = var2_3;
     }
 
     void a(String string2, String string3) {
@@ -1268,84 +1268,84 @@ lbl18: // 2 sources:
      */
     protected void l() {
         if (this.ab == null) return;
-        var5_1 = this.ab.getResources().getAssets();
+        var1_1 = this.ab.getResources().getAssets();
         try {
-            var6_3 = var5_1.open("comScore.properties");
-            var5_1 = new Properties();
-            var5_1.load((InputStream)var6_3);
-            Constants.DEBUG = Utils.getBoolean(this.a("Debug", (Properties)var5_1, false));
-            this.ai = Utils.getBoolean(this.a("Secure", (Properties)var5_1, false));
-            var6_3 = this.a("PublisherSecret", (Properties)var5_1, true);
-            if (var6_3 != null) {
-                this.b((String)var6_3);
+            var2_3 = var1_1.open("comScore.properties");
+            var1_1 = new Properties();
+            var1_1.load((InputStream)var2_3);
+            Constants.DEBUG = Utils.getBoolean(this.a("Debug", (Properties)var1_1, false));
+            this.ai = Utils.getBoolean(this.a("Secure", (Properties)var1_1, false));
+            var2_3 = this.a("PublisherSecret", (Properties)var1_1, true);
+            if (var2_3 != null) {
+                this.b((String)var2_3);
             }
-            if ((var6_3 = this.a("AppName", (Properties)var5_1, true)) != null) {
-                this.c((String)var6_3);
+            if ((var2_3 = this.a("AppName", (Properties)var1_1, true)) != null) {
+                this.c((String)var2_3);
             }
-            if ((var6_3 = this.a("CustomerC2", (Properties)var5_1, false)) != null) {
-                this.d((String)var6_3);
+            if ((var2_3 = this.a("CustomerC2", (Properties)var1_1, false)) != null) {
+                this.d((String)var2_3);
             }
-            if ((var6_3 = this.a("PixelURL", (Properties)var5_1, false)) != null) {
-                this.a((String)var6_3);
+            if ((var2_3 = this.a("PixelURL", (Properties)var1_1, false)) != null) {
+                this.a((String)var2_3);
             }
-            if ((var6_3 = this.a("OfflineURL", (Properties)var5_1, false)) != null) {
-                this.a.setUrl((String)var6_3);
+            if ((var2_3 = this.a("OfflineURL", (Properties)var1_1, false)) != null) {
+                this.a.setUrl((String)var2_3);
             }
-            if ((var6_3 = this.a("LiveTransmissionMode", (Properties)var5_1, false)) == null) ** GOTO lbl26
-            this.aj = TransmissionMode.valueOf(var6_3.toUpperCase(Locale.getDefault()));
+            if ((var2_3 = this.a("LiveTransmissionMode", (Properties)var1_1, false)) == null) ** GOTO lbl26
+            this.aj = TransmissionMode.valueOf(var2_3.toUpperCase(Locale.getDefault()));
             {
-                catch (IllegalArgumentException var6_4) {
+                catch (IllegalArgumentException var2_4) {
                     this.aj = TransmissionMode.DEFAULT;
                 }
 lbl26: // 3 sources:
-                if ((var6_3 = this.a("OfflineTransmissionMode", (Properties)var5_1, false)) == null) ** GOTO lbl33
+                if ((var2_3 = this.a("OfflineTransmissionMode", (Properties)var1_1, false)) == null) ** GOTO lbl33
                 try {
-                    this.ak = TransmissionMode.valueOf(var6_3.toUpperCase(Locale.getDefault()));
+                    this.ak = TransmissionMode.valueOf(var2_3.toUpperCase(Locale.getDefault()));
                 }
-                catch (IllegalArgumentException var6_5) {
+                catch (IllegalArgumentException var2_5) {
                     this.ak = TransmissionMode.DEFAULT;
                 }
 lbl33: // 3 sources:
-                this.ae = Utils.getBoolean(this.a("KeepAliveEnabled", (Properties)var5_1, false), true);
-                var1_6 = Utils.getInteger(this.a("CacheMaxSize", (Properties)var5_1, false), -1);
-                if (var1_6 >= 0) {
-                    this.a.setCacheMaxMeasurements(var1_6);
+                this.ae = Utils.getBoolean(this.a("KeepAliveEnabled", (Properties)var1_1, false), true);
+                var3_6 = Utils.getInteger(this.a("CacheMaxSize", (Properties)var1_1, false), -1);
+                if (var3_6 >= 0) {
+                    this.a.setCacheMaxMeasurements(var3_6);
                 }
-                if ((var1_6 = Utils.getInteger(this.a("CacheMaxBatchSize", (Properties)var5_1, false), -1)) >= 0) {
-                    this.a.setCacheMaxBatchFiles(var1_6);
+                if ((var3_6 = Utils.getInteger(this.a("CacheMaxBatchSize", (Properties)var1_1, false), -1)) >= 0) {
+                    this.a.setCacheMaxBatchFiles(var3_6);
                 }
-                if ((var1_6 = Utils.getInteger(this.a("CacheMaxFlushesInARow", (Properties)var5_1, false), -1)) >= 0) {
-                    this.a.setCacheMaxPosts(var1_6);
+                if ((var3_6 = Utils.getInteger(this.a("CacheMaxFlushesInARow", (Properties)var1_1, false), -1)) >= 0) {
+                    this.a.setCacheMaxPosts(var3_6);
                 }
-                if ((var1_6 = Utils.getInteger(this.a("CacheMinutesToRetry", (Properties)var5_1, false), -1)) >= 0) {
-                    this.a.setCacheWaitMinutes(var1_6);
+                if ((var3_6 = Utils.getInteger(this.a("CacheMinutesToRetry", (Properties)var1_1, false), -1)) >= 0) {
+                    this.a.setCacheWaitMinutes(var3_6);
                 }
-                if ((var1_6 = Utils.getInteger(this.a("CacheExpiryInDays", (Properties)var5_1, false), -1)) >= 0) {
-                    this.a.setCacheMeasurementExpiry(var1_6);
+                if ((var3_6 = Utils.getInteger(this.a("CacheExpiryInDays", (Properties)var1_1, false), -1)) >= 0) {
+                    this.a.setCacheMeasurementExpiry(var3_6);
                 }
-                if ((var2_7 = Utils.getLong(this.a("CacheFlushingInterval", (Properties)var5_1, false), -1)) >= 0) {
-                    this.af = var2_7;
+                if ((var4_7 = Utils.getLong(this.a("CacheFlushingInterval", (Properties)var1_1, false), -1)) >= 0) {
+                    this.af = var4_7;
                     if (this.d != null) {
                         this.d.update();
                     }
                 }
-                this.setErrorHandlingEnabled(Utils.getBoolean(this.a("ErrorHandlingEnabled", (Properties)var5_1, false)));
-                this.v = Utils.getBoolean(this.a("AutoStartEnabled", (Properties)var5_1, false), true);
-                var4_8 = Utils.getBoolean(this.a("AutoUpdateInForegroundOnly", (Properties)var5_1, false), true);
-                var1_6 = Utils.getInteger(this.a("AutoUpdateInterval", (Properties)var5_1, false), -1);
-                if (var1_6 < 60) return;
+                this.setErrorHandlingEnabled(Utils.getBoolean(this.a("ErrorHandlingEnabled", (Properties)var1_1, false)));
+                this.v = Utils.getBoolean(this.a("AutoStartEnabled", (Properties)var1_1, false), true);
+                var6_8 = Utils.getBoolean(this.a("AutoUpdateInForegroundOnly", (Properties)var1_1, false), true);
+                var3_6 = Utils.getInteger(this.a("AutoUpdateInterval", (Properties)var1_1, false), -1);
+                if (var3_6 < 60) return;
             }
         }
 lbl54: // 3 sources:
-        catch (IOException var5_2) {
+        catch (IOException var1_2) {
             if (Constants.DEBUG == false) return;
-            CSLog.printStackTrace(var5_2);
+            CSLog.printStackTrace(var1_2);
             return;
         }
         {
-            ** try [egrp 3[TRYBLOCK] [29 : 527->547)] { 
+            ** try [egrp 3[TRYBLOCK] [29 : 483->502)] { 
 lbl59: // 1 sources:
-            this.a(var1_6, var4_8);
+            this.a(var3_6, var6_8);
             return;
         }
     }

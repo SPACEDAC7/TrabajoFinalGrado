@@ -45,12 +45,12 @@ extends RecyclerView.ItemDecoration {
         int n3;
         canvas.save();
         if (recyclerView.getClipToPadding()) {
-            n2 = recyclerView.getPaddingTop();
-            n3 = recyclerView.getHeight() - recyclerView.getPaddingBottom();
-            canvas.clipRect(recyclerView.getPaddingLeft(), n2, recyclerView.getWidth() - recyclerView.getPaddingRight(), n3);
+            n3 = recyclerView.getPaddingTop();
+            n2 = recyclerView.getHeight() - recyclerView.getPaddingBottom();
+            canvas.clipRect(recyclerView.getPaddingLeft(), n3, recyclerView.getWidth() - recyclerView.getPaddingRight(), n2);
         } else {
-            n2 = 0;
-            n3 = recyclerView.getHeight();
+            n3 = 0;
+            n2 = recyclerView.getHeight();
         }
         int n4 = recyclerView.getChildCount();
         int n5 = 0;
@@ -63,7 +63,7 @@ extends RecyclerView.ItemDecoration {
             recyclerView.getLayoutManager().getDecoratedBoundsWithMargins(view, this.mBounds);
             int n6 = this.mBounds.right + Math.round(ViewCompat.getTranslationX(view));
             int n7 = this.mDivider.getIntrinsicWidth();
-            this.mDivider.setBounds(n6 - n7, n2, n6, n3);
+            this.mDivider.setBounds(n6 - n7, n3, n6, n2);
             this.mDivider.draw(canvas);
             ++n5;
         } while (true);
@@ -77,12 +77,12 @@ extends RecyclerView.ItemDecoration {
         int n3;
         canvas.save();
         if (recyclerView.getClipToPadding()) {
-            n3 = recyclerView.getPaddingLeft();
-            n2 = recyclerView.getWidth() - recyclerView.getPaddingRight();
-            canvas.clipRect(n3, recyclerView.getPaddingTop(), n2, recyclerView.getHeight() - recyclerView.getPaddingBottom());
+            n2 = recyclerView.getPaddingLeft();
+            n3 = recyclerView.getWidth() - recyclerView.getPaddingRight();
+            canvas.clipRect(n2, recyclerView.getPaddingTop(), n3, recyclerView.getHeight() - recyclerView.getPaddingBottom());
         } else {
-            n3 = 0;
-            n2 = recyclerView.getWidth();
+            n2 = 0;
+            n3 = recyclerView.getWidth();
         }
         int n4 = recyclerView.getChildCount();
         int n5 = 0;
@@ -95,7 +95,7 @@ extends RecyclerView.ItemDecoration {
             recyclerView.getDecoratedBoundsWithMargins(view, this.mBounds);
             int n6 = this.mBounds.bottom + Math.round(ViewCompat.getTranslationY(view));
             int n7 = this.mDivider.getIntrinsicHeight();
-            this.mDivider.setBounds(n3, n6 - n7, n2, n6);
+            this.mDivider.setBounds(n2, n6 - n7, n3, n6);
             this.mDivider.draw(canvas);
             ++n5;
         } while (true);

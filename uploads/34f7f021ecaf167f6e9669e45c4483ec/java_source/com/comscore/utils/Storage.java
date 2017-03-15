@@ -106,7 +106,7 @@ public class Storage {
             try {
                 l3 = Long.parseLong(string3);
             }
-            catch (NumberFormatException var7_5) {
+            catch (NumberFormatException var5_5) {
                 l3 = 0;
             }
             this.b.put(string2, Long.toString(l3 + l2));
@@ -132,7 +132,7 @@ public class Storage {
                 try {
                     this.d.wait(l2);
                 }
-                catch (InterruptedException var4_3) {}
+                catch (InterruptedException var2_2) {}
             }
         } while (true);
     }
@@ -198,7 +198,7 @@ public class Storage {
                 try {
                     this.e.wait(100);
                 }
-                catch (InterruptedException var4_3) {
+                catch (InterruptedException var2_2) {
                 }
             }
             return;

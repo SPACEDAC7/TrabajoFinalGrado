@@ -81,6 +81,7 @@ def my_view(request):
 
 def logout_view(request):
 	logout(request)
+	request.session["userID"] = None
 	template = loader.get_template('registration/register.html')
 	context = {}
 	return HttpResponse(template.render(context, request))

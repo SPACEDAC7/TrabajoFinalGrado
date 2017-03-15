@@ -67,28 +67,28 @@ public final class ShareApi {
      */
     private static void handleImagesOnAction(Bundle var0) {
         block9 : {
-            var2_2 = var0.getString("image");
-            if (var2_2 == null) return;
+            var1_2 = var0.getString("image");
+            if (var1_2 == null) return;
             try {
-                var3_3 = new JSONArray(var2_2);
-                var1_5 = 0;
+                var2_3 = new JSONArray(var1_2);
+                var4_5 = 0;
 lbl6: // 2 sources:
-                if (var1_5 < var3_3.length()) {
-                    var4_6 = var3_3.optJSONObject(var1_5);
-                    if (var4_6 != null) {
-                        ShareApi.putImageInBundleWithArrayFormat(var0, var1_5, (JSONObject)var4_6);
+                if (var4_5 < var2_3.length()) {
+                    var3_6 = var2_3.optJSONObject(var4_5);
+                    if (var3_6 != null) {
+                        ShareApi.putImageInBundleWithArrayFormat(var0, var4_5, (JSONObject)var3_6);
                     } else {
-                        var4_6 = var3_3.getString(var1_5);
-                        var0.putString(String.format(Locale.ROOT, "image[%d][url]", new Object[]{var1_5}), (String)var4_6);
+                        var3_6 = var2_3.getString(var4_5);
+                        var0.putString(String.format(Locale.ROOT, "image[%d][url]", new Object[]{var4_5}), (String)var3_6);
                     }
                     break block9;
                 }
                 var0.remove("image");
                 return;
             }
-            catch (JSONException var3_4) {
+            catch (JSONException var2_4) {
                 try {
-                    ShareApi.putImageInBundleWithArrayFormat(var0, 0, new JSONObject(var2_2));
+                    ShareApi.putImageInBundleWithArrayFormat(var0, 0, new JSONObject(var1_2));
                     var0.remove("image");
                     return;
                 }
@@ -97,7 +97,7 @@ lbl6: // 2 sources:
                 }
             }
         }
-        ++var1_5;
+        ++var4_5;
         ** GOTO lbl6
     }
 

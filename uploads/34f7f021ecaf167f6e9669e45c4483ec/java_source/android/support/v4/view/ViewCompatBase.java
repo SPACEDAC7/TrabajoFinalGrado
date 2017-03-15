@@ -67,7 +67,7 @@ class ViewCompatBase {
                 sMinHeightField = View.class.getDeclaredField("mMinHeight");
                 sMinHeightField.setAccessible(true);
             }
-            catch (NoSuchFieldException var2_3) {}
+            catch (NoSuchFieldException var1_3) {}
             sMinHeightFieldFetched = true;
         }
         if (sMinHeightField == null) return 0;
@@ -91,7 +91,7 @@ class ViewCompatBase {
                 sMinWidthField = View.class.getDeclaredField("mMinWidth");
                 sMinWidthField.setAccessible(true);
             }
-            catch (NoSuchFieldException var2_3) {}
+            catch (NoSuchFieldException var1_3) {}
             sMinWidthFieldFetched = true;
         }
         if (sMinWidthField == null) return 0;

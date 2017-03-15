@@ -82,8 +82,8 @@ extends DrawableWrapper {
      */
     private void buildShadowCorners() {
         int n2;
-        int n3;
         Paint paint;
+        int n3;
         float f2;
         int n4;
         RectF rectF = new RectF(- this.mCornerRadius, - this.mCornerRadius, this.mCornerRadius, this.mCornerRadius);
@@ -106,19 +106,19 @@ extends DrawableWrapper {
             float f4 = (1.0f - f2) / 2.0f;
             paint = this.mCornerShadowPaint;
             n4 = this.mShadowStartColor;
-            n3 = this.mShadowMiddleColor;
-            n2 = this.mShadowEndColor;
+            n2 = this.mShadowMiddleColor;
+            n3 = this.mShadowEndColor;
             Shader.TileMode tileMode = Shader.TileMode.CLAMP;
-            paint.setShader((Shader)new RadialGradient(0.0f, 0.0f, f3, new int[]{0, n4, n3, n2}, new float[]{0.0f, f2, f2 + f4, 1.0f}, tileMode));
+            paint.setShader((Shader)new RadialGradient(0.0f, 0.0f, f3, new int[]{0, n4, n2, n3}, new float[]{0.0f, f2, f2 + f4, 1.0f}, tileMode));
         }
         paint = this.mEdgeShadowPaint;
         f3 = rectF.top;
         f2 = rectF2.top;
         n4 = this.mShadowStartColor;
-        n3 = this.mShadowMiddleColor;
-        n2 = this.mShadowEndColor;
+        n2 = this.mShadowMiddleColor;
+        n3 = this.mShadowEndColor;
         rectF = Shader.TileMode.CLAMP;
-        paint.setShader((Shader)new LinearGradient(0.0f, f3, 0.0f, f2, new int[]{n4, n3, n2}, new float[]{0.0f, 0.5f, 1.0f}, (Shader.TileMode)rectF));
+        paint.setShader((Shader)new LinearGradient(0.0f, f3, 0.0f, f2, new int[]{n4, n2, n3}, new float[]{0.0f, 0.5f, 1.0f}, (Shader.TileMode)rectF));
         this.mEdgeShadowPaint.setAntiAlias(false);
     }
 

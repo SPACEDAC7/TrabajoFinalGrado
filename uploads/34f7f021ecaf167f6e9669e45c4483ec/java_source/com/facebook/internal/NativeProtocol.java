@@ -6,18 +6,19 @@
  *  android.content.Context
  *  android.content.Intent
  *  android.content.pm.ActivityInfo
- *  android.content.pm.ApplicationInfo
- *  android.content.pm.PackageInfo
  *  android.content.pm.PackageManager
- *  android.content.pm.PackageManager$NameNotFoundException
  *  android.content.pm.ResolveInfo
  *  android.content.pm.ServiceInfo
- *  android.content.pm.Signature
  *  android.database.Cursor
  *  android.net.Uri
- *  android.os.Build
  *  android.os.Bundle
  *  android.text.TextUtils
+ *  com.facebook.internal.NativeProtocol$1
+ *  com.facebook.internal.NativeProtocol$KatanaAppInfo
+ *  com.facebook.internal.NativeProtocol$MessengerAppInfo
+ *  com.facebook.internal.NativeProtocol$NativeAppInfo
+ *  com.facebook.internal.NativeProtocol$WakizashiAppInfo
+ *  com.facebook.login.DefaultAudience
  */
 package com.facebook.internal;
 
@@ -25,27 +26,23 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
-import android.content.pm.ApplicationInfo;
-import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.content.pm.ServiceInfo;
-import android.content.pm.Signature;
 import android.database.Cursor;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import com.facebook.FacebookException;
 import com.facebook.FacebookOperationCanceledException;
 import com.facebook.FacebookSdk;
+import com.facebook.internal.NativeProtocol;
 import com.facebook.internal.Utility;
 import com.facebook.login.DefaultAudience;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -94,7 +91,7 @@ public final class NativeProtocol {
     public static final String EXTRA_PROTOCOL_VERSION = "com.facebook.platform.protocol.PROTOCOL_VERSION";
     static final String EXTRA_PROTOCOL_VERSIONS = "com.facebook.platform.extra.PROTOCOL_VERSIONS";
     public static final String EXTRA_USER_ID = "com.facebook.platform.extra.USER_ID";
-    private static final NativeAppInfo FACEBOOK_APP_INFO = new KatanaAppInfo();
+    private static final NativeAppInfo FACEBOOK_APP_INFO = new KatanaAppInfo(null);
     private static final String FACEBOOK_PROXY_AUTH_ACTIVITY = "com.facebook.katana.ProxyAuth";
     public static final String FACEBOOK_PROXY_AUTH_APP_ID_KEY = "client_id";
     public static final String FACEBOOK_PROXY_AUTH_E2E_KEY = "e2e";
@@ -154,7 +151,7 @@ public final class NativeProtocol {
     private static Map<String, List<NativeAppInfo>> buildActionToAppInfoMap() {
         HashMap<String, List<NativeAppInfo>> hashMap = new HashMap<String, List<NativeAppInfo>>();
         ArrayList<MessengerAppInfo> arrayList = new ArrayList<MessengerAppInfo>();
-        arrayList.add(new MessengerAppInfo());
+        arrayList.add(new MessengerAppInfo(null));
         hashMap.put("com.facebook.platform.action.request.OGACTIONPUBLISH_DIALOG", facebookAppInfoList);
         hashMap.put("com.facebook.platform.action.request.FEED_DIALOG", facebookAppInfoList);
         hashMap.put("com.facebook.platform.action.request.LIKE_DIALOG", facebookAppInfoList);
@@ -167,7 +164,7 @@ public final class NativeProtocol {
     private static List<NativeAppInfo> buildFacebookAppList() {
         ArrayList<NativeAppInfo> arrayList = new ArrayList<NativeAppInfo>();
         arrayList.add(FACEBOOK_APP_INFO);
-        arrayList.add(new WakizashiAppInfo());
+        arrayList.add((NativeAppInfo)new WakizashiAppInfo(null));
         return arrayList;
     }
 
@@ -188,17 +185,17 @@ public final class NativeProtocol {
         int n7 = -1;
         do {
             if (!iterator.hasNext()) return -1;
-            n5 = (Integer)iterator.next();
-            n4 = Math.max(n7, n5);
-            for (n3 = n6; n3 >= 0 && arrn[n3] > n5; --n3) {
+            n3 = (Integer)iterator.next();
+            n4 = Math.max(n7, n3);
+            for (n5 = n6; n5 >= 0 && arrn[n5] > n3; --n5) {
             }
-            if (n3 < 0) {
+            if (n5 < 0) {
                 return -1;
             }
             n7 = n4;
-            n6 = n3;
-        } while (arrn[n3] != n5);
-        if (n3 % 2 != 0) return -1;
+            n6 = n5;
+        } while (arrn[n5] != n3);
+        if (n5 % 2 != 0) return -1;
         return Math.min(n4, n2);
     }
 
@@ -291,17 +288,17 @@ public final class NativeProtocol {
      * Enabled force condition propagation
      * Lifted jumps to return sites
      */
-    private static Intent findActivityIntent(Context context, String string2, String object) {
-        Intent intent = actionToAppInfoMap.get(object);
+    private static Intent findActivityIntent(Context context, String string2, String string3) {
+        Intent intent = actionToAppInfoMap.get(string3);
         if (intent == null) {
             return null;
         }
-        object = null;
+        string3 = null;
         Iterator<NativeAppInfo> iterator = intent.iterator();
         do {
-            if (!iterator.hasNext()) return object;
-            object = iterator.next();
-            object = intent = NativeProtocol.validateActivityIntent(context, new Intent().setAction(string2).setPackage(object.getPackage()).addCategory("android.intent.category.DEFAULT"), (NativeAppInfo)object);
+            if (!iterator.hasNext()) return string3;
+            string3 = iterator.next();
+            string3 = intent = NativeProtocol.validateActivityIntent(context, new Intent().setAction(string2).setPackage(string3.getPackage()).addCategory("android.intent.category.DEFAULT"), (NativeAppInfo)string3);
         } while (intent == null);
         return intent;
     }
@@ -358,10 +355,10 @@ public final class NativeProtocol {
     public static UUID getCallIdFromIntent(Intent object) {
         if (object == null) return null;
         int n2 = NativeProtocol.getProtocolVersionFromIntent((Intent)object);
-        Object var2_3 = null;
+        Object var1_3 = null;
         if (NativeProtocol.isVersionCompatibleWithBucketedIntent(n2)) {
             Bundle bundle = object.getBundleExtra("com.facebook.platform.protocol.BRIDGE_ARGS");
-            object = var2_3;
+            object = var1_3;
             if (bundle != null) {
                 object = bundle.getString("action_id");
             }
@@ -396,18 +393,18 @@ public final class NativeProtocol {
         if (bundle == null) {
             return null;
         }
-        String string4 = string2 = bundle.getString("error_type");
-        if (string2 == null) {
+        String string4 = string3 = bundle.getString("error_type");
+        if (string3 == null) {
             string4 = bundle.getString("com.facebook.platform.status.ERROR_TYPE");
         }
-        string2 = string3 = bundle.getString("error_description");
-        if (string3 == null) {
-            string2 = bundle.getString("com.facebook.platform.status.ERROR_DESCRIPTION");
+        string3 = string2 = bundle.getString("error_description");
+        if (string2 == null) {
+            string3 = bundle.getString("com.facebook.platform.status.ERROR_DESCRIPTION");
         }
         if (string4 != null && string4.equalsIgnoreCase("UserCanceled")) {
-            return new FacebookOperationCanceledException(string2);
+            return new FacebookOperationCanceledException(string3);
         }
-        return new FacebookException(string2);
+        return new FacebookException(string3);
     }
 
     public static int getLatestAvailableProtocolVersionForAction(String string2, int[] arrn) {
@@ -528,96 +525,5 @@ public final class NativeProtocol {
         if (nativeAppInfo.validateSignature(context, resolveInfo.serviceInfo.packageName)) return intent;
         return null;
     }
-
-    private static class KatanaAppInfo
-    extends NativeAppInfo {
-        static final String KATANA_PACKAGE = "com.facebook.katana";
-
-        private KatanaAppInfo() {
-            super();
-        }
-
-        @Override
-        protected String getPackage() {
-            return "com.facebook.katana";
-        }
-    }
-
-    private static class MessengerAppInfo
-    extends NativeAppInfo {
-        static final String MESSENGER_PACKAGE = "com.facebook.orca";
-
-        private MessengerAppInfo() {
-            super();
-        }
-
-        @Override
-        protected String getPackage() {
-            return "com.facebook.orca";
-        }
-    }
-
-    private static abstract class NativeAppInfo {
-        private static final String FBI_HASH = "a4b7452e2ed8f5f191058ca7bbfd26b0d3214bfc";
-        private static final String FBL_HASH = "5e8f16062ea3cd2c4a0d547876baa6f38cabf625";
-        private static final String FBR_HASH = "8a3c4b262d721acd49a4bf97d5213199c86fa2b9";
-        private static final HashSet<String> validAppSignatureHashes = NativeAppInfo.buildAppSignatureHashes();
-
-        private NativeAppInfo() {
-        }
-
-        private static HashSet<String> buildAppSignatureHashes() {
-            HashSet<String> hashSet = new HashSet<String>();
-            hashSet.add("8a3c4b262d721acd49a4bf97d5213199c86fa2b9");
-            hashSet.add("a4b7452e2ed8f5f191058ca7bbfd26b0d3214bfc");
-            hashSet.add("5e8f16062ea3cd2c4a0d547876baa6f38cabf625");
-            return hashSet;
-        }
-
-        protected abstract String getPackage();
-
-        /*
-         * Enabled aggressive block sorting
-         * Enabled unnecessary exception pruning
-         * Enabled aggressive exception aggregation
-         * Lifted jumps to return sites
-         */
-        public boolean validateSignature(Context arrsignature, String string2) {
-            String string3 = Build.BRAND;
-            int n2 = arrsignature.getApplicationInfo().flags;
-            if (string3.startsWith("generic") && (n2 & 2) != 0) {
-                return true;
-            }
-            try {
-                arrsignature = arrsignature.getPackageManager().getPackageInfo(string2, 64);
-                arrsignature = arrsignature.signatures;
-            }
-            catch (PackageManager.NameNotFoundException var1_2) {
-                return false;
-            }
-            int n3 = arrsignature.length;
-            n2 = 0;
-            while (n2 < n3) {
-                string2 = Utility.sha1hash(arrsignature[n2].toByteArray());
-                if (validAppSignatureHashes.contains(string2)) return true;
-                ++n2;
-            }
-            return false;
-        }
-    }
-
-    private static class WakizashiAppInfo
-    extends NativeAppInfo {
-        static final String WAKIZASHI_PACKAGE = "com.facebook.wakizashi";
-
-        private WakizashiAppInfo() {
-        }
-
-        @Override
-        protected String getPackage() {
-            return "com.facebook.wakizashi";
-        }
-    }
-
 }
 

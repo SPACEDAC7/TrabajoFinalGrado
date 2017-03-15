@@ -47,87 +47,87 @@ implements ValueLoader<String> {
      * Lifted jumps to return sites
      */
     public String load(Context var1_1) throws Exception {
-        var4_10 = System.nanoTime();
-        var10_11 = "";
-        var8_12 = null;
-        var9_13 = null;
-        var6_14 = null;
-        var7_16 = null;
+        var10_10 = System.nanoTime();
+        var8_11 = "";
+        var6_12 = null;
+        var7_13 = null;
+        var4_14 = null;
+        var5_16 = null;
         try {
-            var7_16 = var1_1 = this.getZipInputStreamOfAppApkFrom((Context)var1_1);
-            var8_12 = var1_1;
-            var9_13 = var1_1;
-            var6_14 = var1_1;
-            var6_14 = var7_16 = (var11_17 = this.determineDeviceToken((ZipInputStream)var1_1));
+            var5_16 = var1_1 = this.getZipInputStreamOfAppApkFrom((Context)var1_1);
+            var6_12 = var1_1;
+            var7_13 = var1_1;
+            var4_14 = var1_1;
+            var4_14 = var5_16 = (var9_17 = this.determineDeviceToken((ZipInputStream)var1_1));
             ** if (var1_1 == null) goto lbl21
         }
         catch (PackageManager.NameNotFoundException var1_3) {
-            var6_14 = var7_16;
+            var4_14 = var5_16;
             Fabric.getLogger().e("Beta", "Failed to find this app in the PackageManager", (Throwable)var1_3);
-            var6_14 = var10_11;
-            ** if (var7_16 == null) goto lbl35
+            var4_14 = var8_11;
+            ** if (var5_16 == null) goto lbl35
 lbl-1000: // 1 sources:
             {
                 try {
-                    var7_16.close();
-                    var6_14 = var10_11;
+                    var5_16.close();
+                    var4_14 = var8_11;
                 }
                 catch (IOException var1_4) {
                     Fabric.getLogger().e("Beta", "Failed to close the APK file", (Throwable)var1_4);
-                    var6_14 = var10_11;
+                    var4_14 = var8_11;
                 }
             }
 lbl35: // 2 sources:
             ** GOTO lbl71
             catch (FileNotFoundException var1_5) {
-                var6_14 = var8_12;
+                var4_14 = var6_12;
                 Fabric.getLogger().e("Beta", "Failed to find the APK file", (Throwable)var1_5);
-                var6_14 = var10_11;
-                ** if (var8_12 == null) goto lbl49
+                var4_14 = var8_11;
+                ** if (var6_12 == null) goto lbl49
 lbl-1000: // 1 sources:
                 {
                     try {
-                        var8_12.close();
-                        var6_14 = var10_11;
+                        var6_12.close();
+                        var4_14 = var8_11;
                     }
                     catch (IOException var1_6) {
                         Fabric.getLogger().e("Beta", "Failed to close the APK file", (Throwable)var1_6);
-                        var6_14 = var10_11;
+                        var4_14 = var8_11;
                     }
                 }
 lbl49: // 2 sources:
                 ** GOTO lbl71
                 catch (IOException var1_7) {
                     block21 : {
-                        var6_14 = var9_13;
+                        var4_14 = var7_13;
                         try {
                             Fabric.getLogger().e("Beta", "Failed to read the APK file", (Throwable)var1_7);
-                            var6_14 = var10_11;
-                            if (var9_13 == null) break block21;
+                            var4_14 = var8_11;
+                            if (var7_13 == null) break block21;
                         }
                         catch (Throwable var1_9) {
-                            if (var6_14 == null) throw var1_9;
+                            if (var4_14 == null) throw var1_9;
                             try {
-                                var6_14.close();
+                                var4_14.close();
                             }
-                            catch (IOException var6_15) {
-                                Fabric.getLogger().e("Beta", "Failed to close the APK file", (Throwable)var6_15);
+                            catch (IOException var4_15) {
+                                Fabric.getLogger().e("Beta", "Failed to close the APK file", (Throwable)var4_15);
                                 throw var1_9;
                             }
                             throw var1_9;
                         }
                         try {
-                            var9_13.close();
-                            var6_14 = var10_11;
+                            var7_13.close();
+                            var4_14 = var8_11;
                         }
                         catch (IOException var1_8) {
                             Fabric.getLogger().e("Beta", "Failed to close the APK file", (Throwable)var1_8);
-                            var6_14 = var10_11;
+                            var4_14 = var8_11;
                         }
                     }
-                    var2_18 = (double)(System.nanoTime() - var4_10) / 1000000.0;
+                    var2_18 = (double)(System.nanoTime() - var10_10) / 1000000.0;
                     Fabric.getLogger().d("Beta", "Beta device token load took " + var2_18 + "ms");
-                    return var6_14;
+                    return var4_14;
                 }
             }
         }
@@ -135,11 +135,11 @@ lbl-1000: // 1 sources:
         {
             try {
                 var1_1.close();
-                var6_14 = var7_16;
+                var4_14 = var5_16;
             }
             catch (IOException var1_2) {
                 Fabric.getLogger().e("Beta", "Failed to close the APK file", (Throwable)var1_2);
-                var6_14 = var7_16;
+                var4_14 = var5_16;
             }
         }
 lbl21: // 2 sources:

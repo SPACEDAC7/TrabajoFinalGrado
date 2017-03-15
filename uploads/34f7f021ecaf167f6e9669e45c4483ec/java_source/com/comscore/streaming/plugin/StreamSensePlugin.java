@@ -66,12 +66,11 @@ extends StreamSense {
     private HashMap<String, String> z = new HashMap();
 
     static {
-        float[] arrf = new float[]{-0.5f, 0.0f, 0.5f};
-        float[] arrf2 = new float[]{-0.3f, -0.1f, 0.1f, 0.3f};
-        float[] arrf3 = new float[]{-0.14286f, -0.08571f, -0.02857f, 0.02857f, 0.08571f, 0.14286f};
-        float[] arrf4 = new float[]{-0.10714f, -0.07143f, -0.03571f, 0.0f, 0.03571f, 0.07143f, 0.10714f};
-        float[] arrf5 = new float[]{-0.03846f, -0.03147f, -0.02448f, -0.01748f, -0.01049f, -0.0035f, 0.0035f, 0.01049f, 0.01748f, 0.02448f, 0.03147f, 0.03846f};
-        e = new float[][]{{-1.0f, 1.0f}, arrf, arrf2, {-0.2f, -0.1f, 0.0f, 0.1f, 0.2f}, arrf3, arrf4, {-0.08333f, -0.05952f, -0.03571f, -0.0119f, 0.0119f, 0.03571f, 0.05952f, 0.08333f}, {-0.06667f, -0.05f, -0.03333f, -0.01667f, 0.0f, 0.01667f, 0.03333f, 0.05f, 0.06667f}, {-0.05455f, -0.04242f, -0.0303f, -0.01818f, -0.00606f, 0.00606f, 0.01818f, 0.0303f, 0.04242f, 0.05455f}, {-0.04545f, -0.03636f, -0.02727f, -0.01818f, -0.00909f, 0.0f, 0.00909f, 0.01818f, 0.02727f, 0.03636f, 0.04545f}, arrf5, {-0.03297f, -0.02747f, -0.02198f, -0.01648f, -0.01099f, -0.00549f, 0.0f, 0.00549f, 0.01099f, 0.01648f, 0.02198f, 0.02747f, 0.03297f}};
+        float[] arrf = new float[]{-1.0f, 1.0f};
+        float[] arrf2 = new float[]{-0.5f, 0.0f, 0.5f};
+        float[] arrf3 = new float[]{-0.06667f, -0.05f, -0.03333f, -0.01667f, 0.0f, 0.01667f, 0.03333f, 0.05f, 0.06667f};
+        float[] arrf4 = new float[]{-0.03846f, -0.03147f, -0.02448f, -0.01748f, -0.01049f, -0.0035f, 0.0035f, 0.01049f, 0.01748f, 0.02448f, 0.03147f, 0.03846f};
+        e = new float[][]{arrf, arrf2, {-0.3f, -0.1f, 0.1f, 0.3f}, {-0.2f, -0.1f, 0.0f, 0.1f, 0.2f}, {-0.14286f, -0.08571f, -0.02857f, 0.02857f, 0.08571f, 0.14286f}, {-0.10714f, -0.07143f, -0.03571f, 0.0f, 0.03571f, 0.07143f, 0.10714f}, {-0.08333f, -0.05952f, -0.03571f, -0.0119f, 0.0119f, 0.03571f, 0.05952f, 0.08333f}, arrf3, {-0.05455f, -0.04242f, -0.0303f, -0.01818f, -0.00606f, 0.00606f, 0.01818f, 0.0303f, 0.04242f, 0.05455f}, {-0.04545f, -0.03636f, -0.02727f, -0.01818f, -0.00909f, 0.0f, 0.00909f, 0.01818f, 0.02727f, 0.03636f, 0.04545f}, arrf4, {-0.03297f, -0.02747f, -0.02198f, -0.01648f, -0.01099f, -0.00549f, 0.0f, 0.00549f, 0.01099f, 0.01648f, 0.02198f, 0.02747f, 0.03297f}};
     }
 
     public StreamSensePlugin(HashMap<String, String> hashMap, String string2, String string3, String string4) {
@@ -209,7 +208,7 @@ extends StreamSense {
                             break;
                         }
                     }
-                    catch (Exception var5_7) {
+                    catch (Exception var4_6) {
                         this.log("Exception occurred while processing mapped labels");
                     }
                 }
@@ -520,7 +519,7 @@ extends StreamSense {
      */
     @Override
     public void notify(StreamSenseEventType streamSenseEventType, HashMap<String, String> iterator, long l2) {
-        void var7_6;
+        void var5_6;
         if (this.B || this.C) {
             return;
         }
@@ -530,7 +529,7 @@ extends StreamSense {
         }
         iterator = this.o.iterator();
         while (iterator.hasNext()) {
-            iterator.next().onGetLabels(streamSenseEventType, (HashMap<String, String>)var7_6);
+            iterator.next().onGetLabels(streamSenseEventType, (HashMap<String, String>)var5_6);
         }
         if (l2 <= 0) {
             l2 = this.u != null ? this.u.getPosition() : 0;
@@ -548,7 +547,7 @@ extends StreamSense {
         } else if (streamSenseEventType == StreamSenseEventType.PLAY) {
             this.x = true;
         }
-        super.notify(streamSenseEventType, (HashMap<String, String>)var7_6, l3);
+        super.notify(streamSenseEventType, (HashMap<String, String>)var5_6, l3);
     }
 
     /*

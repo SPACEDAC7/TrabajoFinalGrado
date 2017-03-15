@@ -62,38 +62,38 @@ extends ContextWrapper {
      */
     public static Context wrap(@NonNull Context var0) {
         if (TintContextWrapper.shouldWrap((Context)var0) == false) return var0;
-        var3_1 = TintContextWrapper.CACHE_LOCK;
-        // MONITORENTER : var3_1
+        var2_1 = TintContextWrapper.CACHE_LOCK;
+        // MONITORENTER : var2_1
         if (TintContextWrapper.sCache != null) {
-            var1_2 = TintContextWrapper.sCache.size() - 1;
+            var3_2 = TintContextWrapper.sCache.size() - 1;
         } else {
             TintContextWrapper.sCache = new ArrayList<E>();
             do {
                 var0 = new TintContextWrapper((Context)var0);
                 TintContextWrapper.sCache.add(new WeakReference<Object>(var0));
-                // MONITOREXIT : var3_1
+                // MONITOREXIT : var2_1
                 return var0;
                 break;
             } while (true);
         }
         do {
-            if (var1_2 < 0) break;
-            var2_3 = TintContextWrapper.sCache.get(var1_2);
-            if (var2_3 == null || var2_3.get() == null) {
-                TintContextWrapper.sCache.remove(var1_2);
+            if (var3_2 < 0) break;
+            var1_3 = TintContextWrapper.sCache.get(var3_2);
+            if (var1_3 == null || var1_3.get() == null) {
+                TintContextWrapper.sCache.remove(var3_2);
             }
-            --var1_2;
+            --var3_2;
         } while (true);
-        var1_2 = TintContextWrapper.sCache.size() - 1;
+        var3_2 = TintContextWrapper.sCache.size() - 1;
         do {
-            if (var1_2 < 0) ** continue;
-            var2_3 = TintContextWrapper.sCache.get(var1_2);
-            var2_3 = var2_3 != null ? var2_3.get() : null;
-            if (var2_3 != null && var2_3.getBaseContext() == var0) {
-                // MONITOREXIT : var3_1
-                return var2_3;
+            if (var3_2 < 0) ** continue;
+            var1_3 = TintContextWrapper.sCache.get(var3_2);
+            var1_3 = var1_3 != null ? var1_3.get() : null;
+            if (var1_3 != null && var1_3.getBaseContext() == var0) {
+                // MONITOREXIT : var2_1
+                return var1_3;
             }
-            --var1_2;
+            --var3_2;
         } while (true);
     }
 

@@ -307,15 +307,15 @@ lbl56: // 3 sources:
     private String nextLiteral(boolean bl) throws IOException {
         int n2;
         StringBuilder stringBuilder;
-        void var4_5;
-        Object var4_2 = null;
+        void var2_5;
+        Object var2_2 = null;
         this.valuePos = -1;
         this.valueLength = 0;
         int n3 = 0;
         block4 : do {
-            void var4_3;
+            void var2_3;
             if (this.pos + n3 < this.limit) {
-                stringBuilder = var4_3;
+                stringBuilder = var2_3;
                 n2 = n3;
                 switch (this.buffer[this.pos + n3]) {
                     default: {
@@ -329,7 +329,7 @@ lbl56: // 3 sources:
                     case '\\': {
                         this.checkLenient();
                         n2 = n3;
-                        stringBuilder = var4_3;
+                        stringBuilder = var2_3;
                     }
                     case '\t': 
                     case '\n': 
@@ -348,12 +348,12 @@ lbl56: // 3 sources:
             if (n3 < this.buffer.length) {
                 if (this.fillBuffer(n3 + 1)) continue;
                 this.buffer[this.limit] = '\u0000';
-                stringBuilder = var4_3;
+                stringBuilder = var2_3;
                 n2 = n3;
                 break;
             }
-            stringBuilder = var4_3;
-            if (var4_3 == null) {
+            stringBuilder = var2_3;
+            if (var2_3 == null) {
                 stringBuilder = new StringBuilder();
             }
             stringBuilder.append(this.buffer, this.pos, n3);
@@ -366,7 +366,7 @@ lbl56: // 3 sources:
         } while (true);
         if (bl && stringBuilder == null) {
             this.valuePos = this.pos;
-            Object var4_4 = null;
+            Object var2_4 = null;
         } else if (this.skipping) {
             String string2 = "skipped!";
         } else if (stringBuilder == null) {
@@ -377,7 +377,7 @@ lbl56: // 3 sources:
         }
         this.valueLength += n2;
         this.pos += n2;
-        return var4_5;
+        return var2_5;
     }
 
     /*
@@ -739,7 +739,7 @@ lbl56: // 3 sources:
             try {
                 n2 = Integer.parseInt(this.value);
             }
-            catch (NumberFormatException var5_2) {
+            catch (NumberFormatException var3_2) {
                 int n3;
                 double d2 = Double.parseDouble(this.value);
                 n2 = n3 = (int)d2;
@@ -766,7 +766,7 @@ lbl56: // 3 sources:
             try {
                 l2 = Long.parseLong(this.value);
             }
-            catch (NumberFormatException var7_2) {
+            catch (NumberFormatException var3_2) {
                 long l3;
                 double d2 = Double.parseDouble(this.value);
                 l2 = l3 = (long)d2;

@@ -6,6 +6,7 @@
  *  android.os.Parcel
  *  android.os.Parcelable
  *  android.os.Parcelable$Creator
+ *  com.facebook.share.model.ShareLinkContent$1
  */
 package com.facebook.share.model;
 
@@ -14,21 +15,13 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.support.annotation.Nullable;
 import com.facebook.share.model.ShareContent;
+import com.facebook.share.model.ShareLinkContent;
 import com.facebook.share.model.ShareModel;
 import com.facebook.share.model.ShareModelBuilder;
 
 public final class ShareLinkContent
 extends ShareContent<ShareLinkContent, Builder> {
-    public static final Parcelable.Creator<ShareLinkContent> CREATOR = new Parcelable.Creator<ShareLinkContent>(){
-
-        public ShareLinkContent createFromParcel(Parcel parcel) {
-            return new ShareLinkContent(parcel);
-        }
-
-        public ShareLinkContent[] newArray(int n2) {
-            return new ShareLinkContent[n2];
-        }
-    };
+    public static final Parcelable.Creator<ShareLinkContent> CREATOR = new /* Unavailable Anonymous Inner Class!! */;
     private final String contentDescription;
     private final String contentTitle;
     private final Uri imageUrl;

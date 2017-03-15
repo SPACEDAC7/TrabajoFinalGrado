@@ -227,28 +227,28 @@ lbl9: // 2 sources:
         if (this.mDownScrollRange != -1) {
             return this.mDownScrollRange;
         }
-        var1_1 = 0;
-        var2_2 = 0;
-        var4_3 = this.getChildCount();
+        var3_1 = 0;
+        var4_2 = 0;
+        var6_3 = this.getChildCount();
         do {
-            var3_4 = var1_1;
-            if (var2_2 >= var4_3) ** GOTO lbl20
-            var9_9 = this.getChildAt(var2_2);
-            var10_10 = (LayoutParams)var9_9.getLayoutParams();
-            var6_6 = var9_9.getMeasuredHeight();
-            var7_7 = var10_10.topMargin;
-            var8_8 = var10_10.bottomMargin;
-            var5_5 = var10_10.mScrollFlags;
-            var3_4 = var1_1;
-            if ((var5_5 & 1) == 0) ** GOTO lbl20
-            var1_1 += var6_6 + (var7_7 + var8_8);
-            if ((var5_5 & 2) != 0) {
-                var3_4 = var1_1 - (ViewCompat.getMinimumHeight(var9_9) + this.getTopInset());
+            var5_6 = var3_1;
+            if (var4_2 >= var6_3) ** GOTO lbl20
+            var1_4 = this.getChildAt(var4_2);
+            var2_5 = (LayoutParams)var1_4.getLayoutParams();
+            var8_8 = var1_4.getMeasuredHeight();
+            var9_9 = var2_5.topMargin;
+            var10_10 = var2_5.bottomMargin;
+            var7_7 = var2_5.mScrollFlags;
+            var5_6 = var3_1;
+            if ((var7_7 & 1) == 0) ** GOTO lbl20
+            var3_1 += var8_8 + (var9_9 + var10_10);
+            if ((var7_7 & 2) != 0) {
+                var5_6 = var3_1 - (ViewCompat.getMinimumHeight(var1_4) + this.getTopInset());
 lbl20: // 3 sources:
-                this.mDownScrollRange = var1_1 = Math.max(0, var3_4);
-                return var1_1;
+                this.mDownScrollRange = var3_1 = Math.max(0, var5_6);
+                return var3_1;
             }
-            ++var2_2;
+            ++var4_2;
         } while (true);
     }
 
@@ -294,26 +294,26 @@ lbl20: // 3 sources:
         if (this.mTotalScrollRange != -1) {
             return this.mTotalScrollRange;
         }
-        var1_1 = 0;
-        var2_2 = 0;
-        var4_3 = this.getChildCount();
+        var3_1 = 0;
+        var4_2 = 0;
+        var6_3 = this.getChildCount();
         do {
-            var3_4 = var1_1;
-            if (var2_2 >= var4_3) ** GOTO lbl18
-            var7_7 = this.getChildAt(var2_2);
-            var8_8 = (LayoutParams)var7_7.getLayoutParams();
-            var6_6 = var7_7.getMeasuredHeight();
-            var5_5 = var8_8.mScrollFlags;
-            var3_4 = var1_1;
-            if ((var5_5 & 1) == 0) ** GOTO lbl18
-            var1_1 += var8_8.topMargin + var6_6 + var8_8.bottomMargin;
-            if ((var5_5 & 2) != 0) {
-                var3_4 = var1_1 - ViewCompat.getMinimumHeight(var7_7);
+            var5_6 = var3_1;
+            if (var4_2 >= var6_3) ** GOTO lbl18
+            var1_4 = this.getChildAt(var4_2);
+            var2_5 = (LayoutParams)var1_4.getLayoutParams();
+            var8_8 = var1_4.getMeasuredHeight();
+            var7_7 = var2_5.mScrollFlags;
+            var5_6 = var3_1;
+            if ((var7_7 & 1) == 0) ** GOTO lbl18
+            var3_1 += var2_5.topMargin + var8_8 + var2_5.bottomMargin;
+            if ((var7_7 & 2) != 0) {
+                var5_6 = var3_1 - ViewCompat.getMinimumHeight(var1_4);
 lbl18: // 3 sources:
-                this.mTotalScrollRange = var1_1 = Math.max(0, var3_4 - this.getTopInset());
-                return var1_1;
+                this.mTotalScrollRange = var3_1 = Math.max(0, var5_6 - this.getTopInset());
+                return var3_1;
             }
-            ++var2_2;
+            ++var4_2;
         } while (true);
     }
 

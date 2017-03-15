@@ -75,54 +75,54 @@ class NotificationCompatApi24 {
          * Enabled aggressive block sorting
          */
         public Builder(Context iterator, Notification object, CharSequence charSequence, CharSequence charSequence2, CharSequence charSequence3, RemoteViews remoteViews, int n2, PendingIntent pendingIntent, PendingIntent pendingIntent2, Bitmap bitmap, int n3, int n4, boolean bl, boolean bl2, boolean bl3, int n5, CharSequence charSequence4, boolean bl4, String string2, ArrayList<String> arrayList, Bundle bundle, int n6, int n7, Notification notification, String string3, boolean bl5, String string4, CharSequence[] arrcharSequence, RemoteViews remoteViews2, RemoteViews remoteViews3, RemoteViews remoteViews4) {
-            void var15_17;
-            void var26_28;
-            void var6_8;
-            void var21_23;
-            void var9_11;
-            void var3_5;
-            void var12_14;
-            void var23_25;
-            void var19_21;
-            void var13_15;
-            void var17_19;
-            void var20_22;
-            void var30_32;
-            void var7_9;
-            void var10_12;
-            void var25_27;
-            void var8_10;
-            void var4_6;
+            void var26_29;
             void var11_13;
-            void var27_29;
+            void var7_9;
+            void var3_5;
+            void var31_32;
+            void var19_20;
+            void var23_24;
+            void var30_33;
+            void var18_21;
+            void var10_12;
+            void var16_19;
+            void var27_28;
+            void var17_18;
+            void var6_8;
+            void var8_10;
+            void var20_23;
+            void var21_22;
+            void var22_25;
+            void var12_14;
             boolean bl6;
-            void var31_33;
-            void var22_24;
-            void var28_30;
-            void var24_26;
+            void var29_30;
+            void var28_31;
+            void var15_17;
+            void var9_11;
             void var5_7;
-            void var18_20;
-            void var29_31;
-            void var16_18;
+            void var24_27;
+            void var25_26;
+            void var13_15;
+            void var4_6;
             iterator = new Notification.Builder((Context)iterator).setWhen(object.when).setShowWhen(bl6).setSmallIcon(object.icon, object.iconLevel).setContent(object.contentView).setTicker(object.tickerText, (RemoteViews)var6_8).setSound(object.sound, object.audioStreamType).setVibrate(object.vibrate).setLights(object.ledARGB, object.ledOnMS, object.ledOffMS);
             bl6 = (object.flags & 2) != 0;
             iterator = iterator.setOngoing(bl6);
             bl6 = (object.flags & 8) != 0;
             iterator = iterator.setOnlyAlertOnce(bl6);
             bl6 = (object.flags & 16) != 0;
-            iterator = iterator.setAutoCancel(bl6).setDefaults(object.defaults).setContentTitle((CharSequence)var3_5).setContentText((CharSequence)var4_6).setSubText((CharSequence)var17_19).setContentInfo((CharSequence)var5_7).setContentIntent((PendingIntent)var8_10).setDeleteIntent(object.deleteIntent);
+            iterator = iterator.setAutoCancel(bl6).setDefaults(object.defaults).setContentTitle((CharSequence)var3_5).setContentText((CharSequence)var4_6).setSubText((CharSequence)var17_18).setContentInfo((CharSequence)var5_7).setContentIntent((PendingIntent)var8_10).setDeleteIntent(object.deleteIntent);
             bl6 = (object.flags & 128) != 0;
-            this.b = iterator.setFullScreenIntent((PendingIntent)var9_11, bl6).setLargeIcon((Bitmap)var10_12).setNumber((int)var7_9).setUsesChronometer((boolean)var15_17).setPriority((int)var16_18).setProgress((int)var11_13, (int)var12_14, (boolean)var13_15).setLocalOnly((boolean)var18_20).setExtras((Bundle)var21_23).setGroup((String)var25_27).setGroupSummary((boolean)var26_28).setSortKey((String)var27_29).setCategory((String)var19_21).setColor((int)var22_24).setVisibility((int)var23_25).setPublicVersion((Notification)var24_26).setRemoteInputHistory((CharSequence[])var28_30);
-            if (var29_31 != null) {
-                this.b.setCustomContentView((RemoteViews)var29_31);
+            this.b = iterator.setFullScreenIntent((PendingIntent)var9_11, bl6).setLargeIcon((Bitmap)var10_12).setNumber((int)var7_9).setUsesChronometer((boolean)var15_17).setPriority((int)var16_19).setProgress((int)var11_13, (int)var12_14, (boolean)var13_15).setLocalOnly((boolean)var18_21).setExtras((Bundle)var21_22).setGroup((String)var25_26).setGroupSummary((boolean)var26_29).setSortKey((String)var27_28).setCategory((String)var19_20).setColor((int)var22_25).setVisibility((int)var23_24).setPublicVersion((Notification)var24_27).setRemoteInputHistory((CharSequence[])var28_31);
+            if (var29_30 != null) {
+                this.b.setCustomContentView((RemoteViews)var29_30);
             }
-            if (var30_32 != null) {
-                this.b.setCustomBigContentView((RemoteViews)var30_32);
+            if (var30_33 != null) {
+                this.b.setCustomBigContentView((RemoteViews)var30_33);
             }
-            if (var31_33 != null) {
-                this.b.setCustomHeadsUpContentView((RemoteViews)var31_33);
+            if (var31_32 != null) {
+                this.b.setCustomHeadsUpContentView((RemoteViews)var31_32);
             }
-            iterator = var20_22.iterator();
+            iterator = var20_23.iterator();
             while (iterator.hasNext()) {
                 String string5 = (String)iterator.next();
                 this.b.addPerson(string5);

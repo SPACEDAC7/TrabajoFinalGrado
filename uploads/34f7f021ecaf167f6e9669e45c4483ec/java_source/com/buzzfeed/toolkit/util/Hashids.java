@@ -110,8 +110,8 @@ public class Hashids {
 
     private /* varargs */ String _encode(long ... object) {
         int n2;
-        String string2;
         int n3;
+        String string2;
         int n4 = 0;
         for (n2 = 0; n2 < object.length; ++n2) {
             n4 = (int)((long)n4 + object[n2] % (long)(n2 + 100));

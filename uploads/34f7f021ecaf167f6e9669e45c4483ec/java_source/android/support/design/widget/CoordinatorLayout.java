@@ -70,7 +70,6 @@ import android.support.v4.content.ContextCompat;
 import android.support.v4.graphics.drawable.DrawableCompat;
 import android.support.v4.os.ParcelableCompat;
 import android.support.v4.os.ParcelableCompatCreatorCallbacks;
-import android.support.v4.view.AbsSavedState;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.view.MotionEventCompat;
 import android.support.v4.view.NestedScrollingParent;
@@ -83,6 +82,7 @@ import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.util.SparseArray;
+import android.view.AbsSavedState;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -359,45 +359,45 @@ implements NestedScrollingParent {
             rect2.set(view.getLeft(), view.getTop(), view.getRight(), view.getBottom());
         }
         if (rect2.isEmpty()) return;
-        n2 = n4 = 0;
+        n2 = n3 = 0;
         if ((n5 & 48) == 48) {
-            n3 = rect2.top - layoutParams.topMargin - layoutParams.mInsetOffsetY;
-            n2 = n4;
-            if (n3 < rect.top) {
-                this.setInsetOffsetY(view, rect.top - n3);
+            n4 = rect2.top - layoutParams.topMargin - layoutParams.mInsetOffsetY;
+            n2 = n3;
+            if (n4 < rect.top) {
+                this.setInsetOffsetY(view, rect.top - n4);
                 n2 = 1;
             }
         }
-        n4 = n2;
+        n3 = n2;
         if ((n5 & 80) == 80) {
-            n3 = this.getHeight() - rect2.bottom - layoutParams.bottomMargin + layoutParams.mInsetOffsetY;
-            n4 = n2;
-            if (n3 < rect.bottom) {
-                this.setInsetOffsetY(view, n3 - rect.bottom);
-                n4 = 1;
+            n4 = this.getHeight() - rect2.bottom - layoutParams.bottomMargin + layoutParams.mInsetOffsetY;
+            n3 = n2;
+            if (n4 < rect.bottom) {
+                this.setInsetOffsetY(view, n4 - rect.bottom);
+                n3 = 1;
             }
         }
-        if (n4 == 0) {
+        if (n3 == 0) {
             this.setInsetOffsetY(view, 0);
         }
-        n2 = n4 = 0;
+        n2 = n3 = 0;
         if ((n5 & 3) == 3) {
-            n3 = rect2.left - layoutParams.leftMargin - layoutParams.mInsetOffsetX;
-            n2 = n4;
-            if (n3 < rect.left) {
-                this.setInsetOffsetX(view, rect.left - n3);
+            n4 = rect2.left - layoutParams.leftMargin - layoutParams.mInsetOffsetX;
+            n2 = n3;
+            if (n4 < rect.left) {
+                this.setInsetOffsetX(view, rect.left - n4);
                 n2 = 1;
             }
         }
-        n4 = n2;
+        n3 = n2;
         if ((n5 & 5) != 5) return;
         n5 = this.getWidth() - rect2.right - layoutParams.rightMargin + layoutParams.mInsetOffsetX;
-        n4 = n2;
+        n3 = n2;
         if (n5 < rect.right) {
             this.setInsetOffsetX(view, n5 - rect.right);
             return;
         }
-        if (n4 != 0) return;
+        if (n3 != 0) return;
         this.setInsetOffsetX(view, 0);
     }
 
@@ -416,9 +416,9 @@ implements NestedScrollingParent {
             string2 = WIDGET_PACKAGE_NAME + '.' + string2;
         }
         try {
-            Constructor<Behavior> constructor;
-            void var4_7;
             Map<String, Constructor<Behavior>> map;
+            void var4_7;
+            Constructor<Behavior> constructor;
             Map<String, Constructor<Behavior>> map2 = map = sConstructors.get();
             if (map == null) {
                 map2 = new HashMap<String, Constructor<Behavior>>();
@@ -443,89 +443,89 @@ implements NestedScrollingParent {
      * Lifted jumps to return sites
      */
     private boolean performIntercept(MotionEvent var1_1, int var2_2) {
-        var8_3 = false;
-        var3_4 = false;
-        var13_5 = null;
-        var6_6 = MotionEventCompat.getActionMasked(var1_1);
-        var15_7 = this.mTempList1;
-        this.getTopSortedChildren(var15_7);
-        var7_8 = var15_7.size();
-        var4_9 = 0;
+        var15_3 = false;
+        var8_4 = false;
+        var3_5 = null;
+        var11_6 = MotionEventCompat.getActionMasked(var1_1);
+        var5_7 = this.mTempList1;
+        this.getTopSortedChildren(var5_7);
+        var12_8 = var5_7.size();
+        var9_9 = 0;
         do {
-            var9_11 = var8_3;
-            if (var4_9 >= var7_8) break;
-            var16_15 = var15_7.get(var4_9);
-            var14_14 = (LayoutParams)var16_15.getLayoutParams();
-            var17_16 = var14_14.getBehavior();
-            if (!var8_3 && !var3_4 || var6_6 == 0) ** GOTO lbl40
-            var14_14 = var13_5;
-            var10_12 = var8_3;
-            var5_10 = var3_4;
-            if (var17_16 == null) ** GOTO lbl65
-            var14_14 = var13_5;
-            if (var13_5 == null) {
-                var11_13 = SystemClock.uptimeMillis();
-                var14_14 = MotionEvent.obtain((long)var11_13, (long)var11_13, (int)3, (float)0.0f, (float)0.0f, (int)0);
+            var16_11 = var15_3;
+            if (var9_9 >= var12_8) break;
+            var6_13 = var5_7.get(var9_9);
+            var4_12 = (LayoutParams)var6_13.getLayoutParams();
+            var7_14 = var4_12.getBehavior();
+            if (!var15_3 && !var8_4 || var11_6 == 0) ** GOTO lbl40
+            var4_12 = var3_5;
+            var17_10 = var15_3;
+            var10_15 = var8_4;
+            if (var7_14 == null) ** GOTO lbl65
+            var4_12 = var3_5;
+            if (var3_5 == null) {
+                var13_16 = SystemClock.uptimeMillis();
+                var4_12 = MotionEvent.obtain((long)var13_16, (long)var13_16, (int)3, (float)0.0f, (float)0.0f, (int)0);
             }
             switch (var2_2) {
                 default: {
-                    var5_10 = var3_4;
-                    var10_12 = var8_3;
+                    var10_15 = var8_4;
+                    var17_10 = var15_3;
                     ** GOTO lbl65
                 }
                 case 0: {
-                    var17_16.onInterceptTouchEvent(this, var16_15, (MotionEvent)var14_14);
-                    var10_12 = var8_3;
-                    var5_10 = var3_4;
+                    var7_14.onInterceptTouchEvent(this, var6_13, (MotionEvent)var4_12);
+                    var17_10 = var15_3;
+                    var10_15 = var8_4;
                     ** GOTO lbl65
                 }
                 case 1: 
             }
-            var17_16.onTouchEvent(this, var16_15, (MotionEvent)var14_14);
-            var10_12 = var8_3;
-            var5_10 = var3_4;
+            var7_14.onTouchEvent(this, var6_13, (MotionEvent)var4_12);
+            var17_10 = var15_3;
+            var10_15 = var8_4;
             ** GOTO lbl65
 lbl40: // 1 sources:
-            var9_11 = var8_3;
-            if (!var8_3) {
-                var9_11 = var8_3;
-                if (var17_16 != null) {
+            var16_11 = var15_3;
+            if (!var15_3) {
+                var16_11 = var15_3;
+                if (var7_14 != null) {
                     switch (var2_2) {
                         case 0: {
-                            var8_3 = var17_16.onInterceptTouchEvent(this, var16_15, var1_1);
+                            var15_3 = var7_14.onInterceptTouchEvent(this, var6_13, var1_1);
                             break;
                         }
                         case 1: {
-                            var8_3 = var17_16.onTouchEvent(this, var16_15, var1_1);
+                            var15_3 = var7_14.onTouchEvent(this, var6_13, var1_1);
                         }
                     }
-                    var9_11 = var8_3;
-                    if (var8_3) {
-                        this.mBehaviorTouchView = var16_15;
-                        var9_11 = var8_3;
+                    var16_11 = var15_3;
+                    if (var15_3) {
+                        this.mBehaviorTouchView = var6_13;
+                        var16_11 = var15_3;
                     }
                 }
             }
-            var10_12 = var14_14.didBlockInteraction();
-            var8_3 = var14_14.isBlockingInteractionBelow(this, var16_15);
-            var3_4 = var8_3 != false && var10_12 == false;
-            var14_14 = var13_5;
-            var10_12 = var9_11;
-            var5_10 = var3_4;
-            if (var8_3) {
-                var14_14 = var13_5;
-                var10_12 = var9_11;
-                var5_10 = var3_4;
-                if (!var3_4) break;
+            var17_10 = var4_12.didBlockInteraction();
+            var15_3 = var4_12.isBlockingInteractionBelow(this, var6_13);
+            var8_4 = var15_3 != false && var17_10 == false;
+            var4_12 = var3_5;
+            var17_10 = var16_11;
+            var10_15 = var8_4;
+            if (var15_3) {
+                var4_12 = var3_5;
+                var17_10 = var16_11;
+                var10_15 = var8_4;
+                if (!var8_4) break;
             }
 lbl65: // 7 sources:
-            ++var4_9;
-            var13_5 = var14_14;
-            var8_3 = var10_12;
-            var3_4 = var5_10;
+            ++var9_9;
+            var3_5 = var4_12;
+            var15_3 = var17_10;
+            var8_4 = var10_15;
         } while (true);
-        var15_7.clear();
-        return var9_11;
+        var5_7.clear();
+        return var16_11;
     }
 
     /*
@@ -892,23 +892,23 @@ lbl9: // 2 sources:
                 rect = this.mTempRect3;
                 this.getDescendantRect(layoutParams.mAnchorView, (Rect)object);
                 this.getChildRect(view, false, rect2);
-                n5 = view.getMeasuredWidth();
-                n4 = view.getMeasuredHeight();
-                this.getDesiredAnchoredChildRectWithoutConstraints(view, n2, (Rect)object, rect, layoutParams, n5, n4);
+                n4 = view.getMeasuredWidth();
+                n5 = view.getMeasuredHeight();
+                this.getDesiredAnchoredChildRectWithoutConstraints(view, n2, (Rect)object, rect, layoutParams, n4, n5);
                 if (rect.left == rect2.left) {
                     n2 = n3;
                     if (rect.top == rect2.top) break block6;
                 }
                 n2 = 1;
             }
-            this.constrainChildRect(layoutParams, rect, n5, n4);
+            this.constrainChildRect(layoutParams, rect, n4, n5);
             n3 = rect.left - rect2.left;
-            n5 = rect.top - rect2.top;
+            n4 = rect.top - rect2.top;
             if (n3 != 0) {
                 ViewCompat.offsetLeftAndRight(view, n3);
             }
-            if (n5 != 0) {
-                ViewCompat.offsetTopAndBottom(view, n5);
+            if (n4 != 0) {
+                ViewCompat.offsetTopAndBottom(view, n4);
             }
             if (n2 != 0 && (object = layoutParams.getBehavior()) != null) {
                 object.onDependentViewChanged(this, view, layoutParams.mAnchorView);
@@ -937,83 +937,83 @@ lbl9: // 2 sources:
      * Lifted jumps to return sites
      */
     final void onChildViewsChanged(int var1_1) {
-        var4_2 = ViewCompat.getLayoutDirection((View)this);
-        var5_3 = this.mDependencySortedChildren.size();
-        var7_4 = this.mTempRect4;
-        var7_4.setEmpty();
-        var2_5 = 0;
+        var9_2 = ViewCompat.getLayoutDirection((View)this);
+        var10_3 = this.mDependencySortedChildren.size();
+        var2_4 = this.mTempRect4;
+        var2_4.setEmpty();
+        var7_5 = 0;
         block11 : do {
-            if (var2_5 >= var5_3) return;
-            var8_8 = this.mDependencySortedChildren.get(var2_5);
-            var9_9 = (LayoutParams)var8_8.getLayoutParams();
-            for (var3_6 = 0; var3_6 < var2_5; ++var3_6) {
-                var10_10 = this.mDependencySortedChildren.get(var3_6);
-                if (var9_9.mAnchorDirectChild != var10_10) continue;
-                this.offsetChildToAnchor(var8_8, var4_2);
+            if (var7_5 >= var10_3) return;
+            var3_6 = this.mDependencySortedChildren.get(var7_5);
+            var4_7 = (LayoutParams)var3_6.getLayoutParams();
+            for (var8_10 = 0; var8_10 < var7_5; ++var8_10) {
+                var5_8 = this.mDependencySortedChildren.get(var8_10);
+                if (var4_7.mAnchorDirectChild != var5_8) continue;
+                this.offsetChildToAnchor(var3_6, var9_2);
             }
-            var10_10 = this.mTempRect1;
-            this.getChildRect(var8_8, true, (Rect)var10_10);
-            if (var9_9.insetEdge != 0 && !var10_10.isEmpty()) {
-                var3_6 = GravityCompat.getAbsoluteGravity(var9_9.insetEdge, var4_2);
-                switch (var3_6 & 112) {
+            var5_8 = this.mTempRect1;
+            this.getChildRect(var3_6, true, (Rect)var5_8);
+            if (var4_7.insetEdge != 0 && !var5_8.isEmpty()) {
+                var8_10 = GravityCompat.getAbsoluteGravity(var4_7.insetEdge, var9_2);
+                switch (var8_10 & 112) {
                     case 48: {
-                        var7_4.top = Math.max(var7_4.top, var10_10.bottom);
+                        var2_4.top = Math.max(var2_4.top, var5_8.bottom);
                         break;
                     }
                     case 80: {
-                        var7_4.bottom = Math.max(var7_4.bottom, this.getHeight() - var10_10.top);
+                        var2_4.bottom = Math.max(var2_4.bottom, this.getHeight() - var5_8.top);
                         break;
                     }
                 }
-                switch (var3_6 & 7) {
+                switch (var8_10 & 7) {
                     case 3: {
-                        var7_4.left = Math.max(var7_4.left, var10_10.right);
+                        var2_4.left = Math.max(var2_4.left, var5_8.right);
                         break;
                     }
                     case 5: {
-                        var7_4.right = Math.max(var7_4.right, this.getWidth() - var10_10.left);
+                        var2_4.right = Math.max(var2_4.right, this.getWidth() - var5_8.left);
                     }
                 }
             }
-            if (var9_9.dodgeInsetEdges != 0 && var8_8.getVisibility() == 0) {
-                this.offsetChildByInset(var8_8, var7_4, var4_2);
+            if (var4_7.dodgeInsetEdges != 0 && var3_6.getVisibility() == 0) {
+                this.offsetChildByInset(var3_6, var2_4, var9_2);
             }
             if (var1_1 != 0) ** GOTO lbl39
-            var9_9 = this.mTempRect2;
-            this.getLastChildRect(var8_8, (Rect)var9_9);
-            if (var9_9.equals(var10_10)) ** GOTO lbl-1000
-            this.recordLastChildRect(var8_8, (Rect)var10_10);
+            var4_7 = this.mTempRect2;
+            this.getLastChildRect(var3_6, (Rect)var4_7);
+            if (var4_7.equals(var5_8)) ** GOTO lbl-1000
+            this.recordLastChildRect(var3_6, (Rect)var5_8);
 lbl39: // 2 sources:
-            var3_6 = var2_5 + 1;
+            var8_10 = var7_5 + 1;
             do {
-                if (var3_6 >= var5_3) lbl-1000: // 2 sources:
+                if (var8_10 >= var10_3) lbl-1000: // 2 sources:
                 {
-                    ++var2_5;
+                    ++var7_5;
                     continue block11;
                 }
-                var9_9 = this.mDependencySortedChildren.get(var3_6);
-                var10_10 = (LayoutParams)var9_9.getLayoutParams();
-                var11_11 = var10_10.getBehavior();
-                if (var11_11 != null && var11_11.layoutDependsOn(this, var9_9, var8_8)) {
-                    if (var1_1 == 0 && var10_10.getChangedAfterNestedScroll()) {
-                        var10_10.resetChangedAfterNestedScroll();
+                var4_7 = this.mDependencySortedChildren.get(var8_10);
+                var5_8 = (LayoutParams)var4_7.getLayoutParams();
+                var6_9 = var5_8.getBehavior();
+                if (var6_9 != null && var6_9.layoutDependsOn(this, var4_7, var3_6)) {
+                    if (var1_1 == 0 && var5_8.getChangedAfterNestedScroll()) {
+                        var5_8.resetChangedAfterNestedScroll();
                     } else {
                         switch (var1_1) {
                             default: {
-                                var6_7 = var11_11.onDependentViewChanged(this, var9_9, var8_8);
+                                var11_11 = var6_9.onDependentViewChanged(this, var4_7, var3_6);
                                 break;
                             }
                             case 2: {
-                                var11_11.onDependentViewRemoved(this, var9_9, var8_8);
-                                var6_7 = true;
+                                var6_9.onDependentViewRemoved(this, var4_7, var3_6);
+                                var11_11 = true;
                             }
                         }
                         if (var1_1 == 1) {
-                            var10_10.setChangedAfterNestedScroll(var6_7);
+                            var5_8.setChangedAfterNestedScroll(var11_11);
                         }
                     }
                 }
-                ++var3_6;
+                ++var8_10;
             } while (true);
             break;
         } while (true);
@@ -1097,65 +1097,65 @@ lbl39: // 2 sources:
                 block9 : {
                     this.prepareChildren();
                     this.ensurePreDrawListener();
-                    var14_3 = this.getPaddingLeft();
-                    var15_4 = this.getPaddingTop();
-                    var16_5 = this.getPaddingRight();
-                    var17_6 = this.getPaddingBottom();
-                    var18_7 = ViewCompat.getLayoutDirection((View)this);
-                    if (var18_7 != 1) ** GOTO lbl58
-                    var4_8 = true;
+                    var17_3 = this.getPaddingLeft();
+                    var18_4 = this.getPaddingTop();
+                    var19_5 = this.getPaddingRight();
+                    var20_6 = this.getPaddingBottom();
+                    var21_7 = ViewCompat.getLayoutDirection((View)this);
+                    if (var21_7 != 1) ** GOTO lbl58
+                    var7_8 = true;
 lbl10: // 2 sources:
                     do {
-                        var19_9 = View.MeasureSpec.getMode((int)var1_1);
-                        var20_10 = View.MeasureSpec.getSize((int)var1_1);
-                        var21_11 = View.MeasureSpec.getMode((int)var2_2);
-                        var22_12 = View.MeasureSpec.getSize((int)var2_2);
-                        var9_13 = this.getSuggestedMinimumWidth();
-                        var8_14 = this.getSuggestedMinimumHeight();
-                        var7_15 = 0;
+                        var22_9 = View.MeasureSpec.getMode((int)var1_1);
+                        var23_10 = View.MeasureSpec.getSize((int)var1_1);
+                        var24_11 = View.MeasureSpec.getMode((int)var2_2);
+                        var25_12 = View.MeasureSpec.getSize((int)var2_2);
+                        var12_13 = this.getSuggestedMinimumWidth();
+                        var11_14 = this.getSuggestedMinimumHeight();
+                        var10_15 = 0;
                         if (this.mLastInsets == null || !ViewCompat.getFitsSystemWindows((View)this)) break block9;
-                        var5_16 = true;
+                        var8_16 = true;
 lbl20: // 2 sources:
                         do {
-                            var23_17 = this.mDependencySortedChildren.size();
-                            var6_18 = 0;
+                            var26_17 = this.mDependencySortedChildren.size();
+                            var9_18 = 0;
                             block3 : do {
-                                if (var6_18 >= var23_17) break block10;
-                                var24_24 = this.mDependencySortedChildren.get(var6_18);
-                                var25_25 = (LayoutParams)var24_24.getLayoutParams();
-                                var3_19 = var10_20 = 0;
-                                if (var25_25.keyline < 0) ** GOTO lbl35
-                                var3_19 = var10_20;
-                                if (var19_9 == 0) ** GOTO lbl35
-                                var11_21 = this.getKeyline(var25_25.keyline);
-                                var12_22 = GravityCompat.getAbsoluteGravity(CoordinatorLayout.resolveKeylineGravity(var25_25.gravity), var18_7) & 7;
-                                if (var12_22 == 3 && !var4_8 || var12_22 == 5 && var4_8) {
-                                    var3_19 = Math.max(0, var20_10 - var16_5 - var11_21);
+                                if (var9_18 >= var26_17) break block10;
+                                var3_19 = this.mDependencySortedChildren.get(var9_18);
+                                var4_20 = (LayoutParams)var3_19.getLayoutParams();
+                                var6_22 = var13_23 = 0;
+                                if (var4_20.keyline < 0) ** GOTO lbl35
+                                var6_22 = var13_23;
+                                if (var22_9 == 0) ** GOTO lbl35
+                                var14_24 = this.getKeyline(var4_20.keyline);
+                                var15_25 = GravityCompat.getAbsoluteGravity(CoordinatorLayout.resolveKeylineGravity(var4_20.gravity), var21_7) & 7;
+                                if (var15_25 == 3 && !var7_8 || var15_25 == 5 && var7_8) {
+                                    var6_22 = Math.max(0, var23_10 - var19_5 - var14_24);
 lbl35: // 6 sources:
                                     do {
-                                        var11_21 = var1_1;
-                                        var12_22 = var2_2;
-                                        var13_23 = var11_21;
-                                        var10_20 = var12_22;
-                                        if (var5_16) {
-                                            var13_23 = var11_21;
-                                            var10_20 = var12_22;
-                                            if (!ViewCompat.getFitsSystemWindows(var24_24)) {
-                                                var12_22 = this.mLastInsets.getSystemWindowInsetLeft();
-                                                var13_23 = this.mLastInsets.getSystemWindowInsetRight();
-                                                var10_20 = this.mLastInsets.getSystemWindowInsetTop();
-                                                var11_21 = this.mLastInsets.getSystemWindowInsetBottom();
-                                                var13_23 = View.MeasureSpec.makeMeasureSpec((int)(var20_10 - (var12_22 + var13_23)), (int)var19_9);
-                                                var10_20 = View.MeasureSpec.makeMeasureSpec((int)(var22_12 - (var10_20 + var11_21)), (int)var21_11);
+                                        var14_24 = var1_1;
+                                        var15_25 = var2_2;
+                                        var16_26 = var14_24;
+                                        var13_23 = var15_25;
+                                        if (var8_16) {
+                                            var16_26 = var14_24;
+                                            var13_23 = var15_25;
+                                            if (!ViewCompat.getFitsSystemWindows(var3_19)) {
+                                                var15_25 = this.mLastInsets.getSystemWindowInsetLeft();
+                                                var16_26 = this.mLastInsets.getSystemWindowInsetRight();
+                                                var13_23 = this.mLastInsets.getSystemWindowInsetTop();
+                                                var14_24 = this.mLastInsets.getSystemWindowInsetBottom();
+                                                var16_26 = View.MeasureSpec.makeMeasureSpec((int)(var23_10 - (var15_25 + var16_26)), (int)var22_9);
+                                                var13_23 = View.MeasureSpec.makeMeasureSpec((int)(var25_12 - (var13_23 + var14_24)), (int)var24_11);
                                             }
                                         }
-                                        if ((var26_26 = var25_25.getBehavior()) == null || !var26_26.onMeasureChild(this, var24_24, var13_23, var3_19, var10_20, 0)) {
-                                            this.onMeasureChild(var24_24, var13_23, var3_19, var10_20, 0);
+                                        if ((var5_21 = var4_20.getBehavior()) == null || !var5_21.onMeasureChild(this, var3_19, var16_26, var6_22, var13_23, 0)) {
+                                            this.onMeasureChild(var3_19, var16_26, var6_22, var13_23, 0);
                                         }
-                                        var9_13 = Math.max(var9_13, var24_24.getMeasuredWidth() + (var14_3 + var16_5) + var25_25.leftMargin + var25_25.rightMargin);
-                                        var8_14 = Math.max(var8_14, var24_24.getMeasuredHeight() + (var15_4 + var17_6) + var25_25.topMargin + var25_25.bottomMargin);
-                                        var7_15 = ViewCompat.combineMeasuredStates(var7_15, ViewCompat.getMeasuredState(var24_24));
-                                        ++var6_18;
+                                        var12_13 = Math.max(var12_13, var3_19.getMeasuredWidth() + (var17_3 + var19_5) + var4_20.leftMargin + var4_20.rightMargin);
+                                        var11_14 = Math.max(var11_14, var3_19.getMeasuredHeight() + (var18_4 + var20_6) + var4_20.topMargin + var4_20.bottomMargin);
+                                        var10_15 = ViewCompat.combineMeasuredStates(var10_15, ViewCompat.getMeasuredState(var3_19));
+                                        ++var9_18;
                                         continue block3;
                                         break;
                                     } while (true);
@@ -1168,22 +1168,22 @@ lbl35: // 6 sources:
                         break;
                     } while (true);
 lbl58: // 1 sources:
-                    var4_8 = false;
+                    var7_8 = false;
                     ** while (true)
                 }
-                var5_16 = false;
+                var8_16 = false;
                 ** while (true)
             }
-            if (var12_22 == 5 && !var4_8) ** GOTO lbl69
-            var3_19 = var10_20;
-            if (var12_22 != 3) ** GOTO lbl35
-            var3_19 = var10_20;
-            if (!var4_8) ** GOTO lbl35
+            if (var15_25 == 5 && !var7_8) ** GOTO lbl69
+            var6_22 = var13_23;
+            if (var15_25 != 3) ** GOTO lbl35
+            var6_22 = var13_23;
+            if (!var7_8) ** GOTO lbl35
 lbl69: // 2 sources:
-            var3_19 = Math.max(0, var11_21 - var14_3);
+            var6_22 = Math.max(0, var14_24 - var17_3);
             ** while (true)
         }
-        this.setMeasuredDimension(ViewCompat.resolveSizeAndState(var9_13, var1_1, -16777216 & var7_15), ViewCompat.resolveSizeAndState(var8_14, var2_2, var7_15 << 16));
+        this.setMeasuredDimension(ViewCompat.resolveSizeAndState(var12_13, var1_1, -16777216 & var10_15), ViewCompat.resolveSizeAndState(var11_14, var2_2, var10_15 << 16));
     }
 
     public void onMeasureChild(View view, int n2, int n3, int n4, int n5) {
@@ -1260,12 +1260,12 @@ lbl69: // 2 sources:
             View view2 = this.getChildAt(i2);
             Object object = (LayoutParams)view2.getLayoutParams();
             if (!object.isNestedScrollAccepted()) {
-                n8 = n5;
-                n7 = n4;
+                n7 = n5;
+                n8 = n4;
             } else {
                 object = object.getBehavior();
-                n7 = n4;
-                n8 = n5;
+                n8 = n4;
+                n7 = n5;
                 if (object != null) {
                     int[] arrn2 = this.mTempIntPair;
                     this.mTempIntPair[1] = 0;
@@ -1274,12 +1274,12 @@ lbl69: // 2 sources:
                     n4 = n2 > 0 ? Math.max(n4, this.mTempIntPair[0]) : Math.min(n4, this.mTempIntPair[0]);
                     n5 = n3 > 0 ? Math.max(n5, this.mTempIntPair[1]) : Math.min(n5, this.mTempIntPair[1]);
                     bl = true;
-                    n7 = n4;
-                    n8 = n5;
+                    n8 = n4;
+                    n7 = n5;
                 }
             }
-            n4 = n7;
-            n5 = n8;
+            n4 = n8;
+            n5 = n7;
         }
         arrn[0] = n4;
         arrn[1] = n5;
@@ -1423,51 +1423,51 @@ lbl69: // 2 sources:
      * Lifted jumps to return sites
      */
     public boolean onTouchEvent(MotionEvent var1_1) {
-        var6_2 = false;
-        var4_3 = false;
-        var9_4 = null;
-        var10_5 = null;
-        var2_6 = MotionEventCompat.getActionMasked(var1_1);
+        var11_2 = false;
+        var9_3 = false;
+        var2_4 = null;
+        var3_5 = null;
+        var5_6 = MotionEventCompat.getActionMasked(var1_1);
         if (this.mBehaviorTouchView != null) ** GOTO lbl-1000
-        var5_7 = var4_3 = this.performIntercept(var1_1, 1);
-        var3_8 = var6_2;
-        if (var4_3) lbl-1000: // 2 sources:
+        var10_7 = var9_3 = this.performIntercept(var1_1, 1);
+        var8_8 = var11_2;
+        if (var9_3) lbl-1000: // 2 sources:
         {
-            var11_9 = ((LayoutParams)this.mBehaviorTouchView.getLayoutParams()).getBehavior();
-            var5_7 = var4_3;
-            var3_8 = var6_2;
-            if (var11_9 != null) {
-                var3_8 = var11_9.onTouchEvent(this, this.mBehaviorTouchView, var1_1);
-                var5_7 = var4_3;
+            var4_9 = ((LayoutParams)this.mBehaviorTouchView.getLayoutParams()).getBehavior();
+            var10_7 = var9_3;
+            var8_8 = var11_2;
+            if (var4_9 != null) {
+                var8_8 = var4_9.onTouchEvent(this, this.mBehaviorTouchView, var1_1);
+                var10_7 = var9_3;
             }
         }
         if (this.mBehaviorTouchView == null) {
-            var4_3 = var3_8 | super.onTouchEvent(var1_1);
-            var1_1 = var10_5;
+            var9_3 = var8_8 | super.onTouchEvent(var1_1);
+            var1_1 = var3_5;
         } else {
-            var1_1 = var10_5;
-            var4_3 = var3_8;
-            if (var5_7) {
-                var1_1 = var9_4;
+            var1_1 = var3_5;
+            var9_3 = var8_8;
+            if (var10_7) {
+                var1_1 = var2_4;
                 if (!false) {
-                    var7_10 = SystemClock.uptimeMillis();
-                    var1_1 = MotionEvent.obtain((long)var7_10, (long)var7_10, (int)3, (float)0.0f, (float)0.0f, (int)0);
+                    var6_10 = SystemClock.uptimeMillis();
+                    var1_1 = MotionEvent.obtain((long)var6_10, (long)var6_10, (int)3, (float)0.0f, (float)0.0f, (int)0);
                 }
                 super.onTouchEvent(var1_1);
-                var4_3 = var3_8;
+                var9_3 = var8_8;
             }
         }
-        if (var4_3 || var2_6 == 0) {
+        if (var9_3 || var5_6 == 0) {
             // empty if block
         }
         if (var1_1 != null) {
             var1_1.recycle();
         }
-        if (var2_6 != 1) {
-            if (var2_6 != 3) return var4_3;
+        if (var5_6 != 1) {
+            if (var5_6 != 3) return var9_3;
         }
         this.resetTouchBehaviors();
-        return var4_3;
+        return var9_3;
     }
 
     void recordLastChildRect(View view, Rect rect) {
@@ -1970,7 +1970,7 @@ lbl69: // 2 sources:
     }
 
     protected static class SavedState
-    extends AbsSavedState {
+    extends android.support.v4.view.AbsSavedState {
         public static final Parcelable.Creator<SavedState> CREATOR = ParcelableCompat.newCreator(new ParcelableCompatCreatorCallbacks<SavedState>(){
 
             @Override

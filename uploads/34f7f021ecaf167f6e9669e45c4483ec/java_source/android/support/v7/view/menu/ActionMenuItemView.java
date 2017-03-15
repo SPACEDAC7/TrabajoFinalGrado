@@ -105,20 +105,20 @@ ActionMenuView.ActionMenuChildView {
      * Lifted jumps to return sites
      */
     private void updateTextButtonVisibility() {
-        var3_1 = false;
-        var1_2 = TextUtils.isEmpty((CharSequence)this.mTitle) == false;
+        var4_1 = false;
+        var2_2 = TextUtils.isEmpty((CharSequence)this.mTitle) == false;
         if (this.mIcon == null) ** GOTO lbl-1000
-        var2_3 = var3_1;
+        var3_3 = var4_1;
         if (!this.mItemData.showsTextAsAction()) ** GOTO lbl10
         if (this.mAllowTextWithIcon) ** GOTO lbl-1000
-        var2_3 = var3_1;
+        var3_3 = var4_1;
         if (this.mExpandedFormat) lbl-1000: // 3 sources:
         {
-            var2_3 = true;
+            var3_3 = true;
         }
 lbl10: // 4 sources:
-        var4_4 = (var1_2 & var2_3) != false ? this.mTitle : null;
-        this.setText(var4_4);
+        var1_4 = (var2_2 & var3_3) != false ? this.mTitle : null;
+        this.setText(var1_4);
     }
 
     @Override

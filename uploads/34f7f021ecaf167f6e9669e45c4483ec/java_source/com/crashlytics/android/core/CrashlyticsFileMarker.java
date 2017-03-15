@@ -29,8 +29,8 @@ class CrashlyticsFileMarker {
             boolean bl = this.getMarkerFile().createNewFile();
             return bl;
         }
-        catch (IOException var2_2) {
-            Fabric.getLogger().e("CrashlyticsCore", "Error creating marker: " + this.markerName, (Throwable)var2_2);
+        catch (IOException var1_2) {
+            Fabric.getLogger().e("CrashlyticsCore", "Error creating marker: " + this.markerName, (Throwable)var1_2);
             return false;
         }
     }

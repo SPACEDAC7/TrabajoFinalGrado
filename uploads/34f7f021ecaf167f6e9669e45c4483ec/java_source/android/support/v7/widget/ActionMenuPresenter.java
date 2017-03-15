@@ -148,161 +148,161 @@ implements ActionProvider.SubUiVisibilityListener {
     @Override
     public boolean flagActionItems() {
         if (this.mMenu != null) {
-            var16_1 = this.mMenu.getVisibleItems();
-            var8_2 = var16_1.size();
+            var1_1 = this.mMenu.getVisibleItems();
+            var13_2 = var1_1.size();
         } else {
-            var16_1 = null;
-            var8_2 = 0;
+            var1_1 = null;
+            var13_2 = 0;
         }
-        var1_3 = this.mMaxItems;
-        var10_4 = this.mActionItemWidthLimit;
-        var11_5 = View.MeasureSpec.makeMeasureSpec((int)0, (int)0);
-        var17_6 = (ViewGroup)this.mMenuView;
-        var2_7 = 0;
-        var4_8 = 0;
-        var7_9 = 0;
-        var5_10 = 0;
-        for (var3_11 = 0; var3_11 < var8_2; ++var3_11) {
-            var18_13 = var16_1.get(var3_11);
-            if (var18_13.requiresActionButton()) {
-                ++var2_7;
-            } else if (var18_13.requestsActionButton()) {
-                ++var4_8;
+        var6_3 = this.mMaxItems;
+        var15_4 = this.mActionItemWidthLimit;
+        var16_5 = View.MeasureSpec.makeMeasureSpec((int)0, (int)0);
+        var2_6 = (ViewGroup)this.mMenuView;
+        var7_7 = 0;
+        var9_8 = 0;
+        var12_9 = 0;
+        var10_10 = 0;
+        for (var8_11 = 0; var8_11 < var13_2; ++var8_11) {
+            var3_12 = var1_1.get(var8_11);
+            if (var3_12.requiresActionButton()) {
+                ++var7_7;
+            } else if (var3_12.requestsActionButton()) {
+                ++var9_8;
             } else {
-                var5_10 = 1;
+                var10_10 = 1;
             }
-            var6_12 = var1_3;
+            var11_13 = var6_3;
             if (this.mExpandedActionViewsExclusive) {
-                var6_12 = var1_3;
-                if (var18_13.isActionViewExpanded()) {
-                    var6_12 = 0;
+                var11_13 = var6_3;
+                if (var3_12.isActionViewExpanded()) {
+                    var11_13 = 0;
                 }
             }
-            var1_3 = var6_12;
+            var6_3 = var11_13;
         }
-        var3_11 = var1_3;
+        var8_11 = var6_3;
         if (!this.mReserveOverflow) ** GOTO lbl37
-        if (var5_10 != 0) ** GOTO lbl-1000
-        var3_11 = var1_3;
-        if (var2_7 + var4_8 > var1_3) lbl-1000: // 2 sources:
+        if (var10_10 != 0) ** GOTO lbl-1000
+        var8_11 = var6_3;
+        if (var7_7 + var9_8 > var6_3) lbl-1000: // 2 sources:
         {
-            var3_11 = var1_3 - 1;
+            var8_11 = var6_3 - 1;
         }
 lbl37: // 4 sources:
-        var3_11 -= var2_7;
-        var18_13 = this.mActionButtonGroups;
-        var18_13.clear();
-        var9_14 = 0;
-        var2_7 = 0;
+        var8_11 -= var7_7;
+        var3_12 = this.mActionButtonGroups;
+        var3_12.clear();
+        var14_14 = 0;
+        var7_7 = 0;
         if (this.mStrictWidthLimit) {
-            var2_7 = var10_4 / this.mMinCellSize;
-            var1_3 = this.mMinCellSize;
-            var9_14 = this.mMinCellSize + var10_4 % var1_3 / var2_7;
+            var7_7 = var15_4 / this.mMinCellSize;
+            var6_3 = this.mMinCellSize;
+            var14_14 = this.mMinCellSize + var15_4 % var6_3 / var7_7;
         }
-        var1_3 = 0;
-        var5_10 = var10_4;
-        var10_4 = var1_3;
-        var1_3 = var7_9;
-        while (var10_4 < var8_2) {
-            var19_19 = var16_1.get(var10_4);
-            if (var19_19.requiresActionButton()) {
-                var20_20 = this.getItemView(var19_19, this.mScrapActionButtonView, var17_6);
+        var6_3 = 0;
+        var10_10 = var15_4;
+        var15_4 = var6_3;
+        var6_3 = var12_9;
+        while (var15_4 < var13_2) {
+            var4_15 = var1_1.get(var15_4);
+            if (var4_15.requiresActionButton()) {
+                var5_16 = this.getItemView(var4_15, this.mScrapActionButtonView, var2_6);
                 if (this.mScrapActionButtonView == null) {
-                    this.mScrapActionButtonView = var20_20;
+                    this.mScrapActionButtonView = var5_16;
                 }
                 if (this.mStrictWidthLimit) {
-                    var2_7 -= ActionMenuView.measureChildForCells((View)var20_20, var9_14, var2_7, var11_5, 0);
+                    var7_7 -= ActionMenuView.measureChildForCells((View)var5_16, var14_14, var7_7, var16_5, 0);
                 } else {
-                    var20_20.measure(var11_5, var11_5);
+                    var5_16.measure(var16_5, var16_5);
                 }
-                var6_12 = var20_20.getMeasuredWidth();
-                var4_8 = var5_10 - var6_12;
-                var5_10 = var1_3;
-                if (var1_3 == 0) {
-                    var5_10 = var6_12;
+                var11_13 = var5_16.getMeasuredWidth();
+                var9_8 = var10_10 - var11_13;
+                var10_10 = var6_3;
+                if (var6_3 == 0) {
+                    var10_10 = var11_13;
                 }
-                if ((var1_3 = var19_19.getGroupId()) != 0) {
-                    var18_13.put(var1_3, true);
+                if ((var6_3 = var4_15.getGroupId()) != 0) {
+                    var3_12.put(var6_3, true);
                 }
-                var19_19.setIsActionButton(true);
-                var1_3 = var5_10;
-            } else if (var19_19.requestsActionButton()) {
-                var12_15 = var19_19.getGroupId();
-                var15_18 = var18_13.get(var12_15);
-                var13_16 = !(var3_11 <= 0 && var15_18 == false || var5_10 <= 0 || this.mStrictWidthLimit != false && var2_7 <= 0) ? 1 : 0;
-                var7_9 = var2_7;
-                var6_12 = var1_3;
-                var14_17 = var13_16;
-                var4_8 = var5_10;
-                if (var13_16 != 0) {
-                    var20_20 = this.getItemView(var19_19, this.mScrapActionButtonView, var17_6);
+                var4_15.setIsActionButton(true);
+                var6_3 = var10_10;
+            } else if (var4_15.requestsActionButton()) {
+                var17_17 = var4_15.getGroupId();
+                var20_20 = var3_12.get(var17_17);
+                var18_19 = !(var8_11 <= 0 && var20_20 == false || var10_10 <= 0 || this.mStrictWidthLimit != false && var7_7 <= 0) ? 1 : 0;
+                var12_9 = var7_7;
+                var11_13 = var6_3;
+                var19_18 = var18_19;
+                var9_8 = var10_10;
+                if (var18_19 != 0) {
+                    var5_16 = this.getItemView(var4_15, this.mScrapActionButtonView, var2_6);
                     if (this.mScrapActionButtonView == null) {
-                        this.mScrapActionButtonView = var20_20;
+                        this.mScrapActionButtonView = var5_16;
                     }
                     if (this.mStrictWidthLimit) {
-                        var6_12 = ActionMenuView.measureChildForCells((View)var20_20, var9_14, var2_7, var11_5, 0);
-                        var2_7 = var4_8 = var2_7 - var6_12;
-                        if (var6_12 == 0) {
-                            var13_16 = 0;
-                            var2_7 = var4_8;
+                        var11_13 = ActionMenuView.measureChildForCells((View)var5_16, var14_14, var7_7, var16_5, 0);
+                        var7_7 = var9_8 = var7_7 - var11_13;
+                        if (var11_13 == 0) {
+                            var18_19 = 0;
+                            var7_7 = var9_8;
                         }
                     } else {
-                        var20_20.measure(var11_5, var11_5);
+                        var5_16.measure(var16_5, var16_5);
                     }
-                    var7_9 = var20_20.getMeasuredWidth();
-                    var4_8 = var5_10 - var7_9;
-                    var6_12 = var1_3;
-                    if (var1_3 == 0) {
-                        var6_12 = var7_9;
+                    var12_9 = var5_16.getMeasuredWidth();
+                    var9_8 = var10_10 - var12_9;
+                    var11_13 = var6_3;
+                    if (var6_3 == 0) {
+                        var11_13 = var12_9;
                     }
                     if (this.mStrictWidthLimit) {
-                        var1_3 = var4_8 >= 0 ? 1 : 0;
-                        var14_17 = var13_16 & var1_3;
-                        var7_9 = var2_7;
+                        var6_3 = var9_8 >= 0 ? 1 : 0;
+                        var19_18 = var18_19 & var6_3;
+                        var12_9 = var7_7;
                     } else {
-                        var1_3 = var4_8 + var6_12 > 0 ? 1 : 0;
-                        var14_17 = var13_16 & var1_3;
-                        var7_9 = var2_7;
+                        var6_3 = var9_8 + var11_13 > 0 ? 1 : 0;
+                        var19_18 = var18_19 & var6_3;
+                        var12_9 = var7_7;
                     }
                 }
-                if (var14_17 != 0 && var12_15 != 0) {
-                    var18_13.put(var12_15, true);
-                    var1_3 = var3_11;
+                if (var19_18 != 0 && var17_17 != 0) {
+                    var3_12.put(var17_17, true);
+                    var6_3 = var8_11;
                 } else {
-                    var1_3 = var3_11;
-                    if (var15_18) {
-                        var18_13.put(var12_15, false);
-                        var2_7 = 0;
+                    var6_3 = var8_11;
+                    if (var20_20) {
+                        var3_12.put(var17_17, false);
+                        var7_7 = 0;
                         do {
-                            var1_3 = var3_11;
-                            if (var2_7 >= var10_4) break;
-                            var20_20 = var16_1.get(var2_7);
-                            var1_3 = var3_11;
-                            if (var20_20.getGroupId() == var12_15) {
-                                var1_3 = var3_11;
-                                if (var20_20.isActionButton()) {
-                                    var1_3 = var3_11 + 1;
+                            var6_3 = var8_11;
+                            if (var7_7 >= var15_4) break;
+                            var5_16 = var1_1.get(var7_7);
+                            var6_3 = var8_11;
+                            if (var5_16.getGroupId() == var17_17) {
+                                var6_3 = var8_11;
+                                if (var5_16.isActionButton()) {
+                                    var6_3 = var8_11 + 1;
                                 }
-                                var20_20.setIsActionButton(false);
+                                var5_16.setIsActionButton(false);
                             }
-                            ++var2_7;
-                            var3_11 = var1_3;
+                            ++var7_7;
+                            var8_11 = var6_3;
                         } while (true);
                     }
                 }
-                var3_11 = var1_3;
-                if (var14_17 != 0) {
-                    var3_11 = var1_3 - 1;
+                var8_11 = var6_3;
+                if (var19_18 != 0) {
+                    var8_11 = var6_3 - 1;
                 }
-                var19_19.setIsActionButton((boolean)var14_17);
-                var2_7 = var7_9;
-                var1_3 = var6_12;
+                var4_15.setIsActionButton((boolean)var19_18);
+                var7_7 = var12_9;
+                var6_3 = var11_13;
             } else {
-                var19_19.setIsActionButton(false);
-                var4_8 = var5_10;
+                var4_15.setIsActionButton(false);
+                var9_8 = var10_10;
             }
-            ++var10_4;
-            var5_10 = var4_8;
+            ++var15_4;
+            var10_10 = var9_8;
         }
         return true;
     }
@@ -471,29 +471,29 @@ lbl37: // 4 sources:
         if (!var1_1.hasVisibleItems()) {
             return false;
         }
-        var6_2 = var1_1;
-        while (var6_2.getParentMenu() != this.mMenu) {
-            var6_2 = (SubMenuBuilder)var6_2.getParentMenu();
+        var2_2 = var1_1;
+        while (var2_2.getParentMenu() != this.mMenu) {
+            var2_2 = (SubMenuBuilder)var2_2.getParentMenu();
         }
-        if ((var6_2 = this.findViewForItem(var6_2.getItem())) == null) return false;
+        if ((var2_2 = this.findViewForItem(var2_2.getItem())) == null) return false;
         this.mOpenSubMenuId = var1_1.getItem().getItemId();
-        var5_3 = false;
-        var3_4 = var1_1.size();
-        var2_5 = 0;
+        var7_3 = false;
+        var5_4 = var1_1.size();
+        var4_5 = 0;
         do {
-            var4_6 = var5_3;
-            if (var2_5 >= var3_4) ** GOTO lbl18
-            var7_7 = var1_1.getItem(var2_5);
-            if (var7_7.isVisible() && var7_7.getIcon() != null) {
-                var4_6 = true;
+            var6_7 = var7_3;
+            if (var4_5 >= var5_4) ** GOTO lbl18
+            var3_6 = var1_1.getItem(var4_5);
+            if (var3_6.isVisible() && var3_6.getIcon() != null) {
+                var6_7 = true;
 lbl18: // 2 sources:
-                this.mActionButtonPopup = new ActionButtonSubmenu(this.mContext, var1_1, (View)var6_2);
-                this.mActionButtonPopup.setForceShowIcon(var4_6);
+                this.mActionButtonPopup = new ActionButtonSubmenu(this.mContext, var1_1, (View)var2_2);
+                this.mActionButtonPopup.setForceShowIcon(var6_7);
                 this.mActionButtonPopup.show();
                 super.onSubMenuSelected(var1_1);
                 return true;
             }
-            ++var2_5;
+            ++var4_5;
         } while (true);
     }
 
@@ -570,39 +570,39 @@ lbl18: // 2 sources:
      */
     @Override
     public void updateMenuView(boolean var1_1) {
-        var4_2 = (ViewGroup)((View)this.mMenuView).getParent();
-        if (var4_2 != null) {
-            ActionBarTransition.beginDelayedTransition(var4_2);
+        var2_2 = (ViewGroup)((View)this.mMenuView).getParent();
+        if (var2_2 != null) {
+            ActionBarTransition.beginDelayedTransition(var2_2);
         }
         super.updateMenuView(var1_1);
         ((View)this.mMenuView).requestLayout();
         if (this.mMenu != null) {
-            var4_2 = this.mMenu.getActionItems();
-            var3_3 = var4_2.size();
-            for (var2_4 = 0; var2_4 < var3_3; ++var2_4) {
-                var5_5 = var4_2.get(var2_4).getSupportActionProvider();
-                if (var5_5 == null) continue;
-                var5_5.setSubUiVisibilityListener(this);
+            var2_2 = this.mMenu.getActionItems();
+            var5_3 = var2_2.size();
+            for (var4_4 = 0; var4_4 < var5_3; ++var4_4) {
+                var3_5 = var2_2.get(var4_4).getSupportActionProvider();
+                if (var3_5 == null) continue;
+                var3_5.setSubUiVisibilityListener(this);
             }
         }
-        var4_2 = this.mMenu != null ? this.mMenu.getNonActionItems() : null;
-        var2_4 = var3_3 = 0;
+        var2_2 = this.mMenu != null ? this.mMenu.getNonActionItems() : null;
+        var4_4 = var5_3 = 0;
         if (!this.mReserveOverflow) ** GOTO lbl-1000
-        var2_4 = var3_3;
-        if (var4_2 != null) {
-            var2_4 = var4_2.size();
-            var2_4 = var2_4 == 1 ? (!((MenuItemImpl)var4_2.get(0)).isActionViewExpanded() ? 1 : 0) : (var2_4 > 0 ? 1 : 0);
+        var4_4 = var5_3;
+        if (var2_2 != null) {
+            var4_4 = var2_2.size();
+            var4_4 = var4_4 == 1 ? (!((MenuItemImpl)var2_2.get(0)).isActionViewExpanded() ? 1 : 0) : (var4_4 > 0 ? 1 : 0);
         }
-        if (var2_4 != 0) {
+        if (var4_4 != 0) {
             if (this.mOverflowButton == null) {
                 this.mOverflowButton = new OverflowMenuButton(this.mSystemContext);
             }
-            if ((var4_2 = (ViewGroup)this.mOverflowButton.getParent()) != this.mMenuView) {
-                if (var4_2 != null) {
-                    var4_2.removeView((View)this.mOverflowButton);
+            if ((var2_2 = (ViewGroup)this.mOverflowButton.getParent()) != this.mMenuView) {
+                if (var2_2 != null) {
+                    var2_2.removeView((View)this.mOverflowButton);
                 }
-                var4_2 = (ActionMenuView)this.mMenuView;
-                var4_2.addView((View)this.mOverflowButton, (ViewGroup.LayoutParams)var4_2.generateOverflowButtonLayoutParams());
+                var2_2 = (ActionMenuView)this.mMenuView;
+                var2_2.addView((View)this.mOverflowButton, (ViewGroup.LayoutParams)var2_2.generateOverflowButtonLayoutParams());
             }
         } else if (this.mOverflowButton != null && this.mOverflowButton.getParent() == this.mMenuView) {
             ((ViewGroup)this.mMenuView).removeView((View)this.mOverflowButton);

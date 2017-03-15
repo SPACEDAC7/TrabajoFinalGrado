@@ -100,13 +100,13 @@ extends TransitionPort {
         int n2 = viewGroup == viewGroup2 || viewGroup.getId() == viewGroup2.getId() ? 1 : 0;
         if (!this.mReparent || n2 != 0) {
             int n3;
+            float f2;
+            float f3;
             int n4;
             int n5;
             int n6;
             int n7;
-            float f2;
             int n8;
-            float f3;
             int n9;
             block35 : {
                 object = (Rect)transitionValues.values.get("android:changeBounds:bounds");
@@ -117,36 +117,36 @@ extends TransitionPort {
                 int n13 = transitionValues.top;
                 int n14 = object.right;
                 int n15 = transitionValues.right;
-                n4 = object.bottom;
+                n3 = object.bottom;
                 int n16 = transitionValues.bottom;
-                n3 = n14 - n10;
-                n6 = n4 - n12;
-                n9 = n15 - n11;
-                n5 = n16 - n13;
+                n8 = n14 - n10;
+                n5 = n3 - n12;
+                n6 = n15 - n11;
+                n9 = n16 - n13;
+                n4 = 0;
                 n7 = 0;
-                n8 = 0;
-                n2 = n7;
-                if (n3 != 0) {
-                    n2 = n7;
-                    if (n6 != 0) {
-                        n2 = n7;
-                        if (n9 != 0) {
-                            n2 = n7;
-                            if (n5 != 0) {
+                n2 = n4;
+                if (n8 != 0) {
+                    n2 = n4;
+                    if (n5 != 0) {
+                        n2 = n4;
+                        if (n6 != 0) {
+                            n2 = n4;
+                            if (n9 != 0) {
                                 if (n10 != n11) {
-                                    n8 = 0 + 1;
+                                    n7 = 0 + 1;
                                 }
-                                n2 = n8;
+                                n2 = n7;
                                 if (n12 != n13) {
-                                    n2 = n8 + 1;
+                                    n2 = n7 + 1;
                                 }
-                                n8 = n2;
+                                n7 = n2;
                                 if (n14 != n15) {
-                                    n8 = n2 + 1;
+                                    n7 = n2 + 1;
                                 }
-                                n2 = n8;
-                                if (n4 != n16) {
-                                    n2 = n8 + 1;
+                                n2 = n7;
+                                if (n3 != n16) {
+                                    n2 = n7 + 1;
                                 }
                             }
                         }
@@ -164,27 +164,27 @@ extends TransitionPort {
                     if (n14 != n15) {
                         view.setRight(n14);
                     }
-                    if (n4 != n16) {
-                        view.setBottom(n4);
+                    if (n3 != n16) {
+                        view.setBottom(n3);
                     }
                     if (n10 != n11) {
-                        n8 = 0 + 1;
+                        n7 = 0 + 1;
                         object[0] = PropertyValuesHolder.ofInt((String)"left", (int[])new int[]{n10, n11});
                     } else {
-                        n8 = 0;
+                        n7 = 0;
                     }
-                    n2 = n8;
+                    n2 = n7;
                     if (n12 != n13) {
-                        object[n8] = PropertyValuesHolder.ofInt((String)"top", (int[])new int[]{n12, n13});
-                        n2 = n8 + 1;
+                        object[n7] = PropertyValuesHolder.ofInt((String)"top", (int[])new int[]{n12, n13});
+                        n2 = n7 + 1;
                     }
-                    n8 = n2;
+                    n7 = n2;
                     if (n14 != n15) {
                         object[n2] = PropertyValuesHolder.ofInt((String)"right", (int[])new int[]{n14, n15});
-                        n8 = n2 + 1;
+                        n7 = n2 + 1;
                     }
-                    if (n4 != n16) {
-                        object[n8] = PropertyValuesHolder.ofInt((String)"bottom", (int[])new int[]{n4, n16});
+                    if (n3 != n16) {
+                        object[n7] = PropertyValuesHolder.ofInt((String)"bottom", (int[])new int[]{n3, n16});
                     }
                     object = transitionValues = ObjectAnimator.ofPropertyValuesHolder((Object)view, (PropertyValuesHolder[])object);
                     if (!(view.getParent() instanceof ViewGroup)) return object;
@@ -214,11 +214,11 @@ extends TransitionPort {
                     });
                     return transitionValues;
                 }
-                if (n3 != n9) {
-                    view.setRight(Math.max(n3, n9) + n11);
+                if (n8 != n6) {
+                    view.setRight(Math.max(n8, n6) + n11);
                 }
-                if (n6 != n5) {
-                    view.setBottom(Math.max(n6, n5) + n13);
+                if (n5 != n9) {
+                    view.setBottom(Math.max(n5, n9) + n13);
                 }
                 if (n10 != n11) {
                     view.setTranslationX((float)(n10 - n11));
@@ -228,23 +228,23 @@ extends TransitionPort {
                 }
                 f3 = n11 - n10;
                 f2 = n13 - n12;
-                n7 = n9 - n3;
-                n4 = n5 - n6;
-                n8 = 0;
+                n4 = n6 - n8;
+                n3 = n9 - n5;
+                n7 = 0;
                 if (f3 != 0.0f) {
-                    n8 = 0 + 1;
+                    n7 = 0 + 1;
                 }
-                n2 = n8;
+                n2 = n7;
                 if (f2 != 0.0f) {
-                    n2 = n8 + 1;
+                    n2 = n7 + 1;
                 }
-                if (n7 == 0) {
-                    n8 = n2;
-                    if (n4 == 0) break block35;
+                if (n4 == 0) {
+                    n7 = n2;
+                    if (n3 == 0) break block35;
                 }
-                n8 = n2 + 1;
+                n7 = n2 + 1;
             }
-            object = new PropertyValuesHolder[n8];
+            object = new PropertyValuesHolder[n7];
             if (f3 != 0.0f) {
                 n2 = 0 + 1;
                 object[0] = PropertyValuesHolder.ofFloat((String)"translationX", (float[])new float[]{view.getTranslationX(), 0.0f});
@@ -254,9 +254,9 @@ extends TransitionPort {
             if (f2 != 0.0f) {
                 object[n2] = PropertyValuesHolder.ofFloat((String)"translationY", (float[])new float[]{view.getTranslationY(), 0.0f});
             }
-            if (n7 != 0 || n4 != 0) {
-                new Rect(0, 0, n3, n6);
-                new Rect(0, 0, n9, n5);
+            if (n4 != 0 || n3 != 0) {
+                new Rect(0, 0, n8, n5);
+                new Rect(0, 0, n6, n9);
             }
             object = ObjectAnimator.ofPropertyValuesHolder((Object)view, (PropertyValuesHolder[])object);
             if (view.getParent() instanceof ViewGroup) {

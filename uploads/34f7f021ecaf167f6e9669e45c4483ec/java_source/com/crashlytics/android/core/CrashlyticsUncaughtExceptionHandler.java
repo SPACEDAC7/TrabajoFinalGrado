@@ -426,81 +426,81 @@ lbl57: // 2 sources:
      * Lifted jumps to return sites
      */
     private void synthesizeSessionFile(File var1_1, String var2_5, File[] var3_6, File var4_7) {
-        var5_11 = var4_7 != null;
-        var7_12 = null;
-        var10_13 = null;
-        var6_14 = null;
-        var12_15 = null;
-        var11_16 = null;
-        var9_17 = null;
-        var8_18 = new ClsFileOutputStream(this.getFilesDir(), var2_5);
-        var6_14 = var12_15;
-        var7_12 = var11_16;
-        var6_14 = var9_17 = CodedOutputStream.newInstance(var8_18);
-        var7_12 = var9_17;
+        var12_11 = var4_7 != null;
+        var6_12 = null;
+        var9_13 = null;
+        var5_14 = null;
+        var11_15 = null;
+        var10_16 = null;
+        var8_17 = null;
+        var7_18 = new ClsFileOutputStream(this.getFilesDir(), var2_5);
+        var5_14 = var11_15;
+        var6_12 = var10_16;
+        var5_14 = var8_17 = CodedOutputStream.newInstance(var7_18);
+        var6_12 = var8_17;
         Fabric.getLogger().d("CrashlyticsCore", "Collecting SessionStart data for session ID " + var2_5);
-        var6_14 = var9_17;
-        var7_12 = var9_17;
-        CrashlyticsUncaughtExceptionHandler.writeToCosFromFile(var9_17, (File)var1_1);
-        var6_14 = var9_17;
-        var7_12 = var9_17;
-        var9_17.writeUInt64(4, new Date().getTime() / 1000);
-        var6_14 = var9_17;
-        var7_12 = var9_17;
-        var9_17.writeBool(5, var5_11);
-        var6_14 = var9_17;
-        var7_12 = var9_17;
-        this.writeInitialPartsTo(var9_17, var2_5);
-        var6_14 = var9_17;
-        var7_12 = var9_17;
-        CrashlyticsUncaughtExceptionHandler.writeNonFatalEventsTo(var9_17, (File[])var3_6, var2_5);
-        if (var5_11) {
-            var6_14 = var9_17;
-            var7_12 = var9_17;
-            CrashlyticsUncaughtExceptionHandler.writeToCosFromFile(var9_17, var4_7);
+        var5_14 = var8_17;
+        var6_12 = var8_17;
+        CrashlyticsUncaughtExceptionHandler.writeToCosFromFile(var8_17, (File)var1_1);
+        var5_14 = var8_17;
+        var6_12 = var8_17;
+        var8_17.writeUInt64(4, new Date().getTime() / 1000);
+        var5_14 = var8_17;
+        var6_12 = var8_17;
+        var8_17.writeBool(5, var12_11);
+        var5_14 = var8_17;
+        var6_12 = var8_17;
+        this.writeInitialPartsTo(var8_17, var2_5);
+        var5_14 = var8_17;
+        var6_12 = var8_17;
+        CrashlyticsUncaughtExceptionHandler.writeNonFatalEventsTo(var8_17, (File[])var3_6, var2_5);
+        if (var12_11) {
+            var5_14 = var8_17;
+            var6_12 = var8_17;
+            CrashlyticsUncaughtExceptionHandler.writeToCosFromFile(var8_17, var4_7);
         }
-        var6_14 = var9_17;
-        var7_12 = var9_17;
-        var9_17.writeUInt32(11, 1);
-        var6_14 = var9_17;
-        var7_12 = var9_17;
-        var9_17.writeEnum(12, 3);
-        CommonUtils.flushOrLog(var9_17, "Error flushing session file stream");
+        var5_14 = var8_17;
+        var6_12 = var8_17;
+        var8_17.writeUInt32(11, 1);
+        var5_14 = var8_17;
+        var6_12 = var8_17;
+        var8_17.writeEnum(12, 3);
+        CommonUtils.flushOrLog(var8_17, "Error flushing session file stream");
         if (false) {
-            this.closeWithoutRenamingOrLog(var8_18);
+            this.closeWithoutRenamingOrLog(var7_18);
             return;
         }
-        CommonUtils.closeOrLog(var8_18, "Failed to close CLS file");
+        CommonUtils.closeOrLog(var7_18, "Failed to close CLS file");
         return;
         catch (Exception var4_8) {
-            var3_6 = var10_13;
-            var1_1 = var9_17;
+            var3_6 = var9_13;
+            var1_1 = var8_17;
             ** GOTO lbl57
             catch (Throwable var1_4) {
-                var7_12 = var8_18;
+                var6_12 = var7_18;
                 ** GOTO lbl-1000
             }
             catch (Exception var4_10) {
-                var3_6 = var8_18;
-                var1_1 = var7_12;
+                var3_6 = var7_18;
+                var1_1 = var6_12;
             }
 lbl57: // 2 sources:
-            var6_14 = var1_1;
-            var7_12 = var3_6;
+            var5_14 = var1_1;
+            var6_12 = var3_6;
             try {
                 Fabric.getLogger().e("CrashlyticsCore", "Failed to write session file for session ID: " + var2_5, (Throwable)var4_9);
-                var6_14 = var1_1;
-                var7_12 = var3_6;
+                var5_14 = var1_1;
+                var6_12 = var3_6;
                 ExceptionUtils.writeStackTraceIfNotNull((Throwable)var4_9, (OutputStream)var3_6);
             }
             catch (Throwable var1_2) lbl-1000: // 2 sources:
             {
-                CommonUtils.flushOrLog((Flushable)var6_14, "Error flushing session file stream");
+                CommonUtils.flushOrLog((Flushable)var5_14, "Error flushing session file stream");
                 if (false) {
-                    this.closeWithoutRenamingOrLog((ClsFileOutputStream)var7_12);
+                    this.closeWithoutRenamingOrLog((ClsFileOutputStream)var6_12);
                     throw var1_3;
                 }
-                CommonUtils.closeOrLog((Closeable)var7_12, "Failed to close CLS file");
+                CommonUtils.closeOrLog((Closeable)var6_12, "Failed to close CLS file");
                 throw var1_3;
             }
             CommonUtils.flushOrLog((Flushable)var1_1, "Error flushing session file stream");
@@ -773,8 +773,8 @@ lbl45: // 2 sources:
                 Fabric.getLogger().d("CrashlyticsCore", String.format(Locale.US, "Found Non Fatal for session ID %s in %s ", string2, file.getName()));
                 CrashlyticsUncaughtExceptionHandler.writeToCosFromFile(codedOutputStream, file);
             }
-            catch (Exception var5_6) {
-                Fabric.getLogger().e("CrashlyticsCore", "Error writting non-fatal to session.", (Throwable)var5_6);
+            catch (Exception var3_6) {
+                Fabric.getLogger().e("CrashlyticsCore", "Error writting non-fatal to session.", (Throwable)var3_6);
             }
             ++n3;
         }
@@ -843,82 +843,82 @@ lbl38: // 2 sources:
      * Lifted jumps to return sites
      */
     private void writeSessionDevice(String var1_1) throws Exception {
-        var13_4 = null;
-        var15_6 = null;
-        var12_8 = null;
-        var18_9 = null;
-        var17_10 = null;
-        var16_11 = null;
-        var14_12 = new ClsFileOutputStream(this.getFilesDir(), (String)var1_1 + "SessionDevice");
-        var1_1 = var18_9;
-        var12_8 = var17_10;
-        var1_1 = var13_4 = CodedOutputStream.newInstance((OutputStream)var14_12);
-        var12_8 = var13_4;
-        var15_6 = this.crashlyticsCore.getContext();
-        var1_1 = var13_4;
-        var12_8 = var13_4;
-        var17_10 = new StatFs(Environment.getDataDirectory().getPath());
-        var1_1 = var13_4;
-        var12_8 = var13_4;
-        var16_11 = this.idManager.getDeviceUUID();
-        var1_1 = var13_4;
-        var12_8 = var13_4;
-        var2_13 = CommonUtils.getCpuArchitectureInt();
-        var1_1 = var13_4;
-        var12_8 = var13_4;
-        var3_14 = Runtime.getRuntime().availableProcessors();
-        var1_1 = var13_4;
-        var12_8 = var13_4;
-        var5_15 = CommonUtils.getTotalRamInBytes();
-        var1_1 = var13_4;
-        var12_8 = var13_4;
-        var7_16 = var17_10.getBlockCount();
-        var1_1 = var13_4;
-        var12_8 = var13_4;
-        var9_17 = var17_10.getBlockSize();
-        var1_1 = var13_4;
-        var12_8 = var13_4;
-        var11_18 = CommonUtils.isEmulator((Context)var15_6);
-        var1_1 = var13_4;
-        var12_8 = var13_4;
-        var17_10 = this.idManager.getDeviceIdentifiers();
-        var1_1 = var13_4;
-        var12_8 = var13_4;
-        var4_19 = CommonUtils.getDeviceState((Context)var15_6);
-        var1_1 = var13_4;
-        var12_8 = var13_4;
-        SessionProtobufHelper.writeSessionDevice((CodedOutputStream)var13_4, var16_11, var2_13, Build.MODEL, var3_14, var5_15, var7_16 * var9_17, var11_18, var17_10, var4_19, Build.MANUFACTURER, Build.PRODUCT);
-        CommonUtils.flushOrLog((Flushable)var13_4, "Failed to flush session device info.");
-        CommonUtils.closeOrLog((Closeable)var14_12, "Failed to close session device file.");
+        var3_4 = null;
+        var5_6 = null;
+        var2_8 = null;
+        var8_9 = null;
+        var7_10 = null;
+        var6_11 = null;
+        var4_12 = new ClsFileOutputStream(this.getFilesDir(), (String)var1_1 + "SessionDevice");
+        var1_1 = var8_9;
+        var2_8 = var7_10;
+        var1_1 = var3_4 = CodedOutputStream.newInstance((OutputStream)var4_12);
+        var2_8 = var3_4;
+        var5_6 = this.crashlyticsCore.getContext();
+        var1_1 = var3_4;
+        var2_8 = var3_4;
+        var7_10 = new StatFs(Environment.getDataDirectory().getPath());
+        var1_1 = var3_4;
+        var2_8 = var3_4;
+        var6_11 = this.idManager.getDeviceUUID();
+        var1_1 = var3_4;
+        var2_8 = var3_4;
+        var9_13 = CommonUtils.getCpuArchitectureInt();
+        var1_1 = var3_4;
+        var2_8 = var3_4;
+        var10_14 = Runtime.getRuntime().availableProcessors();
+        var1_1 = var3_4;
+        var2_8 = var3_4;
+        var12_15 = CommonUtils.getTotalRamInBytes();
+        var1_1 = var3_4;
+        var2_8 = var3_4;
+        var14_16 = var7_10.getBlockCount();
+        var1_1 = var3_4;
+        var2_8 = var3_4;
+        var16_17 = var7_10.getBlockSize();
+        var1_1 = var3_4;
+        var2_8 = var3_4;
+        var18_18 = CommonUtils.isEmulator((Context)var5_6);
+        var1_1 = var3_4;
+        var2_8 = var3_4;
+        var7_10 = this.idManager.getDeviceIdentifiers();
+        var1_1 = var3_4;
+        var2_8 = var3_4;
+        var11_19 = CommonUtils.getDeviceState((Context)var5_6);
+        var1_1 = var3_4;
+        var2_8 = var3_4;
+        SessionProtobufHelper.writeSessionDevice((CodedOutputStream)var3_4, var6_11, var9_13, Build.MODEL, var10_14, var12_15, var14_16 * var16_17, var18_18, var7_10, var11_19, Build.MANUFACTURER, Build.PRODUCT);
+        CommonUtils.flushOrLog((Flushable)var3_4, "Failed to flush session device info.");
+        CommonUtils.closeOrLog((Closeable)var4_12, "Failed to close session device file.");
         return;
         catch (Exception var1_2) {
-            var14_12 = var15_6;
-            var15_6 = var1_2;
-            var1_1 = var16_11;
+            var4_12 = var5_6;
+            var5_6 = var1_2;
+            var1_1 = var6_11;
             ** GOTO lbl60
-            catch (Throwable var13_5) {
+            catch (Throwable var3_5) {
                 ** GOTO lbl71
             }
-            catch (Exception var15_7) {
-                var1_1 = var12_8;
+            catch (Exception var5_7) {
+                var1_1 = var2_8;
             }
 lbl60: // 2 sources:
-            var12_8 = var1_1;
-            var13_4 = var14_12;
+            var2_8 = var1_1;
+            var3_4 = var4_12;
             try {
-                ExceptionUtils.writeStackTraceIfNotNull(var15_6, (OutputStream)var14_12);
-                var12_8 = var1_1;
-                var13_4 = var14_12;
-                throw var15_6;
+                ExceptionUtils.writeStackTraceIfNotNull(var5_6, (OutputStream)var4_12);
+                var2_8 = var1_1;
+                var3_4 = var4_12;
+                throw var5_6;
             }
             catch (Throwable var1_3) {
-                var14_12 = var13_4;
-                var13_4 = var1_3;
-                var1_1 = var12_8;
+                var4_12 = var3_4;
+                var3_4 = var1_3;
+                var1_1 = var2_8;
 lbl71: // 2 sources:
                 CommonUtils.flushOrLog((Flushable)var1_1, "Failed to flush session device info.");
-                CommonUtils.closeOrLog((Closeable)var14_12, "Failed to close session device file.");
-                throw var13_4;
+                CommonUtils.closeOrLog((Closeable)var4_12, "Failed to close session device file.");
+                throw var3_4;
             }
         }
     }
@@ -1062,57 +1062,57 @@ lbl38: // 2 sources:
      */
     private void writeSessionUser(String var1_1) throws Exception {
         block8 : {
-            var4_6 = null;
-            var6_7 = null;
-            var3_9 = null;
-            var9_10 = null;
-            var8_11 = null;
-            var7_12 = null;
-            var5_13 = new ClsFileOutputStream(this.getFilesDir(), (String)var1_1 + "SessionUser");
-            var3_9 = var9_10;
-            var4_6 = var8_11;
-            var3_9 = var6_7 = CodedOutputStream.newInstance((OutputStream)var5_13);
-            var4_6 = var6_7;
+            var3_6 = null;
+            var5_7 = null;
+            var2_9 = null;
+            var8_10 = null;
+            var7_11 = null;
+            var6_12 = null;
+            var4_13 = new ClsFileOutputStream(this.getFilesDir(), (String)var1_1 + "SessionUser");
+            var2_9 = var8_10;
+            var3_6 = var7_11;
+            var2_9 = var5_7 = CodedOutputStream.newInstance((OutputStream)var4_13);
+            var3_6 = var5_7;
             var1_1 = this.getUserMetaData((String)var1_1);
-            var3_9 = var6_7;
-            var4_6 = var6_7;
-            var2_14 = var1_1.isEmpty();
-            if (!var2_14) break block8;
-            CommonUtils.flushOrLog((Flushable)var6_7, "Failed to flush session user file.");
-            CommonUtils.closeOrLog((Closeable)var5_13, "Failed to close session user file.");
+            var2_9 = var5_7;
+            var3_6 = var5_7;
+            var9_14 = var1_1.isEmpty();
+            if (!var9_14) break block8;
+            CommonUtils.flushOrLog((Flushable)var5_7, "Failed to flush session user file.");
+            CommonUtils.closeOrLog((Closeable)var4_13, "Failed to close session user file.");
             return;
         }
-        var3_9 = var6_7;
-        var4_6 = var6_7;
-        SessionProtobufHelper.writeSessionUser((CodedOutputStream)var6_7, var1_1.id, var1_1.name, var1_1.email);
-        CommonUtils.flushOrLog((Flushable)var6_7, "Failed to flush session user file.");
-        CommonUtils.closeOrLog((Closeable)var5_13, "Failed to close session user file.");
+        var2_9 = var5_7;
+        var3_6 = var5_7;
+        SessionProtobufHelper.writeSessionUser((CodedOutputStream)var5_7, var1_1.id, var1_1.name, var1_1.email);
+        CommonUtils.flushOrLog((Flushable)var5_7, "Failed to flush session user file.");
+        CommonUtils.closeOrLog((Closeable)var4_13, "Failed to close session user file.");
         return;
         catch (Exception var1_2) {
-            var5_13 = var6_7;
-            var6_7 = var1_2;
-            var1_1 = var7_12;
+            var4_13 = var5_7;
+            var5_7 = var1_2;
+            var1_1 = var6_12;
             ** GOTO lbl40
             catch (Throwable var1_5) {
-                var4_6 = var5_13;
+                var3_6 = var4_13;
                 ** GOTO lbl-1000
             }
-            catch (Exception var6_8) {
-                var1_1 = var4_6;
+            catch (Exception var5_8) {
+                var1_1 = var3_6;
             }
 lbl40: // 2 sources:
-            var3_9 = var1_1;
-            var4_6 = var5_13;
+            var2_9 = var1_1;
+            var3_6 = var4_13;
             try {
-                ExceptionUtils.writeStackTraceIfNotNull((Throwable)var6_7, (OutputStream)var5_13);
-                var3_9 = var1_1;
-                var4_6 = var5_13;
-                throw var6_7;
+                ExceptionUtils.writeStackTraceIfNotNull((Throwable)var5_7, (OutputStream)var4_13);
+                var2_9 = var1_1;
+                var3_6 = var4_13;
+                throw var5_7;
             }
             catch (Throwable var1_3) lbl-1000: // 2 sources:
             {
-                CommonUtils.flushOrLog((Flushable)var3_9, "Failed to flush session user file.");
-                CommonUtils.closeOrLog((Closeable)var4_6, "Failed to close session user file.");
+                CommonUtils.flushOrLog((Flushable)var2_9, "Failed to flush session user file.");
+                CommonUtils.closeOrLog((Closeable)var3_6, "Failed to close session user file.");
                 throw var1_4;
             }
         }

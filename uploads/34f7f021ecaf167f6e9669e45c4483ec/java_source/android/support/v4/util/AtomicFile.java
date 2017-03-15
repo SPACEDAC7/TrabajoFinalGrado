@@ -104,9 +104,9 @@ public class AtomicFile {
                 break;
             } while (true);
         }
-        catch (Throwable var4_4) {
+        catch (Throwable var1_4) {
             fileInputStream.close();
-            throw var4_4;
+            throw var1_4;
         }
         {
             block5 : {

@@ -32,8 +32,8 @@ extends FilterInputStream {
      * Enabled aggressive block sorting
      */
     private int fillbuf(InputStream inputStream, byte[] arrby) throws IOException {
-        byte[] arrby2;
         int n2;
+        byte[] arrby2;
         int n3;
         if (this.markpos == -1 || this.pos - this.markpos >= this.marklimit) {
             int n4 = inputStream.read(arrby);
@@ -45,14 +45,14 @@ extends FilterInputStream {
             return n4;
         }
         if (this.markpos == 0 && this.marklimit > arrby.length && this.count == arrby.length) {
-            n3 = n2 = arrby.length * 2;
-            if (n2 > this.marklimit) {
-                n3 = this.marklimit;
+            n2 = n3 = arrby.length * 2;
+            if (n3 > this.marklimit) {
+                n2 = this.marklimit;
             }
             if (Log.isLoggable((String)"BufferedIs", (int)3)) {
-                Log.d((String)"BufferedIs", (String)("allocate buffer of length: " + n3));
+                Log.d((String)"BufferedIs", (String)("allocate buffer of length: " + n2));
             }
-            arrby2 = new byte[n3];
+            arrby2 = new byte[n2];
             System.arraycopy(arrby, 0, arrby2, 0, arrby.length);
             this.buf = arrby2;
         } else {
@@ -65,10 +65,10 @@ extends FilterInputStream {
         this.pos -= this.markpos;
         this.markpos = 0;
         this.count = 0;
-        n2 = inputStream.read(arrby2, this.pos, arrby2.length - this.pos);
-        n3 = n2 <= 0 ? this.pos : this.pos + n2;
-        this.count = n3;
-        return n2;
+        n3 = inputStream.read(arrby2, this.pos, arrby2.length - this.pos);
+        n2 = n3 <= 0 ? this.pos : this.pos + n3;
+        this.count = n2;
+        return n3;
     }
 
     private static IOException streamClosed() throws IOException {
@@ -194,8 +194,8 @@ extends FilterInputStream {
                 n5 = n3;
             }
             do {
-                int n6;
                 byte[] arrby3;
+                int n6;
                 int n7;
                 if (this.markpos == -1 && n5 >= arrby2.length) {
                     n7 = inputStream.read(arrby, n2, n5);

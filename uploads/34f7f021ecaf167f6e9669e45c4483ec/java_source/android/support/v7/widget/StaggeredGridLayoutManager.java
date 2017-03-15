@@ -372,10 +372,10 @@ implements RecyclerView.SmoothScroller.ScrollVectorProvider {
             int n4 = 0;
             while (layoutState.hasMore(state)) {
                 if (this.mLayoutState.mInfinite || !this.mRemainingSpans.isEmpty()) {
-                    int n5;
                     Span span;
-                    int n6;
                     LazySpanLookup.FullSpanItem fullSpanItem;
+                    int n5;
+                    int n6;
                     int n7;
                     View view = layoutState.next(recycler);
                     LayoutParams layoutParams = (LayoutParams)view.getLayoutParams();
@@ -397,35 +397,35 @@ implements RecyclerView.SmoothScroller.ScrollVectorProvider {
                     this.measureChildWithDecorationsAndMargin(view, layoutParams, false);
                     if (layoutState.mLayoutDirection == 1) {
                         n4 = layoutParams.mFullSpan ? this.getMaxEnd(n3) : span.getEndLine(n3);
-                        n5 = n4 + this.mPrimaryOrientation.getDecoratedMeasurement(view);
+                        n7 = n4 + this.mPrimaryOrientation.getDecoratedMeasurement(view);
                         n6 = n4;
-                        n7 = n5;
+                        n5 = n7;
                         if (n9 != 0) {
                             n6 = n4;
-                            n7 = n5;
+                            n5 = n7;
                             if (layoutParams.mFullSpan) {
                                 fullSpanItem = this.createFullSpanItemFromEnd(n4);
                                 fullSpanItem.mGapDir = -1;
                                 fullSpanItem.mPosition = n8;
                                 this.mLazySpanLookup.addFullSpanItem(fullSpanItem);
-                                n7 = n5;
+                                n5 = n7;
                                 n6 = n4;
                             }
                         }
                     } else {
                         n4 = layoutParams.mFullSpan ? this.getMinStart(n3) : span.getStartLine(n3);
-                        n6 = n5 = n4 - this.mPrimaryOrientation.getDecoratedMeasurement(view);
-                        n7 = n4;
+                        n6 = n7 = n4 - this.mPrimaryOrientation.getDecoratedMeasurement(view);
+                        n5 = n4;
                         if (n9 != 0) {
-                            n6 = n5;
-                            n7 = n4;
+                            n6 = n7;
+                            n5 = n4;
                             if (layoutParams.mFullSpan) {
                                 fullSpanItem = this.createFullSpanItemFromStart(n4);
                                 fullSpanItem.mGapDir = 1;
                                 fullSpanItem.mPosition = n8;
                                 this.mLazySpanLookup.addFullSpanItem(fullSpanItem);
-                                n6 = n5;
-                                n7 = n4;
+                                n6 = n7;
+                                n5 = n4;
                             }
                         }
                     }
@@ -446,17 +446,17 @@ implements RecyclerView.SmoothScroller.ScrollVectorProvider {
                     this.attachViewToSpans(view, layoutParams, layoutState);
                     if (this.isLayoutRTL() && this.mOrientation == 1) {
                         n4 = layoutParams.mFullSpan ? this.mSecondaryOrientation.getEndAfterPadding() : this.mSecondaryOrientation.getEndAfterPadding() - (this.mSpanCount - 1 - span.mIndex) * this.mSizePerSpan;
-                        n5 = n4 - this.mSecondaryOrientation.getDecoratedMeasurement(view);
+                        n7 = n4 - this.mSecondaryOrientation.getDecoratedMeasurement(view);
                         n9 = n4;
-                        n4 = n5;
+                        n4 = n7;
                     } else {
                         n4 = layoutParams.mFullSpan ? this.mSecondaryOrientation.getStartAfterPadding() : span.mIndex * this.mSizePerSpan + this.mSecondaryOrientation.getStartAfterPadding();
                         n9 = n4 + this.mSecondaryOrientation.getDecoratedMeasurement(view);
                     }
                     if (this.mOrientation == 1) {
-                        this.layoutDecoratedWithMargins(view, n4, n6, n9, n7);
+                        this.layoutDecoratedWithMargins(view, n4, n6, n9, n5);
                     } else {
-                        this.layoutDecoratedWithMargins(view, n6, n4, n7, n9);
+                        this.layoutDecoratedWithMargins(view, n6, n4, n5, n9);
                     }
                     if (layoutParams.mFullSpan) {
                         this.updateAllRemainingSpans(this.mLayoutState.mLayoutDirection, n2);
@@ -613,18 +613,18 @@ implements RecyclerView.SmoothScroller.ScrollVectorProvider {
      * Enabled aggressive block sorting
      */
     private Span getNextSpan(LayoutState object) {
+        Object object2;
         int n2;
         int n3;
-        Object object2;
         int n4;
         if (this.preferLastSpan(object.mLayoutDirection)) {
-            n2 = this.mSpanCount - 1;
-            n3 = -1;
+            n3 = this.mSpanCount - 1;
             n4 = -1;
+            n2 = -1;
         } else {
-            n2 = 0;
-            n3 = this.mSpanCount;
-            n4 = 1;
+            n3 = 0;
+            n4 = this.mSpanCount;
+            n2 = 1;
         }
         if (object.mLayoutDirection == 1) {
             object = null;
@@ -632,30 +632,30 @@ implements RecyclerView.SmoothScroller.ScrollVectorProvider {
             int n6 = this.mPrimaryOrientation.getStartAfterPadding();
             do {
                 object2 = object;
-                if (n2 == n3) return object2;
-                object2 = this.mSpans[n2];
+                if (n3 == n4) return object2;
+                object2 = this.mSpans[n3];
                 int n7 = object2.getEndLine(n6);
                 int n8 = n5;
                 if (n7 < n5) {
                     object = object2;
                     n8 = n7;
                 }
-                n2 += n4;
+                n3 += n2;
                 n5 = n8;
             } while (true);
         }
         object = null;
         int n9 = Integer.MIN_VALUE;
         int n10 = this.mPrimaryOrientation.getEndAfterPadding();
-        while (n2 != n3) {
-            object2 = this.mSpans[n2];
+        while (n3 != n4) {
+            object2 = this.mSpans[n3];
             int n11 = object2.getStartLine(n10);
             int n12 = n9;
             if (n11 > n9) {
                 object = object2;
                 n12 = n11;
             }
-            n2 += n4;
+            n3 += n2;
             n9 = n12;
         }
         return object;
@@ -671,17 +671,17 @@ implements RecyclerView.SmoothScroller.ScrollVectorProvider {
         int n7 = this.mShouldReverseLayout ? this.getLastChildPosition() : this.getFirstChildPosition();
         if (n4 == 8) {
             if (n2 < n3) {
-                n5 = n3 + 1;
-                n6 = n2;
+                n6 = n3 + 1;
+                n5 = n2;
             } else {
-                n5 = n2 + 1;
-                n6 = n3;
+                n6 = n2 + 1;
+                n5 = n3;
             }
         } else {
-            n6 = n2;
-            n5 = n2 + n3;
+            n5 = n2;
+            n6 = n2 + n3;
         }
-        this.mLazySpanLookup.invalidateAfter(n6);
+        this.mLazySpanLookup.invalidateAfter(n5);
         switch (n4) {
             case 1: {
                 this.mLazySpanLookup.offsetForAddition(n2, n3);
@@ -696,11 +696,11 @@ implements RecyclerView.SmoothScroller.ScrollVectorProvider {
                 this.mLazySpanLookup.offsetForAddition(n3, 1);
             }
         }
-        if (n5 <= n7) {
+        if (n6 <= n7) {
             return;
         }
         n2 = this.mShouldReverseLayout ? this.getFirstChildPosition() : this.getLastChildPosition();
-        if (n6 > n2) return;
+        if (n5 > n2) return;
         this.requestLayout();
     }
 
@@ -746,39 +746,39 @@ implements RecyclerView.SmoothScroller.ScrollVectorProvider {
                     block18 : {
                         block19 : {
                             block17 : {
-                                var6_4 = 1;
-                                var8_5 = this.mAnchorInfo;
+                                var8_4 = 1;
+                                var4_5 = this.mAnchorInfo;
                                 if ((this.mPendingSavedState != null || this.mPendingScrollPosition != -1) && var2_2.getItemCount() == 0) {
                                     this.removeAndRecycleAllViews(var1_1);
-                                    var8_5.reset();
+                                    var4_5.reset();
                                     do {
                                         return;
                                         break;
                                     } while (true);
                                 }
-                                if (var8_5.mValid && this.mPendingScrollPosition == -1 && this.mPendingSavedState == null) ** GOTO lbl29
-                                var4_6 = 1;
+                                if (var4_5.mValid && this.mPendingScrollPosition == -1 && this.mPendingSavedState == null) ** GOTO lbl29
+                                var6_6 = 1;
 lbl10: // 2 sources:
                                 do {
-                                    if (var4_6 == 0) ** GOTO lbl18
-                                    var8_5.reset();
+                                    if (var6_6 == 0) ** GOTO lbl18
+                                    var4_5.reset();
                                     if (this.mPendingSavedState == null) break block17;
-                                    this.applyPendingSavedState(var8_5);
+                                    this.applyPendingSavedState(var4_5);
 lbl15: // 2 sources:
                                     do {
-                                        this.updateAnchorInfoForLayout(var2_2, var8_5);
-                                        var8_5.mValid = true;
+                                        this.updateAnchorInfoForLayout(var2_2, var4_5);
+                                        var4_5.mValid = true;
 lbl18: // 2 sources:
-                                        if (this.mPendingSavedState == null && this.mPendingScrollPosition == -1 && (var8_5.mLayoutFromEnd != this.mLastLayoutFromEnd || this.isLayoutRTL() != this.mLastLayoutRTL)) {
+                                        if (this.mPendingSavedState == null && this.mPendingScrollPosition == -1 && (var4_5.mLayoutFromEnd != this.mLastLayoutFromEnd || this.isLayoutRTL() != this.mLastLayoutRTL)) {
                                             this.mLazySpanLookup.clear();
-                                            var8_5.mInvalidateOffsets = true;
+                                            var4_5.mInvalidateOffsets = true;
                                         }
                                         if (this.getChildCount() <= 0 || this.mPendingSavedState != null && this.mPendingSavedState.mSpanOffsetsSize >= 1) break block18;
-                                        if (!var8_5.mInvalidateOffsets) break block19;
-                                        for (var4_6 = 0; var4_6 < this.mSpanCount; ++var4_6) {
-                                            this.mSpans[var4_6].clear();
-                                            if (var8_5.mOffset == Integer.MIN_VALUE) continue;
-                                            this.mSpans[var4_6].setLine(var8_5.mOffset);
+                                        if (!var4_5.mInvalidateOffsets) break block19;
+                                        for (var6_6 = 0; var6_6 < this.mSpanCount; ++var6_6) {
+                                            this.mSpans[var6_6].clear();
+                                            if (var4_5.mOffset == Integer.MIN_VALUE) continue;
+                                            this.mSpans[var6_6].setLine(var4_5.mOffset);
                                         }
                                         break block18;
                                         break;
@@ -786,16 +786,16 @@ lbl18: // 2 sources:
                                     break;
                                 } while (true);
 lbl29: // 1 sources:
-                                var4_6 = 0;
+                                var6_6 = 0;
                                 ** while (true)
                             }
                             this.resolveShouldLayoutReverse();
-                            var8_5.mLayoutFromEnd = this.mShouldReverseLayout;
+                            var4_5.mLayoutFromEnd = this.mShouldReverseLayout;
                             ** while (true)
                         }
-                        if (var4_6 == 0 && this.mAnchorInfo.mSpanReferenceLines != null) ** GOTO lbl86
-                        for (var4_6 = 0; var4_6 < this.mSpanCount; ++var4_6) {
-                            this.mSpans[var4_6].cacheReferenceLineAndClear(this.mShouldReverseLayout, var8_5.mOffset);
+                        if (var6_6 == 0 && this.mAnchorInfo.mSpanReferenceLines != null) ** GOTO lbl86
+                        for (var6_6 = 0; var6_6 < this.mSpanCount; ++var6_6) {
+                            this.mSpans[var6_6].cacheReferenceLineAndClear(this.mShouldReverseLayout, var4_5.mOffset);
                         }
                         this.mAnchorInfo.saveSpanReferenceLines(this.mSpans);
                     }
@@ -804,12 +804,12 @@ lbl29: // 1 sources:
                         this.mLayoutState.mRecycle = false;
                         this.mLaidOutInvalidFullSpan = false;
                         this.updateMeasureSpecs(this.mSecondaryOrientation.getTotalSpace());
-                        this.updateLayoutState(var8_5.mPosition, var2_2);
-                        if (!var8_5.mLayoutFromEnd) break block20;
+                        this.updateLayoutState(var4_5.mPosition, var2_2);
+                        if (!var4_5.mLayoutFromEnd) break block20;
                         this.setLayoutStateDirection(-1);
                         this.fill(var1_1, this.mLayoutState, var2_2);
                         this.setLayoutStateDirection(1);
-                        this.mLayoutState.mCurrentPosition = var8_5.mPosition + this.mLayoutState.mItemDirection;
+                        this.mLayoutState.mCurrentPosition = var4_5.mPosition + this.mLayoutState.mItemDirection;
                         this.fill(var1_1, this.mLayoutState, var2_2);
 lbl54: // 2 sources:
                         do {
@@ -821,32 +821,32 @@ lbl54: // 2 sources:
                             }
 lbl60: // 4 sources:
                             do {
-                                var5_8 = var7_7 = false;
+                                var7_8 = var9_7 = false;
                                 if (!var3_3) ** GOTO lbl77
-                                var5_8 = var7_7;
+                                var7_8 = var9_7;
                                 if (var2_2.isPreLayout()) ** GOTO lbl77
                                 if (this.mGapStrategy == 0 || this.getChildCount() <= 0) break block22;
-                                var4_6 = var6_4;
+                                var6_6 = var8_4;
                                 if (this.mLaidOutInvalidFullSpan) ** GOTO lbl70
                                 if (this.hasGapsToFix() != null) {
-                                    var4_6 = var6_4;
+                                    var6_6 = var8_4;
 lbl70: // 3 sources:
                                     do {
-                                        var5_8 = var7_7;
-                                        if (var4_6 != 0) {
+                                        var7_8 = var9_7;
+                                        if (var6_6 != 0) {
                                             this.removeCallbacks(this.mCheckForGapsRunnable);
-                                            var5_8 = var7_7;
+                                            var7_8 = var9_7;
                                             if (this.checkForGaps()) {
-                                                var5_8 = true;
+                                                var7_8 = true;
                                             }
                                         }
 lbl77: // 7 sources:
                                         if (var2_2.isPreLayout()) {
                                             this.mAnchorInfo.reset();
                                         }
-                                        this.mLastLayoutFromEnd = var8_5.mLayoutFromEnd;
+                                        this.mLastLayoutFromEnd = var4_5.mLayoutFromEnd;
                                         this.mLastLayoutRTL = this.isLayoutRTL();
-                                        if (!var5_8) ** continue;
+                                        if (!var7_8) ** continue;
                                         this.mAnchorInfo.reset();
                                         this.onLayoutChildren(var1_1, var2_2, false);
                                         return;
@@ -861,19 +861,19 @@ lbl77: // 7 sources:
                         break;
                     } while (true);
 lbl86: // 1 sources:
-                    var4_6 = 0;
+                    var6_6 = 0;
                     do {
-                        if (var4_6 >= this.mSpanCount) ** continue;
-                        var9_9 = this.mSpans[var4_6];
-                        var9_9.clear();
-                        var9_9.setLine(this.mAnchorInfo.mSpanReferenceLines[var4_6]);
-                        ++var4_6;
+                        if (var6_6 >= this.mSpanCount) ** continue;
+                        var5_9 = this.mSpans[var6_6];
+                        var5_9.clear();
+                        var5_9.setLine(this.mAnchorInfo.mSpanReferenceLines[var6_6]);
+                        ++var6_6;
                     } while (true);
                 }
                 this.setLayoutStateDirection(1);
                 this.fill(var1_1, this.mLayoutState, var2_2);
                 this.setLayoutStateDirection(-1);
-                this.mLayoutState.mCurrentPosition = var8_5.mPosition + this.mLayoutState.mItemDirection;
+                this.mLayoutState.mCurrentPosition = var4_5.mPosition + this.mLayoutState.mItemDirection;
                 this.fill(var1_1, this.mLayoutState, var2_2);
                 ** while (true)
             }
@@ -881,7 +881,7 @@ lbl86: // 1 sources:
             this.fixEndGap(var1_1, var2_2, false);
             ** while (true)
         }
-        var4_6 = 0;
+        var6_6 = 0;
         ** while (true)
     }
 
@@ -983,9 +983,9 @@ lbl86: // 1 sources:
      * Lifted jumps to return sites
      */
     private void repositionToWrapContentIfNecessary() {
+        View view;
         int n2;
         int n3;
-        View view;
         if (this.mSecondaryOrientation.getMode() == 1073741824) {
             return;
         }
@@ -1084,8 +1084,8 @@ lbl86: // 1 sources:
      * Enabled aggressive block sorting
      */
     private void updateLayoutState(int n2, RecyclerView.State object) {
-        boolean bl;
         int n3;
+        boolean bl;
         boolean bl2 = true;
         this.mLayoutState.mAvailable = 0;
         this.mLayoutState.mCurrentPosition = n2;
@@ -1539,24 +1539,24 @@ lbl86: // 1 sources:
      * Enabled aggressive block sorting
      */
     View hasGapsToFix() {
-        View view;
         int n2;
         int n3;
+        View view;
         int n4 = this.getChildCount() - 1;
         BitSet bitSet = new BitSet(this.mSpanCount);
         bitSet.set(0, this.mSpanCount, true);
         int n5 = this.mOrientation == 1 && this.isLayoutRTL() ? 1 : -1;
         if (this.mShouldReverseLayout) {
-            n3 = 0 - 1;
+            n2 = 0 - 1;
         } else {
-            n2 = 0;
-            n3 = n4 + 1;
-            n4 = n2;
+            n3 = 0;
+            n2 = n4 + 1;
+            n4 = n3;
         }
-        n2 = n4 < n3 ? 1 : -1;
+        n3 = n4 < n2 ? 1 : -1;
         int n6 = n4;
         do {
-            if (n6 == n3) {
+            if (n6 == n2) {
                 return null;
             }
             view = this.getChildAt(n6);
@@ -1565,21 +1565,21 @@ lbl86: // 1 sources:
                 if (this.checkSpanForGap(layoutParams.mSpan)) break;
                 bitSet.clear(layoutParams.mSpan.mIndex);
             }
-            if (!layoutParams.mFullSpan && n6 + n2 != n3) {
+            if (!layoutParams.mFullSpan && n6 + n3 != n2) {
                 int n7;
                 int n8;
-                Object object = this.getChildAt(n6 + n2);
+                Object object = this.getChildAt(n6 + n3);
                 n4 = 0;
                 if (this.mShouldReverseLayout) {
-                    n7 = this.mPrimaryOrientation.getDecoratedEnd(view);
-                    if (n7 < (n8 = this.mPrimaryOrientation.getDecoratedEnd((View)object))) break;
-                    if (n7 == n8) {
+                    n8 = this.mPrimaryOrientation.getDecoratedEnd(view);
+                    if (n8 < (n7 = this.mPrimaryOrientation.getDecoratedEnd((View)object))) break;
+                    if (n8 == n7) {
                         n4 = 1;
                     }
                 } else {
-                    n7 = this.mPrimaryOrientation.getDecoratedStart(view);
-                    if (n7 > (n8 = this.mPrimaryOrientation.getDecoratedStart((View)object))) break;
-                    if (n7 == n8) {
+                    n8 = this.mPrimaryOrientation.getDecoratedStart(view);
+                    if (n8 > (n7 = this.mPrimaryOrientation.getDecoratedStart((View)object))) break;
+                    if (n8 == n7) {
                         n4 = 1;
                     }
                 }
@@ -1587,13 +1587,13 @@ lbl86: // 1 sources:
                     object = (LayoutParams)object.getLayoutParams();
                     n4 = layoutParams.mSpan.mIndex - object.mSpan.mIndex < 0 ? 1 : 0;
                     if (n5 >= 0) return view;
-                    n7 = 1;
-                    if (n4 != n7) {
+                    n8 = 1;
+                    if (n4 != n8) {
                         return view;
                     }
                 }
             }
-            n6 += n2;
+            n6 += n3;
         } while (true);
         return view;
     }
@@ -2193,25 +2193,25 @@ lbl86: // 1 sources:
             if (this.mFullSpanItems == null) {
                 return -1;
             }
-            var6_2 = this.getFullSpanItem(var1_1);
-            if (var6_2 != null) {
-                this.mFullSpanItems.remove(var6_2);
+            var2_2 = this.getFullSpanItem(var1_1);
+            if (var2_2 != null) {
+                this.mFullSpanItems.remove(var2_2);
             }
-            var4_3 = -1;
-            var5_4 = this.mFullSpanItems.size();
-            var2_5 = 0;
+            var5_3 = -1;
+            var6_4 = this.mFullSpanItems.size();
+            var3_5 = 0;
             do {
-                var3_6 = var4_3;
-                if (var2_5 >= var5_4) ** GOTO lbl14
-                if (this.mFullSpanItems.get((int)var2_5).mPosition >= var1_1) {
-                    var3_6 = var2_5;
+                var4_6 = var5_3;
+                if (var3_5 >= var6_4) ** GOTO lbl14
+                if (this.mFullSpanItems.get((int)var3_5).mPosition >= var1_1) {
+                    var4_6 = var3_5;
 lbl14: // 2 sources:
-                    if (var3_6 == -1) return -1;
-                    var6_2 = this.mFullSpanItems.get(var3_6);
-                    this.mFullSpanItems.remove(var3_6);
-                    return var6_2.mPosition;
+                    if (var4_6 == -1) return -1;
+                    var2_2 = this.mFullSpanItems.get(var4_6);
+                    this.mFullSpanItems.remove(var4_6);
+                    return var2_2.mPosition;
                 }
-                ++var2_5;
+                ++var3_5;
             } while (true);
         }
 

@@ -48,18 +48,18 @@ final class BoltsExecutors {
         }
 
         private int decrementDepth() {
-            int n2;
-            Integer n3;
-            Integer n4 = n3 = this.executionDepth.get();
-            if (n3 == null) {
+            Integer n2;
+            int n3;
+            Integer n4 = n2 = this.executionDepth.get();
+            if (n2 == null) {
                 n4 = 0;
             }
-            if ((n2 = n4 - 1) == 0) {
+            if ((n3 = n4 - 1) == 0) {
                 this.executionDepth.remove();
-                return n2;
+                return n3;
             }
-            this.executionDepth.set(n2);
-            return n2;
+            this.executionDepth.set(n3);
+            return n3;
         }
 
         private int incrementDepth() {

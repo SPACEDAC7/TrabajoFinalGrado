@@ -3,12 +3,13 @@
  * 
  * Could not load the following classes:
  *  android.content.Intent
+ *  com.facebook.internal.CallbackManagerImpl$Callback
  */
 package com.facebook.internal;
 
 import android.content.Intent;
 import com.facebook.CallbackManager;
-import com.facebook.FacebookSdk;
+import com.facebook.internal.CallbackManagerImpl;
 import com.facebook.internal.Validate;
 import java.util.HashMap;
 import java.util.Map;
@@ -18,10 +19,10 @@ implements CallbackManager {
     private static Map<Integer, Callback> staticCallbacks = new HashMap<Integer, Callback>();
     private Map<Integer, Callback> callbacks = new HashMap<Integer, Callback>();
 
-    private static Callback getStaticCallback(Integer object) {
+    private static Callback getStaticCallback(Integer n2) {
         synchronized (CallbackManagerImpl.class) {
-            object = staticCallbacks.get(object);
-            return object;
+            n2 = staticCallbacks.get(n2);
+            return n2;
         }
     }
 
@@ -32,7 +33,7 @@ implements CallbackManager {
     public static void registerStaticCallback(int n2, Callback callback) {
         synchronized (CallbackManagerImpl.class) {
             block6 : {
-                Validate.notNull(callback, "callback");
+                Validate.notNull((Object)callback, "callback");
                 boolean bl = staticCallbacks.containsKey(n2);
                 if (!bl) break block6;
                 do {
@@ -63,34 +64,8 @@ implements CallbackManager {
     }
 
     public void registerCallback(int n2, Callback callback) {
-        Validate.notNull(callback, "callback");
+        Validate.notNull((Object)callback, "callback");
         this.callbacks.put(n2, callback);
     }
-
-    public static interface Callback {
-        public boolean onActivityResult(int var1, Intent var2);
-    }
-
-    public static enum RequestCodeOffset {
-        Login(0),
-        Share(1),
-        Message(2),
-        Like(3),
-        GameRequest(4),
-        AppGroupCreate(5),
-        AppGroupJoin(6),
-        AppInvite(7);
-        
-        private final int offset;
-
-        private RequestCodeOffset(int n3) {
-            this.offset = n3;
-        }
-
-        public int toRequestCode() {
-            return FacebookSdk.getCallbackRequestCodeOffset() + this.offset;
-        }
-    }
-
 }
 

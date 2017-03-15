@@ -90,56 +90,56 @@ public class AttributionIdentifiers {
                         return recentlyFetchedIdentifiers;
                     }
                     attributionIdentifiers = AttributionIdentifiers.getAndroidId(context);
-                    attributionIdentifiers2 = null;
                     attributionIdentifiers3 = null;
+                    attributionIdentifiers2 = null;
                     context = context.getContentResolver().query(ATTRIBUTION_ID_CONTENT_URI, new String[]{"aid", "androidid", "limit_tracking"}, null, null, null);
                     if (context == null) break block14;
-                    attributionIdentifiers3 = context;
                     attributionIdentifiers2 = context;
+                    attributionIdentifiers3 = context;
                     boolean bl = context.moveToFirst();
                     if (bl) break block15;
                 }
-                attributionIdentifiers3 = attributionIdentifiers;
-                if (context == null) return attributionIdentifiers3;
+                attributionIdentifiers2 = attributionIdentifiers;
+                if (context == null) return attributionIdentifiers2;
                 context.close();
                 return attributionIdentifiers;
             }
-            attributionIdentifiers3 = context;
             attributionIdentifiers2 = context;
+            attributionIdentifiers3 = context;
             int n2 = context.getColumnIndex("aid");
-            attributionIdentifiers3 = context;
             attributionIdentifiers2 = context;
+            attributionIdentifiers3 = context;
             int n3 = context.getColumnIndex("androidid");
-            attributionIdentifiers3 = context;
             attributionIdentifiers2 = context;
+            attributionIdentifiers3 = context;
             int n4 = context.getColumnIndex("limit_tracking");
-            attributionIdentifiers3 = context;
             attributionIdentifiers2 = context;
+            attributionIdentifiers3 = context;
             attributionIdentifiers.attributionId = context.getString(n2);
             if (n3 <= 0 || n4 <= 0) break block16;
-            attributionIdentifiers3 = context;
             attributionIdentifiers2 = context;
+            attributionIdentifiers3 = context;
             if (attributionIdentifiers.getAndroidAdvertiserId() != null) break block16;
-            attributionIdentifiers3 = context;
             attributionIdentifiers2 = context;
+            attributionIdentifiers3 = context;
             attributionIdentifiers.androidAdvertiserId = context.getString(n3);
-            attributionIdentifiers3 = context;
             attributionIdentifiers2 = context;
+            attributionIdentifiers3 = context;
             try {
                 attributionIdentifiers.limitTracking = Boolean.parseBoolean(context.getString(n4));
             }
             catch (Exception var0_1) {
-                attributionIdentifiers2 = attributionIdentifiers3;
+                attributionIdentifiers3 = attributionIdentifiers2;
                 try {
                     Log.d((String)TAG, (String)("Caught unexpected exception in getAttributionId(): " + var0_1.toString()));
-                    if (attributionIdentifiers3 == null) return null;
+                    if (attributionIdentifiers2 == null) return null;
                 }
                 catch (Throwable var0_2) {
-                    if (attributionIdentifiers2 == null) throw var0_2;
-                    attributionIdentifiers2.close();
+                    if (attributionIdentifiers3 == null) throw var0_2;
+                    attributionIdentifiers3.close();
                     throw var0_2;
                 }
-                attributionIdentifiers3.close();
+                attributionIdentifiers2.close();
                 return null;
             }
         }

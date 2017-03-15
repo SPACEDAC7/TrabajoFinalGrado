@@ -102,8 +102,8 @@ public class GraphResponse {
      * Enabled aggressive exception aggregation
      */
     private static List<GraphResponse> createResponsesFromObject(HttpURLConnection httpURLConnection, List<GraphRequest> list, Object object) throws FacebookException, JSONException {
-        int n2;
         GraphRequest graphRequest;
+        int n2;
         int n3 = list.size();
         ArrayList<GraphResponse> arrayList = new ArrayList<GraphResponse>(n3);
         Object object2 = object;
@@ -117,12 +117,12 @@ public class GraphResponse {
                 object2 = new JSONArray();
                 object2.put((Object)jSONObject);
             }
-            catch (JSONException var5_6) {
-                arrayList.add(new GraphResponse(graphRequest, httpURLConnection, new FacebookRequestError(httpURLConnection, (Exception)var5_6)));
+            catch (JSONException var3_6) {
+                arrayList.add(new GraphResponse(graphRequest, httpURLConnection, new FacebookRequestError(httpURLConnection, (Exception)var3_6)));
                 object2 = object;
             }
-            catch (IOException var5_7) {
-                arrayList.add(new GraphResponse(graphRequest, httpURLConnection, new FacebookRequestError(httpURLConnection, var5_7)));
+            catch (IOException var3_7) {
+                arrayList.add(new GraphResponse(graphRequest, httpURLConnection, new FacebookRequestError(httpURLConnection, var3_7)));
                 object2 = object;
             }
         }
@@ -136,11 +136,11 @@ public class GraphResponse {
             try {
                 arrayList.add(GraphResponse.createResponseFromObject(graphRequest, httpURLConnection, object2.get(n2), object));
             }
-            catch (JSONException var8_10) {
-                arrayList.add(new GraphResponse(graphRequest, httpURLConnection, new FacebookRequestError(httpURLConnection, (Exception)var8_10)));
+            catch (JSONException var6_10) {
+                arrayList.add(new GraphResponse(graphRequest, httpURLConnection, new FacebookRequestError(httpURLConnection, (Exception)var6_10)));
             }
-            catch (FacebookException var8_11) {
-                arrayList.add(new GraphResponse(graphRequest, httpURLConnection, new FacebookRequestError(httpURLConnection, var8_11)));
+            catch (FacebookException var6_11) {
+                arrayList.add(new GraphResponse(graphRequest, httpURLConnection, new FacebookRequestError(httpURLConnection, var6_11)));
             }
             ++n2;
         }
@@ -246,7 +246,7 @@ public class GraphResponse {
             object = String.format((Locale)object, "%d", n2);
             return "{Response: " + " responseCode: " + (String)object + ", graphObject: " + (Object)this.graphObject + ", error: " + this.error + "}";
         }
-        catch (IOException var2_2) {
+        catch (IOException var1_2) {
             object = "unknown";
             return "{Response: " + " responseCode: " + (String)object + ", graphObject: " + (Object)this.graphObject + ", error: " + this.error + "}";
         }

@@ -88,15 +88,15 @@ public final class FileLruCache {
      * Enabled aggressive exception aggregation
      */
     private void trim() {
-        long l2;
         Object object;
+        long l2;
         long l3;
         Object object2;
         block17 : {
             long l4;
-            long l5;
             int n2;
             int n3;
+            long l5;
             object = this.lock;
             synchronized (object) {
                 this.isTrimPending = false;
@@ -111,11 +111,11 @@ public final class FileLruCache {
                 l2 = l4;
                 l3 = l5;
                 if (object2 == null) break block17;
-                n3 = object2.length;
-                n2 = 0;
+                n2 = object2.length;
+                n3 = 0;
             }
-            catch (Throwable var12_5) {
-                throw var12_5;
+            catch (Throwable var2_5) {
+                throw var2_5;
             }
             finally {
                 object = this.lock;
@@ -127,15 +127,15 @@ public final class FileLruCache {
             do {
                 l2 = l4;
                 l3 = l5;
-                if (n2 >= n3) break;
-                File file = object2[n2];
+                if (n3 >= n2) break;
+                File file = object2[n3];
                 ModifiedFile modifiedFile = new ModifiedFile(file);
                 object.add(modifiedFile);
                 Logger.log(LoggingBehavior.CACHE, TAG, "  trim considering time=" + Long.valueOf(modifiedFile.getModified()) + " name=" + modifiedFile.getFile().getName());
                 l2 = file.length();
                 l5 += l2;
                 ++l4;
-                ++n2;
+                ++n3;
                 continue;
                 break;
             } while (true);
@@ -181,8 +181,8 @@ public final class FileLruCache {
      * Enabled aggressive exception aggregation
      */
     public InputStream get(String string2, String string3) throws IOException {
-        InputStream inputStream22222;
         File file;
+        InputStream inputStream22222;
         block13 : {
             block14 : {
                 boolean bl;
@@ -305,7 +305,7 @@ public final class FileLruCache {
                 try {
                     this.lock.wait();
                 }
-                catch (InterruptedException var9_3) {}
+                catch (InterruptedException var2_2) {}
             }
         }
         arrfile = this.directory.listFiles();

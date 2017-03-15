@@ -10,6 +10,22 @@
  *  android.content.pm.ResolveInfo
  *  android.os.Bundle
  *  android.os.Parcelable
+ *  com.facebook.internal.CallbackManagerImpl$Callback
+ *  com.facebook.internal.CallbackManagerImpl$RequestCodeOffset
+ *  com.facebook.login.DefaultAudience
+ *  com.facebook.login.LoginBehavior
+ *  com.facebook.login.LoginClient
+ *  com.facebook.login.LoginClient$Request
+ *  com.facebook.login.LoginClient$Result
+ *  com.facebook.login.LoginClient$Result$Code
+ *  com.facebook.login.LoginLogger
+ *  com.facebook.login.LoginManager$1
+ *  com.facebook.login.LoginManager$2
+ *  com.facebook.login.LoginManager$3
+ *  com.facebook.login.LoginManager$ActivityStartActivityDelegate
+ *  com.facebook.login.LoginManager$FragmentStartActivityDelegate
+ *  com.facebook.login.LoginResult
+ *  com.facebook.login.StartActivityDelegate
  */
 package com.facebook.login;
 
@@ -22,7 +38,6 @@ import android.content.pm.ResolveInfo;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import com.facebook.AccessToken;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookActivity;
@@ -40,6 +55,7 @@ import com.facebook.login.LoginBehavior;
 import com.facebook.login.LoginClient;
 import com.facebook.login.LoginFragment;
 import com.facebook.login.LoginLogger;
+import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.facebook.login.StartActivityDelegate;
 import java.util.Collection;
@@ -68,26 +84,26 @@ public class LoginManager {
     }
 
     static LoginResult computeLoginResult(LoginClient.Request object, AccessToken accessToken) {
-        Set<String> set = object.getPermissions();
+        Set set = object.getPermissions();
         HashSet<String> hashSet = new HashSet<String>(accessToken.getPermissions());
         if (object.isRerequest()) {
             hashSet.retainAll(set);
         }
-        object = new HashSet<String>(set);
+        object = new HashSet(set);
         object.removeAll(hashSet);
-        return new LoginResult(accessToken, (Set<String>)hashSet, (Set<String>)object);
+        return new LoginResult(accessToken, hashSet, (Set)object);
     }
 
     /*
      * Enabled aggressive block sorting
      */
-    private LoginClient.Request createLoginRequest(Collection<String> hashSet) {
+    private LoginClient.Request createLoginRequest(Collection<String> request) {
         LoginBehavior loginBehavior = this.loginBehavior;
-        hashSet = hashSet != null ? new HashSet(hashSet) : new HashSet();
-        hashSet = new LoginClient.Request(loginBehavior, Collections.unmodifiableSet(hashSet), this.defaultAudience, FacebookSdk.getApplicationId(), UUID.randomUUID().toString());
+        request = request != null ? new LoginClient.Request(request) : new LoginClient.Request();
+        request = new LoginClient.Request(loginBehavior, Collections.unmodifiableSet(request), this.defaultAudience, FacebookSdk.getApplicationId(), UUID.randomUUID().toString());
         boolean bl = AccessToken.getCurrentAccessToken() != null;
-        hashSet.setRerequest(bl);
-        return hashSet;
+        request.setRerequest(bl);
+        return request;
     }
 
     /*
@@ -168,7 +184,7 @@ public class LoginManager {
     }
 
     private static Set<String> getOtherPublishPermissions() {
-        return Collections.unmodifiableSet(new HashSet<String>(){});
+        return Collections.unmodifiableSet(new /* Unavailable Anonymous Inner Class!! */);
     }
 
     private static boolean isPublishPermission(String string2) {
@@ -205,14 +221,8 @@ public class LoginManager {
         this.pendingLoggingExtras = new HashMap();
         this.context = object.getActivityContext();
         this.logStartLogin();
-        CallbackManagerImpl.registerStaticCallback(CallbackManagerImpl.RequestCodeOffset.Login.toRequestCode(), new CallbackManagerImpl.Callback(){
-
-            @Override
-            public boolean onActivityResult(int n2, Intent intent) {
-                return LoginManager.this.onActivityResult(n2, intent);
-            }
-        });
-        boolean bl = this.tryLoginActivity((StartActivityDelegate)object, (LoginClient.Request)((Object)hashMap));
+        CallbackManagerImpl.registerStaticCallback(CallbackManagerImpl.RequestCodeOffset.Login.toRequestCode(), (CallbackManagerImpl.Callback)new /* Unavailable Anonymous Inner Class!! */);
+        boolean bl = this.tryLoginActivity((StartActivityDelegate)object, (LoginClient.Request)hashMap);
         hashMap = this.pendingLoggingExtras;
         object = bl ? "1" : "0";
         hashMap.put("try_login_activity", (String)object);
@@ -281,28 +291,28 @@ public class LoginManager {
         return this.pendingLoginRequest;
     }
 
-    public void logInWithPublishPermissions(Activity activity, Collection<String> object) {
-        this.validatePublishPermissions((Collection<String>)object);
-        object = this.createLoginRequest((Collection<String>)object);
-        this.startLogin(new ActivityStartActivityDelegate(activity), (LoginClient.Request)object);
+    public void logInWithPublishPermissions(Activity activity, Collection<String> request) {
+        this.validatePublishPermissions((Collection<String>)request);
+        request = this.createLoginRequest((Collection<String>)request);
+        this.startLogin((StartActivityDelegate)new ActivityStartActivityDelegate(activity), request);
     }
 
-    public void logInWithPublishPermissions(Fragment fragment, Collection<String> object) {
-        this.validatePublishPermissions((Collection<String>)object);
-        object = this.createLoginRequest((Collection<String>)object);
-        this.startLogin(new FragmentStartActivityDelegate(fragment), (LoginClient.Request)object);
+    public void logInWithPublishPermissions(Fragment fragment, Collection<String> request) {
+        this.validatePublishPermissions((Collection<String>)request);
+        request = this.createLoginRequest((Collection<String>)request);
+        this.startLogin((StartActivityDelegate)new FragmentStartActivityDelegate(fragment), request);
     }
 
-    public void logInWithReadPermissions(Activity activity, Collection<String> object) {
-        this.validateReadPermissions((Collection<String>)object);
-        object = this.createLoginRequest((Collection<String>)object);
-        this.startLogin(new ActivityStartActivityDelegate(activity), (LoginClient.Request)object);
+    public void logInWithReadPermissions(Activity activity, Collection<String> request) {
+        this.validateReadPermissions((Collection<String>)request);
+        request = this.createLoginRequest((Collection<String>)request);
+        this.startLogin((StartActivityDelegate)new ActivityStartActivityDelegate(activity), request);
     }
 
-    public void logInWithReadPermissions(Fragment fragment, Collection<String> object) {
-        this.validateReadPermissions((Collection<String>)object);
-        object = this.createLoginRequest((Collection<String>)object);
-        this.startLogin(new FragmentStartActivityDelegate(fragment), (LoginClient.Request)object);
+    public void logInWithReadPermissions(Fragment fragment, Collection<String> request) {
+        this.validateReadPermissions((Collection<String>)request);
+        request = this.createLoginRequest((Collection<String>)request);
+        this.startLogin((StartActivityDelegate)new FragmentStartActivityDelegate(fragment), request);
     }
 
     public void logOut() {
@@ -323,10 +333,10 @@ public class LoginManager {
         if (this.pendingLoginRequest == null) {
             return false;
         }
-        Object var12_4 = null;
+        Object var10_4 = null;
         Object object4 = null;
         Object object5 = null;
-        Object var10_7 = null;
+        Object var8_7 = null;
         Object object6 = LoginClient.Result.Code.ERROR;
         LoginClient.Result.Code code = null;
         boolean bl = false;
@@ -334,7 +344,7 @@ public class LoginManager {
         if (object != null) {
             LoginClient.Result result = (LoginClient.Result)object.getParcelableExtra("com.facebook.LoginFragment:Result");
             object = object6;
-            object6 = var12_4;
+            object6 = var10_4;
             object2 = code;
             object3 = object5;
             if (result != null) {
@@ -347,16 +357,16 @@ public class LoginManager {
                     } else {
                         object6 = new FacebookAuthorizationException(result.errorMessage);
                         bl = bl2;
-                        object = var10_7;
+                        object = var8_7;
                     }
                 } else {
                     object6 = object4;
                     bl = bl2;
-                    object = var10_7;
+                    object = var8_7;
                     if (n2 == 0) {
                         bl = true;
                         object6 = object4;
-                        object = var10_7;
+                        object = var8_7;
                     }
                 }
                 object2 = result.loggingExtras;
@@ -365,13 +375,13 @@ public class LoginManager {
             }
         } else {
             object = object6;
-            object6 = var12_4;
+            object6 = var10_4;
             object2 = code;
             object3 = object5;
             if (n2 == 0) {
                 bl = true;
                 object = LoginClient.Result.Code.CANCEL;
-                object6 = var12_4;
+                object6 = var10_4;
                 object2 = code;
                 object3 = object5;
             }
@@ -386,30 +396,24 @@ public class LoginManager {
                 }
             }
         }
-        this.logCompleteLogin((LoginClient.Result.Code)((Object)object), (Map<String, String>)object2, (Exception)object4);
+        this.logCompleteLogin((LoginClient.Result.Code)object, (Map<String, String>)object2, (Exception)object4);
         this.finishLogin((AccessToken)object3, (FacebookException)object4, bl, facebookCallback);
         return true;
     }
 
-    public void registerCallback(CallbackManager callbackManager, final FacebookCallback<LoginResult> facebookCallback) {
+    public void registerCallback(CallbackManager callbackManager, FacebookCallback<LoginResult> facebookCallback) {
         if (!(callbackManager instanceof CallbackManagerImpl)) {
             throw new FacebookException("Unexpected CallbackManager, please use the provided Factory.");
         }
-        ((CallbackManagerImpl)callbackManager).registerCallback(CallbackManagerImpl.RequestCodeOffset.Login.toRequestCode(), new CallbackManagerImpl.Callback(){
-
-            @Override
-            public boolean onActivityResult(int n2, Intent intent) {
-                return LoginManager.this.onActivityResult(n2, intent, facebookCallback);
-            }
-        });
+        ((CallbackManagerImpl)callbackManager).registerCallback(CallbackManagerImpl.RequestCodeOffset.Login.toRequestCode(), (CallbackManagerImpl.Callback)new /* Unavailable Anonymous Inner Class!! */);
     }
 
     public void resolveError(Activity activity, GraphResponse graphResponse) {
-        this.startLogin(new ActivityStartActivityDelegate(activity), this.createLoginRequestFromResponse(graphResponse));
+        this.startLogin((StartActivityDelegate)new ActivityStartActivityDelegate(activity), this.createLoginRequestFromResponse(graphResponse));
     }
 
     public void resolveError(Fragment fragment, GraphResponse graphResponse) {
-        this.startLogin(new FragmentStartActivityDelegate(fragment), this.createLoginRequestFromResponse(graphResponse));
+        this.startLogin((StartActivityDelegate)new FragmentStartActivityDelegate(fragment), this.createLoginRequestFromResponse(graphResponse));
     }
 
     public LoginManager setDefaultAudience(DefaultAudience defaultAudience) {
@@ -421,46 +425,5 @@ public class LoginManager {
         this.loginBehavior = loginBehavior;
         return this;
     }
-
-    private static class ActivityStartActivityDelegate
-    implements StartActivityDelegate {
-        private final Activity activity;
-
-        ActivityStartActivityDelegate(Activity activity) {
-            Validate.notNull((Object)activity, "activity");
-            this.activity = activity;
-        }
-
-        @Override
-        public Activity getActivityContext() {
-            return this.activity;
-        }
-
-        @Override
-        public void startActivityForResult(Intent intent, int n2) {
-            this.activity.startActivityForResult(intent, n2);
-        }
-    }
-
-    private static class FragmentStartActivityDelegate
-    implements StartActivityDelegate {
-        private final Fragment fragment;
-
-        FragmentStartActivityDelegate(Fragment fragment) {
-            Validate.notNull(fragment, "fragment");
-            this.fragment = fragment;
-        }
-
-        @Override
-        public Activity getActivityContext() {
-            return this.fragment.getActivity();
-        }
-
-        @Override
-        public void startActivityForResult(Intent intent, int n2) {
-            this.fragment.startActivityForResult(intent, n2);
-        }
-    }
-
 }
 

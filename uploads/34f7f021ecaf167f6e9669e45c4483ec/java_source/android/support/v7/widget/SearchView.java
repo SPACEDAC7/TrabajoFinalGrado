@@ -436,9 +436,9 @@ implements CollapsibleActionView {
         String string4;
         String string5;
         try {
-            string5 = string4 = SuggestionsAdapter.getColumnString(cursor, "suggest_intent_action");
-            if (string4 == null) {
-                string5 = this.mSearchable.getSuggestIntentAction();
+            string4 = string5 = SuggestionsAdapter.getColumnString(cursor, "suggest_intent_action");
+            if (string5 == null) {
+                string4 = this.mSearchable.getSuggestIntentAction();
             }
         }
         catch (RuntimeException var3_5) {
@@ -451,25 +451,25 @@ implements CollapsibleActionView {
             Log.w((String)"SearchView", (String)("Search suggestions cursor at row " + n2 + " returned exception."), (Throwable)var3_5);
             return null;
         }
-        string4 = string5;
-        if (string5 == null) {
-            string4 = "android.intent.action.SEARCH";
+        string5 = string4;
+        if (string4 == null) {
+            string5 = "android.intent.action.SEARCH";
         }
-        string5 = string3 = SuggestionsAdapter.getColumnString(cursor, "suggest_intent_data");
+        string4 = string3 = SuggestionsAdapter.getColumnString(cursor, "suggest_intent_data");
         if (string3 == null) {
-            string5 = this.mSearchable.getSuggestIntentData();
+            string4 = this.mSearchable.getSuggestIntentData();
         }
-        string3 = string5;
-        if (string5 != null) {
+        string3 = string4;
+        if (string4 != null) {
             String string6 = SuggestionsAdapter.getColumnString(cursor, "suggest_intent_data_id");
-            string3 = string5;
+            string3 = string4;
             if (string6 != null) {
-                string3 = string5 + "/" + Uri.encode((String)string6);
+                string3 = string4 + "/" + Uri.encode((String)string6);
             }
         }
-        string5 = string3 == null ? null : Uri.parse((String)string3);
+        string4 = string3 == null ? null : Uri.parse((String)string3);
         string3 = SuggestionsAdapter.getColumnString(cursor, "suggest_intent_query");
-        return this.createIntent(string4, (Uri)string5, SuggestionsAdapter.getColumnString(cursor, "suggest_intent_extra_data"), string3, n2, string2);
+        return this.createIntent(string5, (Uri)string4, SuggestionsAdapter.getColumnString(cursor, "suggest_intent_extra_data"), string3, n2, string2);
     }
 
     /*

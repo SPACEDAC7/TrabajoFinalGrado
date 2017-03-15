@@ -140,52 +140,52 @@ extends VisibilityPort {
         if ((this.mFadingMode & 2) != 2) {
             return null;
         }
-        Object var11_6 = null;
+        Object var10_6 = null;
         View view = arrn != null ? arrn.view : null;
         transitionValues = transitionValues != null ? transitionValues.view : null;
         if (DBG) {
             Log.d((String)"Fade", (String)("Fade.onDisappear: startView, startVis, endView, endVis = " + (Object)view + ", " + n2 + ", " + transitionValues + ", " + n3));
         }
-        Object var12_8 = null;
+        Object var11_8 = null;
         TransitionValues transitionValues4 = null;
         if (transitionValues == null || transitionValues.getParent() == null) {
             if (transitionValues != null) {
-                transitionValues2 = transitionValues;
-                transitionValues3 = transitionValues4;
+                transitionValues3 = transitionValues;
+                transitionValues2 = transitionValues4;
             } else {
-                transitionValues2 = var12_8;
-                transitionValues = var11_6;
-                transitionValues3 = transitionValues4;
+                transitionValues3 = var11_8;
+                transitionValues = var10_6;
+                transitionValues2 = transitionValues4;
                 if (view != null) {
                     if (view.getParent() == null) {
-                        transitionValues2 = view;
+                        transitionValues3 = view;
                         transitionValues = view;
-                        transitionValues3 = transitionValues4;
+                        transitionValues2 = transitionValues4;
                     } else {
-                        transitionValues2 = var12_8;
-                        transitionValues = var11_6;
-                        transitionValues3 = transitionValues4;
+                        transitionValues3 = var11_8;
+                        transitionValues = var10_6;
+                        transitionValues2 = transitionValues4;
                         if (view.getParent() instanceof View) {
-                            transitionValues2 = var12_8;
-                            transitionValues = var11_6;
-                            transitionValues3 = transitionValues4;
+                            transitionValues3 = var11_8;
+                            transitionValues = var10_6;
+                            transitionValues2 = transitionValues4;
                             if (view.getParent().getParent() == null) {
                                 n2 = ((View)view.getParent()).getId();
-                                transitionValues2 = var12_8;
-                                transitionValues = var11_6;
-                                transitionValues3 = transitionValues4;
+                                transitionValues3 = var11_8;
+                                transitionValues = var10_6;
+                                transitionValues2 = transitionValues4;
                                 if (n2 != -1) {
-                                    transitionValues2 = var12_8;
-                                    transitionValues = var11_6;
-                                    transitionValues3 = transitionValues4;
+                                    transitionValues3 = var11_8;
+                                    transitionValues = var10_6;
+                                    transitionValues2 = transitionValues4;
                                     if (viewGroup.findViewById(n2) != null) {
-                                        transitionValues2 = var12_8;
-                                        transitionValues = var11_6;
-                                        transitionValues3 = transitionValues4;
+                                        transitionValues3 = var11_8;
+                                        transitionValues = var10_6;
+                                        transitionValues2 = transitionValues4;
                                         if (this.mCanRemoveViews) {
-                                            transitionValues2 = view;
+                                            transitionValues3 = view;
                                             transitionValues = view;
-                                            transitionValues3 = transitionValues4;
+                                            transitionValues2 = transitionValues4;
                                         }
                                     }
                                 }
@@ -195,24 +195,24 @@ extends VisibilityPort {
                 }
             }
         } else if (n3 == 4) {
-            transitionValues3 = transitionValues;
-            transitionValues2 = var12_8;
+            transitionValues2 = transitionValues;
+            transitionValues3 = var11_8;
         } else if (view == transitionValues) {
-            transitionValues3 = transitionValues;
-            transitionValues2 = var12_8;
+            transitionValues2 = transitionValues;
+            transitionValues3 = var11_8;
         } else {
-            transitionValues2 = transitionValues = view;
-            transitionValues3 = transitionValues4;
+            transitionValues3 = transitionValues = view;
+            transitionValues2 = transitionValues4;
         }
-        if (transitionValues2 != null) {
+        if (transitionValues3 != null) {
             n2 = (Integer)arrn.values.get("android:fade:screenX");
             int n4 = (Integer)arrn.values.get("android:fade:screenY");
             arrn = new int[2];
             viewGroup.getLocationOnScreen(arrn);
-            ViewCompat.offsetLeftAndRight((View)transitionValues2, n2 - arrn[0] - transitionValues2.getLeft());
-            ViewCompat.offsetTopAndBottom((View)transitionValues2, n4 - arrn[1] - transitionValues2.getTop());
-            ViewGroupOverlay.createFrom(viewGroup).add((View)transitionValues2);
-            return this.createAnimation((View)transitionValues, 1.0f, 0.0f, new AnimatorListenerAdapter((View)transitionValues, (View)transitionValues3, n3, (View)transitionValues2, viewGroup){
+            ViewCompat.offsetLeftAndRight((View)transitionValues3, n2 - arrn[0] - transitionValues3.getLeft());
+            ViewCompat.offsetTopAndBottom((View)transitionValues3, n4 - arrn[1] - transitionValues3.getTop());
+            ViewGroupOverlay.createFrom(viewGroup).add((View)transitionValues3);
+            return this.createAnimation((View)transitionValues, 1.0f, 0.0f, new AnimatorListenerAdapter((View)transitionValues, (View)transitionValues2, n3, (View)transitionValues3, viewGroup){
                 final /* synthetic */ View val$finalOverlayView;
                 final /* synthetic */ ViewGroup val$finalSceneRoot;
                 final /* synthetic */ View val$finalView;
@@ -230,9 +230,9 @@ extends VisibilityPort {
                 }
             });
         }
-        if (transitionValues3 != null) {
-            transitionValues3.setVisibility(0);
-            return this.createAnimation((View)transitionValues, 1.0f, 0.0f, new AnimatorListenerAdapter((View)transitionValues, (View)transitionValues3, n3, (View)transitionValues2, viewGroup){
+        if (transitionValues2 != null) {
+            transitionValues2.setVisibility(0);
+            return this.createAnimation((View)transitionValues, 1.0f, 0.0f, new AnimatorListenerAdapter((View)transitionValues, (View)transitionValues2, n3, (View)transitionValues3, viewGroup){
                 boolean mCanceled;
                 float mPausedAlpha;
                 final /* synthetic */ View val$finalOverlayView;

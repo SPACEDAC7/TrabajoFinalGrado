@@ -269,17 +269,17 @@ implements RecyclerView.OnChildAttachStateChangeListener {
             int n3 = this.mDx > 0.0f ? 8 : 4;
             if (this.mVelocityTracker != null && this.mActivePointerId > -1) {
                 this.mVelocityTracker.computeCurrentVelocity(1000, this.mCallback.getSwipeVelocityThreshold(this.mMaxSwipeVelocity));
-                f3 = VelocityTrackerCompat.getXVelocity(this.mVelocityTracker, this.mActivePointerId);
-                f2 = VelocityTrackerCompat.getYVelocity(this.mVelocityTracker, this.mActivePointerId);
-                int n4 = f3 > 0.0f ? 8 : 4;
-                f3 = Math.abs(f3);
-                if ((n4 & n2) != 0 && n3 == n4 && f3 >= this.mCallback.getSwipeEscapeVelocity(this.mSwipeEscapeVelocity) && f3 > Math.abs(f2)) {
+                f2 = VelocityTrackerCompat.getXVelocity(this.mVelocityTracker, this.mActivePointerId);
+                f3 = VelocityTrackerCompat.getYVelocity(this.mVelocityTracker, this.mActivePointerId);
+                int n4 = f2 > 0.0f ? 8 : 4;
+                f2 = Math.abs(f2);
+                if ((n4 & n2) != 0 && n3 == n4 && f2 >= this.mCallback.getSwipeEscapeVelocity(this.mSwipeEscapeVelocity) && f2 > Math.abs(f3)) {
                     return n4;
                 }
             }
-            f2 = this.mRecyclerView.getWidth();
-            f3 = this.mCallback.getSwipeThreshold(viewHolder);
-            if ((n2 & n3) != 0 && Math.abs(this.mDx) > f2 * f3) {
+            f3 = this.mRecyclerView.getWidth();
+            f2 = this.mCallback.getSwipeThreshold(viewHolder);
+            if ((n2 & n3) != 0 && Math.abs(this.mDx) > f3 * f2) {
                 return n3;
             }
         }
@@ -296,17 +296,17 @@ implements RecyclerView.OnChildAttachStateChangeListener {
             int n3 = this.mDy > 0.0f ? 2 : 1;
             if (this.mVelocityTracker != null && this.mActivePointerId > -1) {
                 this.mVelocityTracker.computeCurrentVelocity(1000, this.mCallback.getSwipeVelocityThreshold(this.mMaxSwipeVelocity));
-                f3 = VelocityTrackerCompat.getXVelocity(this.mVelocityTracker, this.mActivePointerId);
-                f2 = VelocityTrackerCompat.getYVelocity(this.mVelocityTracker, this.mActivePointerId);
-                int n4 = f2 > 0.0f ? 2 : 1;
-                f2 = Math.abs(f2);
-                if ((n4 & n2) != 0 && n4 == n3 && f2 >= this.mCallback.getSwipeEscapeVelocity(this.mSwipeEscapeVelocity) && f2 > Math.abs(f3)) {
+                f2 = VelocityTrackerCompat.getXVelocity(this.mVelocityTracker, this.mActivePointerId);
+                f3 = VelocityTrackerCompat.getYVelocity(this.mVelocityTracker, this.mActivePointerId);
+                int n4 = f3 > 0.0f ? 2 : 1;
+                f3 = Math.abs(f3);
+                if ((n4 & n2) != 0 && n4 == n3 && f3 >= this.mCallback.getSwipeEscapeVelocity(this.mSwipeEscapeVelocity) && f3 > Math.abs(f2)) {
                     return n4;
                 }
             }
-            f3 = this.mRecyclerView.getHeight();
-            f2 = this.mCallback.getSwipeThreshold(viewHolder);
-            if ((n2 & n3) != 0 && Math.abs(this.mDy) > f3 * f2) {
+            f2 = this.mRecyclerView.getHeight();
+            f3 = this.mCallback.getSwipeThreshold(viewHolder);
+            if ((n2 & n3) != 0 && Math.abs(this.mDy) > f2 * f3) {
                 return n3;
             }
         }

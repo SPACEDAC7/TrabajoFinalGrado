@@ -199,42 +199,42 @@ implements MenuView {
      * Enabled aggressive block sorting
      */
     protected void onMeasure(int n2, int n3) {
+        int[] arrn;
         int n4;
         int n5;
-        int[] arrn;
         n3 = View.MeasureSpec.getSize((int)n2);
         int n6 = this.getChildCount();
         int n7 = View.MeasureSpec.makeMeasureSpec((int)this.mItemHeight, (int)1073741824);
         if (!this.mShiftingMode) {
             n2 = n6 == 0 ? 1 : n6;
-            n5 = Math.min(n3 / n2, this.mActiveItemMaxWidth);
-            n3 -= n5 * n6;
+            n4 = Math.min(n3 / n2, this.mActiveItemMaxWidth);
+            n3 -= n4 * n6;
             for (n2 = 0; n2 < n6; ++n2) {
-                this.mTempChildWidths[n2] = n5;
-                n4 = n3;
+                this.mTempChildWidths[n2] = n4;
+                n5 = n3;
                 if (n3 > 0) {
                     arrn = this.mTempChildWidths;
                     arrn[n2] = arrn[n2] + 1;
-                    n4 = n3 - 1;
+                    n5 = n3 - 1;
                 }
-                n3 = n4;
+                n3 = n5;
             }
         } else {
             n2 = n6 - 1;
-            n5 = Math.min(n3 - this.mInactiveItemMinWidth * n2, this.mActiveItemMaxWidth);
-            int n8 = Math.min((n3 - n5) / n2, this.mInactiveItemMaxWidth);
-            n3 = n3 - n5 - n8 * n2;
+            n4 = Math.min(n3 - this.mInactiveItemMinWidth * n2, this.mActiveItemMaxWidth);
+            int n8 = Math.min((n3 - n4) / n2, this.mInactiveItemMaxWidth);
+            n3 = n3 - n4 - n8 * n2;
             for (n2 = 0; n2 < n6; ++n2) {
                 arrn = this.mTempChildWidths;
-                n4 = n2 == this.mActiveButton ? n5 : n8;
-                arrn[n2] = n4;
-                n4 = n3;
+                n5 = n2 == this.mActiveButton ? n4 : n8;
+                arrn[n2] = n5;
+                n5 = n3;
                 if (n3 > 0) {
                     arrn = this.mTempChildWidths;
                     arrn[n2] = arrn[n2] + 1;
-                    n4 = n3 - 1;
+                    n5 = n3 - 1;
                 }
-                n3 = n4;
+                n3 = n5;
             }
         }
         n3 = 0;

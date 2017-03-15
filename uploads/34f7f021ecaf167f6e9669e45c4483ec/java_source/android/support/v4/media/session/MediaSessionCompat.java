@@ -778,7 +778,7 @@ public class MediaSessionCompat {
                 try {
                     iMediaControllerCallback.onEvent(string2, bundle);
                 }
-                catch (RemoteException var4_5) {}
+                catch (RemoteException var3_5) {}
                 --n2;
             } while (true);
         }
@@ -799,7 +799,7 @@ public class MediaSessionCompat {
                 try {
                     iMediaControllerCallback.onExtrasChanged(bundle);
                 }
-                catch (RemoteException var3_4) {}
+                catch (RemoteException var2_4) {}
                 --n2;
             } while (true);
         }
@@ -820,7 +820,7 @@ public class MediaSessionCompat {
                 try {
                     iMediaControllerCallback.onMetadataChanged(mediaMetadataCompat);
                 }
-                catch (RemoteException var3_4) {}
+                catch (RemoteException var2_4) {}
                 --n2;
             } while (true);
         }
@@ -841,7 +841,7 @@ public class MediaSessionCompat {
                 try {
                     iMediaControllerCallback.onQueueChanged(list);
                 }
-                catch (RemoteException var3_4) {}
+                catch (RemoteException var2_4) {}
                 --n2;
             } while (true);
         }
@@ -862,7 +862,7 @@ public class MediaSessionCompat {
                 try {
                     iMediaControllerCallback.onQueueTitleChanged(charSequence);
                 }
-                catch (RemoteException var3_4) {}
+                catch (RemoteException var2_4) {}
                 --n2;
             } while (true);
         }
@@ -884,7 +884,7 @@ public class MediaSessionCompat {
                 try {
                     iMediaControllerCallback.onSessionDestroyed();
                 }
-                catch (RemoteException var2_3) {}
+                catch (RemoteException var1_3) {}
                 --n2;
             } while (true);
         }
@@ -905,7 +905,7 @@ public class MediaSessionCompat {
                 try {
                     iMediaControllerCallback.onPlaybackStateChanged(playbackStateCompat);
                 }
-                catch (RemoteException var3_4) {}
+                catch (RemoteException var2_4) {}
                 --n2;
             } while (true);
         }
@@ -1003,42 +1003,42 @@ public class MediaSessionCompat {
          * Lifted jumps to return sites
          */
         PlaybackStateCompat getStateWithUpdatedPosition() {
-            var3_1 = -1;
-            var7_2 = this.mLock;
-            // MONITORENTER : var7_2
-            var9_3 = this.mState;
-            var1_4 = var3_1;
+            var6_1 = -1;
+            var1_2 = this.mLock;
+            // MONITORENTER : var1_2
+            var3_3 = this.mState;
+            var4_4 = var6_1;
             if (this.mMetadata != null) {
-                var1_4 = var3_1;
+                var4_4 = var6_1;
                 if (this.mMetadata.containsKey("android.media.metadata.DURATION")) {
-                    var1_4 = this.mMetadata.getLong("android.media.metadata.DURATION");
+                    var4_4 = this.mMetadata.getLong("android.media.metadata.DURATION");
                 }
             }
-            // MONITOREXIT : var7_2
-            var7_2 = var8_5 = null;
-            if (var9_3 == null) return var9_3;
-            if (var9_3.getState() == 3 || var9_3.getState() == 4) ** GOTO lbl-1000
-            var7_2 = var8_5;
-            if (var9_3.getState() == 5) lbl-1000: // 2 sources:
+            // MONITOREXIT : var1_2
+            var1_2 = var2_5 = null;
+            if (var3_3 == null) return var3_3;
+            if (var3_3.getState() == 3 || var3_3.getState() == 4) ** GOTO lbl-1000
+            var1_2 = var2_5;
+            if (var3_3.getState() == 5) lbl-1000: // 2 sources:
             {
-                var3_1 = var9_3.getLastPositionUpdateTime();
-                var5_6 = SystemClock.elapsedRealtime();
-                var7_2 = var8_5;
-                if (var3_1 > 0) {
-                    var3_1 = (long)(var9_3.getPlaybackSpeed() * (float)(var5_6 - var3_1)) + var9_3.getPosition();
-                    if (var1_4 < 0 || var3_1 <= var1_4) {
-                        var1_4 = var3_1;
-                        if (var3_1 < 0) {
-                            var1_4 = 0;
+                var6_1 = var3_3.getLastPositionUpdateTime();
+                var8_6 = SystemClock.elapsedRealtime();
+                var1_2 = var2_5;
+                if (var6_1 > 0) {
+                    var6_1 = (long)(var3_3.getPlaybackSpeed() * (float)(var8_6 - var6_1)) + var3_3.getPosition();
+                    if (var4_4 < 0 || var6_1 <= var4_4) {
+                        var4_4 = var6_1;
+                        if (var6_1 < 0) {
+                            var4_4 = 0;
                         }
                     }
-                    var7_2 = new PlaybackStateCompat.Builder(var9_3);
-                    var7_2.setState(var9_3.getState(), var1_4, var9_3.getPlaybackSpeed(), var5_6);
-                    var7_2 = var7_2.build();
+                    var1_2 = new PlaybackStateCompat.Builder(var3_3);
+                    var1_2.setState(var3_3.getState(), var4_4, var3_3.getPlaybackSpeed(), var8_6);
+                    var1_2 = var1_2.build();
                 }
             }
-            if (var7_2 != null) return var7_2;
-            return var9_3;
+            if (var1_2 != null) return var1_2;
+            return var3_3;
         }
 
         @Override
@@ -1098,7 +1098,7 @@ public class MediaSessionCompat {
                 try {
                     iMediaControllerCallback.onVolumeInfoChanged(parcelableVolumeInfo);
                 }
-                catch (RemoteException var3_4) {}
+                catch (RemoteException var2_4) {}
                 --n2;
             } while (true);
         }
@@ -1458,15 +1458,15 @@ public class MediaSessionCompat {
                     int n6 = MediaSessionImplBase.this.mLocalStream;
                     VolumeProviderCompat volumeProviderCompat = MediaSessionImplBase.this.mVolumeProvider;
                     if (n5 == 2) {
-                        n4 = volumeProviderCompat.getVolumeControl();
+                        n2 = volumeProviderCompat.getVolumeControl();
                         n3 = volumeProviderCompat.getMaxVolume();
-                        n2 = volumeProviderCompat.getCurrentVolume();
+                        n4 = volumeProviderCompat.getCurrentVolume();
                     } else {
-                        n4 = 2;
+                        n2 = 2;
                         n3 = MediaSessionImplBase.this.mAudioManager.getStreamMaxVolume(n6);
-                        n2 = MediaSessionImplBase.this.mAudioManager.getStreamVolume(n6);
+                        n4 = MediaSessionImplBase.this.mAudioManager.getStreamVolume(n6);
                     }
-                    return new ParcelableVolumeInfo(n5, n6, n4, n3, n2);
+                    return new ParcelableVolumeInfo(n5, n6, n2, n3, n4);
                 }
             }
 

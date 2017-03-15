@@ -90,8 +90,8 @@ public class CustomTabsClient {
      * Enabled aggressive block sorting
      */
     public static String getPackageName(Context intent, @Nullable List<String> intent2, boolean bl) {
-        String string2;
         void var3_8;
+        String string2;
         PackageManager packageManager = intent.getPackageManager();
         intent = intent2 == null ? new Intent() : intent2;
         Object object = new Intent("android.intent.action.VIEW", Uri.parse((String)"http://"));
@@ -165,7 +165,7 @@ public class CustomTabsClient {
             boolean bl = this.mService.warmup(l2);
             return bl;
         }
-        catch (RemoteException var4_3) {
+        catch (RemoteException var3_3) {
             return false;
         }
     }

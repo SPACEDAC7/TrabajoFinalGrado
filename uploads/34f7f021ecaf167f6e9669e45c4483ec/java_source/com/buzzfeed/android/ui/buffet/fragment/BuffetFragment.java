@@ -740,8 +740,8 @@ NavigationBuffetItem {
      */
     @Override
     public void onShareClicked(final FlowItem flowItem, final int n2) {
-        long l2;
         String string2;
+        long l2;
         String string3;
         String string4 = null;
         String string5 = null;

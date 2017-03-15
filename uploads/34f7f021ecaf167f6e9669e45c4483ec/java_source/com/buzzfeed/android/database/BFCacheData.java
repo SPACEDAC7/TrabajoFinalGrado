@@ -446,48 +446,48 @@ public class BFCacheData {
      * Lifted jumps to return sites
      */
     private static void writePutCache(SQLiteDatabase var0, PutCache var1_2) {
-        var6_3 = BFCacheData.TAG + ".writePutCache";
-        var2_4 = System.currentTimeMillis();
-        var5_5 = null;
-        var4_7 = null;
+        var4_3 = BFCacheData.TAG + ".writePutCache";
+        var7_4 = System.currentTimeMillis();
+        var3_5 = null;
+        var2_7 = null;
         if (var1_2.object != null) {
-            var4_7 = var5_5;
+            var2_7 = var3_5;
             try {
-                var7_8 = new ByteArrayOutputStream();
-                var4_7 = var5_5;
-                var8_9 = new ObjectOutputStream(var7_8);
-                var4_7 = var5_5;
-                var8_9.writeObject(var1_2.object);
-                var4_7 = var5_5;
-                var4_7 = var5_5 = var7_8.toByteArray();
-                var8_9.close();
-                var4_7 = var5_5;
-                var7_8.close();
-                var4_7 = var5_5;
+                var5_8 = new ByteArrayOutputStream();
+                var2_7 = var3_5;
+                var6_9 = new ObjectOutputStream(var5_8);
+                var2_7 = var3_5;
+                var6_9.writeObject(var1_2.object);
+                var2_7 = var3_5;
+                var2_7 = var3_5 = var5_8.toByteArray();
+                var6_9.close();
+                var2_7 = var3_5;
+                var5_8.close();
+                var2_7 = var3_5;
             }
-            catch (IOException var5_6) {
-                LogUtil.e(var6_3, "IOException trying to convert cache: " + var1_2.cacheId, var5_6);
+            catch (IOException var3_6) {
+                LogUtil.e(var4_3, "IOException trying to convert cache: " + var1_2.cacheId, var3_6);
             }
         }
-        var5_5 = new byte[]();
-        var5_5.put("cacheid", var1_2.cacheId);
-        var5_5.put("cachetype", var1_2.type);
-        var5_5.put("cachedata", var4_7);
-        var5_5.put("timestamp", Long.valueOf(var2_4));
-        var4_7 = BFCacheData.getObject(var0, var1_2.type, var1_2.cacheId);
-        if (var4_7 != null) ** GOTO lbl33
+        var3_5 = new byte[]();
+        var3_5.put("cacheid", var1_2.cacheId);
+        var3_5.put("cachetype", var1_2.type);
+        var3_5.put("cachedata", var2_7);
+        var3_5.put("timestamp", Long.valueOf(var7_4));
+        var2_7 = BFCacheData.getObject(var0, var1_2.type, var1_2.cacheId);
+        if (var2_7 != null) ** GOTO lbl33
         try {
-            LogUtil.d(var6_3, "Inserting Cache: " + var1_2.object.toString());
-            var0.insertOrThrow("bfCache", null, (ContentValues)var5_5);
+            LogUtil.d(var4_3, "Inserting Cache: " + var1_2.object.toString());
+            var0.insertOrThrow("bfCache", null, (ContentValues)var3_5);
             return;
 lbl33: // 1 sources:
-            if (var4_7.equals(var1_2.object) != false) return;
-            LogUtil.d(var6_3, "Updating Cache: " + var1_2.object.toString());
-            var0.update("bfCache", (ContentValues)var5_5, "cachetype = ? AND cacheid = ?", new String[]{var1_2.type, var1_2.cacheId});
+            if (var2_7.equals(var1_2.object) != false) return;
+            LogUtil.d(var4_3, "Updating Cache: " + var1_2.object.toString());
+            var0.update("bfCache", (ContentValues)var3_5, "cachetype = ? AND cacheid = ?", new String[]{var1_2.type, var1_2.cacheId});
             return;
         }
         catch (SQLiteException var0_1) {
-            LogUtil.e(var6_3, "Error writing to the database", (Throwable)var0_1);
+            LogUtil.e(var4_3, "Error writing to the database", (Throwable)var0_1);
             return;
         }
     }

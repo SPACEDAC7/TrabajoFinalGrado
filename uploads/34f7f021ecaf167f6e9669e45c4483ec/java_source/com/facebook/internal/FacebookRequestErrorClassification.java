@@ -2,12 +2,16 @@
  * Decompiled with CFR 0_115.
  * 
  * Could not load the following classes:
+ *  com.facebook.internal.FacebookRequestErrorClassification$1
+ *  com.facebook.internal.FacebookRequestErrorClassification$2
+ *  com.facebook.internal.FacebookRequestErrorClassification$3
  *  org.json.JSONArray
  *  org.json.JSONObject
  */
 package com.facebook.internal;
 
 import com.facebook.FacebookRequestError;
+import com.facebook.internal.FacebookRequestErrorClassification;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -60,67 +64,67 @@ public final class FacebookRequestErrorClassification {
         String string4 = null;
         int n2 = 0;
         while (n2 < jSONArray.length()) {
-            Map<Integer, Set<Integer>> map4;
             String string5;
-            String string6;
-            String string7;
+            Map<Integer, Set<Integer>> map4;
             Map<Integer, Set<Integer>> map5;
+            String string6;
             Map<Integer, Set<Integer>> map6;
+            String string7;
             JSONObject jSONObject = jSONArray.optJSONObject(n2);
             if (jSONObject == null) {
                 string7 = string4;
-                string5 = string3;
-                string6 = string2;
-                map6 = map3;
-                map4 = map2;
-                map5 = map;
+                string6 = string3;
+                string5 = string2;
+                map5 = map3;
+                map6 = map2;
+                map4 = map;
             } else {
                 String string8 = jSONObject.optString("name");
-                map5 = map;
-                map4 = map2;
-                map6 = map3;
-                string6 = string2;
-                string5 = string3;
+                map4 = map;
+                map6 = map2;
+                map5 = map3;
+                string5 = string2;
+                string6 = string3;
                 string7 = string4;
                 if (string8 != null) {
                     if (string8.equalsIgnoreCase("other")) {
-                        string6 = jSONObject.optString("recovery_message", null);
-                        map5 = FacebookRequestErrorClassification.parseJSONDefinition(jSONObject);
-                        map4 = map2;
-                        map6 = map3;
-                        string5 = string3;
-                        string7 = string4;
-                    } else if (string8.equalsIgnoreCase("transient")) {
                         string5 = jSONObject.optString("recovery_message", null);
                         map4 = FacebookRequestErrorClassification.parseJSONDefinition(jSONObject);
-                        map5 = map;
-                        map6 = map3;
-                        string6 = string2;
+                        map6 = map2;
+                        map5 = map3;
+                        string6 = string3;
+                        string7 = string4;
+                    } else if (string8.equalsIgnoreCase("transient")) {
+                        string6 = jSONObject.optString("recovery_message", null);
+                        map6 = FacebookRequestErrorClassification.parseJSONDefinition(jSONObject);
+                        map4 = map;
+                        map5 = map3;
+                        string5 = string2;
                         string7 = string4;
                     } else {
-                        map5 = map;
-                        map4 = map2;
-                        map6 = map3;
-                        string6 = string2;
-                        string5 = string3;
+                        map4 = map;
+                        map6 = map2;
+                        map5 = map3;
+                        string5 = string2;
+                        string6 = string3;
                         string7 = string4;
                         if (string8.equalsIgnoreCase("login_recoverable")) {
                             string7 = jSONObject.optString("recovery_message", null);
-                            map6 = FacebookRequestErrorClassification.parseJSONDefinition(jSONObject);
-                            map5 = map;
-                            map4 = map2;
-                            string6 = string2;
-                            string5 = string3;
+                            map5 = FacebookRequestErrorClassification.parseJSONDefinition(jSONObject);
+                            map4 = map;
+                            map6 = map2;
+                            string5 = string2;
+                            string6 = string3;
                         }
                     }
                 }
             }
             ++n2;
-            map = map5;
-            map2 = map4;
-            map3 = map6;
-            string2 = string6;
-            string3 = string5;
+            map = map4;
+            map2 = map6;
+            map3 = map5;
+            string2 = string5;
+            string3 = string6;
             string4 = string7;
         }
         return new FacebookRequestErrorClassification(map, map2, map3, string2, string3, string4);
@@ -137,7 +141,7 @@ public final class FacebookRequestErrorClassification {
     }
 
     private static FacebookRequestErrorClassification getDefaultErrorClassificationImpl() {
-        return new FacebookRequestErrorClassification(null, new HashMap<Integer, Set<Integer>>(){}, new HashMap<Integer, Set<Integer>>(){}, null, null, null);
+        return new FacebookRequestErrorClassification(null, (Map<Integer, Set<Integer>>)new /* Unavailable Anonymous Inner Class!! */, (Map<Integer, Set<Integer>>)new /* Unavailable Anonymous Inner Class!! */, null, null, null);
     }
 
     /*
@@ -225,6 +229,5 @@ public final class FacebookRequestErrorClassification {
     public Map<Integer, Set<Integer>> getTransientErrors() {
         return this.transientErrors;
     }
-
 }
 

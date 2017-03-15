@@ -774,20 +774,20 @@ lbl12: // 2 sources:
         Rect rect = this.mTempRect;
         if (this.mThumbDrawable != null) {
             this.mThumbDrawable.getPadding(rect);
-            n5 = this.mThumbDrawable.getIntrinsicWidth() - rect.left - rect.right;
-            n4 = this.mThumbDrawable.getIntrinsicHeight();
+            n4 = this.mThumbDrawable.getIntrinsicWidth() - rect.left - rect.right;
+            n5 = this.mThumbDrawable.getIntrinsicHeight();
         } else {
-            n5 = 0;
             n4 = 0;
+            n5 = 0;
         }
         int n6 = this.mShowText ? Math.max(this.mOnLayout.getWidth(), this.mOffLayout.getWidth()) + this.mThumbTextPadding * 2 : 0;
-        this.mThumbWidth = Math.max(n6, n5);
+        this.mThumbWidth = Math.max(n6, n4);
         if (this.mTrackDrawable != null) {
             this.mTrackDrawable.getPadding(rect);
-            n5 = this.mTrackDrawable.getIntrinsicHeight();
+            n4 = this.mTrackDrawable.getIntrinsicHeight();
         } else {
             rect.setEmpty();
-            n5 = 0;
+            n4 = 0;
         }
         int n7 = rect.left;
         int n8 = rect.right;
@@ -799,12 +799,12 @@ lbl12: // 2 sources:
             n6 = Math.max(n8, rect.right);
         }
         n6 = Math.max(this.mSwitchMinWidth, this.mThumbWidth * 2 + n9 + n6);
-        n4 = Math.max(n5, n4);
+        n5 = Math.max(n4, n5);
         this.mSwitchWidth = n6;
-        this.mSwitchHeight = n4;
+        this.mSwitchHeight = n5;
         super.onMeasure(n2, n3);
-        if (this.getMeasuredHeight() < n4) {
-            this.setMeasuredDimension(ViewCompat.getMeasuredWidthAndState((View)this), n4);
+        if (this.getMeasuredHeight() < n5) {
+            this.setMeasuredDimension(ViewCompat.getMeasuredWidthAndState((View)this), n5);
         }
     }
 

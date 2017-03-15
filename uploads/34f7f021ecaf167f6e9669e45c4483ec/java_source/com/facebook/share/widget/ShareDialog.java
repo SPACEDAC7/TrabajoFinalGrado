@@ -5,6 +5,24 @@
  *  android.app.Activity
  *  android.content.Context
  *  android.os.Bundle
+ *  com.facebook.internal.AppCall
+ *  com.facebook.internal.CallbackManagerImpl$RequestCodeOffset
+ *  com.facebook.internal.DialogFeature
+ *  com.facebook.internal.DialogPresenter
+ *  com.facebook.internal.FacebookDialogBase
+ *  com.facebook.share.Sharer
+ *  com.facebook.share.Sharer$Result
+ *  com.facebook.share.internal.OpenGraphActionDialogFeature
+ *  com.facebook.share.internal.ShareDialogFeature
+ *  com.facebook.share.internal.ShareInternalUtility
+ *  com.facebook.share.model.ShareOpenGraphContent
+ *  com.facebook.share.model.SharePhotoContent
+ *  com.facebook.share.model.ShareVideoContent
+ *  com.facebook.share.widget.ShareDialog$1
+ *  com.facebook.share.widget.ShareDialog$FeedHandler
+ *  com.facebook.share.widget.ShareDialog$Mode
+ *  com.facebook.share.widget.ShareDialog$NativeHandler
+ *  com.facebook.share.widget.ShareDialog$WebShareHandler
  */
 package com.facebook.share.widget;
 
@@ -12,6 +30,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.appevents.AppEventsLogger;
 import com.facebook.internal.AppCall;
@@ -20,21 +39,17 @@ import com.facebook.internal.DialogFeature;
 import com.facebook.internal.DialogPresenter;
 import com.facebook.internal.FacebookDialogBase;
 import com.facebook.share.Sharer;
-import com.facebook.share.internal.LegacyNativeDialogParameters;
-import com.facebook.share.internal.NativeDialogParameters;
 import com.facebook.share.internal.OpenGraphActionDialogFeature;
-import com.facebook.share.internal.ShareContentValidation;
 import com.facebook.share.internal.ShareDialogFeature;
 import com.facebook.share.internal.ShareInternalUtility;
-import com.facebook.share.internal.WebDialogParameters;
 import com.facebook.share.model.ShareContent;
 import com.facebook.share.model.ShareLinkContent;
 import com.facebook.share.model.ShareOpenGraphContent;
 import com.facebook.share.model.SharePhotoContent;
 import com.facebook.share.model.ShareVideoContent;
+import com.facebook.share.widget.ShareDialog;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 public final class ShareDialog
 extends FacebookDialogBase<ShareContent, Sharer.Result>
@@ -48,22 +63,50 @@ implements Sharer {
 
     public ShareDialog(Activity activity) {
         super(activity, DEFAULT_REQUEST_CODE);
-        ShareInternalUtility.registerStaticShareCallback(DEFAULT_REQUEST_CODE);
+        ShareInternalUtility.registerStaticShareCallback((int)DEFAULT_REQUEST_CODE);
     }
 
     ShareDialog(Activity activity, int n2) {
         super(activity, n2);
-        ShareInternalUtility.registerStaticShareCallback(n2);
+        ShareInternalUtility.registerStaticShareCallback((int)n2);
     }
 
     public ShareDialog(Fragment fragment) {
         super(fragment, DEFAULT_REQUEST_CODE);
-        ShareInternalUtility.registerStaticShareCallback(DEFAULT_REQUEST_CODE);
+        ShareInternalUtility.registerStaticShareCallback((int)DEFAULT_REQUEST_CODE);
     }
 
     ShareDialog(Fragment fragment, int n2) {
         super(fragment, n2);
-        ShareInternalUtility.registerStaticShareCallback(n2);
+        ShareInternalUtility.registerStaticShareCallback((int)n2);
+    }
+
+    static /* synthetic */ boolean access$300(Class class_) {
+        return ShareDialog.canShowNative(class_);
+    }
+
+    static /* synthetic */ Activity access$400(ShareDialog shareDialog) {
+        return shareDialog.getActivityContext();
+    }
+
+    static /* synthetic */ void access$500(ShareDialog shareDialog, Context context, ShareContent shareContent, Mode mode) {
+        shareDialog.logDialogShare(context, shareContent, mode);
+    }
+
+    static /* synthetic */ DialogFeature access$600(Class class_) {
+        return ShareDialog.getFeature(class_);
+    }
+
+    static /* synthetic */ boolean access$700(Class class_) {
+        return ShareDialog.canShowWebTypeCheck(class_);
+    }
+
+    static /* synthetic */ Activity access$800(ShareDialog shareDialog) {
+        return shareDialog.getActivityContext();
+    }
+
+    static /* synthetic */ Activity access$900(ShareDialog shareDialog) {
+        return shareDialog.getActivityContext();
     }
 
     public static boolean canShow(Class<? extends ShareContent> class_) {
@@ -73,8 +116,8 @@ implements Sharer {
         return false;
     }
 
-    private static boolean canShowNative(Class<? extends ShareContent> object) {
-        if ((object = ShareDialog.getFeature(object)) != null && DialogPresenter.canPresentNativeDialogWithFeature((DialogFeature)object)) {
+    private static boolean canShowNative(Class<? extends ShareContent> dialogFeature) {
+        if ((dialogFeature = ShareDialog.getFeature(dialogFeature)) != null && DialogPresenter.canPresentNativeDialogWithFeature((DialogFeature)dialogFeature)) {
             return true;
         }
         return false;
@@ -136,11 +179,11 @@ implements Sharer {
     }
 
     public static void show(Activity activity, ShareContent shareContent) {
-        new ShareDialog(activity).show(shareContent);
+        new ShareDialog(activity).show((Object)shareContent);
     }
 
     public static void show(Fragment fragment, ShareContent shareContent) {
-        new ShareDialog(fragment).show(shareContent);
+        new ShareDialog(fragment).show((Object)shareContent);
     }
 
     public boolean canShow(ShareContent shareContent, Mode mode) {
@@ -148,34 +191,29 @@ implements Sharer {
         if (mode == Mode.AUTOMATIC) {
             object = BASE_AUTOMATIC_MODE;
         }
-        return this.canShowImpl(shareContent, object);
+        return this.canShowImpl((Object)shareContent, object);
     }
 
-    @Override
     protected AppCall createBaseAppCall() {
         return new AppCall(this.getRequestCode());
     }
 
-    @Override
     protected List<FacebookDialogBase<ShareContent, Sharer.Result>> getOrderedModeHandlers() {
         ArrayList<FacebookDialogBase<ShareContent, Sharer.Result>> arrayList = new ArrayList<FacebookDialogBase<ShareContent, Sharer.Result>>();
-        arrayList.add(new NativeHandler());
-        arrayList.add(new FeedHandler());
-        arrayList.add(new WebShareHandler());
+        arrayList.add((FacebookDialogBase<ShareContent, Sharer.Result>)new NativeHandler(this, null));
+        arrayList.add((FacebookDialogBase<ShareContent, Sharer.Result>)new FeedHandler(this, null));
+        arrayList.add((FacebookDialogBase<ShareContent, Sharer.Result>)new WebShareHandler(this, null));
         return arrayList;
     }
 
-    @Override
     public boolean getShouldFailOnDataError() {
         return this.shouldFailOnDataError;
     }
 
-    @Override
     protected void registerCallbackImpl(CallbackManagerImpl callbackManagerImpl, FacebookCallback<Sharer.Result> facebookCallback) {
-        ShareInternalUtility.registerSharerCallback(this.getRequestCode(), callbackManagerImpl, facebookCallback);
+        ShareInternalUtility.registerSharerCallback((int)this.getRequestCode(), (CallbackManager)callbackManagerImpl, facebookCallback);
     }
 
-    @Override
     public void setShouldFailOnDataError(boolean bl) {
         this.shouldFailOnDataError = bl;
     }
@@ -189,122 +227,7 @@ implements Sharer {
         if (this.isAutomaticMode) {
             object = BASE_AUTOMATIC_MODE;
         }
-        this.showImpl(shareContent, object);
+        this.showImpl((Object)shareContent, object);
     }
-
-    private class FeedHandler
-    extends FacebookDialogBase<ShareContent, Sharer.Result> {
-        private FeedHandler() {
-        }
-
-        @Override
-        public boolean canShow(ShareContent shareContent) {
-            return shareContent instanceof ShareLinkContent;
-        }
-
-        public AppCall createAppCall(ShareContent shareContent) {
-            ShareDialog.this.logDialogShare((Context)ShareDialog.this.getActivityContext(), shareContent, Mode.FEED);
-            shareContent = (ShareLinkContent)shareContent;
-            AppCall appCall = ShareDialog.this.createBaseAppCall();
-            ShareContentValidation.validateForWebShare(shareContent);
-            DialogPresenter.setupAppCallForWebDialog(appCall, "feed", WebDialogParameters.createForFeed((ShareLinkContent)shareContent));
-            return appCall;
-        }
-
-        public Object getMode() {
-            return Mode.FEED;
-        }
-    }
-
-    public static enum Mode {
-        AUTOMATIC,
-        NATIVE,
-        WEB,
-        FEED;
-        
-
-        private Mode() {
-        }
-    }
-
-    private class NativeHandler
-    extends FacebookDialogBase<ShareContent, Sharer.Result> {
-        private NativeHandler() {
-        }
-
-        @Override
-        public boolean canShow(ShareContent shareContent) {
-            if (shareContent != null && ShareDialog.canShowNative(shareContent.getClass())) {
-                return true;
-            }
-            return false;
-        }
-
-        public AppCall createAppCall(final ShareContent shareContent) {
-            ShareDialog.this.logDialogShare((Context)ShareDialog.this.getActivityContext(), shareContent, Mode.NATIVE);
-            ShareContentValidation.validateForNativeShare(shareContent);
-            final AppCall appCall = ShareDialog.this.createBaseAppCall();
-            DialogPresenter.setupAppCallForNativeDialog(appCall, new DialogPresenter.ParameterProvider(ShareDialog.this.getShouldFailOnDataError()){
-                final /* synthetic */ boolean val$shouldFailOnDataError;
-
-                @Override
-                public Bundle getLegacyParameters() {
-                    return LegacyNativeDialogParameters.create(appCall.getCallId(), shareContent, this.val$shouldFailOnDataError);
-                }
-
-                @Override
-                public Bundle getParameters() {
-                    return NativeDialogParameters.create(appCall.getCallId(), shareContent, this.val$shouldFailOnDataError);
-                }
-            }, ShareDialog.getFeature(shareContent.getClass()));
-            return appCall;
-        }
-
-        public Object getMode() {
-            return Mode.NATIVE;
-        }
-
-    }
-
-    private class WebShareHandler
-    extends FacebookDialogBase<ShareContent, Sharer.Result> {
-        private WebShareHandler() {
-        }
-
-        private String getActionName(ShareContent shareContent) {
-            if (shareContent instanceof ShareLinkContent) {
-                return "share";
-            }
-            if (shareContent instanceof ShareOpenGraphContent) {
-                return "share_open_graph";
-            }
-            return null;
-        }
-
-        @Override
-        public boolean canShow(ShareContent shareContent) {
-            if (shareContent != null && ShareDialog.canShowWebTypeCheck(shareContent.getClass())) {
-                return true;
-            }
-            return false;
-        }
-
-        /*
-         * Enabled aggressive block sorting
-         */
-        public AppCall createAppCall(ShareContent shareContent) {
-            ShareDialog.this.logDialogShare((Context)ShareDialog.this.getActivityContext(), shareContent, Mode.WEB);
-            AppCall appCall = ShareDialog.this.createBaseAppCall();
-            ShareContentValidation.validateForWebShare(shareContent);
-            Bundle bundle = shareContent instanceof ShareLinkContent ? WebDialogParameters.create((ShareLinkContent)shareContent) : WebDialogParameters.create((ShareOpenGraphContent)shareContent);
-            DialogPresenter.setupAppCallForWebDialog(appCall, this.getActionName(shareContent), bundle);
-            return appCall;
-        }
-
-        public Object getMode() {
-            return Mode.WEB;
-        }
-    }
-
 }
 

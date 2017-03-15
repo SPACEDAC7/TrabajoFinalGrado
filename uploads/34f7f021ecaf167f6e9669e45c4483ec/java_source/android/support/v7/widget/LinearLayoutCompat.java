@@ -139,9 +139,9 @@ extends ViewGroup {
      * Enabled aggressive block sorting
      */
     void drawDividersHorizontal(Canvas canvas) {
-        View view;
-        LayoutParams layoutParams;
         int n2;
+        LayoutParams layoutParams;
+        View view;
         int n3 = this.getVirtualChildCount();
         boolean bl = ViewUtils.isLayoutRtl((View)this);
         for (n2 = 0; n2 < n3; ++n2) {
@@ -167,8 +167,8 @@ extends ViewGroup {
      * Enabled aggressive block sorting
      */
     void drawDividersVertical(Canvas canvas) {
-        int n2;
         View view;
+        int n2;
         LayoutParams layoutParams;
         int n3 = this.getVirtualChildCount();
         for (n2 = 0; n2 < n3; ++n2) {
@@ -523,329 +523,329 @@ extends ViewGroup {
     void measureHorizontal(int var1_1, int var2_2) {
         block54 : {
             this.mTotalLength = 0;
-            var13_3 = 0;
-            var8_4 = 0;
-            var6_5 = 0;
-            var10_6 = 0;
-            var7_7 = 1;
+            var17_3 = 0;
+            var12_4 = 0;
+            var10_5 = 0;
+            var14_6 = 0;
+            var11_7 = 1;
             var3_8 = 0.0f;
-            var21_9 = this.getVirtualChildCount();
-            var23_10 = View.MeasureSpec.getMode((int)var1_1);
-            var22_11 = View.MeasureSpec.getMode((int)var2_2);
-            var9_12 = 0;
-            var14_13 = 0;
+            var25_9 = this.getVirtualChildCount();
+            var27_10 = View.MeasureSpec.getMode((int)var1_1);
+            var26_11 = View.MeasureSpec.getMode((int)var2_2);
+            var13_12 = 0;
+            var18_13 = 0;
             if (this.mMaxAscent == null || this.mMaxDescent == null) {
                 this.mMaxAscent = new int[4];
                 this.mMaxDescent = new int[4];
             }
-            var28_14 = this.mMaxAscent;
-            var29_15 = this.mMaxDescent;
-            var28_14[3] = -1;
-            var28_14[2] = -1;
-            var28_14[1] = -1;
-            var28_14[0] = -1;
-            var29_15[3] = -1;
-            var29_15[2] = -1;
-            var29_15[1] = -1;
-            var29_15[0] = -1;
-            var26_16 = this.mBaselineAligned;
-            var27_17 = this.mUseLargestChild;
-            var17_18 = var23_10 == 1073741824;
-            var12_19 = Integer.MIN_VALUE;
-            for (var11_20 = 0; var11_20 < var21_9; ++var11_20) {
-                var30_26 = this.getVirtualChildAt(var11_20);
-                if (var30_26 == null) {
-                    this.mTotalLength += this.measureNullChild(var11_20);
-                    var16_22 = var12_19;
-                } else if (var30_26.getVisibility() == 8) {
-                    var11_20 += this.getChildrenSkipCount(var30_26, var11_20);
-                    var16_22 = var12_19;
+            var6_14 = this.mMaxAscent;
+            var7_15 = this.mMaxDescent;
+            var6_14[3] = -1;
+            var6_14[2] = -1;
+            var6_14[1] = -1;
+            var6_14[0] = -1;
+            var7_15[3] = -1;
+            var7_15[2] = -1;
+            var7_15[1] = -1;
+            var7_15[0] = -1;
+            var30_16 = this.mBaselineAligned;
+            var31_17 = this.mUseLargestChild;
+            var21_18 = var27_10 == 1073741824;
+            var16_19 = Integer.MIN_VALUE;
+            for (var15_20 = 0; var15_20 < var25_9; ++var15_20) {
+                var8_21 = this.getVirtualChildAt(var15_20);
+                if (var8_21 == null) {
+                    this.mTotalLength += this.measureNullChild(var15_20);
+                    var20_24 = var16_19;
+                } else if (var8_21.getVisibility() == 8) {
+                    var15_20 += this.getChildrenSkipCount(var8_21, var15_20);
+                    var20_24 = var16_19;
                 } else {
-                    if (this.hasDividerBeforeChildAt(var11_20)) {
+                    if (this.hasDividerBeforeChildAt(var15_20)) {
                         this.mTotalLength += this.mDividerWidth;
                     }
-                    var31_27 = (LayoutParams)var30_26.getLayoutParams();
-                    var3_8 += var31_27.weight;
-                    if (var23_10 == 1073741824 && var31_27.width == 0 && var31_27.weight > 0.0f) {
-                        if (var17_18) {
-                            this.mTotalLength += var31_27.leftMargin + var31_27.rightMargin;
+                    var9_22 = (LayoutParams)var8_21.getLayoutParams();
+                    var3_8 += var9_22.weight;
+                    if (var27_10 == 1073741824 && var9_22.width == 0 && var9_22.weight > 0.0f) {
+                        if (var21_18) {
+                            this.mTotalLength += var9_22.leftMargin + var9_22.rightMargin;
                         } else {
-                            var15_21 = this.mTotalLength;
-                            this.mTotalLength = Math.max(var15_21, var31_27.leftMargin + var15_21 + var31_27.rightMargin);
+                            var19_23 = this.mTotalLength;
+                            this.mTotalLength = Math.max(var19_23, var9_22.leftMargin + var19_23 + var9_22.rightMargin);
                         }
-                        if (var26_16) {
-                            var15_21 = View.MeasureSpec.makeMeasureSpec((int)0, (int)0);
-                            var30_26.measure(var15_21, var15_21);
-                            var15_21 = var14_13;
-                            var16_22 = var12_19;
+                        if (var30_16) {
+                            var19_23 = View.MeasureSpec.makeMeasureSpec((int)0, (int)0);
+                            var8_21.measure(var19_23, var19_23);
+                            var19_23 = var18_13;
+                            var20_24 = var16_19;
                         } else {
-                            var15_21 = 1;
-                            var16_22 = var12_19;
+                            var19_23 = 1;
+                            var20_24 = var16_19;
                         }
                     } else {
-                        var15_21 = var16_22 = Integer.MIN_VALUE;
-                        if (var31_27.width == 0) {
-                            var15_21 = var16_22;
-                            if (var31_27.weight > 0.0f) {
-                                var15_21 = 0;
-                                var31_27.width = -2;
+                        var19_23 = var20_24 = Integer.MIN_VALUE;
+                        if (var9_22.width == 0) {
+                            var19_23 = var20_24;
+                            if (var9_22.weight > 0.0f) {
+                                var19_23 = 0;
+                                var9_22.width = -2;
                             }
                         }
-                        var16_22 = var3_8 == 0.0f ? this.mTotalLength : 0;
-                        this.measureChildBeforeLayout(var30_26, var11_20, var1_1, var16_22, var2_2, 0);
-                        if (var15_21 != Integer.MIN_VALUE) {
-                            var31_27.width = var15_21;
+                        var20_24 = var3_8 == 0.0f ? this.mTotalLength : 0;
+                        this.measureChildBeforeLayout(var8_21, var15_20, var1_1, var20_24, var2_2, 0);
+                        if (var19_23 != Integer.MIN_VALUE) {
+                            var9_22.width = var19_23;
                         }
-                        var18_23 = var30_26.getMeasuredWidth();
-                        if (var17_18) {
-                            this.mTotalLength += var31_27.leftMargin + var18_23 + var31_27.rightMargin + this.getNextLocationOffset(var30_26);
+                        var22_26 = var8_21.getMeasuredWidth();
+                        if (var21_18) {
+                            this.mTotalLength += var9_22.leftMargin + var22_26 + var9_22.rightMargin + this.getNextLocationOffset(var8_21);
                         } else {
-                            var15_21 = this.mTotalLength;
-                            this.mTotalLength = Math.max(var15_21, var15_21 + var18_23 + var31_27.leftMargin + var31_27.rightMargin + this.getNextLocationOffset(var30_26));
+                            var19_23 = this.mTotalLength;
+                            this.mTotalLength = Math.max(var19_23, var19_23 + var22_26 + var9_22.leftMargin + var9_22.rightMargin + this.getNextLocationOffset(var8_21));
                         }
-                        var16_22 = var12_19;
-                        var15_21 = var14_13;
-                        if (var27_17) {
-                            var16_22 = Math.max(var18_23, var12_19);
-                            var15_21 = var14_13;
-                        }
-                    }
-                    var18_23 = 0;
-                    var12_19 = var9_12;
-                    var14_13 = var18_23;
-                    if (var22_11 != 1073741824) {
-                        var12_19 = var9_12;
-                        var14_13 = var18_23;
-                        if (var31_27.height == -1) {
-                            var12_19 = 1;
-                            var14_13 = 1;
+                        var20_24 = var16_19;
+                        var19_23 = var18_13;
+                        if (var31_17) {
+                            var20_24 = Math.max(var22_26, var16_19);
+                            var19_23 = var18_13;
                         }
                     }
-                    var9_12 = var31_27.topMargin + var31_27.bottomMargin;
-                    var18_23 = var30_26.getMeasuredHeight() + var9_12;
-                    var19_24 = ViewUtils.combineMeasuredStates(var8_4, ViewCompat.getMeasuredState(var30_26));
-                    if (var26_16 && (var20_25 = var30_26.getBaseline()) != -1) {
-                        var8_4 = var31_27.gravity < 0 ? this.mGravity : var31_27.gravity;
-                        var8_4 = ((var8_4 & 112) >> 4 & -2) >> 1;
-                        var28_14[var8_4] = Math.max((int)var28_14[var8_4], var20_25);
-                        var29_15[var8_4] = Math.max(var29_15[var8_4], var18_23 - var20_25);
-                    }
-                    var13_3 = Math.max(var13_3, var18_23);
-                    var7_7 = var7_7 != 0 && var31_27.height == -1 ? 1 : 0;
-                    if (var31_27.weight > 0.0f) {
-                        if (var14_13 == 0) {
-                            var9_12 = var18_23;
+                    var22_26 = 0;
+                    var16_19 = var13_12;
+                    var18_13 = var22_26;
+                    if (var26_11 != 1073741824) {
+                        var16_19 = var13_12;
+                        var18_13 = var22_26;
+                        if (var9_22.height == -1) {
+                            var16_19 = 1;
+                            var18_13 = 1;
                         }
-                        var10_6 = Math.max(var10_6, var9_12);
+                    }
+                    var13_12 = var9_22.topMargin + var9_22.bottomMargin;
+                    var22_26 = var8_21.getMeasuredHeight() + var13_12;
+                    var23_25 = ViewUtils.combineMeasuredStates(var12_4, ViewCompat.getMeasuredState(var8_21));
+                    if (var30_16 && (var24_27 = var8_21.getBaseline()) != -1) {
+                        var12_4 = var9_22.gravity < 0 ? this.mGravity : var9_22.gravity;
+                        var12_4 = ((var12_4 & 112) >> 4 & -2) >> 1;
+                        var6_14[var12_4] = Math.max((int)var6_14[var12_4], var24_27);
+                        var7_15[var12_4] = Math.max(var7_15[var12_4], var22_26 - var24_27);
+                    }
+                    var17_3 = Math.max(var17_3, var22_26);
+                    var11_7 = var11_7 != 0 && var9_22.height == -1 ? 1 : 0;
+                    if (var9_22.weight > 0.0f) {
+                        if (var18_13 == 0) {
+                            var13_12 = var22_26;
+                        }
+                        var14_6 = Math.max(var14_6, var13_12);
                     } else {
-                        if (var14_13 == 0) {
-                            var9_12 = var18_23;
+                        if (var18_13 == 0) {
+                            var13_12 = var22_26;
                         }
-                        var6_5 = Math.max(var6_5, var9_12);
+                        var10_5 = Math.max(var10_5, var13_12);
                     }
-                    var11_20 += this.getChildrenSkipCount(var30_26, var11_20);
-                    var8_4 = var19_24;
-                    var9_12 = var12_19;
-                    var14_13 = var15_21;
+                    var15_20 += this.getChildrenSkipCount(var8_21, var15_20);
+                    var12_4 = var23_25;
+                    var13_12 = var16_19;
+                    var18_13 = var19_23;
                 }
-                var12_19 = var16_22;
+                var16_19 = var20_24;
             }
-            if (this.mTotalLength > 0 && this.hasDividerBeforeChildAt(var21_9)) {
+            if (this.mTotalLength > 0 && this.hasDividerBeforeChildAt(var25_9)) {
                 this.mTotalLength += this.mDividerWidth;
             }
-            if (var28_14[1] == -1 && var28_14[0] == -1 && var28_14[2] == -1) {
-                var11_20 = var13_3;
-                if (var28_14[3] == -1) break block54;
+            if (var6_14[1] == -1 && var6_14[0] == -1 && var6_14[2] == -1) {
+                var15_20 = var17_3;
+                if (var6_14[3] == -1) break block54;
             }
-            var11_20 = Math.max(var13_3, Math.max(var28_14[3], Math.max(var28_14[0], Math.max(var28_14[1], var28_14[2]))) + Math.max(var29_15[3], Math.max(var29_15[0], Math.max(var29_15[1], var29_15[2]))));
+            var15_20 = Math.max(var17_3, Math.max(var6_14[3], Math.max(var6_14[0], Math.max(var6_14[1], var6_14[2]))) + Math.max(var7_15[3], Math.max(var7_15[0], Math.max(var7_15[1], var7_15[2]))));
         }
-        if (var27_17 && (var23_10 == Integer.MIN_VALUE || var23_10 == 0)) {
+        if (var31_17 && (var27_10 == Integer.MIN_VALUE || var27_10 == 0)) {
             this.mTotalLength = 0;
-            for (var13_3 = 0; var13_3 < var21_9; ++var13_3) {
-                var30_26 = this.getVirtualChildAt(var13_3);
-                if (var30_26 == null) {
-                    this.mTotalLength += this.measureNullChild(var13_3);
+            for (var17_3 = 0; var17_3 < var25_9; ++var17_3) {
+                var8_21 = this.getVirtualChildAt(var17_3);
+                if (var8_21 == null) {
+                    this.mTotalLength += this.measureNullChild(var17_3);
                     continue;
                 }
-                if (var30_26.getVisibility() == 8) {
-                    var13_3 += this.getChildrenSkipCount(var30_26, var13_3);
+                if (var8_21.getVisibility() == 8) {
+                    var17_3 += this.getChildrenSkipCount(var8_21, var17_3);
                     continue;
                 }
-                var31_27 = (LayoutParams)var30_26.getLayoutParams();
-                if (var17_18) {
-                    this.mTotalLength += var31_27.leftMargin + var12_19 + var31_27.rightMargin + this.getNextLocationOffset(var30_26);
+                var9_22 = (LayoutParams)var8_21.getLayoutParams();
+                if (var21_18) {
+                    this.mTotalLength += var9_22.leftMargin + var16_19 + var9_22.rightMargin + this.getNextLocationOffset(var8_21);
                     continue;
                 }
-                var15_21 = this.mTotalLength;
-                this.mTotalLength = Math.max(var15_21, var15_21 + var12_19 + var31_27.leftMargin + var31_27.rightMargin + this.getNextLocationOffset(var30_26));
+                var19_23 = this.mTotalLength;
+                this.mTotalLength = Math.max(var19_23, var19_23 + var16_19 + var9_22.leftMargin + var9_22.rightMargin + this.getNextLocationOffset(var8_21));
             }
         }
         this.mTotalLength += this.getPaddingLeft() + this.getPaddingRight();
-        var24_28 = ViewCompat.resolveSizeAndState(Math.max(this.mTotalLength, this.getSuggestedMinimumWidth()), var1_1, 0);
-        var13_3 = (var24_28 & 16777215) - this.mTotalLength;
-        if (var14_13 == 0 && (var13_3 == 0 || var3_8 <= 0.0f)) ** GOTO lbl155
+        var28_28 = ViewCompat.resolveSizeAndState(Math.max(this.mTotalLength, this.getSuggestedMinimumWidth()), var1_1, 0);
+        var17_3 = (var28_28 & 16777215) - this.mTotalLength;
+        if (var18_13 == 0 && (var17_3 == 0 || var3_8 <= 0.0f)) ** GOTO lbl155
         if (this.mWeightSum > 0.0f) {
             var3_8 = this.mWeightSum;
         }
-        var28_14[3] = -1;
-        var28_14[2] = -1;
-        var28_14[1] = -1;
-        var28_14[0] = -1;
-        var29_15[3] = -1;
-        var29_15[2] = -1;
-        var29_15[1] = -1;
-        var29_15[0] = -1;
-        var11_20 = -1;
+        var6_14[3] = -1;
+        var6_14[2] = -1;
+        var6_14[1] = -1;
+        var6_14[0] = -1;
+        var7_15[3] = -1;
+        var7_15[2] = -1;
+        var7_15[1] = -1;
+        var7_15[0] = -1;
+        var15_20 = -1;
         this.mTotalLength = 0;
-        var10_6 = var6_5;
+        var14_6 = var10_5;
         ** GOTO lbl168
 lbl155: // 1 sources:
-        var16_22 = Math.max(var6_5, var10_6);
-        var15_21 = var7_7;
-        var13_3 = var16_22;
-        var14_13 = var8_4;
-        var6_5 = var11_20;
-        if (!var27_17) ** GOTO lbl262
-        var15_21 = var7_7;
-        var13_3 = var16_22;
-        var14_13 = var8_4;
-        var6_5 = var11_20;
-        if (var23_10 == 1073741824) ** GOTO lbl262
-        var10_6 = 0;
+        var20_24 = Math.max(var10_5, var14_6);
+        var19_23 = var11_7;
+        var17_3 = var20_24;
+        var18_13 = var12_4;
+        var10_5 = var15_20;
+        if (!var31_17) ** GOTO lbl262
+        var19_23 = var11_7;
+        var17_3 = var20_24;
+        var18_13 = var12_4;
+        var10_5 = var15_20;
+        if (var27_10 == 1073741824) ** GOTO lbl262
+        var14_6 = 0;
         ** GOTO lbl272
 lbl168: // 2 sources:
-        for (var14_13 = 0; var14_13 < var21_9; ++var14_13) {
-            var30_26 = this.getVirtualChildAt(var14_13);
-            var15_21 = var7_7;
-            var16_22 = var10_6;
-            var18_23 = var8_4;
-            var19_24 = var13_3;
-            var20_25 = var11_20;
+        for (var18_13 = 0; var18_13 < var25_9; ++var18_13) {
+            var8_21 = this.getVirtualChildAt(var18_13);
+            var19_23 = var11_7;
+            var20_24 = var14_6;
+            var22_26 = var12_4;
+            var23_25 = var17_3;
+            var24_27 = var15_20;
             var5_30 = var3_8;
-            if (var30_26 != null) {
-                if (var30_26.getVisibility() == 8) {
+            if (var8_21 != null) {
+                if (var8_21.getVisibility() == 8) {
                     var5_30 = var3_8;
-                    var20_25 = var11_20;
-                    var19_24 = var13_3;
-                    var18_23 = var8_4;
-                    var16_22 = var10_6;
-                    var15_21 = var7_7;
+                    var24_27 = var15_20;
+                    var23_25 = var17_3;
+                    var22_26 = var12_4;
+                    var20_24 = var14_6;
+                    var19_23 = var11_7;
                 } else {
-                    var31_27 = (LayoutParams)var30_26.getLayoutParams();
-                    var5_30 = var31_27.weight;
-                    var12_19 = var8_4;
-                    var6_5 = var13_3;
+                    var9_22 = (LayoutParams)var8_21.getLayoutParams();
+                    var5_30 = var9_22.weight;
+                    var16_19 = var12_4;
+                    var10_5 = var17_3;
                     var4_29 = var3_8;
                     if (var5_30 > 0.0f) {
-                        var6_5 = (int)((float)var13_3 * var5_30 / var3_8);
+                        var10_5 = (int)((float)var17_3 * var5_30 / var3_8);
                         var4_29 = var3_8 - var5_30;
-                        var12_19 = var13_3 - var6_5;
-                        var15_21 = LinearLayoutCompat.getChildMeasureSpec((int)var2_2, (int)(this.getPaddingTop() + this.getPaddingBottom() + var31_27.topMargin + var31_27.bottomMargin), (int)var31_27.height);
-                        if (var31_27.width != 0 || var23_10 != 1073741824) {
-                            var6_5 = var13_3 = var30_26.getMeasuredWidth() + var6_5;
-                            if (var13_3 < 0) {
-                                var6_5 = 0;
+                        var16_19 = var17_3 - var10_5;
+                        var19_23 = LinearLayoutCompat.getChildMeasureSpec((int)var2_2, (int)(this.getPaddingTop() + this.getPaddingBottom() + var9_22.topMargin + var9_22.bottomMargin), (int)var9_22.height);
+                        if (var9_22.width != 0 || var27_10 != 1073741824) {
+                            var10_5 = var17_3 = var8_21.getMeasuredWidth() + var10_5;
+                            if (var17_3 < 0) {
+                                var10_5 = 0;
                             }
-                            var30_26.measure(View.MeasureSpec.makeMeasureSpec((int)var6_5, (int)1073741824), var15_21);
+                            var8_21.measure(View.MeasureSpec.makeMeasureSpec((int)var10_5, (int)1073741824), var19_23);
                         } else {
-                            if (var6_5 <= 0) {
-                                var6_5 = 0;
+                            if (var10_5 <= 0) {
+                                var10_5 = 0;
                             }
-                            var30_26.measure(View.MeasureSpec.makeMeasureSpec((int)var6_5, (int)1073741824), var15_21);
+                            var8_21.measure(View.MeasureSpec.makeMeasureSpec((int)var10_5, (int)1073741824), var19_23);
                         }
-                        var8_4 = ViewUtils.combineMeasuredStates(var8_4, ViewCompat.getMeasuredState(var30_26) & -16777216);
-                        var6_5 = var12_19;
-                        var12_19 = var8_4;
+                        var12_4 = ViewUtils.combineMeasuredStates(var12_4, ViewCompat.getMeasuredState(var8_21) & -16777216);
+                        var10_5 = var16_19;
+                        var16_19 = var12_4;
                     }
-                    if (var17_18) {
-                        this.mTotalLength += var30_26.getMeasuredWidth() + var31_27.leftMargin + var31_27.rightMargin + this.getNextLocationOffset(var30_26);
+                    if (var21_18) {
+                        this.mTotalLength += var8_21.getMeasuredWidth() + var9_22.leftMargin + var9_22.rightMargin + this.getNextLocationOffset(var8_21);
                     } else {
-                        var8_4 = this.mTotalLength;
-                        this.mTotalLength = Math.max(var8_4, var30_26.getMeasuredWidth() + var8_4 + var31_27.leftMargin + var31_27.rightMargin + this.getNextLocationOffset(var30_26));
+                        var12_4 = this.mTotalLength;
+                        this.mTotalLength = Math.max(var12_4, var8_21.getMeasuredWidth() + var12_4 + var9_22.leftMargin + var9_22.rightMargin + this.getNextLocationOffset(var8_21));
                     }
-                    var8_4 = var22_11 != 1073741824 && var31_27.height == -1 ? 1 : 0;
-                    var15_21 = var31_27.topMargin + var31_27.bottomMargin;
-                    var13_3 = var30_26.getMeasuredHeight() + var15_21;
-                    var11_20 = Math.max(var11_20, var13_3);
-                    var8_4 = var8_4 != 0 ? var15_21 : var13_3;
-                    var10_6 = Math.max(var10_6, var8_4);
-                    var7_7 = var7_7 != 0 && var31_27.height == -1 ? 1 : 0;
-                    var15_21 = var7_7;
-                    var16_22 = var10_6;
-                    var18_23 = var12_19;
-                    var19_24 = var6_5;
-                    var20_25 = var11_20;
+                    var12_4 = var26_11 != 1073741824 && var9_22.height == -1 ? 1 : 0;
+                    var19_23 = var9_22.topMargin + var9_22.bottomMargin;
+                    var17_3 = var8_21.getMeasuredHeight() + var19_23;
+                    var15_20 = Math.max(var15_20, var17_3);
+                    var12_4 = var12_4 != 0 ? var19_23 : var17_3;
+                    var14_6 = Math.max(var14_6, var12_4);
+                    var11_7 = var11_7 != 0 && var9_22.height == -1 ? 1 : 0;
+                    var19_23 = var11_7;
+                    var20_24 = var14_6;
+                    var22_26 = var16_19;
+                    var23_25 = var10_5;
+                    var24_27 = var15_20;
                     var5_30 = var4_29;
-                    if (var26_16) {
-                        var25_31 = var30_26.getBaseline();
-                        var15_21 = var7_7;
-                        var16_22 = var10_6;
-                        var18_23 = var12_19;
-                        var19_24 = var6_5;
-                        var20_25 = var11_20;
+                    if (var30_16) {
+                        var29_31 = var8_21.getBaseline();
+                        var19_23 = var11_7;
+                        var20_24 = var14_6;
+                        var22_26 = var16_19;
+                        var23_25 = var10_5;
+                        var24_27 = var15_20;
                         var5_30 = var4_29;
-                        if (var25_31 != -1) {
-                            var8_4 = var31_27.gravity < 0 ? this.mGravity : var31_27.gravity;
-                            var8_4 = ((var8_4 & 112) >> 4 & -2) >> 1;
-                            var28_14[var8_4] = Math.max((int)var28_14[var8_4], var25_31);
-                            var29_15[var8_4] = Math.max(var29_15[var8_4], var13_3 - var25_31);
-                            var15_21 = var7_7;
-                            var16_22 = var10_6;
-                            var18_23 = var12_19;
-                            var19_24 = var6_5;
-                            var20_25 = var11_20;
+                        if (var29_31 != -1) {
+                            var12_4 = var9_22.gravity < 0 ? this.mGravity : var9_22.gravity;
+                            var12_4 = ((var12_4 & 112) >> 4 & -2) >> 1;
+                            var6_14[var12_4] = Math.max((int)var6_14[var12_4], var29_31);
+                            var7_15[var12_4] = Math.max(var7_15[var12_4], var17_3 - var29_31);
+                            var19_23 = var11_7;
+                            var20_24 = var14_6;
+                            var22_26 = var16_19;
+                            var23_25 = var10_5;
+                            var24_27 = var15_20;
                             var5_30 = var4_29;
                         }
                     }
                 }
             }
-            var7_7 = var15_21;
-            var10_6 = var16_22;
-            var8_4 = var18_23;
-            var13_3 = var19_24;
-            var11_20 = var20_25;
+            var11_7 = var19_23;
+            var14_6 = var20_24;
+            var12_4 = var22_26;
+            var17_3 = var23_25;
+            var15_20 = var24_27;
             var3_8 = var5_30;
         }
         this.mTotalLength += this.getPaddingLeft() + this.getPaddingRight();
-        if (var28_14[1] != -1 || var28_14[0] != -1 || var28_14[2] != -1) ** GOTO lbl-1000
-        var15_21 = var7_7;
-        var13_3 = var10_6;
-        var14_13 = var8_4;
-        var6_5 = var11_20;
-        if (var28_14[3] != -1) lbl-1000: // 2 sources:
+        if (var6_14[1] != -1 || var6_14[0] != -1 || var6_14[2] != -1) ** GOTO lbl-1000
+        var19_23 = var11_7;
+        var17_3 = var14_6;
+        var18_13 = var12_4;
+        var10_5 = var15_20;
+        if (var6_14[3] != -1) lbl-1000: // 2 sources:
         {
-            var6_5 = Math.max(var11_20, Math.max((int)var28_14[3], Math.max((int)var28_14[0], Math.max((int)var28_14[1], (int)var28_14[2]))) + Math.max(var29_15[3], Math.max(var29_15[0], Math.max(var29_15[1], var29_15[2]))));
-            var14_13 = var8_4;
-            var13_3 = var10_6;
-            var15_21 = var7_7;
+            var10_5 = Math.max(var15_20, Math.max((int)var6_14[3], Math.max((int)var6_14[0], Math.max((int)var6_14[1], (int)var6_14[2]))) + Math.max(var7_15[3], Math.max(var7_15[0], Math.max(var7_15[1], var7_15[2]))));
+            var18_13 = var12_4;
+            var17_3 = var14_6;
+            var19_23 = var11_7;
         }
 lbl262: // 6 sources:
         do {
-            var7_7 = var6_5;
-            if (var15_21 == 0) {
-                var7_7 = var6_5;
-                if (var22_11 != 1073741824) {
-                    var7_7 = var13_3;
+            var11_7 = var10_5;
+            if (var19_23 == 0) {
+                var11_7 = var10_5;
+                if (var26_11 != 1073741824) {
+                    var11_7 = var17_3;
                 }
             }
-            this.setMeasuredDimension(-16777216 & var14_13 | var24_28, ViewCompat.resolveSizeAndState(Math.max(var7_7 + (this.getPaddingTop() + this.getPaddingBottom()), this.getSuggestedMinimumHeight()), var2_2, var14_13 << 16));
-            if (var9_12 == 0) return;
-            this.forceUniformHeight(var21_9, var1_1);
+            this.setMeasuredDimension(-16777216 & var18_13 | var28_28, ViewCompat.resolveSizeAndState(Math.max(var11_7 + (this.getPaddingTop() + this.getPaddingBottom()), this.getSuggestedMinimumHeight()), var2_2, var18_13 << 16));
+            if (var13_12 == 0) return;
+            this.forceUniformHeight(var25_9, var1_1);
             return;
             break;
         } while (true);
 lbl272: // 1 sources:
         do {
-            var15_21 = var7_7;
-            var13_3 = var16_22;
-            var14_13 = var8_4;
-            var6_5 = var11_20;
-            if (var10_6 >= var21_9) ** continue;
-            var28_14 = this.getVirtualChildAt(var10_6);
-            if (var28_14 != null && var28_14.getVisibility() != 8 && ((LayoutParams)var28_14.getLayoutParams()).weight > 0.0f) {
-                var28_14.measure(View.MeasureSpec.makeMeasureSpec((int)var12_19, (int)1073741824), View.MeasureSpec.makeMeasureSpec((int)var28_14.getMeasuredHeight(), (int)1073741824));
+            var19_23 = var11_7;
+            var17_3 = var20_24;
+            var18_13 = var12_4;
+            var10_5 = var15_20;
+            if (var14_6 >= var25_9) ** continue;
+            var6_14 = this.getVirtualChildAt(var14_6);
+            if (var6_14 != null && var6_14.getVisibility() != 8 && ((LayoutParams)var6_14.getLayoutParams()).weight > 0.0f) {
+                var6_14.measure(View.MeasureSpec.makeMeasureSpec((int)var16_19, (int)1073741824), View.MeasureSpec.makeMeasureSpec((int)var6_14.getMeasuredHeight(), (int)1073741824));
             }
-            ++var10_6;
+            ++var14_6;
         } while (true);
     }
 
@@ -860,228 +860,228 @@ lbl272: // 1 sources:
      */
     void measureVertical(int var1_1, int var2_2) {
         this.mTotalLength = 0;
-        var9_3 = 0;
-        var8_4 = 0;
-        var6_5 = 0;
-        var11_6 = 0;
-        var7_7 = 1;
+        var11_3 = 0;
+        var10_4 = 0;
+        var8_5 = 0;
+        var13_6 = 0;
+        var9_7 = 1;
         var3_8 = 0.0f;
-        var18_9 = this.getVirtualChildCount();
-        var19_10 = View.MeasureSpec.getMode((int)var1_1);
-        var20_11 = View.MeasureSpec.getMode((int)var2_2);
-        var10_12 = 0;
-        var14_13 = 0;
-        var21_14 = this.mBaselineAlignedChildIndex;
-        var22_15 = this.mUseLargestChild;
-        var13_16 = Integer.MIN_VALUE;
-        for (var12_17 = 0; var12_17 < var18_9; ++var12_17) {
-            var23_21 = this.getVirtualChildAt(var12_17);
-            if (var23_21 == null) {
-                this.mTotalLength += this.measureNullChild(var12_17);
-                var16_19 = var13_16;
-            } else if (var23_21.getVisibility() == 8) {
-                var12_17 += this.getChildrenSkipCount(var23_21, var12_17);
-                var16_19 = var13_16;
+        var20_9 = this.getVirtualChildCount();
+        var21_10 = View.MeasureSpec.getMode((int)var1_1);
+        var22_11 = View.MeasureSpec.getMode((int)var2_2);
+        var12_12 = 0;
+        var16_13 = 0;
+        var23_14 = this.mBaselineAlignedChildIndex;
+        var24_15 = this.mUseLargestChild;
+        var15_16 = Integer.MIN_VALUE;
+        for (var14_17 = 0; var14_17 < var20_9; ++var14_17) {
+            var6_18 = this.getVirtualChildAt(var14_17);
+            if (var6_18 == null) {
+                this.mTotalLength += this.measureNullChild(var14_17);
+                var18_22 = var15_16;
+            } else if (var6_18.getVisibility() == 8) {
+                var14_17 += this.getChildrenSkipCount(var6_18, var14_17);
+                var18_22 = var15_16;
             } else {
-                if (this.hasDividerBeforeChildAt(var12_17)) {
+                if (this.hasDividerBeforeChildAt(var14_17)) {
                     this.mTotalLength += this.mDividerHeight;
                 }
-                var24_22 = (LayoutParams)var23_21.getLayoutParams();
-                var3_8 += var24_22.weight;
-                if (var20_11 == 1073741824 && var24_22.height == 0 && var24_22.weight > 0.0f) {
-                    var14_13 = this.mTotalLength;
-                    this.mTotalLength = Math.max(var14_13, var24_22.topMargin + var14_13 + var24_22.bottomMargin);
-                    var15_18 = 1;
-                    var16_19 = var13_16;
+                var7_19 = (LayoutParams)var6_18.getLayoutParams();
+                var3_8 += var7_19.weight;
+                if (var22_11 == 1073741824 && var7_19.height == 0 && var7_19.weight > 0.0f) {
+                    var16_13 = this.mTotalLength;
+                    this.mTotalLength = Math.max(var16_13, var7_19.topMargin + var16_13 + var7_19.bottomMargin);
+                    var17_20 = 1;
+                    var18_22 = var15_16;
                 } else {
-                    var15_18 = var16_19 = Integer.MIN_VALUE;
-                    if (var24_22.height == 0) {
-                        var15_18 = var16_19;
-                        if (var24_22.weight > 0.0f) {
-                            var15_18 = 0;
-                            var24_22.height = -2;
+                    var17_20 = var18_22 = Integer.MIN_VALUE;
+                    if (var7_19.height == 0) {
+                        var17_20 = var18_22;
+                        if (var7_19.weight > 0.0f) {
+                            var17_20 = 0;
+                            var7_19.height = -2;
                         }
                     }
-                    var16_19 = var3_8 == 0.0f ? this.mTotalLength : 0;
-                    this.measureChildBeforeLayout(var23_21, var12_17, var1_1, 0, var2_2, var16_19);
-                    if (var15_18 != Integer.MIN_VALUE) {
-                        var24_22.height = var15_18;
+                    var18_22 = var3_8 == 0.0f ? this.mTotalLength : 0;
+                    this.measureChildBeforeLayout(var6_18, var14_17, var1_1, 0, var2_2, var18_22);
+                    if (var17_20 != Integer.MIN_VALUE) {
+                        var7_19.height = var17_20;
                     }
-                    var17_20 = var23_21.getMeasuredHeight();
-                    var15_18 = this.mTotalLength;
-                    this.mTotalLength = Math.max(var15_18, var15_18 + var17_20 + var24_22.topMargin + var24_22.bottomMargin + this.getNextLocationOffset(var23_21));
-                    var16_19 = var13_16;
-                    var15_18 = var14_13;
-                    if (var22_15) {
-                        var16_19 = Math.max(var17_20, var13_16);
-                        var15_18 = var14_13;
+                    var19_21 = var6_18.getMeasuredHeight();
+                    var17_20 = this.mTotalLength;
+                    this.mTotalLength = Math.max(var17_20, var17_20 + var19_21 + var7_19.topMargin + var7_19.bottomMargin + this.getNextLocationOffset(var6_18));
+                    var18_22 = var15_16;
+                    var17_20 = var16_13;
+                    if (var24_15) {
+                        var18_22 = Math.max(var19_21, var15_16);
+                        var17_20 = var16_13;
                     }
                 }
-                if (var21_14 >= 0 && var21_14 == var12_17 + 1) {
+                if (var23_14 >= 0 && var23_14 == var14_17 + 1) {
                     this.mBaselineChildTop = this.mTotalLength;
                 }
-                if (var12_17 < var21_14 && var24_22.weight > 0.0f) {
+                if (var14_17 < var23_14 && var7_19.weight > 0.0f) {
                     throw new RuntimeException("A child of LinearLayout with index less than mBaselineAlignedChildIndex has weight > 0, which won't work.  Either remove the weight, or don't set mBaselineAlignedChildIndex.");
                 }
-                var17_20 = 0;
-                var13_16 = var10_12;
-                var14_13 = var17_20;
-                if (var19_10 != 1073741824) {
-                    var13_16 = var10_12;
-                    var14_13 = var17_20;
-                    if (var24_22.width == -1) {
-                        var13_16 = 1;
-                        var14_13 = 1;
+                var19_21 = 0;
+                var15_16 = var12_12;
+                var16_13 = var19_21;
+                if (var21_10 != 1073741824) {
+                    var15_16 = var12_12;
+                    var16_13 = var19_21;
+                    if (var7_19.width == -1) {
+                        var15_16 = 1;
+                        var16_13 = 1;
                     }
                 }
-                var10_12 = var24_22.leftMargin + var24_22.rightMargin;
-                var17_20 = var23_21.getMeasuredWidth() + var10_12;
-                var9_3 = Math.max(var9_3, var17_20);
-                var8_4 = ViewUtils.combineMeasuredStates(var8_4, ViewCompat.getMeasuredState(var23_21));
-                var7_7 = var7_7 != 0 && var24_22.width == -1 ? 1 : 0;
-                if (var24_22.weight > 0.0f) {
-                    if (var14_13 == 0) {
-                        var10_12 = var17_20;
+                var12_12 = var7_19.leftMargin + var7_19.rightMargin;
+                var19_21 = var6_18.getMeasuredWidth() + var12_12;
+                var11_3 = Math.max(var11_3, var19_21);
+                var10_4 = ViewUtils.combineMeasuredStates(var10_4, ViewCompat.getMeasuredState(var6_18));
+                var9_7 = var9_7 != 0 && var7_19.width == -1 ? 1 : 0;
+                if (var7_19.weight > 0.0f) {
+                    if (var16_13 == 0) {
+                        var12_12 = var19_21;
                     }
-                    var11_6 = Math.max(var11_6, var10_12);
+                    var13_6 = Math.max(var13_6, var12_12);
                 } else {
-                    if (var14_13 == 0) {
-                        var10_12 = var17_20;
+                    if (var16_13 == 0) {
+                        var12_12 = var19_21;
                     }
-                    var6_5 = Math.max(var6_5, var10_12);
+                    var8_5 = Math.max(var8_5, var12_12);
                 }
-                var12_17 += this.getChildrenSkipCount(var23_21, var12_17);
-                var10_12 = var13_16;
-                var14_13 = var15_18;
+                var14_17 += this.getChildrenSkipCount(var6_18, var14_17);
+                var12_12 = var15_16;
+                var16_13 = var17_20;
             }
-            var13_16 = var16_19;
+            var15_16 = var18_22;
         }
-        if (this.mTotalLength > 0 && this.hasDividerBeforeChildAt(var18_9)) {
+        if (this.mTotalLength > 0 && this.hasDividerBeforeChildAt(var20_9)) {
             this.mTotalLength += this.mDividerHeight;
         }
-        if (var22_15 && (var20_11 == Integer.MIN_VALUE || var20_11 == 0)) {
+        if (var24_15 && (var22_11 == Integer.MIN_VALUE || var22_11 == 0)) {
             this.mTotalLength = 0;
-            for (var12_17 = 0; var12_17 < var18_9; ++var12_17) {
-                var23_21 = this.getVirtualChildAt(var12_17);
-                if (var23_21 == null) {
-                    this.mTotalLength += this.measureNullChild(var12_17);
+            for (var14_17 = 0; var14_17 < var20_9; ++var14_17) {
+                var6_18 = this.getVirtualChildAt(var14_17);
+                if (var6_18 == null) {
+                    this.mTotalLength += this.measureNullChild(var14_17);
                     continue;
                 }
-                if (var23_21.getVisibility() == 8) {
-                    var12_17 += this.getChildrenSkipCount(var23_21, var12_17);
+                if (var6_18.getVisibility() == 8) {
+                    var14_17 += this.getChildrenSkipCount(var6_18, var14_17);
                     continue;
                 }
-                var24_22 = (LayoutParams)var23_21.getLayoutParams();
-                var15_18 = this.mTotalLength;
-                this.mTotalLength = Math.max(var15_18, var15_18 + var13_16 + var24_22.topMargin + var24_22.bottomMargin + this.getNextLocationOffset(var23_21));
+                var7_19 = (LayoutParams)var6_18.getLayoutParams();
+                var17_20 = this.mTotalLength;
+                this.mTotalLength = Math.max(var17_20, var17_20 + var15_16 + var7_19.topMargin + var7_19.bottomMargin + this.getNextLocationOffset(var6_18));
             }
         }
         this.mTotalLength += this.getPaddingTop() + this.getPaddingBottom();
-        var17_20 = ViewCompat.resolveSizeAndState(Math.max(this.mTotalLength, this.getSuggestedMinimumHeight()), var2_2, 0);
-        var12_17 = (var17_20 & 16777215) - this.mTotalLength;
-        if (var14_13 == 0 && (var12_17 == 0 || var3_8 <= 0.0f)) ** GOTO lbl111
+        var19_21 = ViewCompat.resolveSizeAndState(Math.max(this.mTotalLength, this.getSuggestedMinimumHeight()), var2_2, 0);
+        var14_17 = (var19_21 & 16777215) - this.mTotalLength;
+        if (var16_13 == 0 && (var14_17 == 0 || var3_8 <= 0.0f)) ** GOTO lbl111
         if (this.mWeightSum > 0.0f) {
             var3_8 = this.mWeightSum;
         }
         this.mTotalLength = 0;
-        var11_6 = var9_3;
-        var13_16 = var12_17;
+        var13_6 = var11_3;
+        var15_16 = var14_17;
         ** GOTO lbl124
 lbl111: // 1 sources:
-        var16_19 = Math.max(var6_5, var11_6);
-        var14_13 = var7_7;
-        var6_5 = var16_19;
-        var12_17 = var8_4;
-        var11_6 = var9_3;
-        if (!var22_15) ** GOTO lbl172
-        var14_13 = var7_7;
-        var6_5 = var16_19;
-        var12_17 = var8_4;
-        var11_6 = var9_3;
-        if (var20_11 == 1073741824) ** GOTO lbl172
-        var15_18 = 0;
+        var18_22 = Math.max(var8_5, var13_6);
+        var16_13 = var9_7;
+        var8_5 = var18_22;
+        var14_17 = var10_4;
+        var13_6 = var11_3;
+        if (!var24_15) ** GOTO lbl172
+        var16_13 = var9_7;
+        var8_5 = var18_22;
+        var14_17 = var10_4;
+        var13_6 = var11_3;
+        if (var22_11 == 1073741824) ** GOTO lbl172
+        var17_20 = 0;
         ** GOTO lbl182
 lbl124: // 2 sources:
-        for (var14_13 = 0; var14_13 < var18_9; ++var14_13) {
-            var23_21 = this.getVirtualChildAt(var14_13);
-            if (var23_21.getVisibility() == 8) {
-                var9_3 = var13_16;
-                var12_17 = var8_4;
-                var8_4 = var6_5;
-                var6_5 = var7_7;
+        for (var16_13 = 0; var16_13 < var20_9; ++var16_13) {
+            var6_18 = this.getVirtualChildAt(var16_13);
+            if (var6_18.getVisibility() == 8) {
+                var11_3 = var15_16;
+                var14_17 = var10_4;
+                var10_4 = var8_5;
+                var8_5 = var9_7;
             } else {
-                var24_22 = (LayoutParams)var23_21.getLayoutParams();
-                var5_24 = var24_22.weight;
-                var12_17 = var8_4;
-                var9_3 = var13_16;
+                var7_19 = (LayoutParams)var6_18.getLayoutParams();
+                var5_24 = var7_19.weight;
+                var14_17 = var10_4;
+                var11_3 = var15_16;
                 var4_23 = var3_8;
                 if (var5_24 > 0.0f) {
-                    var9_3 = (int)((float)var13_16 * var5_24 / var3_8);
+                    var11_3 = (int)((float)var15_16 * var5_24 / var3_8);
                     var4_23 = var3_8 - var5_24;
-                    var12_17 = var13_16 - var9_3;
-                    var15_18 = LinearLayoutCompat.getChildMeasureSpec((int)var1_1, (int)(this.getPaddingLeft() + this.getPaddingRight() + var24_22.leftMargin + var24_22.rightMargin), (int)var24_22.width);
-                    if (var24_22.height != 0 || var20_11 != 1073741824) {
-                        var9_3 = var13_16 = var23_21.getMeasuredHeight() + var9_3;
-                        if (var13_16 < 0) {
-                            var9_3 = 0;
+                    var14_17 = var15_16 - var11_3;
+                    var17_20 = LinearLayoutCompat.getChildMeasureSpec((int)var1_1, (int)(this.getPaddingLeft() + this.getPaddingRight() + var7_19.leftMargin + var7_19.rightMargin), (int)var7_19.width);
+                    if (var7_19.height != 0 || var22_11 != 1073741824) {
+                        var11_3 = var15_16 = var6_18.getMeasuredHeight() + var11_3;
+                        if (var15_16 < 0) {
+                            var11_3 = 0;
                         }
-                        var23_21.measure(var15_18, View.MeasureSpec.makeMeasureSpec((int)var9_3, (int)1073741824));
+                        var6_18.measure(var17_20, View.MeasureSpec.makeMeasureSpec((int)var11_3, (int)1073741824));
                     } else {
-                        if (var9_3 <= 0) {
-                            var9_3 = 0;
+                        if (var11_3 <= 0) {
+                            var11_3 = 0;
                         }
-                        var23_21.measure(var15_18, View.MeasureSpec.makeMeasureSpec((int)var9_3, (int)1073741824));
+                        var6_18.measure(var17_20, View.MeasureSpec.makeMeasureSpec((int)var11_3, (int)1073741824));
                     }
-                    var8_4 = ViewUtils.combineMeasuredStates(var8_4, ViewCompat.getMeasuredState(var23_21) & -256);
-                    var9_3 = var12_17;
-                    var12_17 = var8_4;
+                    var10_4 = ViewUtils.combineMeasuredStates(var10_4, ViewCompat.getMeasuredState(var6_18) & -256);
+                    var11_3 = var14_17;
+                    var14_17 = var10_4;
                 }
-                var13_16 = var24_22.leftMargin + var24_22.rightMargin;
-                var15_18 = var23_21.getMeasuredWidth() + var13_16;
-                var11_6 = Math.max(var11_6, var15_18);
-                var8_4 = var19_10 != 1073741824 && var24_22.width == -1 ? 1 : 0;
-                var8_4 = var8_4 != 0 ? var13_16 : var15_18;
-                var8_4 = Math.max(var6_5, var8_4);
-                var6_5 = var7_7 != 0 && var24_22.width == -1 ? 1 : 0;
-                var7_7 = this.mTotalLength;
-                this.mTotalLength = Math.max(var7_7, var23_21.getMeasuredHeight() + var7_7 + var24_22.topMargin + var24_22.bottomMargin + this.getNextLocationOffset(var23_21));
+                var15_16 = var7_19.leftMargin + var7_19.rightMargin;
+                var17_20 = var6_18.getMeasuredWidth() + var15_16;
+                var13_6 = Math.max(var13_6, var17_20);
+                var10_4 = var21_10 != 1073741824 && var7_19.width == -1 ? 1 : 0;
+                var10_4 = var10_4 != 0 ? var15_16 : var17_20;
+                var10_4 = Math.max(var8_5, var10_4);
+                var8_5 = var9_7 != 0 && var7_19.width == -1 ? 1 : 0;
+                var9_7 = this.mTotalLength;
+                this.mTotalLength = Math.max(var9_7, var6_18.getMeasuredHeight() + var9_7 + var7_19.topMargin + var7_19.bottomMargin + this.getNextLocationOffset(var6_18));
                 var3_8 = var4_23;
             }
-            var7_7 = var6_5;
-            var6_5 = var8_4;
-            var8_4 = var12_17;
-            var13_16 = var9_3;
+            var9_7 = var8_5;
+            var8_5 = var10_4;
+            var10_4 = var14_17;
+            var15_16 = var11_3;
         }
         this.mTotalLength += this.getPaddingTop() + this.getPaddingBottom();
-        var12_17 = var8_4;
-        var14_13 = var7_7;
+        var14_17 = var10_4;
+        var16_13 = var9_7;
 lbl172: // 4 sources:
         do {
-            var7_7 = var11_6;
-            if (var14_13 == 0) {
-                var7_7 = var11_6;
-                if (var19_10 != 1073741824) {
-                    var7_7 = var6_5;
+            var9_7 = var13_6;
+            if (var16_13 == 0) {
+                var9_7 = var13_6;
+                if (var21_10 != 1073741824) {
+                    var9_7 = var8_5;
                 }
             }
-            this.setMeasuredDimension(ViewCompat.resolveSizeAndState(Math.max(var7_7 + (this.getPaddingLeft() + this.getPaddingRight()), this.getSuggestedMinimumWidth()), var1_1, var12_17), var17_20);
-            if (var10_12 == 0) return;
-            this.forceUniformWidth(var18_9, var2_2);
+            this.setMeasuredDimension(ViewCompat.resolveSizeAndState(Math.max(var9_7 + (this.getPaddingLeft() + this.getPaddingRight()), this.getSuggestedMinimumWidth()), var1_1, var14_17), var19_21);
+            if (var12_12 == 0) return;
+            this.forceUniformWidth(var20_9, var2_2);
             return;
             break;
         } while (true);
 lbl182: // 1 sources:
         do {
-            var14_13 = var7_7;
-            var6_5 = var16_19;
-            var12_17 = var8_4;
-            var11_6 = var9_3;
-            if (var15_18 >= var18_9) ** continue;
-            var23_21 = this.getVirtualChildAt(var15_18);
-            if (var23_21 != null && var23_21.getVisibility() != 8 && ((LayoutParams)var23_21.getLayoutParams()).weight > 0.0f) {
-                var23_21.measure(View.MeasureSpec.makeMeasureSpec((int)var23_21.getMeasuredWidth(), (int)1073741824), View.MeasureSpec.makeMeasureSpec((int)var13_16, (int)1073741824));
+            var16_13 = var9_7;
+            var8_5 = var18_22;
+            var14_17 = var10_4;
+            var13_6 = var11_3;
+            if (var17_20 >= var20_9) ** continue;
+            var6_18 = this.getVirtualChildAt(var17_20);
+            if (var6_18 != null && var6_18.getVisibility() != 8 && ((LayoutParams)var6_18.getLayoutParams()).weight > 0.0f) {
+                var6_18.measure(View.MeasureSpec.makeMeasureSpec((int)var6_18.getMeasuredWidth(), (int)1073741824), View.MeasureSpec.makeMeasureSpec((int)var15_16, (int)1073741824));
             }
-            ++var15_18;
+            ++var17_20;
         } while (true);
     }
 

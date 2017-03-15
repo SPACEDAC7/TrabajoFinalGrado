@@ -138,10 +138,10 @@ extends Service {
      * Lifted jumps to return sites
      */
     protected static WidgetServiceFeed getWidgetServiceFeed(Context object, int n2) {
-        void var6_21;
-        WidgetServiceFeed widgetServiceFeed;
-        String string2;
         Object object2;
+        String string2;
+        void var4_21;
+        WidgetServiceFeed widgetServiceFeed;
         String string3 = TAG + ".getWidgetServiceFeed";
         Object object3 = widgetServiceFeed = widgetServiceFeedMap.get(n2);
         if (widgetServiceFeed != null) return object3;
@@ -152,17 +152,17 @@ extends Service {
         }
         JSONObject jSONObject = object3.getValue();
         Object object4 = null;
-        Object var9_7 = null;
+        Object var7_7 = null;
         String string4 = null;
         String string5 = null;
         boolean bl = false;
-        Object var6_15 = var9_7;
+        Object var4_15 = var7_7;
         String string6 = string4;
         object3 = string5;
         try {
             boolean bl2;
             object4 = object2 = jSONObject.getString(object.getString(2131296983));
-            Object var6_16 = var9_7;
+            Object var4_16 = var7_7;
             String string7 = string4;
             object3 = string5;
             String string8 = jSONObject.getString(object.getString(2131296984));
@@ -186,16 +186,16 @@ extends Service {
             String string16 = string8;
             object4 = object2;
         }
-        catch (JSONException var8_32) {
-            LogUtil.e(string3, "Error converting preference JSONObject into value parts: prefsObject=" + jSONObject.toString(), (Throwable)var8_32);
+        catch (JSONException var6_32) {
+            LogUtil.e(string3, "Error converting preference JSONObject into value parts: prefsObject=" + jSONObject.toString(), (Throwable)var6_32);
         }
-        if (!TextUtils.isEmpty((CharSequence)object4) && !TextUtils.isEmpty((CharSequence)var6_21)) {
-            StringBuilder stringBuilder = new StringBuilder().append("Loaded preferences: appWidgetId: ").append(n2).append(", feedName=").append((String)object4).append(", feedUrl=").append((String)var6_21).append(", badgeImageUrl=");
+        if (!TextUtils.isEmpty((CharSequence)object4) && !TextUtils.isEmpty((CharSequence)var4_21)) {
+            StringBuilder stringBuilder = new StringBuilder().append("Loaded preferences: appWidgetId: ").append(n2).append(", feedName=").append((String)object4).append(", feedUrl=").append((String)var4_21).append(", badgeImageUrl=");
             object2 = string2 == null ? "null" : string2;
             StringBuilder stringBuilder2 = stringBuilder.append((String)object2).append(", lang=");
             object2 = object3 == null ? "null" : object3;
             LogUtil.d(string3, stringBuilder2.append((String)object2).append(", isBadge=").append(bl).toString());
-            object3 = WidgetServiceFeed.newInstance((Context)object, (String)object4, (String)var6_21, string2, (String)object3, bl);
+            object3 = WidgetServiceFeed.newInstance((Context)object, (String)object4, (String)var4_21, string2, (String)object3, bl);
             widgetServiceFeedMap.put(n2, (WidgetServiceFeed)object3);
             return object3;
         }
@@ -205,8 +205,8 @@ extends Service {
             object = "null";
         }
         object4 = object2.append((String)object).append(", feedUrl=");
-        object = var6_21;
-        if (var6_21 == null) {
+        object = var4_21;
+        if (var4_21 == null) {
             object = "null";
         }
         StringBuilder stringBuilder = object4.append((String)object).append(", badgeImageUrl=");

@@ -222,46 +222,46 @@ public class ShareManager {
      * Lifted jumps to return sites
      */
     public static void shareFromWeb(Activity var0, String var1_1, @Nullable JSONObject var2_2) {
-        var4_3 = ShareManager.TAG + ".shareFromWeb";
+        var3_3 = ShareManager.TAG + ".shareFromWeb";
         if (var0 == null) {
-            LogUtil.e(var4_3, "Can't perform share. Activity was null.");
+            LogUtil.e(var3_3, "Can't perform share. Activity was null.");
             return;
         }
         if (TextUtils.isEmpty((CharSequence)var1_1) || var2_2 == null) ** GOTO lbl57
-        LogUtil.d(var4_3, "type=" + var1_1 + ", json=" + (Object)var2_2);
-        var3_4 = -1;
+        LogUtil.d(var3_3, "type=" + var1_1 + ", json=" + (Object)var2_2);
+        var4_4 = -1;
         switch (var1_1.hashCode()) {
             case 96619420: {
                 if (var1_1.equals("email")) {
-                    var3_4 = 0;
+                    var4_4 = 0;
                     ** break;
                 }
                 ** GOTO lbl32
             }
             case 1194692862: {
                 if (var1_1.equals("linkedin")) {
-                    var3_4 = 1;
+                    var4_4 = 1;
                     ** break;
                 }
                 ** GOTO lbl32
             }
             case -1034342: {
                 if (var1_1.equals("pinterest")) {
-                    var3_4 = 2;
+                    var4_4 = 2;
                     ** break;
                 }
                 ** GOTO lbl32
             }
             case 114009: {
                 if (var1_1.equals("sms")) {
-                    var3_4 = 3;
+                    var4_4 = 3;
                     ** break;
                 }
                 ** GOTO lbl32
             }
             case -916346253: {
                 if (var1_1.equals("twitter")) {
-                    var3_4 = 4;
+                    var4_4 = 4;
                 }
             }
 lbl32: // 12 sources:
@@ -271,10 +271,10 @@ lbl32: // 12 sources:
             case 1934780818: 
         }
         if (var1_1.equals("whatsapp")) {
-            var3_4 = 5;
+            var4_4 = 5;
         }
 lbl37: // 4 sources:
-        switch (var3_4) {
+        switch (var4_4) {
             default: {
                 return;
             }
@@ -302,7 +302,7 @@ lbl37: // 4 sources:
         ShareManager.shareWhatsAppFromJSON(var0, var2_2);
         return;
 lbl57: // 1 sources:
-        LogUtil.e(var4_3, "Invalid share type, or data: type=" + var1_1 + ", json=" + (Object)var2_2);
+        LogUtil.e(var3_3, "Invalid share type, or data: type=" + var1_1 + ", json=" + (Object)var2_2);
     }
 
     private static void shareLinkedIn(Activity activity, String string2, String string3, String string4, String string5, String string6) {

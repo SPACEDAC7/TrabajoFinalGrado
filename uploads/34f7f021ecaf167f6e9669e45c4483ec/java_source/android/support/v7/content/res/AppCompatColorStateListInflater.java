@@ -67,16 +67,16 @@ final class AppCompatColorStateListInflater {
         int[] arrn2 = new int[arrarrn2.length];
         int n3 = 0;
         do {
-            int[] arrn3;
             int n4;
+            int[] arrn3;
             float f2;
             int n5;
             int n6;
             int n7;
-            if ((n6 = arrarrn.next()) != 1 && ((n7 = arrarrn.getDepth()) >= n2 || n6 != 3)) {
-                if (n6 != 2 || n7 > n2 || !arrarrn.getName().equals("item")) continue;
+            if ((n6 = arrarrn.next()) != 1 && ((n4 = arrarrn.getDepth()) >= n2 || n6 != 3)) {
+                if (n6 != 2 || n4 > n2 || !arrarrn.getName().equals("item")) continue;
                 arrn3 = AppCompatColorStateListInflater.obtainAttributes((Resources)arrn, theme, attributeSet, R.styleable.ColorStateListItem);
-                n4 = arrn3.getColor(R.styleable.ColorStateListItem_android_color, -65281);
+                n5 = arrn3.getColor(R.styleable.ColorStateListItem_android_color, -65281);
                 f2 = 1.0f;
                 if (arrn3.hasValue(R.styleable.ColorStateListItem_android_alpha)) {
                     f2 = arrn3.getFloat(R.styleable.ColorStateListItem_android_alpha, 1.0f);
@@ -84,8 +84,8 @@ final class AppCompatColorStateListInflater {
                     f2 = arrn3.getFloat(R.styleable.ColorStateListItem_alpha, 1.0f);
                 }
                 arrn3.recycle();
-                n5 = attributeSet.getAttributeCount();
-                arrn3 = new int[n5];
+                n7 = attributeSet.getAttributeCount();
+                arrn3 = new int[n7];
                 n6 = 0;
             } else {
                 arrn = new int[n3];
@@ -94,18 +94,18 @@ final class AppCompatColorStateListInflater {
                 System.arraycopy(arrarrn2, 0, arrarrn, 0, n3);
                 return new ColorStateList((int[][])arrarrn, arrn);
             }
-            for (n7 = 0; n7 < n5; ++n7) {
-                int n8 = attributeSet.getAttributeNameResource(n7);
+            for (n4 = 0; n4 < n7; ++n4) {
+                int n8 = attributeSet.getAttributeNameResource(n4);
                 if (n8 == 16843173 || n8 == 16843551 || n8 == R.attr.alpha) continue;
                 int n9 = n6 + 1;
-                if (!attributeSet.getAttributeBooleanValue(n7, false)) {
+                if (!attributeSet.getAttributeBooleanValue(n4, false)) {
                     n8 = - n8;
                 }
                 arrn3[n6] = n8;
                 n6 = n9;
             }
             arrn3 = StateSet.trimStateSet((int[])arrn3, (int)n6);
-            n6 = AppCompatColorStateListInflater.modulateColorAlpha(n4, f2);
+            n6 = AppCompatColorStateListInflater.modulateColorAlpha(n5, f2);
             if (n3 == 0 || arrn3.length == 0) {
                 // empty if block
             }

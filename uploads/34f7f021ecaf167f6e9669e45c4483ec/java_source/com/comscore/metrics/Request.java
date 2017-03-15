@@ -145,29 +145,29 @@ public class Request {
      */
     protected boolean a() {
         block27 : {
-            var7_1 = false;
-            var6_2 = false;
-            var10_3 = null;
-            var9_7 = null;
-            var8_9 = var10_3;
-            var11_10 = this.a;
-            var8_9 = var10_3;
+            var12_1 = false;
+            var11_2 = false;
+            var3_3 = null;
+            var2_7 = null;
+            var1_9 = var3_3;
+            var4_10 = this.a;
+            var1_9 = var3_3;
             if (!this.b()) break block27;
-            var8_9 = var10_3;
-            var8_9 = var10_3 = this.a((URL)var11_10);
-            var9_7 = var10_3;
-            var4_11 = var7_1;
+            var1_9 = var3_3;
+            var1_9 = var3_3 = this.a((URL)var4_10);
+            var2_7 = var3_3;
+            var9_11 = var12_1;
             try {
-                var3_12 = var10_3.getResponseCode();
+                var8_12 = var3_3.getResponseCode();
             }
-            catch (Throwable var10_4) {
-                var9_7 = var8_9;
-                var8_9 = var10_4;
+            catch (Throwable var3_4) {
+                var2_7 = var1_9;
+                var1_9 = var3_4;
 lbl122: // 2 sources:
                 do {
-                    if (var9_7 == null) throw var8_9;
-                    var9_7.disconnect();
-                    throw var8_9;
+                    if (var2_7 == null) throw var1_9;
+                    var2_7.disconnect();
+                    throw var1_9;
                     break;
                 } while (true);
             }
@@ -176,107 +176,107 @@ lbl18: // 3 sources:
                 block30 : {
                     block29 : {
                         block28 : {
-                            var8_9 = var10_3;
-                            var9_7 = var10_3;
-                            var4_11 = var7_1;
-                            var11_10 = var10_3.getHeaderField("Content-Type");
-                            var8_9 = var10_3;
-                            var9_7 = var10_3;
-                            var4_11 = var7_1;
-                            var12_13 = var10_3.getHeaderField("Content-Length");
-                            if (var3_12 != 200) break block28;
-                            var8_9 = var10_3;
-                            var9_7 = var10_3;
-                            var4_11 = var7_1;
-                            if (!Utils.isNotEmpty((String)var11_10)) break block28;
-                            var8_9 = var10_3;
-                            var9_7 = var10_3;
-                            var4_11 = var7_1;
-                            if (var11_10.indexOf("image/") != 0) break block28;
-                            var8_9 = var10_3;
-                            var9_7 = var10_3;
-                            var4_11 = var7_1;
-                            if (!Utils.isNotEmpty(var12_13)) break block28;
-                            var8_9 = var10_3;
-                            var9_7 = var10_3;
-                            var4_11 = var7_1;
-                            if (Integer.parseInt(var12_13) > 0) break block29;
+                            var1_9 = var3_3;
+                            var2_7 = var3_3;
+                            var9_11 = var12_1;
+                            var4_10 = var3_3.getHeaderField("Content-Type");
+                            var1_9 = var3_3;
+                            var2_7 = var3_3;
+                            var9_11 = var12_1;
+                            var5_13 = var3_3.getHeaderField("Content-Length");
+                            if (var8_12 != 200) break block28;
+                            var1_9 = var3_3;
+                            var2_7 = var3_3;
+                            var9_11 = var12_1;
+                            if (!Utils.isNotEmpty((String)var4_10)) break block28;
+                            var1_9 = var3_3;
+                            var2_7 = var3_3;
+                            var9_11 = var12_1;
+                            if (var4_10.indexOf("image/") != 0) break block28;
+                            var1_9 = var3_3;
+                            var2_7 = var3_3;
+                            var9_11 = var12_1;
+                            if (!Utils.isNotEmpty(var5_13)) break block28;
+                            var1_9 = var3_3;
+                            var2_7 = var3_3;
+                            var9_11 = var12_1;
+                            if (Integer.parseInt(var5_13) > 0) break block29;
                         }
-                        var5_14 = var6_2;
-                        if (var3_12 == 204) {
-                            var5_14 = var6_2;
-                            var8_9 = var10_3;
-                            var9_7 = var10_3;
-                            var4_11 = var7_1;
-                            if (!Utils.isNotEmpty(var12_13)) break block30;
-                            var5_14 = var6_2;
-                            var8_9 = var10_3;
-                            var9_7 = var10_3;
-                            var4_11 = var7_1;
-                            if (Integer.parseInt(var12_13) != 0) break block30;
+                        var10_14 = var11_2;
+                        if (var8_12 == 204) {
+                            var10_14 = var11_2;
+                            var1_9 = var3_3;
+                            var2_7 = var3_3;
+                            var9_11 = var12_1;
+                            if (!Utils.isNotEmpty(var5_13)) break block30;
+                            var10_14 = var11_2;
+                            var1_9 = var3_3;
+                            var2_7 = var3_3;
+                            var9_11 = var12_1;
+                            if (Integer.parseInt(var5_13) != 0) break block30;
                         }
                         ** GOTO lbl73
                     }
-                    var4_11 = true;
-                    var5_14 = true;
-                    var8_9 = var10_3;
-                    var9_7 = var10_3;
+                    var9_11 = true;
+                    var10_14 = true;
+                    var1_9 = var3_3;
+                    var2_7 = var3_3;
                     this.d.getKeepAlive().reset();
                 }
-                var5_14 = var4_11 = var5_14;
-                if (var10_3 == null) return var5_14;
-                var10_3.disconnect();
-                return var4_11;
+                var10_14 = var9_11 = var10_14;
+                if (var3_3 == null) return var10_14;
+                var3_3.disconnect();
+                return var9_11;
                 break;
             } while (true);
         }
-        var2_15 = 0;
-        var1_16 = 0;
+        var7_15 = 0;
+        var6_16 = 0;
         do {
-            var3_12 = var1_16;
-            var10_3 = var9_7;
-            if (var11_10 == null) ** GOTO lbl18
-            var3_12 = var1_16;
-            var10_3 = var9_7;
-            if (var2_15 >= 5) ** continue;
-            var8_9 = var9_7;
-            var4_11 = var7_1;
-            var8_9 = var10_3 = this.a((URL)var11_10);
-            var9_7 = var10_3;
-            var4_11 = var7_1;
-            var10_3.setInstanceFollowRedirects(false);
-            var8_9 = var10_3;
-            var9_7 = var10_3;
-            var4_11 = var7_1;
-            var1_16 = var10_3.getResponseCode();
-            var8_9 = var10_3;
-            var9_7 = var10_3;
-            var4_11 = var7_1;
-            var11_10 = this.a((URL)var11_10, var1_16, var10_3.getHeaderField("Location"));
-            ++var2_15;
-            var9_7 = var10_3;
+            var8_12 = var6_16;
+            var3_3 = var2_7;
+            if (var4_10 == null) ** GOTO lbl18
+            var8_12 = var6_16;
+            var3_3 = var2_7;
+            if (var7_15 >= 5) ** continue;
+            var1_9 = var2_7;
+            var9_11 = var12_1;
+            var1_9 = var3_3 = this.a((URL)var4_10);
+            var2_7 = var3_3;
+            var9_11 = var12_1;
+            var3_3.setInstanceFollowRedirects(false);
+            var1_9 = var3_3;
+            var2_7 = var3_3;
+            var9_11 = var12_1;
+            var6_16 = var3_3.getResponseCode();
+            var1_9 = var3_3;
+            var2_7 = var3_3;
+            var9_11 = var12_1;
+            var4_10 = this.a((URL)var4_10, var6_16, var3_3.getHeaderField("Location"));
+            ++var7_15;
+            var2_7 = var3_3;
         } while (true);
-        catch (Exception var9_8) {
-            var4_11 = false;
-            var8_9 = null;
+        catch (Exception var2_8) {
+            var9_11 = false;
+            var1_9 = null;
 lbl113: // 3 sources:
-            CSLog.e(this, "Exception sending measurement:" + var9_7.getLocalizedMessage());
-            CSLog.printStackTrace((Exception)var9_7);
-            var5_14 = var4_11;
-            if (var8_9 == null) return var5_14;
-            var8_9.disconnect();
-            return var4_11;
+            CSLog.e(this, "Exception sending measurement:" + var2_7.getLocalizedMessage());
+            CSLog.printStackTrace((Exception)var2_7);
+            var10_14 = var9_11;
+            if (var1_9 == null) return var10_14;
+            var1_9.disconnect();
+            return var9_11;
         }
         {
-            catch (Throwable var10_5) {
-                var9_7 = var8_9;
-                var8_9 = var10_5;
+            catch (Throwable var3_5) {
+                var2_7 = var1_9;
+                var1_9 = var3_5;
                 ** continue;
             }
         }
-        catch (Exception var10_6) {
-            var8_9 = var9_7;
-            var9_7 = var10_6;
+        catch (Exception var3_6) {
+            var1_9 = var2_7;
+            var2_7 = var3_6;
             ** GOTO lbl113
         }
     }
@@ -307,7 +307,7 @@ lbl113: // 3 sources:
             this.c.setLabel("ns_radio", (String)object);
             return bl;
         }
-        catch (NullPointerException var2_2) {
+        catch (NullPointerException var1_2) {
             return false;
         }
     }

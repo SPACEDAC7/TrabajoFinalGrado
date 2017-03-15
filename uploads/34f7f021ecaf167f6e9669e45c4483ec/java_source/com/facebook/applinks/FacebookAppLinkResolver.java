@@ -176,10 +176,10 @@ implements AppLinkResolver {
                 }
                 object = this.val$urisToRequest.iterator();
                 block5 : do {
-                    int n2;
                     Object object2;
-                    int n3;
+                    int n2;
                     Object object3;
+                    int n3;
                     ArrayList<AppLink.Target> arrayList;
                     if (!object.hasNext()) {
                         this.val$taskCompletionSource.setResult(this.val$appLinkResults);
@@ -188,31 +188,31 @@ implements AppLinkResolver {
                     Uri uri = (Uri)object.next();
                     if (!graphResponse.has(uri.toString())) continue;
                     try {
-                        object2 = graphResponse.getJSONObject(uri.toString()).getJSONObject("app_links");
-                        object3 = object2.getJSONArray("android");
-                        n3 = object3.length();
-                        arrayList = new ArrayList<AppLink.Target>(n3);
-                        n2 = 0;
+                        object3 = graphResponse.getJSONObject(uri.toString()).getJSONObject("app_links");
+                        object2 = object3.getJSONArray("android");
+                        n2 = object2.length();
+                        arrayList = new ArrayList<AppLink.Target>(n2);
+                        n3 = 0;
                     }
-                    catch (JSONException var5_6) {
+                    catch (JSONException var3_4) {
                         continue;
                     }
                     do {
-                        if (n2 < n3) {
-                            AppLink.Target target = FacebookAppLinkResolver.getAndroidTargetFromJson(object3.getJSONObject(n2));
+                        if (n3 < n2) {
+                            AppLink.Target target = FacebookAppLinkResolver.getAndroidTargetFromJson(object2.getJSONObject(n3));
                             if (target != null) {
                                 arrayList.add(target);
                             }
                         } else {
-                            object3 = new AppLink(uri, arrayList, FacebookAppLinkResolver.getWebFallbackUriFromJson(uri, (JSONObject)object2));
-                            this.val$appLinkResults.put(uri, object3);
-                            object2 = FacebookAppLinkResolver.this.cachedAppLinks;
-                            synchronized (object2) {
-                                FacebookAppLinkResolver.this.cachedAppLinks.put(uri, object3);
+                            object2 = new AppLink(uri, arrayList, FacebookAppLinkResolver.getWebFallbackUriFromJson(uri, (JSONObject)object3));
+                            this.val$appLinkResults.put(uri, object2);
+                            object3 = FacebookAppLinkResolver.this.cachedAppLinks;
+                            synchronized (object3) {
+                                FacebookAppLinkResolver.this.cachedAppLinks.put(uri, object2);
                                 continue block5;
                             }
                         }
-                        ++n2;
+                        ++n3;
                     } while (true);
                     break;
                 } while (true);

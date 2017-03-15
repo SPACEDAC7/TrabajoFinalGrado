@@ -143,8 +143,8 @@ public final class LinkifyCompat {
      * Enabled aggressive block sorting
      */
     public static final boolean addLinks(@NonNull Spannable spannable, @NonNull Pattern object, @Nullable String arrstring, @Nullable String[] object2, @Nullable Linkify.MatchFilter matchFilter, @Nullable Linkify.TransformFilter transformFilter) {
-        int n2;
         Object object3;
+        int n2;
         block6 : {
             object3 = arrstring;
             if (arrstring == null) {
@@ -244,7 +244,7 @@ public final class LinkifyCompat {
                 linkSpec.url = "geo:0,0?q=" + string2;
                 arrayList.add(linkSpec);
             }
-            catch (UnsupportedEncodingException var5_7) {}
+            catch (UnsupportedEncodingException var2_5) {}
             continue;
             break;
         } while (true);
@@ -256,31 +256,31 @@ public final class LinkifyCompat {
      * Lifted jumps to return sites
      */
     private static String makeUrl(@NonNull String var0, @NonNull String[] var1_1, Matcher var2_2, @Nullable Linkify.TransformFilter var3_3) {
-        var7_4 = var0;
+        var4_4 = var0;
         if (var3_3 != null) {
-            var7_4 = var3_3.transformUrl((Matcher)var2_2, var0);
+            var4_4 = var3_3.transformUrl((Matcher)var2_2, var0);
         }
-        var6_5 = false;
-        var4_6 = 0;
+        var7_5 = false;
+        var5_6 = 0;
         do {
-            var5_7 = var6_5;
-            var0 = var7_4;
-            if (var4_6 >= var1_1.length) ** GOTO lbl16
-            if (var7_4.regionMatches(true, 0, var1_1[var4_6], 0, var1_1[var4_6].length())) {
-                var5_7 = var6_5 = true;
-                var0 = var7_4;
-                if (!var7_4.regionMatches(false, 0, var1_1[var4_6], 0, var1_1[var4_6].length())) {
-                    var0 = var1_1[var4_6] + var7_4.substring(var1_1[var4_6].length());
-                    var5_7 = var6_5;
+            var6_7 = var7_5;
+            var0 = var4_4;
+            if (var5_6 >= var1_1.length) ** GOTO lbl16
+            if (var4_4.regionMatches(true, 0, var1_1[var5_6], 0, var1_1[var5_6].length())) {
+                var6_7 = var7_5 = true;
+                var0 = var4_4;
+                if (!var4_4.regionMatches(false, 0, var1_1[var5_6], 0, var1_1[var5_6].length())) {
+                    var0 = var1_1[var5_6] + var4_4.substring(var1_1[var5_6].length());
+                    var6_7 = var7_5;
                 }
 lbl16: // 4 sources:
                 var2_2 = var0;
-                if (var5_7 != false) return var2_2;
+                if (var6_7 != false) return var2_2;
                 var2_2 = var0;
                 if (var1_1.length <= 0) return var2_2;
                 return var1_1[0] + var0;
             }
-            ++var4_6;
+            ++var5_6;
         } while (true);
     }
 
@@ -288,8 +288,8 @@ lbl16: // 4 sources:
      * Enabled aggressive block sorting
      */
     private static final void pruneOverlaps(ArrayList<LinkSpec> arrayList, Spannable spannable) {
-        int n2;
         LinkSpec linkSpec;
+        int n2;
         Object object = (URLSpan[])spannable.getSpans(0, spannable.length(), (Class)URLSpan.class);
         for (n2 = 0; n2 < object.length; ++n2) {
             linkSpec = new LinkSpec();

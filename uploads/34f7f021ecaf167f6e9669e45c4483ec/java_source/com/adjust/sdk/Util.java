@@ -464,10 +464,10 @@ lbl37: // 2 sources:
      * Lifted jumps to return sites
      */
     public static ResponseData readHttpResponse(HttpsURLConnection object, ActivityPackage object2) throws Exception {
-        Integer n2;
         StringBuffer stringBuffer;
-        Object object3;
+        Integer n2;
         ILogger iLogger;
+        Object object3;
         stringBuffer = new StringBuffer();
         iLogger = Util.getLogger();
         try {

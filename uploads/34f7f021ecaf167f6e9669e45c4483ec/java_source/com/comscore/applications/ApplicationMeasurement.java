@@ -44,7 +44,7 @@ extends Measurement {
         super(core);
         core.update(bl3);
         if (bl3) {
-            n2 = core.getForegroundTransitionsCountDelta(bl2);
+            n3 = core.getForegroundTransitionsCountDelta(bl2);
             l2 = core.getForegroundTotalTime(bl);
             long l3 = core.getForegroundTimeDelta(bl2);
             long l4 = core.getBackgroundTotalTime(bl);
@@ -55,11 +55,11 @@ extends Measurement {
             long l9 = core.getActiveUserSessionTimeDelta(bl2);
             long l10 = core.getUserSessionTimeDelta(bl2);
             long l11 = core.getAutoUpdateInterval();
-            n3 = core.getApplicationSessionCountDelta(bl2);
+            n2 = core.getApplicationSessionCountDelta(bl2);
             int n4 = core.getActiveUserSessionCountDelta(bl2);
             int n5 = core.getUserSessionCountDelta(bl2);
             int n6 = core.getUserInteractionCount(bl2);
-            this.setLabel(new Label("ns_ap_fg", String.valueOf(n2), false));
+            this.setLabel(new Label("ns_ap_fg", String.valueOf(n3), false));
             this.setLabel(new Label("ns_ap_ft", String.valueOf(l2), false));
             this.setLabel(new Label("ns_ap_dft", String.valueOf(l3), false));
             this.setLabel(new Label("ns_ap_bt", String.valueOf(l4), false));
@@ -69,7 +69,7 @@ extends Measurement {
             if (l11 >= 60000) {
                 this.setLabel(new Label("ns_ap_ut", String.valueOf(l11), false));
             }
-            this.setLabel(new Label("ns_ap_as", String.valueOf(n3), false));
+            this.setLabel(new Label("ns_ap_as", String.valueOf(n2), false));
             this.setLabel(new Label("ns_ap_das", String.valueOf(l8), false));
             if (n4 >= 0) {
                 this.setLabel(new Label("ns_ap_aus", String.valueOf(n4), false));
@@ -110,18 +110,18 @@ extends Measurement {
         string2 = core.getAppContext();
         this.setLabel(new Label("ns_ap_ver", core.getCurrentVersion(), false));
         string2 = this.a((Context)string2);
-        n2 = string2.x;
-        n3 = string2.y;
-        this.setLabel(new Label("ns_ap_res", Integer.toString(n2) + "x" + Integer.toString(n3), false));
+        n3 = string2.x;
+        n2 = string2.y;
+        this.setLabel(new Label("ns_ap_res", Integer.toString(n3) + "x" + Integer.toString(n2), false));
         this.setLabel(new Label("ns_ap_lang", Locale.getDefault().getLanguage(), false));
         this.setLabel(new Label("ns_ap_sv", core.getVersion(), false));
         if (eventType.equals((Object)EventType.KEEPALIVE)) {
             this.setLabel("ns_ap_oc", String.valueOf(core.getOfflineCache().getEventCount()));
         }
         l2 = core.getColdStartId();
-        n2 = core.getColdStartCount();
+        n3 = core.getColdStartCount();
         this.setLabel(new Label("ns_ap_id", String.valueOf(l2), false));
-        this.setLabel(new Label("ns_ap_cs", String.valueOf(n2), false));
+        this.setLabel(new Label("ns_ap_cs", String.valueOf(n3), false));
         this.setLabel(new Label("ns_ap_bi", core.getAppContext().getPackageName(), false));
     }
 

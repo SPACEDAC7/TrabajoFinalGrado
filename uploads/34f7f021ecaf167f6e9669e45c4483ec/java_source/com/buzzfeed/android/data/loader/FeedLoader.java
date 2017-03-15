@@ -62,9 +62,9 @@ extends BaseFeedLoader {
         if (jSONObject.opt("section") != null) {
             this.mLocalFlowList = this.parseFlow(new JSONArray(jSONObject.getString("section")), BuffetType.POST, this.shouldShowAds());
             if (this.mPage == 1) {
+                int n2;
                 FlowItem flowItem;
                 JSONObject jSONObject2;
-                int n2;
                 int n3 = n2 = 0;
                 if (jSONObject.opt("splash") != null) {
                     jSONObject2 = new JSONObject(jSONObject.getString("splash"));

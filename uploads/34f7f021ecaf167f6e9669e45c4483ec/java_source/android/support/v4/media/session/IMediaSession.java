@@ -744,28 +744,28 @@ extends IInterface {
             @Override
             public boolean isTransportControlEnabled() throws RemoteException {
                 Parcel parcel;
-                Parcel parcel2;
                 boolean bl;
+                Parcel parcel2;
                 block2 : {
                     bl = false;
-                    parcel = Parcel.obtain();
                     parcel2 = Parcel.obtain();
+                    parcel = Parcel.obtain();
                     try {
-                        parcel.writeInterfaceToken("android.support.v4.media.session.IMediaSession");
-                        this.mRemote.transact(5, parcel, parcel2, 0);
-                        parcel2.readException();
-                        int n2 = parcel2.readInt();
+                        parcel2.writeInterfaceToken("android.support.v4.media.session.IMediaSession");
+                        this.mRemote.transact(5, parcel2, parcel, 0);
+                        parcel.readException();
+                        int n2 = parcel.readInt();
                         if (n2 == 0) break block2;
                         bl = true;
                     }
-                    catch (Throwable var5_5) {
-                        parcel2.recycle();
+                    catch (Throwable var3_5) {
                         parcel.recycle();
-                        throw var5_5;
+                        parcel2.recycle();
+                        throw var3_5;
                     }
                 }
-                parcel2.recycle();
                 parcel.recycle();
+                parcel2.recycle();
                 return bl;
             }
 
@@ -1185,32 +1185,32 @@ extends IInterface {
                 block6 : {
                     block5 : {
                         bl = true;
-                        parcel = Parcel.obtain();
                         parcel2 = Parcel.obtain();
+                        parcel = Parcel.obtain();
                         try {
-                            parcel.writeInterfaceToken("android.support.v4.media.session.IMediaSession");
+                            parcel2.writeInterfaceToken("android.support.v4.media.session.IMediaSession");
                             if (keyEvent != null) {
-                                parcel.writeInt(1);
-                                keyEvent.writeToParcel(parcel, 0);
+                                parcel2.writeInt(1);
+                                keyEvent.writeToParcel(parcel2, 0);
                             } else {
-                                parcel.writeInt(0);
+                                parcel2.writeInt(0);
                             }
-                            this.mRemote.transact(2, parcel, parcel2, 0);
-                            parcel2.readException();
-                            int n2 = parcel2.readInt();
+                            this.mRemote.transact(2, parcel2, parcel, 0);
+                            parcel.readException();
+                            int n2 = parcel.readInt();
                             if (n2 == 0) break block5;
                             break block6;
                         }
                         catch (Throwable var1_2) {
-                            parcel2.recycle();
                             parcel.recycle();
+                            parcel2.recycle();
                             throw var1_2;
                         }
                     }
                     bl = false;
                 }
-                parcel2.recycle();
                 parcel.recycle();
+                parcel2.recycle();
                 return bl;
             }
 

@@ -17,19 +17,19 @@ public class DebugUtils {
             var1_1.append("null");
             return;
         }
-        var4_2 = var0.getClass().getSimpleName();
-        if (var4_2 == null) ** GOTO lbl-1000
-        var3_3 = var4_2;
-        if (var4_2.length() <= 0) lbl-1000: // 2 sources:
+        var3_2 = var0.getClass().getSimpleName();
+        if (var3_2 == null) ** GOTO lbl-1000
+        var2_3 = var3_2;
+        if (var3_2.length() <= 0) lbl-1000: // 2 sources:
         {
-            var4_2 = var0.getClass().getName();
-            var2_4 = var4_2.lastIndexOf(46);
-            var3_3 = var4_2;
-            if (var2_4 > 0) {
-                var3_3 = var4_2.substring(var2_4 + 1);
+            var3_2 = var0.getClass().getName();
+            var4_4 = var3_2.lastIndexOf(46);
+            var2_3 = var3_2;
+            if (var4_4 > 0) {
+                var2_3 = var3_2.substring(var4_4 + 1);
             }
         }
-        var1_1.append(var3_3);
+        var1_1.append(var2_3);
         var1_1.append('{');
         var1_1.append(Integer.toHexString(System.identityHashCode(var0)));
     }

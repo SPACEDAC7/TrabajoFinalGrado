@@ -23,15 +23,15 @@ package com.bumptech.glide.manager;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.Application;
-import android.app.Fragment;
+import android.app.FragmentManager;
 import android.content.Context;
 import android.content.ContextWrapper;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import com.bumptech.glide.RequestManager;
@@ -55,8 +55,8 @@ implements Handler.Callback {
     private static final String TAG = "RMRetriever";
     private volatile RequestManager applicationManager;
     private final Handler handler;
-    final Map<android.app.FragmentManager, RequestManagerFragment> pendingRequestManagerFragments = new HashMap<android.app.FragmentManager, RequestManagerFragment>();
-    final Map<FragmentManager, SupportRequestManagerFragment> pendingSupportRequestManagerFragments = new HashMap<FragmentManager, SupportRequestManagerFragment>();
+    final Map<FragmentManager, RequestManagerFragment> pendingRequestManagerFragments = new HashMap<FragmentManager, RequestManagerFragment>();
+    final Map<android.support.v4.app.FragmentManager, SupportRequestManagerFragment> pendingSupportRequestManagerFragments = new HashMap<android.support.v4.app.FragmentManager, SupportRequestManagerFragment>();
 
     RequestManagerRetriever() {
         this.handler = new Handler(Looper.getMainLooper(), (Handler.Callback)this);
@@ -90,9 +90,9 @@ implements Handler.Callback {
     }
 
     @TargetApi(value=11)
-    RequestManager fragmentGet(Context context, android.app.FragmentManager object) {
+    RequestManager fragmentGet(Context context, FragmentManager object) {
         RequestManager requestManager;
-        RequestManagerFragment requestManagerFragment = this.getRequestManagerFragment((android.app.FragmentManager)object);
+        RequestManagerFragment requestManagerFragment = this.getRequestManagerFragment((FragmentManager)object);
         object = requestManager = requestManagerFragment.getRequestManager();
         if (requestManager == null) {
             object = new RequestManager(context, requestManagerFragment.getLifecycle(), requestManagerFragment.getRequestManagerTreeNode());
@@ -111,14 +111,14 @@ implements Handler.Callback {
     }
 
     @TargetApi(value=17)
-    public RequestManager get(Fragment fragment) {
+    public RequestManager get(android.app.Fragment fragment) {
         if (fragment.getActivity() == null) {
             throw new IllegalArgumentException("You cannot start a load on a fragment before it is attached");
         }
         if (Util.isOnBackgroundThread() || Build.VERSION.SDK_INT < 17) {
             return this.get(fragment.getActivity().getApplicationContext());
         }
-        android.app.FragmentManager fragmentManager = fragment.getChildFragmentManager();
+        FragmentManager fragmentManager = fragment.getChildFragmentManager();
         return this.fragmentGet((Context)fragment.getActivity(), fragmentManager);
     }
 
@@ -140,14 +140,14 @@ implements Handler.Callback {
         return this.getApplicationManager(context);
     }
 
-    public RequestManager get(android.support.v4.app.Fragment fragment) {
+    public RequestManager get(Fragment fragment) {
         if (fragment.getActivity() == null) {
             throw new IllegalArgumentException("You cannot start a load on a fragment before it is attached");
         }
         if (Util.isOnBackgroundThread()) {
             return this.get(fragment.getActivity().getApplicationContext());
         }
-        FragmentManager fragmentManager = fragment.getChildFragmentManager();
+        android.support.v4.app.FragmentManager fragmentManager = fragment.getChildFragmentManager();
         return this.supportFragmentGet((Context)fragment.getActivity(), fragmentManager);
     }
 
@@ -160,7 +160,7 @@ implements Handler.Callback {
     }
 
     @TargetApi(value=17)
-    RequestManagerFragment getRequestManagerFragment(android.app.FragmentManager fragmentManager) {
+    RequestManagerFragment getRequestManagerFragment(FragmentManager fragmentManager) {
         RequestManagerFragment requestManagerFragment;
         RequestManagerFragment requestManagerFragment2 = requestManagerFragment = (RequestManagerFragment)fragmentManager.findFragmentByTag("com.bumptech.glide.manager");
         if (requestManagerFragment == null) {
@@ -168,14 +168,14 @@ implements Handler.Callback {
             if (requestManagerFragment == null) {
                 requestManagerFragment2 = new RequestManagerFragment();
                 this.pendingRequestManagerFragments.put(fragmentManager, requestManagerFragment2);
-                fragmentManager.beginTransaction().add((Fragment)requestManagerFragment2, "com.bumptech.glide.manager").commitAllowingStateLoss();
+                fragmentManager.beginTransaction().add((android.app.Fragment)requestManagerFragment2, "com.bumptech.glide.manager").commitAllowingStateLoss();
                 this.handler.obtainMessage(1, (Object)fragmentManager).sendToTarget();
             }
         }
         return requestManagerFragment2;
     }
 
-    SupportRequestManagerFragment getSupportRequestManagerFragment(FragmentManager fragmentManager) {
+    SupportRequestManagerFragment getSupportRequestManagerFragment(android.support.v4.app.FragmentManager fragmentManager) {
         SupportRequestManagerFragment supportRequestManagerFragment;
         SupportRequestManagerFragment supportRequestManagerFragment2 = supportRequestManagerFragment = (SupportRequestManagerFragment)fragmentManager.findFragmentByTag("com.bumptech.glide.manager");
         if (supportRequestManagerFragment == null) {
@@ -196,20 +196,20 @@ implements Handler.Callback {
     public boolean handleMessage(Message object) {
         boolean bl = true;
         Object object2 = null;
-        Object var4_4 = null;
+        Object var3_4 = null;
         switch (object.what) {
             default: {
                 bl = false;
-                object = var4_4;
+                object = var3_4;
                 break;
             }
             case 1: {
-                object = object2 = (android.app.FragmentManager)object.obj;
+                object = object2 = (FragmentManager)object.obj;
                 object2 = this.pendingRequestManagerFragments.remove(object2);
                 break;
             }
             case 2: {
-                object = object2 = (FragmentManager)object.obj;
+                object = object2 = (android.support.v4.app.FragmentManager)object.obj;
                 object2 = this.pendingSupportRequestManagerFragments.remove(object2);
             }
         }
@@ -219,9 +219,9 @@ implements Handler.Callback {
         return bl;
     }
 
-    RequestManager supportFragmentGet(Context context, FragmentManager object) {
+    RequestManager supportFragmentGet(Context context, android.support.v4.app.FragmentManager object) {
         RequestManager requestManager;
-        SupportRequestManagerFragment supportRequestManagerFragment = this.getSupportRequestManagerFragment((FragmentManager)object);
+        SupportRequestManagerFragment supportRequestManagerFragment = this.getSupportRequestManagerFragment((android.support.v4.app.FragmentManager)object);
         object = requestManager = supportRequestManagerFragment.getRequestManager();
         if (requestManager == null) {
             object = new RequestManager(context, supportRequestManagerFragment.getLifecycle(), supportRequestManagerFragment.getRequestManagerTreeNode());

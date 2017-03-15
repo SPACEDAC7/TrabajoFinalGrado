@@ -671,11 +671,11 @@ ScrollingView {
             int n5 = this.getScrollY();
             if (!this.mEdgeGlowTop.isFinished()) {
                 n4 = canvas.save();
-                n3 = this.getWidth();
-                n2 = this.getPaddingLeft();
+                n2 = this.getWidth();
+                n3 = this.getPaddingLeft();
                 int n6 = this.getPaddingRight();
                 canvas.translate((float)this.getPaddingLeft(), (float)Math.min(0, n5));
-                this.mEdgeGlowTop.setSize(n3 - n2 - n6, this.getHeight());
+                this.mEdgeGlowTop.setSize(n2 - n3 - n6, this.getHeight());
                 if (this.mEdgeGlowTop.draw(canvas)) {
                     ViewCompat.postInvalidateOnAnimation((View)this);
                 }
@@ -683,11 +683,11 @@ ScrollingView {
             }
             if (!this.mEdgeGlowBottom.isFinished()) {
                 n4 = canvas.save();
-                n3 = this.getWidth() - this.getPaddingLeft() - this.getPaddingRight();
-                n2 = this.getHeight();
-                canvas.translate((float)(- n3 + this.getPaddingLeft()), (float)(Math.max(this.getScrollRange(), n5) + n2));
-                canvas.rotate(180.0f, (float)n3, 0.0f);
-                this.mEdgeGlowBottom.setSize(n3, n2);
+                n2 = this.getWidth() - this.getPaddingLeft() - this.getPaddingRight();
+                n3 = this.getHeight();
+                canvas.translate((float)(- n2 + this.getPaddingLeft()), (float)(Math.max(this.getScrollRange(), n5) + n3));
+                canvas.rotate(180.0f, (float)n2, 0.0f);
+                this.mEdgeGlowBottom.setSize(n2, n3);
                 if (this.mEdgeGlowBottom.draw(canvas)) {
                     ViewCompat.postInvalidateOnAnimation((View)this);
                 }
@@ -1108,21 +1108,21 @@ lbl48: // 6 sources:
      */
     public boolean onTouchEvent(MotionEvent var1_1) {
         this.initVelocityTrackerIfNotExists();
-        var9_2 = MotionEvent.obtain((MotionEvent)var1_1);
-        var2_3 = MotionEventCompat.getActionMasked(var1_1);
-        if (var2_3 == 0) {
+        var2_2 = MotionEvent.obtain((MotionEvent)var1_1);
+        var4_3 = MotionEventCompat.getActionMasked(var1_1);
+        if (var4_3 == 0) {
             this.mNestedYOffset = 0;
         }
-        var9_2.offsetLocation(0.0f, (float)this.mNestedYOffset);
-        switch (var2_3) {
+        var2_2.offsetLocation(0.0f, (float)this.mNestedYOffset);
+        switch (var4_3) {
             case 0: {
                 if (this.getChildCount() == 0) {
                     return false;
                 }
-                var8_4 = this.mScroller.isFinished() == false;
-                this.mIsBeingDragged = var8_4;
-                if (var8_4 && (var10_5 = this.getParent()) != null) {
-                    var10_5.requestDisallowInterceptTouchEvent(true);
+                var10_4 = this.mScroller.isFinished() == false;
+                this.mIsBeingDragged = var10_4;
+                if (var10_4 && (var3_5 = this.getParent()) != null) {
+                    var3_5.requestDisallowInterceptTouchEvent(true);
                 }
                 if (!this.mScroller.isFinished()) {
                     this.mScroller.abortAnimation();
@@ -1133,55 +1133,55 @@ lbl48: // 6 sources:
                 ** break;
             }
             case 2: {
-                var4_7 = var1_1.findPointerIndex(this.mActivePointerId);
-                if (var4_7 == -1) {
+                var6_7 = var1_1.findPointerIndex(this.mActivePointerId);
+                if (var6_7 == -1) {
                     Log.e((String)"NestedScrollView", (String)("Invalid pointerId=" + this.mActivePointerId + " in onTouchEvent"));
                     ** break;
                 }
-                var5_8 = (int)var1_1.getY(var4_7);
-                var3_9 = var2_3 = this.mLastMotionY - var5_8;
-                if (this.dispatchNestedPreScroll(0, var2_3, this.mScrollConsumed, this.mScrollOffset)) {
-                    var3_9 = var2_3 - this.mScrollConsumed[1];
-                    var9_2.offsetLocation(0.0f, (float)this.mScrollOffset[1]);
+                var7_8 = (int)var1_1.getY(var6_7);
+                var5_9 = var4_3 = this.mLastMotionY - var7_8;
+                if (this.dispatchNestedPreScroll(0, var4_3, this.mScrollConsumed, this.mScrollOffset)) {
+                    var5_9 = var4_3 - this.mScrollConsumed[1];
+                    var2_2.offsetLocation(0.0f, (float)this.mScrollOffset[1]);
                     this.mNestedYOffset += this.mScrollOffset[1];
                 }
-                var2_3 = var3_9;
+                var4_3 = var5_9;
                 if (!this.mIsBeingDragged) {
-                    var2_3 = var3_9;
-                    if (Math.abs(var3_9) > this.mTouchSlop) {
-                        var10_6 = this.getParent();
-                        if (var10_6 != null) {
-                            var10_6.requestDisallowInterceptTouchEvent(true);
+                    var4_3 = var5_9;
+                    if (Math.abs(var5_9) > this.mTouchSlop) {
+                        var3_6 = this.getParent();
+                        if (var3_6 != null) {
+                            var3_6.requestDisallowInterceptTouchEvent(true);
                         }
                         this.mIsBeingDragged = true;
-                        var2_3 = var3_9 > 0 ? var3_9 - this.mTouchSlop : var3_9 + this.mTouchSlop;
+                        var4_3 = var5_9 > 0 ? var5_9 - this.mTouchSlop : var5_9 + this.mTouchSlop;
                     }
                 }
                 if (this.mIsBeingDragged) {
-                    this.mLastMotionY = var5_8 - this.mScrollOffset[1];
-                    var6_10 = this.getScrollY();
-                    var5_8 = this.getScrollRange();
-                    var3_9 = this.getOverScrollMode();
-                    var3_9 = var3_9 == 0 || var3_9 == 1 && var5_8 > 0 ? 1 : 0;
-                    if (this.overScrollByCompat(0, var2_3, 0, this.getScrollY(), 0, var5_8, 0, 0, true) && !this.hasNestedScrollingParent()) {
+                    this.mLastMotionY = var7_8 - this.mScrollOffset[1];
+                    var8_10 = this.getScrollY();
+                    var7_8 = this.getScrollRange();
+                    var5_9 = this.getOverScrollMode();
+                    var5_9 = var5_9 == 0 || var5_9 == 1 && var7_8 > 0 ? 1 : 0;
+                    if (this.overScrollByCompat(0, var4_3, 0, this.getScrollY(), 0, var7_8, 0, 0, true) && !this.hasNestedScrollingParent()) {
                         this.mVelocityTracker.clear();
                     }
-                    if (this.dispatchNestedScroll(0, var7_11 = this.getScrollY() - var6_10, 0, var2_3 - var7_11, this.mScrollOffset)) {
+                    if (this.dispatchNestedScroll(0, var9_11 = this.getScrollY() - var8_10, 0, var4_3 - var9_11, this.mScrollOffset)) {
                         this.mLastMotionY -= this.mScrollOffset[1];
-                        var9_2.offsetLocation(0.0f, (float)this.mScrollOffset[1]);
+                        var2_2.offsetLocation(0.0f, (float)this.mScrollOffset[1]);
                         this.mNestedYOffset += this.mScrollOffset[1];
                         ** break;
                     }
-                    if (var3_9 != 0) {
+                    if (var5_9 != 0) {
                         this.ensureGlows();
-                        var3_9 = var6_10 + var2_3;
-                        if (var3_9 < 0) {
-                            this.mEdgeGlowTop.onPull((float)var2_3 / (float)this.getHeight(), var1_1.getX(var4_7) / (float)this.getWidth());
+                        var5_9 = var8_10 + var4_3;
+                        if (var5_9 < 0) {
+                            this.mEdgeGlowTop.onPull((float)var4_3 / (float)this.getHeight(), var1_1.getX(var6_7) / (float)this.getWidth());
                             if (!this.mEdgeGlowBottom.isFinished()) {
                                 this.mEdgeGlowBottom.onRelease();
                             }
-                        } else if (var3_9 > var5_8) {
-                            this.mEdgeGlowBottom.onPull((float)var2_3 / (float)this.getHeight(), 1.0f - var1_1.getX(var4_7) / (float)this.getWidth());
+                        } else if (var5_9 > var7_8) {
+                            this.mEdgeGlowBottom.onPull((float)var4_3 / (float)this.getHeight(), 1.0f - var1_1.getX(var6_7) / (float)this.getWidth());
                             if (!this.mEdgeGlowTop.isFinished()) {
                                 this.mEdgeGlowTop.onRelease();
                             }
@@ -1198,9 +1198,9 @@ lbl48: // 6 sources:
                 if (this.mIsBeingDragged) {
                     var1_1 = this.mVelocityTracker;
                     var1_1.computeCurrentVelocity(1000, (float)this.mMaximumVelocity);
-                    var2_3 = (int)VelocityTrackerCompat.getYVelocity((VelocityTracker)var1_1, this.mActivePointerId);
-                    if (Math.abs(var2_3) > this.mMinimumVelocity) {
-                        this.flingWithNestedDispatch(- var2_3);
+                    var4_3 = (int)VelocityTrackerCompat.getYVelocity((VelocityTracker)var1_1, this.mActivePointerId);
+                    if (Math.abs(var4_3) > this.mMinimumVelocity) {
+                        this.flingWithNestedDispatch(- var4_3);
                     } else if (this.mScroller.springBack(this.getScrollX(), this.getScrollY(), 0, 0, 0, this.getScrollRange())) {
                         ViewCompat.postInvalidateOnAnimation((View)this);
                     }
@@ -1218,9 +1218,9 @@ lbl48: // 6 sources:
                 ** break;
             }
             case 5: {
-                var2_3 = MotionEventCompat.getActionIndex(var1_1);
-                this.mLastMotionY = (int)var1_1.getY(var2_3);
-                this.mActivePointerId = var1_1.getPointerId(var2_3);
+                var4_3 = MotionEventCompat.getActionIndex(var1_1);
+                this.mLastMotionY = (int)var1_1.getY(var4_3);
+                this.mActivePointerId = var1_1.getPointerId(var4_3);
             }
 lbl93: // 9 sources:
             default: {
@@ -1232,9 +1232,9 @@ lbl93: // 9 sources:
         this.mLastMotionY = (int)var1_1.getY(var1_1.findPointerIndex(this.mActivePointerId));
 lbl98: // 2 sources:
         if (this.mVelocityTracker != null) {
-            this.mVelocityTracker.addMovement(var9_2);
+            this.mVelocityTracker.addMovement(var2_2);
         }
-        var9_2.recycle();
+        var2_2.recycle();
         return true;
     }
 

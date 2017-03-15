@@ -38,8 +38,8 @@ public final class TransformationUtils {
      * Enabled aggressive block sorting
      */
     public static Bitmap centerCrop(Bitmap bitmap, Bitmap bitmap2, int n2, int n3) {
-        Bitmap bitmap3;
         float f2;
+        Bitmap bitmap3;
         if (bitmap2 == null) {
             return null;
         }
@@ -139,9 +139,9 @@ public final class TransformationUtils {
             int n3 = TransformationUtils.getExifOrientationDegrees(new ExifInterface(string2).getAttributeInt("Orientation", 0));
             return n3;
         }
-        catch (Exception var3_3) {
+        catch (Exception var1_3) {
             if (!Log.isLoggable((String)"TransformationUtils", (int)6)) return n2;
-            Log.e((String)"TransformationUtils", (String)("Unable to get orientation for image with path=" + string2), (Throwable)var3_3);
+            Log.e((String)"TransformationUtils", (String)("Unable to get orientation for image with path=" + string2), (Throwable)var1_3);
             return 0;
         }
     }

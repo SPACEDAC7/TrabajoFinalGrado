@@ -113,44 +113,44 @@ extends FrameLayout {
      * Enabled aggressive block sorting
      */
     protected void onMeasure(int n2, int n3) {
-        int n4;
         TypedValue typedValue;
+        int n4;
         int n5;
         DisplayMetrics displayMetrics = this.getContext().getResources().getDisplayMetrics();
         int n6 = displayMetrics.widthPixels < displayMetrics.heightPixels ? 1 : 0;
         int n7 = View.MeasureSpec.getMode((int)n2);
         int n8 = View.MeasureSpec.getMode((int)n3);
-        int n9 = n5 = 0;
+        int n9 = n4 = 0;
         int n10 = n2;
         if (n7 == Integer.MIN_VALUE) {
             typedValue = n6 != 0 ? this.mFixedWidthMinor : this.mFixedWidthMajor;
-            n9 = n5;
+            n9 = n4;
             n10 = n2;
             if (typedValue != null) {
-                n9 = n5;
+                n9 = n4;
                 n10 = n2;
                 if (typedValue.type != 0) {
-                    n4 = 0;
+                    n5 = 0;
                     if (typedValue.type == 5) {
-                        n4 = (int)typedValue.getDimension(displayMetrics);
+                        n5 = (int)typedValue.getDimension(displayMetrics);
                     } else if (typedValue.type == 6) {
-                        n4 = (int)typedValue.getFraction((float)displayMetrics.widthPixels, (float)displayMetrics.widthPixels);
+                        n5 = (int)typedValue.getFraction((float)displayMetrics.widthPixels, (float)displayMetrics.widthPixels);
                     }
-                    n9 = n5;
+                    n9 = n4;
                     n10 = n2;
-                    if (n4 > 0) {
-                        n10 = View.MeasureSpec.makeMeasureSpec((int)Math.min(n4 - (this.mDecorPadding.left + this.mDecorPadding.right), View.MeasureSpec.getSize((int)n2)), (int)1073741824);
+                    if (n5 > 0) {
+                        n10 = View.MeasureSpec.makeMeasureSpec((int)Math.min(n5 - (this.mDecorPadding.left + this.mDecorPadding.right), View.MeasureSpec.getSize((int)n2)), (int)1073741824);
                         n9 = 1;
                     }
                 }
             }
         }
-        n4 = n3;
+        n5 = n3;
         if (n8 == Integer.MIN_VALUE) {
             typedValue = n6 != 0 ? this.mFixedHeightMajor : this.mFixedHeightMinor;
-            n4 = n3;
+            n5 = n3;
             if (typedValue != null) {
-                n4 = n3;
+                n5 = n3;
                 if (typedValue.type != 0) {
                     n2 = 0;
                     if (typedValue.type == 5) {
@@ -158,29 +158,29 @@ extends FrameLayout {
                     } else if (typedValue.type == 6) {
                         n2 = (int)typedValue.getFraction((float)displayMetrics.heightPixels, (float)displayMetrics.heightPixels);
                     }
-                    n4 = n3;
+                    n5 = n3;
                     if (n2 > 0) {
-                        n4 = View.MeasureSpec.makeMeasureSpec((int)Math.min(n2 - (this.mDecorPadding.top + this.mDecorPadding.bottom), View.MeasureSpec.getSize((int)n3)), (int)1073741824);
+                        n5 = View.MeasureSpec.makeMeasureSpec((int)Math.min(n2 - (this.mDecorPadding.top + this.mDecorPadding.bottom), View.MeasureSpec.getSize((int)n3)), (int)1073741824);
                     }
                 }
             }
         }
-        super.onMeasure(n10, n4);
+        super.onMeasure(n10, n5);
         n8 = this.getMeasuredWidth();
         n10 = 0;
-        n5 = View.MeasureSpec.makeMeasureSpec((int)n8, (int)1073741824);
+        n4 = View.MeasureSpec.makeMeasureSpec((int)n8, (int)1073741824);
         n3 = n10;
-        n2 = n5;
+        n2 = n4;
         if (n9 == 0) {
             n3 = n10;
-            n2 = n5;
+            n2 = n4;
             if (n7 == Integer.MIN_VALUE) {
                 typedValue = n6 != 0 ? this.mMinWidthMinor : this.mMinWidthMajor;
                 n3 = n10;
-                n2 = n5;
+                n2 = n4;
                 if (typedValue != null) {
                     n3 = n10;
-                    n2 = n5;
+                    n2 = n4;
                     if (typedValue.type != 0) {
                         n2 = 0;
                         if (typedValue.type == 5) {
@@ -193,7 +193,7 @@ extends FrameLayout {
                             n6 = n2 - (this.mDecorPadding.left + this.mDecorPadding.right);
                         }
                         n3 = n10;
-                        n2 = n5;
+                        n2 = n4;
                         if (n8 < n6) {
                             n2 = View.MeasureSpec.makeMeasureSpec((int)n6, (int)1073741824);
                             n3 = 1;
@@ -203,7 +203,7 @@ extends FrameLayout {
             }
         }
         if (n3 != 0) {
-            super.onMeasure(n2, n4);
+            super.onMeasure(n2, n5);
         }
     }
 

@@ -185,16 +185,16 @@ public class AnimatedGifEncoder {
         this.out.write(249);
         this.out.write(4);
         if (this.transparent == null && !this.hasTransparentPixels) {
-            n3 = 0;
             n2 = 0;
+            n3 = 0;
         } else {
-            n3 = 1;
-            n2 = 2;
+            n2 = 1;
+            n3 = 2;
         }
         if (this.dispose >= 0) {
-            n2 = this.dispose & 7;
+            n3 = this.dispose & 7;
         }
-        this.out.write(n2 << 2 | 0 | 0 | n3);
+        this.out.write(n3 << 2 | 0 | 0 | n2);
         this.writeShort(this.delay);
         this.out.write(this.transIndex);
         this.out.write(0);
@@ -308,7 +308,7 @@ public class AnimatedGifEncoder {
                 bl = bl2;
             }
         }
-        catch (IOException var3_3) {
+        catch (IOException var1_3) {
             bl = false;
         }
         this.transIndex = 0;

@@ -61,35 +61,35 @@ implements Parcelable {
         if (Build.VERSION.SDK_INT < 19) {
             return null;
         }
-        var1_1 = RatingCompatKitkat.getRatingStyle(var0);
+        var2_1 = RatingCompatKitkat.getRatingStyle(var0);
         if (!RatingCompatKitkat.isRated(var0)) ** GOTO lbl21
-        switch (var1_1) {
+        switch (var2_1) {
             default: {
                 return null;
             }
             case 1: {
-                var2_2 = RatingCompat.newHeartRating(RatingCompatKitkat.hasHeart(var0));
+                var1_2 = RatingCompat.newHeartRating(RatingCompatKitkat.hasHeart(var0));
                 ** GOTO lbl22
             }
             case 2: {
-                var2_2 = RatingCompat.newThumbRating(RatingCompatKitkat.isThumbUp(var0));
+                var1_2 = RatingCompat.newThumbRating(RatingCompatKitkat.isThumbUp(var0));
                 ** GOTO lbl22
             }
             case 3: 
             case 4: 
             case 5: {
-                var2_2 = RatingCompat.newStarRating(var1_1, RatingCompatKitkat.getStarRating(var0));
+                var1_2 = RatingCompat.newStarRating(var2_1, RatingCompatKitkat.getStarRating(var0));
                 ** GOTO lbl22
             }
             case 6: 
         }
-        var2_2 = RatingCompat.newPercentageRating(RatingCompatKitkat.getPercentRating(var0));
+        var1_2 = RatingCompat.newPercentageRating(RatingCompatKitkat.getPercentRating(var0));
         ** GOTO lbl22
 lbl21: // 1 sources:
-        var2_2 = RatingCompat.newUnratedRating(var1_1);
+        var1_2 = RatingCompat.newUnratedRating(var2_1);
 lbl22: // 5 sources:
-        var2_2.mRatingObj = var0;
-        return var2_2;
+        var1_2.mRatingObj = var0;
+        return var1_2;
     }
 
     /*

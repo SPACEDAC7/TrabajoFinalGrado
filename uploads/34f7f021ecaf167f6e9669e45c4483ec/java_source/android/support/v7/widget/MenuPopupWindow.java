@@ -148,8 +148,8 @@ implements MenuItemHoverListener {
          */
         public boolean onHoverEvent(MotionEvent motionEvent) {
             if (this.mHoverListener != null) {
-                int n2;
                 MenuItem menuItem;
+                int n2;
                 Object object = this.getAdapter();
                 if (object instanceof HeaderViewListAdapter) {
                     object = (HeaderViewListAdapter)object;

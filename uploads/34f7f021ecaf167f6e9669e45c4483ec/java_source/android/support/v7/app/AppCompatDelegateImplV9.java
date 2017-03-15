@@ -432,43 +432,43 @@ LayoutInflaterFactory {
         PanelFeatureState panelFeatureState = this.getPanelState(n2, true);
         if (n2 == 0 && this.mDecorContentParent != null && this.mDecorContentParent.canShowOverflowMenu() && !ViewConfigurationCompat.hasPermanentMenuKey(ViewConfiguration.get((Context)this.mContext))) {
             if (!this.mDecorContentParent.isOverflowMenuShowing()) {
-                bl = bl3;
+                bl2 = bl3;
                 if (!this.isDestroyed()) {
-                    bl = bl3;
+                    bl2 = bl3;
                     if (this.preparePanel(panelFeatureState, keyEvent)) {
-                        bl = this.mDecorContentParent.showOverflowMenu();
+                        bl2 = this.mDecorContentParent.showOverflowMenu();
                     }
                 }
             } else {
-                bl = this.mDecorContentParent.hideOverflowMenu();
+                bl2 = this.mDecorContentParent.hideOverflowMenu();
             }
         } else if (panelFeatureState.isOpen || panelFeatureState.isHandled) {
-            bl = panelFeatureState.isOpen;
+            bl2 = panelFeatureState.isOpen;
             this.closePanel(panelFeatureState, true);
         } else {
-            bl = bl3;
+            bl2 = bl3;
             if (panelFeatureState.isPrepared) {
-                bl2 = true;
+                bl = true;
                 if (panelFeatureState.refreshMenuContent) {
                     panelFeatureState.isPrepared = false;
-                    bl2 = this.preparePanel(panelFeatureState, keyEvent);
+                    bl = this.preparePanel(panelFeatureState, keyEvent);
                 }
-                bl = bl3;
-                if (bl2) {
+                bl2 = bl3;
+                if (bl) {
                     this.openPanel(panelFeatureState, keyEvent);
-                    bl = true;
+                    bl2 = true;
                 }
             }
         }
-        bl2 = bl;
-        if (!bl) return bl2;
+        bl = bl2;
+        if (!bl2) return bl;
         keyEvent = (AudioManager)this.mContext.getSystemService("audio");
         if (keyEvent != null) {
             keyEvent.playSoundEffect(0);
-            return bl;
+            return bl2;
         }
         Log.w((String)"AppCompatDelegate", (String)"Couldn't get audio manager");
-        return bl;
+        return bl2;
     }
 
     /*
@@ -1388,19 +1388,19 @@ LayoutInflaterFactory {
         if (this.mActionMode != null) {
             this.mActionMode.finish();
         }
-        var4_3 = var1_1;
+        var2_3 = var1_1;
         if (!(var1_1 instanceof ActionModeCallbackWrapperV9)) {
-            var4_3 = new ActionModeCallbackWrapperV9((ActionMode.Callback)var1_1);
+            var2_3 = new ActionModeCallbackWrapperV9((ActionMode.Callback)var1_1);
         }
-        var1_1 = var5_4 = null;
+        var1_1 = var3_4 = null;
         if (this.mAppCompatCallback == null) ** GOTO lbl-1000
-        var1_1 = var5_4;
+        var1_1 = var3_4;
         if (!this.isDestroyed()) {
             try {
-                var1_1 = this.mAppCompatCallback.onWindowStartingSupportActionMode((ActionMode.Callback)var4_3);
+                var1_1 = this.mAppCompatCallback.onWindowStartingSupportActionMode((ActionMode.Callback)var2_3);
             }
             catch (AbstractMethodError var1_2) {
-                var1_1 = var5_4;
+                var1_1 = var3_4;
             }
         }
         if (var1_1 != null) {
@@ -1409,15 +1409,15 @@ LayoutInflaterFactory {
         {
             if (this.mActionModeView == null) {
                 if (this.mIsFloating) {
-                    var5_4 = new TypedValue();
+                    var3_4 = new TypedValue();
                     var1_1 = this.mContext.getTheme();
-                    var1_1.resolveAttribute(R.attr.actionBarTheme, (TypedValue)var5_4, true);
-                    if (var5_4.resourceId != 0) {
-                        var6_5 = this.mContext.getResources().newTheme();
-                        var6_5.setTo((Resources.Theme)var1_1);
-                        var6_5.applyStyle(var5_4.resourceId, true);
+                    var1_1.resolveAttribute(R.attr.actionBarTheme, (TypedValue)var3_4, true);
+                    if (var3_4.resourceId != 0) {
+                        var4_5 = this.mContext.getResources().newTheme();
+                        var4_5.setTo((Resources.Theme)var1_1);
+                        var4_5.applyStyle(var3_4.resourceId, true);
                         var1_1 = new ContextThemeWrapper(this.mContext, 0);
-                        var1_1.getTheme().setTo(var6_5);
+                        var1_1.getTheme().setTo(var4_5);
                     } else {
                         var1_1 = this.mContext;
                     }
@@ -1426,9 +1426,9 @@ LayoutInflaterFactory {
                     PopupWindowCompat.setWindowLayoutType(this.mActionModePopup, 2);
                     this.mActionModePopup.setContentView((View)this.mActionModeView);
                     this.mActionModePopup.setWidth(-1);
-                    var1_1.getTheme().resolveAttribute(R.attr.actionBarSize, (TypedValue)var5_4, true);
-                    var2_6 = TypedValue.complexToDimensionPixelSize((int)var5_4.data, (DisplayMetrics)var1_1.getResources().getDisplayMetrics());
-                    this.mActionModeView.setContentHeight(var2_6);
+                    var1_1.getTheme().resolveAttribute(R.attr.actionBarSize, (TypedValue)var3_4, true);
+                    var5_6 = TypedValue.complexToDimensionPixelSize((int)var3_4.data, (DisplayMetrics)var1_1.getResources().getDisplayMetrics());
+                    this.mActionModeView.setContentHeight(var5_6);
                     this.mActionModePopup.setHeight(-2);
                     this.mShowActionModePopup = new Runnable(){
 
@@ -1472,9 +1472,9 @@ LayoutInflaterFactory {
                 this.endOnGoingFadeAnimation();
                 this.mActionModeView.killMode();
                 var1_1 = this.mActionModeView.getContext();
-                var5_4 = this.mActionModeView;
-                var3_7 = this.mActionModePopup == null;
-                if (var4_3.onCreateActionMode((ActionMode)(var1_1 = new StandaloneActionMode((Context)var1_1, (ActionBarContextView)var5_4, (ActionMode.Callback)var4_3, var3_7)), var1_1.getMenu())) {
+                var3_4 = this.mActionModeView;
+                var6_7 = this.mActionModePopup == null;
+                if (var2_3.onCreateActionMode((ActionMode)(var1_1 = new StandaloneActionMode((Context)var1_1, (ActionBarContextView)var3_4, (ActionMode.Callback)var2_3, var6_7)), var1_1.getMenu())) {
                     var1_1.invalidate();
                     this.mActionModeView.initForMode((ActionMode)var1_1);
                     this.mActionMode = var1_1;
@@ -1570,34 +1570,34 @@ LayoutInflaterFactory {
                     }
                     n6 = this.mStatusGuard != null ? 1 : 0;
                     n4 = n7;
-                    n9 = n6;
-                    n8 = n2;
+                    n8 = n6;
+                    n9 = n2;
                     if (!this.mOverlayActionMode) {
                         n4 = n7;
-                        n9 = n6;
-                        n8 = n2;
+                        n8 = n6;
+                        n9 = n2;
                         if (n6 != 0) {
-                            n8 = 0;
-                            n9 = n6;
+                            n9 = 0;
+                            n8 = n6;
                             n4 = n7;
                         }
                     }
                 } else {
-                    n9 = n5;
-                    n8 = n2;
+                    n8 = n5;
+                    n9 = n2;
                     if (view.topMargin != 0) {
                         n4 = 1;
                         view.topMargin = 0;
-                        n9 = n5;
-                        n8 = n2;
+                        n8 = n5;
+                        n9 = n2;
                     }
                 }
-                n6 = n9;
-                n7 = n8;
+                n6 = n8;
+                n7 = n9;
                 if (n4 != 0) {
                     this.mActionModeView.setLayoutParams((ViewGroup.LayoutParams)view);
-                    n7 = n8;
-                    n6 = n9;
+                    n7 = n9;
+                    n6 = n8;
                 }
             }
         }

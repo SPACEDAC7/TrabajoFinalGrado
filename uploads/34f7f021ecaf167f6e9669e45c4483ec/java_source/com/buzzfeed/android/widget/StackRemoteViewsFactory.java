@@ -163,7 +163,7 @@ implements RemoteViewsService.RemoteViewsFactory {
             try {
                 Thread.sleep(100);
             }
-            catch (InterruptedException var5_4) {
+            catch (InterruptedException var2_4) {
                 LogUtil.e(string2, "Timeout occurred while loading buzz feed");
             }
             this.widgetItems = WidgetService.getRegularBuzzList(this.context, this.appWidgetId, false);

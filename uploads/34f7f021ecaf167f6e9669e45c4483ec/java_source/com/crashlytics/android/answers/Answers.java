@@ -251,8 +251,8 @@ extends Kit<Boolean> {
             this.analyticsManager.enable();
             return true;
         }
-        catch (Exception var3_7) {
-            Fabric.getLogger().e("Answers", "Error retrieving app properties", (Throwable)var3_7);
+        catch (Exception var1_7) {
+            Fabric.getLogger().e("Answers", "Error retrieving app properties", (Throwable)var1_7);
             return false;
         }
     }

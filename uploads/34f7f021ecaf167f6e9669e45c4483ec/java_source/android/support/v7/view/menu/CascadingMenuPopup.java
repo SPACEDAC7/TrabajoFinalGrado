@@ -142,31 +142,31 @@ PopupWindow.OnDismissListener {
             @Override
             public void onItemHoverEnter(@NonNull MenuBuilder var1_1, @NonNull MenuItem var2_2) {
                 CascadingMenuPopup.this.mSubMenuHoverHandler.removeCallbacksAndMessages((Object)null);
-                var5_3 = -1;
-                var3_4 = 0;
-                var6_5 = CascadingMenuPopup.this.mShowingMenus.size();
+                var6_3 = -1;
+                var4_4 = 0;
+                var7_5 = CascadingMenuPopup.this.mShowingMenus.size();
                 do {
-                    var4_6 = var5_3;
-                    if (var3_4 >= var6_5) ** GOTO lbl10
-                    if (var1_1 == CascadingMenuPopup.this.mShowingMenus.get((int)var3_4).menu) {
-                        var4_6 = var3_4;
+                    var5_6 = var6_3;
+                    if (var4_4 >= var7_5) ** GOTO lbl10
+                    if (var1_1 == CascadingMenuPopup.this.mShowingMenus.get((int)var4_4).menu) {
+                        var5_6 = var4_4;
 lbl10: // 2 sources:
-                        if (var4_6 != -1) break;
+                        if (var5_6 != -1) break;
                         return;
                     }
-                    ++var3_4;
+                    ++var4_4;
                 } while (true);
-                var3_4 = var4_6 + 1;
-                var9_7 = var3_4 < CascadingMenuPopup.this.mShowingMenus.size() ? CascadingMenuPopup.this.mShowingMenus.get(var3_4) : null;
+                var4_4 = var5_6 + 1;
+                var3_7 = var4_4 < CascadingMenuPopup.this.mShowingMenus.size() ? CascadingMenuPopup.this.mShowingMenus.get(var4_4) : null;
                 var2_2 = new Runnable((MenuItem)var2_2, var1_1){
                     final /* synthetic */ MenuItem val$item;
                     final /* synthetic */ MenuBuilder val$menu;
 
                     @Override
                     public void run() {
-                        if (var9_7 != null) {
+                        if (var3_7 != null) {
                             CascadingMenuPopup.this.mShouldCloseImmediately = true;
-                            var9_7.menu.close(false);
+                            var3_7.menu.close(false);
                             CascadingMenuPopup.this.mShouldCloseImmediately = false;
                         }
                         if (this.val$item.isEnabled() && this.val$item.hasSubMenu()) {
@@ -174,8 +174,8 @@ lbl10: // 2 sources:
                         }
                     }
                 };
-                var7_8 = SystemClock.uptimeMillis();
-                CascadingMenuPopup.this.mSubMenuHoverHandler.postAtTime((Runnable)var2_2, (Object)var1_1, var7_8 + 200);
+                var8_8 = SystemClock.uptimeMillis();
+                CascadingMenuPopup.this.mSubMenuHoverHandler.postAtTime((Runnable)var2_2, (Object)var1_1, var8_8 + 200);
             }
 
             @Override
@@ -238,32 +238,32 @@ lbl10: // 2 sources:
         if ((var2_2 = this.findMenuItemForSubmenu(var1_1.menu, var2_2)) == null) {
             return null;
         }
-        var8_3 = var1_1.getListView();
-        var1_1 = var8_3.getAdapter();
+        var3_3 = var1_1.getListView();
+        var1_1 = var3_3.getAdapter();
         if (var1_1 instanceof HeaderViewListAdapter) {
             var1_1 = (HeaderViewListAdapter)var1_1;
-            var4_4 = var1_1.getHeadersCount();
+            var5_4 = var1_1.getHeadersCount();
             var1_1 = (MenuAdapter)var1_1.getWrappedAdapter();
         } else {
-            var4_4 = 0;
+            var5_4 = 0;
             var1_1 = (MenuAdapter)var1_1;
         }
-        var6_5 = -1;
-        var3_6 = 0;
-        var7_7 = var1_1.getCount();
+        var7_5 = -1;
+        var4_6 = 0;
+        var8_7 = var1_1.getCount();
         do {
-            var5_8 = var6_5;
-            if (var3_6 >= var7_7) ** GOTO lbl20
-            if (var2_2 == var1_1.getItem(var3_6)) {
-                var5_8 = var3_6;
+            var6_8 = var7_5;
+            if (var4_6 >= var8_7) ** GOTO lbl20
+            if (var2_2 == var1_1.getItem(var4_6)) {
+                var6_8 = var4_6;
 lbl20: // 2 sources:
-                if (var5_8 == -1) return null;
-                var3_6 = var5_8 + var4_4 - var8_3.getFirstVisiblePosition();
-                if (var3_6 < 0) return null;
-                if (var3_6 >= var8_3.getChildCount()) return null;
-                return var8_3.getChildAt(var3_6);
+                if (var6_8 == -1) return null;
+                var4_6 = var6_8 + var5_4 - var3_3.getFirstVisiblePosition();
+                if (var4_6 < 0) return null;
+                if (var4_6 >= var3_3.getChildCount()) return null;
+                return var3_3.getChildAt(var4_6);
             }
-            ++var3_6;
+            ++var4_6;
         } while (true);
     }
 
@@ -453,20 +453,20 @@ lbl20: // 2 sources:
      * Lifted jumps to return sites
      */
     public void onDismiss() {
-        var4_1 = null;
-        var1_2 = 0;
-        var2_3 = this.mShowingMenus.size();
+        var2_1 = null;
+        var3_2 = 0;
+        var4_3 = this.mShowingMenus.size();
         do {
-            var3_4 = var4_1;
-            if (var1_2 >= var2_3) ** GOTO lbl-1000
-            var3_4 = this.mShowingMenus.get(var1_2);
-            if (!var3_4.window.isShowing()) lbl-1000: // 2 sources:
+            var1_4 = var2_1;
+            if (var3_2 >= var4_3) ** GOTO lbl-1000
+            var1_4 = this.mShowingMenus.get(var3_2);
+            if (!var1_4.window.isShowing()) lbl-1000: // 2 sources:
             {
-                if (var3_4 == null) return;
-                var3_4.menu.close(false);
+                if (var1_4 == null) return;
+                var1_4.menu.close(false);
                 return;
             }
-            ++var1_2;
+            ++var3_2;
         } while (true);
     }
 

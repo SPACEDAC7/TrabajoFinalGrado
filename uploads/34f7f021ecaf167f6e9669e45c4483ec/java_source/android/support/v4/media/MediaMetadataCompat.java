@@ -178,63 +178,63 @@ implements Parcelable {
         if (this.mDescription != null) {
             return this.mDescription;
         }
-        var7_1 = this.getString("android.media.metadata.MEDIA_ID");
-        var8_2 = new CharSequence[3];
-        var5_3 = null;
-        var6_4 = null;
-        var4_5 = this.getText("android.media.metadata.DISPLAY_TITLE");
-        if (!TextUtils.isEmpty((CharSequence)var4_5)) {
-            var8_2[0] = var4_5;
-            var8_2[1] = this.getText("android.media.metadata.DISPLAY_SUBTITLE");
-            var8_2[2] = this.getText("android.media.metadata.DISPLAY_DESCRIPTION");
+        var4_1 = this.getString("android.media.metadata.MEDIA_ID");
+        var5_2 = new CharSequence[3];
+        var2_3 = null;
+        var3_4 = null;
+        var1_5 = this.getText("android.media.metadata.DISPLAY_TITLE");
+        if (!TextUtils.isEmpty((CharSequence)var1_5)) {
+            var5_2[0] = var1_5;
+            var5_2[1] = this.getText("android.media.metadata.DISPLAY_SUBTITLE");
+            var5_2[2] = this.getText("android.media.metadata.DISPLAY_DESCRIPTION");
         } else {
-            var2_7 = 0;
-            for (var1_6 = 0; var2_7 < var8_2.length && var1_6 < MediaMetadataCompat.PREFERRED_DESCRIPTION_ORDER.length; ++var1_6) {
-                var4_5 = this.getText(MediaMetadataCompat.PREFERRED_DESCRIPTION_ORDER[var1_6]);
-                var3_8 = var2_7;
-                if (!TextUtils.isEmpty((CharSequence)var4_5)) {
-                    var8_2[var2_7] = var4_5;
-                    var3_8 = var2_7 + 1;
+            var8_7 = 0;
+            for (var7_6 = 0; var8_7 < var5_2.length && var7_6 < MediaMetadataCompat.PREFERRED_DESCRIPTION_ORDER.length; ++var7_6) {
+                var1_5 = this.getText(MediaMetadataCompat.PREFERRED_DESCRIPTION_ORDER[var7_6]);
+                var9_8 = var8_7;
+                if (!TextUtils.isEmpty((CharSequence)var1_5)) {
+                    var5_2[var8_7] = var1_5;
+                    var9_8 = var8_7 + 1;
                 }
-                var2_7 = var3_8;
+                var8_7 = var9_8;
             }
         }
-        var1_6 = 0;
+        var7_6 = 0;
         do {
-            var4_5 = var5_3;
-            if (var1_6 >= MediaMetadataCompat.PREFERRED_BITMAP_ORDER.length || (var4_5 = this.getBitmap(MediaMetadataCompat.PREFERRED_BITMAP_ORDER[var1_6])) != null) break;
-            ++var1_6;
+            var1_5 = var2_3;
+            if (var7_6 >= MediaMetadataCompat.PREFERRED_BITMAP_ORDER.length || (var1_5 = this.getBitmap(MediaMetadataCompat.PREFERRED_BITMAP_ORDER[var7_6])) != null) break;
+            ++var7_6;
         } while (true);
-        var1_6 = 0;
+        var7_6 = 0;
         do {
-            var5_3 = var6_4;
-            if (var1_6 >= MediaMetadataCompat.PREFERRED_URI_ORDER.length) ** GOTO lbl35
-            var5_3 = this.getString(MediaMetadataCompat.PREFERRED_URI_ORDER[var1_6]);
-            if (!TextUtils.isEmpty((CharSequence)var5_3)) {
-                var5_3 = Uri.parse((String)var5_3);
+            var2_3 = var3_4;
+            if (var7_6 >= MediaMetadataCompat.PREFERRED_URI_ORDER.length) ** GOTO lbl35
+            var2_3 = this.getString(MediaMetadataCompat.PREFERRED_URI_ORDER[var7_6]);
+            if (!TextUtils.isEmpty((CharSequence)var2_3)) {
+                var2_3 = Uri.parse((String)var2_3);
 lbl35: // 2 sources:
-                var6_4 = null;
-                var9_9 = this.getString("android.media.metadata.MEDIA_URI");
-                if (!TextUtils.isEmpty((CharSequence)var9_9)) {
-                    var6_4 = Uri.parse((String)var9_9);
+                var3_4 = null;
+                var6_9 = this.getString("android.media.metadata.MEDIA_URI");
+                if (!TextUtils.isEmpty((CharSequence)var6_9)) {
+                    var3_4 = Uri.parse((String)var6_9);
                 }
-                var9_9 = new MediaDescriptionCompat.Builder();
-                var9_9.setMediaId(var7_1);
-                var9_9.setTitle(var8_2[0]);
-                var9_9.setSubtitle(var8_2[1]);
-                var9_9.setDescription(var8_2[2]);
-                var9_9.setIconBitmap((Bitmap)var4_5);
-                var9_9.setIconUri((Uri)var5_3);
-                var9_9.setMediaUri((Uri)var6_4);
+                var6_9 = new MediaDescriptionCompat.Builder();
+                var6_9.setMediaId(var4_1);
+                var6_9.setTitle(var5_2[0]);
+                var6_9.setSubtitle(var5_2[1]);
+                var6_9.setDescription(var5_2[2]);
+                var6_9.setIconBitmap((Bitmap)var1_5);
+                var6_9.setIconUri((Uri)var2_3);
+                var6_9.setMediaUri((Uri)var3_4);
                 if (this.mBundle.containsKey("android.media.metadata.BT_FOLDER_TYPE")) {
-                    var4_5 = new Bundle();
-                    var4_5.putLong("android.media.extra.BT_FOLDER_TYPE", this.getLong("android.media.metadata.BT_FOLDER_TYPE"));
-                    var9_9.setExtras((Bundle)var4_5);
+                    var1_5 = new Bundle();
+                    var1_5.putLong("android.media.extra.BT_FOLDER_TYPE", this.getLong("android.media.metadata.BT_FOLDER_TYPE"));
+                    var6_9.setExtras((Bundle)var1_5);
                 }
-                this.mDescription = var9_9.build();
+                this.mDescription = var6_9.build();
                 return this.mDescription;
             }
-            ++var1_6;
+            ++var7_6;
         } while (true);
     }
 

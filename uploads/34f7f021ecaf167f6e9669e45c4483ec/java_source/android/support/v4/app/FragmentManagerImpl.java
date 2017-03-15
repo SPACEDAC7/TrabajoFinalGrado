@@ -653,72 +653,72 @@ implements LayoutInflaterFactory {
      */
     @Override
     public void dump(String string2, FileDescriptor object, PrintWriter printWriter, String[] arrstring) {
+        Object object2;
         int n2;
         int n3;
-        Object object2;
         String string3 = string2 + "    ";
-        if (this.mActive != null && (n2 = this.mActive.size()) > 0) {
+        if (this.mActive != null && (n3 = this.mActive.size()) > 0) {
             printWriter.print(string2);
             printWriter.print("Active Fragments in ");
             printWriter.print(Integer.toHexString(System.identityHashCode(this)));
             printWriter.println(":");
-            for (n3 = 0; n3 < n2; ++n3) {
-                object2 = this.mActive.get(n3);
+            for (n2 = 0; n2 < n3; ++n2) {
+                object2 = this.mActive.get(n2);
                 printWriter.print(string2);
                 printWriter.print("  #");
-                printWriter.print(n3);
+                printWriter.print(n2);
                 printWriter.print(": ");
                 printWriter.println(object2);
                 if (object2 == null) continue;
                 object2.dump(string3, (FileDescriptor)object, printWriter, arrstring);
             }
         }
-        if (this.mAdded != null && (n2 = this.mAdded.size()) > 0) {
+        if (this.mAdded != null && (n3 = this.mAdded.size()) > 0) {
             printWriter.print(string2);
             printWriter.println("Added Fragments:");
-            for (n3 = 0; n3 < n2; ++n3) {
-                object2 = this.mAdded.get(n3);
+            for (n2 = 0; n2 < n3; ++n2) {
+                object2 = this.mAdded.get(n2);
                 printWriter.print(string2);
                 printWriter.print("  #");
-                printWriter.print(n3);
+                printWriter.print(n2);
                 printWriter.print(": ");
                 printWriter.println(object2.toString());
             }
         }
-        if (this.mCreatedMenus != null && (n2 = this.mCreatedMenus.size()) > 0) {
+        if (this.mCreatedMenus != null && (n3 = this.mCreatedMenus.size()) > 0) {
             printWriter.print(string2);
             printWriter.println("Fragments Created Menus:");
-            for (n3 = 0; n3 < n2; ++n3) {
-                object2 = this.mCreatedMenus.get(n3);
+            for (n2 = 0; n2 < n3; ++n2) {
+                object2 = this.mCreatedMenus.get(n2);
                 printWriter.print(string2);
                 printWriter.print("  #");
-                printWriter.print(n3);
+                printWriter.print(n2);
                 printWriter.print(": ");
                 printWriter.println(object2.toString());
             }
         }
-        if (this.mBackStack != null && (n2 = this.mBackStack.size()) > 0) {
+        if (this.mBackStack != null && (n3 = this.mBackStack.size()) > 0) {
             printWriter.print(string2);
             printWriter.println("Back Stack:");
-            for (n3 = 0; n3 < n2; ++n3) {
-                object2 = this.mBackStack.get(n3);
+            for (n2 = 0; n2 < n3; ++n2) {
+                object2 = this.mBackStack.get(n2);
                 printWriter.print(string2);
                 printWriter.print("  #");
-                printWriter.print(n3);
+                printWriter.print(n2);
                 printWriter.print(": ");
                 printWriter.println(object2.toString());
                 object2.dump(string3, (FileDescriptor)object, printWriter, arrstring);
             }
         }
         // MONITORENTER : this
-        if (this.mBackStackIndices != null && (n2 = this.mBackStackIndices.size()) > 0) {
+        if (this.mBackStackIndices != null && (n3 = this.mBackStackIndices.size()) > 0) {
             printWriter.print(string2);
             printWriter.println("Back Stack Indices:");
-            for (n3 = 0; n3 < n2; ++n3) {
-                object = this.mBackStackIndices.get(n3);
+            for (n2 = 0; n2 < n3; ++n2) {
+                object = this.mBackStackIndices.get(n2);
                 printWriter.print(string2);
                 printWriter.print("  #");
-                printWriter.print(n3);
+                printWriter.print(n2);
                 printWriter.print(": ");
                 printWriter.println(object);
             }
@@ -729,14 +729,14 @@ implements LayoutInflaterFactory {
             printWriter.println(Arrays.toString(this.mAvailBackStackIndices.toArray()));
         }
         // MONITOREXIT : this
-        if (this.mPendingActions != null && (n2 = this.mPendingActions.size()) > 0) {
+        if (this.mPendingActions != null && (n3 = this.mPendingActions.size()) > 0) {
             printWriter.print(string2);
             printWriter.println("Pending Actions:");
-            for (n3 = 0; n3 < n2; ++n3) {
-                object = this.mPendingActions.get(n3);
+            for (n2 = 0; n2 < n3; ++n2) {
+                object = this.mPendingActions.get(n2);
                 printWriter.print(string2);
                 printWriter.print("  #");
-                printWriter.print(n3);
+                printWriter.print(n2);
                 printWriter.print(": ");
                 printWriter.println(object);
             }
@@ -1477,10 +1477,10 @@ implements LayoutInflaterFactory {
      */
     void restoreAllState(Parcelable object, FragmentManagerNonConfig object2) {
         List<Fragment> list;
-        FragmentState fragmentState;
-        int n2;
         List<Fragment> list2;
+        int n2;
         int n3;
+        FragmentState fragmentState;
         if (object == null) {
             return;
         }
@@ -1488,14 +1488,14 @@ implements LayoutInflaterFactory {
         if (fragmentManagerState.mActive == null) return;
         object = null;
         if (object2 != null) {
-            list2 = object2.getFragments();
-            list = object2.getChildNonConfigs();
-            n2 = list2 != null ? list2.size() : 0;
+            list = object2.getFragments();
+            list2 = object2.getChildNonConfigs();
+            n2 = list != null ? list.size() : 0;
             n3 = 0;
             do {
-                object = list;
+                object = list2;
                 if (n3 >= n2) break;
-                object = list2.get(n3);
+                object = list.get(n3);
                 if (DEBUG) {
                     Log.v((String)"FragmentManager", (String)("restoreAllState: re-attaching retained " + object));
                 }
@@ -1521,18 +1521,18 @@ implements LayoutInflaterFactory {
         for (n2 = 0; n2 < fragmentManagerState.mActive.length; ++n2) {
             fragmentState = fragmentManagerState.mActive[n2];
             if (fragmentState != null) {
-                list = list2 = null;
+                list2 = list = null;
                 if (object != null) {
-                    list = list2;
+                    list2 = list;
                     if (n2 < object.size()) {
-                        list = (FragmentManagerNonConfig)((Object)object.get(n2));
+                        list2 = (FragmentManagerNonConfig)((Object)object.get(n2));
                     }
                 }
-                list = fragmentState.instantiate(this.mHost, this.mParent, (FragmentManagerNonConfig)((Object)list));
+                list2 = fragmentState.instantiate(this.mHost, this.mParent, (FragmentManagerNonConfig)((Object)list2));
                 if (DEBUG) {
-                    Log.v((String)"FragmentManager", (String)("restoreAllState: active #" + n2 + ": " + list));
+                    Log.v((String)"FragmentManager", (String)("restoreAllState: active #" + n2 + ": " + list2));
                 }
-                this.mActive.add((Fragment)((Object)list));
+                this.mActive.add((Fragment)((Object)list2));
                 fragmentState.mInstance = null;
                 continue;
             }
@@ -1626,34 +1626,34 @@ implements LayoutInflaterFactory {
                     }
                     arrayList.add((ArrayList<Fragment>)((Object)fragment));
                     fragment.mRetaining = true;
-                    n4 = fragment.mTarget != null ? fragment.mTarget.mIndex : -1;
-                    fragment.mTargetIndex = n4;
+                    n3 = fragment.mTarget != null ? fragment.mTarget.mIndex : -1;
+                    fragment.mTargetIndex = n3;
                     arrayList3 = arrayList;
                     if (DEBUG) {
                         Log.v((String)"FragmentManager", (String)("retainNonConfig: keeping retained " + fragment));
                         arrayList3 = arrayList;
                     }
                 }
-                n4 = n3 = 0;
+                n3 = n4 = 0;
                 arrayList2 = arrayList4;
                 if (fragment.mChildFragmentManager != null) {
                     arrayList = fragment.mChildFragmentManager.retainNonConfig();
-                    n4 = n3;
+                    n3 = n4;
                     arrayList2 = arrayList4;
                     if (arrayList != null) {
                         arrayList2 = arrayList4;
                         if (arrayList4 == null) {
                             arrayList4 = new ArrayList();
-                            n4 = 0;
+                            n3 = 0;
                             do {
                                 arrayList2 = arrayList4;
-                                if (n4 >= n2) break;
+                                if (n3 >= n2) break;
                                 arrayList4.add(null);
-                                ++n4;
+                                ++n3;
                             } while (true);
                         }
                         arrayList2.add(arrayList);
-                        n4 = 1;
+                        n3 = 1;
                     }
                 }
                 arrayList = arrayList2;
@@ -1661,7 +1661,7 @@ implements LayoutInflaterFactory {
                 if (arrayList2 != null) {
                     arrayList = arrayList2;
                     arrayList5 = arrayList3;
-                    if (n4 == 0) {
+                    if (n3 == 0) {
                         arrayList2.add(null);
                         arrayList5 = arrayList3;
                         arrayList = arrayList2;

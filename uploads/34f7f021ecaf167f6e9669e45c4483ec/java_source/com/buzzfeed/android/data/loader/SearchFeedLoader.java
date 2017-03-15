@@ -56,8 +56,8 @@ extends BaseFeedLoader {
         iterator = iterator.getList().iterator();
         while (iterator.hasNext()) {
             Buzz buzz;
-            boolean bl;
             String string2;
+            boolean bl;
             FlowItem flowItem = iterator.next();
             if (!(flowItem.getContent() instanceof Buzz) || !(bl = (string2 = (buzz = (Buzz)flowItem.getContent()).getSponsorUserImageUrl()) != null && string2.startsWith("/"))) continue;
             buzz.setSponsorUserImageUrl(EnvironmentConfig.getUrlWithStaticBaseUrl(buzz.getSponsorUserImageUrl()));

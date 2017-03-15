@@ -709,46 +709,46 @@ RecyclerView.SmoothScroller.ScrollVectorProvider {
      * Lifted jumps to return sites
      */
     int fill(RecyclerView.Recycler var1_1, LayoutState var2_2, RecyclerView.State var3_3, boolean var4_4) {
-        var7_5 = var2_2.mAvailable;
+        var8_5 = var2_2.mAvailable;
         if (var2_2.mScrollingOffset != Integer.MIN_VALUE) {
             if (var2_2.mAvailable < 0) {
                 var2_2.mScrollingOffset += var2_2.mAvailable;
             }
             this.recycleByLayoutState(var1_1, var2_2);
         }
-        var5_6 = var2_2.mAvailable + var2_2.mExtra;
-        var8_7 = this.mLayoutChunkResult;
+        var6_6 = var2_2.mAvailable + var2_2.mExtra;
+        var5_7 = this.mLayoutChunkResult;
         do lbl-1000: // 3 sources:
         {
             if (!var2_2.mInfinite) {
-                if (var5_6 <= 0) return var7_5 - var2_2.mAvailable;
+                if (var6_6 <= 0) return var8_5 - var2_2.mAvailable;
             }
-            if (var2_2.hasMore(var3_3) == false) return var7_5 - var2_2.mAvailable;
-            var8_7.resetInternal();
-            this.layoutChunk(var1_1, var3_3, var2_2, var8_7);
-            if (var8_7.mFinished) {
-                return var7_5 - var2_2.mAvailable;
+            if (var2_2.hasMore(var3_3) == false) return var8_5 - var2_2.mAvailable;
+            var5_7.resetInternal();
+            this.layoutChunk(var1_1, var3_3, var2_2, var5_7);
+            if (var5_7.mFinished) {
+                return var8_5 - var2_2.mAvailable;
             }
-            var2_2.mOffset += var8_7.mConsumed * var2_2.mLayoutDirection;
-            if (!var8_7.mIgnoreConsumed || this.mLayoutState.mScrapList != null) ** GOTO lbl-1000
-            var6_8 = var5_6;
+            var2_2.mOffset += var5_7.mConsumed * var2_2.mLayoutDirection;
+            if (!var5_7.mIgnoreConsumed || this.mLayoutState.mScrapList != null) ** GOTO lbl-1000
+            var7_8 = var6_6;
             if (!var3_3.isPreLayout()) lbl-1000: // 2 sources:
             {
-                var2_2.mAvailable -= var8_7.mConsumed;
-                var6_8 = var5_6 - var8_7.mConsumed;
+                var2_2.mAvailable -= var5_7.mConsumed;
+                var7_8 = var6_6 - var5_7.mConsumed;
             }
             if (var2_2.mScrollingOffset != Integer.MIN_VALUE) {
-                var2_2.mScrollingOffset += var8_7.mConsumed;
+                var2_2.mScrollingOffset += var5_7.mConsumed;
                 if (var2_2.mAvailable < 0) {
                     var2_2.mScrollingOffset += var2_2.mAvailable;
                 }
                 this.recycleByLayoutState(var1_1, var2_2);
             }
-            var5_6 = var6_8;
+            var6_6 = var7_8;
             if (!var4_4) ** GOTO lbl-1000
-            var5_6 = var6_8;
-        } while (!var8_7.mFocusable);
-        return var7_5 - var2_2.mAvailable;
+            var6_6 = var7_8;
+        } while (!var5_7.mFocusable);
+        return var8_5 - var2_2.mAvailable;
     }
 
     public int findFirstCompletelyVisibleItemPosition() {
@@ -994,31 +994,31 @@ RecyclerView.SmoothScroller.ScrollVectorProvider {
         layoutChunkResult.mConsumed = this.mOrientationHelper.getDecoratedMeasurement((View)recycler);
         if (this.mOrientation == 1) {
             if (this.isLayoutRTL()) {
-                n2 = this.getWidth() - this.getPaddingRight();
-                n3 = n2 - this.mOrientationHelper.getDecoratedMeasurementInOther((View)recycler);
+                n3 = this.getWidth() - this.getPaddingRight();
+                n4 = n3 - this.mOrientationHelper.getDecoratedMeasurementInOther((View)recycler);
             } else {
-                n3 = this.getPaddingLeft();
-                n2 = n3 + this.mOrientationHelper.getDecoratedMeasurementInOther((View)recycler);
+                n4 = this.getPaddingLeft();
+                n3 = n4 + this.mOrientationHelper.getDecoratedMeasurementInOther((View)recycler);
             }
             if (layoutState.mLayoutDirection == -1) {
+                n2 = layoutState.mOffset;
+                n5 = layoutState.mOffset - layoutChunkResult.mConsumed;
+            } else {
                 n5 = layoutState.mOffset;
+                n2 = layoutState.mOffset + layoutChunkResult.mConsumed;
+            }
+        } else {
+            n5 = this.getPaddingTop();
+            n2 = n5 + this.mOrientationHelper.getDecoratedMeasurementInOther((View)recycler);
+            if (layoutState.mLayoutDirection == -1) {
+                n3 = layoutState.mOffset;
                 n4 = layoutState.mOffset - layoutChunkResult.mConsumed;
             } else {
                 n4 = layoutState.mOffset;
-                n5 = layoutState.mOffset + layoutChunkResult.mConsumed;
-            }
-        } else {
-            n4 = this.getPaddingTop();
-            n5 = n4 + this.mOrientationHelper.getDecoratedMeasurementInOther((View)recycler);
-            if (layoutState.mLayoutDirection == -1) {
-                n2 = layoutState.mOffset;
-                n3 = layoutState.mOffset - layoutChunkResult.mConsumed;
-            } else {
-                n3 = layoutState.mOffset;
-                n2 = layoutState.mOffset + layoutChunkResult.mConsumed;
+                n3 = layoutState.mOffset + layoutChunkResult.mConsumed;
             }
         }
-        this.layoutDecoratedWithMargins((View)recycler, n3, n4, n2, n5);
+        this.layoutDecoratedWithMargins((View)recycler, n4, n5, n3, n2);
         if (object.isItemRemoved() || object.isItemChanged()) {
             layoutChunkResult.mIgnoreConsumed = true;
         }
@@ -1081,10 +1081,10 @@ RecyclerView.SmoothScroller.ScrollVectorProvider {
      */
     @Override
     public void onLayoutChildren(RecyclerView.Recycler recycler, RecyclerView.State state) {
+        Object object;
         int n2;
         int n3;
         int n4;
-        Object object;
         if ((this.mPendingSavedState != null || this.mPendingScrollPosition != -1) && state.getItemCount() == 0) {
             this.removeAndRecycleAllViews(recycler);
             return;
@@ -1103,38 +1103,38 @@ RecyclerView.SmoothScroller.ScrollVectorProvider {
         }
         int n5 = this.getExtraLayoutSpace(state);
         if (this.mLayoutState.mLastScrollDelta >= 0) {
-            n3 = 0;
+            n4 = 0;
         } else {
-            n3 = n5;
+            n4 = n5;
             n5 = 0;
         }
-        int n6 = n3 + this.mOrientationHelper.getStartAfterPadding();
+        int n6 = n4 + this.mOrientationHelper.getStartAfterPadding();
         n5 = n2 = n5 + this.mOrientationHelper.getEndPadding();
-        n3 = n6;
+        n4 = n6;
         if (state.isPreLayout()) {
             n5 = n2;
-            n3 = n6;
+            n4 = n6;
             if (this.mPendingScrollPosition != -1) {
                 n5 = n2;
-                n3 = n6;
+                n4 = n6;
                 if (this.mPendingScrollPositionOffset != Integer.MIN_VALUE) {
                     object = this.findViewByPosition(this.mPendingScrollPosition);
                     n5 = n2;
-                    n3 = n6;
+                    n4 = n6;
                     if (object != null) {
                         if (this.mShouldReverseLayout) {
                             n5 = this.mOrientationHelper.getEndAfterPadding() - this.mOrientationHelper.getDecoratedEnd((View)object) - this.mPendingScrollPositionOffset;
                         } else {
                             n5 = this.mOrientationHelper.getDecoratedStart((View)object);
-                            n3 = this.mOrientationHelper.getStartAfterPadding();
-                            n5 = this.mPendingScrollPositionOffset - (n5 - n3);
+                            n4 = this.mOrientationHelper.getStartAfterPadding();
+                            n5 = this.mPendingScrollPositionOffset - (n5 - n4);
                         }
                         if (n5 > 0) {
-                            n3 = n6 + n5;
+                            n4 = n6 + n5;
                             n5 = n2;
                         } else {
                             n5 = n2 - n5;
-                            n3 = n6;
+                            n4 = n6;
                         }
                     }
                 }
@@ -1147,27 +1147,27 @@ RecyclerView.SmoothScroller.ScrollVectorProvider {
         this.mLayoutState.mIsPreLayout = state.isPreLayout();
         if (this.mAnchorInfo.mLayoutFromEnd) {
             this.updateLayoutStateToFillStart(this.mAnchorInfo);
-            this.mLayoutState.mExtra = n3;
+            this.mLayoutState.mExtra = n4;
             this.fill(recycler, this.mLayoutState, state, false);
             n6 = this.mLayoutState.mOffset;
-            n4 = this.mLayoutState.mCurrentPosition;
-            n3 = n5;
+            n3 = this.mLayoutState.mCurrentPosition;
+            n4 = n5;
             if (this.mLayoutState.mAvailable > 0) {
-                n3 = n5 + this.mLayoutState.mAvailable;
+                n4 = n5 + this.mLayoutState.mAvailable;
             }
             this.updateLayoutStateToFillEnd(this.mAnchorInfo);
-            this.mLayoutState.mExtra = n3;
+            this.mLayoutState.mExtra = n4;
             object = this.mLayoutState;
             object.mCurrentPosition += this.mLayoutState.mItemDirection;
             this.fill(recycler, this.mLayoutState, state, false);
             n5 = n2 = this.mLayoutState.mOffset;
-            n3 = n6;
+            n4 = n6;
             if (this.mLayoutState.mAvailable > 0) {
                 n5 = this.mLayoutState.mAvailable;
-                this.updateLayoutStateToFillStart(n4, n6);
+                this.updateLayoutStateToFillStart(n3, n6);
                 this.mLayoutState.mExtra = n5;
                 this.fill(recycler, this.mLayoutState, state, false);
-                n3 = this.mLayoutState.mOffset;
+                n4 = this.mLayoutState.mOffset;
                 n5 = n2;
             }
         } else {
@@ -1175,10 +1175,10 @@ RecyclerView.SmoothScroller.ScrollVectorProvider {
             this.mLayoutState.mExtra = n5;
             this.fill(recycler, this.mLayoutState, state, false);
             n6 = this.mLayoutState.mOffset;
-            n4 = this.mLayoutState.mCurrentPosition;
-            n5 = n3;
+            n3 = this.mLayoutState.mCurrentPosition;
+            n5 = n4;
             if (this.mLayoutState.mAvailable > 0) {
-                n5 = n3 + this.mLayoutState.mAvailable;
+                n5 = n4 + this.mLayoutState.mAvailable;
             }
             this.updateLayoutStateToFillStart(this.mAnchorInfo);
             this.mLayoutState.mExtra = n5;
@@ -1187,30 +1187,30 @@ RecyclerView.SmoothScroller.ScrollVectorProvider {
             this.fill(recycler, this.mLayoutState, state, false);
             n2 = this.mLayoutState.mOffset;
             n5 = n6;
-            n3 = n2;
+            n4 = n2;
             if (this.mLayoutState.mAvailable > 0) {
                 n5 = this.mLayoutState.mAvailable;
-                this.updateLayoutStateToFillEnd(n4, n6);
+                this.updateLayoutStateToFillEnd(n3, n6);
                 this.mLayoutState.mExtra = n5;
                 this.fill(recycler, this.mLayoutState, state, false);
                 n5 = this.mLayoutState.mOffset;
-                n3 = n2;
+                n4 = n2;
             }
         }
         n6 = n5;
-        n2 = n3;
+        n2 = n4;
         if (this.getChildCount() > 0) {
             if (this.mShouldReverseLayout ^ this.mStackFromEnd) {
                 n6 = this.fixLayoutEndGap(n5, recycler, state, true);
-                n2 = n3 + n6;
-                n3 = this.fixLayoutStartGap(n2, recycler, state, false);
-                n2 += n3;
-                n6 = n5 + n6 + n3;
+                n2 = n4 + n6;
+                n4 = this.fixLayoutStartGap(n2, recycler, state, false);
+                n2 += n4;
+                n6 = n5 + n6 + n4;
             } else {
-                n6 = this.fixLayoutStartGap(n3, recycler, state, true);
-                n4 = this.fixLayoutEndGap(n5 += n6, recycler, state, false);
-                n2 = n3 + n6 + n4;
-                n6 = n5 + n4;
+                n6 = this.fixLayoutStartGap(n4, recycler, state, true);
+                n3 = this.fixLayoutEndGap(n5 += n6, recycler, state, false);
+                n2 = n4 + n6 + n3;
+                n6 = n5 + n3;
             }
         }
         this.layoutForPredictiveAnimations(recycler, state, n2, n6);

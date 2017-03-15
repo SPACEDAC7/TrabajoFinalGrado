@@ -157,19 +157,19 @@ implements CommentListCache {
      */
     @Override
     public void replaceComment(Comment var1_1, String var2_2) {
-        var4_3 = (List)this.mCommentListMap.get(var2_2);
-        if (var4_3 == null) return;
-        var3_4 = 0;
+        var3_3 = (List)this.mCommentListMap.get(var2_2);
+        if (var3_3 == null) return;
+        var4_4 = 0;
         do {
-            if (var3_4 >= var4_3.size()) ** GOTO lbl8
-            if (((Comment)var4_3.get(var3_4)).getCommentId().equals(var1_1.getCommentId())) {
-                var4_3.set(var3_4, var1_1);
+            if (var4_4 >= var3_3.size()) ** GOTO lbl8
+            if (((Comment)var3_3.get(var4_4)).getCommentId().equals(var1_1.getCommentId())) {
+                var3_3.set(var4_4, var1_1);
 lbl8: // 2 sources:
                 this.mObservable.setChangeFlag();
                 this.mObservable.notifyObservers(var2_2);
                 return;
             }
-            ++var3_4;
+            ++var4_4;
         } while (true);
     }
 

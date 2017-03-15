@@ -185,8 +185,8 @@ implements IActivityHandler {
      * Lifted jumps to return sites
      */
     private void delayStartI() {
-        String string2;
         long l2;
+        String string2;
         if (this.internalState.isToStartNow()) {
             return;
         }

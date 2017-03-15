@@ -146,9 +146,9 @@ final class CollapsingTextHelper {
         n4 = GravityCompat.getAbsoluteGravity(n3, n4);
         switch (n4 & 112) {
             default: {
-                f3 = (this.mTextPaint.descent() - this.mTextPaint.ascent()) / 2.0f;
-                f2 = this.mTextPaint.descent();
-                this.mCollapsedDrawY = (float)this.mCollapsedBounds.centerY() + (f3 - f2);
+                f2 = (this.mTextPaint.descent() - this.mTextPaint.ascent()) / 2.0f;
+                f3 = this.mTextPaint.descent();
+                this.mCollapsedDrawY = (float)this.mCollapsedBounds.centerY() + (f2 - f3);
                 break;
             }
             case 80: {
@@ -180,9 +180,9 @@ final class CollapsingTextHelper {
         n4 = GravityCompat.getAbsoluteGravity(n3, n4);
         switch (n4 & 112) {
             default: {
-                f3 = (this.mTextPaint.descent() - this.mTextPaint.ascent()) / 2.0f;
-                f2 = this.mTextPaint.descent();
-                this.mExpandedDrawY = (float)this.mExpandedBounds.centerY() + (f3 - f2);
+                f2 = (this.mTextPaint.descent() - this.mTextPaint.ascent()) / 2.0f;
+                f3 = this.mTextPaint.descent();
+                this.mExpandedDrawY = (float)this.mExpandedBounds.centerY() + (f2 - f3);
                 break;
             }
             case 80: {
@@ -420,25 +420,25 @@ final class CollapsingTextHelper {
             float f5 = this.mCurrentDrawY;
             boolean bl = this.mUseTexture && this.mExpandedTitleTexture != null;
             if (bl) {
-                f3 = this.mTextureAscent * this.mScale;
-                f2 = this.mTextureDescent;
-                f2 = this.mScale;
+                f2 = this.mTextureAscent * this.mScale;
+                f3 = this.mTextureDescent;
+                f3 = this.mScale;
             } else {
-                f3 = this.mTextPaint.ascent() * this.mScale;
+                f2 = this.mTextPaint.ascent() * this.mScale;
                 this.mTextPaint.descent();
-                f2 = this.mScale;
+                f3 = this.mScale;
             }
-            f2 = f5;
+            f3 = f5;
             if (bl) {
-                f2 = f5 + f3;
+                f3 = f5 + f2;
             }
             if (this.mScale != 1.0f) {
-                canvas.scale(this.mScale, this.mScale, f4, f2);
+                canvas.scale(this.mScale, this.mScale, f4, f3);
             }
             if (bl) {
-                canvas.drawBitmap(this.mExpandedTitleTexture, f4, f2, this.mTexturePaint);
+                canvas.drawBitmap(this.mExpandedTitleTexture, f4, f3, this.mTexturePaint);
             } else {
-                canvas.drawText(this.mTextToDraw, 0, this.mTextToDraw.length(), f4, f2, (Paint)this.mTextPaint);
+                canvas.drawText(this.mTextToDraw, 0, this.mTextToDraw.length(), f4, f3, (Paint)this.mTextPaint);
             }
         }
         canvas.restoreToCount(n2);

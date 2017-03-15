@@ -176,13 +176,13 @@ public class MeasurementDispatcher {
                 return;
             }
         }
-        catch (NumberFormatException var4_2) {
+        catch (NumberFormatException var1_2) {
             if (!Constants.DEBUG) {
                 return;
             }
             CSLog.e(this, "Unexpected error parsing storage data: ");
-            CSLog.printStackTrace(var4_2);
-            throw var4_2;
+            CSLog.printStackTrace(var1_2);
+            throw var1_2;
         }
     }
 

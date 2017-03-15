@@ -230,9 +230,9 @@ extends SampleSourceTrackRenderer {
      * Enabled aggressive exception aggregation
      */
     private boolean feedInputBuffer(long l2, boolean bl) throws ExoPlaybackException {
+        Object object;
         int n2;
         int n3;
-        Object object;
         if (this.inputStreamEnded) return false;
         if (this.codecReinitializationState == 2) {
             return false;
@@ -263,31 +263,31 @@ extends SampleSourceTrackRenderer {
             return true;
         }
         if (this.waitingForKeys) {
-            n3 = -3;
+            n2 = -3;
         } else {
             if (this.codecReconfigurationState == 1) {
-                for (n3 = 0; n3 < this.format.initializationData.size(); ++n3) {
-                    object = this.format.initializationData.get(n3);
+                for (n2 = 0; n2 < this.format.initializationData.size(); ++n2) {
+                    object = this.format.initializationData.get(n2);
                     this.sampleHolder.data.put((byte[])object);
                 }
                 this.codecReconfigurationState = 2;
             }
-            n3 = n2 = this.readSource(l2, this.formatHolder, this.sampleHolder);
+            n2 = n3 = this.readSource(l2, this.formatHolder, this.sampleHolder);
             if (bl) {
-                n3 = n2;
+                n2 = n3;
                 if (this.sourceState == 1) {
-                    n3 = n2;
-                    if (n2 == -2) {
+                    n2 = n3;
+                    if (n3 == -2) {
                         this.sourceState = 2;
-                        n3 = n2;
+                        n2 = n3;
                     }
                 }
             }
         }
-        if (n3 == -2) {
+        if (n2 == -2) {
             return false;
         }
-        if (n3 == -4) {
+        if (n2 == -4) {
             if (this.codecReconfigurationState == 2) {
                 this.sampleHolder.clearData();
                 this.codecReconfigurationState = 1;
@@ -295,7 +295,7 @@ extends SampleSourceTrackRenderer {
             this.onInputFormatChanged(this.formatHolder);
             return true;
         }
-        if (n3 == -1) {
+        if (n2 == -1) {
             if (this.codecReconfigurationState == 2) {
                 this.sampleHolder.clearData();
                 this.codecReconfigurationState = 1;
@@ -314,9 +314,9 @@ extends SampleSourceTrackRenderer {
                 this.inputIndex = -1;
                 return false;
             }
-            catch (MediaCodec.CryptoException var6_6) {
-                this.notifyCryptoError(var6_6);
-                throw new ExoPlaybackException((Throwable)var6_6);
+            catch (MediaCodec.CryptoException var4_5) {
+                this.notifyCryptoError(var4_5);
+                throw new ExoPlaybackException((Throwable)var4_5);
             }
         }
         if (this.waitingForFirstSyncFrame) {
@@ -341,18 +341,18 @@ extends SampleSourceTrackRenderer {
             this.codecNeedsDiscardToSpsWorkaround = false;
         }
         try {
-            n3 = this.sampleHolder.data.position();
-            n2 = this.sampleHolder.size;
+            n2 = this.sampleHolder.data.position();
+            n3 = this.sampleHolder.size;
             l2 = this.sampleHolder.timeUs;
             if (this.sampleHolder.isDecodeOnly()) {
                 this.decodeOnlyPresentationTimestamps.add(l2);
             }
-            this.onQueuedInputBuffer(l2, this.sampleHolder.data, n3, bl);
+            this.onQueuedInputBuffer(l2, this.sampleHolder.data, n2, bl);
             if (bl) {
-                object = MediaCodecTrackRenderer.getFrameworkCryptoInfo(this.sampleHolder, n3 - n2);
+                object = MediaCodecTrackRenderer.getFrameworkCryptoInfo(this.sampleHolder, n2 - n3);
                 this.codec.queueSecureInputBuffer(this.inputIndex, 0, (MediaCodec.CryptoInfo)object, l2, 0);
             } else {
-                this.codec.queueInputBuffer(this.inputIndex, 0, n3, l2, 0);
+                this.codec.queueInputBuffer(this.inputIndex, 0, n2, l2, 0);
             }
             this.inputIndex = -1;
             this.codecReceivedBuffers = true;
@@ -361,9 +361,9 @@ extends SampleSourceTrackRenderer {
             ++object.inputBufferCount;
             return true;
         }
-        catch (MediaCodec.CryptoException var6_7) {
-            this.notifyCryptoError(var6_7);
-            throw new ExoPlaybackException((Throwable)var6_7);
+        catch (MediaCodec.CryptoException var4_6) {
+            this.notifyCryptoError(var4_6);
+            throw new ExoPlaybackException((Throwable)var4_6);
         }
     }
 
@@ -632,8 +632,8 @@ extends SampleSourceTrackRenderer {
         try {
             object3 = object = this.getDecoderInfo(this.mediaCodecSelector, (String)object, bl);
         }
-        catch (MediaCodecUtil.DecoderQueryException var9_2) {
-            this.notifyAndThrowDecoderInitError(new DecoderInitializationException(this.format, (Throwable)var9_2, bl, -49998));
+        catch (MediaCodecUtil.DecoderQueryException var3_2) {
+            this.notifyAndThrowDecoderInitError(new DecoderInitializationException(this.format, (Throwable)var3_2, bl, -49998));
         }
         if (object3 == null) {
             this.notifyAndThrowDecoderInitError(new DecoderInitializationException(this.format, null, bl, -49999));
@@ -662,8 +662,8 @@ extends SampleSourceTrackRenderer {
             this.inputBuffers = this.codec.getInputBuffers();
             this.outputBuffers = this.codec.getOutputBuffers();
         }
-        catch (Exception var7_4) {
-            this.notifyAndThrowDecoderInitError(new DecoderInitializationException(this.format, (Throwable)var7_4, bl, (String)object));
+        catch (Exception var1_4) {
+            this.notifyAndThrowDecoderInitError(new DecoderInitializationException(this.format, (Throwable)var1_4, bl, (String)object));
         }
         l2 = this.getState() == 3 ? SystemClock.elapsedRealtime() : -1;
         this.codecHotswapTimeMs = l2;

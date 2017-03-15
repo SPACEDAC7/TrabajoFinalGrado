@@ -12,6 +12,8 @@ import subprocess
 import platform
 import errno
 
+from django.shortcuts import render
+
 from django.http import HttpResponseRedirect
 from django.http import HttpResponse
 from django.template.loader import get_template
@@ -113,6 +115,290 @@ def Unzip(APP_PATH, EXT_PATH):
             except:
                 PrintException("[ERROR] Unzipping Error")
 
+def XML(request):
+    try:
+        MD5 = request.GET['md5']
+        TYP = request.GET['type']
+        m = re.match('^[0-9a-f]{32}$', MD5)
+	if m:
+            if TYP in ['APK', 'ANDZIP']:
+                DB = StaticAnalyzerAndroid.objects.filter(MD5=MD5)
+                if DB.exists():
+                    print "\n[INFO] Fetching data from DB for PDF Report Generation (Android)"
+                    context = get_context_from_db_entry(DB)
+                    if TYP == 'APK':
+                        template = get_template("pdf/static_analysis_pdf.html")
+                    else:
+                        template = get_template(
+                            "pdf/static_analysis_zip_pdf.html")
+                else:
+                    return HttpResponse(json.dumps({"report": "Report not Found"}),
+                                        content_type="application/json; charset=utf-8")
+            elif re.findall('IPA|IOSZIP', TYP):
+                if TYP == 'IPA':
+                    DB = StaticAnalyzerIPA.objects.filter(MD5=MD5)
+                    if DB.exists():
+                        print "\n[INFO] Fetching data from DB for PDF Report Generation (IOS IPA)"
+                        context = {
+                            'title': DB[0].TITLE,
+                            'name': DB[0].APPNAMEX,
+                            'size': DB[0].SIZE,
+                            'md5': DB[0].MD5,
+                            'sha1': DB[0].SHA1,
+                            'sha256': DB[0].SHA256,
+                            'plist': DB[0].INFOPLIST,
+                            'bin_name': DB[0].BINNAME,
+                            'id': DB[0].IDF,
+                            'ver': DB[0].VERSION,
+                            'sdk': DB[0].SDK,
+                            'pltfm': DB[0].PLTFM,
+                            'min': DB[0].MINX,
+                            'bin_anal': DB[0].BIN_ANAL,
+                            'libs': DB[0].LIBS,
+                            'files': python_list(DB[0].FILES),
+                            'file_analysis': DB[0].SFILESX,
+                            'strings': python_list(DB[0].STRINGS),
+                            'permissions': python_list(DB[0].PERMISSIONS)
+                        }
+                        template = get_template(
+                            "pdf/ios_binary_analysis_pdf.html")
+                    else:
+                        return HttpResponse(json.dumps({"report": "Report not Found"}),
+                                            content_type="application/json; charset=utf-8")
+                elif TYP == 'IOSZIP':
+                    DB = StaticAnalyzerIOSZIP.objects.filter(MD5=MD5)
+                    if DB.exists():
+                        print "\n[INFO] Fetching data from DB for PDF Report Generation (IOS ZIP)"
+                        context = {
+                            'title': DB[0].TITLE,
+                            'name': DB[0].APPNAMEX,
+                            'size': DB[0].SIZE,
+                            'md5': DB[0].MD5,
+                            'sha1': DB[0].SHA1,
+                            'sha256': DB[0].SHA256,
+                            'plist': DB[0].INFOPLIST,
+                            'bin_name': DB[0].BINNAME,
+                            'id': DB[0].IDF,
+                            'ver': DB[0].VERSION,
+                            'sdk': DB[0].SDK,
+                            'pltfm': DB[0].PLTFM,
+                            'min': DB[0].MINX,
+                            'bin_anal': DB[0].BIN_ANAL,
+                            'libs': DB[0].LIBS,
+                            'files': python_list(DB[0].FILES),
+                            'file_analysis': DB[0].SFILESX,
+                            'api': DB[0].HTML,
+                            'insecure': DB[0].CODEANAL,
+                            'urls': DB[0].URLnFile,
+                            'domains': python_dict(DB[0].DOMAINS),
+                            'emails': DB[0].EmailnFile,
+                            'permissions': python_list(DB[0].PERMISSIONS)
+                        }
+                        template = get_template(
+                            "pdf/ios_source_analysis_pdf.html")
+                    else:
+                        return HttpResponse(json.dumps({"report": "Report not Found"}),
+                                            content_type="application/json; charset=utf-8")
+            elif re.findall('APPX', TYP):
+                if TYP == 'APPX':
+                    db_entry = StaticAnalyzerWindows.objects.filter(  # pylint: disable-msg=E1101
+                        MD5=MD5
+                    )
+                    if db_entry.exists():
+                        print "\n[INFO] Fetching data from DB for PDF Report Generation (APPX)"
+
+                        context = {
+                            'title': db_entry[0].TITLE,
+                            'name': db_entry[0].APP_NAME,
+                            'pub_name': db_entry[0].PUB_NAME,
+                            'size': db_entry[0].SIZE,
+                            'md5': db_entry[0].MD5,
+                            'sha1': db_entry[0].SHA1,
+                            'sha256': db_entry[0].SHA256,
+                            'bin_name': db_entry[0].BINNAME,
+                            'version':  db_entry[0].VERSION,
+                            'arch':  db_entry[0].ARCH,
+                            'compiler_version':  db_entry[0].COMPILER_VERSION,
+                            'visual_studio_version':  db_entry[0].VISUAL_STUDIO_VERSION,
+                            'visual_studio_edition':  db_entry[0].VISUAL_STUDIO_EDITION,
+                            'target_os':  db_entry[0].TARGET_OS,
+                            'appx_dll_version':  db_entry[0].APPX_DLL_VERSION,
+                            'proj_guid':  db_entry[0].PROJ_GUID,
+                            'opti_tool':  db_entry[0].OPTI_TOOL,
+                            'target_run':  db_entry[0].TARGET_RUN,
+                            'files':  python_list(db_entry[0].FILES),
+                            'strings': python_list(db_entry[0].STRINGS),
+                            'bin_an_results': python_list(db_entry[0].BIN_AN_RESULTS),
+                            'bin_an_warnings': python_list(db_entry[0].BIN_AN_WARNINGS)
+                        }
+                        template = get_template(
+                            "pdf/windows_binary_analysis_pdf.html")
+            else:
+                return HttpResponse(json.dumps({"type": "Type is not Allowed"}),
+                                    content_type="application/json; charset=utf-8")
+            html = template.render(context)
+            result = StringIO()
+
+	    from django.core import serializers
+    	    data = serializers.serialize('xml', DB), 
+
+    	    from django.core.files import File
+    	    f = open('content.xml', 'w')
+    	    myfile = File(f)
+    	    myfile.write(data)
+    	    myfile.close()
+	    
+	    #pdf = pisa.pisaDocument(StringIO("{0}".format(
+             #   html.encode('utf-8'))), result, encoding='utf-8')
+           # if not pdf.err:
+            response = HttpResponse( content_type='application/xml')
+	    response['Content-Disposition'] = 'attachment; filename=content.xml'
+	    return response
+
+	else:
+            return HttpResponse(json.dumps({"md5": "Invalid MD5"}),
+                                content_type="application/json; charset=utf-8")
+    except:
+
+        PrintException("[ERROR] XML Report Generation Error")
+        return HttpResponseRedirect('/error/')
+
+def HTML(request):
+    try:
+        MD5 = request.GET['md5']
+        TYP = request.GET['type']
+        m = re.match('^[0-9a-f]{32}$', MD5)
+        if m:
+            if TYP in ['APK', 'ANDZIP']:
+                DB = StaticAnalyzerAndroid.objects.filter(MD5=MD5)
+                if DB.exists():
+                    print "\n[INFO] Fetching data from DB for PDF Report Generation (Android)"
+                    context = get_context_from_db_entry(DB)
+                    if TYP == 'APK':
+                        template = get_template("pdf/static_analysis_pdf.html")
+                    else:
+                        template = get_template(
+                            "pdf/static_analysis_zip_pdf.html")
+                else:
+                    return HttpResponse(json.dumps({"report": "Report not Found"}),
+                                        content_type="application/json; charset=utf-8")
+            elif re.findall('IPA|IOSZIP', TYP):
+                if TYP == 'IPA':
+                    DB = StaticAnalyzerIPA.objects.filter(MD5=MD5)
+                    if DB.exists():
+                        print "\n[INFO] Fetching data from DB for PDF Report Generation (IOS IPA)"
+                        context = {
+                            'title': DB[0].TITLE,
+                            'name': DB[0].APPNAMEX,
+                            'size': DB[0].SIZE,
+                            'md5': DB[0].MD5,
+                            'sha1': DB[0].SHA1,
+                            'sha256': DB[0].SHA256,
+                            'plist': DB[0].INFOPLIST,
+                            'bin_name': DB[0].BINNAME,
+                            'id': DB[0].IDF,
+                            'ver': DB[0].VERSION,
+                            'sdk': DB[0].SDK,
+                            'pltfm': DB[0].PLTFM,
+                            'min': DB[0].MINX,
+                            'bin_anal': DB[0].BIN_ANAL,
+                            'libs': DB[0].LIBS,
+                            'files': python_list(DB[0].FILES),
+                            'file_analysis': DB[0].SFILESX,
+                            'strings': python_list(DB[0].STRINGS),
+                            'permissions': python_list(DB[0].PERMISSIONS)
+                        }
+                        template = get_template(
+                            "pdf/ios_binary_analysis_pdf.html")
+                    else:
+                        return HttpResponse(json.dumps({"report": "Report not Found"}),
+                                            content_type="application/json; charset=utf-8")
+                elif TYP == 'IOSZIP':
+                    DB = StaticAnalyzerIOSZIP.objects.filter(MD5=MD5)
+                    if DB.exists():
+                        print "\n[INFO] Fetching data from DB for PDF Report Generation (IOS ZIP)"
+                        context = {
+                            'title': DB[0].TITLE,
+                            'name': DB[0].APPNAMEX,
+                            'size': DB[0].SIZE,
+                            'md5': DB[0].MD5,
+                            'sha1': DB[0].SHA1,
+                            'sha256': DB[0].SHA256,
+                            'plist': DB[0].INFOPLIST,
+                            'bin_name': DB[0].BINNAME,
+                            'id': DB[0].IDF,
+                            'ver': DB[0].VERSION,
+                            'sdk': DB[0].SDK,
+                            'pltfm': DB[0].PLTFM,
+                            'min': DB[0].MINX,
+                            'bin_anal': DB[0].BIN_ANAL,
+                            'libs': DB[0].LIBS,
+                            'files': python_list(DB[0].FILES),
+                            'file_analysis': DB[0].SFILESX,
+                            'api': DB[0].HTML,
+                            'insecure': DB[0].CODEANAL,
+                            'urls': DB[0].URLnFile,
+                            'domains': python_dict(DB[0].DOMAINS),
+                            'emails': DB[0].EmailnFile,
+                            'permissions': python_list(DB[0].PERMISSIONS)
+                        }
+                        template = get_template(
+                            "pdf/ios_source_analysis_pdf.html")
+                    else:
+                        return HttpResponse(json.dumps({"report": "Report not Found"}),
+                                            content_type="application/json; charset=utf-8")
+            elif re.findall('APPX', TYP):
+                if TYP == 'APPX':
+                    db_entry = StaticAnalyzerWindows.objects.filter(  # pylint: disable-msg=E1101
+                        MD5=MD5
+                    )
+                    if db_entry.exists():
+                        print "\n[INFO] Fetching data from DB for PDF Report Generation (APPX)"
+
+                        context = {
+                            'title': db_entry[0].TITLE,
+                            'name': db_entry[0].APP_NAME,
+                            'pub_name': db_entry[0].PUB_NAME,
+                            'size': db_entry[0].SIZE,
+                            'md5': db_entry[0].MD5,
+                            'sha1': db_entry[0].SHA1,
+                            'sha256': db_entry[0].SHA256,
+                            'bin_name': db_entry[0].BINNAME,
+                            'version':  db_entry[0].VERSION,
+                            'arch':  db_entry[0].ARCH,
+                            'compiler_version':  db_entry[0].COMPILER_VERSION,
+                            'visual_studio_version':  db_entry[0].VISUAL_STUDIO_VERSION,
+                            'visual_studio_edition':  db_entry[0].VISUAL_STUDIO_EDITION,
+                            'target_os':  db_entry[0].TARGET_OS,
+                            'appx_dll_version':  db_entry[0].APPX_DLL_VERSION,
+                            'proj_guid':  db_entry[0].PROJ_GUID,
+                            'opti_tool':  db_entry[0].OPTI_TOOL,
+                            'target_run':  db_entry[0].TARGET_RUN,
+                            'files':  python_list(db_entry[0].FILES),
+                            'strings': python_list(db_entry[0].STRINGS),
+                            'bin_an_results': python_list(db_entry[0].BIN_AN_RESULTS),
+                            'bin_an_warnings': python_list(db_entry[0].BIN_AN_WARNINGS)
+                        }
+                        template = get_template(
+                            "pdf/windows_binary_analysis_pdf.html")
+            else:
+                return HttpResponse(json.dumps({"type": "Type is not Allowed"}),
+                                    content_type="application/json; charset=utf-8")
+            html = template.render(context)
+            #result = StringIO()
+            #pdf = pisa.pisaDocument(StringIO("{0}".format(
+            #    html.encode('utf-8'))), result, encoding='utf-8')
+            #if not pdf.err:
+	    return HttpResponse(template.render(context, request))
+            #else:
+            #    return HttpResponseRedirect('/error/')
+        else:
+            return HttpResponse(json.dumps({"md5": "Invalid MD5"}),
+                                content_type="application/json; charset=utf-8")
+    except:
+
+        PrintException("[ERROR] PDF Report Generation Error")
+        return HttpResponseRedirect('/error/')
 
 def PDF(request):
     try:
@@ -237,10 +523,11 @@ def PDF(request):
                                     content_type="application/json; charset=utf-8")
             html = template.render(context)
             result = StringIO()
-            pdf = pisa.pisaDocument(StringIO("{0}".format(
+
+	    pdf = pisa.pisaDocument(StringIO("{0}".format(
                 html.encode('utf-8'))), result, encoding='utf-8')
             if not pdf.err:
-                return HttpResponse(result.getvalue(), content_type='application/pdf')
+	       return HttpResponse(result.getvalue(), content_type='application/pdf')
             else:
                 return HttpResponseRedirect('/error/')
         else:

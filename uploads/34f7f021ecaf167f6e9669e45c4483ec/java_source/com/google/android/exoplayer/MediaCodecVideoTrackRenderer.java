@@ -165,54 +165,54 @@ extends MediaCodecTrackRenderer {
         if (var1_1.containsKey("max-input-size")) {
             return;
         }
-        var4_4 = var3_3 = var1_1.getInteger("height");
+        var5_4 = var4_3 = var1_1.getInteger("height");
         if (var2_2) {
-            var4_4 = var3_3;
+            var5_4 = var4_3;
             if (var1_1.containsKey("max-height")) {
-                var4_4 = Math.max(var3_3, var1_1.getInteger("max-height"));
+                var5_4 = Math.max(var4_3, var1_1.getInteger("max-height"));
             }
         }
-        var5_5 = var3_3 = var1_1.getInteger("width");
+        var6_5 = var4_3 = var1_1.getInteger("width");
         if (var2_2) {
-            var5_5 = var3_3;
+            var6_5 = var4_3;
             if (var1_1.containsKey("max-width")) {
-                var5_5 = Math.max(var4_4, var1_1.getInteger("max-width"));
+                var6_5 = Math.max(var5_4, var1_1.getInteger("max-width"));
             }
         }
-        var6_6 = var1_1.getString("mime");
-        var3_3 = -1;
-        switch (var6_6.hashCode()) {
+        var3_6 = var1_1.getString("mime");
+        var4_3 = -1;
+        switch (var3_6.hashCode()) {
             case -1664118616: {
-                if (var6_6.equals("video/3gpp")) {
-                    var3_3 = 0;
+                if (var3_6.equals("video/3gpp")) {
+                    var4_3 = 0;
                     ** break;
                 }
                 ** GOTO lbl39
             }
             case 1187890754: {
-                if (var6_6.equals("video/mp4v-es")) {
-                    var3_3 = 1;
+                if (var3_6.equals("video/mp4v-es")) {
+                    var4_3 = 1;
                     ** break;
                 }
                 ** GOTO lbl39
             }
             case 1331836730: {
-                if (var6_6.equals("video/avc")) {
-                    var3_3 = 2;
+                if (var3_6.equals("video/avc")) {
+                    var4_3 = 2;
                     ** break;
                 }
                 ** GOTO lbl39
             }
             case 1599127256: {
-                if (var6_6.equals("video/x-vnd.on2.vp8")) {
-                    var3_3 = 3;
+                if (var3_6.equals("video/x-vnd.on2.vp8")) {
+                    var4_3 = 3;
                     ** break;
                 }
                 ** GOTO lbl39
             }
             case -1662541442: {
-                if (var6_6.equals("video/hevc")) {
-                    var3_3 = 4;
+                if (var3_6.equals("video/hevc")) {
+                    var4_3 = 4;
                 }
             }
 lbl39: // 12 sources:
@@ -221,38 +221,38 @@ lbl39: // 12 sources:
             }
             case 1599127257: 
         }
-        if (var6_6.equals("video/x-vnd.on2.vp9")) {
-            var3_3 = 5;
+        if (var3_6.equals("video/x-vnd.on2.vp9")) {
+            var4_3 = 5;
         }
 lbl44: // 4 sources:
-        switch (var3_3) {
+        switch (var4_3) {
             default: {
                 return;
             }
             case 0: 
             case 1: {
-                var3_3 = var5_5 * var4_4;
-                var4_4 = 2;
+                var4_3 = var6_5 * var5_4;
+                var5_4 = 2;
                 break;
             }
             case 2: {
                 if ("BRAVIA 4K 2015".equals(Util.MODEL) != false) return;
-                var3_3 = (var5_5 + 15) / 16 * ((var4_4 + 15) / 16) * 16 * 16;
-                var4_4 = 2;
+                var4_3 = (var6_5 + 15) / 16 * ((var5_4 + 15) / 16) * 16 * 16;
+                var5_4 = 2;
                 break;
             }
             case 3: {
-                var3_3 = var5_5 * var4_4;
-                var4_4 = 2;
+                var4_3 = var6_5 * var5_4;
+                var5_4 = 2;
                 break;
             }
             case 4: 
             case 5: {
-                var3_3 = var5_5 * var4_4;
-                var4_4 = 4;
+                var4_3 = var6_5 * var5_4;
+                var5_4 = 4;
             }
         }
-        var1_1.setInteger("max-input-size", var3_3 * 3 / (var4_4 * 2));
+        var1_1.setInteger("max-input-size", var4_3 * 3 / (var5_4 * 2));
     }
 
     /*

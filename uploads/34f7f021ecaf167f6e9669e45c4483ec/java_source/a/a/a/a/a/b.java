@@ -36,19 +36,19 @@ public class b {
             b.c(var0, var1_1);
             var2_2 = var2_2.getDeclaredFields();
             AccessibleObject.setAccessible(var2_2, true);
-            var6_8 = 0;
+            var7_8 = 0;
             do {
                 block11 : {
-                    if (var6_8 >= var2_2.length || !var3_5.b) break block10;
-                    var8_10 = var2_2[var6_8];
-                    if (a.b(var5_7, var8_10.getName()) || var8_10.getName().indexOf(36) != -1) break block11;
+                    if (var7_8 >= var2_2.length || !var3_5.b) break block10;
+                    var6_9 = var2_2[var7_8];
+                    if (a.b(var5_7, var6_9.getName()) || var6_9.getName().indexOf(36) != -1) break block11;
                     if (var4_6) ** GOTO lbl17
-                    if (Modifier.isTransient(var8_10.getModifiers())) break block11;
+                    if (Modifier.isTransient(var6_9.getModifiers())) break block11;
 lbl17: // 2 sources:
-                    if (var7_9 = Modifier.isStatic(var8_10.getModifiers())) break block11;
-                    var3_5.e(var8_10.get(var0), var8_10.get(var1_1));
+                    if (var8_10 = Modifier.isStatic(var6_9.getModifiers())) break block11;
+                    var3_5.e(var6_9.get(var0), var6_9.get(var1_1));
                 }
-                ++var6_8;
+                ++var7_8;
             } while (true);
             catch (IllegalAccessException var2_3) {
                 try {

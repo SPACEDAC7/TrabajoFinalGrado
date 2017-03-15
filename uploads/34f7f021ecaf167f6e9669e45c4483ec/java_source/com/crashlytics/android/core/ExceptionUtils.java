@@ -114,7 +114,7 @@ lbl18: // 2 sources:
     private static void writeStackTrace(Throwable throwable, Writer writer) {
         int n2 = 1;
         while (throwable != null) {
-            void var6_8;
+            void var3_6;
             StackTraceElement[] arrstackTraceElement = ExceptionUtils.getMessage(throwable);
             if (arrstackTraceElement == null) {
                 arrstackTraceElement = "";
@@ -124,7 +124,7 @@ lbl18: // 2 sources:
             } else {
                 String string3 = "Caused by: ";
             }
-            writer.write((String)var6_8 + throwable.getClass().getName() + ": " + (String)arrstackTraceElement + "\n");
+            writer.write((String)var3_6 + throwable.getClass().getName() + ": " + (String)arrstackTraceElement + "\n");
             int n3 = 0;
             for (StackTraceElement stackTraceElement : throwable.getStackTrace()) {
                 writer.write("\tat " + stackTraceElement.toString() + "\n");

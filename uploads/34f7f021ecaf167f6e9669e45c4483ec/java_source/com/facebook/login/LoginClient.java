@@ -478,7 +478,7 @@ implements Parcelable {
          * Enabled aggressive block sorting
          */
         private Request(Parcel parcel) {
-            Object var4_2 = null;
+            Object var3_2 = null;
             this.isRerequest = false;
             Object object = parcel.readString();
             object = object != null ? LoginBehavior.valueOf((String)object) : null;
@@ -487,7 +487,7 @@ implements Parcelable {
             parcel.readStringList(object);
             this.permissions = new HashSet<String>((Collection<String>)object);
             String string2 = parcel.readString();
-            object = var4_2;
+            object = var3_2;
             if (string2 != null) {
                 object = DefaultAudience.valueOf(string2);
             }

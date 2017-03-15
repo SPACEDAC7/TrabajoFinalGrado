@@ -224,51 +224,51 @@ public final class FacebookSdk {
      * Lifted jumps to return sites
      */
     public static String getAttributionId(ContentResolver contentResolver) {
+        Object var3_3;
         Object object;
-        Object var4_3;
         Object object2;
         block7 : {
             block6 : {
-                var4_3 = null;
+                var3_3 = null;
                 Validate.sdkInitialized();
-                object = null;
                 object2 = null;
+                object = null;
                 contentResolver = contentResolver.query(ATTRIBUTION_ID_CONTENT_URI, new String[]{"aid"}, null, null, null);
                 if (contentResolver == null) break block6;
-                object2 = contentResolver;
                 object = contentResolver;
+                object2 = contentResolver;
                 boolean bl = contentResolver.moveToFirst();
                 if (bl) break block7;
             }
-            object = var4_3;
-            if (contentResolver == null) return object;
+            object2 = var3_3;
+            if (contentResolver == null) return object2;
             contentResolver.close();
-            return var4_3;
+            return var3_3;
         }
-        object2 = contentResolver;
         object = contentResolver;
+        object2 = contentResolver;
         try {
             String string2;
-            object = object2 = (string2 = contentResolver.getString(contentResolver.getColumnIndex("aid")));
-            if (contentResolver == null) return object;
+            object2 = object = (string2 = contentResolver.getString(contentResolver.getColumnIndex("aid")));
+            if (contentResolver == null) return object2;
         }
         catch (Exception var0_1) {
-            object = object2;
+            object2 = object;
             try {
                 Log.d((String)TAG, (String)("Caught unexpected exception in getAttributionId(): " + var0_1.toString()));
-                object = var4_3;
-                if (object2 == null) return object;
+                object2 = var3_3;
+                if (object == null) return object2;
             }
             catch (Throwable var0_2) {
-                if (object == null) throw var0_2;
-                object.close();
+                if (object2 == null) throw var0_2;
+                object2.close();
                 throw var0_2;
             }
-            object2.close();
+            object.close();
             return null;
         }
         contentResolver.close();
-        return object2;
+        return object;
     }
 
     public static File getCacheDir() {

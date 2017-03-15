@@ -122,7 +122,7 @@ implements RendererBuilder {
          */
         @Override
         public void onSingleManifest(HlsPlaylist object) {
-            void var4_11;
+            void var2_11;
             if (this.mIsCanceled) {
                 return;
             }
@@ -150,7 +150,7 @@ implements RendererBuilder {
             } else {
                 object = new MediaCodecAudioTrackRenderer(hlsSampleSource, MediaCodecSelector.DEFAULT, null, true, handler, (MediaCodecAudioTrackRenderer.EventListener)vCRExoPlayerEventProxy, AudioCapabilities.getCapabilities(this.mContext), 3);
             }
-            this.mPlayer.onRenderers(new TrackRenderer[]{var4_11, object});
+            this.mPlayer.onRenderers(new TrackRenderer[]{var2_11, object});
         }
 
         @Override

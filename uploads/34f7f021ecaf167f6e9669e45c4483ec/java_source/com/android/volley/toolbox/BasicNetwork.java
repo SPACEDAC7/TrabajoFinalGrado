@@ -110,48 +110,48 @@ implements Network {
      * Lifted jumps to return sites
      */
     private byte[] entityToBytes(HttpEntity var1_1) throws IOException, ServerError {
-        var5_4 = new PoolingByteArrayOutputStream(this.mPool, (int)var1_1.getContentLength());
-        var3_7 = var4_5 = null;
+        var4_4 = new PoolingByteArrayOutputStream(this.mPool, (int)var1_1.getContentLength());
+        var2_7 = var3_5 = null;
         try {
-            var6_8 = var1_1.getContent();
-            if (var6_8 == null) {
-                var3_7 = var4_5;
+            var5_8 = var1_1.getContent();
+            if (var5_8 == null) {
+                var2_7 = var3_5;
                 throw new ServerError();
             }
-            var3_7 = var4_5;
-            var4_5 = this.mPool.getBuf(1024);
+            var2_7 = var3_5;
+            var3_5 = this.mPool.getBuf(1024);
             do {
-                var3_7 = var4_5;
-                var2_9 = var6_8.read(var4_5);
-                if (var2_9 != -1) {
-                    var3_7 = var4_5;
-                    var5_4.write(var4_5, 0, var2_9);
+                var2_7 = var3_5;
+                var6_9 = var5_8.read(var3_5);
+                if (var6_9 != -1) {
+                    var2_7 = var3_5;
+                    var4_4.write(var3_5, 0, var6_9);
                     continue;
                 }
                 ** GOTO lbl22
                 break;
             } while (true);
         }
-        catch (Throwable var4_6) {
+        catch (Throwable var3_6) {
             var1_1.consumeContent();
 lbl22: // 1 sources:
-            var3_7 = var4_5;
-            var6_8 = var5_4.toByteArray();
+            var2_7 = var3_5;
+            var5_8 = var4_4.toByteArray();
             try {
                 var1_1.consumeContent();
             }
             catch (IOException var1_2) {
                 VolleyLog.v("Error occured when calling consumingContent", new Object[0]);
             }
-            this.mPool.returnBuf(var4_5);
-            var5_4.close();
-            return var6_8;
+            this.mPool.returnBuf(var3_5);
+            var4_4.close();
+            return var5_8;
             catch (IOException var1_3) {
                 VolleyLog.v("Error occured when calling consumingContent", new Object[0]);
             }
-            this.mPool.returnBuf(var3_7);
-            var5_4.close();
-            throw var4_6;
+            this.mPool.returnBuf(var2_7);
+            var4_4.close();
+            throw var3_6;
         }
     }
 
@@ -178,106 +178,106 @@ lbl22: // 1 sources:
      */
     @Override
     public NetworkResponse performRequest(Request<?> var1_1) throws VolleyError {
-        var3_2 = SystemClock.elapsedRealtime();
+        var9_2 = SystemClock.elapsedRealtime();
         do {
             block20 : {
-                var7_14 = null;
-                var5_4 = var8_15 = Collections.emptyMap();
-                var6_12 = var7_14;
-                var9_16 = new HashMap<String, String>();
-                var5_4 = var8_15;
-                var6_12 = var7_14;
-                this.addCacheHeaders((Map<String, String>)var9_16, var1_1.getCacheEntry());
-                var5_4 = var8_15;
-                var6_12 = var7_14;
-                var7_14 = this.mHttpStack.performRequest(var1_1, (Map<String, String>)var9_16);
-                var5_4 = var8_15;
-                var6_12 = var7_14;
-                var10_17 = var7_14.getStatusLine();
-                var5_4 = var8_15;
-                var6_12 = var7_14;
-                var2_3 = var10_17.getStatusCode();
-                var5_4 = var8_15;
-                var6_12 = var7_14;
-                var8_15 = BasicNetwork.convertHeaders(var7_14.getAllHeaders());
-                if (var2_3 == 304) {
-                    var5_4 = var8_15;
-                    var6_12 = var7_14;
-                    var9_16 = var1_1.getCacheEntry();
-                    if (var9_16 == null) {
-                        var5_4 = var8_15;
-                        var6_12 = var7_14;
-                        return new NetworkResponse(304, null, (Map<String, String>)var8_15, true, SystemClock.elapsedRealtime() - var3_2);
+                var4_13 = null;
+                var2_3 = var5_14 = Collections.emptyMap();
+                var3_11 = var4_13;
+                var6_15 = new HashMap<String, String>();
+                var2_3 = var5_14;
+                var3_11 = var4_13;
+                this.addCacheHeaders((Map<String, String>)var6_15, var1_1.getCacheEntry());
+                var2_3 = var5_14;
+                var3_11 = var4_13;
+                var4_13 = this.mHttpStack.performRequest(var1_1, (Map<String, String>)var6_15);
+                var2_3 = var5_14;
+                var3_11 = var4_13;
+                var7_16 = var4_13.getStatusLine();
+                var2_3 = var5_14;
+                var3_11 = var4_13;
+                var8_18 = var7_16.getStatusCode();
+                var2_3 = var5_14;
+                var3_11 = var4_13;
+                var5_14 = BasicNetwork.convertHeaders(var4_13.getAllHeaders());
+                if (var8_18 == 304) {
+                    var2_3 = var5_14;
+                    var3_11 = var4_13;
+                    var6_15 = var1_1.getCacheEntry();
+                    if (var6_15 == null) {
+                        var2_3 = var5_14;
+                        var3_11 = var4_13;
+                        return new NetworkResponse(304, null, (Map<String, String>)var5_14, true, SystemClock.elapsedRealtime() - var9_2);
                     }
-                    var5_4 = var8_15;
-                    var6_12 = var7_14;
-                    var9_16.responseHeaders.putAll((Map<String, String>)var8_15);
-                    var5_4 = var8_15;
-                    var6_12 = var7_14;
-                    return new NetworkResponse(304, var9_16.data, var9_16.responseHeaders, true, SystemClock.elapsedRealtime() - var3_2);
+                    var2_3 = var5_14;
+                    var3_11 = var4_13;
+                    var6_15.responseHeaders.putAll((Map<String, String>)var5_14);
+                    var2_3 = var5_14;
+                    var3_11 = var4_13;
+                    return new NetworkResponse(304, var6_15.data, var6_15.responseHeaders, true, SystemClock.elapsedRealtime() - var9_2);
                 }
-                var5_4 = var8_15;
-                var6_12 = var7_14;
-                if (var7_14.getEntity() != null) {
-                    var5_4 = var8_15;
-                    var6_12 = var7_14;
-                    var5_4 = var9_16 = this.entityToBytes(var7_14.getEntity());
+                var2_3 = var5_14;
+                var3_11 = var4_13;
+                if (var4_13.getEntity() != null) {
+                    var2_3 = var5_14;
+                    var3_11 = var4_13;
+                    var2_3 = var6_15 = this.entityToBytes(var4_13.getEntity());
                     break block20;
                 }
-                var5_4 = var8_15;
-                var6_12 = var7_14;
-                var5_4 = var9_16 = new byte[0];
+                var2_3 = var5_14;
+                var3_11 = var4_13;
+                var2_3 = var6_15 = new byte[0];
             }
             try {
-                this.logSlowRequests(SystemClock.elapsedRealtime() - var3_2, var1_1, var5_4, var10_17);
-                if (var2_3 < 200) throw new IOException();
-                if (var2_3 <= 299) return new NetworkResponse(var2_3, var5_4, (Map<String, String>)var8_15, false, SystemClock.elapsedRealtime() - var3_2);
+                this.logSlowRequests(SystemClock.elapsedRealtime() - var9_2, var1_1, var2_3, var7_16);
+                if (var8_18 < 200) throw new IOException();
+                if (var8_18 <= 299) return new NetworkResponse(var8_18, var2_3, (Map<String, String>)var5_14, false, SystemClock.elapsedRealtime() - var9_2);
                 throw new IOException();
             }
-            catch (SocketTimeoutException var5_5) {}
+            catch (SocketTimeoutException var2_4) {}
             ** GOTO lbl-1000
-            catch (ConnectTimeoutException var5_6) {}
+            catch (ConnectTimeoutException var2_5) {}
             ** GOTO lbl-1000
-            catch (MalformedURLException var5_7) {}
+            catch (MalformedURLException var2_6) {}
             ** GOTO lbl-1000
-            catch (IOException var10_18) {
-                var9_16 = null;
-                var7_14 = var6_12;
-                var8_15 = var5_4;
-                var6_12 = var10_18;
+            catch (IOException var7_17) {
+                var6_15 = null;
+                var4_13 = var3_11;
+                var5_14 = var2_3;
+                var3_11 = var7_17;
                 ** GOTO lbl67
-                catch (IOException var6_13) {
-                    var9_16 = var5_4;
+                catch (IOException var3_12) {
+                    var6_15 = var2_3;
                 }
 lbl67: // 2 sources:
-                if (var7_14 == null) throw new NoConnectionError((Throwable)var6_12);
-                var2_3 = var7_14.getStatusLine().getStatusCode();
-                VolleyLog.e("Unexpected response code %d for %s", new Object[]{var2_3, var1_1.getUrl()});
-                if (var9_16 == null) throw new NetworkError(null);
-                var5_4 = new NetworkResponse(var2_3, (byte[])var9_16, (Map<String, String>)var8_15, false, SystemClock.elapsedRealtime() - var3_2);
-                if (var2_3 != 401) {
-                    if (var2_3 != 403) throw new ServerError((NetworkResponse)var5_4);
+                if (var4_13 == null) throw new NoConnectionError((Throwable)var3_11);
+                var8_18 = var4_13.getStatusLine().getStatusCode();
+                VolleyLog.e("Unexpected response code %d for %s", new Object[]{var8_18, var1_1.getUrl()});
+                if (var6_15 == null) throw new NetworkError(null);
+                var2_3 = new NetworkResponse(var8_18, (byte[])var6_15, (Map<String, String>)var5_14, false, SystemClock.elapsedRealtime() - var9_2);
+                if (var8_18 != 401) {
+                    if (var8_18 != 403) throw new ServerError((NetworkResponse)var2_3);
                 }
-                BasicNetwork.attemptRetryOnException("auth", var1_1, new AuthFailureError((NetworkResponse)var5_4));
+                BasicNetwork.attemptRetryOnException("auth", var1_1, new AuthFailureError((NetworkResponse)var2_3));
                 continue;
             }
-            catch (MalformedURLException var5_9) {}
+            catch (MalformedURLException var2_8) {}
 lbl-1000: // 2 sources:
             {
                 if ((var1_1 = String.valueOf(var1_1.getUrl())).length() != 0) {
                     var1_1 = "Bad URL ".concat((String)var1_1);
-                    throw new RuntimeException((String)var1_1, (Throwable)var5_8);
+                    throw new RuntimeException((String)var1_1, (Throwable)var2_7);
                 }
                 var1_1 = new String("Bad URL ");
-                throw new RuntimeException((String)var1_1, (Throwable)var5_8);
+                throw new RuntimeException((String)var1_1, (Throwable)var2_7);
             }
-            catch (ConnectTimeoutException var5_10) {}
+            catch (ConnectTimeoutException var2_9) {}
 lbl-1000: // 2 sources:
             {
                 BasicNetwork.attemptRetryOnException("connection", var1_1, new TimeoutError());
                 continue;
             }
-            catch (SocketTimeoutException var5_11) {}
+            catch (SocketTimeoutException var2_10) {}
 lbl-1000: // 2 sources:
             {
                 BasicNetwork.attemptRetryOnException("socket", var1_1, new TimeoutError());
