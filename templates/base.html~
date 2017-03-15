@@ -13,13 +13,13 @@
 
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.5 -->
-    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="/static/css/font-awesome.min.css">
     <!-- Ionicons -->
     <link rel="stylesheet" href="/static/css/ionicons.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="/static/dash/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="/static/dash/css/AdminLTE.css">
     <link rel="stylesheet" href="/static/dash/css/skins/_all-skins.min.css">
     <link rel="stylesheet" href="/static/css/style.css">
 
@@ -45,7 +45,6 @@
       </a>
 
       <div class="navbar-custom-menu">
-        <ul class="nav navbar-nav">
 
           <!--Menu Items-->
           <ul class="nav navbar-nav navbar-left">
@@ -69,7 +68,6 @@
             <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i> Tools</a>
           </li>
         -->
-        </ul>
       </div>
     </nav>
   </header>

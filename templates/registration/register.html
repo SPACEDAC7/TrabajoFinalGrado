@@ -13,7 +13,7 @@
 	<p>Please login to see this page.</p>
 	{% endif %}
 {% endif %}
-<div style="margin-top: 60px;margin-left:40%;margin-right:40%;">
+<div class="contenedor-registro">
 <form class="form-horizontal" method="post" action="/registrar/">
 {% csrf_token %}
 <div class="form-group">
@@ -39,7 +39,7 @@
 
 <form class="form-horizontal" method="post" action="/login/">
 {% csrf_token%}
-<h5>If you are register, log in your account.</h5>
+<h5 class="texto-registro">If you are register, log in your account.</h5>
 <input class="btn btn-primary" type="submit" value="Login" />
 </form>
 </div>

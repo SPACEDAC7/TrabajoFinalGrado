@@ -49,6 +49,9 @@
               </ul>
             </li>
             <li><a target="_blank" href="../PDF/?md5={{ md5 }}&amp;type=APK"><i class="glyphicon glyphicon-list-alt"></i> Download Report</a></li>
+            <li><a target="_blank" href="../XML/?md5={{ md5 }}&amp;type=ANDZIP"><i class="glyphicon glyphicon-list-alt"></i> XML Report</a></li> 
+	    <li><a target="_blank" href="../HTML/?md5={{ md5 }}&amp;type=ANDZIP"><i class="glyphicon glyphicon-list-alt"></i> HTML Report</a></li>  
+        
             <li><a href="javascript:document.getElementById('dynform').submit();"><i class="glyphicon glyphicon-play-circle""></i> <strong>Start Dynamic Analysis</strong></a></li>
           </ul>
         </div>
@@ -151,7 +154,7 @@
       <div class="row">
         <div class="col-lg-3 col-xs-6">
           <!-- small box -->
-          <div class="small-box bg-aqua">
+          <div class="small-box bg-light-blue">
             <div class="inner">
               <h3>{{ act_count }}</h3>
 
@@ -166,7 +169,7 @@
         <!-- ./col -->
         <div class="col-lg-3 col-xs-6">
           <!-- small box -->
-          <div class="small-box bg-green">
+          <div class="small-box bg-yellow">
             <div class="inner">
               <h3>{{ serv_count }}</h3>
 
@@ -196,7 +199,7 @@
         <!-- ./col -->
         <div class="col-lg-3 col-xs-6">
           <!-- small box -->
-          <div class="small-box bg-red">
+          <div class="small-box bg-light-blue">
             <div class="inner">
               <h3>{{ prov_count }}</h3>
 
@@ -217,7 +220,7 @@
 
         <div class="col-md-3 col-sm-6 col-xs-12">
           <div class="info-box">
-            <span class="info-box-icon bg-aqua"><i class="fa fa-language"></i></span>
+            <span class="info-box-icon bg-light-blue"><i class="fa fa-language"></i></span>
 
             <div class="info-box-content">
               <span class="info-box-text">Exported </br>Activities</span>
@@ -228,21 +231,7 @@
           <!-- /.info-box -->
         </div>
         <!-- /.col -->
-        <div class="col-md-3 col-sm-6 col-xs-12">
-          <div class="info-box">
-            <span class="info-box-icon bg-green"><i class="fa fa-gears"></i></span>
-
-            <div class="info-box-content">
-              <span class="info-box-text">Exported </br>Services</span>
-              <span class="info-box-number">{{ e_ser }}</span>
-            </div>
-            <!-- /.info-box-content -->
-          </div>
-          <!-- /.info-box -->
-        </div>
-        <!-- /.col -->
-
-        <!-- fix for small devices only -->
+ 	<!-- fix for small devices only -->
         <div class="clearfix visible-sm-block"></div>
 
         <div class="col-md-3 col-sm-6 col-xs-12">
@@ -260,7 +249,20 @@
         <!-- /.col -->
         <div class="col-md-3 col-sm-6 col-xs-12">
           <div class="info-box">
-            <span class="info-box-icon bg-red"><i class="fa fa-database"></i></span>
+            <span class="info-box-icon bg-light-blue"><i class="fa fa-gears"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">Exported </br>Services</span>
+              <span class="info-box-number">{{ e_ser }}</span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div>
+        <!-- /.col -->
+        <div class="col-md-3 col-sm-6 col-xs-12">
+          <div class="info-box">
+            <span class="info-box-icon bg-yellow"><i class="fa fa-database"></i></span>
 
             <div class="info-box-content">
               <span class="info-box-text">Exported </br>Providers</span>
@@ -321,7 +323,7 @@
           <span class="label label-danger pull-right"><i class="fa fa-flash"></i></span>
         </div><!-- /.box-header -->
         <div align="center" class="box-body">
-          <a href="../Java/?md5={{ md5 }}{{ zipped }}" class="btn btn-info" role="button"><i class="fa fa-code"></i> View Java</a>
+          <a href="../Java/?md5={{ md5 }}{{ zipped }}" class="btn btn-primary" role="button"><i class="fa fa-code"></i> View Java</a>
             <a href="../download/{{ md5 }}-java.zip" class="btn btn-warning" role="button"> <i class="glyphicon glyphicon-download"></i> Download Java Code</a>
               </br>
             <a href="../Smali/?md5={{ md5 }}" class="btn btn-info" role="button"><i class="fa fa-code"></i> View Smali</a>
@@ -371,7 +373,7 @@ Production ready applications should not be signed with 'Android Debug' Certific
           <div class="box">
           <div class="box-header">
              <!-- /.box-header -->
-              <h3 class="box-title"><i class="fa fa-align-justify"></i> Android Permissions</h3>
+              <h3 class="box-title"><i class="fa fa-align-justify"></i> Android Permissions  <span class="glyphicon glyphicon-arrow-right"></h3>
             </div>
   <div class="box-body no-padding">
              <div class="table-responsive">
@@ -425,7 +427,7 @@ Production ready applications should not be signed with 'Android Debug' Certific
           <div class="box">
           <div class="box-header">
              <!-- /.box-header -->
-              <h3 class="box-title"><i class="fa fa-flag"></i> Android Library Binary Analysis</h3>
+              <h3 class="box-title"><i class="fa fa-flag"></i> Android Library Binary Analysis  <span class="glyphicon glyphicon-arrow-right"></h3>
             </div>
   <div class="box-body no-padding">
              <div class="table-responsive">
@@ -484,7 +486,7 @@ Production ready applications should not be signed with 'Android Debug' Certific
           <div class="box">
           <div class="box-header">
              <!-- /.box-header -->
-              <h3 class="box-title"><i class="fa  fa-dot-circle-o"></i> Android API</h3>
+              <h3 class="box-title"><i class="fa  fa-dot-circle-o"></i> Android API  <span class="glyphicon glyphicon-arrow-right"></h3>
             </div>
  <div class="box-body no-padding">
           <div class="table-responsive">
@@ -517,7 +519,7 @@ Production ready applications should not be signed with 'Android Debug' Certific
 
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title"><i class="fa fa-clone"></i> Browsable Activities</h3> 
+              <h3 class="box-title"><i class="fa fa-clone"></i> Browsable Activities  <span class="glyphicon glyphicon-arrow-right"></h3> 
             </div>
             <!-- /.box-header -->
             <div class="box-body no-padding">
@@ -597,7 +599,7 @@ Production ready applications should not be signed with 'Android Debug' Certific
 
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title"><i class="fa fa-search"></i> Manifest Analysis</h3> 
+              <h3 class="box-title"><i class="fa fa-search"></i> Manifest Analysis  <span class="glyphicon glyphicon-arrow-right"></h3> 
             </div>
             <!-- /.box-header -->
             <div class="box-body no-padding">
@@ -654,7 +656,7 @@ Production ready applications should not be signed with 'Android Debug' Certific
 
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title"><i class="fa  fa-code"></i> Code Analysis</h3>
+              <h3 class="box-title"><i class="fa  fa-code"></i> Code Analysis  <span class="glyphicon glyphicon-arrow-right"></h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body no-padding">

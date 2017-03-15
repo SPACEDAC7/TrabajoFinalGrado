@@ -1,0 +1,73 @@
+Signature-Version: 1.0
+Created-By: 1.0 (Android SignApk)
+SHA1-Digest-Manifest: OxXhE9Gej+CsZHrVkWrKaSl6ntY=
+
+Name: res/layout/activity_main.xml
+SHA1-Digest: Ylts0eI/YReIhLNsDTVzTLStilE=
+
+Name: res/drawable-mdpi-v4/lock.png
+SHA1-Digest: J7fo9m5SrZ8QulajwXbnPeCywf8=
+
+Name: res/drawable-xhdpi-v4/ic_launcher.png
+SHA1-Digest: UYaTXMDOKfo+S5c8oiOU7xQUuog=
+
+Name: res/drawable-mdpi-v4/wifisignal4.png
+SHA1-Digest: bETCzKLCd7pOMTvWuPCOhK3yA0I=
+
+Name: res/layout/listitem_pwd.xml
+SHA1-Digest: QgAHR9btbj79Xv+4oRWWnKtYoGg=
+
+Name: res/drawable-mdpi-v4/unlock.png
+SHA1-Digest: ZZ6IOnMNdRh2D3UvfAxVctmT1tg=
+
+Name: res/layout/about.xml
+SHA1-Digest: 7cHANthOiWqa3dng12B/w4cnMf8=
+
+Name: res/layout/listitem_titular.xml
+SHA1-Digest: uChF0naRjcgbSeETrkfvYr3brH4=
+
+Name: res/layout/show_password.xml
+SHA1-Digest: ksBxME9e4Eae0xItdaBfA+jPnmI=
+
+Name: res/drawable-xxhdpi-v4/ic_launcher.png
+SHA1-Digest: wCDAc2msL++4KuUAmVZBmoPL1HU=
+
+Name: res/layout/no_networks.xml
+SHA1-Digest: uv1Jxj/aAXb4Vcw0Ml7hh/crD3I=
+
+Name: res/raw/wpa_cli
+SHA1-Digest: 2s1pkJk+b0CJU6uzAF22UptrwhI=
+
+Name: AndroidManifest.xml
+SHA1-Digest: DyvDWRixtDXiBPNbMFNfOZFMgUs=
+
+Name: res/drawable-hdpi-v4/ic_launcher.png
+SHA1-Digest: t07HtU5ZnqpgMXWn076yq+Fp6fI=
+
+Name: res/menu/main.xml
+SHA1-Digest: NSawXnAFW5MRgBXwwBhZh3B0/PI=
+
+Name: res/menu/menu_pass.xml
+SHA1-Digest: w7VTbENxuqGn9N8tW8+uZGnduNU=
+
+Name: resources.arsc
+SHA1-Digest: kys4ksrqRJCQ/3rQ5u4iDIDbJkI=
+
+Name: classes.dex
+SHA1-Digest: eCHz8qzxb+VwZ+YKfYtnUUkS2Ko=
+
+Name: res/drawable-mdpi-v4/ic_launcher.png
+SHA1-Digest: 7dMq8MuIosK/zRqfCSWt50O3RSQ=
+
+Name: res/drawable-mdpi-v4/wifisignal2.png
+SHA1-Digest: LBv7NYqM/ia9Lc9ExVFT8ERjLkY=
+
+Name: res/drawable-mdpi-v4/wifisignal3.png
+SHA1-Digest: CJ2rjCHVd2Z+ZaE4EGa0mq1izBA=
+
+Name: res/drawable-mdpi-v4/iwps.png
+SHA1-Digest: 4P02xAi5pNzm5IGhCIu6L4/hKUw=
+
+Name: res/drawable-mdpi-v4/wifisignal1.png
+SHA1-Digest: 8UpIkTtzfk4FrRrf8i/DLnCDi9U=
+

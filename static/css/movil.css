@@ -31,12 +31,23 @@ body {
   margin-left: auto;
 }
 
+.contenedor-registro {
+  margin: 0% 25% 0% 25%;
+}
+
 /* Padding for spacing */
 .inner {
   padding: 1px;
   margin: 10% 5% 5% 5%;
 }
 
+.texto-registro {
+  color: #256E89;
+}
+
+.cerrar-sesion{
+	margin:0px 5px 0px 0px;
+}
 
 /*
  * Header
@@ -80,6 +91,10 @@ body {
   }
   .masthead-nav {
     float: right;
+  }
+
+  .contenedor-registro {
+    margin: 2% 40% 0% 40%;
   }
 }
 
@@ -151,8 +166,8 @@ body {
 }
 
 .imagen-logo{
-   width: 100px;
-   height: 100px;
+   width: 200px;
+   height: 200px;
 }
 
 .back-arrow{
