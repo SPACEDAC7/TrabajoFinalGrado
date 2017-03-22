@@ -564,8 +564,9 @@ def PDF(request):
                 if DB.exists():
                     print "\n[INFO] Fetching data from DB for PDF Report Generation (Android)"
                     context = get_context_from_db_entry(DB)
-		    print context
+		    #print context
                     if TYP == 'APK':
+			print "opcion APK"
                         template = get_template("pdf/static_analysis_pdf.html")
                     else:
                         template = get_template(

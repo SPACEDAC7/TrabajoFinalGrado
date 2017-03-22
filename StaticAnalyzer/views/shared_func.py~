@@ -400,8 +400,6 @@ def XML(request):
 	    list = context.get("files")
 	    for f in list:
 		etree.SubElement(precuinat, "file").text = f
-
-
 	   	
 
 	    g = open('./xml/t.xml', 'w')
@@ -566,7 +564,7 @@ def PDF(request):
                 if DB.exists():
                     print "\n[INFO] Fetching data from DB for PDF Report Generation (Android)"
                     context = get_context_from_db_entry(DB)
-		    print context
+		    #print context
                     if TYP == 'APK':
                         template = get_template("pdf/static_analysis_pdf.html")
                     else:

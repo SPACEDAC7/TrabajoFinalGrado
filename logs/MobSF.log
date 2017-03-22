@@ -491,3 +491,5 @@
 [ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 356 "etree.SubElement(precuinat, "contenido").text = context.get("strings")"): Argument must be bytes or unicode, got 'list'
 [2017-03-21 16:07:40]
 [ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 357 "etree.SubElement(precuinat, "contenido").text = context.get("strings")"): Argument must be bytes or unicode, got 'list'
+[2017-03-22 11:36:18]
+[ERROR] Cannot Check for updates. (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/MobSF/utils.py, LINE 49 "html = response.read().split("\n")"): [Errno 104] Connection reset by peer

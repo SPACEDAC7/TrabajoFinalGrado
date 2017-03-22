@@ -3,7 +3,7 @@
 
 <h1 align="center" class="page-header">Static Analysis - {{name}} David el que runea</h1>
 <hr>
-	<img src="/static/img/uji.png" style="width:50%;heigh:50%"/>
+	<img src="/static/img/uji.png"/>
         
                   <div class="col-lg-7">
                         <div class="panel panel-default">

@@ -221,7 +221,6 @@ STATICFILES_DIRS = (
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/dev/howto/static-files/
 STATIC_URL = '/static/'
-
 #===============================================
 if CONFIG_HOME:
     print "[INFO] Loading User config from: " + USER_CONFIG
