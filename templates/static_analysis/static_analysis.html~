@@ -762,7 +762,7 @@ Production ready applications should not be signed with 'Android Debug' Certific
 
           <div class="box">
             <div class="box-header">
-              <h3 class="box-title"><i class="glyphicon glyphicon-screenshot"></i> Malware Check</h3>
+              <h3 class="box-title"><i class="glyphicon glyphicon-screenshot"></i> Malware Check  <span class="glyphicon glyphicon-arrow-right"></h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body no-padding">
