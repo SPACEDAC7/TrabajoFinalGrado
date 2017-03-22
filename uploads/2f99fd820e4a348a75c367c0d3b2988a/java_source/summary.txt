@@ -1,0 +1,81 @@
+Summary for /home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/uploads/2f99fd820e4a348a75c367c0d3b2988a/classes.jar
+Decompiled with CFR 0_115
+
+
+hecticman.jsterm.RemoteInterface
+----------------------------
+
+appendToWindow(java.lang.String java.lang.String )
+  Unable to fully structure code
+
+
+hecticman.jsterm.ShellTermSession
+----------------------------
+
+createSubprocess(int[] java.lang.String java.lang.String[] )
+  Unable to fully structure code
+
+
+hecticman.jsterm.Term
+----------------------------
+
+doCommandHistory()
+  Unable to fully structure code
+doFindSD()
+  Unable to fully structure code
+doUIToggle(int int int int )
+  Unable to fully structure code
+updatePrefs()
+  Unable to fully structure code
+onCreate(android.os.Bundle )
+  Unable to fully structure code
+
+
+hecticman.jsterm.TermView
+----------------------------
+
+onTouchEvent(android.view.MotionEvent )
+  Unable to fully structure code
+
+
+hecticman.jsterm.emulatorview.ByteQueue
+----------------------------
+
+write(byte[] int int )
+  Unable to fully structure code
+
+
+hecticman.jsterm.emulatorview.TermKeyListener
+----------------------------
+
+keyDown(int android.view.KeyEvent boolean )
+  Unable to fully structure code
+mapControlChar(boolean boolean int )
+  Unable to fully structure code
+
+
+hecticman.jsterm.emulatorview.TerminalEmulator
+----------------------------
+
+process(byte boolean )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Tried to end blocks [2[CASE]], but top level block is 11[SWITCH]
+selectGraphicRendition()
+  Unable to fully structure code
+
+
+hecticman.jsterm.emulatorview.TranscriptScreen
+----------------------------
+
+internalGetTranscriptText(java.lang.StringBuilder int int int int )
+  Unable to fully structure code
+drawText(int android.graphics.Canvas float float hecticman.jsterm.emulatorview.TextRenderer int int int java.lang.String )
+  Exception : org.benf.cfr.reader.util.ConfusedCFRException: Statement already marked as first in another block
+
+
+hecticman.jsterm.emulatorview.UnicodeTranscript
+----------------------------
+
+blockCopy(int int int int int int )
+  Unable to fully structure code
+resize(int int int[] )
+  Unable to fully structure code

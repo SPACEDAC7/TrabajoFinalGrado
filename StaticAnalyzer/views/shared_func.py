@@ -13,6 +13,8 @@ import platform
 import errno
 
 from django.shortcuts import render
+from lxml import etree
+from django.utils.encoding import smart_str
 
 from django.http import HttpResponseRedirect
 from django.http import HttpResponse
@@ -237,24 +239,181 @@ def XML(request):
                 return HttpResponse(json.dumps({"type": "Type is not Allowed"}),
                                     content_type="application/json; charset=utf-8")
             html = template.render(context)
-            result = StringIO()
-
-	    from django.core import serializers
-    	    data = serializers.serialize('xml', DB), 
-
-    	    from django.core.files import File
-    	    f = open('content.xml', 'w')
-    	    myfile = File(f)
-    	    myfile.write(data)
-    	    myfile.close()
+         
 	    
-	    #pdf = pisa.pisaDocument(StringIO("{0}".format(
-             #   html.encode('utf-8'))), result, encoding='utf-8')
-           # if not pdf.err:
-            response = HttpResponse( content_type='application/xml')
-	    response['Content-Disposition'] = 'attachment; filename=content.xml'
-	    return response
+	    memorandum = etree.Element("memorandum")
+	    
+	    etree.SubElement(memorandum, "titul").text = context.get("title")+" - "+context.get("name")
+	    precuinat = etree.SubElement(memorandum, "precuinat")
+	    precuinat.set("category", "fileInformation")
+	    etree.SubElement(precuinat, "title").text = "File Information"
+	    etree.SubElement(precuinat, "nom").text = context.get("name")
+	    etree.SubElement(precuinat, "tam").text = context.get("size")
+	    etree.SubElement(precuinat, "md5").text = context.get("md5")
+	    etree.SubElement(precuinat, "sha1").text = context.get("sha1")
+	    etree.SubElement(precuinat, "sha256").text = context.get("sha256")
 
+	    precuinat = etree.SubElement(memorandum, "precuinat")
+	    precuinat.set("category", "appInformation")
+	    etree.SubElement(precuinat, "title").text = "App Information"
+	    etree.SubElement(precuinat, "packagename").text = context.get("packagename")
+	    etree.SubElement(precuinat, "mainactivity").text = context.get("mainactivity")
+	    etree.SubElement(precuinat, "targetsdk").text = context.get("targetsdk")
+	    etree.SubElement(precuinat, "minsdk").text = context.get("minsdk")
+	    etree.SubElement(precuinat, "maxsdk").text = context.get("maxsdk")
+	    etree.SubElement(precuinat, "androvername").text = context.get("androvername")
+	    etree.SubElement(precuinat, "androver").text = context.get("androver")
+
+	    precuinat = etree.SubElement(memorandum, "precuinat")
+	    precuinat.set("category", "codeNature")
+	    etree.SubElement(precuinat, "title").text = "Code Nature"
+	    etree.SubElement(precuinat, "native").text = context.get("native")
+    	    etree.SubElement(precuinat, "dynamic").text = context.get("dynamic")
+	    etree.SubElement(precuinat, "reflection").text = context.get("reflection")
+	    etree.SubElement(precuinat, "crypto").text = context.get("crypto")
+	    etree.SubElement(precuinat, "obfus").text = context.get("obfus")
+
+	    precuinat = etree.SubElement(memorandum, "precuinat")
+	    precuinat.set("category", "certificate")
+	    etree.SubElement(precuinat, "title").text = "Certificate"
+	    etree.SubElement(precuinat, "certinfo").text = context.get("certinfo")
+	    etree.SubElement(precuinat, "issued").text = "Certificate Status: " + context.get("issued")
+
+
+ 	    precuinat = etree.SubElement(memorandum, "precuinat")
+	    precuinat.set("category", "permissions")
+	    etree.SubElement(precuinat, "title").text = "Permissions"
+	    dic = context.get("permissions")
+	    
+	    for perm, desc in dic.items():
+		etree.SubElement(precuinat, "perm").text = "PERMISSION: " + perm + " " + desc[0]
+		etree.SubElement(precuinat, "info").text = "INFO: " + desc[1]
+		etree.SubElement(precuinat, "description").text = "DESCRIPTION: " + desc[2]
+	   
+
+ 	    precuinat = etree.SubElement(memorandum, "precuinat")
+	    precuinat.set("category", "SOLibraryBinaryAnalis")
+	    etree.SubElement(precuinat, "title").text = "ANDROID LIBRARY BINARY ANALYSIS"
+	    dic = context.get("binary_analysis")
+	    dic2 = dic[0]
+	    for i,j in dic2.items():
+	    	etree.SubElement(precuinat, "key").text = i
+	    	etree.SubElement(precuinat, "value").text = j
+	     
+    	    precuinat = etree.SubElement(memorandum, "precuinat")
+	    precuinat.set("category", "brossableActivities")
+	    etree.SubElement(precuinat, "title").text = "Brossable Activities"
+	    dic = context.get("browsable_activities")
+
+	    for i,j in dic.items():
+		etree.SubElement(precuinat, "activity").text = "ACTIVITY " + i
+		etree.SubElement(precuinat, "intent").text = "INTENT " + j
+	    
+    	    precuinat = etree.SubElement(memorandum, "precuinat")
+	    precuinat.set("category", "manifestAnalysis")
+	    etree.SubElement(precuinat, "title").text = "Manifest Analysis"
+	    dic = context.get("manifest")
+
+	    for p in dic:
+		for i,j in p.items():
+			etree.SubElement(precuinat, "key").text = i
+			etree.SubElement(precuinat, "value").text = j
+	    
+    	    precuinat = etree.SubElement(memorandum, "precuinat")
+	    precuinat.set("category", "codeAnalysis")
+	    etree.SubElement(precuinat, "title").text = "Code Analysis"
+	    etree.SubElement(precuinat, "contenido").text = context.get("dang")
+	    
+
+	    precuinat = etree.SubElement(memorandum, "precuinat")
+	    precuinat.set("category", "AndroidAPI")
+	    etree.SubElement(precuinat, "title").text = "Android API"
+	    etree.SubElement(precuinat, "contenido").text = context.get("api")    
+	
+	    precuinat = etree.SubElement(memorandum, "precuinat")
+	    precuinat.set("category", "urls")
+	    etree.SubElement(precuinat, "title").text = "URLS"
+	    etree.SubElement(precuinat, "contenido").text = context.get("urls") 
+
+ 	    precuinat = etree.SubElement(memorandum, "precuinat")
+	    precuinat.set("category", "malwareChecks")
+	    etree.SubElement(precuinat, "title").text = "Malware Checks"
+	    dic = context.get("domain")
+
+ 	    precuinat = etree.SubElement(memorandum, "precuinat")
+	    precuinat.set("category", "emails")
+	    etree.SubElement(precuinat, "title").text = "Emails"
+	    etree.SubElement(precuinat, "contenido").text = context.get("emails") 
+	   		
+	    precuinat = etree.SubElement(memorandum, "precuinat")
+	    precuinat.set("category", "fileAnalysis")
+	    etree.SubElement(precuinat, "title").text = "File Analysis"
+	    etree.SubElement(precuinat, "contenido").text = context.get("certz") 
+
+	    precuinat = etree.SubElement(memorandum, "precuinat")
+	    precuinat.set("category", "strings")
+	    etree.SubElement(precuinat, "title").text = "Strings"
+	    list = context.get("strings")
+	    for var in list:
+		etree.SubElement(precuinat, "strings").text = var
+
+	    precuinat = etree.SubElement(memorandum, "precuinat")
+	    precuinat.set("category", "activities")
+	    etree.SubElement(precuinat, "title").text = "Activities"
+	    list = context.get("activities")
+	   
+	    for act in list:
+		etree.SubElement(precuinat, "activity").text = act 
+
+	    precuinat = etree.SubElement(memorandum, "precuinat")
+	    precuinat.set("category", "providers")
+	    etree.SubElement(precuinat, "title").text = "Providers"
+	    list = context.get("providers")
+	    for prov in list:
+		etree.SubElement(precuinat, "provider").text = prov
+	   
+
+	    precuinat = etree.SubElement(memorandum, "precuinat")
+	    precuinat.set("category", "receivers")
+	    etree.SubElement(precuinat, "title").text = "Receivers"
+	    list = context.get("receivers")
+	    for rec in list:
+		etree.SubElement(precuinat, "receiver").text = rec
+
+	    precuinat = etree.SubElement(memorandum, "precuinat")
+	    precuinat.set("category", "services")
+	    etree.SubElement(precuinat, "title").text = "Services"
+	    list = context.get("services")
+	    for ser in list:
+		etree.SubElement(precuinat, "service").text = ser
+
+	    precuinat = etree.SubElement(memorandum, "precuinat")
+	    precuinat.set("category", "libraries")
+	    etree.SubElement(precuinat, "title").text = "Libraries"
+	    list = context.get("libraries")
+	    for lib in list:
+		etree.SubElement(precuinat, "library").text = lib
+
+	    precuinat = etree.SubElement(memorandum, "precuinat")
+	    precuinat.set("category", "files")
+	    etree.SubElement(precuinat, "title").text = "Files"
+	    list = context.get("files")
+	    for f in list:
+		etree.SubElement(precuinat, "file").text = f
+	   	
+
+	    g = open('./xml/t.xml', 'w')
+ 	    g.write('<?xml version="1.0"?>')
+	   # print(etree.tostring(memorandum, xml_declaration=True, encoding = 'iso-8859-1'))
+	    g.write(etree.tostring(memorandum))
+	    g.close()
+
+	    g = open('./xml/t.xml', 'r')
+	    response = HttpResponse(g, content_type='application/force-download') 
+	    response['Content-Disposition'] = 'attachment; filename=t.xml'
+	    g.close()
+	    return response
+	    
 	else:
             return HttpResponse(json.dumps({"md5": "Invalid MD5"}),
                                 content_type="application/json; charset=utf-8")
@@ -385,13 +544,7 @@ def HTML(request):
                 return HttpResponse(json.dumps({"type": "Type is not Allowed"}),
                                     content_type="application/json; charset=utf-8")
             html = template.render(context)
-            #result = StringIO()
-            #pdf = pisa.pisaDocument(StringIO("{0}".format(
-            #    html.encode('utf-8'))), result, encoding='utf-8')
-            #if not pdf.err:
-	    return HttpResponse(template.render(context, request))
-            #else:
-            #    return HttpResponseRedirect('/error/')
+            return HttpResponse(template.render(context, request))
         else:
             return HttpResponse(json.dumps({"md5": "Invalid MD5"}),
                                 content_type="application/json; charset=utf-8")
@@ -411,6 +564,7 @@ def PDF(request):
                 if DB.exists():
                     print "\n[INFO] Fetching data from DB for PDF Report Generation (Android)"
                     context = get_context_from_db_entry(DB)
+		    print context
                     if TYP == 'APK':
                         template = get_template("pdf/static_analysis_pdf.html")
                     else:

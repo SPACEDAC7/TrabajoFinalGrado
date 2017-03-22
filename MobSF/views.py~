@@ -46,7 +46,7 @@ def registrar(request):
 	user = authenticate(username=username, password=password)
 	if user is not None:
 		login(request, user)
-		request.session["user"] = user
+		request.session["userID"] = user.id
 		template = loader.get_template('general/index.html')
 		context = {}
 		return HttpResponse(template.render(context, request))
@@ -81,6 +81,7 @@ def my_view(request):
 
 def logout_view(request):
 	logout(request)
+	request.session["userID"] = None
 	template = loader.get_template('registration/register.html')
 	context = {}
 	return HttpResponse(template.render(context, request))

@@ -307,3 +307,187 @@
 [ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 248 "myfile.write(data)"): expected a character buffer object
 [2017-03-14 15:34:52]
 [ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 248 "myfile.write(data)"): expected a character buffer object
+[2017-03-15 12:48:18]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 269 "soup = BeautifulStoneSoup(html)"): global name 'BeautifulStoneSoup' is not defined
+[2017-03-16 10:40:16]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 269 "soup = BeautifulStoneSoup(html)"): global name 'BeautifulStoneSoup' is not defined
+[2017-03-16 10:44:57]
+[ERROR] PDF Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 430 "print context.key()"): 'dict' object has no attribute 'key'
+[2017-03-16 11:03:56]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 283 "response = HttpResponse(mimetype='application/force-download') # mimetype is replaced by content_type for django 1.7"): __init__() got an unexpected keyword argument 'mimetype'
+[2017-03-16 11:27:45]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 245 "etree.Element.text = '<?xml version="1.0"?>'"): 'builtin_function_or_method' object has no attribute 'text'
+[2017-03-16 11:28:57]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 245 "etree.SubElement(memorandum, "titul").text = context.get("title")+" - "+context.get("name")"): Argument '_parent' has incorrect type (expected lxml.etree._Element, got str)
+[2017-03-21 08:02:01]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 282 "filename = g.file.name.split('/')[-1]"): 'file' object has no attribute 'file'
+[2017-03-21 08:03:42]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 282 "filename = html.file.name.split('/')[-1]"): 'SafeText' object has no attribute 'file'
+[2017-03-21 08:37:00]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 277 "g = open('../tmp/a.xml', 'w')"): [Errno 2] No such file or directory: '../tmp/a.xml'
+[2017-03-21 08:38:16]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 277 "g = open('/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/xm/a.xml', 'w')"): [Errno 2] No such file or directory: '/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/xm/a.xml'
+[2017-03-21 08:50:34]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 277 "g = open('..///tmp/a.xml', 'w')"): [Errno 2] No such file or directory: '..///tmp/a.xml'
+[2017-03-21 08:58:18]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 277 "g = open('../../../tmp/mozilla_david0/dd.xml', 'w')"): [Errno 2] No such file or directory: '../../../tmp/mozilla_david0/dd.xml'
+[2017-03-21 09:12:32]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 277 "g = open('/../../xml/m.xml', 'w')"): [Errno 2] No such file or directory: '/../../xml/m.xml'
+[2017-03-21 09:13:08]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 277 "g = open('../../xml/m.xml', 'w')"): [Errno 2] No such file or directory: '../../xml/m.xml'
+[2017-03-21 09:15:06]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 277 "g = open('~/Escritorio/MobSFDavid/TrabajoFinalGrado/xml/m.xml', 'w')"): [Errno 2] No such file or directory: '~/Escritorio/MobSFDavid/TrabajoFinalGrado/xml/m.xml'
+[2017-03-21 09:16:00]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 277 "g = open('/xml/m.xml', 'w')"): [Errno 2] No such file or directory: '/xml/m.xml'
+[2017-03-21 09:32:47]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 284 "response = HttpResponse(g, content_type='application/force-download') # mimetype is replaced by content_type for django 1.7"): File not open for reading
+[2017-03-21 09:33:25]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 278 "g.write('<?xml version="1.0"?>')"): [Errno 9] Bad file descriptor
+[2017-03-21 09:35:58]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 277 "g = open('./MobSFDavid/TrabajoFinalGrado/xml/m.xml', 'w')"): [Errno 2] No such file or directory: './MobSFDavid/TrabajoFinalGrado/xml/m.xml'
+[2017-03-21 09:38:04]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 277 "g = open('/../../../../MobSFDavid/TrabajoFinalGrado/xml/t.xml', 'w')"): [Errno 2] No such file or directory: '/../../../../MobSFDavid/TrabajoFinalGrado/xml/t.xml'
+[2017-03-21 09:39:42]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 277 "g = open('../../../../MobSFDavid/TrabajoFinalGrado/xml/t.xml', 'w')"): [Errno 2] No such file or directory: '../../../../MobSFDavid/TrabajoFinalGrado/xml/t.xml'
+[2017-03-21 09:40:25]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 277 "g = open('////MobSFDavid/TrabajoFinalGrado/xml/t.xml', 'w')"): [Errno 2] No such file or directory: '////MobSFDavid/TrabajoFinalGrado/xml/t.xml'
+[2017-03-21 09:42:04]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 277 "g = open('///MobSFDavid/TrabajoFinalGrado/xml/t.xml', 'w')"): [Errno 2] No such file or directory: '///MobSFDavid/TrabajoFinalGrado/xml/t.xml'
+[2017-03-21 09:43:18]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 277 "g = open('MobSFDavid/TrabajoFinalGrado/xml/t.xml', 'w')"): [Errno 2] No such file or directory: 'MobSFDavid/TrabajoFinalGrado/xml/t.xml'
+[2017-03-21 09:53:04]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 279 "etree.SubElement(precuinat, "certinfo | safe").text = context.get("certinfo | safe")"): Invalid tag name u'certinfo | safe'
+[2017-03-21 10:31:00]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 279 "print permissions.items"): global name 'permissions' is not defined
+[2017-03-21 10:31:40]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 279 "print permissions.items"): global name 'permissions' is not defined
+[2017-03-21 10:32:30]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 279 "print perm"): global name 'perm' is not defined
+[2017-03-21 10:36:16]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 280 "etree.SubElement(precuinat, "issues").text = "Certificate Status: " + context.get("issues")"): cannot concatenate 'str' and 'NoneType' objects
+[2017-03-21 13:08:05]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 286 "print 'Permissions' + context.get("permissions.items")"): cannot concatenate 'str' and 'NoneType' objects
+[2017-03-21 13:11:41]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 289 "for perm, desc in items:"): 'NoneType' object is not iterable
+[2017-03-21 13:12:13]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 289 "for i in items:"): 'NoneType' object is not iterable
+[2017-03-21 13:12:41]
+[ERROR] Cannot Check for updates. (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/MobSF/utils.py, LINE 49 "html = response.read().split("\n")"): [Errno 104] Connection reset by peer
+[2017-03-21 14:14:16]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 289 "for perm, desc in dic.items():"): 'list' object has no attribute 'items'
+[2017-03-21 14:21:52]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 300 "for perm, desc in dic.items():"): 'list' object has no attribute 'items'
+[2017-03-21 14:22:52]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 300 "print dic.keys()"): 'list' object has no attribute 'keys'
+[2017-03-21 14:23:18]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 300 "print dic.keys()"): 'list' object has no attribute 'keys'
+[2017-03-21 14:31:53]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 300 "porComas = dic.split(",")"): 'list' object has no attribute 'split'
+[2017-03-21 14:32:39]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 300 "porComas = dic.split(",").toString()"): 'list' object has no attribute 'split'
+[2017-03-21 14:35:53]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 302 "porComas = linea.split(",")"): 'dict' object has no attribute 'split'
+[2017-03-21 14:36:59]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 298 "etree.SubElement(precuinat, "bin_analysis").text = dic"): Argument must be bytes or unicode, got 'list'
+[2017-03-21 14:37:29]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 298 "etree.SubElement(precuinat, "bin_analysis").text = dic[0]"): Argument must be bytes or unicode, got 'dict'
+[2017-03-21 14:38:20]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 297 "etree.SubElement(precuinat, "bin_analysis").text = context.get("binary_analysis")"): Argument must be bytes or unicode, got 'list'
+[2017-03-21 14:41:18]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 298 "dic2 = ''.join(dic)"): sequence item 0: expected string, dict found
+[2017-03-21 14:42:11]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 301 "etree.SubElement(precuinat, "bin_analysis").text = dic2"): Argument must be bytes or unicode, got 'dict'
+[2017-03-21 14:43:02]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 301 "etree.SubElement(precuinat, "bin_analysis").text = dic"): Argument must be bytes or unicode, got 'list'
+[2017-03-21 14:45:07]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 302 "etree.SubElement(precuinat, "bin_analysis").text = dic"): Argument must be bytes or unicode, got 'list'
+[2017-03-21 14:46:53]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 300 "for i,j in dic2:"): too many values to unpack
+[2017-03-21 14:47:33]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 300 "print dic2[2]"): 2
+[2017-03-21 14:48:05]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 302 "for i,j in dic2:"): too many values to unpack
+[2017-03-21 14:48:40]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 304 "etree.SubElement(precuinat, "value").text = i.value()"): 'str' object has no attribute 'value'
+[2017-03-21 14:49:34]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 299 "dic3 = dic2.split(",")"): 'dict' object has no attribute 'split'
+[2017-03-21 14:50:16]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 299 "dic3 = dic2.split(",")"): 'dict' object has no attribute 'split'
+[2017-03-21 14:50:52]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 301 "print dic3"): global name 'dic3' is not defined
+[2017-03-21 14:51:26]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 302 "print dic3"): global name 'dic3' is not defined
+[2017-03-21 14:59:53]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 318 "for i, j in dic.items():"): 'list' object has no attribute 'items'
+[2017-03-21 15:02:31]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 318 "for i, j, k in dic.items():"): 'list' object has no attribute 'items'
+[2017-03-21 15:05:24]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 317 "for i, j, k in dic.items():"): 'list' object has no attribute 'items'
+[2017-03-21 15:05:56]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 319 "for i, j, k in dic.items():"): 'list' object has no attribute 'items'
+[2017-03-21 15:06:56]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 317 "for p in dic.items():"): 'list' object has no attribute 'items'
+[2017-03-21 15:07:40]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 319 "for p in dic.items():"): 'list' object has no attribute 'items'
+[2017-03-21 15:08:42]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 318 "for n in len(dic):"): 'int' object is not iterable
+[2017-03-21 15:15:01]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 318 "for n in len(dic):"): 'int' object is not iterable
+[2017-03-21 15:16:59]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 318 "dic2.append(dic[n])"): 'dict' object has no attribute 'append'
+[2017-03-21 15:19:20]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 318 "dic2[n] = dic[n]"): list indices must be integers, not dict
+[2017-03-21 15:19:52]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 318 "print dic[n]"): list indices must be integers, not dict
+[2017-03-21 15:20:39]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 319 "print dic[n]"): list indices must be integers, not dict
+[2017-03-21 15:21:04]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 322 "for i, j, k in p:"): too many values to unpack
+[2017-03-21 15:21:52]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 319 "dic2.append(dic)"): 'dict' object has no attribute 'append'
+[2017-03-21 15:23:22]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 318 "for i, j, k in p:"): too many values to unpack
+[2017-03-21 15:23:58]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 319 "for i, j, k in p:"): too many values to unpack
+[2017-03-21 15:24:22]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 318 "print p[0]"): 0
+[2017-03-21 15:24:47]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 319 "for i, j, k in p:"): too many values to unpack
+[2017-03-21 15:27:53]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 318 "print p[0]"): 0
+[2017-03-21 15:28:12]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 319 "for i,j in p:"): too many values to unpack
+[2017-03-21 15:28:58]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 319 "etree.SubElement(precuinat, "key").text = i.key()"): 'str' object has no attribute 'key'
+[2017-03-21 15:29:23]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 320 "etree.SubElement(precuinat, "key").text = i.key()"): 'str' object has no attribute 'key'
+[2017-03-21 15:29:52]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 318 "for i,j in p:"): too many values to unpack
+[2017-03-21 15:30:22]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 318 "for i,j in p:"): too many values to unpack
+[2017-03-21 15:30:40]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 320 "print i.values()"): 'str' object has no attribute 'values'
+[2017-03-21 15:44:41]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 343 "for i,j in dic.items():"): 'NoneType' object has no attribute 'items'
+[2017-03-21 15:53:41]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 343 "for i,j in dic.items():"): 'NoneType' object has no attribute 'items'
+[2017-03-21 15:55:11]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 343 "if (len(dic) > 0):"): object of type 'NoneType' has no len()
+[2017-03-21 15:55:34]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 343 "if (len(dic) != 0):"): object of type 'NoneType' has no len()
+[2017-03-21 15:55:59]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 343 "print len(dic)"): object of type 'NoneType' has no len()
+[2017-03-21 15:56:27]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 343 "if (dic != null):"): global name 'null' is not defined
+[2017-03-21 15:56:44]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 343 "if (dic != Null):"): global name 'Null' is not defined
+[2017-03-21 16:00:56]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 343 "if (dic.exists()):"): 'NoneType' object has no attribute 'exists'
+[2017-03-21 16:01:46]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 343 "if (dic != NoneType):"): global name 'NoneType' is not defined
+[2017-03-21 16:02:10]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 344 "for i,j in dic.items():"): 'NoneType' object has no attribute 'items'
+[2017-03-21 16:06:58]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 356 "etree.SubElement(precuinat, "contenido").text = context.get("strings")"): Argument must be bytes or unicode, got 'list'
+[2017-03-21 16:07:40]
+[ERROR] XML Report Generation Error (/home/david/Escritorio/MobSFDavid/TrabajoFinalGrado/StaticAnalyzer/views/shared_func.py, LINE 357 "etree.SubElement(precuinat, "contenido").text = context.get("strings")"): Argument must be bytes or unicode, got 'list'
