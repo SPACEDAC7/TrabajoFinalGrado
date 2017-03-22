@@ -33,319 +33,181 @@
 
 <h1 align="center" class="page-header">STATIC ANALYSIS - {{name}} </h1>
 <hr>
-        
+
                   <div class="col-lg-7">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-clock-o fa-fw"></i> <span class="glyphicon glyphicon-file"></span> FILE INFORMATION</h3><hr>
-                            </div>
-
-                            <div class="panel-body">
-                                <div style="padding-left:20px;" class="list-group">
-                                    <p>                                       
-                                       <span class="label label-primary"><strong>Name</strong></span> {{ name }}
-                                    </p>
-                                    <p>
-                                       <span class="label label-primary"><strong>Size</strong></span> {{ size }}
-                                    </p>
-				    <p>
-                                       <span class="label label-primary"><strong>MD5</strong></span> {{ md5 }}
-                                    </p>
-				    <p>
-                                     <span class="label label-primary"><strong>SHA1</strong></span> {{ sha1 }}
-                                    </p>
-				    <p>
-                                     <span class="label label-primary"><strong>SHA256:</strong></span> {{ sha256 }}
-				    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-<hr>
-                  <div class="col-lg-5">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-clock-o fa-fw"></i> <span class="glyphicon glyphicon-phone"></span> APP INFORMATION</h3><hr>
+                                <h3 class="panel-title"><i class="fa fa-clock-o fa-fw"></i> <span class="glyphicon glyphicon-file"></span> FILE INFORMATION</h3>
+                                <hr>
                             </div>
                             <div class="panel-body">
                                 <div style="padding-left:20px;" class="list-group">
                                     <p>                                       
-                                       <span class="label label-primary"><strong>Package Name:</strong></span>
-                                    {{ packagename }}
+                                       <span class="label label-primary"><strong>File Name:</strong></span>
+                                    {{ name }}
                                     </p>
                                     <p>
-                                       <span class="label label-primary"><strong>Main Activity:</strong></span>
-                                    {{ mainactivity }}
+                                       <span class="label label-primary"><strong>Size:</strong></span>
+                                    {{ size }}
                                    </p><p>
-                                       <span class="label label-primary"><strong>Target SDK:</strong></span>
-                                    {{ targetsdk }}
+                                       <span class="label label-primary"><strong>MD5:</strong></span>
+                                    {{ md5 }}
                                     
-                                     <span class="label label-primary"><strong>Min SDK:</strong></span>
-                                    {{ minsdk }}
+                                   </p><p>
+                                     <span class="label label-primary"><strong>SHA1:</strong></span>
+                                    {{ sha1 }}
                                   
-                                    
-                                     <span class="label label-primary"><strong>Max SDK:</strong></span>
-                                    {{ maxsdk }}
-                                    </p><p>
-                                    <span class="label label-primary"><strong>Android Version Name:</strong></span>
-                                    {{ androvername }}
-                                    </p><p>
-                                    <span class="label label-primary"><strong>Android Version Code:</strong></span>
-                                    {{ androver }}
-                                    </p>
+                                     </p><p>
+                                     <span class="label label-primary"><strong>SHA256:</strong></span>
+                                    {{ sha256 }}
                                 </div>
                                 
                             </div>
                         </div>
                     </div>
-                    <hr>
-                      <div class="col-lg-3">
+    <hr>
+                <div class="col-lg-5">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-clock-o fa-fw"></i> <span class="glyphicon glyphicon-eye-close"></span> CODE NATURE</h3><hr>
+                                <h3 class="panel-title"><i class="fa fa-clock-o fa-fw"></i> <span class="glyphicon glyphicon-phone"></span> APP INFORMATION</h3>
+                                <hr>
                             </div>
                             <div class="panel-body">
-                                <div style="padding-left:20px;" class="list-group">
-                                    <p>                                     
-                                    <span class="label label-primary"><strong>Native:</strong></span>
-                                    {{ native }}
+                                <div class="list-group">
+                                    <p>                                       
+                                    <span class="label label-primary">App Name</span>
+                                    {{ bin_name }}
                                     </p>
-                                    <p>
-                                    <span class="label label-primary"><strong>Dynamic:</strong></span>
-                                    
-                                    {{ dynamic }}
+                                     <p>                                       
+                                    <span class="label label-primary">Identifier</span>
+                                    {{ id }}
+                                    <span class="label label-primary">Version</span>
+                                    {{ ver }}
+
                                     </p>
-                                    <p>
-                                    <span class="label label-primary"><strong>Reflection:</strong></span> 
-                                    {{ reflection }}
+                                      <p>                                       
+                                    <span class="label label-primary">SDK Name</span>
+                                    {{ sdk }}
+                                    <span class="label label-primary">Platform Version</span>
+                                    {{ pltfm }}
+                                   <span class="label label-primary">Min OS Version</span>
+                                    {{ min }}
+                    
                                     </p>
-                                    <p>
-                                    <span class="label label-primary"><strong>Crypto:</strong></span> 
-                                    {{ crypto }}
-                                    </p>
-                                    <p>
-                                    <span class="label label-primary"><strong>Obfuscation:</strong></span> 
-                                    {{ obfus }}
-                                    </p>
+                                      
                                 </div>
                                 
                             </div>
                         </div>
                     </div>
+       <hr>
+        <div class="col-lg-12">
+         <div class="panel panel-default">
+           <div class="panel-heading">
+             <h3 class="panel-title"><i class="fa fa-clock-o fa-fw"></i><span class="fa fa-mobile"></span> PERMISSIONS</h3><hr>
+           </div>
+           <div class="panel-body">
+             {% if permissions|length > 0 %}
+             <div class="table-responsive">
+               <table class="table table-bordered table-hover table-striped">
+                 <thead>
+                   <tr>
+                     <th>Permissions</th>
+                     <th>Description</th>
+                     <th>Reason in Manifest</th>
+                   </tr>
+                 </thead>
+                 <tbody>
+                   {%for perm in permissions%}
+                   <tr>
+                     <td>
+                       {{ perm.0 | safe }}
+                     </td>
+                     <td>
+                       {{ perm.1 | safe }}
+                     </td>
+                     <td>
+                       {{ perm.2 | safe }}
+                     </td>
+                   </tr>
+                   {% endfor %}
+                 </tbody>
+               </table>
+             </div>
+             {% else %}
+             <div class="list-group">
+                 <p>
+                 <span class="label label-primary">No permissions required.</span>
+                 </p>
+               </div>
 
-                    <hr>
-                    <div class="col-lg-12">
+             {% endif %}
+           </div>
+         </div>
+       </div> <hr>
+             <div class="col-lg-12">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-clock-o fa-fw"></i><span class="glyphicon glyphicon-ok"></span> PERMISSIONS</h3><hr>
+                                <h3 class="panel-title"><i class="fa fa-clock-o fa-fw"></i><span class="glyphicon glyphicon-warning-sign"></span> CODE ANALYSIS</h3>
+                                <hr>
                             </div>
                             <div class="panel-body">
-                                  <div class="table-responsive">
-                    <table>
-                      <thead>
-                    <tr>
-                        <th>PERMISSION</th>
-                        <th>INFO </th>
-                        <th>DESCRIPTION</th>
-                      </tr>
-                                        </thead>
-                                        <tbody>
-                    {% for perm,desc in permissions.items %}
-                    <tr>
-                    <td>{{ perm }} ({{ desc.0 }})</td>
-                    <td style="text-align:center;">{{ desc.1 }}</td>
-                    <td>{{ desc.2 }}</td>
-                    </tr>
-                    {% endfor %}
-                    </tbody>
-                    </table>
-                                
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-<hr>
-                      <div class="col-lg-12">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"><i class=""></i><span class=""></span> BROWSABLE ACTIVITIES</h3><hr>
-                            </div>
-                            <div class="panel-body">
-                                  <div class="table-responsive">
-                                   <table class="table table-bordered table-hover table-striped">
-                                        <thead>
-                                            <tr>
-                                                <th>ACTIVITY</th>
-                                                <th>INTENT</th>   
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                      {% for activity,intent_details in browsable_activities.items %}
-                          <tr>
-                            <td>{{activity}}</td>
-                            <td>
-                                   {% if intent_details|key:"schemes" %}
-                                      <strong>Schemes</strong>: 
-                                      {% for scheme in intent_details|key:"schemes" %}
-                                        {{scheme}},
-                                      {% endfor %}
-                                       </br>
-                                   {% endif %}
-                                   {% if intent_details|key:"hosts" %}
-                                      <strong>Hosts:</strong> {% for host in intent_details|key:"hosts" %}
-                                        {{host}},
-                                      {% endfor %} 
-                                      </br>
-                                   {% endif %}
-                                   {% if intent_details|key:"ports" %}
-                                      <strong>Ports:</strong> {% for port in intent_details|key:"ports" %}
-                                        {{port}},
-                                      {% endfor %} 
-                                      </br>
-                                   {% endif %}
-                                   {% if intent_details|key:"mime_types" %}
-                                      <strong>Mime Types:</strong> {% for mime in intent_details|key:"mime_types" %}
-                                        {{mime}},
-                                      {% endfor %} 
-                                      </br>
-                                   {% endif %}
-                                   {% if intent_details|key:"paths" %}
-                                      <strong>Paths:</strong> {% for path in intent_details|key:"paths" %}
-                                        {{path}},
-                                      {% endfor %} 
-                                      </br>
-                                   {% endif %}
-                                   {% if intent_details|key:"path_prefixs" %}
-                                      <strong>Path Prefixes:</strong> {% for prefix in intent_details|key:"path_prefixs" %}
-                                        {{prefix}},
-                                      {% endfor %} 
-                                      </br>
-                                   {% endif %}
-                                   {% if intent_details|key:"path_patterns" %}
-                                      <strong>Path Patterns:</strong> {% for pattern in intent_details|key:"path_patterns" %}
-                                        {{pattern}},
-                                      {% endfor %} 
-                                      </br>
-                                   {% endif %}
-                              {% endfor %}
-                            </td>
-                          </tr>
-                    </tbody>
-                    </table>
-                                
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-<hr>
-            <div class="col-lg-12">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-clock-o fa-fw"></i><span class="glyphicon glyphicon-search"></span> MANIFEST ANALYSIS</h3><hr>
-
-                            </div>
-                            <div class="panel-body">
-                                  <div class="table-responsive">
+                  <div class="table-responsive">
                                     <table class="table table-bordered table-hover table-striped">
                                         <thead>
                                             <tr>
                                                 <th>ISSUE</th>
-                                                <th>SEVERITY</th>
+                                                <th>STATUS</th>
                                                 <th>DESCRIPTION</th>
                                                 
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            {% for item in manifest %}
-                      <tr>
-                        <td>
-                        {{item|key:"title" | safe}}
-                        </td>
-                        <td style="text-align: center;">
-
-                          {% if item|key:"stat" == "high" %}
-                            <span class="label label-danger"><strong>high</strong></span>
-                          {% elif item|key:"stat" == "info" %}
-                            <span class="label label-info"><strong>info</strong></span>
-                          {% elif item|key:"stat" == "medium" %}
-                            <span class="label label-warning"><strong>medium</strong></span>
-                          {% endif %}
-                         
-                        </td>
-                        <td>
-                        {{item|key:"desc"}}
-                        </td>
-   
-                       </tr>
-                     {% endfor %}
-                                        </tbody>
-                                        </table>
+                    {{ insecure| safe}}
+                    </tbody>
+                    </table>
                                 
                             </div>
                         </div>
                     </div>
-                    </div>
-<hr>
-                        <div class="col-lg-12">
+          </div>  
+          <hr>
+  <div class="col-lg-12">
                         <div class="panel panel-default">
                             <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-clock-o fa-fw"></i><span class="glyphicon glyphicon-warning-sign"></span> CODE ANALYSIS</h3><hr>
+                                <h3 class="panel-title"><i class="fa fa-clock-o fa-fw"></i><span class="glyphicon glyphicon-tasks"></span> iOS API</h3>
+                                <hr>
                             </div>
                             <div class="panel-body">
-                                  <div class="table-responsive">
-                                    <table class="table table-bordered table-hover table-striped">
-                                        <thead>
-                                            <tr>
-                                                <th>ISSUE</th>
-                                                <th>SEVERITY</th>
-                                                <th>FILES</th>
-                                                
-                                            </tr>
-                                        </thead>
-                                        <tbody style="text-align:center;">
-                                        {{ dang | safe}}
-                                        </tbody>
-                                        </table>
-                                
-                            </div>
-                        </div>
-                    </div>
-                    </div>      
-                    <hr>
-    <div class="col-lg-12">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-clock-o fa-fw"></i><span class="glyphicon glyphicon-tasks"></span> ANDROID API</h3><hr>
-                            </div>
-                            <div class="panel-body">
-                                  <div class="table-responsive">
+                  <div class="table-responsive">
                                     <table class="table table-bordered table-hover table-striped">
                                         <thead>
                                             <tr>
                                                 
                                                 <th>API</th>
-                                                <th>FILES</th>
+                        <th>FILES</th>
                                                 
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        {{ api | safe}}
-                                        </tbody>
-                                        </table>
+                    {{ api | safe}}
+                    </tbody>
+                    </table>
                                 
                             </div>
                         </div>
                     </div>
-                    </div>
-    <hr> <div class="col-lg-12">
+          </div>
+<hr>
+              <div class="col-lg-12">
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h3 class="panel-title"><i class="fa fa-clock-o fa-fw"></i><span class="glyphicon glyphicon-globe"></span> URLS</h3><hr>
                             </div>
                             <div class="panel-body">
-                                  <div class="table-responsive">
+                  <div class="table-responsive">
                                     <table class="table table-bordered table-hover table-striped">
-                                        {% if urls|length > 1 %} 
+                                         {% if urls|length > 1 %} 
                   <thead>
                   <tr>
                      <th>URL</th>
@@ -354,25 +216,25 @@
                  </thead>
                     {% endif %}
                                         <tbody>
-                                
-                                    {{ urls | safe}} 
-                                        </tbody>
-                                        </table>
+                
+                  {{ urls | safe}} 
+                    </tbody>
+                    </table>
                                 
                             </div>
                         </div>
                     </div>
-                    </div>
-                    <hr>
-                    <div class="col-lg-12">
+          </div><hr>
+
+           <div class="col-lg-12">
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h3 class="panel-title"><i class="fa fa-clock-o fa-fw"></i><span class="glyphicon glyphicon-screenshot"></span> Malware Check</h3><hr>
                             </div>
                             <div class="panel-body">
-                                  <div class="table-responsive">
+                  <div class="table-responsive">
                                     <table class="table table-bordered table-hover table-striped">
-                                        {% if urls|length > 1 %} 
+                                     {% if urls|length > 1 %} 
                   <thead>
                   <tr>
                      <th>Domain</th>
@@ -380,7 +242,7 @@
                   </tr>
                  </thead>
                   {% endif %}
-                                      <tbody>
+                 <tbody>
                 
                   {% for domain, details in domains.items %}
                   <tr><td>{{domain}}</td><td> 
@@ -401,22 +263,22 @@
                   {% endfor %}
                    
                     </tbody>
-                                        </table>
+                    </table>
                                 
                             </div>
                         </div>
                     </div>
-                    </div>
-                    <hr>
-                                <div class="col-lg-12">
+          </div><hr>
+
+                  <div class="col-lg-12">
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h3 class="panel-title"><i class="fa fa-clock-o fa-fw"></i><span class="glyphicon glyphicon-envelope"></span> EMAILS</h3><hr>
                             </div>
                             <div class="panel-body">
-                                  <div class="table-responsive">
+                  <div class="table-responsive">
                                     <table class="table table-bordered table-hover table-striped">
-                                        {% if emails|length > 1 %} 
+                                         {% if emails|length > 1 %} 
                   <thead>
                   <tr>
                      <th>Email</th>
@@ -424,154 +286,77 @@
                   </tr>
                  </thead>
                  {% endif %}
-                                        <tbody style="text-align:center;">
-                                    {{ emails | safe}} 
-                                        </tbody>
-                                        </table>
+                                        <tbody>
+                
+                  {{ emails | safe}} 
+                    </tbody>
+                    </table>
                                 
                             </div>
                         </div>
                     </div>
-                    </div>
-                            <hr>            <div class="col-lg-12">
+          </div><hr>
+  <div class="col-lg-12">
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h3 class="panel-title"><i class="fa fa-clock-o fa-fw"></i><span class="glyphicon glyphicon-lock"></span> FILE ANALYSIS</h3><hr>
                             </div>
                             <div class="panel-body">
-                                  <div class="table-responsive">
+                  <div class="table-responsive">
                                     <table class="table table-bordered table-hover table-striped">
-                                              <thead>
+                                        <thead>
                                             <tr>
                                                 <th>ISSUE</th>
                                                 <th>FILES</th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                
-                                    {{ certz | safe}} 
-                                        </tbody>
-                                        </table>
-                                
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-          
-           
-                    <hr>     <div class="col-lg-5">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-clock-o fa-fw"></i><span class="glyphicon glyphicon-credit-card"></span> ACTIVITIES</h3><hr>
-                            </div>
-                            <div class="panel-body">
-                                <div style="margin-left:20px;" class="list-group">
-                                    <p>  
-                                {% for act in activities %}
-                                    {{ act}} <br>
-                                {% endfor %}                                    
-                                    
-                                    </p>
-                                </div>
+                    {{ file_analysis | safe}}
+                    </tbody>
+                    </table>
                                 
                             </div>
                         </div>
                     </div>
-          <hr><div class="col-lg-5">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-clock-o fa-fw"></i><span class="glyphicon glyphicon-hdd"></span> PROVIDERS</h3><hr>
-                            </div>
-                            <div class="panel-body">
-                                <div style="margin-left:20px;" class="list-group">
-                                    <p>  
-                                {% for prv in providers %}
-                                    {{ prv}} <br>
-                                {% endfor %}                                    
-                                    
-                                    </p>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-            <hr>        <div class="col-lg-5">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-clock-o fa-fw"></i><span class="glyphicon glyphicon-sort-by-attributes-alt"></span> RECEIVERS</h3><hr>
-                            </div>
-                            <div class="panel-body">
-                                <div style="margin-left:20px;" class="list-group">
-                                    <p>  
-                                {% for rcv in receivers %}
-                                    {{ rcv}} <br>
-                                {% endfor %}                                    
-                                    
-                                    </p>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-            <hr>        <div class="col-lg-5">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-clock-o fa-fw"></i><span class="glyphicon glyphicon-refresh"></span> SERVICES</h3><hr>
-                            </div>
-                            <div class="panel-body">
-                                <div  style="margin-left:20px;" class="list-group">
-                                    <p>  
-                                {% for srv in services %}
-                                    {{ srv}} <br>
-                                {% endfor %}                                    
-                                    
-                                    </p>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-            <hr>            <div class="col-lg-5">
+          </div> <hr>
+                <div class="col-lg-12">
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h3 class="panel-title"><i class="fa fa-clock-o fa-fw"></i><span class="glyphicon glyphicon-chevron-down"></span> LIBRARIES</h3><hr>
                             </div>
                             <div class="panel-body">
-                                <div style="margin-left:20px;" class="list-group">
-                                    <p>  
-                                {% for lib in libraries %}
-                                    {{ lib }} <br>
-                                {% endfor %}                                    
-                                    
-                                    </p>
+                                <div class="list-group">
+                  <p>  
+                  {{ libs|safe }}
+                  </p>
                                 </div>
                                 
                             </div>
                         </div>
                     </div>
-                     <hr>  <div class="col-lg-7">
+<hr>
+              <div class="col-lg-12">
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <h3 class="panel-title"><i class="fa fa-clock-o fa-fw"></i><span class="glyphicon glyphicon-folder-open"></span> FILES</h3><hr>
                             </div>
                             <div class="panel-body">
-                                <div style="margin-left:20px;" class="list-group">
-                                    <p>  
-                                {% for file in files %}
-                                    {{ file}} <br>
-                                {% endfor %}                                    
-                                    
-                                    </p>
+                                <div class="list-group">
+                  <p>  
+                {% for file in files %}
+                  {{ file}} <br>
+                {% endfor %}                  
+                  
+                  </p>
                                 </div>
                                 
                             </div>
                         </div>
                     </div>
-
-    <hr><hr>
-    <h3 align="center"> Report Generated by - Sofinspect | http://opensecurity.in</h3>
-           
-           
+                    <hr><hr>
+                     <h3 align="center"> Report Generated by - MobSF | http://opensecurity.in</h3>
        
+  
+  
       
    {% endblock %}
